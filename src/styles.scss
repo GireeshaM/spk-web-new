@@ -1,0 +1,67 @@
+/* You can add global styles to this file, and also import other style files */
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+// @import "bootstrap/scss/mixins.scss";
+
+/* Setting Rubik as the global font */
+body {
+  font-family: "Rubik", sans-serif !important;
+  // font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  color: #0a2250;
+}
+
+// p {
+//   font-size: 18px;
+// }
+
+h1 {
+  font-weight: bold;
+}
+@media (max-width: 767.98px) {
+  h1 {
+    font-size: 2rem; /* Smaller font size for h1 */
+  }
+
+  h2 {
+    font-size: 1.75rem; /* Smaller font size for h2 */
+  }
+
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 1.2rem !important; /* Smaller font size for h3 */
+  }
+
+  p {
+    font-size: 13px !important; /* Smaller font size for paragraphs */
+  }
+  a {
+    font-size: 13px !important; /* Smaller font size for paragraphs */
+  }
+}
+
+@media (max-width: 575.98px) {
+  h1 {
+    font-size: 1.75rem; /* Even smaller font size for h1 */
+  }
+
+  h2 {
+    font-size: 1.5rem; /* Even smaller font size for h2 */
+  }
+
+  h3 {
+    font-size: 1.25rem; /* Even smaller font size for h3 */
+  }
+
+  p {
+    font-size: 12px; /* Even smaller font size for paragraphs */
+  }
+}
