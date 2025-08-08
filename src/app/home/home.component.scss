@@ -1,0 +1,155 @@
+//section 3
+// What we offer
+.custom-container {
+  width: 1312px;
+  height: 387px;
+  position: absolute;
+  top: 1543px;
+  left: 65px;
+  opacity: 1;
+  transform: rotate(0deg);
+  background-color: #ebe6f8;
+  padding-top: 3rem; /* py-5 = 3rem top and bottom */
+  padding-bottom: 3rem;
+}
+.whatWeOffer-section {
+  background-color: #EDE8F6;
+}
+
+
+
+
+
+//section 5
+    .collaborate-subtitle,
+    .collaborate-title,
+    .collaborate-card-title,
+    .collaborate-card-desc {
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      letter-spacing: 0.01em;
+    }
+
+    .collaborate-title {
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: #111;
+    }
+
+    .collaborate-highlight {
+      color: #468bd5;
+      font-weight: 700;
+    }
+
+    .text-purple {
+      color: #3d008d;
+    }
+
+    .collaborate-card {
+      border-radius: 0;
+      border: 1px solid #e4d6c3;
+      transition: box-shadow 0.2s;
+    }
+
+    .collaborate-card:hover {
+      box-shadow: 0 4px 24px rgba(70, 139, 213, 0.12);
+    }
+
+    @media (max-width: 991px) {
+      .collaborate-card {
+        min-height: 200px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .collaborate-section {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+
+      .collaborate-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .collaborate-card {
+        padding: 2rem 0.75rem;
+        min-height: auto;
+      }
+    }
+
+// section 5 end
+
+
+
+
+
+
+// stats section
+    .stats-section {
+      background: linear-gradient(90deg, #4b197a 0%, #6a2997 100%);
+      padding: 20px 0;
+      min-height: 130px;
+    }
+    .stats-icon {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+    }
+    .stats-number {
+      color: #fff;
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      font-size: 2.1rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      text-align: left;
+    }
+    .stats-label {
+      color: #fff;
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      font-size: 1.08rem;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      text-align: left;
+    }
+    @media (max-width: 991px) {
+      .stats-section {
+        padding: 32px 0;
+      }
+      .stats-icon {
+        width: 40px;
+        height: 40px;
+      }
+      .stats-number {
+        font-size: 1.3rem;
+      }
+      .stats-label {
+        font-size: 0.98rem;
+      }
+    }
+//....................stats section end
+
+
+
+//testimonial section
+.testimonial-section {
+  background:
+    url('/assets/homepage/footer/abstract-backdrop-with-colorful-wave-gradient-lines-white-background-modern-technology-background-wave-design-vector-illustration 4.png') no-repeat center/120% auto,
+    url('/assets/homepage/footer/315788 4.png') no-repeat center/cover,
+    #f6f4fd;
+  position: relative;
+  /* Remove extra padding/margin if any */
+}
+
+.testimonial-section .card,
+.testimonial-section .bg-white {
+  border-radius: 0.25rem !important; /* Bootstrap's .rounded-1 */
+  border-width: 1px !important;
+  border-color: #e0e0e0 !important;
+  margin: 0 !important;
+  /* Remove extra box-shadow if needed */
+}
+
+@media (max-width: 767px) {
+  .testimonial-section h2 { font-size: 1.3rem !important; }
+}
+// testimonial section end
