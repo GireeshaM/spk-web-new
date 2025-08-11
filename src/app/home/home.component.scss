@@ -1,3 +1,57 @@
+//features
+.features-container {
+  width: 1440px;
+  height: 700px;
+  position: absolute;
+  top: 0;      /* relative to wrapper now */
+  left: -6px;
+  opacity: 1;
+  transform: rotate(0deg);
+  background-color: #fff; /* optional: ensure background */
+  overflow: auto; /* scroll if content overflows */
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.image-wrapper {
+  position: relative;
+  width: 420px;   /* fixed width for demo */
+  height: 436px;  /* fixed height for demo */
+  /* You can adjust these sizes as needed */
+}
+ 
+.main-image {
+  width: 90%;
+  height: 90%;
+  border-radius: 15px;
+  object-fit: cover;
+  display: block;
+  position: relative;
+  z-index: 2; /* on top */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+ 
+.ellipse-shape {
+  position: absolute;
+  width: 286px;
+  height: 295px;
+  right: -70px;    /* pushes ellipse partially outside the container on the right */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1; /* behind main image */
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 0 10px rgba(128, 0, 255, 0.5)); /* subtle glow */
+}
+.move-right {
+  margin-left: 90px; /* or padding-left */
+}
+ 
+.about-sprintpark-section {
+  background-color: #F2F1F9;
+  padding-top: 60px;   /* optional padding */
+  padding-bottom: 60px; /* optional padding */
+}
+//feature
 //section 3
 .offer-industries-bg {
   background: 
@@ -8,16 +62,22 @@
   width: 100%;
   padding-bottom: 4rem;
 }
+.whatWeOffer-section .bg-white , .offer-industries {
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  font-size: 31px;
 
+}
 .whatWeOffer-section,
 .industries-section {
   background: transparent;
 }
 
 .whatWeOffer-section {
-  margin-bottom: 10rem;
+  margin-bottom: 6rem;
+  @media (max-width: 767px) {
+    margin-bottom: 2.5rem; // Decrease gap on mobile
+  }
 }
-
 // Industries cards: increase height
 .industries-card {
   overflow: hidden;
@@ -26,7 +86,6 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-
   .img {
     height: 240px;
     object-fit: cover;
@@ -45,8 +104,6 @@
     z-index: 2;
   }
 }
-
-
 .whatWeOffer-section .bg-white,
 .industries-section .bg-white {
   border-radius: 0 !important;
@@ -55,8 +112,7 @@
 }
 
 .slide-top {
-  -webkit-animation: slide-top 0.11s cubic-bezier(0.23, 1, 0.32, 1) both;
-          animation: slide-top 0.11s cubic-bezier(0.23, 1, 0.32, 1) both;
+  animation: slide-top 0.5s cubic-bezier(0.23, 1, 0.32, 1) both;
 }
 @-webkit-keyframes slide-top {
   0% {
@@ -82,6 +138,34 @@
     opacity: 1;
   }
 }
+.slide-right {
+  animation: slide-right 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@keyframes slide-right {
+  0% { transform: translateX(100px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+.slide-left {
+  animation: slide-left 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@keyframes slide-left {
+  0% { transform: translateX(-100px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+.pre-slide-right {
+  opacity: 0;
+  transform: translateX(100px);
+}
+.pre-slide-left {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+.pre-slide-top {
+  opacity: 0;
+  transform: translateY(80px);
+}
 
 //section 5
     .collaborate-subtitle,
@@ -97,26 +181,21 @@
       font-weight: 700;
       color: #111;
     }
-
     .collaborate-highlight {
       color: #468bd5;
       font-weight: 700;
     }
-
     .text-purple {
       color: #3d008d;
     }
-
     .collaborate-card {
       border-radius: 0;
       border: 1px solid #e4d6c3;
       transition: box-shadow 0.2s;
     }
-
     .collaborate-card:hover {
       box-shadow: 0 4px 24px rgba(70, 139, 213, 0.12);
     }
-
     @media (max-width: 991px) {
       .collaborate-card {
         min-height: 200px;
@@ -128,12 +207,10 @@
         padding-top: 2rem;
         padding-bottom: 2rem;
       }
-
       .collaborate-title {
         font-size: 1.5rem;
         margin-bottom: 1.5rem;
       }
-
       .collaborate-card {
         padding: 2rem 0.75rem;
         min-height: auto;
@@ -195,9 +272,7 @@
     url('/assets/homepage/footer/315788 4.png') no-repeat center/cover,
     #f6f4fd;
   position: relative;
-  /* Remove extra padding/margin if any */
 }
-
 .testimonial-section .card,
 .testimonial-section .bg-white {
   border-radius: 0.25rem !important; /* Bootstrap's .rounded-1 */
@@ -206,12 +281,9 @@
   margin: 0 !important;
   /* Remove extra box-shadow if needed */
 }
-
 @media (max-width: 767px) {
   .testimonial-section h2 { font-size: 1.3rem !important; }
 }
-// testimonial section end
-
 // Service cards (What we offer)
 .whatWeOffer-section .bg-white:hover {
   background: #372399 !important;
@@ -242,4 +314,24 @@
 .testimonial-section .bg-white:hover .text-secondary,
 .testimonial-section .bg-white:hover .fs-5 {
   color: #fff !important;
+}
+
+// Ensure same font, color, and weight for "What we offer" and "Industries we serve" cards as collaborative cards
+.whatWeOffer-section .bg-white,
+.industries-section .bg-white,
+.industries-section .bg-transparent {
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+
+  h6, h5 {
+    font-family: inherit;
+    color: #000000;
+  }
+
+  p {
+    font-family: inherit;
+    font-size: 1rem; // 16px
+    font-weight: 400;
+    color: #000000;
+    margin-bottom: 0;
+  }
 }

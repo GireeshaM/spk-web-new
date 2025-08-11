@@ -7,43 +7,143 @@
     How to troubleshoot:
     Open the browser console and look for errors or warnings.
     Check your terminal for errors during build/serve.
+     Welcome to the home page!
+    Service Worker / PWA: If you have a service worker enabled (Angular PWA), it may prompt for a refresh when a new version is detected. Check if ServiceWorkerModule is imported in your app.module.ts.
+    Infinite Navigation Loop: If you have a guard or redirect that keeps navigating, it can cause the page to reload or flicker.
+    Browser Extensions: Sometimes extensions (like auto-refreshers) can cause this.
+    How to troubleshoot:
+    Open the browser console and look for errors or warnings.
+    Check your terminal for errors during build/serve.
+     Welcome to the home page!
+    Service Worker / PWA: If you have a service worker enabled (Angular PWA), it may prompt for a refresh when a new version is detected. Check if ServiceWorkerModule is imported in your app.module.ts.
+    Infinite Navigation Loop: If you have a guard or redirect that keeps navigating, it can cause the page to reload or flicker.
+    Browser Extensions: Sometimes extensions (like auto-refreshers) can cause this.
+    How to troubleshoot:
+    Open the browser console and look for errors or warnings.
+    Check your terminal for errors during build/serve.
   </p>
+  <!-- FEATURES -->
+     <section class="about-sprintpark-section">
+  <div class="container py-5 position-relative">
+    <div class="row align-items-center position-relative">
+      <!-- Left Image -->
+      <div class="col-md-5 image-wrapper"
+           [ngClass]="{
+             'pre-slide-left': !imageInView,
+             'slide-left': imageInView
+           }">
+        <img src="/assets/homepage/home 2nd section/Rectangle 50.png" alt="Team working" class="main-image" />
+        <img src="/assets/homepage/home 3rd section/image.png" alt="Ellipse" class="ellipse-shape" />
+      </div>
 
+      <!-- Right Content -->
+      <div class="col-md-7 move-right">
+        <div [ngClass]="{
+          'pre-slide-right': !contentInView,
+          'slide-right': contentInView
+        }">
+          <small class="text-primary fst-italic mb-2 d-block" style="font-size: 0.8rem;">About Sprintpark</small>
+          <h3 class="fw-bold mb-3">Smart. Sleek. Scalable. We don’t just build tech - we craft digital experiences.</h3>
+          <p class="text-muted mb-4" style="font-size: 0.9rem; line-height: 1.5;">
+            Our goal is to become the most trusted and recognized provider of cutting-edge IT products and solutions—celebrated for our unwavering commitment to quality, forward-thinking innovation, and exceptional client satisfaction. By developing scalable, efficient, and user-centric products, we empower businesses to thrive in an ever-evolving digital landscape.
+          </p>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="row g-3" #featureGrid
+             [ngClass]="{
+               'pre-slide-top': !featuresInView,
+               'slide-top': featuresInView
+             }">
+          <!-- Feature 1 -->
+          <div class="col-6">
+            <div class="feature-box p-3 rounded bg-light d-flex align-items-center gap-3">
+              <div class="icon-box text-primary">
+                <img src="/assets/homepage/home 2nd section/best-employee_8057738 1.png" alt="Integrity" style="width: 24px; height: 24px;">
+              </div>
+              <div>
+                <h6 class="mb-1 fw-semibold">Integrity</h6>
+                <small class="text-muted">Upholding honesty in all dealings</small>
+              </div>
+            </div>
+          </div>
+          <!-- Feature 2 -->
+          <div class="col-6">
+            <div class="feature-box p-3 rounded bg-light d-flex align-items-center gap-3">
+              <div class="icon-box text-primary">
+                <img src="/assets/homepage/home 2nd section/cooperation_8124710 1.png" alt="Team Work" style="width: 24px; height: 24px;">
+              </div>
+              <div>
+                <h6 class="mb-1 fw-semibold">Team Work</h6>
+                <small class="text-muted">Collaborating to achieve shared success</small>
+              </div>
+            </div>
+          </div>
+          <!-- Feature 3 -->
+          <div class="col-6">
+            <div class="feature-box p-3 rounded bg-light d-flex align-items-center gap-3">
+              <div class="icon-box text-primary">
+                <img src="/assets/homepage/home 2nd section/problem-solving_16781642 2.png" alt="Commitment" style="width: 24px; height: 24px;">
+              </div>
+              <div>
+                <h6 class="mb-1 fw-semibold">Commitment</h6>
+                <small class="text-muted">Dedicated to exceeding client expectations</small>
+              </div>
+            </div>
+          </div>
+          <!-- Feature 4 -->
+          <div class="col-6">
+            <div class="feature-box p-3 rounded bg-light d-flex align-items-center gap-3">
+              <div class="icon-box text-primary">
+                <img src="/assets/homepage/home 2nd section/diversity_4776029 1.png" alt="Diversity" style="width: 24px; height: 24px;">
+              </div>
+              <div>
+                <h6 class="mb-1 fw-semibold">Diversity</h6>
+                <small class="text-muted">Embracing differences to drive innovation</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    </section>
+  <!-- FEATURES END -->
   <!--section3-->
-  <div class="offer-industries-bg py-5">
+  <div class="offer-industries-bg offer-industries py-5">
     <!-- What we offer -->
     <section class="whatWeOffer-section mb-20">
       <div class="container">
-        <div class="d-flex justify-content-between align-items-center mb-4">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-4 gap-2">
           <div>
-            <small class="text-muted">What we offer</small>
+            <small class="text-muted" style="font-size: 1rem">What we offer</small>
             <h3 class="fw-bold mb-2">Services tailored for you</h3>
           </div>
-          <a href="#" class="text-primary text-decoration-none d-flex align-items-center">
+          <a href="#" class="text-primary text-decoration-none d-flex align-items-center mt-2 mt-md-0">
             View all
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right ms-1" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M10.146 12.354a.5.5 0 0 0 .708-.708L7.707 9H14.5a.5.5 0 0 0 0-1H7.707l3.147-2.646a.5.5 0 0 0-.708-.708l-4 3.5a.5.5 0 0 0 0 .708l4 3.5z"/>
             </svg>
           </a>
         </div>
-    <div class="row g-4 text-center">
-  <div
-    class="col-md-4"
-    *ngFor="let offer of whatWeOffer; let i = index"
-    #offerCard
-  >
-    <div
-      class="bg-white p-4 rounded-0 shadow-sm h-100"
-      [ngClass]="{'slide-top': offerCardVisible[i]}"
-      [style.animationDelay]="(i * 0.50) + 's'"
-      [style.webkitAnimationDelay]="(i * 1.20) + 's'"
-    >
-      <img [src]="offer.img" [alt]="offer.title" class="mb-3" style="height: 60px;">
-      <h6 class="fw-bold mb-2">{{ offer.title }}</h6>
-      <p class="text-muted small mb-0">{{ offer.desc }}</p>
-    </div>
-  </div>
-</div>
+        <div class="row g-4 text-center">
+          <div
+            class="col-12 col-sm-6 col-md-4 h-2000" style="height: 500%;"
+            *ngFor="let offer of whatWeOffer; let i = index"
+            #offerCard
+          >
+            <div
+              class="bg-white p-4 rounded-0 shadow-sm h-20"
+              [ngClass]="{'slide-top': offerCardVisible[i]}"
+              [style.animationDelay]="(i * 0.15) + 's'"
+              [style.webkitAnimationDelay]="(i * 0.15) + 's'"
+            >
+              <img [src]="offer.img" [alt]="offer.title" class="mb-3" style="height: 60px;">
+              <h6 class="fw-bold mb-2 text-sec">{{ offer.title }}</h6>
+              <p class="text-muted small mb-0 text sec">{{ offer.desc }}</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -51,12 +151,12 @@
     <section class="industries-section my-30">
       <div class="container">
         <div class="mb-4">
-          <small class="text-muted">Industries we serve</small>
+          <small class="text-muted" style="font-size: 1rem">Industries we serve</small>
           <h3 class="fw-bold mb-2">We bring our experties</h3>
         </div>
         <div class="row g-4">
-          <div class="col-md-3 col-6" *ngFor="let industry of industries">
-            <div class="bg-white p-0 rounded-0 shadow-sm h-100 overflow-hidden industries-card d-flex flex-column">
+          <div class="col-12 col-sm-6 col-md-3" *ngFor="let industry of industries">
+            <div class="bg-transparent p-0 rounded-0  h-100 overflow-hidden industries-card d-flex flex-column">
               <img [src]="industry.img" [alt]="industry.alt" class="w-100 industries-img flex-grow-1">
             </div>
           </div>
@@ -68,17 +168,16 @@
 
   <!-- Collaboration Section -->
   <div class="collaborate-section bg-light py-5 rounded-3">
-    <div class="container px-5">
+    <div class="container px-2 px-sm-4 px-md-5">
       <p class="collaborate-subtitle mb-2">Discover Our Company</p>
       <h2 class="collaborate-title mt-2 mb-4">
         How we <span class="collaborate-highlight text-primary fw-bold">Collaborate</span> with you.
       </h2>
       <div class="row g-4">
-        <div class="col-md-4" *ngFor="let c of collaborations; let i = index">
+        <div class="col-12 col-md-4" *ngFor="let c of collaborations; let i = index">
           <div
-            class="collaborate-card text-center bg-white border shadow-sm p-4 d-flex flex-column align-items-center"
+            class="collaborate-card text-center bg-white border shadow-sm p-4 d-flex flex-column align-items-center h-100"
             style="min-height: 233px;"
-          
           >
             <img [src]="c.img" [alt]="c.alt" class="collaborate-icon mb-3" style="width: 56px; height: 56px;" />
             <h5 class="collaborate-card-title text-purple fw-bold mb-2">{{ c.title }}</h5>
@@ -94,7 +193,7 @@
   <div class="stats-section d-flex align-items-center">
     <div class="container">
       <div class="row justify-content-center align-items-center text-center">
-        <div class="col-md-3 col-12 mb-4 mb-md-0" *ngFor="let stat of stats">
+        <div class="col-12 col-sm-6 col-md-3 mb-4 mb-md-0" *ngFor="let stat of stats">
           <div class="d-flex align-items-center justify-content-center">
             <img [src]="stat.img" [alt]="stat.label" class="stats-icon" />
             <div class="text-start ms-3">
@@ -114,11 +213,10 @@
       <p class="mb-2 text-secondary fw-semibold">Testimonial</p>
       <h2 class="fw-bold mb-4" style="font-size:2.2rem;">Real Stories, Real Results</h2>
       <div class="row gx-2 gy-3">
-        <div class="col-md-6" *ngFor="let t of testimonials; let i = index">
+        <div class="col-12 col-md-6" *ngFor="let t of testimonials; let i = index">
           <div
             class="bg-white border border-1 rounded-1 shadow-sm px-3 py-4 h-100 position-relative d-flex flex-column"
             style="min-height:340px;"
-           
           >
             <div class="d-flex align-items-center mb-2 mt-5">
               <img [src]="t.img" [alt]="t.name" class="rounded-circle me-4" style="width:80px;height:80px;object-fit:cover;">

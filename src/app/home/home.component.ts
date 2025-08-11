@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, HostListener, QueryList, ViewChildren, AfterViewInit } from '@angular/core';
+import { Component, ElementRef, HostListener, QueryList, ViewChildren, AfterViewInit, ViewChild } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
@@ -17,6 +17,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   ]
 })
 export class HomeComponent implements AfterViewInit {
+  @ViewChild('featureGrid') featureGrid!: ElementRef;
   whatWeOffer = [
     {
       img: '/assets/homepage/home 3rd section/software_3950815 1.png',
@@ -26,7 +27,7 @@ export class HomeComponent implements AfterViewInit {
     {
       img: '/assets/homepage/home 3rd section/svg_11516534 1.png',
       title: 'IT Consulting',
-      desc: 'Expert guidance and strategic solutions to overcome challenges and drive your business forward.'
+      desc: 'Expert guidance and strategic solutions to overcome challenges and drive your business.'
     },
     {
       img: '/assets/homepage/home 3rd section/talent-search_2272580 (1) 1.png',
@@ -118,24 +119,51 @@ export class HomeComponent implements AfterViewInit {
       text: 'Sprintpark has delivered excellent services to deliver our AI products. They have given us innovative solutions. Happy client :)'
     }
   ];
-  // Animation state arrays
-  offerCardVisible: boolean[] = [];
+
   @ViewChildren('offerCard') offerCards!: QueryList<ElementRef>;
+  offerCardVisible: boolean[] = [];
+
+  imageInView = false;
+  contentInView = false;
+  featuresInView = false;
 
   ngOnInit() {
     this.offerCardVisible = this.whatWeOffer.map(() => false);
   }
 
   ngAfterViewInit() {
+    this.checkInView();
     this.onScroll();
   }
 
   @HostListener('window:scroll')
   onScroll() {
-    this.offerCards?.forEach((card, i) => {
+    this.offerCards.forEach((card, i) => {
       const rect = card.nativeElement.getBoundingClientRect();
-      this.offerCardVisible[i] = (rect.top < window.innerHeight - 80 && rect.bottom > 0);
+      this.offerCardVisible[i] = rect.top < window.innerHeight && rect.bottom > 0;
     });
+  }
+
+  checkInView() {
+    // Get the left image element
+    const imageEl = document.querySelector('.image-wrapper');
+    if (imageEl) {
+      const rect = imageEl.getBoundingClientRect();
+      this.imageInView = rect.top < window.innerHeight && rect.bottom > 0;
+    }
+
+    // Get the right content element
+    const contentEl = document.querySelector('.move-right > div');
+    if (contentEl) {
+      const rect = contentEl.getBoundingClientRect();
+      this.contentInView = rect.top < window.innerHeight && rect.bottom > 0;
+    }
+
+    // Features grid
+    if (this.featureGrid) {
+      const rect = this.featureGrid.nativeElement.getBoundingClientRect();
+      this.featuresInView = rect.top < window.innerHeight && rect.bottom > 0;
+    }
   }
 }
 
