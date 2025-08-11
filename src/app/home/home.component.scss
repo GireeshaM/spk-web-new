@@ -1,0 +1,245 @@
+//section 3
+.offer-industries-bg {
+  background: 
+    url('/assets/homepage/footer/abstract-backdrop-with-colorful-wave-gradient-lines-white-background-modern-technology-background-wave-design-vector-illustration 4.png') 
+      no-repeat center bottom/100% 700px,
+    #f6f4fd; // light purple under the image
+  min-height: 100vh;
+  width: 100%;
+  padding-bottom: 4rem;
+}
+
+.whatWeOffer-section,
+.industries-section {
+  background: transparent;
+}
+
+.whatWeOffer-section {
+  margin-bottom: 10rem;
+}
+
+// Industries cards: increase height
+.industries-card {
+  overflow: hidden;
+  position: relative;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  .img {
+    height: 240px;
+    object-fit: cover;
+    width: 100%;
+    display: block;
+  }
+
+  .industries-img {
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    will-change: transform;
+  }
+
+  &:hover .industries-img {
+    transform: scale(2.0) perspective(800px) translateZ(20px);
+    box-shadow: 0 12px 32px rgba(55, 35, 153, 0.18);
+    z-index: 2;
+  }
+}
+
+
+.whatWeOffer-section .bg-white,
+.industries-section .bg-white {
+  border-radius: 0 !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border: none;
+}
+
+.slide-top {
+  -webkit-animation: slide-top 0.11s cubic-bezier(0.23, 1, 0.32, 1) both;
+          animation: slide-top 0.11s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+@-webkit-keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(80px);
+            transform: translateY(80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(80px);
+            transform: translateY(80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+//section 5
+    .collaborate-subtitle,
+    .collaborate-title,
+    .collaborate-card-title,
+    .collaborate-card-desc {
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      letter-spacing: 0.01em;
+    }
+
+    .collaborate-title {
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: #111;
+    }
+
+    .collaborate-highlight {
+      color: #468bd5;
+      font-weight: 700;
+    }
+
+    .text-purple {
+      color: #3d008d;
+    }
+
+    .collaborate-card {
+      border-radius: 0;
+      border: 1px solid #e4d6c3;
+      transition: box-shadow 0.2s;
+    }
+
+    .collaborate-card:hover {
+      box-shadow: 0 4px 24px rgba(70, 139, 213, 0.12);
+    }
+
+    @media (max-width: 991px) {
+      .collaborate-card {
+        min-height: 200px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .collaborate-section {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+
+      .collaborate-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .collaborate-card {
+        padding: 2rem 0.75rem;
+        min-height: auto;
+      }
+    }
+.collaborate-section {
+  position: relative;
+  overflow: hidden;
+}
+// section 5 end
+
+// stats section
+    .stats-section {
+      background: linear-gradient(90deg, #4b197a 0%, #6a2997 100%);
+      padding: 20px 0;
+      min-height: 130px;
+    }
+    .stats-icon {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+    }
+    .stats-number {
+      color: #fff;
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      font-size: 2.1rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      text-align: left;
+    }
+    .stats-label {
+      color: #fff;
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      font-size: 1.08rem;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      text-align: left;
+    }
+    @media (max-width: 991px) {
+      .stats-section {
+        padding: 32px 0;
+      }
+      .stats-icon {
+        width: 40px;
+        height: 40px;
+      }
+      .stats-number {
+        font-size: 1.3rem;
+      }
+      .stats-label {
+        font-size: 0.98rem;
+      }
+    }
+//....................stats section end
+//testimonial section
+.testimonial-section {
+  background:
+    url('/assets/homepage/footer/abstract-backdrop-with-colorful-wave-gradient-lines-white-background-modern-technology-background-wave-design-vector-illustration 4.png') no-repeat center/120% auto,
+    url('/assets/homepage/footer/315788 4.png') no-repeat center/cover,
+    #f6f4fd;
+  position: relative;
+  /* Remove extra padding/margin if any */
+}
+
+.testimonial-section .card,
+.testimonial-section .bg-white {
+  border-radius: 0.25rem !important; /* Bootstrap's .rounded-1 */
+  border-width: 1px !important;
+  border-color: #e0e0e0 !important;
+  margin: 0 !important;
+  /* Remove extra box-shadow if needed */
+}
+
+@media (max-width: 767px) {
+  .testimonial-section h2 { font-size: 1.3rem !important; }
+}
+// testimonial section end
+
+// Service cards (What we offer)
+.whatWeOffer-section .bg-white:hover {
+  background: #372399 !important;
+  color: #fff !important;
+  transition: background 0.2s, color 0.2s;
+}
+.whatWeOffer-section .bg-white:hover h6,
+.whatWeOffer-section .bg-white:hover p {
+  color: #fff !important;
+}
+// Collaboration cards
+.collaborate-card:hover {
+  background: #372399 !important;
+  color: #fff !important;
+  transition: background 0.2s, color 0.2s;
+}
+.collaborate-card:hover .collaborate-card-title,
+.collaborate-card:hover .collaborate-card-desc {
+  color: #fff !important;
+}
+// Testimonial cards
+.testimonial-section .bg-white:hover {
+  background: #372399 !important;
+  color: #fff !important;
+  transition: background 0.2s, color 0.2s;
+}
+.testimonial-section .bg-white:hover .fw-bold,
+.testimonial-section .bg-white:hover .text-secondary,
+.testimonial-section .bg-white:hover .fs-5 {
+  color: #fff !important;
+}
