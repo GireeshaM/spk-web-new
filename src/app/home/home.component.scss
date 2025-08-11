@@ -1,24 +1,87 @@
 //section 3
-// What we offer
-.custom-container {
-  width: 1312px;
-  height: 387px;
-  position: absolute;
-  top: 1543px;
-  left: 65px;
-  opacity: 1;
-  transform: rotate(0deg);
-  background-color: #ebe6f8;
-  padding-top: 3rem; /* py-5 = 3rem top and bottom */
-  padding-bottom: 3rem;
+.offer-industries-bg {
+  background: 
+    url('/assets/homepage/footer/abstract-backdrop-with-colorful-wave-gradient-lines-white-background-modern-technology-background-wave-design-vector-illustration 4.png') 
+      no-repeat center bottom/100% 700px,
+    #f6f4fd; // light purple under the image
+  min-height: 100vh;
+  width: 100%;
+  padding-bottom: 4rem;
 }
+
+.whatWeOffer-section,
+.industries-section {
+  background: transparent;
+}
+
 .whatWeOffer-section {
-  background-color: #EDE8F6;
+  margin-bottom: 10rem;
+}
+
+// Industries cards: increase height
+.industries-card {
+  overflow: hidden;
+  position: relative;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  .img {
+    height: 240px;
+    object-fit: cover;
+    width: 100%;
+    display: block;
+  }
+
+  .industries-img {
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    will-change: transform;
+  }
+
+  &:hover .industries-img {
+    transform: scale(2.0) perspective(800px) translateZ(20px);
+    box-shadow: 0 12px 32px rgba(55, 35, 153, 0.18);
+    z-index: 2;
+  }
 }
 
 
+.whatWeOffer-section .bg-white,
+.industries-section .bg-white {
+  border-radius: 0 !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border: none;
+}
 
-
+.slide-top {
+  -webkit-animation: slide-top 0.11s cubic-bezier(0.23, 1, 0.32, 1) both;
+          animation: slide-top 0.11s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+@-webkit-keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(80px);
+            transform: translateY(80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(80px);
+            transform: translateY(80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
 
 //section 5
     .collaborate-subtitle,
@@ -76,13 +139,11 @@
         min-height: auto;
       }
     }
-
+.collaborate-section {
+  position: relative;
+  overflow: hidden;
+}
 // section 5 end
-
-
-
-
-
 
 // stats section
     .stats-section {
@@ -127,9 +188,6 @@
       }
     }
 //....................stats section end
-
-
-
 //testimonial section
 .testimonial-section {
   background:
@@ -153,3 +211,35 @@
   .testimonial-section h2 { font-size: 1.3rem !important; }
 }
 // testimonial section end
+
+// Service cards (What we offer)
+.whatWeOffer-section .bg-white:hover {
+  background: #372399 !important;
+  color: #fff !important;
+  transition: background 0.2s, color 0.2s;
+}
+.whatWeOffer-section .bg-white:hover h6,
+.whatWeOffer-section .bg-white:hover p {
+  color: #fff !important;
+}
+// Collaboration cards
+.collaborate-card:hover {
+  background: #372399 !important;
+  color: #fff !important;
+  transition: background 0.2s, color 0.2s;
+}
+.collaborate-card:hover .collaborate-card-title,
+.collaborate-card:hover .collaborate-card-desc {
+  color: #fff !important;
+}
+// Testimonial cards
+.testimonial-section .bg-white:hover {
+  background: #372399 !important;
+  color: #fff !important;
+  transition: background 0.2s, color 0.2s;
+}
+.testimonial-section .bg-white:hover .fw-bold,
+.testimonial-section .bg-white:hover .text-secondary,
+.testimonial-section .bg-white:hover .fs-5 {
+  color: #fff !important;
+}
