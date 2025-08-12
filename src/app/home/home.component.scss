@@ -1,7 +1,6 @@
 //features
 .features-container {
-  width: 1440px;
-  height: 700px;
+  width: 1440px;  
   position: absolute;
   top: 0;      /* relative to wrapper now */
   left: -6px;
@@ -14,36 +13,48 @@
 }
 .image-wrapper {
   position: relative;
-  width: 420px;   /* fixed width for demo */
-  height: 436px;  /* fixed height for demo */
-  /* You can adjust these sizes as needed */
+  width: 100%;
+  height: auto;
+
+  @media (min-width: 992px) {
+    width: 420px;
+    height: 436px;
+  }
 }
- 
+
 .main-image {
-  width: 90%;
-  height: 90%;
+  width: 100%;
+  height: auto;
   border-radius: 15px;
   object-fit: cover;
   display: block;
   position: relative;
-  z-index: 2; /* on top */
+  z-index: 2;
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
- 
+
 .ellipse-shape {
+  max-width: 100%;
+  height: auto;
   position: absolute;
-  width: 286px;
-  height: 295px;
-  right: -70px;    /* pushes ellipse partially outside the container on the right */
+  right: -80px; // Move ellipse further to the right
   top: 50%;
   transform: translateY(-50%);
-  z-index: 1; /* behind main image */
+  z-index: 1;
   pointer-events: none;
   user-select: none;
   filter: drop-shadow(0 0 10px rgba(128, 0, 255, 0.5)); /* subtle glow */
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 }
 .move-right {
-  margin-left: 90px; /* or padding-left */
+  margin-left: 0;
+
+  @media (min-width: 992px) {
+    margin-left: 90px;
+  }
 }
  
 .about-sprintpark-section {
@@ -315,7 +326,7 @@
 .testimonial-section .bg-white:hover .fs-5 {
   color: #fff !important;
 }
-
+//TESTIMONIAL END
 // Ensure same font, color, and weight for "What we offer" and "Industries we serve" cards as collaborative cards
 .whatWeOffer-section .bg-white,
 .industries-section .bg-white,

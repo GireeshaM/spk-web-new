@@ -102,6 +102,7 @@ export class HomeComponent implements AfterViewInit {
       label: 'Media posts'
     }
   ];
+  
 
   testimonials = [
     {
@@ -127,6 +128,29 @@ export class HomeComponent implements AfterViewInit {
   contentInView = false;
   featuresInView = false;
 
+  features = [
+    {
+      img: '/assets/homepage/home 2nd section/best-employee_8057738 1.png',
+      title: 'Integrity',
+      desc: 'Upholding honesty in all dealings'
+    },
+    {
+      img: '/assets/homepage/home 2nd section/cooperation_8124710 1.png',
+      title: 'Team Work',
+      desc: 'Collaborating to achieve shared success'
+    },
+    {
+      img: '/assets/homepage/home 2nd section/problem-solving_16781642 2.png',
+      title: 'Commitment',
+      desc: 'Dedicated to exceeding client expectations'
+    },
+    {
+      img: '/assets/homepage/home 2nd section/diversity_4776029 1.png',
+      title: 'Diversity',
+      desc: 'Embracing differences to drive innovation'
+    }
+  ];
+
   ngOnInit() {
     this.offerCardVisible = this.whatWeOffer.map(() => false);
   }
@@ -142,6 +166,7 @@ export class HomeComponent implements AfterViewInit {
       const rect = card.nativeElement.getBoundingClientRect();
       this.offerCardVisible[i] = rect.top < window.innerHeight && rect.bottom > 0;
     });
+        this.checkInView();
   }
 
   checkInView() {
