@@ -1,0 +1,250 @@
+.home {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;            /* Medium weight */
+  font-style: normal;          /* 'Medium' is a weight, not style; style is usually normal/italic */
+  font-size: 16px;
+  line-height: 31px;
+  letter-spacing: 0.01em;      /* 1% letter spacing ≈ 0.01em */
+  /* leading-trim is experimental and not widely supported; usually ignored */
+}
+
+
+.carousel-section{
+margin-top: 50px;
+max-width: 1600px;
+}
+
+.custom-carousel ::ng-deep .p-carousel-prev,
+.custom-carousel ::ng-deep .p-carousel-next {
+  display: none; /* Hide default navigators */
+}
+
+.nav-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.overlay-nav {
+  position: absolute;
+  top: 70%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: 2px solid #F90; 
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  color: white;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.overlay-nav.prev {
+  left: 20px;
+}
+
+.overlay-nav.next {
+  right: 20px;
+}
+// Carousel
+.carousel-slide {
+  height: 80vh;
+  width:auto; 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  
+  .carousel-image {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+  }
+
+  .caption-overlay {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    font-family: Inter, sans-serif;
+    max-width: 500px;
+  }
+}
+
+.carousel-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-top: -10%;
+  line-height: 56px;
+   color: #fff !important;
+  letter-spacing: 0.32px;
+}
+
+.carousel-subtitle {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 31px;
+   margin-top: 0%;
+   color: #fff !important;
+  letter-spacing: 0.16px;
+}
+
+.carousel-buttons {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+   margin-top: 100px;
+   max-width: 600px;
+   
+  .btn1,.btn2 {
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0.8rem 1rem  ;       
+  border-radius: 30px;
+  display: flex;
+  align-items: center;   
+  justify-content: center;
+  }
+
+  .btn1 {
+    background: #EF7A13;
+    color: #FDFDFD;
+    border:none;
+  }
+
+  .btn2 {
+    background: transparent;
+    border: 2px solid #FDFDFD;
+    
+    color: #FDFDFD;
+   
+  }
+}
+
+.logo-section {
+  background: linear-gradient(90deg, #360060 0%, #5F3481 104.75%);
+  padding: 15px 0;
+    max-width: 1600px;
+    height: 120px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: space-evenly; /* Even spacing between logos */
+  align-items: center;
+  max-width: 1500px;
+  margin: auto;
+  gap: 80px;
+}
+
+.logo-container img {
+  margin-top: 20px;
+  height: 50px;
+  filter: none; 
+  transition: transform 0.3s ease;
+}
+
+.logo-container img:hover {
+  transform: scale(1.1);
+}
+  // Explore Our case Studies
+
+
+
+
+/* Card container */
+.insight-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  margin-top: 30px;
+}
+
+.insight-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Dark gradient overlay */
+.overlay-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+
+/* Text over image */
+.insight-text {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  z-index: 2;
+}
+
+.insight-text h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 6px;
+    color: white;
+}
+
+
+.read-more {
+  font-size: 0.85rem;
+  cursor: pointer;
+  color: white;
+}
+
+/* Gap between cards */
+::ng-deep .custom-carousel .p-carousel-item {
+  padding: 0 10px;
+}
+
+::ng-deep .custom-carousel .p-carousel-items-content {
+  margin: 0 -10px;
+}
+
+/* Orange navigation arrows */
+::ng-deep .custom-carousel .p-carousel-prev,
+::ng-deep .custom-carousel .p-carousel-next {
+  background-color: #f97316;
+  border-radius: 4px;
+  color: white;
+  width: 36px;
+  height: 36px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+::ng-deep .custom-carousel .p-carousel-prev:hover,
+::ng-deep .custom-carousel .p-carousel-next:hover {
+  background-color: #ea580c;
+}
+
+::ng-deep .custom-carousel .p-carousel-prev {
+  left: -20px;
+}
+
+::ng-deep .custom-carousel .p-carousel-next {
+  right: -20px;
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,108 @@
+<div class="home">
+    
+  <section class="carousel-section">
+      <div class="carousel-container">
+        <p-carousel 
+          [value]="slides"
+          [numVisible]="1"
+          [numScroll]="1"
+          [circular]="true"
+          [autoplayInterval]="5000"
+          [showIndicators]="false"
+          [showNavigators]="false"
+          styleClass="custom-carousel"
+          #carousel>
+          
+          <ng-template pTemplate="item" let-slide>
+            <div class="carousel-slide" [style.background-image]="'url(' + slide.image + ')'">
+              <div class="caption-overlay">
+                <h1 class="carousel-title">{{ slide.title }}</h1>
+                <p class="carousel-subtitle">{{ slide.subtitle }}</p>
+                <div class="carousel-buttons">
+                  <button class="btn1">{{ slide.btn1.label }}</button>
+                  <button class="btn2">{{ slide.btn2.label }}</button>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </p-carousel>
+        
+        <!-- Custom overlay navigators -->
+        <div class="nav-overlay">
+          <button class="overlay-nav prev" (click)="carousel.navBackward($event)">
+            <i class="pi pi-chevron-left"></i>
+          </button>
+          <button class="overlay-nav next" (click)="carousel.navForward($event)">
+            <i class="pi pi-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+        <section class="logo-section">
+        <div class="logo-container">
+        <div class="combined-logo">
+            <img src="assets/Home/salesforce-icon.png" alt="Salesforce" />
+            <img src="assets/Home/salesforce_logo.png" alt="Salesforce" />
+          </div>
+            <img src="assets/Home/amazon_web_services_logo.png" alt="AWS" />
+            <img src="assets/Home/MicrosoftLogo.png" alt="Microsoft" />
+            <img src="assets/Home/copado_logo.png" alt="Copado" />
+            <img src="assets/Home/GoogleLogo.png" alt="Google" />
+        </div>
+        </section>
+  </section>  
+  
+    <!-- Explore Our case Studies -->
+     <!-- <p-carousel [value]="ourInsightsSlides" [numVisible]="2" [numScroll]="1" [circular]="true" [showIndicators]="false" styleClass="custom-carousel">
+      <ng-template pTemplate="item" let-slide>
+    <div class="slide-content">
+      <img [src]="slide.image" alt="Case Image" class="slide-image" />
+      <div class="slide-text">
+        <h3>{{ slide.title }}</h3>
+        <p class="read-more">{{ slide.description }}</p>
+      </div>
+         <div class="nav-overlay">
+          <button class="overlay-nav prev" (click)="carousel.navBackward($event)">
+            <i class="pi pi-arrow-left"></i>
+          </button>
+          <button class="overlay-nav next" (click)="carousel.navForward($event)">
+            <i class="pi pi-ARROW-right"></i>
+          </button>
+        </div>
+    </div>
+  </ng-template>
+    </p-carousel> -->
+  <!-- Explore Our case Studies -->
+<div class="ourInsights-container">
+  <p-carousel 
+    [value]="ourInsightsSlides" 
+    [numVisible]="3" 
+    [numScroll]="1" 
+    [responsiveOptions]="responsiveOptions" 
+    [circular]="true" 
+    [showIndicators]="false" 
+    styleClass="custom-carousel"
+  >
+    <ng-template pTemplate="item" let-insight>
+      <div class="insight-card">
+        <img [src]="insight.image" [alt]="slide.title" class="slide-image" />
+        <div class="overlay-gradient"></div>
+        <div class="insight-text">
+          <h3>{{ insight.title }}</h3>
+          <p class="read-more">{{ insight.description }}</p>
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
