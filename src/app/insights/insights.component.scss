@@ -1,0 +1,31 @@
+.insight-card {
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.insight-card:hover {
+  transform: scale(1.02); // Subtle zoom effect
+}
+
+.read-badge {
+  background-color: rgba(255, 255, 255, 0.2); // Light overlay
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 600;
+  border-radius: 0;
+  width: auto;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.image-wrapper {
+  position: relative;
+  height: 350px;
+  overflow: hidden;
+}
+
+.card-img-top {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
