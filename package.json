@@ -22,7 +22,11 @@
     "@angular/router": "^19.2.0",
     "@angular/ssr": "^19.2.15",
     "@fortawesome/fontawesome-free": "^7.0.0",
+<<<<<<< HEAD
     "@primeng/themes": "^20.0.1",
+=======
+    "@types/bootstrap": "^5.2.10",
+>>>>>>> 1aea208467cfcb774cac93a43519200e95afd9eb
     "bootstrap": "^5.3.7",
     "express": "^4.18.2",
      "primeflex": "^4.0.0",
