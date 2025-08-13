@@ -1,14 +1,13 @@
-<nav
-  class="navbar navbar-expand-md fixed-top p-2"
-  [class.scrolled]="isScrolled"
->
+<nav class="navbar navbar-expand-md fixed-top" [class.scrolled]="isScrolled">
   <div
     class="container-fluid d-flex justify-content-between align-items-center"
   >
     <a href="" class="navbar-brand">
       <img
         [src]="
-          isScrolled ? 'assets/logoBlue.png' : 'assets/sprintpark-web-logo.png'
+          isScrolled
+            ? 'assets/header/logoBlue.png'
+            : 'assets/header/logoBlue.png'
         "
         class="logo-img"
         alt="logoImg"
@@ -117,29 +116,6 @@
           <a href="/contactUs" class="nav-link">Contact Us</a>
         </li>
       </ul>
-      <div class="socialIcons ms-5">
-        <a
-          href="https://www.facebook.com/SPRINTPARKLLC"
-          target="_blank"
-          title="Facebook"
-        >
-          <i class="fa fa-facebook"></i>
-        </a>
-        <a
-          href="https://www.instagram.com/sprintpark"
-          target="_blank"
-          title="Instagram"
-        >
-          <i class="fa fa-instagram"></i>
-        </a>
-        <a
-          href="https://www.linkedin.com/company/sprintparkusa"
-          target="_blank"
-          title="LinkedIn"
-        >
-          <i class="fa fa-linkedin"></i>
-        </a>
-      </div>
     </div>
 
     <div class="d-flex" role="search">

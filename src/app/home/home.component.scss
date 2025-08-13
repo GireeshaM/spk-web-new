@@ -1,0 +1,640 @@
+.home {
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 31px;
+  letter-spacing: 0.01em;
+  padding-top: 80px;
+}
+
+// Carousel
+.p-carousel-item-cloned {
+  display: none !important;
+}
+.carousel-section {
+  // margin-top: 50px;
+  max-width: 1600px;
+}
+
+.custom-carousel ::ng-deep .p-carousel-prev,
+.custom-carousel ::ng-deep .p-carousel-next {
+  display: none; /* Hide default navigators */
+}
+
+.nav-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.overlay-nav {
+  position: absolute;
+  top: 70%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: 2px solid #f90;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  color: white;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.overlay-nav.prev {
+  left: 20px;
+}
+
+.overlay-nav.next {
+  right: 20px;
+}
+// Carousel
+.carousel-slide {
+  aspect-ratio: 16/9;
+  //  width: auto;
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  .carousel-image {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+  }
+
+  .caption-overlay {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    font-family: Inter, sans-serif;
+    max-width: 500px;
+  }
+}
+
+.carousel-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-top: -10%;
+  line-height: 56px;
+  color: #fff !important;
+  letter-spacing: 0.32px;
+}
+
+.carousel-subtitle {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 31px;
+  margin-top: 0%;
+  color: #fff !important;
+  letter-spacing: 0.16px;
+}
+
+.carousel-buttons {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  margin-top: 100px;
+  max-width: 600px;
+
+  .btn1,
+  .btn2 {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0.8rem 1rem;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn1 {
+    background: #ef7a13;
+    color: #fdfdfd;
+    border: none;
+  }
+
+  .btn2 {
+    background: transparent;
+    border: 2px solid #fdfdfd;
+
+    color: #fdfdfd;
+  }
+}
+// Carousel ends
+
+.logo-section {
+  background: linear-gradient(90deg, #360060 0%, #5f3481 104.75%);
+  padding: 15px 0;
+  max-width: 1600px;
+  height: 120px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: space-evenly; /* Even spacing between logos */
+  align-items: center;
+  max-width: 1500px;
+  margin: auto;
+  gap: 80px;
+}
+
+.logo-container img {
+  margin-top: 20px;
+  height: 50px;
+  filter: none;
+  transition: transform 0.3s ease;
+}
+
+.logo-container img:hover {
+  transform: scale(1.1);
+}
+// Explore Our case Studies
+
+/* Card container */
+.insight-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  margin-top: 30px;
+}
+
+.insight-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Dark gradient overlay */
+.overlay-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+
+/* Gap between cards */
+// ::ng-deep .custom-carousel .p-carousel-item {
+//   //  padding: 0 10px;
+// }
+
+::ng-deep .custom-carousel .p-carousel-items-content {
+  margin: 0 -10px;
+}
+
+/* Orange navigation arrows */
+::ng-deep .custom-carousel .p-carousel-prev,
+::ng-deep .custom-carousel .p-carousel-next {
+  background-color: #f97316;
+  border-radius: 4px;
+  color: white;
+  width: 36px;
+  height: 36px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+::ng-deep .custom-carousel .p-carousel-prev:hover,
+::ng-deep .custom-carousel .p-carousel-next:hover {
+  background-color: #ea580c;
+}
+
+::ng-deep .custom-carousel .p-carousel-prev {
+  left: -20px;
+}
+
+::ng-deep .custom-carousel .p-carousel-next {
+  right: -20px;
+}
+
+//features section
+.features-container {
+  width: 1440px;
+  position: absolute;
+  top: 0; /* relative to wrapper now */
+  left: -6px;
+  opacity: 1;
+  transform: rotate(0deg);
+  background-color: #fff; /* optional: ensure background */
+  overflow: auto; /* scroll if content overflows */
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+
+  @media (min-width: 992px) {
+    width: 420px;
+    height: 436px;
+  }
+}
+
+.main-image {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+  display: block;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.ellipse-shape {
+  max-width: 100%;
+  height: auto;
+  position: absolute;
+  right: -80px; // Move ellipse further to the right
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 0 10px rgba(128, 0, 255, 0.5)); /* subtle glow */
+
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+.move-right {
+  margin-left: 0;
+
+  @media (min-width: 992px) {
+    margin-left: 90px;
+  }
+}
+
+.about-sprintpark-section {
+  background-color: #f2f1f9;
+  padding-top: 60px; /* optional padding */
+  padding-bottom: 60px; /* optional padding */
+}
+//features section end
+
+//section 3( what we offer, industries we serve)
+.offer-industries-bg {
+  background: url("/assets/home/whatWeOffer/backdropHome.png") no-repeat center
+      bottom/100% 700px,
+    #f6f4fd; // light purple under the image
+  min-height: 100vh;
+  width: 100%;
+  padding-bottom: 4rem;
+}
+.whatWeOffer-section .bg-white,
+.offer-industries {
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  font-size: 31px;
+}
+.whatWeOffer-section,
+.industries-section {
+  background: transparent;
+}
+.whatWeOffer-section .bg-white,
+.industries-section .bg-white {
+  border-radius: 0 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  border: none;
+}
+.whatWeOffer-section {
+  margin-bottom: 6rem;
+  @media (max-width: 767px) {
+    margin-bottom: 2.5rem;
+  }
+}
+// Industries cards: increase height
+.industries-card {
+  overflow: hidden;
+  position: relative;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  .img {
+    height: 240px;
+    object-fit: cover;
+    width: 100%;
+    display: block;
+  }
+
+  .industries-img {
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    will-change: transform;
+  }
+
+  &:hover .industries-img {
+    transform: scale(2) perspective(800px) translateZ(20px);
+    box-shadow: 0 12px 32px rgba(55, 35, 153, 0.18);
+    z-index: 2;
+  }
+}
+// Service cards (What we offer) hover effect
+.whatWeOffer-section .bg-white:hover {
+  background: #372399 !important;
+  color: #fff !important;
+  transition: background 0.2s, color 0.2s;
+}
+
+.whatWeOffer-section .bg-white:hover h6,
+.whatWeOffer-section .bg-white:hover p {
+  color: #fff !important;
+}
+
+//font, color, and weight for "What we offer" and "Industries we serve" cards
+.whatWeOffer-section .bg-white,
+.industries-section .bg-white,
+.industries-section .bg-transparent {
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+
+  h6,
+  h5 {
+    font-family: inherit;
+    color: #000000;
+  }
+
+  p {
+    font-family: inherit;
+    font-size: 1rem; // 16px
+    font-weight: 400;
+    color: #000000;
+    margin-bottom: 0;
+  }
+}
+//animation code for what we offer and whom we serve
+.slide-top {
+  animation: slide-top 0.5s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+@-webkit-keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(80px);
+    transform: translateY(80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(80px);
+    transform: translateY(80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.slide-right {
+  animation: slide-right 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@keyframes slide-right {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-left {
+  animation: slide-left 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@keyframes slide-left {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.pre-slide-right {
+  opacity: 0;
+  transform: translateX(100px);
+}
+.pre-slide-left {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+.pre-slide-top {
+  opacity: 0;
+  transform: translateY(80px);
+}
+//section 3 end of (what we offer and industries we serve)
+
+//Collaboration Section
+.collaborate-subtitle,
+.collaborate-title,
+.collaborate-card-title,
+.collaborate-card-desc {
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  letter-spacing: 0.01em;
+}
+
+.collaborate-title {
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #111;
+}
+.collaborate-highlight {
+  color: #468bd5;
+  font-weight: 700;
+}
+.text-purple {
+  color: #3d008d;
+}
+.collaborate-card {
+  border-radius: 0;
+  border: 1px solid #e4d6c3;
+  transition: box-shadow 0.2s;
+}
+.collaborate-card:hover {
+  box-shadow: 0 4px 24px rgba(70, 139, 213, 0.12);
+}
+@media (max-width: 991px) {
+  .collaborate-card {
+    min-height: 200px;
+  }
+}
+
+@media (max-width: 767px) {
+  .collaborate-section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .collaborate-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .collaborate-card {
+    padding: 2rem 0.75rem;
+    min-height: auto;
+  }
+}
+.collaborate-section {
+  position: relative;
+  overflow: hidden;
+}
+// Collaboration cards hover effect
+.collaborate-card:hover {
+  background: #372399 !important;
+  color: #fff !important;
+  transition: background 0.2s, color 0.2s;
+}
+.collaborate-card:hover .collaborate-card-title,
+.collaborate-card:hover .collaborate-card-desc {
+  color: #fff !important;
+}
+// Collaboration Section end
+
+// stats section
+.stats-section {
+  background: linear-gradient(90deg, #4b197a 0%, #6a2997 100%);
+  padding: 20px 0;
+  min-height: 250px;
+}
+.stats-icon {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+.stats-number {
+  color: #fff;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  text-align: left;
+}
+.stats-label {
+  color: #fff;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  font-size: 1.08rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  text-align: left;
+}
+@media (max-width: 991px) {
+  .stats-section {
+    padding: 32px 0;
+  }
+  .stats-icon {
+    width: 40px;
+    height: 40px;
+  }
+  .stats-number {
+    font-size: 1.3rem;
+  }
+  .stats-label {
+    font-size: 0.98rem;
+  }
+}
+//stats section end
+/* Card container */
+.insight-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  margin-top: 30px;
+}
+
+.insight-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Dark gradient overlay */
+.overlay-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+
+/* Text over image */
+.insight-text {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  z-index: 2;
+}
+
+.insight-text h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: white;
+}
+
+.read-more {
+  font-size: 0.85rem;
+  cursor: pointer;
+  color: white;
+}
+/* Gap between cards */
+::ng-deep .custom-carousel .p-carousel-item {
+  padding: 0 10px;
+}
+
+::ng-deep .custom-carousel .p-carousel-items-content {
+  margin: 0 -10px;
+}
+//testimonial section
+.testimonial-section {
+  background: url("/assets/homepage/footer/abstract-backdrop-with-colorful-wave-gradient-lines-white-background-modern-technology-background-wave-design-vector-illustration 4.png")
+      no-repeat center/120% auto,
+    url("/assets/homepage/footer/315788 4.png") no-repeat center/cover, #f6f4fd;
+  position: relative;
+}
+.testimonial-section .card,
+.testimonial-section .bg-white {
+  border-radius: 0.25rem !important;
+  border-width: 1px !important;
+  border-color: #e0e0e0 !important;
+  margin: 0 !important;
+}
+@media (max-width: 767px) {
+  .testimonial-section h2 {
+    font-size: 1.3rem !important;
+  }
+}
+
+// Testimonial cards
+.testimonial-section .bg-white:hover {
+  background: #372399 !important;
+  color: #fff !important;
+  transition: background 0.2s, color 0.2s;
+}
+.testimonial-section .bg-white:hover .fw-bold,
+.testimonial-section .bg-white:hover .text-secondary,
+.testimonial-section .bg-white:hover .fs-5 {
+  color: #fff !important;
+}
+//TESTIMONIAL END

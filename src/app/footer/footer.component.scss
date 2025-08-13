@@ -5,8 +5,13 @@
   }
 
   .footer-background {
-    background-color: #0a2250;
-    margin-top: -5px;
+    // Gradient from top left to top right, fading as it goes right
+    background-image: linear-gradient(
+      to right,
+      #1f0334 0%,
+      #3f0d66 50%,
+      #601698 100%
+    );
   }
 
   .footer-content {
