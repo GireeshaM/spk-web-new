@@ -10,8 +10,11 @@ import { CarouselModule } from 'primeng/carousel';
 })
 export class HomeComponent implements OnInit {
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+   
   }
+  constructor() {
+  console.log('HomeComponent created');
+}
 btn1 = { label: 'Get started with AI', style: 'btn-warning' };
 btn2 = { label: "Let's talk", style: 'btn-outline-light' };
 slides = [

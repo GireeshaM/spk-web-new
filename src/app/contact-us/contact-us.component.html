@@ -1,1 +1,153 @@
-<p>contact-us works!</p>
+<div class="contact-us">
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <img src="assets/contactus/contactUsHero.png" alt="Contact Hero" class="hero-img" />
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <h1 class="d-none d-md-block">Get in touch with SprintPark</h1>
+        <h1 class="d-md-none">Get in touch with SprintPark</h1>
+        <p class="hero-desc">
+          We're here to answer your questions, support your journey, and help you move forward faster.
+        </p>
+      </div>   
+    </div>
+  </div>
+
+  <!-- Contact Form Section -->
+  <section class="contact-form-section">
+    <div class="container-fluid">
+      <div class="contact-form-container d-lg-flex d-block">
+        <div class="contact-info">
+          <h2>
+            Let's start a conversation your questions, ideas, and feedback are always welcome at SprintPark
+          </h2>
+          <p class="contact-desc">
+            Whether you're looking for more information, partnership opportunities, or customer support, our team is here for you. We're committed to quick, thoughtful responses and making your experience with SprintPark seamless from start to finish.
+          </p>
+          <div class="locations d-lg-flex d-block">
+            <div 
+              class="location mb-4 mb-lg-0"
+              [ngClass]="location.type"
+              *ngFor="let location of locations; let last = last">
+              <i class="pi pi-map-marker location-icon" [ngClass]="location.type"></i>
+              <span class="location-title">{{ location.title }}</span>
+              <div class="location-details">
+                {{ location.address }}
+              </div>
+              <div class="location-contact">
+                <i class="pi pi-phone phone-icon"></i>
+                <span>{{ location.phone }}</span>
+              </div>
+              <div class="location-contact">
+                <i class="pi pi-envelope mail-icon"></i>
+                <span>{{ location.email }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form mt-4 mt-lg-0">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input 
+              id="name" 
+              type="text" 
+              placeholder="Your name" 
+              class="form-control"
+              formControlName="name"
+              [class.is-invalid]="getFormControlError('name')" />
+            <div class="invalid-feedback" *ngIf="getFormControlError('name')">
+              {{ getFormControlError('name') }}
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input 
+              id="email" 
+              type="email" 
+              placeholder="Your@gmail.com" 
+              class="form-control"
+              formControlName="email"
+              [class.is-invalid]="getFormControlError('email')" />
+            <div class="invalid-feedback" *ngIf="getFormControlError('email')">
+              {{ getFormControlError('email') }}
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone number</label>
+            <input 
+              id="phone" 
+              type="text" 
+              placeholder="Your number" 
+              class="form-control"
+              formControlName="phone"
+              [class.is-invalid]="getFormControlError('phone')" />
+            <div class="invalid-feedback" *ngIf="getFormControlError('phone')">
+              {{ getFormControlError('phone') }}
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">How can we help?</label>
+            <textarea 
+              id="message" 
+              placeholder="Tell us little about your problem" 
+              class="form-control"
+              formControlName="message"
+              [class.is-invalid]="getFormControlError('message')"></textarea>
+            <div class="invalid-feedback" *ngIf="getFormControlError('message')">
+              {{ getFormControlError('message') }}
+            </div>
+          </div>
+
+          <button type="submit" class="btn" [disabled]="contactForm.invalid">
+            Send
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Section -->
+  <!-- Social Section -->
+<section class="social-section">
+  <div class="social-left">
+    <img src="assets/contactus/GetSocial.png" alt="Social Phone" class="social-img" />
+  </div>
+  <div class="social-right">
+    <h3>Get social with us</h3>
+    <ul class="social-links row g-3">
+      <li class="col-4" *ngFor="let social of socialLinks">
+        <a [href]="social.url" class="text-decoration-none">
+          <img [src]="social.icon" [alt]="social.name" class="social-icon" />
+          {{ social.name }}
+        </a>
+      </li>
+    </ul>
+    <img src="assets/contactus/contactUsEllipse.png" alt="Ellipse" class="ellipse-img d-none d-lg-block" />
+  </div>
+</section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <h3 class="text-center text-lg-start">Frequently asked questions</h3>
+      <div class="faq-list">
+        <div class="faq-item" 
+             *ngFor="let faq of faqItems; let i = index"
+             [ngClass]="{ 'active': faq.isOpen }">
+          <button class="faq-question" (click)="toggleFAQ(i)">
+            {{ faq.question }} 
+            <i class="pi float-end" 
+               [ngClass]="faq.isOpen ? 'pi-minus' : 'pi-plus'"></i>
+          </button>
+          <div class="faq-answer" [ngClass]="{ 'show': faq.isOpen }">
+            {{ faq.answer }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

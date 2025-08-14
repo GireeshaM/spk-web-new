@@ -1,23 +1,20 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { IndustryUtilComponent } from '../../utilities/industry-util/industry-util.component';
 
 @Component({
-  selector: 'app-industry-util',
-  imports: [CommonModule],
-  templateUrl: './industry-util.component.html',
-  styleUrl: './industry-util.component.scss',
+  selector: 'app-tele-communications',
+  imports: [CommonModule,IndustryUtilComponent],
+  templateUrl: './tele-communications.component.html',
+  styleUrl: './tele-communications.component.scss'
 })
-export class IndustryUtilComponent {
-@Input() img!: string;
-  @Input() itHeader!: string;
-  @Input() itContent!: string;
-  @Input() itSubHeading!:string;
-  // @Input() cards: { title: string; description: string; link: string;img?: string; }[] = [];
-  @Input() isTwoPerRow: boolean = false;
-  @Input() headerBgImg!: string;
-  @Input() industryImg!: string;
- 
-   cards=[
+export class TeleCommunicationsComponent {
+headerBg='assets/Industries/wave.svg';
+itHeader='Empowering Telecom Growth with Confidence';
+ itContent="As the telecom industry rapidly expands across B2B and B2C markets, so do the challenges of compliance, risk, and trust. We help telecom businesses scale strategically, strengthen governance, and stay resilient in a constantly evolving landscape — empowering growth with clarity and confidence.";
+ subHeading='How We Empower Your Business';
+ telecom="assets/Industries/TelecomIndustries.png";
+ cards=[
   {
     img:'assets/Industries/DataPrivacy.png',
     title:'Data Privacy',
@@ -44,16 +41,6 @@ export class IndustryUtilComponent {
   },
   
  ]
-  getCardClass(index: number): string {
-    const classes = [
-      'background-1',
-      'background-2',
-      'background-3',
-      'background-4',
-      'background-5',
-      'background-6',
-    ];
-    return classes[index % classes.length];
-  }
-  
 }
+
+  

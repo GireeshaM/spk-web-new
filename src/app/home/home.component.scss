@@ -8,7 +8,9 @@
   /* leading-trim is experimental and not widely supported; usually ignored */
 }
 
-
+.p-carousel-item-cloned {
+  display: none !important;
+}
 .carousel-section{
 margin-top: 50px;
 max-width: 1600px;

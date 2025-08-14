@@ -6,7 +6,7 @@
           [value]="slides"
           [numVisible]="1"
           [numScroll]="1"
-          [circular]="true"
+          
           [autoplayInterval]="5000"
           [showIndicators]="false"
           [showNavigators]="false"
@@ -51,26 +51,6 @@
         </section>
   </section>  
   
-    <!-- Explore Our case Studies -->
-     <!-- <p-carousel [value]="ourInsightsSlides" [numVisible]="2" [numScroll]="1" [circular]="true" [showIndicators]="false" styleClass="custom-carousel">
-      <ng-template pTemplate="item" let-slide>
-    <div class="slide-content">
-      <img [src]="slide.image" alt="Case Image" class="slide-image" />
-      <div class="slide-text">
-        <h3>{{ slide.title }}</h3>
-        <p class="read-more">{{ slide.description }}</p>
-      </div>
-         <div class="nav-overlay">
-          <button class="overlay-nav prev" (click)="carousel.navBackward($event)">
-            <i class="pi pi-arrow-left"></i>
-          </button>
-          <button class="overlay-nav next" (click)="carousel.navForward($event)">
-            <i class="pi pi-ARROW-right"></i>
-          </button>
-        </div>
-    </div>
-  </ng-template>
-    </p-carousel> -->
   <!-- Explore Our case Studies -->
 <div class="ourInsights-container">
   <p-carousel 
@@ -78,13 +58,13 @@
     [numVisible]="3" 
     [numScroll]="1" 
     [responsiveOptions]="responsiveOptions" 
-    [circular]="true" 
+    
     [showIndicators]="false" 
     styleClass="custom-carousel"
   >
     <ng-template pTemplate="item" let-insight>
       <div class="insight-card">
-        <img [src]="insight.image" [alt]="slide.title" class="slide-image" />
+        <img [src]="insight.image" [alt]="insight.title" class="insight-image" />
         <div class="overlay-gradient"></div>
         <div class="insight-text">
           <h3>{{ insight.title }}</h3>
