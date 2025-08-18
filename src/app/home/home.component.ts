@@ -111,6 +111,7 @@ export class HomeComponent {
       const rect = imageEl.getBoundingClientRect();
       this.imageInView = rect.top < window.innerHeight && rect.bottom > 0;
     }
+//chevron buttons glow
 
     // Get the right content element
     const contentEl = document.querySelector('.move-right > div');
@@ -125,6 +126,7 @@ export class HomeComponent {
       this.featuresInView = rect.top < window.innerHeight && rect.bottom > 0;
     }
   }
+
   // what we offer
 
   @ViewChildren('offerCard') offerCards!: QueryList<ElementRef>;
@@ -297,4 +299,7 @@ export class HomeComponent {
       text: 'Sprintpark has delivered excellent services to deliver our AI products. They have given us innovative solutions. Happy client :)',
     },
   ];
+
+
+  
 }

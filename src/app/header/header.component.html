@@ -1,31 +1,8 @@
-<nav class="navbar navbar-expand-md fixed-top" [class.scrolled]="isScrolled">
-  <div
-    class="container-fluid d-flex justify-content-between align-items-center"
+<nav
+    class="navbar navbar-expand-md fixed-top p-2"
+    [class.scrolled]="isScrolled"
+    style="background-color: #fff !important; box-shadow: 0 2px 8px rgba(0,0,0,0.07);"
   >
-    <a href="" class="navbar-brand">
-      <img
-        [src]="
-          isScrolled
-            ? 'assets/header/logoBlue.png'
-            : 'assets/header/logoBlue.png'
-        "
-        class="logo-img"
-        alt="logoImg"
-      />
-    </a>
-
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarCollapse"
-      aria-controls="navbarCollapse"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
     <div
       class="container-fluid d-flex justify-content-between align-items-center"
     >
@@ -39,61 +16,7 @@
         
         />
       </a>
-<ul>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="industriesDropdown"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Industries
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="industriesDropdown">
-            <li>
-              <a class="dropdown-item" href="/itTelecommunications"
-                >IT & Telecommunications</a
-              >
-            </li>
-            <li><a class="dropdown-item" href="/government">Government</a></li>
-            <li>
-              <a class="dropdown-item" href="/healthCareAndLifeSciences"
-                >Health Care & Life Sciences</a
-              >
-            </li>
-            <li>
-              <a class="dropdown-item" href="/manufacturing">Manufacturing</a>
-            </li>
-            <li><a class="dropdown-item" href="/education">Education</a></li>
-            <li>
-              <a class="dropdown-item" href="/transportationAndLogistics"
-                >Transportation & Logistics</a
-              >
-            </li>
-            <li><a class="dropdown-item" href="/banking">Banking</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <!-- <a href="/careers" class="nav-link">Careers</a> -->
-          <a
-            href="https://sprintpark6-dev-ed.develop.my.site.com/careers/s/"
-            class="nav-link"
-            target="_blank"
-            >Careers</a
-          >
-        </li>
-        <li class="nav-item">
-          <a href="/insights" class="nav-link">Insights</a>
-        </li>
-        <li class="nav-item">
-          <a href="/contactUs" class="nav-link">Contact Us</a>
-        </li>
-      </ul>
-    </div>
 
-    <div class="d-flex" role="search">
       <button
         class="navbar-toggler"
         type="button"
@@ -189,35 +112,13 @@
             >
           </li>
           <li class="nav-item">
-            <a href="/insights" class="nav-link">Insights</a>
+            <a routerLink="/insights" class="nav-link">Insights</a>
           </li>
           <li class="nav-item">
             <a href="/contactUs" class="nav-link">Contact Us</a>
           </li>
         </ul>
-        <div class="socialIcons ms-5">
-          <a
-            href="https://www.facebook.com/SPRINTPARKLLC"
-            target="_blank"
-            title="Facebook"
-          >
-            <i class="fa fa-facebook"></i>
-          </a>
-          <a
-            href="https://www.instagram.com/sprintpark"
-            target="_blank"
-            title="Instagram"
-          >
-            <i class="fa fa-instagram"></i>
-          </a>
-          <a
-            href="https://www.linkedin.com/company/sprintparkusa"
-            target="_blank"
-            title="LinkedIn"
-          >
-            <i class="fa fa-linkedin"></i>
-          </a>
-        </div>
+      
       </div>
 
       <div class="d-flex" role="search">
@@ -231,53 +132,33 @@
       </div>
     </div>
   </nav>
-  <!--Login Modal -->
-  <div
-    class="modal fade"
-    id="loginModal"
-    tabindex="-1"
-    aria-labelledby="loginModalLabel"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="loginModalLabel">Login as</h5>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          ></button>
-        </div>
-        <div class="modal-body">
-          <div class="d-flex justify-content-around">
-            <a
-              href="https://talenthire.ceipal.com/signin"
-              class="login-option text-center"
-            >
-              <i class="fa fa-user-plus" aria-hidden="true"></i>
-              <h6>Recruiter</h6>
-            </a>
-            <a
-              href="https://talenthire.ceipal.com/signin"
-              class="login-option text-center"
-            >
-              <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-              <h6>Admin</h6>
-            </a>
-            <a
-              href="http://localhost:58704/login"
-              class="login-option text-center"
-            >
-              <i class="fa fa-users" aria-hidden="true"></i>
-              <h6>Employee</h6>
-            </a>
-          </div>
+<!--Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">Login as</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex justify-content-around">
+          <a href="https://talenthire.ceipal.com/signin" class="login-option text-center">
+            <i class="fa fa-user-plus" aria-hidden="true"></i>
+            <h6>Recruiter</h6>
+          </a>
+          <a href="https://talenthire.ceipal.com/signin" class="login-option text-center">
+            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+            <h6>Admin</h6>
+          </a>
+          <a href="http://localhost:58704/login" class="login-option text-center">
+            <i class="fa fa-users" aria-hidden="true"></i>
+            <h6>Employee</h6>
+          </a>
         </div>
       </div>
     </div>
   </div>
+</div>
 
 
 
