@@ -122,6 +122,48 @@
     color: #fdfdfd;
   }
 }
+.carousel-slide {
+  position: relative;
+  height: 100%; 
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark-overlay {
+  position: absolute;
+  inset: 0; /* shorthand for top:0; right:0; bottom:0; left:0 */
+  background: rgba(0, 0, 0, 0.4); /* adjust opacity here */
+  z-index: 1;
+}
+
+.caption-overlay {
+  position: relative;
+  z-index: 2; /* keep text above the dark overlay */
+  padding: 1rem;
+}
+
+.carousel-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.carousel-subtitle {
+  font-size: 1.2rem;
+}
+
+.nav-overlay {
+  @media (max-width: 768px) {
+    top: 85% !important;
+    button {
+      width: 32px !important;
+      height: 32px !important;
+    }
+  }
+}
 
 // Carousel ends
 
@@ -217,9 +259,9 @@
 
 //features section
 .features-container {
-  width: 1440px;
+  width: 1440px;  
   position: absolute;
-  top: 0; /* relative to wrapper now */
+  top: 0;      /* relative to wrapper now */
   left: -6px;
   opacity: 1;
   transform: rotate(0deg);
@@ -247,7 +289,7 @@
   display: block;
   position: relative;
   z-index: 2;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .ellipse-shape {
@@ -273,27 +315,29 @@
     margin-left: 90px;
   }
 }
-
+ 
 .about-sprintpark-section {
-  background-color: #f2f1f9;
-  padding-top: 60px; /* optional padding */
+  background-color: #F2F1F9;
+  padding-top: 60px;   /* optional padding */
   padding-bottom: 60px; /* optional padding */
 }
 //features section end
 
+
 //section 3( what we offer, industries we serve)
 .offer-industries-bg {
-  background: url("/assets/home/whatWeOffer/backdropHome.png") no-repeat center
-      bottom/100% 700px,
+  background: 
+    url('/assets/homepage/footer/abstract-backdrop-with-colorful-wave-gradient-lines-white-background-modern-technology-background-wave-design-vector-illustration 4.png') 
+      no-repeat center bottom/100% 700px,
     #f6f4fd; // light purple under the image
   min-height: 100vh;
   width: 100%;
   padding-bottom: 4rem;
 }
-.whatWeOffer-section .bg-white,
-.offer-industries {
-  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+.whatWeOffer-section .bg-white , .offer-industries {
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
   font-size: 31px;
+
 }
 .whatWeOffer-section,
 .industries-section {
@@ -302,13 +346,13 @@
 .whatWeOffer-section .bg-white,
 .industries-section .bg-white {
   border-radius: 0 !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   border: none;
 }
 .whatWeOffer-section {
   margin-bottom: 6rem;
   @media (max-width: 767px) {
-    margin-bottom: 2.5rem;
+    margin-bottom: 2.5rem; 
   }
 }
 // Industries cards: increase height
@@ -332,7 +376,7 @@
   }
 
   &:hover .industries-img {
-    transform: scale(2) perspective(800px) translateZ(20px);
+    transform: scale(2.0) perspective(800px) translateZ(20px);
     box-shadow: 0 12px 32px rgba(55, 35, 153, 0.18);
     z-index: 2;
   }
@@ -349,14 +393,13 @@
   color: #fff !important;
 }
 
-//font, color, and weight for "What we offer" and "Industries we serve" cards
+//font, color, and weight for "What we offer" and "Industries we serve" cards 
 .whatWeOffer-section .bg-white,
 .industries-section .bg-white,
 .industries-section .bg-transparent {
-  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
 
-  h6,
-  h5 {
+  h6, h5 {
     font-family: inherit;
     color: #000000;
   }
@@ -371,58 +414,46 @@
 }
 //animation code for what we offer and whom we serve
 .slide-top {
-  animation: slide-top 4.0s cubic-bezier(0.23, 1, 0.32, 1) both;
+  animation: slide-top 1.5s cubic-bezier(0.23, 1, 0.32, 1) both;
 }
 @-webkit-keyframes slide-top {
   0% {
     -webkit-transform: translateY(80px);
-    transform: translateY(80px);
+            transform: translateY(80px);
     opacity: 0;
   }
   100% {
     -webkit-transform: translateY(0);
-    transform: translateY(0);
+            transform: translateY(0);
     opacity: 1;
   }
 }
 @keyframes slide-top {
   0% {
     -webkit-transform: translateY(80px);
-    transform: translateY(80px);
+            transform: translateY(80px);
     opacity: 0;
   }
   100% {
     -webkit-transform: translateY(0);
-    transform: translateY(0);
+            transform: translateY(0);
     opacity: 1;
   }
 }
 .slide-right {
-  animation: slide-right 2.0s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-right 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 @keyframes slide-right {
-  0% {
-    transform: translateX(100px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
+  0% { transform: translateX(100px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
 }
 
 .slide-left {
-  animation: slide-left 2.0s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-left 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 @keyframes slide-left {
-  0% {
-    transform: translateX(-100px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
+  0% { transform: translateX(-100px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
 }
 
 .pre-slide-right {
@@ -438,6 +469,10 @@
   transform: translateY(80px);
 }
 //section 3 end of (what we offer and industries we serve)
+
+
+
+
 
 //Collaboration Section
 .collaborate-subtitle,
@@ -547,61 +582,14 @@
   }
 }
 //stats section end
-/* Card container */
-.insight-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 4px;
-  margin-top: 30px;
+//insights
+/* Apply big margin only on desktop (≥992px) */
+@media (min-width: 992px) {
+  .ms-lg-150 {
+    margin-left: 200px !important;
+  }
 }
-
-.insight-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Dark gradient overlay */
-.overlay-gradient {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 40%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-}
-
-/* Text over image */
-.insight-text {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  color: white;
-  z-index: 2;
-}
-
-.insight-text h3 {
-  font-size: 1rem;
-  font-weight: bold;
-  margin-bottom: 6px;
-  color: white;
-}
-
-.read-more {
-  font-size: 0.85rem;
-  cursor: pointer;
-  color: white;
-}
-/* Gap between cards */
-::ng-deep .custom-carousel .p-carousel-item {
-  padding: 0 10px;
-}
-
-::ng-deep .custom-carousel .p-carousel-items-content {
-  margin: 0 -10px;
-}
-
+//insights end
 //testimonial section
 .testimonial-section {
   background: url("/assets/homepage/footer/abstract-backdrop-with-colorful-wave-gradient-lines-white-background-modern-technology-background-wave-design-vector-illustration 4.png")

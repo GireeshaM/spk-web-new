@@ -5,9 +5,12 @@ import {
   QueryList,
   ViewChild,
   ViewChildren,
+  OnInit,
+  Inject,
+  PLATFORM_ID,
 } from '@angular/core';
 import { CarouselModule } from 'primeng/carousel';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import {
   trigger,
   state,
@@ -20,7 +23,7 @@ import {
   selector: 'app-home',
   imports: [CarouselModule, CommonModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
+  styleUrls: ['./home.component.scss'],
   animations: [
     trigger('slideUp', [
       state('hidden', style({ opacity: 0, transform: 'translateY(60px)' })),
@@ -33,7 +36,7 @@ import {
     ]),
   ],
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   btn1 = { label: 'Get started with AI', style: 'btn-warning' };
   btn2 = { label: "Let's talk", style: 'btn-outline-light' };
   slides = [
@@ -87,6 +90,7 @@ export class HomeComponent {
   ];
   ngOnInit() {
     this.offerCardVisible = this.whatWeOffer.map(() => false);
+    this.checkMobile();
   }
 
   ngAfterViewInit() {
@@ -276,11 +280,22 @@ export class HomeComponent {
       title: 'Salesforce Health Cloud transform Payer sector in Healthcare',
       description: 'Read More >>',
     },
+     {
+      image: 'assets/home/carousel/ourInsights-3.png',
+      title: "Salesforce's Commitment to Data Security and Privacy Excellence",
+      description: 'Read More >>',
+    },
+    {
+      image: 'assets/home/carousel/ourInsights-2.png',
+      title: 'Salesforce Marketing Cloud Empowers Marketing of Businesses',
+      description: 'Read More >>',
+    },
     {
       image: 'assets/home/carousel/ourInsights-1.png',
       title: 'Salesforce Health Cloud transform Payer sector in Healthcare',
       description: 'Read More >>',
-    },
+    }
+
   ];
 
   testimonials = [
@@ -300,6 +315,30 @@ export class HomeComponent {
     },
   ];
 
+  currentInsightIndex = 1; // Start with the middle card (or 0 for first)
 
-  
+
+  isMobile = false;
+
+  @HostListener('window:resize')
+  onResize() {
+    this.checkMobile();
+  }
+
+  checkMobile() {
+    this.isMobile = window.innerWidth < 768;
+  }
+   
+  isBrowser: boolean;
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
+  }
+
+  moveInsight(step: number) {
+    const newIndex = this.currentInsightIndex + step;
+    if (newIndex >= 0 && newIndex < this.ourInsightsSlides.length) {
+      this.currentInsightIndex = newIndex;
+    }
+  }
 }

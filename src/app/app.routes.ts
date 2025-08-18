@@ -1,14 +1,14 @@
 import { Routes } from '@angular/router';
+import path from 'node:path';
 import { HomeComponent } from './home/home.component';
-import { TeleCommunicationsComponent } from './webmodules/industries/tele-communications/tele-communications.component';
-
+import { InsightsComponent } from './insights/insights.component';
+ 
 export const routes: Routes = [
-  {
-    path: '',
-    component: HomeComponent,
-  },
-  {
-    path: 'industries',
-    component: TeleCommunicationsComponent,
-  },
+    {
+        path:'',component:HomeComponent
+    },
+    {
+        path:'insights',component:InsightsComponent
+    }
 ];
+ 
