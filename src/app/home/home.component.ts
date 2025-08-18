@@ -279,21 +279,6 @@ export class HomeComponent implements OnInit {
       image: 'assets/home/carousel/ourInsights-1.png',
       title: 'Salesforce Health Cloud transform Payer sector in Healthcare',
       description: 'Read More >>',
-    },
-     {
-      image: 'assets/home/carousel/ourInsights-3.png',
-      title: "Salesforce's Commitment to Data Security and Privacy Excellence",
-      description: 'Read More >>',
-    },
-    {
-      image: 'assets/home/carousel/ourInsights-2.png',
-      title: 'Salesforce Marketing Cloud Empowers Marketing of Businesses',
-      description: 'Read More >>',
-    },
-    {
-      image: 'assets/home/carousel/ourInsights-1.png',
-      title: 'Salesforce Health Cloud transform Payer sector in Healthcare',
-      description: 'Read More >>',
     }
 
   ];
