@@ -11,6 +11,7 @@ import {
 } from '@angular/core';
 import { CarouselModule } from 'primeng/carousel';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { AfterViewInit} from '@angular/core';
 import {
   trigger,
   state,
@@ -18,7 +19,7 @@ import {
   transition,
   animate,
 } from '@angular/animations';
-
+declare var bootstrap: any;
 @Component({
   selector: 'app-home',
   imports: [CarouselModule, CommonModule],
@@ -37,6 +38,7 @@ import {
   ],
 })
 export class HomeComponent implements OnInit {
+  
   btn1 = { label: 'Get started with AI', style: 'btn-warning' };
   btn2 = { label: "Let's talk", style: 'btn-outline-light' };
   slides = [
@@ -89,6 +91,7 @@ export class HomeComponent implements OnInit {
     { breakpoint: '560px', numVisible: 1, numScroll: 1 },
   ];
   ngOnInit() {
+    
     this.offerCardVisible = this.whatWeOffer.map(() => false);
     this.checkMobile();
   }

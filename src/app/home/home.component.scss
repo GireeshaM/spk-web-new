@@ -601,6 +601,20 @@
     margin-left: 200px !important;
   }
 }
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: #f77300;
+}
+
 //insights end
 //testimonial section
 .testimonial-section {
@@ -632,5 +646,50 @@
 .testimonial-section .bg-white:hover .text-secondary,
 .testimonial-section .bg-white:hover .fs-5 {
   color: #fff !important;
+}
+.testimonial-wrapper {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 10px;
+
+  .testimonial-card {
+    scroll-snap-align: start;
+  }
+}
+
+.quote1 {
+  position: absolute;
+  top: 24px;
+  right: 72px;
+  width: 32px;
+  height: 32px;
+}
+.quote2 {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  width: 32px;
+  height: 32px;
+}
+/* 📱 Mobile view adjustments */
+@media (max-width: 768px) {
+  .testimonial-card {
+   
+    .card-inner {
+      min-height: 260px !important; // reduce card height
+      padding: 1rem !important;     // less padding
+    }
+
+    img {
+      width: 60px !important;
+      height: 60px !important;
+    }
+
+    p {
+      font-size: 0.95rem !important;
+      line-height: 1.4 !important;
+    }
+  }
+  
 }
 //TESTIMONIAL END
