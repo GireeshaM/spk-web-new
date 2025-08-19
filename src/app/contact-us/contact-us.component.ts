@@ -12,23 +12,23 @@ export class ContactUsComponent {
 contactForm: FormGroup;
   faqItems = [
     {
-      question: 'What services does your company offer?',
+      question: 'What services does your company offer?  ',
       answer: 'We specialize in custom software development, mobile and web applications, UI/UX design, and IT consulting solutions tailored to your business needs.    ',
       isOpen: false
     },
     {
-      question: 'Do you offer both web and mobile app development??',
-      answer: 'We follow agile methodologies and regular client updates.',
+      question: 'Do you offer both web and mobile app development?',
+      answer: 'Yes, at Sprintpark we offer both web and mobile app development, delivering customized solutions to meet your business needs.',
       isOpen: false
     },
     {
       question: 'What industries do you serve?',
-      answer: 'Yes, we provide flexible staffing for your project needs.',
+      answer: 'We serve diverse industries including healthcare, education, finance, retail, and technology, providing tailored digital solutions for each sector.',
       isOpen: false
     },
     {
       question: ' How do you ensure quality and security in your projects?',
-      answer: 'Yes, we provide flexible staffing for your project needs.',
+      answer: 'We ensure quality and security through rigorous testing, code reviews, and strict compliance with industry best practices and security standards.',
       isOpen: false
     }
   ];
@@ -53,7 +53,7 @@ contactForm: FormGroup;
     {
       type: 'india',
       title: 'India Location :',
-      address: '2nd Floor, Abhi\'s Ganga, Vittal Rao Nagar, Madhapur, Hyderabad, Telangana 500081',
+      address: 'Unit No. 1204,12th Floor,B Block,Asian Suncity, Kondapur, Hyderabad, Telangana 500084',
       phone: '+1 (860) 566 9894',
       email: 'hr@sprintpark.com'
     }
