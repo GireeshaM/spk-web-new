@@ -59,6 +59,21 @@
 }
 /* Target only mobile offcanvas sidebar */
 
+/* Reduce sidebar width */
+#mobileMenu.offcanvas-start {
+  width: 150px;  /* default 400px, you can set 220px, 280px, etc. */
+  max-width: 80%; /* makes sure it doesn't get too wide on small screens */
+}
+
+/* Mobile Login Button */
+@media (max-width: 768px) {
+  .mobile-login-btn {
+    width: 120px;      /* control exact width */
+    padding: 6px 14px; /* adjust padding */
+    font-size: 14px;   /* smaller font */
+  }
+}
+
 
 
 /* Prevent navbar from overflowing on small screens */
@@ -128,4 +143,13 @@
 /* Specific icon colors */
 .login-option .fa {
   color: #034e5d;
+}
+@media (min-width: 768px) {
+  .navbar-brand {
+    margin-right: 8px !important; /* tighten space between logo & menu */
+  }
+
+  .navbar-collapse {
+    margin-left: 0 !important; /* avoid extra gap */
+  }
 }
