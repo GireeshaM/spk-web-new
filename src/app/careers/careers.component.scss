@@ -162,6 +162,8 @@ letter-spacing: 0%;
   .pill-image {
     border-radius: 650px;
     object-fit: cover;
+    width:317px;
+     height:742px;
   }
  
 // Job Oppurtunities at SprintPark
@@ -175,11 +177,17 @@ line-height: 20px;
 letter-spacing: 6%;
  
 }
+ 
 .joboppurtunity-card{
   background: rgba(255, 255, 255, 0.08);
                     backdrop-filter: blur(6px);
                     border-radius: 16px;
 }
+.apply-now-btn{
+  background:#EF7A13;
+  border-radius:8px;
+}
+ 
 @media (max-width: 991.98px) {
   .career-images-group {
     display: flex !important;
@@ -190,3 +198,4 @@ letter-spacing: 6%;
   }
  
 }
+ 
