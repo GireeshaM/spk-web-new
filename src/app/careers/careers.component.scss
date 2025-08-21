@@ -1,0 +1,192 @@
+.career-img {
+  object-fit: cover;
+  height: 100vh;  
+}
+ 
+.career-overlay {
+  z-index: 2;    
+  max-width: 800px;
+}
+.heading-main {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;  
+  font-size: 56px;    
+  line-height: 1.2;
+  text-align: left;
+  margin-left: 100px;
+}
+ 
+.w-75{
+    margin-left: 100px;
+}
+ 
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  margin-top: 59px;
+  .hero-img {
+    width: 100%;
+    height: 100%;
+   
+    display: block;
+  }
+  .hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    background: rgba(0, 0, 0, 0.28);
+    color: #FDFDFD;
+    padding: 1rem;
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 80px 0 1cap;
+      width: 100%;
+      max-width: 100%;
+      margin-left: 50px;
+      margin-top: 40px;
+    }
+    h1 {
+      font-size: 4rem;
+      font-weight: 00;
+      margin-bottom: 1rem;
+      color: #FDFDFD;
+      white-space: normal;
+    }
+    .hero-desc {
+      font-size: 0.9rem;
+      color: #e0e0e0;
+      font-weight: 300;
+      max-width: 60%;
+      line-height: 1.4;
+    }
+  }
+}
+/* Empowering Your Journey */
+ 
+ 
+.custom-image-frame {
+  border: 6px solid #ededed;
+}
+ 
+.half-circle {
+  width: 100px !important;
+  height: 100px !important;
+  border: 16px solid #9D67D6;
+  border-radius: 50%;
+  background: transparent;
+  z-index: 1;
+}
+ 
+.half-circle.top-right {
+  top: -48px;
+  right: -60px;
+  border-left: none;
+  border-bottom: none;
+}
+ 
+.half-circle.bottom-left {
+  bottom: -48px;
+  left: -60px;
+  border-top: none;
+  border-right: none;
+}
+ 
+@media (max-width:991px) {
+  .half-circle { display: none; }
+}
+ 
+  .feature-text {
+    background:  #9D67D6;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    flex-grow: 1;
+    text-align: center;
+    margin: 0 15px;
+  }
+   .feature-box {
+    display: flex;
+    align-items: center;
+   margin-bottom: 40px;
+    gap: 1rem;
+    width: 100%;
+  }
+ 
+  .feature-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color:  #9D67D6;
+    flex-shrink: 0;
+  }
+ 
+  .feature-text {
+    background: #9D67D6;
+    color: white;
+    flex: 1;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+    padding: 12px 20px;
+   
+    font-size: 18px;
+    flex-grow: 1;
+    text-align: center;
+    margin: 0 15px;
+  }
+ 
+//   Life at Sprintpark
+.p-3{
+font-family: Inter;
+font-weight: 500;
+font-style: Medium;
+font-size: 12px;
+line-height: 20px;
+letter-spacing: 0%;
+}
+ 
+  .pill-image {
+    border-radius: 650px;
+    object-fit: cover;
+  }
+ 
+// Job Oppurtunities at SprintPark
+.col-lg-4{
+  font-family: Inter;
+font-weight: 500;
+font-style: Medium;
+font-size: 12px;
+ 
+line-height: 20px;
+letter-spacing: 6%;
+ 
+}
+.joboppurtunity-card{
+  background: rgba(255, 255, 255, 0.08);
+                    backdrop-filter: blur(6px);
+                    border-radius: 16px;
+}
+@media (max-width: 991.98px) {
+  .career-images-group {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 24px !important;
+    width: 100% !important;
+  }
+ 
+}

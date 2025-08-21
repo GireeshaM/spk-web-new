@@ -1,0 +1,140 @@
+.software-service{
+}
+// hero section
+.hero-section {
+  position: relative;
+  height: 600px;
+  margin-top: 59px;
+  .hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.28);
+}
+.hero-desc {
+//   max-width: 65%;
+  @media (max-width: 768px) {
+    // max-width: 90%;
+  }
+}
+}
+// software-solutions
+.growth-section {
+  background: 
+    url('/assets/services/software-services/abstract-backdrop.png') center/cover no-repeat,
+    linear-gradient(275.69deg, #1A0951 2.22%, #4B1078 76.02%);
+  .growth-content{
+    margin-left: 0;
+  }
+    .growth-card {
+    height: 170px !important;
+//    width: 90%;
+    min-width: 420px;
+    margin: 0 0 0 10px;
+    gap: 10px;
+   
+    .growth-icon{
+      margin: -10px 0 0 -5px !important;
+      width: 50px;
+    }
+    .h5{
+      margin: 0 -0px 0 50px !important;
+    }
+    .p{
+      margin-left:40px
+      
+    }
+    
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+
+}
+// software-partner
+.section-title {
+  color: rgba(26, 26, 26, 1);
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 3px;
+    background-color: rgba(139, 89, 239, 1);
+  }
+}
+// hover card
+.hover-card {
+    transition: background-color 0.3s ease;
+    color:black;
+    .text-muted{
+      color: black !important;
+    }
+}
+.hover-card:hover {
+    background-color: #2f1c8f;
+    cursor: pointer;
+    color: #fdfdfd !important;
+
+}
+.hover-card:hover .text-dark {
+     color: #fdfdfd !important;
+}
+.hover-card:hover .text-muted {
+     color: #fdfdfd !important;
+}
+// software-development
+.software-section {
+  background-color: #0b0f3a;
+  .card {
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    
+    &:hover {
+      transform: translateY(-5px);
+      img {
+        filter: brightness(0.8);
+      }
+      .read-btn::before {
+        transform: scaleX(5);
+      }
+      .read-btn {
+        width: 390px;
+        height: 50px;
+        background: linear-gradient(90deg, rgba(26, 26, 26, 1));
+       border-radius: 0%;
+        .arrow-icon {
+          transform: translateX(0);
+          opacity: 1;
+          display: inline-block;
+        }
+      }
+    }
+     img {
+      transition: filter 0.3s ease;
+    }
+     .read-btn {
+      width: 80px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      border: none;
+      overflow: hidden;
+      
+      .arrow-icon {
+        display: none;
+        transform: translateX(-20px);
+        opacity: 0;
+        transition: all 0.3s ease;
+        margin-left: 8px;
+      }
+    }
+
+  }
+}
+

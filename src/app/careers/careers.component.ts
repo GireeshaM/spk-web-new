@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+ 
 @Component({
   selector: 'app-careers',
   imports: [],
@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './careers.component.scss'
 })
 export class CareersComponent {
-
+ sprintHandle: string = '@Sprintpark';
 }
+ 
