@@ -8,32 +8,31 @@ import { Component, Input } from '@angular/core';
   styleUrl: './industry-util.component.scss',
 })
 export class IndustryUtilComponent {
-@Input() img!: string;
+  @Input() img!: string;
   @Input() itHeader!: string;
   @Input() itContent!: string;
-  @Input() itSubHeading!:string;
+  @Input() itSubHeading!: string;
   // @Input() cards: { title: string; description: string; link: string;img?: string; }[] = [];
   @Input() isTwoPerRow: boolean = false;
   @Input() headerBgImg!: string;
   @Input() industryImg!: string;
- 
-   cards=[
-  {
-    img:'assets/Industries/DataPrivacy.png',
-    title:'Data Privacy',
-    description:'Protect your data using advanced risk assessments, encryption, and compliance tools to prevent breaches, leaks, and unauthorized access.',
-    link:'/#'
-  },
-  {
-    img:'assets/Industries/Automation.png',
-    title:'Automation',
-    description:'Automate personalized communications across email, SMS, and social media to boost efficiency, engagement, and timely customer interactions.',
-    link:'/#'
-  },
-  
-  
-  
- ]
+
+  cards = [
+    {
+      img: 'assets/Industries/DataPrivacy.png',
+      title: 'Data Privacy',
+      description:
+        'Protect your data using advanced risk assessments, encryption, and compliance tools to prevent breaches, leaks, and unauthorized access.',
+      link: '/#',
+    },
+    {
+      img: 'assets/Industries/Automation.png',
+      title: 'Automation',
+      description:
+        'Automate personalized communications across email, SMS, and social media to boost efficiency, engagement, and timely customer interactions.',
+      link: '/#',
+    },
+  ];
   getCardClass(index: number): string {
     const classes = [
       'background-1',
@@ -45,5 +44,4 @@ export class IndustryUtilComponent {
     ];
     return classes[index % classes.length];
   }
-  
 }

@@ -1,153 +1,140 @@
-<div class="header-container">
-  <nav class="navbar navbar-expand-md fixed-top w-100" [class.scrolled]="isScrolled">
-    <div class="container-fluid d-flex justify-content-between align-items-center px-2">
-      <!-- Logo -->
-      <a href="/" class="navbar-brand">
-        <img
-          [src]="isScrolled ? '/assets/logo/logoBlue.png' : '/assets/logo/logoBlue.png'"
-          class="logo-img"
-          alt="logoImg"
-        />
-      </a>
+<nav class="navbar navbar-expand-md bg-white sticky-top border-bottom">
+  <div class="container">
+    <!-- Logo -->
+    <a class="navbar-brand" href="#">
+      <img src="/assets/header/logoBlue.png" alt="logo" />
+    </a>
 
-      <!-- Mobile Toggle (Offcanvas) -->
-      <button
-        class="navbar-toggler d-md-none"
-        type="button"
-        data-bs-toggle="offcanvas"
-        data-bs-target="#mobileMenu"
-        aria-controls="mobileMenu"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <!-- Toggler -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvas"
+      aria-controls="offcanvas"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <!-- Desktop Menu -->
-      <div class="collapse navbar-collapse justify-content-center d-none d-md-block">
-        <ul class="nav d-flex justify-content-around">
-          <li class="nav-item"><a href="/company" class="nav-link">Company</a></li>
+    <!-- Offcanvas -->
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvas"
+      aria-labelledby="offcanvasLabel"
+    >
+      <div class="offcanvas-header">
+        <a class="navbar-brand" href="">
+          <img src="/assets/header/logoBlue.png" alt="logo" />
+        </a>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <div class="offcanvas-body">
+        <ul class="navbar-nav flex-grow-1 justify-content-between">
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#" aria-label="SprintPark">
+              <svg class="bi" width="24" height="24" aria-hidden="true">
+                <use xlink:href="#sprintpark"></use>
+              </svg>
+            </a>
+          </li> -->
+          <li></li>
+
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
+            <a
+              class="nav-link dropdown-toggle d-md-none"
+              href="#"
+              data-bs-toggle="dropdown"
+              >Services</a
+            >
+            <a class="nav-link d-none d-md-block" href="#">Services</a>
+
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="/it-consulting">IT Consulting</a></li>
-              <li><a class="dropdown-item" href="/staffingSolutions">Staffing</a></li>
-              <li><a class="dropdown-item" href="/projectManagement">Project Management</a></li>
-              <li><a class="dropdown-item" href="/softwareServices">Software Services</a></li>
+              <li>
+                <a class="dropdown-item" href="/it-common">IT Consulting</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/staffingSolutions">Staffing</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/projectManagement"
+                  >Project Management</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="/software-service-util"
+                  >Software Services</a
+                >
+              </li>
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Industries</a>
+            <a
+              class="nav-link dropdown-toggle d-md-none"
+              href="#"
+              data-bs-toggle="dropdown"
+              >Industries</a
+            >
+            <a class="nav-link d-none d-md-block" href="#">Industries</a>
+
             <ul class="dropdown-menu">
-             <li>
-              <a class="dropdown-item" href="/telecommunications"
-                >IT & Telecommunications</a
-              >
-            </li>
-              <li><a class="dropdown-item" href="/government">Government</a></li>
-              <li><a class="dropdown-item" href="/healthCareAndLifeSciences">Health Care & Life Sciences</a></li>
-              <li><a class="dropdown-item" href="/manufacturing">Manufacturing</a></li>
+              <li>
+                <a class="dropdown-item" href="/itTelecommunications"
+                  >IT & Telecommunications</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="/government">Government</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/healthCareAndLifeSciences"
+                  >Health Care & Life Sciences</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="/manufacturing">Manufacturing</a>
+              </li>
               <li><a class="dropdown-item" href="/education">Education</a></li>
-              <li><a class="dropdown-item" href="/transportationAndLogistics">Transportation & Logistics</a></li>
+              <li>
+                <a class="dropdown-item" href="/transportationAndLogistics"
+                  >Transportation & Logistics</a
+                >
+              </li>
               <li><a class="dropdown-item" href="/banking">Banking</a></li>
             </ul>
           </li>
-          <li class="nav-item"><a href="https://sprintpark6-dev-ed.develop.my.site.com/careers/s/" class="nav-link" target="_blank">Careers</a></li>
-            <li class="nav-item">
-            <a routerLink="/insights" class="nav-link">Insights</a>
+          <li class="nav-item">
+            <a class="nav-link" href="/careers">Careers</a>
           </li>
-          <li class="nav-item"><a href="/contactUs" class="nav-link">Contact Us</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="/insights">Insights</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact-us">Contact Us</a>
+          </li>
+
+          <!-- Login Button -->
+          <li class="nav-item">
+            <button
+              class="btn btnn"
+              data-bs-toggle="modal"
+              data-bs-target="#loginModal"
+            >
+              Login
+            </button>
+          </li>
         </ul>
       </div>
-
-      <!-- Desktop Login -->
-      <div class="d-none d-md-flex">
-        <button class="btn btnn mobile-login-btn" data-bs-toggle="modal" data-bs-target="#loginModal">
-          <span class="text-white">Login</span>
-        </button>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Mobile Offcanvas Sidebar -->
-  <div class="offcanvas offcanvas-start d-md-none" tabindex="-1" id="mobileMenu">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title">Menu</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-    </div>
-    <div class="offcanvas-body">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a href="/company" class="nav-link">Company</a></li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/it-consulting">IT Consulting</a></li>
-            <li><a class="dropdown-item" href="/staffingSolutions">Staffing</a></li>
-            <li><a class="dropdown-item" href="/projectManagement">Project Management</a></li>
-            <li><a class="dropdown-item" href="/softwareServices">Software Services</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Industries</a>
-          <ul class="dropdown-menu">
-          <li>
-              <a class="dropdown-item" href="/telecommunications"
-                >IT & Telecommunications</a
-              >
-            </li>
-            <li><a class="dropdown-item" href="/government">Government</a></li>
-            <li><a class="dropdown-item" href="/healthCareAndLifeSciences">Health Care & Life Sciences</a></li>
-            <li><a class="dropdown-item" href="/manufacturing">Manufacturing</a></li>
-            <li><a class="dropdown-item" href="/education">Education</a></li>
-            <li><a class="dropdown-item" href="/transportationAndLogistics">Transportation & Logistics</a></li>
-            <li><a class="dropdown-item" href="/banking">Banking</a></li>
-          </ul>
-        </li>
-        <li class="nav-item"><a href="https://sprintpark6-dev-ed.develop.my.site.com/careers/s/" class="nav-link" target="_blank">Careers</a></li>
-        <li class="nav-item">
-            <a routerLink="/insights" class="nav-link">Insights</a>
-          </li>
-        <li class="nav-item"><a href="/contactUs" class="nav-link">Contact Us</a></li>
-      </ul>
-      <div class="mt-3">
-        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
-      </div>
     </div>
   </div>
-
-  <!-- Login Modal -->
-<!--Login Modal -->
-<div class="modal fade" 
-     id="loginModal" 
-     tabindex="-1" 
-     aria-labelledby="loginModalLabel" 
-     aria-hidden="true"
-     data-bs-backdrop="false" 
-     data-bs-keyboard="false">
-
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="loginModalLabel">Login as</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="d-flex justify-content-around">
-          <a href="https://talenthire.ceipal.com/signin" class="login-option text-center">
-            <i class="fa fa-user-plus" aria-hidden="true"></i>
-            <h6>Recruiter</h6>
-          </a>
-          <a href="https://talenthire.ceipal.com/signin" class="login-option text-center">
-            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-            <h6>Admin</h6>
-          </a>
-          <a href="http://localhost:58704/login" class="login-option text-center">
-            <i class="fa fa-users" aria-hidden="true"></i>
-            <h6>Employee</h6>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-
-
+</nav>

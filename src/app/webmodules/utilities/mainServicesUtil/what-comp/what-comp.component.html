@@ -1,1 +1,49 @@
-<p>what-comp works!</p>
+<div class="container my-5">
+  <h1 class="text-center mb-5">
+    <span class="section-title fw-bold text-dark position-relative"
+      >{{ whyMainHeading }}
+    </span>
+  </h1>
+
+  <div class="row g-4 align-items-center">
+    <div class="col-lg-6">
+      <h5 class="fw-semibold w-75 w-md-75">
+        {{ whySubHeading }}
+      </h5>
+      <p>
+        {{ whyContent }}
+      </p>
+
+      <div class="d-flex flex-column gap-3">
+        <div class="card shadow-sm hover-card" *ngFor="let card of whyCards">
+          <div class="card-body">
+            <h6 class="fw-semibold mb-2">{{ card.title }}</h6>
+            <p class="small mb-0">{{ card.desc }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- child.component.html -->
+    <div class="col-12 col-lg-6">
+      <div class="row g-3">
+        <div class="col-12 col-md-auto">
+          <img
+            [src]="images.left.src"
+            class="img-fluid rounded"
+            [alt]="images.left.alt"
+          />
+        </div>
+        <div class="col-12 col-md">
+          <img
+            *ngFor="let img of images.right"
+            [src]="img.src"
+            class="img-fluid rounded"
+            [ngClass]="img.extraClass"
+            [alt]="img.alt"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

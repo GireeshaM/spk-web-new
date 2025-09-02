@@ -1,0 +1,46 @@
+.software-section {
+  background-color: #1d0663;
+
+  .sub-heading {
+    margin-left: 25%;
+  }
+
+  .card {
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+
+      img {
+        filter: brightness(0.8);
+      }
+    }
+  }
+
+  .read-btn {
+    transition: all 0.3s ease;
+    border: none;
+    color: #fff;
+    background: black;
+
+    &:hover {
+      width: 390px;
+      height: 50px;
+      background: black;
+      border-radius: 0;
+    }
+
+    .arrow-icon {
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: all 0.3s ease;
+      margin-left: 8px;
+
+      /* fade in on button hover */
+      .read-btn:hover & {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+}

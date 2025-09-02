@@ -1,0 +1,47 @@
+.it-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.hero-image {
+  width: 100%;
+  object-fit: contain;
+}
+
+.text-container {
+  position: absolute;
+  bottom: 30%;
+  right: 5%;
+  text-align: right;
+  z-index: 1;
+  h5 {
+    width: 50%;
+  }
+}
+.text-container.text-right {
+  text-align: right;
+  bottom: 30%;
+  right: 5%;
+}
+
+.text-container.text-left {
+  text-align: left;
+  top: 30%;
+  left: 5%;
+}
+
+@media (max-width: 576px) {
+  .text-container {
+    top: 20% !important;
+  }
+
+  .text-container h1 {
+    font-size: 18px;
+  }
+
+  .text-container h5 {
+    width: 100%;
+    font-size: 12px !important;
+  }
+}

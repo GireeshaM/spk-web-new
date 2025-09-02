@@ -1,155 +1,74 @@
-
-/* Header wrapper */
-.header-container {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1050;
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-}
-
-/* Navbar */
 .navbar {
-  padding: 0.5rem 1rem;
-}
-.navbar .navbar-brand .logo-img {
-  height: 38px;
-}
-.nav-link {
-  color: #000 !important;
-  position: relative;
-}
-.nav-link:hover::after {
-  content: "";
-  position: absolute;
-  left: 0; bottom: -2px;
-  width: 100%; height: 2px;
-  background: #468bd5;
-}
-.btnn {
-  background-color: #072f6b;
-  border-radius: 2rem;
-  width: 5rem;
-  box-shadow: 0 2px 2px #4245ec;
-  color: #fff;
-}
-
-/* Dropdown show on hover (desktop) */
-@media (min-width: 768px) {
-  .nav-item.dropdown:hover .dropdown-menu {
-    display: block;
-  }
-}
-
-/* Mobile fixes */
-@media (max-width: 767.98px) {
-  .navbar {
-    padding: 0.5rem 1rem;
-  }
-
-  .nav-link {
-    display: block;
-    padding: 0.75rem 0;
-  }
-  body {
-    padding-top: 60px; /* prevent overlap */
-  }
-}
-/* Target only mobile offcanvas sidebar */
-
-/* Reduce sidebar width */
-#mobileMenu.offcanvas-start {
-  width: 150px;  /* default 400px, you can set 220px, 280px, etc. */
-  max-width: 80%; /* makes sure it doesn't get too wide on small screens */
-}
-
-/* Mobile Login Button */
-@media (max-width: 768px) {
-  .mobile-login-btn {
-    width: 120px;      /* control exact width */
-    padding: 6px 14px; /* adjust padding */
-    font-size: 14px;   /* smaller font */
-  }
-}
-
-
-
-/* Prevent navbar from overflowing on small screens */
-@media (max-width: 767.98px) {
-  .header-container,
-  .navbar {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden; /* stop horizontal scroll */
-  }
-
-  /* Make sure brand + toggler fit side by side */
-  .navbar .container-fluid {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-  }
-
-  /* Reduce toggler size */
-  .navbar-toggler {
-    padding: 0.25rem 0.5rem;
-    font-size: 1rem;
-    border: none; /* optional: cleaner look */
-  }
-
-  /* Reduce logo size a bit on mobile */
-  .navbar .navbar-brand .logo-img {
-    height: 30px;
-  }
-}
-.navbar {
-  background-color: #ffffff !important; /* force white */
-}
-.header-container {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1050;
-  background: #fff;   /* ✅ White background */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-}
-
-
-//LOGIN MODEL START
-/* General styling for login options */
-.login-option {
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  text-align: center;
-}
-
-/* Styling for the icons */
-.login-option i {
-  font-size: 3rem;
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-/* Hover effect for login options */
-.login-option:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Specific icon colors */
-.login-option .fa {
-  color: #034e5d;
-}
-@media (min-width: 768px) {
   .navbar-brand {
-    margin-right: 8px !important; /* tighten space between logo & menu */
+    img {
+      height: 40px;
+    }
   }
 
-  .navbar-collapse {
-    margin-left: 0 !important; /* avoid extra gap */
+  .offcanvas-body {
+    .nav-link {
+      color: black;
+    }
+  }
+
+  .btnn {
+    width: 5rem;
+    color: #fff;
+    background: linear-gradient(
+      89.48deg,
+      #1b0976 3.39%,
+      #4b36b3 212.69%,
+      #372399 212.69%
+    );
+  }
+
+  /* Nav link underline animation */
+  .nav-link {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--bs-primary);
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+
+  /* Dropdown styles */
+  .dropdown-toggle::after {
+    display: none !important;
+  }
+
+  .dropdown-menu {
+    .dropdown-item {
+      &:hover {
+        background-color: #d9d3f9;
+        color: #000;
+      }
+    }
+  }
+}
+
+/* Reduce offcanvas width */
+.offcanvas {
+  &.offcanvas-end {
+    width: 240px;
+  }
+}
+
+/* Desktop-only dropdown hover */
+@media (min-width: 768px) {
+  .navbar {
+    .dropdown:hover > .dropdown-menu {
+      display: block;
+    }
   }
 }

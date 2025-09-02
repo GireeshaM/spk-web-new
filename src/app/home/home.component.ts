@@ -11,7 +11,7 @@ import {
 } from '@angular/core';
 import { CarouselModule } from 'primeng/carousel';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { AfterViewInit} from '@angular/core';
+import { AfterViewInit } from '@angular/core';
 import {
   trigger,
   state,
@@ -38,7 +38,6 @@ declare var bootstrap: any;
   ],
 })
 export class HomeComponent implements OnInit {
-  
   btn1 = { label: 'Get started with AI', style: 'btn-warning' };
   btn2 = { label: "Let's talk", style: 'btn-outline-light' };
   slides = [
@@ -90,8 +89,8 @@ export class HomeComponent implements OnInit {
     { breakpoint: '768px', numVisible: 2, numScroll: 1 },
     { breakpoint: '560px', numVisible: 1, numScroll: 1 },
   ];
+
   ngOnInit() {
-    
     this.offerCardVisible = this.whatWeOffer.map(() => false);
     this.checkMobile();
   }
@@ -118,7 +117,7 @@ export class HomeComponent implements OnInit {
       const rect = imageEl.getBoundingClientRect();
       this.imageInView = rect.top < window.innerHeight && rect.bottom > 0;
     }
-//chevron buttons glow
+    //chevron buttons glow
 
     // Get the right content element
     const contentEl = document.querySelector('.move-right > div');
@@ -282,8 +281,7 @@ export class HomeComponent implements OnInit {
       image: 'assets/home/carousel/ourInsights-1.png',
       title: 'Salesforce Health Cloud transform Payer sector in Healthcare',
       description: 'Read More >>',
-    }
-
+    },
   ];
 
   testimonials = [
@@ -305,7 +303,6 @@ export class HomeComponent implements OnInit {
 
   currentInsightIndex = 1; // Start with the middle card (or 0 for first)
 
-
   isMobile = false;
 
   @HostListener('window:resize')
@@ -316,7 +313,7 @@ export class HomeComponent implements OnInit {
   checkMobile() {
     this.isMobile = window.innerWidth < 768;
   }
-   
+
   isBrowser: boolean;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {

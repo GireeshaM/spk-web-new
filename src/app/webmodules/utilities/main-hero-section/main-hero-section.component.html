@@ -1,0 +1,19 @@
+<div class="it-container position-relative">
+  <img
+    [src]="isMobile ? smallImage : heroImage"
+    class="img-fluid hero-image"
+    alt="Hero Image"
+  />
+  <div class="d-flex align-items-center justify-content-end w-100 h-100">
+    <div
+      class="text-container p-4 text-white"
+      [ngClass]="{
+        'text-right': alignRight,
+        'text-left': !alignRight
+      }"
+    >
+      <h1 class="fw-bold text-white">{{ whatHeader }}</h1>
+      <h5 class="text-white">{{ whatDescription }}</h5>
+    </div>
+  </div>
+</div>

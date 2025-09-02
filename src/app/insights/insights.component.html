@@ -1,51 +1,59 @@
-<div class="container-fluid px-0 py-0 section-hero" style="min-height: 605px; height: 605px; margin-top: 40px; margin-right:0px;">
-  <div class="row g-0 align-items-stretch" style="min-height: 605px; height: 605px;">
-    <!-- Mobile Image: show only on mobile -->
-    <div class="col-12 d-block d-lg-none" style="height: 300px;">
-      <img src="/assets/insights/Header.jpg" alt="Expert Insights"
-           class="img-fluid w-100 h-100"
-           style="object-fit: cover; object-position: top; height: 100%;">
+<section class="insights-section container-fluid p-0">
+  <div class="row g-0 align-items-stretch">
+    <!-- Image (one element only) -->
+    <div class="col-lg-5 order-1 order-lg-2">
+      <img
+        src="/assets/insights/Header.jpg"
+        alt="Expert Insights"
+        class="img-fluid w-100 h-100 object-fit-cover"
+      />
     </div>
-    <!-- Content: 60% -->
-    <div class="col-lg-7 d-flex align-items-center justify-content-center"
-         style="background:
-         url('assets/insights/insights.png') no-repeat left bottom/100% 220px,
-         linear-gradient(90deg, #1F0334 0%, #601698 100%);
-       min-height: 605px; height: 605px;
-     ">
-      <div class="text-white w-100 px-4" style="max-width: 700px;">
-        <h1 class="fw-bold mb-4 fs-9 fs-md-1" style="color: white;">Stay Ahead with Expert Insights</h1>
-        <p class="fs-5 fs-md-4 fs-lg-3" style="color: white;">
-          Explore trends, technologies, and strategies shaping the future of digital transformation.
-          Our thought leadership and industry perspectives help you navigate innovation with clarity and confidence.
-        </p>
-      </div>
-    </div>
-    <!-- Image: 40% (desktop only) -->
-    <div class="col-lg-5 d-none d-lg-block" style="min-height: 605px; height: 605px;">
-      <div class="h-100 w-100">
-        <img src="/assets/insights/Header.jpg" alt="Expert Insights"
-             class="img-fluid h-100 w-100"
-             style="object-fit: cover; object-position: top; height: 100%;">
+
+    <!-- Content -->
+    <div
+      class="col-lg-7 order-2 order-lg-1 d-flex align-items-center justify-content-center p-5 insights-content"
+    >
+      <div class="w-100 px-3 px-lg-5">
+        <h1 class="fw-bold mb-4 text-white">Stay Ahead with Expert Insights</h1>
+        <h5 class="text-white">
+          Explore trends, technologies, and strategies shaping the future of
+          digital transformation. Our thought leadership and industry
+          perspectives help you navigate innovation with clarity and confidence.
+        </h5>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<div class="container py-5" style="max-width: 1500px;">
+<div class="container py-5">
   <h2 class="text-center mb-5 mt-5 fw-bold">Our Insights</h2>
   <div class="row g-5">
     <div class="col-md-4" *ngFor="let insight of insights">
       <div class="card h-100 border-0 position-relative insight-card">
-        <div class="position-relative w-100" style="height: 350px; overflow: hidden;">
-          <img [src]="insight.image" class="card-img-top rounded-0 object-fit-cover" [alt]="insight.title" style="height: 350px; width: 100%;">
-          <div class="read-badge position-absolute bottom-0 start-0 d-flex align-items-center px-3 py-2">
+        <div
+          class="position-relative w-100 our-insights"
+          style="height: 350px; overflow: hidden"
+        >
+          <img
+            [src]="insight.image"
+            class="card-img-top rounded-0 object-fit-cover"
+            [alt]="insight.title"
+            style="height: 350px; width: 100%"
+          />
+          <div
+            class="read-badge position-absolute bottom-0 start-0 d-flex align-items-center px-3 py-2"
+          >
             <span class="text-white fw-semibold">Read</span>
             <span class="arrow-icon ms-2 text-white">→</span>
           </div>
         </div>
-         <div class="card-body">
-          <h5 class="card-title fw-semibold" style="font-family: 'Segoe UI', sans-serif;">{{ insight.title }}</h5>
+        <div class="card-body">
+          <h5
+            class="card-title fw-semibold"
+            style="font-family: 'Segoe UI', sans-serif"
+          >
+            {{ insight.title }}
+          </h5>
         </div>
       </div>
     </div>
