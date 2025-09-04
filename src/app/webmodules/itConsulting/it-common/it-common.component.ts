@@ -20,17 +20,17 @@ export class ItCommonComponent {
   public whatMainHeader = 'IT Consulting';
   public whatDescription =
     'Leverage the knowledge of seasoned IT professionals who guide you from strategy to execution solution design, implementation, and issue resolution all handled by specialists.';
-  public heroImage = 'assets/services/software-services/itConsult.png';
-  public smallImage = 'assets/services/software-services/itConsult.png';
+  public heroImage = 'assets/services/it-Consulting/it-consulting-hero-c.png';
+  public smallImage = 'assets/services/It_telecommunications/It_consulting_hero.jpg';
 
   // Section 2
   public whyHeader = 'Unlocking Growth Through IT Expertise';
   public whyList!: any[];
   public images = [
-    'assets/staffing/time.png',
-    'assets/itImages/risk.png',
-    'assets/itImages/reduce.png',
-    'assets/itImages/analyze.png',
+    'assets/services/It_telecommunications/icon-1.png',
+    'assets/services/it-Consulting/Icon-1.png',
+    'assets/services/it-Consulting/icon-1-c.svg',
+    'assets/services/It_telecommunications/icon-4.png',
   ];
   ngOnInit() {
     this.whyList = [
@@ -44,7 +44,6 @@ export class ItCommonComponent {
       'External IT consultants can evaluate your processes to provide a point of view on how your solution works.',
     ];
   }
-
   // Section 3
   public whyMainHeading = 'What Sets Us Apart';
   public whySubHeading = 'Visionary';
@@ -70,22 +69,21 @@ export class ItCommonComponent {
   ];
   teamImages = {
     left: {
-      src: 'assets/services/software-services/section-3-1.png',
+      src: 'assets/services/it-Consulting/team-1.png',
       alt: 'Team 1',
     },
     right: [
       {
-        src: 'assets/services/software-services/section-3-2.png',
+        src: 'assets/services/it-Consulting/team-2.png',
         alt: 'Team 2',
         extraClass: 'mb-3',
       },
       {
-        src: 'assets/services/software-services/section-3-3.png',
+        src: 'assets/services/it-Consulting/team-3.png',
         alt: 'Team 3',
       },
     ],
   };
-
   // Section 4
   public whatWeDoHeading = 'What we do';
   public whatWeDoDescription =
@@ -93,15 +91,15 @@ export class ItCommonComponent {
   softwareCards = [
     {
       title: 'IT Assessment',
-      image: 'assets/services/software-services/whatWeDo.png',
+      image: 'assets/services/it-Consulting/it-Assessment-c.jpg',
     },
     {
       title: 'IT Design Consulting',
-      image: 'assets/services/software-services/whatWeDo.png',
+      image: 'assets/services/it-Consulting/it-design-c.png',
     },
     {
       title: 'IT Infrastructure Consulting',
-      image: 'assets/services/software-services/whatWeDo.png',
+      image: 'assets/services/it-Consulting/It-Infrastructure-c.png',
     },
   ];
 }

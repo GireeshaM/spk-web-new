@@ -1,26 +1,13 @@
-import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  OnDestroy,
-  QueryList,
-  ViewChildren,
-  Inject,
-  PLATFORM_ID,
-} from '@angular/core';
-import {
-  trigger,
-  state,
-  style,
-  transition,
-  animate,
-} from '@angular/animations';
+import {AfterViewInit,Component,  ElementRef,  OnDestroy,  QueryList,  ViewChildren,  Inject,  PLATFORM_ID,} from '@angular/core';
+import {  trigger,  state,  style,  transition,  animate,} from '@angular/animations';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { MainHeroSectionComponent } from '../webmodules/utilities/main-hero-section/main-hero-section.component';
+import { WhatCompComponent } from '../webmodules/utilities/mainServicesUtil/what-comp/what-comp.component';
 
 @Component({
   standalone: true,
   selector: 'app-careers',
-  imports: [CommonModule],
+  imports: [CommonModule,MainHeroSectionComponent,WhatCompComponent],
   templateUrl: './careers.component.html',
   styleUrls: ['./careers.component.scss'],
   animations: [
@@ -45,6 +32,11 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
   ],
 })
 export class CareersComponent implements AfterViewInit, OnDestroy {
+    public whatMainHeader = 'IT Consulting';
+  public whatDescription =
+    'Leverage the knowledge of seasoned IT professionals who guide you from strategy to execution solution design, implementation, and issue resolution all handled by specialists.';
+  public heroImage = 'assets/services/software-services/itConsult.png';
+  public smallImage = 'assets/services/software-services/itConsult.png';
   imageVisible = false;
 
   buttonStates: { btn1: boolean; btn2: boolean; btn3: boolean } = {
@@ -151,32 +143,75 @@ export class CareersComponent implements AfterViewInit, OnDestroy {
       location: 'Hyderabad',
     },
   ];
-
-  public cards = [
+   // Section 3
+  public whyMainHeading = 'Life@Sprintpark';
+  public whySubHeading = 'Your Trusted Partner for Comprehensive Software Solutions';
+  public whyContent =
+    'SprintPark delivers tailored AI, data analytics, cybersecurity, and Salesforce services to boost your efficiency, security, and growth.';
+  public whyCards = [
     {
-      title: 'Learning',
-      description:
-        "Every employee should get their fair share of opportunities to share their ideas and become a part of organization's success.",
+      title: 'Learning ',
+      desc: "Every employee should get their fair share of opportunities to share their ideas and become a part of organization's success.",
     },
     {
       title: 'Employee growth',
-      description:
-        'We are dedicated to providing a workplace where employees can grow and thrive.',
+      desc: 'We are dedicated to providing a workplace where employees can grow and thrive.',
     },
     {
       title: 'Work Environment',
-      description:
-        'We believe in a big family and treat all our members like one.',
+      desc: 'We believe in a big family and treat all our members like one.',
     },
     {
       title: 'Professional Development',
-      description:
-        'We are committed to empower our team to grow personally and professionally.',
+      desc: 'We are committed to empower our team to grow personally and professionally.',
     },
     {
-      title: 'Compensation and Benefits',
-      description:
-        'We are committed to empower our team to grow personally and professionally.',
+      title: 'Compensation & Benefits',
+      desc: 'Compensations and benefits reward employees fairly while enhancing their growth and well-being.',
     },
   ];
+  teamImages = {
+    left: {
+      src: 'assets/services/software-services/section-3-1.png',
+      alt: 'Team 1',
+    },
+    right: [
+      {
+        src: 'assets/services/software-services/section-3-2.png',
+        alt: 'Team 2',
+        extraClass: 'mb-3',
+      },
+      {
+        src: 'assets/services/software-services/section-3-3.png',
+        alt: 'Team 3',
+      },
+    ],
+  };
+  // public cards = [
+  //   {
+  //     title: 'Learning',
+  //     description:
+  //       "Every employee should get their fair share of opportunities to share their ideas and become a part of organization's success.",
+  //   },
+  //   {
+  //     title: 'Employee growth',
+  //     description:
+  //       'We are dedicated to providing a workplace where employees can grow and thrive.',
+  //   },
+  //   {
+  //     title: 'Work Environment',
+  //     description:
+  //       'We believe in a big family and treat all our members like one.',
+  //   },
+  //   {
+  //     title: 'Professional Development',
+  //     description:
+  //       'We are committed to empower our team to grow personally and professionally.',
+  //   },
+  //   {
+  //     title: 'Compensation and Benefits',
+  //     description:
+  //       'We are committed to empower our team to grow personally and professionally.',
+  //   },
+  // ];
 }

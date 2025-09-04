@@ -1,1 +1,27 @@
-<p>project-management works!</p>
+<app-main-hero-section
+  [whatHeader]="whatMainHeader"
+  [whatDescription]="whatDescription"
+  [heroImage]="heroImage"
+  [smallImage]="smallImage"
+  [alignRight]="false"
+></app-main-hero-section>
+
+<app-unlock-comp
+  [whyList]="whyList"
+  [whyheader]="whyHeader"
+  [images]="images"
+></app-unlock-comp>
+
+<app-what-comp
+  [whyMainHeading]="whyMainHeading"
+  [whySubHeading]="whySubHeading"
+  [whyContent]="whyContent"
+  [whyCards]="whyCards"
+  [images]="teamImages"
+></app-what-comp>
+
+<app-what-we-do-comp
+  [whatWeDoHeading]="whatWeDoHeading"
+  [whatWeDoDescription]="whatWeDoDescription"
+  [softwareCards]="softwareCards"
+></app-what-we-do-comp>

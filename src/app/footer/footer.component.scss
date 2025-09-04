@@ -1,9 +1,31 @@
 .footer {
+   position: relative;
+  .footer-top {
+  position: absolute;
+   height: 140px;
+  width: 100%;
+  background-color: inherit;
+    z-index: 0;
+}
+.curve-img {
+  position: relative;
+  width: 100%;
+  display: block;
+  z-index: 2;
+}
+.footer-top {
+  z-index: 1;
+}
+.footer-background {
+  background: #fff;
+  padding: 40px 20px;
+  position: relative;
+  z-index: 2;
+}
   img {
     max-width: 100%;
     display: block;
   }
-
   .footer-background {
     // Gradient from top left to top right, fading as it goes right
     background-image: linear-gradient(
@@ -49,12 +71,16 @@
     margin-bottom: 10.8px;
     padding-bottom: 5px;
     color: white;
+    
   }
-
+  .li {
+    line-height: 200%;
+  }
   .contactCol {
     li {
       display: flex;
       align-items: center;
+    
 
       a {
         display: flex;
@@ -82,7 +108,7 @@
     .social-icons {
       display: flex;
       justify-content: space-between;
-      gap: 3px;
+      gap: 40px;
     }
     img {
       width: 30px;
@@ -100,6 +126,7 @@
           display: flex;
           gap: 10px;
           align-items: center;
+         
 
           a {
             img {

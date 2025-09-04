@@ -1,6 +1,7 @@
 <div class="footer curve">
-  <img src="/assets/footer/footerCurve.png" alt="footerCurve" />
-  <div class="footer-background">
+  <div class="footer-top" [ngStyle]="{'background-color': themeColor}"></div>
+  <img src="/assets/footer/footerCurve.png" alt="footerCurve" class="curve-img" />
+  <div class="footer-background" >
     <div class="footer-content">
       <div class="row">
         <div class="col-12 col-md-4">
@@ -95,30 +96,29 @@
             </li>
           </ul>
         </div>
-        <div class="col-6 col-xs-12 col-md-2 contactCol">
+        <div class="col-6 col-xs-12 col-md-2 lh-lg contactCol ">
           <h4 class="footer-header">Contact Info</h4>
           <ul class="nav flex-column">
-            <li>
+            <li >
               <a href="/contactUs#contactContainer">
-                <i class="fa fa-phone fa-lg"></i>
+                <i class="fa fa-phone fa-lg "></i>
                 <p>+1(860) 566 9894</p>
               </a>
             </li>
             <!-- Email Section -->
             <li>
               <a href="/contactUs#contactContainer">
-                <i class="fa fa-envelope fa-lg"></i>
+                <i class="fa fa-envelope fa-lg "></i>
                 <p>
                   info&#64;sprintpark.com <br />
                   hr&#64;sprintpark.com
                 </p>
               </a>
             </li>
-
             <!-- Address Section -->
             <li>
               <a href="/contactUs#mapContainer" target="_blank">
-                <i class="fa fa-map-marker fa-lg"></i>
+                <i class="fa fa-map-marker fa-lg "></i>
                 <p>85 Felt Rd, Suite #604, South Windsor, CT 06074</p>
               </a>
             </li>
@@ -129,7 +129,7 @@
         <div>
           <p class="mb-5">All rights reserved &#64;SprintPark 2024</p>
         </div>
-        <div class="social-icons d-flex">
+        <div class="social-icons d-flex me-5">
           <a href="https://www.facebook.com/SPRINTPARKLLC" target="_blank">
             <img src="/assets/footer/facebook.png" alt="Facebook Icon"
           /></a>
