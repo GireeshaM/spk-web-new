@@ -1,0 +1,22 @@
+img.hero-image {
+  width: 100% !important;
+  max-height: 520px !important;
+  object-fit: cover;
+  z-index: 2;
+}
+
+.bg-curve {
+  position: absolute;
+  // bottom: -6vw; /* half hidden, half showing */
+  left: 0;
+  right: 0;
+  height: 12vw; /* adjust curve depth */
+  background: url("/assets/industries/bgImage.png") center bottom no-repeat;
+  background-size: 100% auto; /* stretch horizontally */
+  opacity: 0.2; /* light visibility */
+  z-index: 1; /* behind hero */
+}
+
+.container.custom-wide {
+  max-width: 1400px; /* wider than Bootstrap default 1320px */
+}

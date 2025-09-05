@@ -1,0 +1,19 @@
+<app-industry-sub-util
+  *ngIf="currentSection === 'dataPrivacy'"
+  [heroImage]="dataPrivacy.heroImage"
+  [heroHeading]="dataPrivacy.heroHeading"
+  [subHeading]="dataPrivacy.subHeading"
+  [introText]="dataPrivacy.introText"
+  [points]="dataPrivacy.healthcarePoints"
+>
+</app-industry-sub-util>
+
+<app-industry-sub-util
+  *ngIf="currentSection === 'automation'"
+  [heroImage]="automation.heroImage"
+  [heroHeading]="automation.heroHeading"
+  [subHeading]="automation.subHeading"
+  [introText]="automation.introText"
+  [points]="automation.points"
+>
+</app-industry-sub-util>

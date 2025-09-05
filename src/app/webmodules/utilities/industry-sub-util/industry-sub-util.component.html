@@ -1,1 +1,46 @@
-<p>industry-sub-util works!</p>
+<div class="w-100 position-relative">
+  <!-- Hero image -->
+  <img
+    *ngIf="heroImage"
+    [src]="heroImage"
+    class="hero-image"
+    alt="Industry Hero"
+  />
+
+  <div class="bg-curve"><!-- Decorative curve --></div>
+
+  <!-- Headings -->
+  <h2
+    *ngIf="heroHeading"
+    class="fw-bold lh-sm hero-heading mt-5 mb-4 text-center"
+  >
+    {{ heroHeading }}
+  </h2>
+  <h4
+    *ngIf="subHeading"
+    class="text-center fw-medium lh-base letter-spacing-1 mx-auto"
+  >
+    {{ subHeading }}
+  </h4>
+
+  <!-- Content Section -->
+  <section
+    class="container-fluid px-2 pt-5 pb-7 font-family-inter"
+    *ngIf="introText || points?.length"
+  >
+    <div class="container custom-wide">
+      <div class="row">
+        <div class="col-lg-10 w-100 mx-auto">
+          <p *ngIf="introText" class="heading pt-2 pb-4">{{ introText }}</p>
+
+          <div *ngFor="let point of points">
+            <h5 class="fw-bold mb-3">
+              <li>{{ point.title }}</li>
+            </h5>
+            <p>{{ point.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

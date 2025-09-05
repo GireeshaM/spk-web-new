@@ -9,11 +9,14 @@ import { SoftwareServiceUtilComponent } from './webmodules/utilities/software-se
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ItCommonComponent } from './webmodules/itConsulting/it-common/it-common.component';
 import { ProjectManagementComponent } from './webmodules/project-management/project-management.component';
+import { IndustrySubUtilComponent } from './webmodules/utilities/industry-sub-util/industry-sub-util.component';
+import { TelecommunicationComponent } from './webmodules/industriesSubPages/telecommunication/telecommunication.component';
 
 export const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,data: { footerColor: '#EDE8F6' }
+    component: HomeComponent,
+    data: { footerColor: '#EDE8F6' },
   },
   {
     path: 'insights',
@@ -21,7 +24,8 @@ export const routes: Routes = [
   },
   {
     path: 'telecommunications',
-    component: TeleCommunicationsComponent,data: { footerColor: '#f7f7fc' }
+    component: TeleCommunicationsComponent,
+    data: { footerColor: '#f7f7fc' },
   },
   {
     path: 'insights',
@@ -33,21 +37,30 @@ export const routes: Routes = [
   },
   {
     path: 'contact-us',
-    component: ContactUsComponent,data: { footerColor: 'rgba(255, 255, 255, 1)' }
+    component: ContactUsComponent,
+    data: { footerColor: 'rgba(255, 255, 255, 1)' },
   },
   {
     path: 'careers',
-    component: CareersComponent,data: {footerColor: '#fff' }
+    component: CareersComponent,
+    data: { footerColor: '#fff' },
   },
   {
     path: 'software-service-util',
-    component: SoftwareServiceUtilComponent,data: { footerColor: 'rgba(29, 6, 99, 1)' }
+    component: SoftwareServiceUtilComponent,
+    data: { footerColor: 'rgba(29, 6, 99, 1)' },
   },
   {
     path: 'it-common',
-    component: ItCommonComponent,data: { footerColor: 'rgba(29, 6, 99, 1)' }
+    component: ItCommonComponent,
+    data: { footerColor: 'rgba(29, 6, 99, 1)' },
   },
   {
-    path:'project-management',component:ProjectManagementComponent,
-  }
+    path: 'project-management',
+    component: ProjectManagementComponent,
+  },
+  {
+    path: 'industry-sub-util',
+    component: TelecommunicationComponent,
+  },
 ];
