@@ -9,9 +9,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './healthcare.component.scss'
 })
 export class HealthcareComponent {
-currentSection = 'medicalinnovation';
+public currentSection = 'medicalinnovation';
  
-medicalinnovation = {
+public medicalinnovation = {
   heroImage: '/assets/industries/healthcare/automation.png',
   heroHeading: 'How can automation reshape patient care and medical innovation?',
   subHeading: 'Intelligent Automation in Healthcare & Life Sciences',
@@ -60,7 +60,7 @@ medicalinnovation = {
     },
   ],
 };
-HealthCareTransform = {
+public HealthCareTransform = {
   heroImage: '/assets/industries/healthcare/infrastructure.png',
   heroHeading: 'How Does Connected Infrastructure Transform Healthcare?',
   subHeading: 'Building smarter systems for efficient, secure, and patient-centered care.',
@@ -114,7 +114,7 @@ points: [
     },
   ],
 };
-dataSecurity = {
+public dataSecurity = {
   heroImage: '/assets/industries/healthcare/dataSecurity.png',
   heroHeading: 'Why Is Data Security & Compliance Critical in Healthcare?',
   subHeading: 'Protecting sensitive health information while ensuring trust and regulatory alignment.',
@@ -163,7 +163,7 @@ points: [
     },
   ],
 };
-projectDelivery = {
+public projectDelivery = {
   heroImage: '/assets/industries/healthcareProjectDelivery.png',
   heroHeading: 'How Can Effective Project Delivery Transform Healthcare Services?',
   subHeading: 'Achieving efficiency, innovation, and better patient outcomes through structured project execution.',
@@ -212,8 +212,7 @@ projectDelivery = {
     },
   ],
 };
- 
-talentSolutions = {
+public talentSolutions = {
   heroImage: '/assets/industries/healthcareTalentSolutions.png',
   heroHeading: 'How Can Expert Talent Solutions Empower the Healthcare Sector?',
   subHeading: 'Building stronger healthcare systems with skilled professionals and specialized expertise.',
@@ -262,8 +261,7 @@ talentSolutions = {
     },
   ],
 };
- 
-patientInnovation = {
+public patientInnovation = {
   heroImage: '/assets/industries/healthcarePatientInnovation.png',
   heroHeading: 'How Can Patient-Centered Innovation Transform Healthcare?',
   subHeading: 'Empowering patients through personalized care, technology, and human-centered design.',
@@ -311,6 +309,5 @@ patientInnovation = {
         'By using patient surveys, real-time feedback systems, and experience-driven insights, healthcare organizations can refine services and innovate in line with patient needs.',
     },
   ],
-};
- 
+}; 
 }

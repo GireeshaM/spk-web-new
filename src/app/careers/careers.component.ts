@@ -51,7 +51,7 @@ export class CareersComponent implements AfterViewInit, OnDestroy {
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
-  ngAfterViewInit(): void {
+  public ngAfterViewInit(): void {
     // Skip completely if this is SSR
     if (!isPlatformBrowser(this.platformId)) {
       return; // do nothing during server render
@@ -170,7 +170,7 @@ export class CareersComponent implements AfterViewInit, OnDestroy {
       desc: 'Compensations and benefits reward employees fairly while enhancing their growth and well-being.',
     },
   ];
-  teamImages = {
+  public  teamImages = {
     left: {
       src: 'assets/services/software-services/section-3-1.png',
       alt: 'Team 1',

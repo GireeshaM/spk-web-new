@@ -9,9 +9,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './government.component.scss'
 })
 export class GovernmentComponent {
-currentSection = 'StrategicRiskAndResilence';
+public currentSection = 'StrategicRiskAndResilence';
 // StrategicRiskAndResilence
-  StrategicRiskAndResilence = {
+public  StrategicRiskAndResilence = {
     heroImage: '/assets/industries/healthcareIndustry.png',
     heroHeading: 'How Can Risk Management Safeguard Public Trust?',
     subHeading: 'Identifying, assessing, and mitigating risks to ensure stability and reliable services.',
@@ -54,7 +54,7 @@ currentSection = 'StrategicRiskAndResilence';
     ],
   };
   // SmartItManagedsolutions
-  SmartItManagedsolutions = {
+  public SmartItManagedsolutions = {
     heroImage: '/assets/industries/automation.png',
     heroHeading: 'How Can IT Consulting Transform Government Operations?',
     subHeading: 'Enhancing Collaboration and Efficiency in Public Sector Agencies',
@@ -95,7 +95,7 @@ currentSection = 'StrategicRiskAndResilence';
     ],
   };
   // ProjectManagementExcellence
-   ProjectManagementExcellence = {
+   public ProjectManagementExcellence = {
     heroImage: '/assets/industries/healthcareIndustry.png',
     heroHeading: 'How Does Project Management Drive Development',
     subHeading: 'Turning plans into impactful results',
@@ -146,7 +146,7 @@ currentSection = 'StrategicRiskAndResilence';
     ],
   };
 // DataAnalytics
-  DataAnalytics = {
+  public DataAnalytics = {
   heroImage: '/assets/industries/dataAnalytics.png',
   heroHeading: 'How Can Data Analytics Transform Public Services?',
   subHeading: 'Unlocking insights to drive smarter governance and citizen trust.',
@@ -180,7 +180,7 @@ currentSection = 'StrategicRiskAndResilence';
   ],
   };
   // TrustedTransformationPartner
-  TrustedTransformationPartner = {
+   public TrustedTransformationPartner = {
     heroImage: '/assets/industries/transformationPartner.png',
     heroHeading: 'How Can a Trusted Transformation Partner Drive Your Growth?',
     subHeading: 'Building long-term success with expertise, innovation, and reliability.',
@@ -214,7 +214,7 @@ currentSection = 'StrategicRiskAndResilence';
     ],
   };
 // CitizenEngagementTransparency
-  CitizenEngagementTransparency = {
+  public CitizenEngagementTransparency = {
     heroImage: '/assets/industries/governmentTransparency.png',
     heroHeading: 'How Can Governments Build Stronger Citizen Engagement and Transparency?',
     subHeading: 'Empowering Citizens Through Open Communication and Trust',

@@ -12,8 +12,7 @@ import { filter } from 'rxjs/operators';
 export class FooterComponent implements OnInit {
  @Input() themeColor: string = '#ffffff';
 constructor(private router: Router, private route: ActivatedRoute) {}
-
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(() => {

@@ -23,20 +23,19 @@ export class MainHeroSectionComponent {
     this.isBrowser = isPlatformBrowser(platformId);
   }
  
-  ngOnInit() {
+  public ngOnInit() {
     if (this.isBrowser) {
       this.checkScreenSize();
     }
   }
  
   @HostListener('window:resize', [])
-  onResize() {
+  public onResize() {
     if (this.isBrowser) {
       this.checkScreenSize();
     }
   }
- 
-  checkScreenSize() {
+  public checkScreenSize() {
     this.isMobile = window.innerWidth <= 768;
   }
 }

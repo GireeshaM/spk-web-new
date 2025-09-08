@@ -30,7 +30,7 @@ export class ProjectManagementComponent {
     'assets/itImages/reduce.png',
     'assets/itImages/analyze.png',
   ];
-  ngOnInit() {
+  public ngOnInit() {
     this.whyList = [
       'Enhance Internal Communication',
       'Streamlined project management processes reduce complexity, improve team collaboration, and boost transparency across departments. ',
@@ -66,7 +66,7 @@ export class ProjectManagementComponent {
       desc: ' Every line of code we write serves a purpose. Our focus is on delivering measurable outcomes that align with your business objectives.',
     },
   ];
-  teamImages = {
+ public  teamImages = {
     left: {
       src: 'assets/services/software-services/section-3-1.png',
       alt: 'Team 1',
@@ -88,7 +88,7 @@ export class ProjectManagementComponent {
   public whatWeDoHeading = 'How We Deliver Value';
   public whatWeDoDescription =
     'SprintPark delivers tailored project management solutions that ensure efficient execution, expert support, and long-term success built around your unique business needs.  ';
-  softwareCards = [
+  public softwareCards = [
     {
       title: 'Project Implementation',
       image: 'assets/services/software-services/whatWeDo.png',

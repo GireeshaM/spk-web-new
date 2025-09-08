@@ -10,8 +10,8 @@ import { IndustrySubUtilComponent } from '../../utilities/industry-sub-util/indu
   styleUrls: ['./transport.component.scss'],
 })
 export class transportComponent {
-  currentSection = 'itConsulting';
- itConsulting = {
+  public currentSection = 'itConsulting';
+ public itConsulting = {
    heroImage: '/assets/industries/healthcareIndustry.png',
     heroHeading: 'How Can IT Consulting & Digital Solutions Transform Transportation & Logistics?',
     subHeading: 'Driving efficiency, transparency, and smarter decision-making through digital innovation.',
@@ -30,7 +30,7 @@ export class transportComponent {
     ],
   };
  
-  networkEngineering = {
+  public networkEngineering = {
     heroImage: '/assets/industries/transportIndustry.png',
     heroHeading: 'How Can Network Engineering & Connectivity Revolutionize Transportation & Logistics?',
     subHeading: 'Building reliable, secure, and high-speed networks to keep transportation systems connected and efficient.',
@@ -47,7 +47,7 @@ export class transportComponent {
       { title: 'Scalability for Future Growth', description: 'Ensures logistics systems can adapt to new technologies and business expansion.' },
     ],
   };
-  salesforceAI = {
+  public salesforceAI = {
     heroImage: '/assets/industries/transportIndustry.png',
     heroHeading: 'How Can Salesforce & AI Automations Transform Transportation and Logistics?',
     subHeading: 'Streamlining logistics operations with intelligent automation and customer-focused Salesforce solutions.',

@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './education.component.scss'
 })
 export class EducationComponent {
-currentSection = 'NetworkingEngineering';
+public currentSection = 'NetworkingEngineering';
 //NetworkingEngineering
-networkingEngineering = {
+public networkingEngineering = {
   heroImage: '/assets/industries/educationNetworking.png',
   heroHeading: 'How Can Networking Engineering Transform Modern Education?',
   subHeading: 'Building connected campuses with reliable, secure, and scalable networks.',
@@ -58,7 +58,7 @@ networkingEngineering = {
   ],
 };
 //EducationProjectManagement
-educationProjectManagement = {
+public educationProjectManagement = {
   heroImage: '/assets/industries/educationProject.png',
   heroHeading: 'How Can Project Management Drive Success in Education?',
   subHeading: 'Ensuring efficiency, accountability, and timely delivery of educational initiatives.',
@@ -107,7 +107,7 @@ educationProjectManagement = {
   ],
 };
 //dataAnalyticsEducation
- dataAnalyticsEducation = {
+public  dataAnalyticsEducation = {
   heroImage: '/assets/industries/educationIndustry.png',
   heroHeading: 'How Can Data Analytics Transform Education?',
   subHeading: 'Unlocking insights to improve learning outcomes and institutional performance.',

@@ -32,7 +32,7 @@ export class ItCommonComponent {
     'assets/services/it-consulting-page/icon-3.png',
     'assets/services/it-consulting-page/icon-4.png',
   ];
-  ngOnInit() {
+  public  ngOnInit() {
     this.whyList = [
       'Access Professionals',
       'Get access to the team of experts who can help you in all the way to solution generation, implementation and troubleshoot. ',
@@ -67,7 +67,7 @@ export class ItCommonComponent {
       desc: 'Your success is our priority. We put your needs first, delivering intuitive solutions and seamless experiences that truly serve your users and stakeholders.',
     },
   ];
-  teamImages = {
+  public teamImages = {
     left: {
       src: 'assets/services/it-consulting-page/team-1.png',
       alt: 'Team 1',
@@ -88,7 +88,7 @@ export class ItCommonComponent {
   public whatWeDoHeading = 'What we do';
   public whatWeDoDescription =
     'SprintPark offers wide range of IT Consulting services which include';
-  softwareCards = [
+  public  softwareCards = [
     {
       title: 'IT Assessment',
       image: 'assets/services/it-consulting-page/it-assessment.jpg',

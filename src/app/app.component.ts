@@ -11,5 +11,5 @@ import { HomeComponent } from './home/home.component';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'spk-web-new';
+  public title = 'spk-web-new';
 }

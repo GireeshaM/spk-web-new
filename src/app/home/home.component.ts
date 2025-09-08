@@ -39,9 +39,9 @@ declare var bootstrap: any;
 })
 export class HomeComponent implements OnInit {
  
-  btn1 = { label: 'Get started with AI', style: 'btn-warning' };
-  btn2 = { label: "Let's talk", style: 'btn-outline-light' };
-  slides = [
+  public btn1 = { label: 'Get started with AI', style: 'btn-warning' };
+  public btn2 = { label: "Let's talk", style: 'btn-outline-light' };
+  public slides = [
     {
       image: 'assets/Compressed-home/section-1-compressed-hero/carousel-1.jpg',
       title: 'Next-Gen Software',
@@ -85,18 +85,16 @@ export class HomeComponent implements OnInit {
       btn2: this.btn2,
     },
   ];
-  responsiveOptions = [
+  public  responsiveOptions = [
     { breakpoint: '1024px', numVisible: 3, numScroll: 1 },
     { breakpoint: '768px', numVisible: 2, numScroll: 1 },
     { breakpoint: '560px', numVisible: 1, numScroll: 1 },
   ];
-  ngOnInit() {
-   
+  public ngOnInit() { 
     this.offerCardVisible = this.whatWeOffer.map(() => false);
- 
   }
  
-  ngAfterViewInit() {
+  public ngAfterViewInit() {
     if (this.isBrowser){
     this.checkInView();
     this.onScroll();
@@ -105,7 +103,7 @@ export class HomeComponent implements OnInit {
 }
  
   @HostListener('window:scroll')
-  onScroll() {
+  public onScroll() {
      if (!this.isBrowser) return;
  
   this.offerCards.forEach((card, i) => {
@@ -116,7 +114,7 @@ export class HomeComponent implements OnInit {
   this.checkInView();
 }
  
-checkInView() {
+public checkInView() {
   if (!this.isBrowser) return;
  
   const imageEl = document.querySelector('.image-wrapper');
@@ -140,8 +138,8 @@ checkInView() {
   // what we offer
  
   @ViewChildren('offerCard') offerCards!: QueryList<ElementRef>;
-  offerCardVisible: boolean[] = [];
-  whatWeOffer = [
+  public offerCardVisible: boolean[] = [];
+  public  whatWeOffer = [
     {
       img: 'assets/Compressed-home/section-3-what-we-offer/software-services.png',
       title: 'Software services',
@@ -160,12 +158,12 @@ checkInView() {
   ];
  
   // Features
-  imageInView = false;
-  contentInView = false;
-  featuresInView = false;
+  public imageInView = false;
+  public contentInView = false;
+  public featuresInView = false;
   @ViewChild('featureGrid') featureGrid!: ElementRef;
  
-  features = [
+  public  features = [
     {
       img: 'assets/Compressed-home/section-2-abt-sprintpark/integrity.png',
       title: 'Integrity',
@@ -188,7 +186,7 @@ checkInView() {
     },
   ];
  
-  collaborations = [
+ public  collaborations = [
     {
       img: 'assets/Compressed-home/section-5-collaborate-section/collaborate-1.png',
       alt: 'Expert Team',
@@ -228,7 +226,7 @@ checkInView() {
   ];
  
   // Industries
-  industries = [
+ public  industries = [
     {
       img: 'assets/Compressed-home/secton-4-industries/industry-it-telecommunications.jpg',
       alt: 'IT & TeleCommunications',
@@ -251,7 +249,7 @@ checkInView() {
     },
   ];
  
-  stats = [
+ public  stats = [
     {
       img: 'assets/Compressed-home/section-6/satisfied-clients.png',
       number: '4,386+',
@@ -274,7 +272,7 @@ checkInView() {
     },
   ];
  
-  ourInsightsSlides = [
+  public ourInsightsSlides = [
     {
       image: 'assets/Compressed-home/section-7-our-insights/our-insights-3.jpg',
       title: "Salesforce's Commitment to Data Security and Privacy Excellence",
@@ -293,7 +291,7 @@ checkInView() {
  
   ];
  
-  testimonials = [
+  public testimonials = [
     {
       img: 'assets/Compressed-home/section-8-testinomials/review-1.png',
       name: 'Maria Sans',
@@ -309,30 +307,27 @@ checkInView() {
       text: 'Sprintpark has delivered excellent services to deliver our AI products. They have given us innovative solutions. Happy client :)',
     },
   ];
- 
-  currentInsightIndex = 1; // Start with the middle card (or 0 for first)
- 
- 
-  isMobile = false;
+  public currentInsightIndex = 1; // Start with the middle card (or 0 for first)
+  public isMobile = false;
  
   @HostListener('window:resize')
-  onResize() {
+  public onResize() {
     this.checkMobile();
   }
  
-  checkMobile() {
+ public  checkMobile() {
     if(this.isBrowser){
     this.isMobile = window.innerWidth < 768;
   }
 }
    
-  isBrowser: boolean;
+  public isBrowser: boolean;
  
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
     this.isBrowser = isPlatformBrowser(this.platformId);
   }
  
-  moveInsight(step: number) {
+  public moveInsight(step: number) {
     const newIndex = this.currentInsightIndex + step;
     if (newIndex >= 0 && newIndex < this.ourInsightsSlides.length) {
       this.currentInsightIndex = newIndex;

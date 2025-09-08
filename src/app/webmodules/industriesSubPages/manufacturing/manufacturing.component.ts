@@ -9,9 +9,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './manufacturing.component.scss'
 })
 export class ManufacturingComponent {
-currentSection = 'salesforceIntegration';
+public currentSection = 'salesforceIntegration';
  
-  salesforceIntegration = {
+  public salesforceIntegration = {
     heroImage: '/assets/industries/manufacturing/salesforceIntegration.png',
     heroHeading: 'How Can Salesforce Integration Transform Manufacturing Operations?',
     subHeading: 'Connecting systems to streamline workflows and enhance decision-making.',
@@ -35,7 +35,7 @@ currentSection = 'salesforceIntegration';
     ],
   };
  
-  dataAnalytics = {
+  public  dataAnalytics = {
     heroImage: '/assets/industries/manufacturing/dataAnalytics.png',
     heroHeading: 'How Can Advanced Data Analytics Revolutionize Manufacturing?',
     subHeading: 'Unlocking insights to optimize production, reduce costs, and improve decision-making.',
@@ -59,7 +59,7 @@ currentSection = 'salesforceIntegration';
     ],
   };
  
-  projectManagement = {
+  public projectManagement = {
     heroImage: '/assets/industries/manufacturing/projectManagement.png',
     heroHeading: 'How Can Expert Project Management Drive Manufacturing Success?',
     subHeading: 'Delivering efficiency, innovation, and reliability through structured execution.',
@@ -84,7 +84,7 @@ currentSection = 'salesforceIntegration';
          description: 'Post-project evaluations help identify lessons learned, fostering a culture of innovation and continuous improvement for upcoming manufacturing projects.' },
     ],
   };
-   ITConsulting = {
+   public ITConsulting = {
     heroImage: 'assets/industries/manufacturing/projectManagement.png',
     heroHeading: 'How Can Strategic IT Consulting Transform Manufacturing?',
     subHeading: 'Driving digital transformation, operational efficiency, and innovation.',

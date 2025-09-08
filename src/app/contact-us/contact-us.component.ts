@@ -17,8 +17,8 @@ export class ContactUsComponent {
   public heroImage = 'assets/contactus/contactUsHero.png';
   public smallImage = 'assets/contactus/contactUsHero.png';
 //section 2 Contact form
-  contactForm: FormGroup;
- locations = [
+ public  contactForm: FormGroup;
+ public locations = [
     {
       type: 'usa',
       title: 'USA Location :',
@@ -34,7 +34,7 @@ export class ContactUsComponent {
       email: 'hr@sprintpark.com'
     }
   ];
-   onSubmit() {
+ public  onSubmit() {
     if (this.contactForm.valid) {
       console.log('Form submitted:', this.contactForm.value);
       // Handle form submission logic here
@@ -57,7 +57,7 @@ export class ContactUsComponent {
       control?.markAsTouched();
     });
   }
-   getFormControlError(controlName: string): string | null {
+  public  getFormControlError(controlName: string): string | null {
     const control = this.contactForm.get(controlName);
     if (control?.errors && control.touched) {
       if (control.errors['required']) {
@@ -70,7 +70,7 @@ export class ContactUsComponent {
     return null;
   }
   // Section 3- Social Links
-  socialLinks = [
+  public  socialLinks = [
       { name: 'LinkedIn', icon: 'assets/contactus/linkedin.png', url: '#' },
       { name: 'X (Twitter)', icon: 'assets/contactus/twitter.png', url: '#' },
       { name: 'YouTube', icon: 'assets/contactus/youtube.png', url: '#' },
@@ -79,7 +79,7 @@ export class ContactUsComponent {
       { name: 'Glassdoor', icon: 'assets/contactus/glassdoor.png', url: '#' }
     ];
   // Section 4- FAQ
-    faqItems = [
+   public faqItems = [
       {
         question: 'What services does your company offer?  ',
         answer: 'We specialize in custom software development, mobile and web applications, UI/UX design, and IT consulting solutions tailored to your business needs.    ',
@@ -101,11 +101,11 @@ export class ContactUsComponent {
         isOpen: false
       }
     ];
-    toggleFAQ(index: number) {
+    public toggleFAQ(index: number) {
       this.faqItems[index].isOpen = !this.faqItems[index].isOpen;
     }
   // Section 5- Why Hire   
-    reasons = [
+  public  reasons = [
       {
         icon: '/assets/contactuslogos/1.png',
         title: 'Certified Consultants and Architects'

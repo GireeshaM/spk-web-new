@@ -9,8 +9,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './telecommunication.component.scss',
 })
 export class TelecommunicationComponent {
-  currentSection = 'dataPrivacy';
-  dataPrivacy = {
+  public currentSection = 'dataPrivacy';
+  public  dataPrivacy = {
     heroImage: '/assets/industries/healthcareIndustry.png',
     heroHeading: 'Why Data Privacy is Telecom’s Biggest Challenge',
     subHeading: 'Customer trust begins with secure communication.',
@@ -41,7 +41,7 @@ export class TelecommunicationComponent {
     ],
   };
  
-  automation = {
+public  automation = {
     heroImage: '/assets/industries/automation.png',
     heroHeading:
       'How can automation reshape patient care and medical innovation?',
@@ -74,7 +74,7 @@ export class TelecommunicationComponent {
     ],
   };
  
- infrastructure = {
+public  infrastructure = {
   heroImage: '/assets/industries/infrastructure.png',
   heroHeading: 'What Makes Strong Infrastructure the Backbone of IT and Telecom?',
   subHeading: ' Understanding why reliable systems keep businesses connected.',
@@ -113,7 +113,7 @@ export class TelecommunicationComponent {
   ],
 };
  
-   managedSolutions = {
+  public managedSolutions = {
   heroImage: '/assets/industries/managed-solutions.png',
   heroHeading: 'Why Choose Managed Solutions for Your Business?',
   subHeading: 'Unlock productivity with dependable IT services.',

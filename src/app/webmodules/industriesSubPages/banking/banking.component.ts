@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './banking.component.scss'
 })
 export class BankingComponent {
-currentSection = 'CybersecurityBanking';
+public currentSection = 'CybersecurityBanking';
 //BigData
- BigData = {
+public  BigData = {
   heroImage: '/assets/industries/bigDataBanking.png',
   heroHeading: 'How Can Big Data Transform the Future of Banking?',
   subHeading: 'Unlocking insights for smarter decisions, better security, and enhanced customer experiences.',
@@ -59,7 +59,7 @@ currentSection = 'CybersecurityBanking';
   ],
 };
 //Cybersecurity
- Cybersecurity = {
+public Cybersecurity = {
   heroImage: '/assets/industries/cybersecurityBanking.png',
   heroHeading: 'Why Is Cybersecurity Essential for Modern Banking?',
   subHeading: 'Safeguarding customer trust, financial assets, and digital operations in an evolving threat landscape.',
@@ -109,7 +109,7 @@ currentSection = 'CybersecurityBanking';
   ],
 };
 //ProjectManagement
-ProjectManagement = {
+public ProjectManagement = {
   heroImage: '/assets/industries/bankingIndustry.png',
   heroHeading: 'How Does Project Management Drive Success in Banking?',
   subHeading: 'Ensuring efficiency, compliance, and customer value in financial transformation initiatives.',
@@ -163,7 +163,7 @@ ProjectManagement = {
   ],
 };
 //AI
-AI = {
+public AI = {
   heroImage: '/assets/industries/aiBanking.png',
   heroHeading: 'How Is Artificial Intelligence Transforming Modern Banking?',
   subHeading: 'Leveraging AI to enhance customer experiences, streamline operations, and strengthen security in the financial sector.',

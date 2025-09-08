@@ -17,7 +17,7 @@ export class IndustryUtilComponent {
   @Input() headerBgImg!: string;
   @Input() industryImg!: string;
 
-  cards = [
+  public  cards = [
     {
       img: 'assets/Industries/DataPrivacy.png',
       title: 'Data Privacy',
@@ -33,7 +33,7 @@ export class IndustryUtilComponent {
       link: '/#',
     },
   ];
-  getCardClass(index: number): string {
+  public getCardClass(index: number): string {
     const classes = [
       'background-1',
       'background-2',

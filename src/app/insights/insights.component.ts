@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './insights.component.scss'
 })
 export class InsightsComponent {
- insights = [
+  public insights = [
     {
       image: '/assets/insights/1.jpg',
       title: 'Achieving Marketing Excellence: Boost Your Campaigns Using Salesforce Marketing Cloud & Salesforce Data Cloud'

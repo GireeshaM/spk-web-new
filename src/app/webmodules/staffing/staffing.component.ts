@@ -33,7 +33,7 @@ export class staffingComponent {
     'assets/itImages/reduce.png',
     'assets/itImages/analyze.png',
   ];
-  ngOnInit() {
+  public ngOnInit() {
     this.whyList = [
       'Boost Employee Retention',
       'We align the right candidate with the right job to reduce attrition and increase long-term engagement. ',
@@ -69,7 +69,7 @@ export class staffingComponent {
       desc: 'We conduct thorough verifications background, references, and credit checks to ensure reliability and compliance.',
     },
   ];
-  teamImages = {
+  public teamImages = {
     left: {
       src: 'assets/services/software-services/section-3-1.png',
       alt: 'Team 1',
@@ -91,7 +91,7 @@ export class staffingComponent {
   public whatWeDoHeading = 'Our Staffing Services';
   public whatWeDoDescription =
     'At SprintPark, we offer dynamic and scalable staffing solutions tailored to your business needs whether youre expanding locally or globally.';
-  softwareCards = [
+public  softwareCards = [
     {
       title: 'Contract Staffing  ',
       image: 'assets/services/software-services/whatWeDo.png',

@@ -9,12 +9,12 @@ import { IndustryUtilComponent } from '../../utilities/industry-util/industry-ut
   styleUrl: './tele-communications.component.scss'
 })
 export class TeleCommunicationsComponent {
-headerBg='assets/Industries/wave.svg';
-itHeader='Empowering Telecom Growth with Confidence';
- itContent="As the telecom industry rapidly expands across B2B and B2C markets, so do the challenges of compliance, risk, and trust. We help telecom businesses scale strategically, strengthen governance, and stay resilient in a constantly evolving landscape — empowering growth with clarity and confidence.";
- subHeading='How We Empower Your Business';
- telecom="assets/Industries/TelecomIndustries.png";
- cards=[
+public headerBg='assets/Industries/wave.svg';
+public itHeader='Empowering Telecom Growth with Confidence';
+ public itContent="As the telecom industry rapidly expands across B2B and B2C markets, so do the challenges of compliance, risk, and trust. We help telecom businesses scale strategically, strengthen governance, and stay resilient in a constantly evolving landscape — empowering growth with clarity and confidence.";
+ public subHeading='How We Empower Your Business';
+  public  telecom="assets/Industries/TelecomIndustries.png";
+  public  cards=[
   {
     img:'assets/Industries/DataPrivacy.png',
     title:'Data Privacy',

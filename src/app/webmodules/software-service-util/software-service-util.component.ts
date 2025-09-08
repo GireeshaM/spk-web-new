@@ -30,7 +30,7 @@ export class SoftwareServiceUtilComponent {
     'assets/itImages/reduce.png',
     'assets/itImages/analyze.png',
   ];
-  ngOnInit() {
+  public ngOnInit() {
     this.whyList = [
       'Digital Transformation',
       'Empower your business with custom-built software that automates operations, enhances customer experience, and drives innovation. ',
@@ -66,7 +66,7 @@ export class SoftwareServiceUtilComponent {
       desc: 'Maximize your Salesforce investment with our tailored CRM solutions. From implementation and customization to third-party integrations, we help streamline your sales, marketing, and customer service processes.',
     },
   ];
-  teamImages = {
+  public teamImages = {
     left: {
       src: 'assets/services/software-services/section-3-1.png',
       alt: 'Team 1',
@@ -88,7 +88,7 @@ export class SoftwareServiceUtilComponent {
   public whatWeDoHeading = 'Driving Excellence in Software Development';
   public whatWeDoDescription =
     'SprintPark delivers innovative, tailored software solutions designed to meet your unique business needs and drive growth.';
-  softwareCards = [
+  public softwareCards = [
     {
       title: 'Comprehensive Software Solutions ',
       image: 'assets/services/software-services/whatWeDo.png',
