@@ -7,15 +7,15 @@ import { filter } from 'rxjs/operators';
   selector: 'app-footer',
   imports: [NgStyle],
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.scss'
+  styleUrl: './footer.component.scss',
 })
 export class FooterComponent implements OnInit {
- @Input() themeColor: string = '#ffffff';
-constructor(private router: Router, private route: ActivatedRoute) {}
+  @Input() themeColor: string = '#ffffff';
+  constructor(private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.router.events
-      .pipe(filter(event => event instanceof NavigationEnd))
+      .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe(() => {
         let child = this.route.firstChild;
         while (child?.firstChild) {

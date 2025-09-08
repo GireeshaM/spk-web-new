@@ -25,6 +25,7 @@
   /* Nav link underline animation */
   .nav-link {
     position: relative;
+    cursor: pointer;
 
     &::after {
       content: "";
