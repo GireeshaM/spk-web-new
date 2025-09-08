@@ -132,7 +132,7 @@
             <img src="assets/contactus/GetSocial.png" alt="Social Phone" class="social-img img-fluid" />
             </div>
             <div class=" col social-right">
-              <h3 >Get social with us</h3>
+              <h3 class="fw-bold">Get social with us</h3>
               <ul class="social-links row g-3">
                 <li class="col-4 mt-5" *ngFor="let social of socialLinks">
                   <a [href]="social.url" class="text-decoration-none justify-content-center">
@@ -153,7 +153,7 @@
     <div class="container px-4 px-lg-5">
       <div class="row justify-content-center">
         <div class="col-12 col-lg-10">
-          <h3 class="text-center text-lg-start mb-4 mb-lg-5">Frequently asked questions</h3>
+          <h3 class="text-center fw-bold mb-4 mb-lg-5">Frequently asked questions</h3>
           
           <div class="faq-list">
             <div class="faq-item"
@@ -181,7 +181,7 @@
     <div class="col-md-4 mb-4" *ngFor="let reason of reasons">
       <div class="why-card text-center p-4 h-100">
         <img [src]="reason.icon" alt="{{ reason.title }}" class="card-icon mb-3">
-        <h5 class="card-title">{{ reason.title }}</h5>
+        <h5 class="card-title fw-bold">{{ reason.title }}</h5>
       </div>
     </div>
   </div>

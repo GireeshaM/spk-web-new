@@ -15,7 +15,7 @@
     >
       <div class="w-100 px-3 px-lg-5">
         <h1 class="fw-bold mb-4 text-white">Stay Ahead with Expert Insights</h1>
-        <h5 class="text-white">
+        <h5 class="text-white lh-lg">
           Explore trends, technologies, and strategies shaping the future of
           digital transformation. Our thought leadership and industry
           perspectives help you navigate innovation with clarity and confidence.
@@ -36,9 +36,10 @@
         >
           <img
             [src]="insight.image"
-            class="card-img-top rounded-0 object-fit-cover"
+            class="card-img-top rounded-0 object-fit-contain"
             [alt]="insight.title"
-            style="height: 350px; width: 100%"
+            style="height: 450px; width: 100%"
+            
           />
           <div
             class="read-badge position-absolute bottom-0 start-0 d-flex align-items-center px-3 py-2"
@@ -49,8 +50,7 @@
         </div>
         <div class="card-body">
           <h5
-            class="card-title fw-semibold"
-            style="font-family: 'Segoe UI', sans-serif"
+            class="card-title lh-base fw-semibold" 
           >
             {{ insight.title }}
           </h5>

@@ -7,7 +7,7 @@
   [points]="dataPrivacy.healthcarePoints"
 >
 </app-industry-sub-util>
-
+ 
 <app-industry-sub-util
   *ngIf="currentSection === 'automation'"
   [heroImage]="automation.heroImage"
@@ -17,3 +17,23 @@
   [points]="automation.points"
 >
 </app-industry-sub-util>
+ 
+<app-industry-sub-util
+  *ngIf="currentSection === 'infrastructure'"
+  [heroImage]="infrastructure.heroImage"
+  [heroHeading]="infrastructure.heroHeading"
+  [subHeading]="infrastructure.subHeading"
+  [introText]="infrastructure.introText"
+  [points]="infrastructure.points">
+</app-industry-sub-util>
+ 
+<app-industry-sub-util
+  *ngIf="currentSection === 'managedSolutions'"
+  [heroImage]="managedSolutions.heroImage"
+  [heroHeading]="managedSolutions.heroHeading"
+  [subHeading]="managedSolutions.subHeading"
+  [introText]="managedSolutions.introText"
+  [points]="managedSolutions.points">
+</app-industry-sub-util>
+ 
+ 

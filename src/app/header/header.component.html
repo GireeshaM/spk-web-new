@@ -4,7 +4,7 @@
     <a class="navbar-brand" href="#">
       <img src="/assets/header/logoBlue.png" alt="logo" />
     </a>
-
+ 
     <!-- Toggler -->
     <button
       class="navbar-toggler"
@@ -16,7 +16,7 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-
+ 
     <!-- Offcanvas -->
     <div
       class="offcanvas offcanvas-end"
@@ -35,7 +35,7 @@
           aria-label="Close"
         ></button>
       </div>
-
+ 
       <div class="offcanvas-body">
         <ul class="navbar-nav flex-grow-1 justify-content-between">
           <!-- <li class="nav-item">
@@ -46,10 +46,10 @@
             </a>
           </li> -->
           <li></li>
-
+ 
           <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
-
+          <li class="nav-item"><a class="nav-link" (click)="onAboutClick()">About Us</a></li>
+ 
           <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle d-md-none"
@@ -58,16 +58,16 @@
               >Services</a
             >
             <a class="nav-link d-none d-md-block" href="#">Services</a>
-
+ 
             <ul class="dropdown-menu">
               <li>
                 <a class="dropdown-item" href="/it-common">IT Consulting</a>
               </li>
               <li>
-                <a class="dropdown-item" href="/staffingSolutions">Staffing</a>
+                <a class="dropdown-item" href="/staffing">Staffing</a>
               </li>
               <li>
-                <a class="dropdown-item" href="/project-management"
+                <a class="dropdown-item" href="/projectManagement"
                   >Project Management</a
                 >
               </li>
@@ -86,7 +86,7 @@
               >Industries</a
             >
             <a class="nav-link d-none d-md-block" href="#">Industries</a>
-
+ 
             <ul class="dropdown-menu">
               <li>
                 <a class="dropdown-item" href="/itTelecommunications"
@@ -122,7 +122,7 @@
           <li class="nav-item">
             <a class="nav-link" href="/contact-us">Contact Us</a>
           </li>
-
+ 
           <!-- Login Button -->
           <li class="nav-item">
             <button

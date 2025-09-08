@@ -38,47 +38,47 @@ declare var bootstrap: any;
   ],
 })
 export class HomeComponent implements OnInit {
-  
+ 
   btn1 = { label: 'Get started with AI', style: 'btn-warning' };
   btn2 = { label: "Let's talk", style: 'btn-outline-light' };
   slides = [
     {
-      image: 'assets/home/carousel/carousel-1.png',
+      image: 'assets/Compressed-home/section-1-compressed-hero/carousel-1.jpg',
       title: 'Next-Gen Software',
       subtitle: 'Smarter software, better solutions.',
       btn1: this.btn1,
       btn2: this.btn2,
     },
     {
-      image: 'assets/home/carousel/carousel-2.png',
+      image: 'assets/Compressed-home/section-1-compressed-hero/carousel-2.jpg',
       title: 'Talent Solution',
       subtitle: 'Right people, Right fit.',
       btn1: this.btn1,
       btn2: this.btn2,
     },
     {
-      image: 'assets/home/carousel/carousel-3.png',
+      image: 'assets/Compressed-home/section-1-compressed-hero/carousel-3.jpg',
       title: 'Tech Evolution Partners',
       subtitle: 'Smart Solutions, Clear Direction.',
       btn1: this.btn1,
       btn2: this.btn2,
     },
     {
-      image: 'assets/home/carousel/carousel-4.png',
+      image: 'assets/Compressed-home/section-1-compressed-hero/carousel-4.jpg',
       title: 'Smart Product Rollouts',
       subtitle: 'From Code to Clients.',
       btn1: this.btn1,
       btn2: this.btn2,
     },
     {
-      image: 'assets/home/carousel/carousel-5.png',
+      image: 'assets/Compressed-home/section-1-compressed-hero/carousel-5.jpg',
       title: 'From Plan to Launch',
       subtitle: 'Smart.Agile.Delivered',
       btn1: this.btn1,
       btn2: this.btn2,
     },
     {
-      image: 'assets/home/carousel/carousel-6.png',
+      image: 'assets/Compressed-home/section-1-compressed-hero/carousel-6.jpg',
       title: 'Future in Focus',
       subtitle: "Get Ready for what's next in innovation  .",
       btn1: this.btn1,
@@ -91,242 +91,247 @@ export class HomeComponent implements OnInit {
     { breakpoint: '560px', numVisible: 1, numScroll: 1 },
   ];
   ngOnInit() {
-    
+   
     this.offerCardVisible = this.whatWeOffer.map(() => false);
-    this.checkMobile();
+ 
   }
-
+ 
   ngAfterViewInit() {
+    if (this.isBrowser){
     this.checkInView();
     this.onScroll();
+    this.checkMobile();
   }
-
+}
+ 
   @HostListener('window:scroll')
   onScroll() {
-    this.offerCards.forEach((card, i) => {
-      const rect = card.nativeElement.getBoundingClientRect();
-      this.offerCardVisible[i] =
-        rect.top < window.innerHeight && rect.bottom > 0;
-    });
-    this.checkInView();
+     if (!this.isBrowser) return;
+ 
+  this.offerCards.forEach((card, i) => {
+    const rect = card.nativeElement.getBoundingClientRect();
+    this.offerCardVisible[i] = rect.top < window.innerHeight && rect.bottom > 0;
+  });
+ 
+  this.checkInView();
+}
+ 
+checkInView() {
+  if (!this.isBrowser) return;
+ 
+  const imageEl = document.querySelector('.image-wrapper');
+  if (imageEl) {
+    const rect = imageEl.getBoundingClientRect();
+    this.imageInView = rect.top < window.innerHeight && rect.bottom > 0;
   }
-
-  checkInView() {
-    // Get the left image element
-    const imageEl = document.querySelector('.image-wrapper');
-    if (imageEl) {
-      const rect = imageEl.getBoundingClientRect();
-      this.imageInView = rect.top < window.innerHeight && rect.bottom > 0;
-    }
-//chevron buttons glow
-
-    // Get the right content element
-    const contentEl = document.querySelector('.move-right > div');
-    if (contentEl) {
-      const rect = contentEl.getBoundingClientRect();
-      this.contentInView = rect.top < window.innerHeight && rect.bottom > 0;
-    }
-
-    // Features grid
-    if (this.featureGrid) {
-      const rect = this.featureGrid.nativeElement.getBoundingClientRect();
-      this.featuresInView = rect.top < window.innerHeight && rect.bottom > 0;
-    }
+ 
+  const contentEl = document.querySelector('.move-right > div');
+  if (contentEl) {
+    const rect = contentEl.getBoundingClientRect();
+    this.contentInView = rect.top < window.innerHeight && rect.bottom > 0;
   }
-
+ 
+  if (this.featureGrid) {
+    const rect = this.featureGrid.nativeElement.getBoundingClientRect();
+    this.featuresInView = rect.top < window.innerHeight && rect.bottom > 0;
+  }
+}
+ 
   // what we offer
-
+ 
   @ViewChildren('offerCard') offerCards!: QueryList<ElementRef>;
   offerCardVisible: boolean[] = [];
   whatWeOffer = [
     {
-      img: '/assets/home/whatWeOffer/softwareServices.png',
-      title: 'Software servies',
+      img: 'assets/Compressed-home/section-3-what-we-offer/software-services.png',
+      title: 'Software services',
       desc: 'Custom software solutions designed to meet your unique business needs.',
     },
     {
-      img: '/assets/home/whatWeOffer/itConsult.png',
+      img: 'assets/Compressed-home/section-3-what-we-offer/It_consulting.png',
       title: 'IT Consulting',
       desc: 'Expert guidance and strategic solutions to overcome challenges and drive your business.',
     },
     {
-      img: '/assets/home/whatWeOffer/staffing.png',
+      img: 'assets/Compressed-home/section-3-what-we-offer/staffing-solutions.png',
       title: 'Staffing Solutions',
       desc: "Connect with the right talent to drive your organization's growth and success.",
     },
   ];
-
+ 
   // Features
   imageInView = false;
   contentInView = false;
   featuresInView = false;
   @ViewChild('featureGrid') featureGrid!: ElementRef;
-
+ 
   features = [
     {
-      img: '/assets/home/about/integrity.png',
+      img: 'assets/Compressed-home/section-2-abt-sprintpark/integrity.png',
       title: 'Integrity',
       desc: 'Upholding honesty in all dealings',
     },
     {
-      img: '/assets/home/about/teamWork.png',
+      img: 'assets/Compressed-home/section-2-abt-sprintpark/team-work.png',
       title: 'Team Work',
       desc: 'Collaborating to achieve shared success',
     },
     {
-      img: '/assets/home/about/diversity.png',
+      img: 'assets/Compressed-home/section-2-abt-sprintpark/commitment.png',
       title: 'Commitment',
       desc: 'Dedicated to exceeding client expectations',
     },
     {
-      img: '/assets/home/about/problemSolving.png',
+      img: 'assets/Compressed-home/section-2-abt-sprintpark/diversity.png',
       title: 'Diversity',
       desc: 'Embracing differences to drive innovation',
     },
   ];
-
+ 
   collaborations = [
     {
-      img: '/assets/home/collaborate/expert.png',
+      img: 'assets/Compressed-home/section-5-collaborate-section/collaborate-1.png',
       alt: 'Expert Team',
       title: 'Assemble Your Expert Team',
       desc: 'Reach out to us, and we’ll assign professionals perfectly suited to your project’s needs.',
     },
     {
-      img: '/assets/home/collaborate/objectives.png',
+      img: 'assets/Compressed-home/section-5-collaborate-section/collaborate-2.png',
       alt: 'Objectives',
       title: 'Define Your Objectives Clearly',
       desc: 'Engage in a strategic consultation to uncover your goals, challenges, and priorities.',
     },
     {
-      img: '/assets/home/collaborate/strategy.png',
+      img: 'assets/Compressed-home/section-5-collaborate-section/collaborate-3.png',
       alt: 'Strategy',
       title: 'Develop a Custom Strategy',
       desc: 'Receive a personalized, flexible plan tailored to solve your unique business challenges.',
     },
     {
-      img: '/assets/home/collaborate/execute.png',
+      img: 'assets/Compressed-home/section-5-collaborate-section/collaborate-4.png',
       alt: 'Execute',
       title: 'Execute with Confidence',
       desc: 'Our expert team and 24/7 support ensure seamless delivery and ongoing success.',
     },
     {
-      img: '/assets/home/collaborate/expectations.png',
+      img: 'assets/Compressed-home/section-5-collaborate-section/collaborate-5.png',
       alt: 'Expectations',
       title: 'Set Clear Expectations',
       desc: 'Align on requirements, limitations, and success criteria to ensure shared understanding.',
     },
     {
-      img: '/assets/home/collaborate/objectives.png',
+      img: 'assets/Compressed-home/section-5-collaborate-section/collaborate-6.png',
       alt: 'Objectives',
-      title: 'Define Your Objectives Clearly',
-      desc: 'Engage in a strategic consultation to uncover your goals, challenges, and priorities.',
+      title: 'Measure and Optimize Performance',
+      desc: 'Monitor results, refine strategies, and drive continuous improvement for success.',
     },
   ];
-
+ 
   // Industries
   industries = [
     {
-      img: 'assets/home/whatWeOffer/itTele.png',
+      img: 'assets/Compressed-home/secton-4-industries/industry-it-telecommunications.jpg',
       alt: 'IT & TeleCommunications',
       title: 'IT & TeleCommunications',
     },
     {
-      img: 'assets/home/whatWeOffer/healthCare.png',
+      img: 'assets/Compressed-home/secton-4-industries/industries-healthcare.jpg',
       alt: 'Healthcare & Life Sciences',
        title: 'Healthcare & Life Sciences',
     },
     {
-      img: 'assets/home/whatWeOffer/education.png',
+      img: 'assets/Compressed-home/secton-4-industries/industry-education.jpg',
       alt: 'Education',
       title: 'Education',
     },
     {
-      img: 'assets/home/whatWeOffer/government.png',
+      img: 'assets/Compressed-home/secton-4-industries/industries-government.jpg',
       alt: 'Government',
        title: 'Government',
     },
   ];
-
+ 
   stats = [
     {
-      img: '/assets/home/stats/clients.png',
+      img: 'assets/Compressed-home/section-6/satisfied-clients.png',
       number: '4,386+',
       label: 'Satisfied Clients',
     },
     {
-      img: '/assets/home/stats/projects.png',
+      img: 'assets/Compressed-home/section-6/finished-projects.png',
       number: '400+',
       label: 'Finished projects',
     },
     {
-      img: '/assets/home/stats/experts.png',
+      img: 'assets/Compressed-home/section-6/skilled-experts.png',
       number: '250+',
       label: 'Skilled experts',
     },
     {
-      img: '/assets/home/stats/posts.png',
+      img: 'assets/Compressed-home/section-6/media-posts.png',
       number: '4,386+',
       label: 'Media posts',
     },
   ];
-
+ 
   ourInsightsSlides = [
     {
-      image: 'assets/home/carousel/ourInsights-3.png',
+      image: 'assets/Compressed-home/section-7-our-insights/our-insights-3.jpg',
       title: "Salesforce's Commitment to Data Security and Privacy Excellence",
       description: 'Read More >>',
     },
     {
-      image: 'assets/home/carousel/ourInsights-2.png',
+      image: 'assets/Compressed-home/section-7-our-insights/our-insights-2.jpg',
       title: 'Salesforce Marketing Cloud Empowers Marketing of Businesses',
       description: 'Read More >>',
     },
     {
-      image: 'assets/home/carousel/ourInsights-1.png',
+      image: 'assets/Compressed-home/section-7-our-insights/our-insights-1.jpg',
       title: 'Salesforce Health Cloud transform Payer sector in Healthcare',
       description: 'Read More >>',
     }
-
+ 
   ];
-
+ 
   testimonials = [
     {
-      img: '/assets/home/testimonials/testimony1.jpg',
+      img: 'assets/Compressed-home/section-8-testinomials/review-1.png',
       name: 'Maria Sans',
       role: 'Co-founder - Zent Technologies',
       rating: 4,
       text: 'Sprintpark has delivered excellent services to deliver our AI products. They have given us innovative solutions. Happy client :)',
     },
     {
-      img: '/assets/home/testimonials/testimony2.jpg',
+      img: 'assets/Compressed-home/section-8-testinomials/review-2.png',
       name: 'Maria Sans',
       role: 'Co-founder - Zent Technologies',
       rating: 4,
       text: 'Sprintpark has delivered excellent services to deliver our AI products. They have given us innovative solutions. Happy client :)',
     },
   ];
-
+ 
   currentInsightIndex = 1; // Start with the middle card (or 0 for first)
-
-
+ 
+ 
   isMobile = false;
-
+ 
   @HostListener('window:resize')
   onResize() {
     this.checkMobile();
   }
-
+ 
   checkMobile() {
+    if(this.isBrowser){
     this.isMobile = window.innerWidth < 768;
   }
+}
    
   isBrowser: boolean;
-
+ 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
     this.isBrowser = isPlatformBrowser(this.platformId);
   }
-
+ 
   moveInsight(step: number) {
     const newIndex = this.currentInsightIndex + step;
     if (newIndex >= 0 && newIndex < this.ourInsightsSlides.length) {

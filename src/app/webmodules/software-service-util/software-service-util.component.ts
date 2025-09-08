@@ -99,7 +99,7 @@ export class SoftwareServiceUtilComponent {
     },
     {
       title: 'Tailored Software Development',
-      image: 'Offshore Staffingassets/services/software-services/whatWeDo.png',
+      image: 'assets/services/software-services/whatWeDo.png',
     },
   ];
 }

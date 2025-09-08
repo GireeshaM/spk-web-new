@@ -1,10 +1,8 @@
 .software-section {
   background-color: #1d0663;
-
   .sub-heading {
     margin-left: 25%;
   }
-
   .card {
     transition: transform 0.3s ease;
 
@@ -15,8 +13,12 @@
         filter: brightness(0.8);
       }
     }
+    .card-image {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+    }
   }
-
   .read-btn {
     transition: all 0.3s ease;
     border: none;
@@ -29,7 +31,6 @@
       background: black;
       border-radius: 0;
     }
-
     .arrow-icon {
       opacity: 0;
       transform: translateX(-20px);

@@ -14,7 +14,13 @@
               <h1 class="carousel-title text-light fw-bold">{{ slide.title }}</h1>
               <p class="carousel-subtitle text-light me-5">{{ slide.subtitle }}</p>
               <p>
-                <a class="btn btn-lg btn-1 d-inline-block mt-5 me-5 text-light fw-normal  px-3 py-2  rounded-pill fw-semibold" href="#">Get Started with AI</a>
+                <a class="btn btn-lg btn-1 d-inline-block mt-5 me-5 text-light fw-normal  px-3 py-2  rounded-pill fw-semibold" href="#">Get Started with AI
+                  <span class="sparkle"></span>
+                  <span class="sparkle"></span>
+                  <span class="sparkle"></span>
+                  <span class="sparkle"></span>
+                  <span class="sparkle"></span>
+                </a>
                 <a class="btn btn-lg btn-2  d-inline-block mt-5 rounded-pill fw-semibold" href="">Let's Talk</a>
               </p>
             </div>
@@ -38,21 +44,17 @@
           <div class="logo-track">
             <!-- Duplicate the logos twice for smooth infinite scrolling -->
             <div class="logo-container">
-              <div class="combined-logo">
-                <img src="assets/home/partners/salesforce.png" alt="Salesforce" />
-                <img src="assets/home/partners/salesforceLogo.png" alt="Salesforce" />
-              </div>
-              <img src="assets/home/partners/amazonWeb.png" alt="AWS" />
-              <img src="assets/home/partners/microsoft.png" alt="Microsoft" />
-              <img src="assets/home/partners/copado.png" alt="Copado" />
+                <img src="assets/Compressed-home/logos/salesforce-logo.png" alt="Salesforce" />
+              <img src="assets/Compressed-home/logos/amazon_web_services_logo.svg.png" alt="AWS" />
+              <img src="assets/Compressed-home/logos/microsoft-logo.png" alt="Microsoft" />
+              <img src="assets/Compressed-home/logos/copado_logo.png" alt="Copado" />
               <img src="assets/home/partners/google.png" alt="Google" />
-              
             </div>
           </div>
         </div>
         </section>
   </section>
-  <!-- FEATURES -->
+  <!-- FEATURES   About sprintpark -->
   <section class="about-sprintpark-section">
     <div class="container py-0 position-relative">
       <div class="row align-items-center position-relative flex-column flex-md-row">
@@ -62,10 +64,10 @@
                'pre-slide-left': !imageInView,
                'slide-left': imageInView
              }">
-          <img src="/assets/homepage/home 2nd section/Rectangle 50.png"
+          <img src="assets/Compressed-home/section-2-abt-sprintpark/about-spk-right-img.png"
                alt="Team working"
                class="main-image img-fluid w-100" />
-          <img src="/assets/home/about/circleBg.png"
+          <img src="assets/Compressed-home/section-2-abt-sprintpark/Ellipse.png"
                alt="Ellipse"
                class="ellipse-shape img-fluid" />
         </div>
@@ -77,7 +79,7 @@
             'slide-right': contentInView
           }">
             <small class="text-primary  mb-2  gradient-underline " >About Sprintpark</small>
-            <h3 class="fw-bold mb-3" >Smart. Sleek. Scalable. We don’t just build tech - we craft digital experiences.</h3>
+            <h3 class="fw-bold mb-3 " >Smart. Sleek. Scalable. We don’t just build tech , we craft digital experiences.</h3>
             <p class="text-muted lh-lg mb-4">
               Our goal is to become the most trusted and recognized provider of cutting-edge IT products and solutions—celebrated for our unwavering commitment to quality, forward-thinking innovation, and exceptional client satisfaction. By developing scalable, efficient, and user-centric products, we empower businesses to thrive in an ever-evolving digital landscape.
             </p>
@@ -90,9 +92,9 @@
                  'slide-top': featuresInView
                }">
             <div class="col-12 col-sm-6 mb-3 mb-sm-0" *ngFor="let feature of features">
-              <div class="feature-box p-3 rounded bg-light d-flex align-items-center gap-3 h-100">
+              <div class="feature-box p-3 rounded  d-flex align-items-center gap-3 h-100">
                 <div class="icon-box text-primary flex-shrink-0">
-                  <img [src]="feature.img" [alt]="feature.title" class="img-fluid" >
+                  <img [src]="feature.img" [alt]="feature.title" class="img-fluid feature-image " >
                 </div>
                 <div>
                   <h6 class="mb-1 text-dark fw-semibold">{{ feature.title }}</h6>
@@ -130,7 +132,7 @@
               [style.animationDelay]="(i * 0.15) + 's'"
               [style.webkitAnimationDelay]="(i * 0.15) + 's'"
             >
-              <img [src]="offer.img" [alt]="offer.title" class="mb-3" >
+              <img [src]="offer.img" [alt]="offer.title" class="mb-3 offer-image" >
               <h6 class="fw-bold mb-2 text-sec">{{ offer.title }}</h6>
               <p class="text-muted small mb-0 lh-lg text sec">{{ offer.desc }}</p>
             </div>
@@ -163,39 +165,36 @@
   </div>
   <!-- Collaboration Section -->
   <div class="collaborate-section bg-light py-5 rounded-3">
-    <div class="container px-2 px-sm-4 px-md-5">
-      <p class="collaborate-subtitle mb-2">Discover Our Company</p>
-      <h2 class="collaborate-title mt-2 mb-4 fw-bold">
-        How we
-        <span class="collaborate-highlight text-primary fw-bold"
-          >Collaborate</span
-        >
-        with you.
-      </h2>
-      <div class="row g-5">
+  <div class="container px-2 px-sm-4 px-md-5">
+    <p class="text-muted mb-2">Discover Our Company</p>
+    <h2 class="mt-2 mb-4 fw-bold">
+      How we
+      <span class="text-primary fw-bold">Collaborate</span>
+      with you.
+    </h2>
+ 
+    <div class="row g-4">
+      <div
+        class="col-12 col-md-4"
+        *ngFor="let c of collaborations; let i = index"
+      >
         <div
-          class="col-12 col-md-4"
-          *ngFor="let c of collaborations; let i = index"
+          class="collaborate-card text-center bg-white border rounded shadow-sm p-4 d-flex flex-column align-items-center h-100"
         >
-          <div
-            class="collaborate-card text-center bg-white border shadow-sm p-4 d-flex flex-column align-items-center w-120 h-100"
-           
-          >
-            <img
-              [src]="c.img"
-              [alt]="c.alt"
-              class="collaborate-icon mb-3"
-              style="width: 56px; height: 56px"
-            />
-            <h5 class="collaborate-card-title text-purple fw-bold mb-2">
-              {{ c.title }}
-            </h5>
-            <p class="collaborate-card-desc w-100 text-dark mb-0">{{ c.desc }}</p>
-          </div>
+          <img
+            [src]="c.img"
+            [alt]="c.alt"
+            class="mb-3"
+            width="56"
+            height="56"
+          />
+          <h5 class="fw-bold text-purple mb-2">{{ c.title }}</h5>
+          <p class="text-dark mb-0">{{ c.desc }}</p>
         </div>
       </div>
     </div>
   </div>
+</div>
   <!-- Collaboration Section End -->
   <!--stats section-->
   <div class="stats-section d-flex align-items-center">
@@ -223,7 +222,7 @@
     <div class="row ms-2 ms-md-5 ms-lg-150">
       <div class="ms-2">
         <p class="collaborate-subtitle mb-2">Our insights</p>
-        <h2 class="collaborate-title mt-2 mb-4">
+        <h2 class="collaborate-title fw-bold mt-2 mb-4">
           Explore our
           <span class="collaborate-highlight text-primary fw-bold">Case Studies</span>
         </h2>
@@ -334,89 +333,49 @@
     </div>
   </div>
 </div>
-<!-- ====== END BLOCK ====== -->
  <!-- Testimonial Section -->
 <section class="testimonial-section py-4">
   <div class="container">
     <p class="mb-2 text-secondary fw-semibold">Testimonial</p>
-    <h2 class="fw-bold mb-4" style="font-size: 2.2rem">
-      Real Stories, Real Results
-    </h2>
+    <h2 class="fw-bold mb-4 fs-2">Real Stories, Real Results</h2>
  
-    <!-- Wrapper for sliding on mobile -->
-    <div class="testimonial-wrapper d-flex d-md-none overflow-auto">
-      <div
-        class="testimonial-card flex-shrink-0 me-3"
-        *ngFor="let t of testimonials; let i = index"
-      >
-        <div
-          class="bg-white border border-1 rounded-1 shadow-sm px-3 py-2 h-100 position-relative d-flex flex-column "
-          style="height: 40px; width: 280px"
-        >
+    <!-- Mobile slider -->
+    <div class="testimonial-wrapper d-flex d-md-none overflow-auto pb-2">
+      <div class="testimonial-card flex-shrink-0 me-3" *ngFor="let t of testimonials">
+        <div class="bg-white border rounded shadow-sm p-3 d-flex flex-column h-100 card-hover" style="width: 280px;">
           <div class="d-flex align-items-center mb-2 mt-5">
-            <img
-              [src]="t.img"
-              [alt]="t.name"
-              class="rounded-circle me-4"
-              style="width: 80px; height: 80px; object-fit: cover"
-            />
-            <div>
-              <div class="fw-bold">{{ t.name }}</div>
-              <div class="text-secondary small">{{ t.role }}</div>
-              <div class="mt-0">
-                <span
-                  class="text-warning"
-                  *ngFor="let star of [].constructor(t.rating)"
-                  >&#9733;</span
-                >
-                <span
-                  class="text-muted"
-                  *ngFor="let star of [].constructor(5 - t.rating)"
-                  >&#9734;</span
-                >
-              </div>
-            </div>
-          </div>
-          <p class="mt-4 mb-0 fs-5 lh-lg text-dark flex-grow-1">
-            {{ t.text }}
-          </p>
-        </div>
-      </div>
-    </div>
- 
-    <!-- Desktop grid (unchanged) -->
-    <div class="row gx-2 gy-3 d-none d-md-flex">
-      <div class="col-12 col-md-6" *ngFor="let t of testimonials">
-        <div
-          class="bg-white border border-1 rounded-1 shadow-sm px-3 py-4 h-100 position-relative d-flex flex-column"
-          style="min-height: 340px"
-        >
-          <div class="d-flex align-items-center mb-2 mt-5">
-            <img
-              [src]="t.img"
-              [alt]="t.name"
-              class="rounded-circle me-4"
-              style="width: 80px; height: 80px; object-fit: cover"
-            />
+            <img [src]="t.img" [alt]="t.name" class="rounded-circle me-4" width="80" height="80" />
             <div>
               <div class="fw-bold">{{ t.name }}</div>
               <div class="text-secondary small">{{ t.role }}</div>
               <div class="mt-1">
-                <span
-                  class="text-warning"
-                  *ngFor="let star of [].constructor(t.rating)"
-                  >&#9733;</span
-                >
-                <span
-                  class="text-muted"
-                  *ngFor="let star of [].constructor(5 - t.rating)"
-                  >&#9734;</span
-                >
+                <span class="text-warning" *ngFor="let star of [].constructor(t.rating)">&#9733;</span>
+                <span class="text-muted" *ngFor="let star of [].constructor(5 - t.rating)">&#9734;</span>
               </div>
             </div>
           </div>
-          <img src="/assets/home/testimonials/vector1.svg" alt="Quote" class="quote1" />
-          <img src="/assets/home/testimonials/vector2.svg" alt="Quote" class="quote2" />
+          <p class="mt-4 mb-0 fs-5 lh-lg text-dark flex-grow-1">{{ t.text }}</p>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- Desktop grid -->
+    <div class="row gx-2 gy-3 d-none d-md-flex">
+      <div class="col-12 col-md-6" *ngFor="let t of testimonials">
+        <div class="bg-white border rounded shadow-sm p-4 d-flex flex-column position-relative h-100 card-hover" style="min-height: 340px;">
+          <div class="d-flex align-items-center mb-2 mt-5">
+            <img [src]="t.img" [alt]="t.name" class="rounded-circle me-4" width="80" height="80" />
+            <div>
+              <div class="fw-bold">{{ t.name }}</div>
+              <div class="text-secondary small">{{ t.role }}</div>
+              <div class="mt-1">
+                <span class="text-warning" *ngFor="let star of [].constructor(t.rating)">&#9733;</span>
+                <span class="text-muted" *ngFor="let star of [].constructor(5 - t.rating)">&#9734;</span>
+              </div>
+            </div>
+          </div>
+          <img src="/assets/home/testimonials/vector1.svg" alt="Quote" class="position-absolute top-0 end-0 m-2" width="32" height="32"/>
+          <img src="/assets/home/testimonials/vector2.svg" alt="Quote" class="position-absolute top-0 end-0 me-5 mt-2" width="32" height="32"/>
           <p class="mt-4 mb-0 fs-5 lh-lg text-dark flex-grow-1">{{ t.text }}</p>
         </div>
       </div>

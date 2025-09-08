@@ -2,7 +2,7 @@
   font-family: "Inter", sans-serif;
   min-height: 100vh;
   overflow-x: hidden;
-  // padding-top: 60px;
+  //hero section
   #myCarousel {
     .carousel-item {
       img {
@@ -25,61 +25,50 @@
         transition: all 0.3s ease-in-out;
         text-decoration: none;
       }
-      .btn-1 {
-        border: none;
-        background-color: rgba(239, 122, 19, 1);
-         &:hover {
-        background-color: #ff8c1a;
-        transform: scale(1.05);
-        &:hover {
-    background-color: #ff8c1a;
-    transform: scale(1.05);
-  }
-  // Sparkles container
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 2;
-    background-image: radial-gradient(circle, #fff 0%, transparent 70%);
-    background-size: 4px 4px;
-    background-repeat: repeat;
-    opacity: 0;
-  }
-  &:hover::before {
-    animation: sparkles 1s linear infinite;
-    opacity: 1;
-  }
-  }
-  @keyframes sparkles {
-  0% {
-    background-position: 0% 0%;
-  }
-  25% {
-    background-position: 25% 50%;
-  }
-  50% {
-    background-position: 50% 25%;
-  }
-  75% {
-    background-position: 75% 75%;
-  }
-  100% {
-    background-position: 100% 100%;
-  }
-}
-      }
-      .btn-1:hover {
-  background: #ff8c1a; /* lighter orange */
-  color: #fff;
-  box-shadow: 0 6px 20px rgba(247, 115, 0, 0.6);
-  transform: translateY(-2px) scale(1.05); /* slight lift */
-    }
       .btn-2:hover {
-        background-color: #fff;
-        color: #000;
-      }
+        background-color: #ffff;
+          transform: scale(1.05);
+          color: black !important; 
+        }
+.btn-1 {
+  position: relative;
+  background-color: rgba(239, 122, 19, 1);
+  border: none;
+  overflow: visible;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.btn-1:hover {
+ background-color: #ff8c1a;
+  transform: scale(1.05);
+ 
+}
+/* Sparkles hidden by default */
+.sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, #f1efe8 0%, transparent 70%); /* golden sparkle ✨ */
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* When button is hovered → sparkles animate */
+.btn-1:hover .sparkle {
+  animation: twinkle 1.5s infinite;
+}
+
+/* Random sparkle positions around button */
+.sparkle:nth-child(2) { top: -10px; left: 20%; animation-delay: 0s; }
+.sparkle:nth-child(3) { top: 50%; left: -12px; animation-delay: 0.3s; }
+.sparkle:nth-child(4) { top: 100%; left: 30%; animation-delay: 0.6s; }
+.sparkle:nth-child(5) { top: 20%; right: -12px; animation-delay: 0.9s; }
+.sparkle:nth-child(6) { bottom: -10px; right: 25%; animation-delay: 1.2s; }
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
     }
     .carousel-control-prev,
     .carousel-control-next {
@@ -106,6 +95,7 @@
     }
   }
 }
+//logo slider
 .logo-section {
   background: linear-gradient(90deg, #360060 0%, #5F3481 104.75%);
   padding: 15px 0;
@@ -195,18 +185,22 @@
     overflow: auto;
     padding-top: 3rem;
     padding-bottom: 3rem;
+  
   }
- 
+    .feature-image{
+      height:50px;
+      width:50px;
+      background-color: #fff;
+      background-size: cover;
+    }
   .image-wrapper {
     position: relative;
     width: 100%;
     height: auto;
- 
     @media (min-width: 992px) {
       width: 420px;
       height: 436px;
     }
- 
     .main-image {
       width: 100%;
       height: auto;
@@ -217,7 +211,6 @@
       z-index: 2;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
- 
     .ellipse-shape {
       max-width: 100%;
       height: auto;
@@ -234,10 +227,8 @@
       }
     }
   }
- 
   .move-right {
     margin-left: 0;
- 
     @media (min-width: 992px) {
       margin-left: 90px;
     }
@@ -261,6 +252,10 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
       border: none;
     }
+  }
+  .offer-image{
+    height: 60px;
+    width: 60px;
   }
   .whatWeOffer-section {
     margin-bottom: 6rem;
@@ -311,8 +306,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
- 
+} 
 .arrow-btn {
   background: #ff6600;
   width: 35px;
@@ -346,11 +340,9 @@
   position: relative;
   overflow: hidden;
 }
- 
 .industries-img {
   transition: transform 0.5s ease;
 }
- 
 .industries-card:hover .industries-img {
   transform: scale(2.05);
 }
@@ -358,9 +350,7 @@
 .whatWeOffer-section .bg-white:hover h6,
 .whatWeOffer-section .bg-white:hover p {
   color: #fff !important;
-}
-//font, color, and weight for "What we offer" and "Industries we serve" cards
- 
+} 
 //animation code for what we offer and whom we serve
 .slide-top {
   animation: slide-top 1.5s cubic-bezier(0.23, 1, 0.32, 1) both;
@@ -403,8 +393,7 @@
 @keyframes slide-left {
   0% { transform: translateX(-100px); opacity: 0; }
   100% { transform: translateX(0); opacity: 1; }
-}
- 
+} 
 .pre-slide-right {
   opacity: 0;
   transform: translateX(100px);
@@ -419,31 +408,31 @@
 }
 //section 3 end of (what we offer and industries we serve)
 //Collaboration Section
- 
- 
-.collaborate-highlight {
-  color: #468bd5;
- 
-}
+// .collaborate-highlight {
+//   color: #468bd5;
+// }
 .text-purple {
   color: #3d008d;
 }
 .collaborate-card {
-  border-radius: 0;
-  border: 1px solid #e4d6c3;
-  transition: box-shadow 0.2s;
+   transition: all 0.2s ease-in-out;
 }
 .collaborate-card:hover {
+  background-color: #372399 !important;
+  color: #fff !important;
   box-shadow: 0 4px 24px rgba(70, 139, 213, 0.12);
+}
+.collaborate-card:hover h5,
+.collaborate-card:hover p {
+  color: #fff !important;
 }
 @media (max-width: 991px) {
   .collaborate-card {
     min-height: 200px;
   }
-}
- 
+} 
 @media (max-width: 767px) {
- 
+
   .collaborate-section {
     padding-top: 2rem;
     padding-bottom: 2rem;
@@ -519,18 +508,15 @@
   cursor: pointer;
   transition: background-color 0.3s;
 }
- 
 .dot.active {
   background-color: #f77300;
 }
- 
 //insights end
 //testimonial section
 .testimonial-section {
   background: url("/assets/homepage/footer/abstract-backdrop-with-colorful-wave-gradient-lines-white-background-modern-technology-background-wave-design-vector-illustration 4.png")
       no-repeat center/120% auto,
     url("/assets/homepage/footer/315788 4.png") no-repeat center/cover, #f6f4fd;
-  position: relative;
  
 }
 .testimonial-section .card,
@@ -540,12 +526,9 @@
   border-color: #e0e0e0 !important;
   margin: 0 !important;
 }
- 
- 
 // Testimonial cards
 .testimonial-section .bg-white:hover {
   background: #372399 !important;
-  color: #fff !important;
   transition: background 0.2s, color 0.2s;
 }
 .testimonial-section .bg-white:hover .fw-bold,
@@ -557,12 +540,10 @@
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   padding-bottom: 10px;
- 
   .testimonial-card {
     scroll-snap-align: start;
   }
 }
- 
 .quote1 {
   position: absolute;
   top: 24px;

@@ -20,17 +20,17 @@ export class ItCommonComponent {
   public whatMainHeader = 'IT Consulting';
   public whatDescription =
     'Leverage the knowledge of seasoned IT professionals who guide you from strategy to execution solution design, implementation, and issue resolution all handled by specialists.';
-  public heroImage = 'assets/services/it-Consulting/it-consulting-hero-c.png';
-  public smallImage = 'assets/services/It_telecommunications/It_consulting_hero.jpg';
+  public heroImage = 'assets/services/it-consulting-page/it-consulting-hero.jpg';
+  public smallImage = 'assets/services/it-consulting-page/it-consulting-hero.jpg';
 
   // Section 2
   public whyHeader = 'Unlocking Growth Through IT Expertise';
   public whyList!: any[];
   public images = [
-    'assets/services/It_telecommunications/icon-1.png',
-    'assets/services/it-Consulting/Icon-1.png',
-    'assets/services/it-Consulting/icon-1-c.svg',
-    'assets/services/It_telecommunications/icon-4.png',
+    'assets/services/it-consulting-page/icon-1.png',
+    'assets/services/it-consulting-page/icon-2.png',
+    'assets/services/it-consulting-page/icon-3.png',
+    'assets/services/it-consulting-page/icon-4.png',
   ];
   ngOnInit() {
     this.whyList = [
@@ -69,17 +69,17 @@ export class ItCommonComponent {
   ];
   teamImages = {
     left: {
-      src: 'assets/services/it-Consulting/team-1.png',
+      src: 'assets/services/it-consulting-page/team-1.png',
       alt: 'Team 1',
     },
     right: [
       {
-        src: 'assets/services/it-Consulting/team-2.png',
+        src: 'assets/services/it-consulting-page/team-2.png',
         alt: 'Team 2',
         extraClass: 'mb-3',
       },
       {
-        src: 'assets/services/it-Consulting/team-3.png',
+        src: 'assets/services/it-consulting-page/team-3.png',
         alt: 'Team 3',
       },
     ],
@@ -91,15 +91,15 @@ export class ItCommonComponent {
   softwareCards = [
     {
       title: 'IT Assessment',
-      image: 'assets/services/it-Consulting/it-Assessment-c.jpg',
+      image: 'assets/services/it-consulting-page/it-assessment.jpg',
     },
     {
       title: 'IT Design Consulting',
-      image: 'assets/services/it-Consulting/it-design-c.png',
+      image: 'assets/services/it-consulting-page/it-design-figmac.png',
     },
     {
       title: 'IT Infrastructure Consulting',
-      image: 'assets/services/it-Consulting/It-Infrastructure-c.png',
+      image: 'assets/services/it-consulting-page/it-infra.jpg',
     },
   ];
 }
