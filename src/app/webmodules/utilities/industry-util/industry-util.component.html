@@ -58,7 +58,7 @@
               </div>
               <h5 class="industry-card-title mt-4 mb-2">{{ card.title }}</h5>
               <p class="industry-card-desc mb-3">{{ card.description }}</p>
-              <a href="{{ card.link }}" class="industry-card-link">
+              <a [routerLink]=" card.link " class="industry-card-link">
                 Read More <span class="industry-card-link-arrow">&gt;&gt;</span>
               </a>
             </div>

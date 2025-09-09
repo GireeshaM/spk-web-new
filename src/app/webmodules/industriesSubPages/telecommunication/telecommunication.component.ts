@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IndustrySubUtilComponent } from '../../utilities/industry-sub-util/industry-sub-util.component';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
  
 @Component({
   selector: 'app-telecommunication',
@@ -10,13 +11,15 @@ import { CommonModule } from '@angular/common';
 })
 export class TelecommunicationComponent {
   public currentSection = 'dataPrivacy';
-  public  dataPrivacy = {
+    constructor(private route: ActivatedRoute) {}
+  public sections={
+    dataPrivacy : {
     heroImage: '/assets/industries/healthcareIndustry.png',
     heroHeading: 'Why Data Privacy is Telecom’s Biggest Challenge',
     subHeading: 'Customer trust begins with secure communication.',
     introText:
       'Telecom networks connect people, businesses, and governments every second. With this connectivity comes the responsibility of handling huge volumes of personal data from call logs to browsing activity. Cybercriminals see this data as gold, and a single breach can affect millions of users at once. The challenge for telecom providers is not just offering high-speed services but also protecting every piece of information that flows through their systems. Building stronger encryption, monitoring threats in real time, and educating users are now critical for protecting digital trust.',
-    healthcarePoints: [
+    points: [
       {
         title:
           'From Calls to Clouds Safeguarding User Data in Telecommunications',
@@ -39,12 +42,10 @@ export class TelecommunicationComponent {
           'From wearable health trackers to connected cars, IoT devices generate massive amounts of personal data every second. Each device, if left unsecured, can act as a backdoor for hackers. In telecom and IT environments, where billions of devices share information simultaneously, the risk multiplies. Strong authentication, secure coding, and timely updates are essential to prevent misuse. As IoT continues to grow, protecting data privacy will be the key to ensuring users can trust the smart devices around them.',
       },
     ],
-  };
- 
-public  automation = {
+  },
+  automation : {
     heroImage: '/assets/industries/automation.png',
-    heroHeading:
-      'How can automation reshape patient care and medical innovation?',
+    heroHeading:'How can automation reshape patient care and medical innovation?',
     subHeading: 'Intelligent Automation in Healthcare & Life Sciences',
     introText: '',
     points: [
@@ -72,9 +73,8 @@ public  automation = {
           'For IT companies, Automation is powerful, but it cannot replace human empathy. The best customer experiences happen when automated tools handle repetitive tasks while humans focus on complex or sensitive issues. In telecom and IT, this balance ensures customers enjoy both instant updates and meaningful personal support. Rather than replacing people, automation works best when it enhances human connection, making service both fast and thoughtful. is more than efficiency — it’s about building reliable systems. Automated notifications, status updates, and ticket handling ensure that both employees and customers stay informed at all times. This minimizes downtime, reduces manual errors, and creates a smoother workflow. By adopting automation, IT services can deliver high-quality support while focusing their teams on innovation and problem-solving. companies deal with millions of customer requests every day — from billing notifications to service upgrades. Automation helps manage this scale by responding instantly to routine queries, sending timely updates, and even predicting customer needs. This reduces the burden on support teams and allows them to focus on solving complex issues. With automation, telecom providers not only cut costs but also deliver faster, more reliable services that customers can trust.',
       },
     ],
-  };
- 
-public  infrastructure = {
+  },
+  infrastructure : {
   heroImage: '/assets/industries/infrastructure.png',
   heroHeading: 'What Makes Strong Infrastructure the Backbone of IT and Telecom?',
   subHeading: ' Understanding why reliable systems keep businesses connected.',
@@ -111,9 +111,8 @@ public  infrastructure = {
         'Infrastructure today is designed not just to support but to anticipate business needs. Smart infrastructure uses automation, AI monitoring, and predictive analytics to reduce downtime and enhance security. With these advancements, businesses can scale confidently, adapt quickly, and provide better experiences for users worldwide.',
     },
   ],
-};
- 
-  public managedSolutions = {
+},
+   managedSolutions : {
   heroImage: '/assets/industries/managed-solutions.png',
   heroHeading: 'Why Choose Managed Solutions for Your Business?',
   subHeading: 'Unlock productivity with dependable IT services.',
@@ -155,5 +154,17 @@ public  infrastructure = {
         'Your IT should drive growth, not slow it down. SprintPark’s Managed Solutions handle complex tasks like data storage, cybersecurity, and device management, freeing your team to innovate and move faster.',
     }
   ],
-};
+  }
+  }
+  ngOnInit() {
+  this.route.paramMap.subscribe(params => {
+    const section = params.get('section');
+    if (section && this.sections[section as keyof typeof this.sections]) {
+      this.currentSection = section;
+    }
+  });
+}
+ get sectionData() {
+  return this.sections[this.currentSection as keyof typeof this.sections];
+}
 }

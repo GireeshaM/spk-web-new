@@ -10,8 +10,17 @@ import { ItCommonComponent } from './webmodules/itConsulting/it-common/it-common
 import { ProjectManagementComponent } from './webmodules/project-management/project-management.component';
 import { IndustrySubUtilComponent } from './webmodules/utilities/industry-sub-util/industry-sub-util.component';
 import { TelecommunicationComponent } from './webmodules/industriesSubPages/telecommunication/telecommunication.component';
-import { GovernmentComponent } from './webmodules/industriesSubPages/government/government.component';
 import { SoftwareServiceUtilComponent } from './webmodules/software-service-util/software-service-util.component';
+import { BankingComponent } from './webmodules/industries/banking/banking.component';
+import { EducationComponent } from './webmodules/industries/education/education.component';
+import { GovtComponent } from './webmodules/industries/govt/govt.component';
+import { HealthCareComponent } from './webmodules/industries/health-care/health-care.component';
+import { ManufacturingComponent } from './webmodules/industries/manufacturing/manufacturing.component';
+import { TransportationComponent } from './webmodules/industries/transportation/transportation.component';
+import { staffingComponent } from './webmodules/staffing/staffing.component';
+import { transportComponent } from './webmodules/industriesSubPages/transport/transport.component';
+import { GovernmentComponent } from './webmodules/industriesSubPages/government/government.component';
+import { HealthcareComponent } from './webmodules/industriesSubPages/healthcare/healthcare.component';
 
 export const routes: Routes = [
   {
@@ -23,15 +32,7 @@ export const routes: Routes = [
     path: 'insights',
     component: InsightsComponent,
   },
-  {
-    path: 'telecommunications',
-    component: TeleCommunicationsComponent,
-    data: { footerColor: '#f7f7fc' },
-  },
-  {
-    path: 'insights',
-    component: InsightsComponent,
-  },
+  
   {
     path: 'industry-util',
     component: IndustryUtilComponent,
@@ -56,15 +57,74 @@ export const routes: Routes = [
     data: { footerColor: 'rgba(29, 6, 99, 1)' },
   },
   {
-    path: 'project-management',
+    path: 'projectManagement',
     component: ProjectManagementComponent,
+    data: { footerColor: 'rgba(29, 6, 99, 1)' },
   },
   {
     path: 'industry-sub-util',
-    component: TelecommunicationComponent,
+    component: IndustrySubUtilComponent,
+  },
+  {
+    path:'staffing',
+    component:staffingComponent,
+    data: { footerColor: 'rgba(29, 6, 99, 1)' },
+  },
+   {
+    path: 'telecommunications',
+    component: TeleCommunicationsComponent,
+    data: { footerColor: '#f7f7fc' },
   },
   {
     path: 'government',
-    component:GovernmentComponent,
-  }
+    component:GovtComponent,
+    data: { footerColor: '#f7f7fc' },
+  },
+  {
+    path:'banking',
+    component:BankingComponent,
+    data: { footerColor: '#f7f7fc' },
+  },
+  {
+    path:'education',
+    component:EducationComponent,
+    data: { footerColor: '#f7f7fc' },
+  },
+  {
+    path:'healthCareAndLifeSciences',
+    component:HealthCareComponent,
+    data: { footerColor: '#f7f7fc' },
+  },
+  {
+    path:'manufacturing',
+    component:ManufacturingComponent,
+    data: { footerColor: '#f7f7fc' },
+  },
+  {
+    path:'transportationAndLogistics',
+    component:TransportationComponent,
+    data: { footerColor: '#f7f7fc' },
+  },
+  //Industries subPages
+  {
+    path: 'telecommunication/:section',
+    component: TelecommunicationComponent
+  },
+  {
+    path:'government/:section',
+    component:GovernmentComponent
+  },
+  {
+    path:'health-care/:section',
+    component:HealthcareComponent
+  },
+  {
+    path:'transport/:section',
+    component:transportComponent
+  },
+  // {
+  //   path:'manufacturing/:section',
+  //   component:ManufacturingComponent
+  // },
+
 ];

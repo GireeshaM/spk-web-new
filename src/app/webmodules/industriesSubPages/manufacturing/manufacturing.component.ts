@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IndustrySubUtilComponent } from '../../utilities/industry-sub-util/industry-sub-util.component';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
  
 @Component({
   selector: 'app-manufacturing',
@@ -10,8 +11,9 @@ import { CommonModule } from '@angular/common';
 })
 export class ManufacturingComponent {
 public currentSection = 'salesforceIntegration';
- 
-  public salesforceIntegration = {
+  constructor(private route: ActivatedRoute) {}
+  public sections={
+   salesforceIntegration : {
     heroImage: '/assets/industries/manufacturing/salesforceIntegration.png',
     heroHeading: 'How Can Salesforce Integration Transform Manufacturing Operations?',
     subHeading: 'Connecting systems to streamline workflows and enhance decision-making.',
@@ -33,9 +35,8 @@ public currentSection = 'salesforceIntegration';
       { title: 'Better Customer Experience',
          description: 'By connecting service, sales, and product data, Salesforce enables proactive engagement. Manufacturers can anticipate customer needs, offer faster support, and build long-term loyalty.' },
     ],
-  };
- 
-  public  dataAnalytics = {
+  },
+    dataAnalytics : {
     heroImage: '/assets/industries/manufacturing/dataAnalytics.png',
     heroHeading: 'How Can Advanced Data Analytics Revolutionize Manufacturing?',
     subHeading: 'Unlocking insights to optimize production, reduce costs, and improve decision-making.',
@@ -57,9 +58,9 @@ public currentSection = 'salesforceIntegration';
       { title: 'Faster and Smarter Decision-Making',
          description: 'With advanced dashboards and AI-driven insights, executives can make data-backed decisions quickly. This agility strengthens competitiveness and helps organizations adapt to changing market needs.' },
     ],
-  };
+  },
  
-  public projectManagement = {
+   projectManagement : {
     heroImage: '/assets/industries/manufacturing/projectManagement.png',
     heroHeading: 'How Can Expert Project Management Drive Manufacturing Success?',
     subHeading: 'Delivering efficiency, innovation, and reliability through structured execution.',
@@ -83,8 +84,8 @@ public currentSection = 'salesforceIntegration';
       { title: 'Continuous Improvement for Future Projects',
          description: 'Post-project evaluations help identify lessons learned, fostering a culture of innovation and continuous improvement for upcoming manufacturing projects.' },
     ],
-  };
-   public ITConsulting = {
+  },
+    ITConsulting : {
     heroImage: 'assets/industries/manufacturing/projectManagement.png',
     heroHeading: 'How Can Strategic IT Consulting Transform Manufacturing?',
     subHeading: 'Driving digital transformation, operational efficiency, and innovation.',
@@ -127,5 +128,17 @@ public currentSection = 'salesforceIntegration';
           'Future-focused IT strategies ensure systems can adapt to new challenges, market shifts, and technological advancements while maintaining long-term scalability.',
       },
     ],
-  };
+  }
+}
+   ngOnInit() {
+  this.route.paramMap.subscribe(params => {
+    const section = params.get('section');
+    if (section && this.sections[section as keyof typeof this.sections]) {
+      this.currentSection = section;
+    }
+  });
+}
+get sectionData() {
+    return this.sections[this.currentSection as keyof typeof this.sections];
+  }
 }

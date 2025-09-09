@@ -1,11 +1,44 @@
 import { Component } from '@angular/core';
+import { IndustryUtilComponent } from '../../utilities/industry-util/industry-util.component';
 
 @Component({
   selector: 'app-manufacturing',
-  imports: [],
+  imports: [IndustryUtilComponent],
   templateUrl: './manufacturing.component.html',
   styleUrl: './manufacturing.component.scss'
 })
 export class ManufacturingComponent {
 
+public headerBg='assets/Industries/wave.svg';
+public itHeader='Transforming Manufacturing Through Smart Innovation';
+ public itContent="Manufacturing faces global challenges like supplier management and regulations. SprintPark helps you turn these into lasting opportunities, aligning strategies with your strengths and goals.";
+ public subHeading='Driving Innovation in Manufacturing';
+  public  telecom="assets/Industries/TelecomIndustries.png";
+  public  cards=[
+  {
+    img:'assets/Industries/DataPrivacy.png',
+    title:'Salesforce Integration',
+    description:'Implement Salesforce solutions to optimize supply chain, customer relationships, and sales operations for manufacturing efficiency.',
+    link:'/#'
+  },
+  {
+    img:'assets/Industries/Automation.png',
+    title:'Advanced Data Analytics',
+     description:'Leverage data insights for process optimization, predictive maintenance, and improving product quality across your operations.',
+    link:'/#'
+  },
+   {
+    title:'Expert Project Management',
+    img:'assets/Industries/Infrastructure.png',
+     description:'Oversee manufacturing system implementations to ensure projects are delivered on time and meet business objectives.',
+    link:'/#'
+  },
+   {
+    img:'assets/Industries/ManagedSolutions.png',
+    title:'Strategic IT Consulting',
+     description:'Provide guidance on technology integration, Industry 4.0 adoption, automation, IoT, and IT infrastructure enhancements to boost productivity and innovation.',
+    link:'/#'
+  },
+  
+ ]
 }
