@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { IndustryUtilComponent } from '../../utilities/industry-util/industry-util.component';
+import { CommonModule, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-health-care',
-  imports: [IndustryUtilComponent],
+  imports: [IndustryUtilComponent,CommonModule],
   templateUrl: './health-care.component.html',
   styleUrl: './health-care.component.scss'
 })
@@ -18,37 +19,37 @@ public itHeader='Innovative Smart Health Solutions Network';
     img:'assets/Industries/DataPrivacy.png',
     title:'Intelligent Automation',
     description:'Boost operational efficiency and patient care through AI-driven monitoring, diagnostics, personalized medicine, and drug discovery.',
-    link:'/#'
+    link:'/healthcare/intelligentinnovation'
   },
   {
     img:'assets/Industries/Automation.png',
     title:'Connected Infrastructure',
      description:'Design and maintain robust networks and migrate healthcare systems to secure, scalable cloud platforms for seamless access and data management.',
-    link:'/#'
+    link:'/healthcare/connectedInfrastructure'
   },
    {
     title:'Data Security & Compliance',
     img:'assets/Industries/Infrastructure.png',
      description:'Protect patient data and systems with strong security protocols, risk assessments, and adherence to healthcare regulations.',
-    link:'/#'
+    link:'/healthcare/dataSecurity'
   },
    {
     img:'assets/Industries/ManagedSolutions.png',
     title:'Healthcare Project Delivery',
      description:'Manage critical healthcare IT projects—like EHR implementations and system upgrades—ensuring timely and successful delivery.',
-    link:'/#'
+    link:'/healthcare/projectDelivery'
   },
    {
     img:'assets/Industries/ManagedSolutions.png',
     title:'Expert Talent Solutions',
      description:'Provide specialized healthcare IT professionals, including analysts, project managers, data scientists, and cybersecurity experts.',
-    link:'/#'
+    link:'/healthcare/talentSolutions'
   },
    {
     img:'assets/Industries/ManagedSolutions.png',
     title:'Patient-Centered Innovation',
      description:'Drive better outcomes by integrating cutting-edge technologies that enhance patient experience, remote care, and personalized treatment plans.',
-    link:'/#'
+    link:'/healthcare/patientInnovation'
   },
   
  ]

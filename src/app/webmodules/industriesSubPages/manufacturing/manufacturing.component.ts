@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './manufacturing.component.html',
   styleUrl: './manufacturing.component.scss'
 })
-export class ManufacturingComponent {
+export class ManufacturingIComponent {
 public currentSection = 'salesforceIntegration';
   constructor(private route: ActivatedRoute) {}
   public sections={

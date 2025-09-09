@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IndustrySubUtilComponent } from '../../utilities/industry-sub-util/industry-sub-util.component';
+import { ActivatedRoute } from '@angular/router';
  
 @Component({
   selector: 'app-transport',
@@ -11,7 +12,9 @@ import { IndustrySubUtilComponent } from '../../utilities/industry-sub-util/indu
 })
 export class transportComponent {
   public currentSection = 'itConsulting';
- public itConsulting = {
+ constructor(private route: ActivatedRoute) {}
+  public sections={
+  itConsulting : {
    heroImage: '/assets/industries/healthcareIndustry.png',
     heroHeading: 'How Can IT Consulting & Digital Solutions Transform Transportation & Logistics?',
     subHeading: 'Driving efficiency, transparency, and smarter decision-making through digital innovation.',
@@ -28,9 +31,9 @@ export class transportComponent {
       { title: 'Last-Mile Delivery Innovation', description: 'AI-driven planning and smart lockers improve transparency, timeliness, and service quality.' },
       { title: 'Scalability & Future-Readiness', description: 'Builds infrastructures that adapt to growth, leveraging AI and blockchain for resilience.' },
     ],
-  };
+  },
  
-  public networkEngineering = {
+   networkEngineering :{
     heroImage: '/assets/industries/transportIndustry.png',
     heroHeading: 'How Can Network Engineering & Connectivity Revolutionize Transportation & Logistics?',
     subHeading: 'Building reliable, secure, and high-speed networks to keep transportation systems connected and efficient.',
@@ -46,8 +49,8 @@ export class transportComponent {
       { title: 'Warehouse & Hub Connectivity', description: 'Strong internal networks help automation tools like robotic systems and inventory trackers.' },
       { title: 'Scalability for Future Growth', description: 'Ensures logistics systems can adapt to new technologies and business expansion.' },
     ],
-  };
-  public salesforceAI = {
+  },
+   salesforceAI :{
     heroImage: '/assets/industries/transportIndustry.png',
     heroHeading: 'How Can Salesforce & AI Automations Transform Transportation and Logistics?',
     subHeading: 'Streamlining logistics operations with intelligent automation and customer-focused Salesforce solutions.',
@@ -65,6 +68,18 @@ export class transportComponent {
       { title: 'Automated Compliance & Documentation', description: 'Salesforce workflows combined with AI generate, validate, and manage shipping documents, ensuring adherence to regulations.' },
       { title: 'Data-Driven Business Insights', description: 'With Salesforce dashboards powered by AI, logistics companies gain insights into customer behavior, fleet efficiency, and revenue patterns for smarter decisions.' },
     ],
-  };
+  },
+}
+  ngOnInit() {
+  this.route.paramMap.subscribe(params => {
+    const section = params.get('section');
+    if (section && this.sections[section as keyof typeof this.sections]) {
+      this.currentSection = section;
+    }
+  });
+}
+ get sectionData() {
+  return this.sections[this.currentSection as keyof typeof this.sections];
+}
 }
  

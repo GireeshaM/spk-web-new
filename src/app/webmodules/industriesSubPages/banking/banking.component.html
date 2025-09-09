@@ -1,41 +1,8 @@
-<!-- BigData -->
 <app-industry-sub-util
-  *ngIf="currentSection === 'BigData'"
-  [heroImage]="BigData.heroImage"
-  [heroHeading]="BigData.heroHeading"
-  [subHeading]="BigData.subHeading"
-  [introText]="BigData.introText"
-  [points]="BigData.healthcarePoints"
->
+  *ngIf="sectionData"
+  [heroImage]="sectionData.heroImage"
+  [heroHeading]="sectionData.heroHeading"
+  [subHeading]="sectionData.subHeading"
+  [introText]="sectionData.introText"
+  [points]="sectionData.points">
 </app-industry-sub-util>
-<!-- Cybersecurity -->
-<app-industry-sub-util
-  *ngIf="currentSection === 'Cybersecurity'"
-  [heroImage]="Cybersecurity.heroImage"
-  [heroHeading]="Cybersecurity.heroHeading"
-  [subHeading]="Cybersecurity.subHeading"
-  [introText]="Cybersecurity.introText"
-  [points]="Cybersecurity.points"
->
-</app-industry-sub-util>
-<!-- ProjectManagement -->
-<app-industry-sub-util
-  *ngIf="currentSection === 'ProjectManagement'"
-  [heroImage]="ProjectManagement.heroImage"
-  [heroHeading]="ProjectManagement.heroHeading"
-  [subHeading]="ProjectManagement.subHeading"
-  [introText]="ProjectManagement.introText"
-  [points]="ProjectManagement.points"
->
-</app-industry-sub-util>
-<!-- AI -->
-<app-industry-sub-util
-  *ngIf="currentSection === 'AI'"
-  [heroImage]="AI.heroImage"
-  [heroHeading]="AI.heroHeading"
-  [subHeading]="AI.subHeading"
-  [introText]="AI.introText"
-  [points]="AI.points"
->
-</app-industry-sub-util>
-

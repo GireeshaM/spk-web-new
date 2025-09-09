@@ -19,19 +19,19 @@ public itHeader='Transportation & Logistics: Innovate and Thrive';
     img:'assets/Industries/DataPrivacy.png',
     title:'IT Consulting & Digital Solutions',
     description:'We provide tailored digital strategies like TMS, route optimization, and real-time tracking to improve your operations.',
-    link:'/#'
+    link:'/transport/itConsulting'
   },
   {
     img:'assets/Industries/Automation.png',
     title:'Network Engineering & Connectivity',
      description:'We build and maintain networks for smooth data flow, GPS tracking, and reliable vehicle communication.',
-    link:'/#'
+    link:'/transport/networkEngineering'
   },
    {
     title:'Salesforce & AI Automation',
     img:'assets/Industries/Infrastructure.png',
      description:'We customize Salesforce for customer management and use AI for route planning, maintenance, forecasting, and chatbots.',
-    link:'/#'
+    link:'/transport/salesforceAI'
   },
   
   

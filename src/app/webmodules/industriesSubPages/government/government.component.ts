@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IndustrySubUtilComponent } from '../../utilities/industry-sub-util/industry-sub-util.component';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-government',
@@ -10,8 +11,10 @@ import { CommonModule } from '@angular/common';
 })
 export class GovernmentComponent {
 public currentSection = 'StrategicRiskAndResilence';
+constructor(private route: ActivatedRoute) {}
+public sections={
 // StrategicRiskAndResilence
-public  StrategicRiskAndResilence = {
+  StrategicRiskAndResilence : {
     heroImage: '/assets/industries/healthcareIndustry.png',
     heroHeading: 'How Can Risk Management Safeguard Public Trust?',
     subHeading: 'Identifying, assessing, and mitigating risks to ensure stability and reliable services.',
@@ -52,9 +55,9 @@ public  StrategicRiskAndResilence = {
           'Effective risk management minimizes disruptions and ensures resources are directed where they are needed most. It supports smooth service delivery and strengthens trust among citizens.',
       },
     ],
-  };
+  },
   // SmartItManagedsolutions
-  public SmartItManagedsolutions = {
+   SmartItManagedsolutions : {
     heroImage: '/assets/industries/automation.png',
     heroHeading: 'How Can IT Consulting Transform Government Operations?',
     subHeading: 'Enhancing Collaboration and Efficiency in Public Sector Agencies',
@@ -93,9 +96,9 @@ public  StrategicRiskAndResilence = {
           'IT consultants bring emerging technologies like Artificial Intelligence, Machine Learning, and Data Analytics to government processes. These innovations help predict citizen needs, identify patterns in service delivery, and build smarter governance models.',
       },
     ],
-  };
+  },
   // ProjectManagementExcellence
-   public ProjectManagementExcellence = {
+    ProjectManagementExcellence: {
     heroImage: '/assets/industries/healthcareIndustry.png',
     heroHeading: 'How Does Project Management Drive Development',
     subHeading: 'Turning plans into impactful results',
@@ -144,9 +147,9 @@ public  StrategicRiskAndResilence = {
           'Effective project management allows governments to achieve development goals faster. It helps maintain quality, manage risks, and optimize resource utilization.',
       },
     ],
-  };
+  },
 // DataAnalytics
-  public DataAnalytics = {
+   DataAnalytics: {
   heroImage: '/assets/industries/dataAnalytics.png',
   heroHeading: 'How Can Data Analytics Transform Public Services?',
   subHeading: 'Unlocking insights to drive smarter governance and citizen trust.',
@@ -178,9 +181,9 @@ public  StrategicRiskAndResilence = {
         'When policymakers rely on analytics, their strategies become more realistic and impactful. Data helps identify societal gaps, measure policy effectiveness, and evaluate whether objectives are being met. For example, analyzing employment trends helps shape labor policies, while agricultural data can guide subsidies and support programs for farmers. By continuously monitoring the impact of policies, adjustments can be made in real-time, ensuring that long-term goals are consistently achieved while serving citizens’ best interests.',
     },
   ],
-  };
+  },
   // TrustedTransformationPartner
-   public TrustedTransformationPartner = {
+    TrustedTransformationPartner: {
     heroImage: '/assets/industries/transformationPartner.png',
     heroHeading: 'How Can a Trusted Transformation Partner Drive Your Growth?',
     subHeading: 'Building long-term success with expertise, innovation, and reliability.',
@@ -212,9 +215,9 @@ public  StrategicRiskAndResilence = {
           'Guiding teams smoothly through transitions. Transformation is not only about technology—it’s also about people. A trusted partner helps organizations manage cultural shifts, employee training, and process adaptation. They provide tools and guidance to minimize resistance, increase adoption, and ensure that employees are empowered rather than overwhelmed by change. This human-centered approach makes transformation smoother and more sustainable.',
       },
     ],
-  };
+  },
 // CitizenEngagementTransparency
-  public CitizenEngagementTransparency = {
+   CitizenEngagementTransparency: {
     heroImage: '/assets/industries/governmentTransparency.png',
     heroHeading: 'How Can Governments Build Stronger Citizen Engagement and Transparency?',
     subHeading: 'Empowering Citizens Through Open Communication and Trust',
@@ -251,6 +254,17 @@ public  StrategicRiskAndResilence = {
           'Emerging technologies like blockchain, AI, and IoT can improve transparency in processes such as voting, welfare distribution, and procurement. For example, blockchain ensures tamper-proof records, while AI-driven analytics can detect irregularities. Leveraging such technologies builds public trust by ensuring fairness, security, and efficiency.',
       },
     ],
-  };
-
+  }
+}
+ ngOnInit() {
+  this.route.paramMap.subscribe(params => {
+    const section = params.get('section');
+    if (section && this.sections[section as keyof typeof this.sections]) {
+      this.currentSection = section;
+    }
+  });
+}
+ get sectionData() {
+  return this.sections[this.currentSection as keyof typeof this.sections];
+}
 }

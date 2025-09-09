@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IndustrySubUtilComponent } from '../../utilities/industry-sub-util/industry-sub-util.component';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
  
 @Component({
   selector: 'app-healthcare',
@@ -8,10 +9,12 @@ import { CommonModule } from '@angular/common';
   templateUrl: './healthcare.component.html',
   styleUrl: './healthcare.component.scss'
 })
-export class HealthcareComponent {
+export class HealthcareIComponent {
 public currentSection = 'medicalinnovation';
- 
-public medicalinnovation = {
+  constructor(private route: ActivatedRoute) {}
+
+public sections={
+ intelligentinnovation : {
   heroImage: '/assets/industries/healthcare/automation.png',
   heroHeading: 'How can automation reshape patient care and medical innovation?',
   subHeading: 'Intelligent Automation in Healthcare & Life Sciences',
@@ -59,8 +62,8 @@ public medicalinnovation = {
         'Healthcare institutions often face budget constraints while managing growing patient demands. Intelligent automation helps balance this by reducing administrative costs, improving resource allocation, and eliminating operational inefficiencies. Hospitals and research organizations can scale their services without proportionally increasing workforce expenses. This enables them to provide quality care to more patients while staying financially sustainable and resilient in a fast-evolving healthcare landscape.',
     },
   ],
-};
-public HealthCareTransform = {
+},
+ connectedInfrastructure : {
   heroImage: '/assets/industries/healthcare/infrastructure.png',
   heroHeading: 'How Does Connected Infrastructure Transform Healthcare?',
   subHeading: 'Building smarter systems for efficient, secure, and patient-centered care.',
@@ -113,8 +116,8 @@ points: [
         'Connected infrastructure ensures that healthcare organizations remain resilient against disruptions. Whether during pandemics or natural disasters, connected systems support continuity of care and service reliability.',
     },
   ],
-};
-public dataSecurity = {
+},
+ dataSecurity : {
   heroImage: '/assets/industries/healthcare/dataSecurity.png',
   heroHeading: 'Why Is Data Security & Compliance Critical in Healthcare?',
   subHeading: 'Protecting sensitive health information while ensuring trust and regulatory alignment.',
@@ -162,8 +165,8 @@ points: [
         'As technology evolves, so do threats. Building scalable, adaptive, and AI-powered security systems ensures healthcare organizations stay ahead of emerging risks while remaining compliant.',
     },
   ],
-};
-public projectDelivery = {
+},
+ projectDelivery : {
   heroImage: '/assets/industries/healthcareProjectDelivery.png',
   heroHeading: 'How Can Effective Project Delivery Transform Healthcare Services?',
   subHeading: 'Achieving efficiency, innovation, and better patient outcomes through structured project execution.',
@@ -211,8 +214,8 @@ public projectDelivery = {
         'Project completion is only the beginning. Tracking outcomes, gathering feedback, and reviewing processes enable healthcare organizations to keep improving and deliver long-term impact.',
     },
   ],
-};
-public talentSolutions = {
+},
+ talentSolutions : {
   heroImage: '/assets/industries/healthcareTalentSolutions.png',
   heroHeading: 'How Can Expert Talent Solutions Empower the Healthcare Sector?',
   subHeading: 'Building stronger healthcare systems with skilled professionals and specialized expertise.',
@@ -260,8 +263,8 @@ public talentSolutions = {
         'Beyond immediate hiring needs, expert talent solutions focus on retention, upskilling, and career development—ensuring healthcare organizations are prepared for future challenges.',
     },
   ],
-};
-public patientInnovation = {
+},
+ patientInnovation : {
   heroImage: '/assets/industries/healthcarePatientInnovation.png',
   heroHeading: 'How Can Patient-Centered Innovation Transform Healthcare?',
   subHeading: 'Empowering patients through personalized care, technology, and human-centered design.',
@@ -309,5 +312,17 @@ public patientInnovation = {
         'By using patient surveys, real-time feedback systems, and experience-driven insights, healthcare organizations can refine services and innovate in line with patient needs.',
     },
   ],
-}; 
+}, 
+}
+  ngOnInit() {
+  this.route.paramMap.subscribe(params => {
+    const section = params.get('section');
+    if (section && this.sections[section as keyof typeof this.sections]) {
+      this.currentSection = section;
+    }
+  });
+}
+ get sectionData() {
+  return this.sections[this.currentSection as keyof typeof this.sections];
+}
 }

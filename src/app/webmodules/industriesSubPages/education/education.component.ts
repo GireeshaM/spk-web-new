@@ -1,20 +1,25 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { IndustrySubUtilComponent } from '../../utilities/industry-sub-util/industry-sub-util.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-education',
-  imports: [],
+  imports: [IndustrySubUtilComponent,CommonModule],
   templateUrl: './education.component.html',
   styleUrl: './education.component.scss'
 })
-export class EducationComponent {
+export class EducationIComponent {
 public currentSection = 'NetworkingEngineering';
+ constructor(private route: ActivatedRoute) {}
+public sections={
 //NetworkingEngineering
-public networkingEngineering = {
+ networkingEngineering: {
   heroImage: '/assets/industries/educationNetworking.png',
   heroHeading: 'How Can Networking Engineering Transform Modern Education?',
   subHeading: 'Building connected campuses with reliable, secure, and scalable networks.',
   introText: '',
-  healthcarePoints: [
+  points: [
     {
       title: 'Reliable Campus Connectivity',
       description:
@@ -56,14 +61,14 @@ public networkingEngineering = {
         'Optimized network designs reduce downtime, minimize maintenance costs, and extend infrastructure lifespan, allowing institutions to focus resources on educational priorities.',
     },
   ],
-};
+},
 //EducationProjectManagement
-public educationProjectManagement = {
+ educationProjectManagement: {
   heroImage: '/assets/industries/educationProject.png',
   heroHeading: 'How Can Project Management Drive Success in Education?',
   subHeading: 'Ensuring efficiency, accountability, and timely delivery of educational initiatives.',
   introText: '',
-  healthcarePoints: [
+  points: [
     {
       title: 'Streamlined Academic Program Implementation',
       description:
@@ -105,14 +110,14 @@ public educationProjectManagement = {
         'Projects like digital literacy programs or career development initiatives benefit from structured management, ensuring they deliver long-term value to students.',
     },
   ],
-};
+},
 //dataAnalyticsEducation
-public  dataAnalyticsEducation = {
+  dataAnalyticsEducation: {
   heroImage: '/assets/industries/educationIndustry.png',
   heroHeading: 'How Can Data Analytics Transform Education?',
   subHeading: 'Unlocking insights to improve learning outcomes and institutional performance.',
   introText: '',
-  healthcarePoints: [
+  points: [
     {
       title: 'Personalized Learning Pathways',
       description:
@@ -154,5 +159,17 @@ public  dataAnalyticsEducation = {
         'By monitoring participation and feedback, institutions can design engaging programs and support systems, helping students stay motivated and reducing dropout rates.',
     },
   ],
-};
+},
+}
+  ngOnInit() {
+  this.route.paramMap.subscribe(params => {
+    const section = params.get('section');
+    if (section && this.sections[section as keyof typeof this.sections]) {
+      this.currentSection = section;
+    }
+  });
+}
+ get sectionData() {
+  return this.sections[this.currentSection as keyof typeof this.sections];
+}
 }

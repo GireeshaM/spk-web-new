@@ -1,33 +1,8 @@
-<!-- networkingEngineering -->
 <app-industry-sub-util
-  *ngIf="currentSection === 'networkingEngineering'"
-  [heroImage]="networkingEngineering.heroImage"
-  [heroHeading]="networkingEngineering.heroHeading"
-  [subHeading]="networkingEngineering.subHeading"
-  [introText]="networkingEngineering.introText"
-  [points]="networkingEngineering.healthcarePoints"
->
+  *ngIf="sectionData"
+  [heroImage]="sectionData.heroImage"
+  [heroHeading]="sectionData.heroHeading"
+  [subHeading]="sectionData.subHeading"
+  [introText]="sectionData.introText"
+  [points]="sectionData.points">
 </app-industry-sub-util>
-<!-- educationProjectManagement -->
-<app-industry-sub-util
-  *ngIf="currentSection === 'educationProjectManagement'"
-  [heroImage]="educationProjectManagement.heroImage"
-  [heroHeading]="educationProjectManagement.heroHeading"
-  [subHeading]="educationProjectManagement.subHeading"
-  [introText]="educationProjectManagement.introText"
-  [points]="educationProjectManagement.points"
->
-</app-industry-sub-util>
-<!-- dataAnalyticsEducation -->
-<app-industry-sub-util
-  *ngIf="currentSection === 'dataAnalyticsEducation'"
-  [heroImage]="dataAnalyticsEducation.heroImage"
-  [heroHeading]="dataAnalyticsEducation.heroHeading"
-  [subHeading]="dataAnalyticsEducation.subHeading"
-  [introText]="dataAnalyticsEducation.introText"
-  [points]="dataAnalyticsEducation.points"
->
-</app-industry-sub-util>
-
-
-

@@ -19,19 +19,19 @@ public itHeader='Transforming the Landscape of Higher Education';
     img:'assets/Industries/DataPrivacy.png',
     title:'Network Engineering',
     description:'We design and maintain strong network systems to support campus connectivity, e-learning, and administrative needs.',
-    link:'/#'
+    link:'/education/networkingEngineering'
   },
   {
     img:'assets/Industries/Automation.png',
     title:'Project Management',
      description:'We oversee key projects like LMS deployment, IT upgrades, and integration of new educational technologies.',
-    link:'/#'
+    link:'/education/educationProjectManagement'
   },
    {
     title:'Data Analytics',
     img:'assets/Industries/Infrastructure.png',
      description:'Using data insights, we analyze student performance to help improve learning outcomes and strategies.',
-    link:'/#'
+    link:'/education/dataAnalyticsEducation'
   },
    
   

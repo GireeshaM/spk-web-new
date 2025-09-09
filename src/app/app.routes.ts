@@ -20,7 +20,10 @@ import { TransportationComponent } from './webmodules/industries/transportation/
 import { staffingComponent } from './webmodules/staffing/staffing.component';
 import { transportComponent } from './webmodules/industriesSubPages/transport/transport.component';
 import { GovernmentComponent } from './webmodules/industriesSubPages/government/government.component';
-import { HealthcareComponent } from './webmodules/industriesSubPages/healthcare/healthcare.component';
+import { HealthcareIComponent } from './webmodules/industriesSubPages/healthcare/healthcare.component';
+import { BankingIComponent } from './webmodules/industriesSubPages/banking/banking.component';
+import { EducationIComponent } from './webmodules/industriesSubPages/education/education.component';
+import { ManufacturingIComponent } from './webmodules/industriesSubPages/manufacturing/manufacturing.component';
 
 export const routes: Routes = [
   {
@@ -115,16 +118,23 @@ export const routes: Routes = [
     component:GovernmentComponent
   },
   {
-    path:'health-care/:section',
-    component:HealthcareComponent
-  },
-  {
     path:'transport/:section',
     component:transportComponent
   },
-  // {
-  //   path:'manufacturing/:section',
-  //   component:ManufacturingComponent
-  // },
-
+  {
+    path:'healthcare/:section',
+    component:HealthcareIComponent
+  },
+  {
+    path:'banking/:section',
+    component:BankingIComponent
+  },
+  {
+    path:'education/:section',
+    component:EducationIComponent
+  },
+  {
+    path:'manufacturing/:section',
+    component:ManufacturingIComponent
+  }
 ];

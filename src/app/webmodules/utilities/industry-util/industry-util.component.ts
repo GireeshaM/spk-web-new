@@ -4,6 +4,7 @@ import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-industry-util',
+  standalone: true,
   imports: [CommonModule,RouterLink],
   templateUrl: './industry-util.component.html',
   styleUrl: './industry-util.component.scss',

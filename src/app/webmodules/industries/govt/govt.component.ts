@@ -18,37 +18,38 @@ public itHeader='Empowering Governments with Purpose-Built Solutions';
     img:'assets/Industries/DataPrivacy.png',
     title:'Strategic Risk & Cyber Resilience',
     description:'We help safeguard public trust by identifying risks, enforcing cybersecurity defenses, and reducing threats like data breaches and fraud.',
-    link:'/#'
+    link:'/government/StrategicRiskAndResilence'
   },
   {
     img:'assets/Industries/Automation.png',
     title:'Smart IT & Managed Solutions',
      description:'Modernize public services with integrated IT consulting and managed solutions that streamline workflows, improve systems, and boost collaboration.',
-    link:'/#'
+    link:'/government/SmartItManagedsolutions'
   },
    {
-    title:'Project Management Excellence',
+    
     img:'assets/Industries/Infrastructure.png',
+    title:'Project Management Excellence',
      description:'Ensure policy and development goals are met efficiently through tailored project management that maximizes limited public resources.',
-    link:'/#'
+    link:'/government/ProjectManagementExcellence'
   },
    {
     img:'assets/Industries/ManagedSolutions.png',
     title:' Actionable Data Analytics',
      description:'Empower decision-makers with real-time insights, improve service delivery, and increase transparency through secure, ethical use of public data.',
-    link:'/#'
+    link:'/government/ DataAnalytics'
   },
    {
     img:'assets/Industries/ManagedSolutions.png',
     title:' Trusted Transformation Partner',
      description:'From digital upgrades to crisis resilience, SprintPark delivers expertise, structure, and support to help governments adapt and thrive.',
-    link:'/#'
+    link:'/government/TrustedTransformationPartner'
   },
    {
     img:'assets/Industries/ManagedSolutions.png',
     title:' Citizen Engagement & Transparency',
      description:'Enhance public trust by improving communication channels, promoting transparency, and enabling citizen-centric services through innovative technology solutions.',
-    link:'/#'
+    link:'/government/CitizenEngagementTransparency'
   },
   
  ]

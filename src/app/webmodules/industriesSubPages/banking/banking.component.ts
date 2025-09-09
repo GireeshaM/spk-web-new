@@ -1,21 +1,27 @@
+import { CommonModule, NgClass, NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { IndustryUtilComponent } from '../../utilities/industry-util/industry-util.component';
+import { IndustrySubUtilComponent } from '../../utilities/industry-sub-util/industry-sub-util.component';
 
 @Component({
   selector: 'app-banking',
-  imports: [],
+  imports: [IndustrySubUtilComponent,CommonModule],
   templateUrl: './banking.component.html',
   styleUrl: './banking.component.scss'
 })
-export class BankingComponent {
+export class BankingIComponent {
 public currentSection = 'CybersecurityBanking';
+ constructor(private route: ActivatedRoute) {}
+public sections={
 //BigData
-public  BigData = {
+  BigData: {
   heroImage: '/assets/industries/bigDataBanking.png',
   heroHeading: 'How Can Big Data Transform the Future of Banking?',
   subHeading: 'Unlocking insights for smarter decisions, better security, and enhanced customer experiences.',
   introText:
     'Big Data is revolutionizing the banking sector by enabling institutions to analyze massive volumes of structured and unstructured data. From improving fraud detection to offering personalized financial services, Big Data helps banks make informed decisions, reduce risks, and increase efficiency. By leveraging predictive analytics, banks can anticipate customer needs, ensure regulatory compliance, and gain a competitive edge in today’s data-driven economy.',
-  healthcarePoints: [
+  points: [
     {
       title: 'Fraud Detection and Prevention',
       description:
@@ -57,15 +63,15 @@ public  BigData = {
         'Big Data helps banks analyze market trends, investment risks, and global financial patterns. This enables institutions to guide clients toward smarter investment opportunities and make well-informed financial decisions.',
     },
   ],
-};
+},
 //Cybersecurity
-public Cybersecurity = {
+ Cybersecurity : {
   heroImage: '/assets/industries/cybersecurityBanking.png',
   heroHeading: 'Why Is Cybersecurity Essential for Modern Banking?',
   subHeading: 'Safeguarding customer trust, financial assets, and digital operations in an evolving threat landscape.',
   introText:
     'Cybersecurity has become the backbone of modern banking, ensuring that sensitive financial data and customer transactions remain secure in an increasingly digital world. With the rise of online banking, mobile payments, and AI-driven services, banks are more exposed to cyber risks than ever before. Effective cybersecurity strategies not only prevent financial losses and data breaches but also build customer confidence and regulatory compliance. By leveraging advanced tools like AI-driven monitoring, encryption, and fraud prevention systems, banks can protect assets, mitigate risks, and deliver secure digital banking experiences.',
-  healthcarePoints: [
+  points: [
     {
       title: 'Advanced Threat Detection and Prevention',
       description:
@@ -107,14 +113,14 @@ public Cybersecurity = {
         'With digital banking shifting to cloud platforms and mobile apps, cybersecurity measures focus on securing APIs, mobile transactions, and cloud infrastructures to deliver safe, seamless services.',
     },
   ],
-};
+},
 //ProjectManagement
-public ProjectManagement = {
+ ProjectManagement : {
   heroImage: '/assets/industries/bankingIndustry.png',
   heroHeading: 'How Does Project Management Drive Success in Banking?',
   subHeading: 'Ensuring efficiency, compliance, and customer value in financial transformation initiatives.',
   introText: '',
-  healthcarePoints: [
+  points: [
     {
       title: 'Strategic Alignment of Projects',
       description:
@@ -161,14 +167,14 @@ public ProjectManagement = {
         'Post-project reviews and feedback loops help banks refine processes, improve delivery, and encourage innovation for future projects.',
     },
   ],
-};
+},
 //AI
-public AI = {
+ AI : {
   heroImage: '/assets/industries/aiBanking.png',
   heroHeading: 'How Is Artificial Intelligence Transforming Modern Banking?',
   subHeading: 'Leveraging AI to enhance customer experiences, streamline operations, and strengthen security in the financial sector.',
   introText: '',
-  healthcarePoints: [
+  points: [
     {
       title: 'Personalized Customer Experience',
       description:
@@ -210,9 +216,18 @@ public AI = {
         'By automating tasks and reducing human error, AI lowers operational costs while maintaining accuracy and compliance across banking operations.',
     },
   ],
-};
-
-
-
-
+},
+}
+ 
+   ngOnInit() {
+  this.route.paramMap.subscribe(params => {
+    const section = params.get('section');
+    if (section && this.sections[section as keyof typeof this.sections]) {
+      this.currentSection = section;
+    }
+  });
+}
+ get sectionData() {
+  return this.sections[this.currentSection as keyof typeof this.sections];
+}
 }

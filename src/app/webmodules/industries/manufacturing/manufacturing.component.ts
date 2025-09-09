@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { IndustryUtilComponent } from '../../utilities/industry-util/industry-util.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-manufacturing',
-  imports: [IndustryUtilComponent],
+  imports: [IndustryUtilComponent,CommonModule],
   templateUrl: './manufacturing.component.html',
   styleUrl: './manufacturing.component.scss'
 })
@@ -19,25 +20,25 @@ public itHeader='Transforming Manufacturing Through Smart Innovation';
     img:'assets/Industries/DataPrivacy.png',
     title:'Salesforce Integration',
     description:'Implement Salesforce solutions to optimize supply chain, customer relationships, and sales operations for manufacturing efficiency.',
-    link:'/#'
+    link:'/manufacturing/salesforceIntegration'
   },
   {
     img:'assets/Industries/Automation.png',
     title:'Advanced Data Analytics',
      description:'Leverage data insights for process optimization, predictive maintenance, and improving product quality across your operations.',
-    link:'/#'
+    link:'/manufacturing/dataAnalytics'
   },
    {
     title:'Expert Project Management',
     img:'assets/Industries/Infrastructure.png',
      description:'Oversee manufacturing system implementations to ensure projects are delivered on time and meet business objectives.',
-    link:'/#'
+    link:'/manufacturing/projectManagement'
   },
    {
     img:'assets/Industries/ManagedSolutions.png',
     title:'Strategic IT Consulting',
      description:'Provide guidance on technology integration, Industry 4.0 adoption, automation, IoT, and IT infrastructure enhancements to boost productivity and innovation.',
-    link:'/#'
+    link:'/manufacturing/ITConsulting'
   },
   
  ]
