@@ -1,16 +1,16 @@
 <div [ngClass]="{ 'two-per-row': isTwoPerRow }" class="tele align-items-center">
-  <!-- Hero Section -->
+  <!-- Hero Section (unchanged) -->
   <div
     class="container-fluid topSection h-80 p-0"
     [ngStyle]="{ 'background-image': 'url(' + headerBgImg + ')' }"
   >
-    <div class="row align-items-center gx-0 min-vh-100">
-      <div class="col-12 col-md-6 px-md-5 py-5 top-content">
-        <h1 class="it-header-gradient shadow-320 mb-4">{{ itHeader }}</h1>
-        <p>{{ itContent }}</p>
+    <div class="row align-items-center hero-row gx-0">
+      <div class="top-content col-6 col-md-6 px-md-5 py-5 px-5 content-down">
+        <h1 class="it-header-gradient shadow-320 fw-bold ">{{ itHeader }}</h1>
+        <p class="">{{ itContent }}</p>
       </div>
-
-      <div class="col-12 col-md-6 d-flex justify-content-end align-items-center px-0">
+ 
+      <div class="col-md-6 d-flex justify-content-end align-items-center px-0">
         <img
           [src]="industryImg"
           class="img-fluid hero-img"
@@ -24,20 +24,18 @@
       class="wave-overlay"
     />
   </div>
-
-  <!-- Small Screen Section -->
-  <div class="container-fluid d-block d-md-none smallScreenSection">
+  <!-- <div class="container-fluid d-block d-md-none smallScreenSection">
     <img [src]="industryImg" class="img-fluid" alt="Industry Image" />
-    <div class="text-center bg-dark py-3">
-      <h1 class="text-white px-5 mb-3">{{ itHeader }}</h1>
-      <p class="px-5">{{ itContent }}</p>
+    <div class="text-center" style="background-color: #0a2250">
+      <h1 class="text-white px-5 mb-3 pt-3">{{ itHeader }}</h1>
+      <p class="text-content px-5">{{ itContent }}</p>
     </div>
-  </div>
-
-  <!-- Industry Section -->
+  </div> -->
   <div class="industryBg">
-    <div class="container-fluid p-5 bottomSection mb-5">
-      <h1 class="text-center mb-5 fw-bold">{{ itSubHeading }}</h1>
+    <div class="container-fluid p-5 bottomSection ">
+      <h1 class="text-center mb-5">
+        <strong class="fw-bold">{{ itSubHeading }}</strong>
+      </h1>
       <div class="row">
         <ng-container *ngFor="let card of cards; let i = index">
           <div
@@ -55,11 +53,13 @@
                   alt="Card Image"
                   class="industry-card-img"
                 />
-                <span class="industry-card-number">{{ i + 1 }}</span>
+                <span  class="industry-card-number  position-absolute top-0 start-0 translate-middle
+                         bg-primary text-white fw-bold d-flex align-items-center justify-content-center
+                         rounded-circle shadow-sm h-25 w-25" >{{ i + 1 }}</span>
               </div>
-              <h5 class="industry-card-title mt-4 mb-2">{{ card.title }}</h5>
+              <h5 class="industry-card-title mt-4 mb-2 fw-bold">{{ card.title }}</h5>
               <p class="industry-card-desc mb-3">{{ card.description }}</p>
-              <a [routerLink]="card.link" class="industry-card-link">
+              <a [routerLink]=" card.link " class="industry-card-link">
                 Read More <span class="industry-card-link-arrow">&gt;&gt;</span>
               </a>
             </div>
@@ -69,3 +69,4 @@
     </div>
   </div>
 </div>
+ 

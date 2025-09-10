@@ -9,7 +9,6 @@ import { CommonModule } from '@angular/common';
   styleUrl: './manufacturing.component.scss'
 })
 export class ManufacturingComponent {
-
 public headerBg='assets/Industries/wave.svg';
 public itHeader='Transforming Manufacturing Through Smart Innovation';
  public itContent="Manufacturing faces global challenges like supplier management and regulations. SprintPark helps you turn these into lasting opportunities, aligning strategies with your strengths and goals.";
@@ -40,6 +39,5 @@ public itHeader='Transforming Manufacturing Through Smart Innovation';
      description:'Provide guidance on technology integration, Industry 4.0 adoption, automation, IoT, and IT infrastructure enhancements to boost productivity and innovation.',
     link:'/manufacturing/ITConsulting'
   },
-  
  ]
 }

@@ -24,6 +24,7 @@ import { HealthcareIComponent } from './webmodules/industriesSubPages/healthcare
 import { BankingIComponent } from './webmodules/industriesSubPages/banking/banking.component';
 import { EducationIComponent } from './webmodules/industriesSubPages/education/education.component';
 import { ManufacturingIComponent } from './webmodules/industriesSubPages/manufacturing/manufacturing.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 export const routes: Routes = [
   {
@@ -32,10 +33,13 @@ export const routes: Routes = [
     data: { footerColor: '#EDE8F6' },
   },
   {
+    path: '*', component:PageNotFoundComponent
+  },
+  
+  {
     path: 'insights',
     component: InsightsComponent,
   },
-  
   {
     path: 'industry-util',
     component: IndustryUtilComponent,
@@ -136,5 +140,9 @@ export const routes: Routes = [
   {
     path:'manufacturing/:section',
     component:ManufacturingIComponent
-  }
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent,
+  },
 ];
