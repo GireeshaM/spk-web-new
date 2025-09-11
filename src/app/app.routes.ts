@@ -6,7 +6,6 @@ import { CareersComponent } from './careers/careers.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ItCommonComponent } from './webmodules/it-common/it-common.component';
 import { ProjectManagementComponent } from './webmodules/project-management/project-management.component';
-import { TelecommunicationComponent } from './webmodules/industriesSubPages/telecommunication/telecommunication.component';
 import { SoftwareServiceUtilComponent } from './webmodules/software-service-util/software-service-util.component';
 import { BankingComponent } from './webmodules/industries/banking/banking.component';
 import { EducationComponent } from './webmodules/industries/education/education.component';
@@ -15,13 +14,14 @@ import { HealthCareComponent } from './webmodules/industries/health-care/health-
 import { ManufacturingComponent } from './webmodules/industries/manufacturing/manufacturing.component';
 import { TransportationComponent } from './webmodules/industries/transportation/transportation.component';
 import { staffingComponent } from './webmodules/staffing/staffing.component';
-import { transportComponent } from './webmodules/industriesSubPages/transport/transport.component';
-import { GovernmentComponent } from './webmodules/industriesSubPages/government/government.component';
-import { HealthcareIComponent } from './webmodules/industriesSubPages/healthcare/healthcare.component';
-import { BankingIComponent } from './webmodules/industriesSubPages/banking/banking.component';
-import { EducationIComponent } from './webmodules/industriesSubPages/education/education.component';
-import { ManufacturingIComponent } from './webmodules/industriesSubPages/manufacturing/manufacturing.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { BankingIComponent } from './webmodules/industriesSubPages/banking-i/banking-i.component';
+import { GovernmentIComponent } from './webmodules/industriesSubPages/government-i/government-i.component';
+import { EducationIComponent } from './webmodules/industriesSubPages/education-i/education-i.component';
+import { HealthCareIComponent } from './webmodules/industriesSubPages/health-care-i/health-care-i.component';
+import { ManufacturingIComponent } from './webmodules/industriesSubPages/manufacturing-i/manufacturing-i.component';
+import { TelecommunicationIComponent } from './webmodules/industriesSubPages/telecommunication-i/telecommunication-i.component';
+import { TransportationIComponent } from './webmodules/industriesSubPages/transportation-i/transportation-i.component';
 
 export const routes: Routes = [
   {
@@ -102,27 +102,27 @@ export const routes: Routes = [
   //Telecommunication-subPage
   {
     path: 'telecommunication/:section',
-    component: TelecommunicationComponent,
+    component: TelecommunicationIComponent,
   },
   //government-subPage
   {
     path: 'government/:section',
-    component: GovernmentComponent,
+    component: GovernmentIComponent,
   },
   //transport-subPage
   {
     path: 'transport/:section',
-    component: transportComponent,
+    component: TransportationIComponent,
   },
   //healthcare & life sciences-subPage
   {
     path: 'healthcare/:section',
-    component: HealthcareIComponent,
+    component: HealthCareIComponent,
   },
   //banking-subPage
   {
     path: 'banking/:section',
-    component: BankingIComponent,
+    component:BankingIComponent,
   },
   //education-subPage
   {
