@@ -1,11 +1,10 @@
 import { Routes } from '@angular/router';
-import path from 'node:path';
 import { HomeComponent } from './home/home.component';
 import { InsightsComponent } from './insights/insights.component';
 import { TeleCommunicationsComponent } from './webmodules/industries/tele-communications/tele-communications.component';
 import { CareersComponent } from './careers/careers.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
-import { ItCommonComponent } from './webmodules/itConsulting/it-common/it-common.component';
+import { ItCommonComponent } from './webmodules/it-common/it-common.component';
 import { ProjectManagementComponent } from './webmodules/project-management/project-management.component';
 import { TelecommunicationComponent } from './webmodules/industriesSubPages/telecommunication/telecommunication.component';
 import { SoftwareServiceUtilComponent } from './webmodules/software-service-util/software-service-util.component';
@@ -65,7 +64,7 @@ export const routes: Routes = [
   //government
   {
     path: 'government',
-    component:GovtComponent,
+    component: GovtComponent,
     data: { footerColor: '#f7f7fc' },
   },
   //healthCrae & life Sciences
@@ -103,32 +102,32 @@ export const routes: Routes = [
   //Telecommunication-subPage
   {
     path: 'telecommunication/:section',
-    component: TelecommunicationComponent
+    component: TelecommunicationComponent,
   },
   //government-subPage
   {
-    path:'government/:section',
-    component:GovernmentComponent
+    path: 'government/:section',
+    component: GovernmentComponent,
   },
   //transport-subPage
   {
-    path:'transport/:section',
-    component:transportComponent
+    path: 'transport/:section',
+    component: transportComponent,
   },
   //healthcare & life sciences-subPage
   {
-    path:'healthcare/:section',
-    component:HealthcareIComponent
+    path: 'healthcare/:section',
+    component: HealthcareIComponent,
   },
   //banking-subPage
   {
-    path:'banking/:section',
-    component:BankingIComponent
+    path: 'banking/:section',
+    component: BankingIComponent,
   },
   //education-subPage
   {
-    path:'education/:section',
-    component:EducationIComponent
+    path: 'education/:section',
+    component: EducationIComponent,
   },
   //manufacturing-subPage
   {

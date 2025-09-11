@@ -6,12 +6,13 @@ import {
   ViewChild,
   ViewChildren,
   OnInit,
-  Inject,
   PLATFORM_ID,
+  ChangeDetectorRef,
+  inject,
 } from '@angular/core';
 import { CarouselModule } from 'primeng/carousel';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { AfterViewInit} from '@angular/core';
+import { AfterViewInit } from '@angular/core';
 import {
   trigger,
   state,
@@ -19,7 +20,7 @@ import {
   transition,
   animate,
 } from '@angular/animations';
-declare var bootstrap: any;
+
 @Component({
   selector: 'app-home',
   imports: [CarouselModule, CommonModule],
@@ -31,14 +32,13 @@ declare var bootstrap: any;
       state('visible', style({ opacity: 1, transform: 'translateY(0)' })),
       transition(
         'hidden => visible',
-        animate('700ms cubic-bezier(0.23, 1, 0.32, 1)')
+        animate('700ms cubic-bezier(0.23, 1, 0.32, 1)'),
       ),
       transition('visible => hidden', animate('0ms')),
     ]),
   ],
 })
-export class HomeComponent implements OnInit {
- 
+export class HomeComponent implements OnInit, AfterViewInit {
   public btn1 = { label: 'Get started with AI', style: 'btn-warning' };
   public btn2 = { label: "Let's talk", style: 'btn-outline-light' };
   public slides = [
@@ -85,61 +85,89 @@ export class HomeComponent implements OnInit {
       btn2: this.btn2,
     },
   ];
-  public  responsiveOptions = [
+  public responsiveOptions = [
     { breakpoint: '1024px', numVisible: 3, numScroll: 1 },
     { breakpoint: '768px', numVisible: 2, numScroll: 1 },
     { breakpoint: '560px', numVisible: 1, numScroll: 1 },
   ];
-  public ngOnInit() { 
+  public ngOnInit(): void {
     this.offerCardVisible = this.whatWeOffer.map(() => false);
   }
- 
-  public ngAfterViewInit() {
-    if (this.isBrowser){
-    this.checkInView();
-    this.onScroll();
-    this.checkMobile();
+
+  public ngAfterViewInit(): void {
+    if (this.isBrowser) {
+      this.checkInView();
+      this.onScroll();
+      this.checkMobile();
+
+      if (!this.isBrowser) return;
+      setTimeout(() => {
+        this.observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const index = this.statElements
+                  .toArray()
+                  .findIndex((el) => el.nativeElement === entry.target);
+
+                if (index !== -1 && !this.stats[index].animated) {
+                  this.stats[index].animated = true;
+
+                  this.animateStat(index);
+                  this.observer.unobserve(entry.target);
+                }
+              }
+            });
+          },
+          { threshold: 0.3 },
+        );
+
+        this.statElements.forEach((el) => {
+          this.observer.observe(el.nativeElement);
+        });
+      }, 100);
+    }
   }
-}
- 
+
   @HostListener('window:scroll')
-  public onScroll() {
-     if (!this.isBrowser) return;
- 
-  this.offerCards.forEach((card, i) => {
-    const rect = card.nativeElement.getBoundingClientRect();
-    this.offerCardVisible[i] = rect.top < window.innerHeight && rect.bottom > 0;
-  });
- 
-  this.checkInView();
-}
- 
-public checkInView() {
-  if (!this.isBrowser) return;
- 
-  const imageEl = document.querySelector('.image-wrapper');
-  if (imageEl) {
-    const rect = imageEl.getBoundingClientRect();
-    this.imageInView = rect.top < window.innerHeight && rect.bottom > 0;
+  public onScroll(): void {
+    if (!this.isBrowser) return;
+
+    this.offerCards.forEach((card, i) => {
+      const rect = card.nativeElement.getBoundingClientRect();
+      this.offerCardVisible[i] =
+        rect.top < window.innerHeight && rect.bottom > 0;
+    });
+
+    this.checkInView();
   }
- 
-  const contentEl = document.querySelector('.move-right > div');
-  if (contentEl) {
-    const rect = contentEl.getBoundingClientRect();
-    this.contentInView = rect.top < window.innerHeight && rect.bottom > 0;
+
+  public checkInView(): void {
+    if (!this.isBrowser) return;
+
+    const imageEl = document.querySelector('.image-wrapper');
+    if (imageEl) {
+      const rect = imageEl.getBoundingClientRect();
+      this.imageInView = rect.top < window.innerHeight && rect.bottom > 0;
+    }
+
+    const contentEl = document.querySelector('.move-right > div');
+    if (contentEl) {
+      const rect = contentEl.getBoundingClientRect();
+      this.contentInView = rect.top < window.innerHeight && rect.bottom > 0;
+    }
+
+    if (this.featureGrid) {
+      const rect = this.featureGrid.nativeElement.getBoundingClientRect();
+      this.featuresInView = rect.top < window.innerHeight && rect.bottom > 0;
+    }
   }
- 
-  if (this.featureGrid) {
-    const rect = this.featureGrid.nativeElement.getBoundingClientRect();
-    this.featuresInView = rect.top < window.innerHeight && rect.bottom > 0;
-  }
-}
- 
+
   // what we offer
- 
+
   @ViewChildren('offerCard') offerCards!: QueryList<ElementRef>;
   public offerCardVisible: boolean[] = [];
-  public  whatWeOffer = [
+  public whatWeOffer = [
     {
       img: 'assets/home-compression-1/what-we-offer-c-1/software-services.png',
       title: 'Software services',
@@ -156,14 +184,14 @@ public checkInView() {
       desc: "Connect with the right talent to drive your organization's growth and success.",
     },
   ];
- 
+
   // Features
   public imageInView = false;
   public contentInView = false;
   public featuresInView = false;
   @ViewChild('featureGrid') featureGrid!: ElementRef;
- 
-  public  features = [
+
+  public features = [
     {
       img: 'assets/home-compression-1/abt-sok-c-1/integrity.svg',
       title: 'Integrity',
@@ -185,8 +213,8 @@ public checkInView() {
       desc: 'Embracing differences to drive innovation',
     },
   ];
- 
- public  collaborations = [
+
+  public collaborations = [
     {
       img: 'assets/Compressed-home/section-5-collaborate-section/collaborate-1.png',
       alt: 'Expert Team',
@@ -224,9 +252,9 @@ public checkInView() {
       desc: 'Monitor results, refine strategies, and drive continuous improvement for success.',
     },
   ];
- 
+
   // Industries
- public  industries = [
+  public industries = [
     {
       img: 'assets/home-compression-1/industries-c-1/industry-it-telecommunications.jpg',
       alt: 'IT & TeleCommunications',
@@ -235,7 +263,7 @@ public checkInView() {
     {
       img: 'assets/Compressed-home/secton-4-industries/industries-healthcare.jpg',
       alt: 'Healthcare & Life Sciences',
-       title: 'Healthcare & Life Sciences',
+      title: 'Healthcare & Life Sciences',
     },
     {
       img: 'assets/home-compression-1/industries-c-1/industry-education.jpg',
@@ -245,33 +273,40 @@ public checkInView() {
     {
       img: 'assets/home-compression-1/industries-c-1/industries-government.jpg',
       alt: 'Government',
-       title: 'Government',
+      title: 'Government',
     },
   ];
- 
- public  stats = [
+
+  public stats = [
     {
-      img: 'assets/home-compression-1/section-7-c-1/satisfied clients.png',
-      number: '4,386+',
+      img: 'assets/Compressed-home/section-6/satisfied-clients.png',
+      target: 4386,
+      current: 0,
       label: 'Satisfied Clients',
+      animated: false,
     },
     {
-      img: 'assets/home-compression-1/section-7-c-1/finished projects.png',
-      number: '400+',
+      img: 'assets/Compressed-home/section-6/finished-projects.png',
+      target: 400,
+      current: 0,
       label: 'Finished projects',
+      animated: false,
     },
     {
-      img: 'assets/home-compression-1/section-7-c-1/skilled experts (1).png',
-      number: '250+',
+      img: 'assets/Compressed-home/section-6/skilled-experts.png',
+      target: 250,
+      current: 0,
       label: 'Skilled experts',
+      animated: false,
     },
     {
-      img: 'assets/home-compression-1/section-7-c-1/media posts.png',
-      number: '4,386+',
+      img: 'assets/Compressed-home/section-6/media-posts.png',
+      target: 4386,
+      current: 0,
       label: 'Media posts',
+      animated: false,
     },
   ];
- 
   public ourInsightsSlides = [
     {
       image: 'assets/home-compression-1/our-insights-c-1/our-insights-3.jpg',
@@ -287,10 +322,9 @@ public checkInView() {
       image: 'assets/home-compression-1/our-insights-c-1/our-insights-1.jpg',
       title: 'Salesforce Health Cloud transform Payer sector in Healthcare',
       description: 'Read More >>',
-    }
- 
+    },
   ];
- 
+
   public testimonials = [
     {
       img: 'assets/home-compression-1/testinomials-c-1/review-1.png',
@@ -309,28 +343,56 @@ public checkInView() {
   ];
   public currentInsightIndex = 1; // Start with the middle card (or 0 for first)
   public isMobile = false;
- 
+
   @HostListener('window:resize')
-  public onResize() {
+  public onResize(): void {
     this.checkMobile();
   }
- 
- public  checkMobile() {
-    if(this.isBrowser){
-    this.isMobile = window.innerWidth < 768;
+
+  public checkMobile(): void {
+    if (this.isBrowser) {
+      this.isMobile = window.innerWidth < 768;
+    }
   }
-}
-   
-  public isBrowser: boolean;
- 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
-    this.isBrowser = isPlatformBrowser(this.platformId);
-  }
- 
-  public moveInsight(step: number) {
+
+  public moveInsight(step: number): void {
     const newIndex = this.currentInsightIndex + step;
     if (newIndex >= 0 && newIndex < this.ourInsightsSlides.length) {
       this.currentInsightIndex = newIndex;
     }
+  }
+  public onKeyDown(event: KeyboardEvent): void {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      this.moveInsight(1);
+    }
+  }
+
+  @ViewChildren('statElements') statElements!: QueryList<ElementRef>;
+
+  private observer!: IntersectionObserver;
+
+  private platformId = inject(PLATFORM_ID);
+  isBrowser = isPlatformBrowser(this.platformId);
+  cdRef = inject(ChangeDetectorRef);
+
+  private animateStat(index: number): void {
+    const stat = this.stats[index];
+    const duration = 2000;
+    const steps = 60;
+    let currentStep = 0;
+
+    const interval = setInterval(() => {
+      currentStep++;
+      const progress = currentStep / steps;
+      stat.current = Math.floor(stat.target * progress);
+      this.cdRef.detectChanges();
+      // console.log(`Animating: ${stat.label}`);
+
+      if (currentStep >= steps) {
+        stat.current = stat.target;
+        clearInterval(interval);
+      }
+    }, duration / steps);
   }
 }

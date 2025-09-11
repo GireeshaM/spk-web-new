@@ -1,5 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+interface SoftwareCard {
+  title: string;
+  image: string;
+}
 
 @Component({
   selector: 'app-what-we-do-comp',
@@ -8,7 +12,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './what-we-do-comp.component.scss',
 })
 export class WhatWeDoCompComponent {
-  @Input() softwareCards!: any[];
+  @Input() softwareCards!: SoftwareCard[];
   @Input() whatWeDoHeading!: string;
   @Input() whatWeDoDescription!: string;
 }

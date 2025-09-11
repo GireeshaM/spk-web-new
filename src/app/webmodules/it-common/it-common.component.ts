@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { UnlockCompComponent } from '../../utilities/mainServicesUtil/unlock-comp/unlock-comp.component';
-import { WhatCompComponent } from '../../utilities/mainServicesUtil/what-comp/what-comp.component';
-import { WhatWeDoCompComponent } from '../../utilities/mainServicesUtil/what-we-do-comp/what-we-do-comp.component';
-import { MainHeroSectionComponent } from '../../utilities/main-hero-section/main-hero-section.component';
+import { UnlockCompComponent } from '../utilities/mainServicesUtil/unlock-comp/unlock-comp.component';
+import { WhatCompComponent } from '../utilities/mainServicesUtil/what-comp/what-comp.component';
+import { WhatWeDoCompComponent } from '../utilities/mainServicesUtil/what-we-do-comp/what-we-do-comp.component';
+import { MainHeroSectionComponent } from '../utilities/main-hero-section/main-hero-section.component';
 
 @Component({
   selector: 'app-it-common',
@@ -20,30 +20,43 @@ export class ItCommonComponent {
   public whatMainHeader = 'IT Consulting';
   public whatDescription =
     'Leverage the knowledge of seasoned IT professionals who guide you from strategy to execution solution design, implementation, and issue resolution all handled by specialists.';
-  public heroImage = 'assets/it-consulting-service-c-1/hero.jpg';
-  public smallImage = 'assets/it-consulting-service-c-1/hero.jpg';
+  public heroImage =
+    'assets/services/it-consulting-page/it-consulting-hero.jpg';
+  public smallImage =
+    'assets/services/it-consulting-page/it-consulting-hero.jpg';
 
   // Section 2
   public whyHeader = 'Unlocking Growth Through IT Expertise';
-  public whyList!: any[];
+
   public images = [
     'assets/it-consulting-service-c-1/icon-1.png',
     'assets/it-consulting-service-c-1/icon-2.png',
     'assets/it-consulting-service-c-1/icon-3.png',
     'assets/it-consulting-service-c-1/icon-4.png',
   ];
-  public  ngOnInit() {
-    this.whyList = [
-      'Access Professionals',
-      'Get access to the team of experts who can help you in all the way to solution generation, implementation and troubleshoot. ',
-      'Reduce Risk',
-      'We provide a maximum security for your solutions by continuously monitoring to prevent attacks before they may happen.',
-      'Reduce Cost',
-      'Optimize your budget by maintaining high system performance without the need for full-time staff. Additionally, reduce the risk of expensive costs in the future.',
-      'Objective Analysis',
-      'External IT consultants can evaluate your processes to provide a point of view on how your solution works.',
-    ];
-  }
+  whyList = [
+    {
+      title: 'Access Professionals',
+      description:
+        'Get access to the team of experts who can help you in all the way to solution generation, implementation and troubleshoot.',
+    },
+    {
+      title: 'Reduce Risk',
+      description:
+        'We provide a maximum security for your solutions by continuously monitoring to prevent attacks before they may happen.',
+    },
+    {
+      title: 'Reduce Cost',
+      description:
+        'Optimize your budget by maintaining high system performance without the need for full-time staff. Additionally, reduce the risk of expensive costs in the future.',
+    },
+    {
+      title: 'Objective Analysis',
+      description:
+        'External IT consultants can evaluate your processes to provide a point of view on how your solution works.',
+    },
+  ];
+
   // Section 3
   public whyMainHeading = 'What Sets Us Apart';
   public whySubHeading = 'Visionary';
@@ -88,7 +101,7 @@ export class ItCommonComponent {
   public whatWeDoHeading = 'What we do';
   public whatWeDoDescription =
     'SprintPark offers wide range of IT Consulting services which include';
-  public  softwareCards = [
+  public softwareCards = [
     {
       title: 'IT Assessment',
       image: 'assets/it-consulting-service-c-1/it-assessment.jpg',

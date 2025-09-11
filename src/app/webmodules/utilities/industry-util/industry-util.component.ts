@@ -5,7 +5,7 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-industry-util',
   standalone: true,
-  imports: [CommonModule,RouterLink],
+  imports: [CommonModule, RouterLink],
   templateUrl: './industry-util.component.html',
   styleUrl: './industry-util.component.scss',
 })
@@ -14,8 +14,13 @@ export class IndustryUtilComponent {
   @Input() itHeader!: string;
   @Input() itContent!: string;
   @Input() itSubHeading!: string;
-  @Input() cards: { title: string; description: string; link: string;img?: string; }[] = [];
-  @Input() isTwoPerRow: boolean = false;
+  @Input() cards: {
+    title: string;
+    description: string;
+    link: string;
+    img?: string;
+  }[] = [];
+  @Input() isTwoPerRow = false;
   @Input() headerBgImg!: string;
   @Input() industryImg!: string;
 

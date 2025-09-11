@@ -1,5 +1,20 @@
-import {AfterViewInit,Component,  ElementRef,  OnDestroy,  QueryList,  ViewChildren,  Inject,  PLATFORM_ID,} from '@angular/core';
-import {  trigger,  state,  style,  transition,  animate,} from '@angular/animations';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnDestroy,
+  QueryList,
+  ViewChildren,
+  PLATFORM_ID,
+  inject,
+} from '@angular/core';
+import {
+  trigger,
+  state,
+  style,
+  transition,
+  animate,
+} from '@angular/animations';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { MainHeroSectionComponent } from '../webmodules/utilities/main-hero-section/main-hero-section.component';
 import { WhatCompComponent } from '../webmodules/utilities/mainServicesUtil/what-comp/what-comp.component';
@@ -7,7 +22,7 @@ import { WhatCompComponent } from '../webmodules/utilities/mainServicesUtil/what
 @Component({
   standalone: true,
   selector: 'app-careers',
-  imports: [CommonModule,MainHeroSectionComponent,WhatCompComponent],
+  imports: [CommonModule, MainHeroSectionComponent, WhatCompComponent],
   templateUrl: './careers.component.html',
   styleUrls: ['./careers.component.scss'],
   animations: [
@@ -32,7 +47,7 @@ import { WhatCompComponent } from '../webmodules/utilities/mainServicesUtil/what
   ],
 })
 export class CareersComponent implements AfterViewInit, OnDestroy {
-    public whatMainHeader = 'IT Consulting';
+  public whatMainHeader = 'IT Consulting';
   public whatDescription =
     'Leverage the knowledge of seasoned IT professionals who guide you from strategy to execution solution design, implementation, and issue resolution all handled by specialists.';
   public heroImage = 'assets/services/software-services/itConsult.png';
@@ -49,7 +64,7 @@ export class CareersComponent implements AfterViewInit, OnDestroy {
 
   private observer: IntersectionObserver | null = null;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  private platformId = inject(PLATFORM_ID);
 
   public ngAfterViewInit(): void {
     // Skip completely if this is SSR
@@ -79,14 +94,14 @@ export class CareersComponent implements AfterViewInit, OnDestroy {
             }
           });
         },
-        { threshold: 0.2 }
+        { threshold: 0.2 },
       );
 
       this.elements.forEach((el) => this.observer!.observe(el.nativeElement));
     }
   }
 
-  ngOnDestroy(): void {
+  public ngOnDestroy(): void {
     if (this.observer) {
       this.observer.disconnect();
       this.observer = null;
@@ -143,9 +158,10 @@ export class CareersComponent implements AfterViewInit, OnDestroy {
       location: 'Hyderabad',
     },
   ];
-   // Section 3
+  // Section 3
   public whyMainHeading = 'Life@Sprintpark';
-  public whySubHeading = 'Your Trusted Partner for Comprehensive Software Solutions';
+  public whySubHeading =
+    'Your Trusted Partner for Comprehensive Software Solutions';
   public whyContent =
     'SprintPark delivers tailored AI, data analytics, cybersecurity, and Salesforce services to boost your efficiency, security, and growth.';
   public whyCards = [
@@ -170,7 +186,7 @@ export class CareersComponent implements AfterViewInit, OnDestroy {
       desc: 'Compensations and benefits reward employees fairly while enhancing their growth and well-being.',
     },
   ];
-  public  teamImages = {
+  public teamImages = {
     left: {
       src: 'assets/services/software-services/section-3-1.png',
       alt: 'Team 1',
@@ -187,31 +203,4 @@ export class CareersComponent implements AfterViewInit, OnDestroy {
       },
     ],
   };
-  // public cards = [
-  //   {
-  //     title: 'Learning',
-  //     description:
-  //       "Every employee should get their fair share of opportunities to share their ideas and become a part of organization's success.",
-  //   },
-  //   {
-  //     title: 'Employee growth',
-  //     description:
-  //       'We are dedicated to providing a workplace where employees can grow and thrive.',
-  //   },
-  //   {
-  //     title: 'Work Environment',
-  //     description:
-  //       'We believe in a big family and treat all our members like one.',
-  //   },
-  //   {
-  //     title: 'Professional Development',
-  //     description:
-  //       'We are committed to empower our team to grow personally and professionally.',
-  //   },
-  //   {
-  //     title: 'Compensation and Benefits',
-  //     description:
-  //       'We are committed to empower our team to grow personally and professionally.',
-  //   },
-  // ];
 }

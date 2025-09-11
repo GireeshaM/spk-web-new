@@ -8,9 +8,8 @@ describe('MainHeroSectionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MainHeroSectionComponent]
-    })
-    .compileComponents();
+      imports: [MainHeroSectionComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(MainHeroSectionComponent);
     component = fixture.componentInstance;

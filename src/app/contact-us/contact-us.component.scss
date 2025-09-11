@@ -1,7 +1,7 @@
 .contact-us {
   // height: auto;
   overflow-x: hidden;
-  font-family: inter; 
+  font-family: inter;
 }
 // Contact Form Section
 .contact-form-section {
@@ -14,9 +14,9 @@
     text-align: center;
     .contact-info {
       padding: 20px;
-      .contact-head { 
+      .contact-head {
         width: 100%;
-      } 
+      }
       .locations {
         width: 100%;
         // margin-top: 1rem;
@@ -30,49 +30,49 @@
         }
       }
       .locations {
-  .location {
-     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    min-height: 200px;
-    padding: 15px !important;
-    margin-bottom: 20px;
-    @media (max-width: 768px) {
-      width: 100%;
-      padding-right: 15px !important;
-    }
-    
-    // USA location icons
-    &.usa {
-      .location-icon,
-      .phone-icon,
-      .mail-icon {
-        color: #482AA3;
-      }
-    }
-    // India location icons
-    &.india {
-      .location-icon,
-      .phone-icon,
-      .mail-icon {
-        color: #EF7A13;
-      }
-    }
-    .d-flex {
-      width: 100%;
-      span {
-        word-break: break-word;
-        overflow-wrap: break-word;
-      }
-    }
-    i {
-      flex-shrink: 0;
-    }
-  }
-   // Dotted vertical divider
-  .has-border {
-    border-right: 1px dashed #000;
-  }
+        .location {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          min-height: 200px;
+          padding: 15px !important;
+          margin-bottom: 20px;
+          @media (max-width: 768px) {
+            width: 100%;
+            padding-right: 15px !important;
+          }
+
+          // USA location icons
+          &.usa {
+            .location-icon,
+            .phone-icon,
+            .mail-icon {
+              color: #482aa3;
+            }
+          }
+          // India location icons
+          &.india {
+            .location-icon,
+            .phone-icon,
+            .mail-icon {
+              color: #ef7a13;
+            }
+          }
+          .d-flex {
+            width: 100%;
+            span {
+              word-break: break-word;
+              overflow-wrap: break-word;
+            }
+          }
+          i {
+            flex-shrink: 0;
+          }
+        }
+        // Dotted vertical divider
+        .has-border {
+          border-right: 1px dashed #000;
+        }
       }
     }
     .contact-image {
@@ -98,12 +98,12 @@
           color: white;
           border: none;
           transition: opacity 0.3s ease;
-        }       
+        }
       }
     }
   }
 }
-//Social Section 
+//Social Section
 .social-section {
   display: flex;
   align-items: center;
@@ -188,7 +188,9 @@
         overflow: hidden;
         padding-left: 10px;
         color: #555;
-        transition: max-height 0.3s ease, padding 0.3s ease;
+        transition:
+          max-height 0.3s ease,
+          padding 0.3s ease;
         &.show {
           max-height: 200px;
           padding: 10px 10px 20px 10px;
@@ -212,14 +214,14 @@
     .card-icon {
       width: 70px;
       height: auto;
-    }   
+    }
   }
   .head {
     color: #000;
     margin-bottom: 5rem;
   }
 }
-@media (max-width: 768px) { 
+@media (max-width: 768px) {
   // Social Section
   .social-section {
     padding: 2rem 1rem;
@@ -228,7 +230,7 @@
       flex-direction: column;
       .social-left {
         order: 2;
-        margin: 1rem 0;        
+        margin: 1rem 0;
       }
       .social-right {
         order: 1;
@@ -245,11 +247,10 @@
           padding: 0 1rem;
           margin-left: 70px;
           li {
-            margin-bottom: 1rem; 
+            margin-bottom: 1rem;
           }
         }
       }
     }
   }
 }
-

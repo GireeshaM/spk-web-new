@@ -1,42 +1,38 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener, Input } from '@angular/core';
-import { PLATFORM_ID, Inject } from '@angular/core';
-import { isPlatformBrowser} from '@angular/common';
- 
+import { Component, HostListener, inject, Input } from '@angular/core';
+import { PLATFORM_ID, OnInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+
 @Component({
   selector: 'app-main-hero-section',
   imports: [CommonModule],
   templateUrl: './main-hero-section.component.html',
   styleUrl: './main-hero-section.component.scss',
 })
-export class MainHeroSectionComponent {
+export class MainHeroSectionComponent implements OnInit {
   @Input() whatHeader!: string;
   @Input() whatDescription!: string;
   @Input() heroImage!: string;
-  @Input() alignRight: boolean = true;
+  @Input() alignRight = true;
   @Input() smallImage!: string;
- 
-  public isMobile: boolean = false;
-  private isBrowser: boolean;
- 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
-    this.isBrowser = isPlatformBrowser(platformId);
-  }
- 
-  public ngOnInit() {
+
+  public isMobile = false;
+
+  private platformId = inject(PLATFORM_ID);
+  isBrowser = isPlatformBrowser(this.platformId);
+  public ngOnInit(): void {
     if (this.isBrowser) {
       this.checkScreenSize();
     }
   }
- 
+
   @HostListener('window:resize', [])
-  public onResize() {
+  public onResize(): void {
     if (this.isBrowser) {
       this.checkScreenSize();
     }
   }
-  public checkScreenSize() {
+  public checkScreenSize(): void {
     this.isMobile = window.innerWidth <= 768;
   }
 }
- 
