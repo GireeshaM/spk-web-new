@@ -6,10 +6,10 @@
   >
     <div class="row align-items-center hero-row gx-0">
       <div class="top-content col-6 col-md-6 px-md-5 py-5 px-5 content-down">
-        <h1 class="it-header-gradient shadow-320 fw-bold ">{{ itHeader }}</h1>
+        <h1 class="it-header-gradient shadow-320 fw-bold">{{ itHeader }}</h1>
         <p class="">{{ itContent }}</p>
       </div>
- 
+
       <div class="col-md-6 d-flex justify-content-end align-items-center px-0">
         <img
           [src]="industryImg"
@@ -32,7 +32,7 @@
     </div>
   </div> -->
   <div class="industryBg">
-    <div class="container-fluid p-5 bottomSection ">
+    <div class="container-fluid p-5 bottomSection">
       <h1 class="text-center mb-5">
         <strong class="fw-bold">{{ itSubHeading }}</strong>
       </h1>
@@ -42,7 +42,7 @@
             [ngClass]="{
               'col-6': cards.length === 4 || cards.length === 2,
               'col-4':
-                cards.length === 3 || cards.length === 6 || cards.length === 5
+                cards.length === 3 || cards.length === 6 || cards.length === 5,
             }"
             class="mb-5 d-flex justify-content-center align-items-stretch"
           >
@@ -53,13 +53,16 @@
                   alt="Card Image"
                   class="industry-card-img"
                 />
-                <span  class="industry-card-number  position-absolute top-0 start-0 translate-middle
-                         bg-primary text-white fw-bold d-flex align-items-center justify-content-center
-                         rounded-circle shadow-sm h-25 w-25" >{{ i + 1 }}</span>
+                <span
+                  class="industry-card-number position-absolute top-0 start-0 translate-middle bg-primary text-white fw-bold d-flex align-items-center justify-content-center rounded-circle shadow-sm h-25 w-25"
+                  >{{ i + 1 }}</span
+                >
               </div>
-              <h5 class="industry-card-title mt-4 mb-2 fw-bold">{{ card.title }}</h5>
+              <h5 class="industry-card-title mt-4 mb-2 fw-bold">
+                {{ card.title }}
+              </h5>
               <p class="industry-card-desc mb-3">{{ card.description }}</p>
-              <a [routerLink]=" card.link " class="industry-card-link">
+              <a [routerLink]="card.link" class="industry-card-link">
                 Read More <span class="industry-card-link-arrow">&gt;&gt;</span>
               </a>
             </div>
@@ -69,4 +72,3 @@
     </div>
   </div>
 </div>
- 

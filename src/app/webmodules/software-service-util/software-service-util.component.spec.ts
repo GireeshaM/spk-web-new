@@ -8,9 +8,8 @@ describe('SoftwareServiceUtilComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SoftwareServiceUtilComponent]
-    })
-    .compileComponents();
+      imports: [SoftwareServiceUtilComponent],  
+    }).compileComponents();
 
     fixture = TestBed.createComponent(SoftwareServiceUtilComponent);
     component = fixture.componentInstance;

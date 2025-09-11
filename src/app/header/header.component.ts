@@ -9,16 +9,17 @@ import { Component, HostListener } from '@angular/core';
 })
 export class HeaderComponent {
   public isScrolled = false;
-  public modalService: any;
 
-  public onAboutClick() {
+  public onAboutClick(event: MouseEvent): void {
+    event.preventDefault();
     const section = document.getElementById('about-us');
     if (section) {
       section.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
+
   @HostListener('window:scroll', [])
- public  onWindowScroll() {
+  public onWindowScroll(): void {
     this.isScrolled = window.scrollY > 100;
   }
 }

@@ -14,7 +14,7 @@
       margin-right: 0px;
     }
   }
-  .top-content{
+  .top-content {
     margin-top: -20%;
   }
   .it-header-gradient {
@@ -39,7 +39,7 @@
   }
   .hero-img {
     width: 90%; // makes sure image stretches full column
-     max-height: 900px;
+    max-height: 900px;
     height: auto; // maintain aspect ratio
     margin-right: 2px;
     margin-top: -22px;
@@ -85,14 +85,14 @@
   }
   .wave-overlay {
     position: absolute;
-    bottom: -220px; 
+    bottom: -220px;
     left: 0;
     width: 100%;
     height: 200px;
     pointer-events: none; /* makes sure wave is not clickable */
     z-index: 1;
   }
-   .industry-card-number {
+  .industry-card-number {
     margin-left: 10px;
   }
   .industry-card-link {
@@ -107,7 +107,7 @@
 }
 // Responsive
 @media (max-width: 768px) {
-   .top-content{
+  .top-content {
     margin-top: -8% !important;
   }
   .tele .industry-card-img {
@@ -124,12 +124,12 @@
     max-width: 100%;
     padding: 0;
   }
-   .hero-img{
-  margin-right: 20px !important;
-   }
-   .wave-overlay{
+  .hero-img {
+    margin-right: 20px !important;
+  }
+  .wave-overlay {
     display: none;
-   }
+  }
 }
 @media (max-width: 767.98px) {
   .tele .row > div[class*="col-"] {

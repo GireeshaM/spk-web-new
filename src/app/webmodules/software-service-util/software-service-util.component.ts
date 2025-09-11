@@ -6,12 +6,14 @@ import { MainHeroSectionComponent } from '../utilities/main-hero-section/main-he
 
 @Component({
   selector: 'app-software-service-util',
-  imports: [UnlockCompComponent,
+  imports: [
+    UnlockCompComponent,
     WhatCompComponent,
     WhatWeDoCompComponent,
-    MainHeroSectionComponent,],
+    MainHeroSectionComponent,
+  ],
   templateUrl: './software-service-util.component.html',
-  styleUrl: './software-service-util.component.scss'
+  styleUrl: './software-service-util.component.scss',
 })
 export class SoftwareServiceUtilComponent {
   // Section 1
@@ -20,32 +22,45 @@ export class SoftwareServiceUtilComponent {
     'SprintPark’s software services deliver customized, high-performance solutions that accelerate digital growth. From development to deployment, we ensure scalable, secure, and user-centric applications.';
   public heroImage = 'assets/services/software-services/itConsult.png';
   public smallImage = 'assets/services/software-services/itConsult.png';
- 
+
   // Section 2
-  public whyHeader = 'Enhancing Organizational Performance with Software Solutions.';
-  public whyList!: any[];
+  public whyHeader =
+    'Enhancing Organizational Performance with Software Solutions.';
+
   public images = [
     'assets/staffing/time.png',
     'assets/itImages/risk.png',
     'assets/itImages/reduce.png',
     'assets/itImages/analyze.png',
   ];
-  public ngOnInit() {
-    this.whyList = [
-      'Digital Transformation',
-      'Empower your business with custom-built software that automates operations, enhances customer experience, and drives innovation. ',
-      'Tailored Your Needs',
-      'Every business is unique — our software solutions are crafted specifically to fit your goals, workflows, and challenges.',
-      'Scalability & Flexibility',
-      'We build future-ready systems that grow with your business, ensuring long-term success and adaptability.  ',
-      'Security & Reliability',
-      'Your data is safe with us. We prioritize secure architecture, quality assurance, and 24/7 support.',
-    ];
-  }
- 
+
+  public whyList = [
+    {
+      title: 'Digital Transformation',
+      description:
+        'Empower your business with custom-built software that automates operations, enhances customer experience, and drives innovation.',
+    },
+    {
+      title: 'Tailored Your Needs',
+      description:
+        'Every business is unique — our software solutions are crafted specifically to fit your goals, workflows, and challenges.',
+    },
+    {
+      title: 'Scalability & Flexibility',
+      description:
+        'We build future-ready systems that grow with your business, ensuring long-term success and adaptability.',
+    },
+    {
+      title: 'Security & Reliability',
+      description:
+        'Your data is safe with us. We prioritize secure architecture, quality assurance, and 24/7 support.',
+    },
+  ];
+
   // Section 3
   public whyMainHeading = 'Why SprintPark is Your Ideal Software Partner  ';
-  public whySubHeading = 'Your Trusted Partner for Comprehensive Software Solutions';
+  public whySubHeading =
+    'Your Trusted Partner for Comprehensive Software Solutions';
   public whyContent =
     'SprintPark delivers tailored AI, data analytics, cybersecurity, and Salesforce services to boost your efficiency, security, and growth.';
   public whyCards = [
@@ -83,7 +98,7 @@ export class SoftwareServiceUtilComponent {
       },
     ],
   };
- 
+
   // Section 4
   public whatWeDoHeading = 'Driving Excellence in Software Development';
   public whatWeDoDescription =
