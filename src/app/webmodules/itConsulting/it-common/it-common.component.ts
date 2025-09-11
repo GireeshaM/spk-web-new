@@ -20,17 +20,17 @@ export class ItCommonComponent {
   public whatMainHeader = 'IT Consulting';
   public whatDescription =
     'Leverage the knowledge of seasoned IT professionals who guide you from strategy to execution solution design, implementation, and issue resolution all handled by specialists.';
-  public heroImage = 'assets/services/it-consulting-page/it-consulting-hero.jpg';
-  public smallImage = 'assets/services/it-consulting-page/it-consulting-hero.jpg';
+  public heroImage = 'assets/it-consulting-service-c-1/hero.jpg';
+  public smallImage = 'assets/it-consulting-service-c-1/hero.jpg';
 
   // Section 2
   public whyHeader = 'Unlocking Growth Through IT Expertise';
   public whyList!: any[];
   public images = [
-    'assets/services/it-consulting-page/icon-1.png',
-    'assets/services/it-consulting-page/icon-2.png',
-    'assets/services/it-consulting-page/icon-3.png',
-    'assets/services/it-consulting-page/icon-4.png',
+    'assets/it-consulting-service-c-1/icon-1.png',
+    'assets/it-consulting-service-c-1/icon-2.png',
+    'assets/it-consulting-service-c-1/icon-3.png',
+    'assets/it-consulting-service-c-1/icon-4.png',
   ];
   public  ngOnInit() {
     this.whyList = [
@@ -59,7 +59,7 @@ export class ItCommonComponent {
       desc: 'We believe in long-term relationships built on trust, accountability, and consistent delivery. Our commitment to integrity is reflected in everything we do.',
     },
     {
-      title: 'Flexible Engagement Models',
+      title: 'Flexible Engagement Models',  
       desc: 'We offer adaptable plans designed to fit your unique goals, timelines, and budget—whether you need end-to-end support or specialized consulting.',
     },
     {
@@ -69,17 +69,17 @@ export class ItCommonComponent {
   ];
   public teamImages = {
     left: {
-      src: 'assets/services/it-consulting-page/team-1.png',
+      src: 'assets/it-consulting-service-c-1/team-1.png',
       alt: 'Team 1',
     },
     right: [
       {
-        src: 'assets/services/it-consulting-page/team-2.png',
+        src: 'assets/it-consulting-service-c-1/team-2.png',
         alt: 'Team 2',
         extraClass: 'mb-3',
       },
       {
-        src: 'assets/services/it-consulting-page/team-3.png',
+        src: 'assets/it-consulting-service-c-1/team-3.png',
         alt: 'Team 3',
       },
     ],
@@ -91,15 +91,15 @@ export class ItCommonComponent {
   public  softwareCards = [
     {
       title: 'IT Assessment',
-      image: 'assets/services/it-consulting-page/it-assessment.jpg',
+      image: 'assets/it-consulting-service-c-1/it-assessment.jpg',
     },
     {
       title: 'IT Design Consulting',
-      image: 'assets/services/it-consulting-page/it-design-figmac.png',
+      image: 'assets/it-consulting-service-c-1/it-design.jpg',
     },
     {
       title: 'IT Infrastructure Consulting',
-      image: 'assets/services/it-consulting-page/it-infra.jpg',
+      image: 'assets/it-consulting-service-c-1/it-infra.jpg',
     },
   ];
 }
