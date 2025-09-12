@@ -20,17 +20,17 @@ export class ProjectManagementComponent {
   public whatMainHeader = 'Project Management';
   public whatDescription =
     'SprintPark’s project management services ensure seamless execution from planning to delivery. We drive efficiency, collaboration, and timely outcomes aligned with your business objectives.';
-  public heroImage = 'assets/services/software-services/itConsult.png';
-  public smallImage = 'assets/services/software-services/itConsult.png';
+  public heroImage = 'assets/services/project-management-service/project-management-hero.png';
+  public smallImage = 'assets/services/project-management-service/project-management-hero.png';
 
   // Section 2
   public whyHeader = 'Ensuring Excellence in Project Delivery';
 
   public images = [
-    'assets/staffing/time.png',
-    'assets/itImages/risk.png',
-    'assets/itImages/reduce.png',
-    'assets/itImages/analyze.png',
+    'assets/services/project-management-service/enhance-internal-communication.png',
+    'assets/services/project-management-service/costs.png',
+    'assets/services/project-management-service/enable-Smarter-Decision-Making.png',
+    'assets/services/project-management-service/discover-best-practices.png',
   ];
 
   whyList = [
@@ -82,17 +82,17 @@ export class ProjectManagementComponent {
   ];
   public teamImages = {
     left: {
-      src: 'assets/services/software-services/section-3-1.png',
+      src: 'assets/services/project-management-service/team-1.png',
       alt: 'Team 1',
     },
     right: [
       {
-        src: 'assets/services/software-services/section-3-2.png',
+        src: 'assets/services/project-management-service/team-2.png',
         alt: 'Team 2',
         extraClass: 'mb-3',
       },
       {
-        src: 'assets/services/software-services/section-3-3.png',
+        src: 'assets/services/project-management-service/team-3.png',
         alt: 'Team 3',
       },
     ],
@@ -105,15 +105,15 @@ export class ProjectManagementComponent {
   public softwareCards = [
     {
       title: 'Project Implementation',
-      image: 'assets/services/software-services/whatWeDo.png',
+      image: 'assets/services/project-management-service/project-implementation.png',
     },
     {
       title: 'Project Outsourcing ',
-      image: 'assets/services/software-services/whatWeDo.png',
+      image: 'assets/services/project-management-service/project-outsourcing.png',
     },
     {
       title: 'Project Consulting',
-      image: 'assets/services/software-services/whatWeDo.png',
+      image: 'assets/services/project-management-service/project-consulting.png',
     },
   ];
 }

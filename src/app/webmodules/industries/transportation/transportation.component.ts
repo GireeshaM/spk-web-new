@@ -14,17 +14,17 @@ export class TransportationComponent {
   public itContent =
     'SprintPark supports transportation and logistics firms with smart, tailored solutions. We combine strategy and expertise to help you stay competitive and grow in a fast-changing industry.';
   public subHeading = 'How We Help Transform Transportation & Logistics';
-  public telecom = 'assets/Industries/TelecomIndustries.png';
+  public telecom = 'assets/Industries/transportation-and-logistics/transportation-hero.png';
   public cards = [
     {
-      img: 'assets/Industries/DataPrivacy.png',
+      img: 'assets/Industries/transportation-and-logistics/it-Consulting-Digital-Solutions.png',
       title: 'IT Consulting & Digital Solutions',
       description:
         'We provide tailored digital strategies like TMS, route optimization, and real-time tracking to improve your operations.',
       link: '/transport/itConsulting',
     },
     {
-      img: 'assets/Industries/Automation.png',
+      img: 'assets/Industries/transportation-and-logistics/network-Engineering-Connectivity.png',
       title: 'Network Engineering & Connectivity',
       description:
         'We build and maintain networks for smooth data flow, GPS tracking, and reliable vehicle communication.',
@@ -32,7 +32,7 @@ export class TransportationComponent {
     },
     {
       title: 'Salesforce & AI Automation',
-      img: 'assets/Industries/Infrastructure.png',
+      img: 'assets/Industries/transportation-and-logistics/salesforce-AI Automation.png',
       description:
         'We customize Salesforce for customer management and use AI for route planning, maintenance, forecasting, and chatbots.',
       link: '/transport/salesforceAI',

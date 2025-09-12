@@ -118,27 +118,27 @@ export class ContactUsComponent {
   // Section 5- Why Hire
   public reasons = [
     {
-      icon: '/assets/contactuslogos/1.png',
+      icon: 'assets/contactus/certified-consultants.png',
       title: 'Certified Consultants and Architects',
     },
     {
-      icon: '/assets/contactuslogos/2.png',
+      icon: 'assets/contactus/projects-delivered.png',
       title: '100+ Projects Delivered',
     },
     {
-      icon: '/assets/contactuslogos/3.png',
+      icon: 'assets/contactus/247-support.png',
       title: '24/7 Support',
     },
     {
-      icon: '/assets/contactuslogos/4.png',
+      icon: 'assets/contactus/flexible-solutions.png',
       title: 'Flexible Solutions',
     },
     {
-      icon: '/assets/contactuslogos/5.png',
+      icon: 'assets/contactus/extensive-experience.png',
       title: 'Extensive Experience',
     },
     {
-      icon: '/assets/contactuslogos/6.png',
+      icon: 'assets/contactus/data-privacy.png',
       title: 'Complete Data Privacy',
     },
   ];

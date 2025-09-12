@@ -14,7 +14,7 @@ public currentSection = 'salesforceIntegration';
   route = inject(ActivatedRoute);
   public sections = {
     salesforceIntegration: {
-      heroImage: '/assets/industries/manufacturing/salesforceIntegration.png',
+      heroImage: 'assets/Industries/manufacturing-SubPages/salesforce-integration.png',
       heroHeading:
         'How Can Salesforce Integration Transform Manufacturing Operations?',
       subHeading:
@@ -60,7 +60,7 @@ public currentSection = 'salesforceIntegration';
       ],
     },
     dataAnalytics: {
-      heroImage: '/assets/industries/manufacturing/dataAnalytics.png',
+      heroImage: 'assets/Industries/manufacturing-SubPages/advanced-data-analytics.png',
       heroHeading:
         'How Can Advanced Data Analytics Revolutionize Manufacturing?',
       subHeading:
@@ -107,7 +107,7 @@ public currentSection = 'salesforceIntegration';
     },
 
     projectManagement: {
-      heroImage: '/assets/industries/manufacturing/projectManagement.png',
+      heroImage: 'assets/Industries/manufacturing-SubPages/expert-project-management.png',
       heroHeading:
         'How Can Expert Project Management Drive Manufacturing Success?',
       subHeading:
@@ -158,7 +158,7 @@ public currentSection = 'salesforceIntegration';
       ],
     },
     ITConsulting: {
-      heroImage: 'assets/industries/manufacturing/projectManagement.png',
+      heroImage: 'assets/Industries/manufacturing-SubPages/strategic-it-consulting.png',
       heroHeading: 'How Can Strategic IT Consulting Transform Manufacturing?',
       subHeading:
         'Driving digital transformation, operational efficiency, and innovation.',
@@ -215,4 +215,3 @@ public currentSection = 'salesforceIntegration';
     return this.sections[this.currentSection as keyof typeof this.sections];
   }
 }
-

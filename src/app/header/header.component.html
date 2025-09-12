@@ -2,7 +2,7 @@
   <div class="container">
     <!-- Logo -->
     <a class="navbar-brand" href="#">
-      <img src="/assets/header/logoBlue.png" alt="logo" />
+      <img src="assets/header/header-logo.png" alt="logo" />
     </a>
 
     <!-- Toggler -->
@@ -50,9 +50,8 @@
           <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
           <li class="nav-item">
             <!-- <a class="nav-link" (click)="onAboutClick()">About Us</a> -->
-            <a class="nav-link" href="#" (click)="onAboutClick($event)"
-              >About Us</a
-            >
+           <a [routerLink]="['/']" fragment="about-us" class="nav-link">About Us</a>
+
           </li>
 
           <li class="nav-item dropdown">

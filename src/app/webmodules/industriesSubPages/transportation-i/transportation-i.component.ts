@@ -15,7 +15,7 @@ public currentSection = 'itConsulting';
   route = inject(ActivatedRoute);
   public sections = {
     itConsulting: {
-      heroImage: '/assets/industries/healthcareIndustry.png',
+      heroImage: 'assets/Industries/transportation-SubPages/it-consulting-digital-solution.png',
       heroHeading:
         'How Can IT Consulting & Digital Solutions Transform Transportation & Logistics?',
       subHeading:
@@ -68,7 +68,7 @@ public currentSection = 'itConsulting';
     },
 
     networkEngineering: {
-      heroImage: '/assets/industries/transportIndustry.png',
+      heroImage: 'assets/Industries/transportation-SubPages/networkin-engineering-connectivity.png',
       heroHeading:
         'How Can Network Engineering & Connectivity Revolutionize Transportation & Logistics?',
       subHeading:
@@ -115,7 +115,7 @@ public currentSection = 'itConsulting';
       ],
     },
     salesforceAI: {
-      heroImage: '/assets/industries/transportIndustry.png',
+      heroImage: 'assets/Industries/transportation-SubPages/salesforce-ai-automation.png',
       heroHeading:
         'How Can Salesforce & AI Automations Transform Transportation and Logistics?',
       subHeading:

@@ -15,7 +15,7 @@ public currentSection = 'medicalinnovation';
 
   public sections = {
     intelligentinnovation: {
-      heroImage: '/assets/industries/healthcare/automation.png',
+      heroImage: 'assets/Industries/healthCare-Life-Science-SubPages/intelligent-automation.png',
       heroHeading:
         'How can automation reshape patient care and medical innovation?',
       subHeading: 'Intelligent Automation in Healthcare & Life Sciences',
@@ -65,7 +65,7 @@ public currentSection = 'medicalinnovation';
       ],
     },
     connectedInfrastructure: {
-      heroImage: '/assets/industries/healthcare/infrastructure.png',
+      heroImage: 'assets/Industries/healthCare-Life-Science-SubPages/connected-infrastructure.png',
       heroHeading: 'How Does Connected Infrastructure Transform Healthcare?',
       subHeading:
         'Building smarter systems for efficient, secure, and patient-centered care.',
@@ -120,7 +120,7 @@ public currentSection = 'medicalinnovation';
       ],
     },
     dataSecurity: {
-      heroImage: '/assets/industries/healthcare/dataSecurity.png',
+      heroImage: 'assets/Industries/healthCare-Life-Science-SubPages/data-Security.png',
       heroHeading: 'Why Is Data Security & Compliance Critical in Healthcare?',
       subHeading:
         'Protecting sensitive health information while ensuring trust and regulatory alignment.',
@@ -170,7 +170,7 @@ public currentSection = 'medicalinnovation';
       ],
     },
     projectDelivery: {
-      heroImage: '/assets/industries/healthcareProjectDelivery.png',
+      heroImage: 'assets/Industries/healthCare-Life-Science-SubPages/healthCare-project-delivery.png',
       heroHeading:
         'How Can Effective Project Delivery Transform Healthcare Services?',
       subHeading:
@@ -221,7 +221,7 @@ public currentSection = 'medicalinnovation';
       ],
     },
     talentSolutions: {
-      heroImage: '/assets/industries/healthcareTalentSolutions.png',
+      heroImage: 'assets/Industries/healthCare-Life-Science-SubPages/expert-talent-solutions.png',
       heroHeading:
         'How Can Expert Talent Solutions Empower the Healthcare Sector?',
       subHeading:
@@ -272,7 +272,7 @@ public currentSection = 'medicalinnovation';
       ],
     },
     patientInnovation: {
-      heroImage: '/assets/industries/healthcarePatientInnovation.png',
+      heroImage: 'assets/Industries/healthCare-Life-Science-SubPages/patient-centered-innovations.png',
       heroHeading: 'How Can Patient-Centered Innovation Transform Healthcare?',
       subHeading:
         'Empowering patients through personalized care, technology, and human-centered design.',

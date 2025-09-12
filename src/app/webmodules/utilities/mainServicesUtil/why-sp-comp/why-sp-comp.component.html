@@ -1,0 +1,38 @@
+<div class="container py-5">
+  <!-- Heading & Description -->
+  <div class="text-center mb-5">
+    <h1 class="display-5 fw-bold text-dark">{{ mainHeading }}</h1>
+    <p class="text-muted mx-auto w-75">{{ content }}</p>
+  </div>
+
+  <div class="row align-items-start g-4">
+    <!-- Left Image -->
+    <div class="col-lg-5 text-center mb-4 mb-lg-0">
+     <img
+  [src]="image.left.src"
+  [alt]="image.left.alt"
+  class="img-fluid rounded shadow"
+  style="max-width: 350px; height: auto;"
+/>
+
+    </div>
+
+    <!-- Right Cards -->
+    <div class="col-lg-7">
+      <div class="row g-4 mt-n2">  <!-- pushed upward -->
+        <div class="col-md-6 d-flex" *ngFor="let card of cards">
+        <div class="card card-hover flex-fill text-center shadow"
+        style="width:365px; height:254px;">
+        <div class="card-body text-white d-flex flex-column justify-content-center p-4">
+        <h5 class="card-title fw-bold mb-3">{{ card.title }}</h5>
+        <p class="card-text text-white mb-0">{{ card.desc }}</p>
+       </div>
+      </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

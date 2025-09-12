@@ -43,42 +43,42 @@ export class HomeComponent implements OnInit, AfterViewInit {
   public btn2 = { label: "Let's talk", style: 'btn-outline-light' };
   public slides = [
     {
-      image: 'assets/home-compression-1/hero-compression-1/carousel-1.jpg',
+      image: 'assets/home/hero-carousel/next-gen-software.jpg',
       title: 'Next-Gen Software',
       subtitle: 'Smarter software, better solutions.',
       btn1: this.btn1,
       btn2: this.btn2,
     },
     {
-      image: 'assets/home-compression-1/hero-compression-1/carousel-2.jpg',
+      image: 'assets/home/hero-carousel/talent-solution.jpg',
       title: 'Talent Solution',
       subtitle: 'Right people, Right fit.',
       btn1: this.btn1,
       btn2: this.btn2,
     },
     {
-      image: 'assets/home-compression-1/hero-compression-1/carousel-3.jpg',
+      image: 'assets/home/hero-carousel/tech-evolution-partners.jpg',
       title: 'Tech Evolution Partners',
       subtitle: 'Smart Solutions, Clear Direction.',
       btn1: this.btn1,
       btn2: this.btn2,
     },
     {
-      image: 'assets/home-compression-1/hero-compression-2/carousel-4.jpg',
+      image: 'assets/home/hero-carousel/smart-product-layout.jpg',
       title: 'Smart Product Rollouts',
       subtitle: 'From Code to Clients.',
       btn1: this.btn1,
       btn2: this.btn2,
     },
     {
-      image: 'assets/home-compression-1/hero-compression-1/carousel-5.jpg',
+      image: 'assets/home/hero-carousel/plan-to-launch.jpg',
       title: 'From Plan to Launch',
       subtitle: 'Smart.Agile.Delivered',
       btn1: this.btn1,
       btn2: this.btn2,
     },
     {
-      image: 'assets/home-compression-1/hero-compression-1/carousel-6.jpg',
+      image: 'assets/home/hero-carousel/future-to-focus.jpg',
       title: 'Future in Focus',
       subtitle: "Get Ready for what's next in innovation  .",
       btn1: this.btn1,
@@ -169,17 +169,17 @@ export class HomeComponent implements OnInit, AfterViewInit {
   public offerCardVisible: boolean[] = [];
   public whatWeOffer = [
     {
-      img: 'assets/home-compression-1/what-we-offer-c-1/software-services.png',
+      img: 'assets/home/whatWeOffer/software-services.png',
       title: 'Software services',
       desc: 'Custom software solutions designed to meet your unique business needs.',
     },
     {
-      img: 'assets/home-compression-1/what-we-offer-c-1/It_consulting.png',
+      img: 'assets/home/whatWeOffer/It_consulting.png',
       title: 'IT Consulting',
       desc: 'Expert guidance and strategic solutions to overcome challenges and drive your business.',
     },
     {
-      img: 'assets/home-compression-1/what-we-offer-c-1/staffing-solutions.png',
+      img: 'assets/home/whatWeOffer/staffing-solutions.png',
       title: 'Staffing Solutions',
       desc: "Connect with the right talent to drive your organization's growth and success.",
     },
@@ -193,22 +193,22 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   public features = [
     {
-      img: 'assets/home-compression-1/abt-sok-c-1/integrity.svg',
+      img: 'assets/home/about-sprintpark/integrity.png',
       title: 'Integrity',
       desc: 'Upholding honesty in all dealings',
     },
     {
-      img: 'assets/home-compression-1/abt-sok-c-1/team-work.svg',
+      img: 'assets/home/about-sprintpark/team-work.svg',
       title: 'Team Work',
       desc: 'Collaborating to achieve shared success',
     },
     {
-      img: 'assets/home-compression-1/abt-sok-c-1/commitment.svg',
+      img: 'assets/home/about-sprintpark/commitment.svg',
       title: 'Commitment',
       desc: 'Dedicated to exceeding client expectations',
     },
     {
-      img: 'assets/home-compression-1/abt-sok-c-1/diversity.svg',
+      img: 'assets/home/about-sprintpark/diversity.svg',
       title: 'Diversity',
       desc: 'Embracing differences to drive innovation',
     },
@@ -216,31 +216,31 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   public collaborations = [
     {
-      img: 'assets/Compressed-home/section-5-collaborate-section/collaborate-1.png',
+      img: 'assets/home/collaborate/expert-team.svg',
       alt: 'Expert Team',
       title: 'Assemble Your Expert Team',
       desc: 'Reach out to us, and we’ll assign professionals perfectly suited to your project’s needs.',
     },
     {
-      img: 'assets/Compressed-home/section-5-collaborate-section/collaborate-2.png',
+      img: 'assets/home/collaborate/define-objectives.svg',
       alt: 'Objectives',
       title: 'Define Your Objectives Clearly',
       desc: 'Engage in a strategic consultation to uncover your goals, challenges, and priorities.',
     },
     {
-      img: 'assets/Compressed-home/section-5-collaborate-section/collaborate-3.png',
+      img: 'assets/home/collaborate/clear-strategy.svg',
       alt: 'Strategy',
       title: 'Develop a Custom Strategy',
       desc: 'Receive a personalized, flexible plan tailored to solve your unique business challenges.',
     },
     {
-      img: 'assets/Compressed-home/section-5-collaborate-section/collaborate-4.png',
+      img: 'assets/home/collaborate/execute-confidence.svg',
       alt: 'Execute',
       title: 'Execute with Confidence',
       desc: 'Our expert team and 24/7 support ensure seamless delivery and ongoing success.',
     },
     {
-      img: 'assets/Compressed-home/section-5-collaborate-section/collaborate-5.png',
+      img: 'assets/home/collaborate/clear-expectations.svg',
       alt: 'Expectations',
       title: 'Set Clear Expectations',
       desc: 'Align on requirements, limitations, and success criteria to ensure shared understanding.',
@@ -256,22 +256,22 @@ export class HomeComponent implements OnInit, AfterViewInit {
   // Industries
   public industries = [
     {
-      img: 'assets/home-compression-1/industries-c-1/industry-it-telecommunications.jpg',
+      img: 'assets/home/industries-c-1/industry-it-telecommunications.jpg',
       alt: 'IT & TeleCommunications',
       title: 'IT & TeleCommunications',
     },
     {
-      img: 'assets/Compressed-home/secton-4-industries/industries-healthcare.jpg',
+      img: 'assets/home/industries-c-1/industries-healthcare.jpg',
       alt: 'Healthcare & Life Sciences',
       title: 'Healthcare & Life Sciences',
     },
     {
-      img: 'assets/home-compression-1/industries-c-1/industry-education.jpg',
+      img: 'assets/home/industries-c-1/industry-education.jpg',
       alt: 'Education',
       title: 'Education',
     },
     {
-      img: 'assets/home-compression-1/industries-c-1/industries-government.jpg',
+      img: 'assets/home/industries-c-1/industries-government.jpg',
       alt: 'Government',
       title: 'Government',
     },
@@ -309,17 +309,17 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ];
   public ourInsightsSlides = [
     {
-      image: 'assets/home-compression-1/our-insights-c-1/our-insights-3.jpg',
+      image: 'assets/home/our-insights/data-security.jpg',
       title: "Salesforce's Commitment to Data Security and Privacy Excellence",
       description: 'Read More >>',
     },
     {
-      image: 'assets/home-compression-1/our-insights-c-1/our-insights-2.jpg',
+      image: 'assets/home/our-insights/markrting-cloud.jpg',
       title: 'Salesforce Marketing Cloud Empowers Marketing of Businesses',
       description: 'Read More >>',
     },
     {
-      image: 'assets/home-compression-1/our-insights-c-1/our-insights-1.jpg',
+      image: 'assets/home/our-insights/health-cloud.jpg',
       title: 'Salesforce Health Cloud transform Payer sector in Healthcare',
       description: 'Read More >>',
     },
@@ -327,14 +327,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   public testimonials = [
     {
-      img: 'assets/home-compression-1/testinomials-c-1/review-1.png',
+      img: 'assets/home/testimonials/testimony-1.png',
       name: 'Maria Sans',
       role: 'Co-founder - Zent Technologies',
       rating: 4,
       text: 'Sprintpark has delivered excellent services to deliver our AI products. They have given us innovative solutions. Happy client :)',
     },
     {
-      img: 'assets/home-compression-1/testinomials-c-1/review-2.png',
+      img: 'assets/home/testimonials/testimony-2.png',
       name: 'Maria Sans',
       role: 'Co-founder - Zent Technologies',
       rating: 4,

@@ -14,17 +14,17 @@ export class HealthCareComponent {
   public itContent =
     'Life sciences and healthcare face risks like IP protection, supply chain issues, and regulatory change. SprintPark delivers tailored solutions to help you manage costs, ensure compliance, grow revenue, and strengthen cybersecurity with confidence.';
   public subHeading = 'Innovating Healthcare Services';
-  public telecom = 'assets/Industries/TelecomIndustries.png';
+  public telecom = 'assets/Industries/healthCareAndLifeSciences/healthCare-hero.png';
   public cards = [
     {
-      img: 'assets/Industries/DataPrivacy.png',
+      img: 'assets/Industries/healthCareAndLifeSciences/intelligent-automation.png',
       title: 'Intelligent Automation',
       description:
         'Boost operational efficiency and patient care through AI-driven monitoring, diagnostics, personalized medicine, and drug discovery.',
       link: '/healthcare/intelligentinnovation',
     },
     {
-      img: 'assets/Industries/Automation.png',
+      img: 'assets/Industries/healthCareAndLifeSciences/connected-infrastructure.png',
       title: 'Connected Infrastructure',
       description:
         'Design and maintain robust networks and migrate healthcare systems to secure, scalable cloud platforms for seamless access and data management.',
@@ -32,27 +32,27 @@ export class HealthCareComponent {
     },
     {
       title: 'Data Security & Compliance',
-      img: 'assets/Industries/Infrastructure.png',
+      img: 'assets/Industries/healthCareAndLifeSciences/data-security-compilance.png',
       description:
         'Protect patient data and systems with strong security protocols, risk assessments, and adherence to healthcare regulations.',
       link: '/healthcare/dataSecurity',
     },
     {
-      img: 'assets/Industries/ManagedSolutions.png',
+      img: 'assets/Industries/healthCareAndLifeSciences/healthCare-project-delivery.png',
       title: 'Healthcare Project Delivery',
       description:
         'Manage critical healthcare IT projects—like EHR implementations and system upgrades—ensuring timely and successful delivery.',
       link: '/healthcare/projectDelivery',
     },
     {
-      img: 'assets/Industries/ManagedSolutions.png',
+      img: 'assets/Industries/healthCareAndLifeSciences/expert-talent-solutions.png',
       title: 'Expert Talent Solutions',
       description:
         'Provide specialized healthcare IT professionals, including analysts, project managers, data scientists, and cybersecurity experts.',
       link: '/healthcare/talentSolutions',
     },
     {
-      img: 'assets/Industries/ManagedSolutions.png',
+      img: 'assets/Industries/healthCareAndLifeSciences/patient-Centered-Innovation.png',
       title: 'Patient-Centered Innovation',
       description:
         'Drive better outcomes by integrating cutting-edge technologies that enhance patient experience, remote care, and personalized treatment plans.',

@@ -47,11 +47,11 @@ import { WhatCompComponent } from '../webmodules/utilities/mainServicesUtil/what
   ],
 })
 export class CareersComponent implements AfterViewInit, OnDestroy {
-  public whatMainHeader = 'IT Consulting';
+  public whatMainHeader = 'Careers';
   public whatDescription =
-    'Leverage the knowledge of seasoned IT professionals who guide you from strategy to execution solution design, implementation, and issue resolution all handled by specialists.';
-  public heroImage = 'assets/services/software-services/itConsult.png';
-  public smallImage = 'assets/services/software-services/itConsult.png';
+    'SprintPark’s software services deliver customized, high-performance solutions that accelerate digital growth. From development to deployment, we ensure scalable, secure, and user-centric applications.';
+  public heroImage = 'assets/careers/careers-hero.jpg';
+  public smallImage = 'assets/careers/careers-hero.jpg';
   imageVisible = false;
 
   buttonStates: { btn1: boolean; btn2: boolean; btn3: boolean } = {
@@ -188,17 +188,17 @@ export class CareersComponent implements AfterViewInit, OnDestroy {
   ];
   public teamImages = {
     left: {
-      src: 'assets/services/software-services/section-3-1.png',
+      src: 'assets/careers/lifeAtSprintpark-1.png',
       alt: 'Team 1',
     },
     right: [
       {
-        src: 'assets/services/software-services/section-3-2.png',
+        src: 'assets/careers/lifeAtSprintpark-2.png',
         alt: 'Team 2',
         extraClass: 'mb-3',
       },
       {
-        src: 'assets/services/software-services/section-3-3.png',
+        src: 'assets/careers/lifeAtSprintpark-3.png',
         alt: 'Team 3',
       },
     ],

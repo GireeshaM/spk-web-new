@@ -10,13 +10,13 @@ import { CommonModule } from '@angular/common';
   styleUrl: './education-i.component.scss'
 })
 export class EducationIComponent implements OnInit {
-  public currentSection = 'NetworkingEngineering';
+ public currentSection = 'NetworkingEngineering';
 
   route = inject(ActivatedRoute);
   public sections = {
     //NetworkingEngineering
     networkingEngineering: {
-      heroImage: '/assets/industries/educationNetworking.png',
+      heroImage: 'assets/Industries/education-sub-pages/network-engineering.png',
       heroHeading: 'How Can Networking Engineering Transform Modern Education?',
       subHeading:
         'Building connected campuses with reliable, secure, and scalable networks.',
@@ -65,8 +65,8 @@ export class EducationIComponent implements OnInit {
       ],
     },
     //EducationProjectManagement
-    educationProjectManagement: {
-      heroImage: '/assets/industries/educationProject.png',
+    ProjectManagement: {
+      heroImage: 'assets/Industries/education-sub-pages/project-management.png',
       heroHeading: 'How Can Project Management Drive Success in Education?',
       subHeading:
         'Ensuring efficiency, accountability, and timely delivery of educational initiatives.',
@@ -116,7 +116,7 @@ export class EducationIComponent implements OnInit {
     },
     //dataAnalyticsEducation
     dataAnalyticsEducation: {
-      heroImage: '/assets/industries/educationIndustry.png',
+      heroImage: 'assets/Industries/education-sub-pages/data-analytics.png',
       heroHeading: 'How Can Data Analytics Transform Education?',
       subHeading:
         'Unlocking insights to improve learning outcomes and institutional performance.',

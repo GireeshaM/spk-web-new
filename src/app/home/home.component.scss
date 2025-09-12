@@ -235,7 +235,7 @@
     }
     .main-image {
       width: 100%;
-      height: auto;
+      height: 400px;
       border-radius: 15px;
       object-fit: cover;
       display: block;
@@ -620,3 +620,6 @@
   }
 }
 //TESTIMONIAL END
+#about-us {
+  scroll-margin-top: 80px; // adjust for sticky header height
+}

@@ -21,39 +21,39 @@ export class ItCommonComponent {
   public whatDescription =
     'Leverage the knowledge of seasoned IT professionals who guide you from strategy to execution solution design, implementation, and issue resolution all handled by specialists.';
   public heroImage =
-    'assets/services/it-consulting-page/it-consulting-hero.jpg';
+    '/assets/services/it-consulting-service/hero.jpg';
   public smallImage =
-    'assets/services/it-consulting-page/it-consulting-hero.jpg';
+    '/assets/services/it-consulting-service/hero.jpg';
 
   // Section 2
   public whyHeader = 'Unlocking Growth Through IT Expertise';
 
   public images = [
-    'assets/it-consulting-service-c-1/icon-1.png',
-    'assets/it-consulting-service-c-1/icon-2.png',
-    'assets/it-consulting-service-c-1/icon-3.png',
-    'assets/it-consulting-service-c-1/icon-4.png',
+    '/assets/services/it-consulting-service/access-Top-Tier-Experts.png',
+    '/assets/services/it-consulting-service/proactive-Risk-Management.png',
+    '/assets/services/it-consulting-service/focus-on-core-business.png',
+    '/assets/services/it-consulting-service/unbiased-Strategic-Insights.png',
   ];
   whyList = [
     {
-      title: 'Access Professionals',
+      title: 'Access Top-Tier Experts',
       description:
-        'Get access to the team of experts who can help you in all the way to solution generation, implementation and troubleshoot.',
+        'Leverage the knowledge of seasoned IT professionals who guide you from strategy to execution—solution design, implementation, and issue resolution—all handled by specialists.',
     },
     {
-      title: 'Reduce Risk',
+      title: ' Proactive Risk Management',
       description:
-        'We provide a maximum security for your solutions by continuously monitoring to prevent attacks before they may happen.',
+        'Safeguard your digital assets with continuous monitoring and threat prevention. We mitigate risks before they become problems, ensuring security and system resilience.',
     },
     {
-      title: 'Reduce Cost',
+      title: ' Focus on Core Business',
       description:
-        'Optimize your budget by maintaining high system performance without the need for full-time staff. Additionally, reduce the risk of expensive costs in the future.',
+        'Free your internal team from complex IT challenges so they can focus on what matters most—growing your business. Let our experts handle the tech, while you drive the strategy.',
     },
     {
-      title: 'Objective Analysis',
+      title: ' Unbiased, Strategic Insights',
       description:
-        'External IT consultants can evaluate your processes to provide a point of view on how your solution works.',
+        'Gain a clear, external perspective on your IT processes. Our consultants deliver actionable analysis to improve efficiency, identify gaps, and elevate overall performance.',
     },
   ];
 
@@ -82,17 +82,17 @@ export class ItCommonComponent {
   ];
   public teamImages = {
     left: {
-      src: 'assets/it-consulting-service-c-1/team-1.png',
+      src: 'assets/services/it-consulting-service/team-1.png',
       alt: 'Team 1',
     },
     right: [
       {
-        src: 'assets/it-consulting-service-c-1/team-2.png',
+        src: 'assets/services/it-consulting-service/team-2.png',
         alt: 'Team 2',
         extraClass: 'mb-3',
       },
       {
-        src: 'assets/it-consulting-service-c-1/team-3.png',
+        src: 'assets/services/it-consulting-service/team-3.png',
         alt: 'Team 3',
       },
     ],
@@ -104,15 +104,15 @@ export class ItCommonComponent {
   public softwareCards = [
     {
       title: 'IT Assessment',
-      image: 'assets/it-consulting-service-c-1/it-assessment.jpg',
+      image: 'assets/services/it-consulting-service/it-assessment.jpg',
     },
     {
       title: 'IT Design Consulting',
-      image: 'assets/it-consulting-service-c-1/it-design.jpg',
+      image: 'assets/services/it-consulting-service/it-design.jpg',
     },
     {
       title: 'IT Infrastructure Consulting',
-      image: 'assets/it-consulting-service-c-1/it-infra.jpg',
+      image: 'assets/services/it-consulting-service/it-infra.jpg',
     },
   ];
 }

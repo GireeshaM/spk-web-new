@@ -10,31 +10,32 @@ import { Component } from '@angular/core';
 export class InsightsComponent {
   public insights = [
     {
-      image: '/assets/insights/1.jpg',
+      image: 'assets/insights/achieving-marketing-excellence.jpg',
       title:
-        'Achieving Marketing Excellence: Boost Your Campaigns Using Salesforce Marketing Cloud & Salesforce Data Cloud',
+        'Achieving Marketing Excellence: Boost Your Campaigns Using Synergy of Salesforce Marketing Cloud & Salesforce Data Cloud',
     },
     {
-      image: '/assets/insights/2.jpg',
+      image: 'assets/insights/automate-business.jpg',
       title: 'Automate your business process through Salesforce Flow Builder',
+
     },
     {
-      image: '/assets/insights/3.jpg',
+      image: 'assets/insights/deep-dive-health-cloud.jpg',
       title:
         'Demo: How the Salesforce Health Cloud changing Healthcare Industry',
     },
     {
-      image: '/assets/insights/4.jpg',
+      image: 'assets/insights/explore-potential-salesforce.jpg',
       title:
         'Exploring the Potential of Salesforce Analytics Cloud & Compliance Use-cases in Business Intelligence',
     },
     {
-      image: '/assets/insights/5.jpg',
+      image: 'assets/insights/empovering-smart-business.jpg',
       title:
         'Empowering smart Business Reporting via potential of Salesforce CRM Analytics',
     },
     {
-      image: '/assets/insights/6.jpg',
+      image: 'assets/insights/explore -salesforce-automation.jpg',
       title:
         'Exploring the trending benefits of Choosing Salesforce Consultations',
     },

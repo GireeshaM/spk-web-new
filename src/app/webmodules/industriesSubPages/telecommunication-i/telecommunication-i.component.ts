@@ -14,7 +14,7 @@ export class TelecommunicationIComponent {
   route = inject(ActivatedRoute);
   public sections = {
     dataPrivacy: {
-      heroImage: '/assets/industries/healthcareIndustry.png',
+      heroImage: 'assets/Industries/telecommunicationSubPages/data-privacy-hero.png',
       heroHeading: 'Why Data Privacy is Telecom’s Biggest Challenge',
       subHeading: 'Customer trust begins with secure communication.',
       introText:
@@ -44,7 +44,7 @@ export class TelecommunicationIComponent {
       ],
     },
     automation: {
-      heroImage: '/assets/industries/automation.png',
+      heroImage: 'assets/Industries/telecommunicationSubPages/automation-hero.png',
       heroHeading:
         'How can automation reshape patient care and medical innovation?',
       subHeading: 'Intelligent Automation in Healthcare & Life Sciences',
@@ -81,7 +81,7 @@ export class TelecommunicationIComponent {
       ],
     },
     infrastructure: {
-      heroImage: '/assets/industries/infrastructure.png',
+      heroImage: 'assets/Industries/telecommunicationSubPages/infrastructure-hero.png',
       heroHeading:
         'What Makes Strong Infrastructure the Backbone of IT and Telecom?',
       subHeading:
@@ -122,7 +122,7 @@ export class TelecommunicationIComponent {
       ],
     },
     managedSolutions: {
-      heroImage: '/assets/industries/managed-solutions.png',
+      heroImage: 'assets/Industries/telecommunicationSubPages/managed-solutions.png',
       heroHeading: 'Why Choose Managed Solutions for Your Business?',
       subHeading: 'Unlock productivity with dependable IT services.',
       introText: '',
