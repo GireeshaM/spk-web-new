@@ -2,7 +2,7 @@
   font-family: "Inter", sans-serif;
   min-height: 100vh;
   overflow-x: hidden;
-  //hero section
+  // Hero Section
   #myCarousel {
     .carousel-item {
       img {
@@ -11,59 +11,77 @@
         filter: brightness(50%);
       }
     }
+
     .carousel-caption {
       bottom: 40%;
       left: 5%;
       right: auto;
       max-width: 45%;
       top: 32%;
-      .btn-1,
-      .btn-2 {
-        background-color: transparent;
-        border: 2px solid #fdfdfd;
-        color: #fff;
-        transition: all 0.3s ease-in-out;
-        text-decoration: none;
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+
+      h1,
+      p {
+        text-align: left !important;
       }
-      .btn-2:hover {
-        background-color: #ffff;
-        transform: scale(1.05);
-        color: black !important;
-      }
-      .btn-1 {
-        position: relative;
-        background-color: rgba(239, 122, 19, 1);
-        border: none;
-        overflow: visible;
-        transition:
-          transform 0.2s ease,
-          background-color 0.2s ease;
-      }
-      .btn-1:hover {
-        background-color: #ff8c1a;
-        transform: scale(1.05);
-      }
-      /* Sparkles hidden by default */
+
+      // Buttons
+     .btn-1,
+.btn-2 {
+  padding: 0.75rem 1rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center; 
+  align-items: center;      
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-1 {
+  background: #EF7A13;
+
+  color: #fff;
+  border: none;
+}
+
+.btn-1:hover {
+  background-color: #e68a00;
+  transform: scale(1.05);
+}
+
+.btn-2 {
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.btn-2:hover {
+
+
+
+  transform: scale(1.05);
+}
+
+
+      /* Sparkles */
       .sparkle {
         position: absolute;
         width: 6px;
         height: 6px;
-        background: radial-gradient(
-          circle,
-          #f1efe8 0%,
-          transparent 70%
-        ); /* golden sparkle ✨ */
+        background: radial-gradient(circle, #f1efe8 0%, transparent 70%);
         border-radius: 50%;
         pointer-events: none;
         opacity: 0;
       }
 
-      /* When button is hovered → sparkles animate */
       .btn-1:hover .sparkle {
         animation: twinkle 1.5s infinite;
       }
 
-      /* Random sparkle positions around button */
       .sparkle:nth-child(2) {
         top: -10px;
         left: 20%;
@@ -102,32 +120,72 @@
         }
       }
     }
-    .carousel-control-prev,
-    .carousel-control-next {
-      width: 30px;
-      height: 30px;
-      top: 75%;
-      border: 4px solid #f90;
-    }
+
+    // Carousel controls
+   .carousel-control-prev,
+.carousel-control-next {
+  width: 50px;
+  height: 50px;
+  top: 75%;
+  border: 4px solid #ff9900;
+  border-radius: 50%;
+  background: transparent !important;
+  opacity: 1 !important;
+  transition: all 0.3s ease-in-out; // smooth transition
+  color: #e6e4e1 !important;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background: #d2ac23;
+  color: #fff !important;
+  transform: scale(1.15); // ✅ zoom effect
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25); // ✅ smooth shadow pop
+}
+
+
+    // Mobile adjustments
     @media (max-width: 576px) {
       .carousel-item img {
         height: 50vh;
       }
+
       .carousel-caption {
         bottom: 10%;
         left: 5%;
         right: 5%;
         top: 5%;
-        max-width: 90%;
-        text-align: center;
+        max-width: 100%;
+        padding: 0 1rem;
+        text-align: center !important;
+        align-items: center;
+
+        .btn-group {
+          flex-direction: column !important;
+          width: 100%;
+
+          .btn-1,
+          .btn-2 {
+            width: 100%;
+          }
+        }
       }
+
       .carousel-control-prev,
       .carousel-control-next {
         margin-top: 42px;
+        width: 40px;
+        height: 40px;
+        border-width: 3px;
       }
     }
   }
 }
+
 //logo slider
 .logo-section {
   background: linear-gradient(90deg, #360060 0%, #5f3481 104.75%);
@@ -146,7 +204,7 @@
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-        min-width: 100%;
+        min-width: 200%;
         .combined-logo {
           display: flex;
           gap: 10px;
@@ -196,6 +254,19 @@
   background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
 }
 //features section
+.title {
+   
+  color:#372399;             
+            
+}
+/* CSS */
+.custom-paragraph {
+  font-family: 'Inter', sans-serif; /* Font-family */
+  font-size: 16px;                  /* Font size */
+  line-height: 40px;                /* Exact line-height */
+  letter-spacing: 0%;               /* Letter-spacing */
+}
+
 .about-sprintpark-section {
   background-color: #f2f1f9;
   padding-top: 30px;
@@ -214,15 +285,14 @@
     left: -6px;
     opacity: 1;
     transform: rotate(0deg);
-    background-color: #fff;
+  
     overflow: auto;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+   
   }
   .feature-image {
     height: 50px;
     width: 50px;
-    background-color: #fff;
+   
     background-size: cover;
   }
   .image-wrapper {
@@ -235,7 +305,7 @@
     }
     .main-image {
       width: 100%;
-      height: 400px;
+     height:400px;
       border-radius: 15px;
       object-fit: cover;
       display: block;
@@ -270,15 +340,19 @@
 //section 3 start of (what we offer and industries we serve)
 .offer-industries-bg {
   background:
-    url("/assets/homepage/footer/abstract-backdrop-with-colorful-wave-gradient-lines-white-background-modern-technology-background-wave-design-vector-illustration 4.png")
-      no-repeat center bottom/100% 700px,
-    #f6f4fd;
+    url("/assets/home/industries/industries-bgwave.png")
+      no-repeat center bottom/100% 600px,
+    #f6f4fd;
   min-height: 100vh;
   width: 100%;
   padding-bottom: 4rem;
+    background-color:  #EDE8F6;
+;
   .whatWeOffer-section,
   .industries-section {
     background: transparent;
+      margin-top: 40px;  // adjust as needed
+  margin-bottom: 60px;
     .bg-white {
       border-radius: 0 !important;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
@@ -293,94 +367,14 @@
     margin-bottom: 6rem;
     @media (max-width: 767px) {
       margin-bottom: 2.5rem;
+      margin-top: 60px;
     }
   }
 }
-// Industries cards: increase height
-.industries-card {
-  overflow: hidden;
-  position: relative;
-  min-height: 340px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  .img {
-    height: 240px;
-    object-fit: cover;
-    width: 100%;
-    display: block;
-  }
+.offer-industries-bg section {
+  padding-top: 60px;  /* space above each section */
+}
 
-  .industries-img {
-    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    will-change: transform;
-  }
-
-  &:hover .industries-img {
-    transform: scale(2) perspective(800px) translateZ(20px);
-    box-shadow: 0 12px 32px rgba(55, 35, 153, 0.18);
-    z-index: 2;
-  }
-}
-// Service cards (What we offer) hover effect
-.whatWeOffer-section .bg-white:hover {
-  background: #372399 !important;
-  color: #fff !important;
-  transition:
-    background 0.2s,
-    color 0.2s;
-}
-.industry-title-overlay {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  padding: 15px;
-  z-index: 2;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.arrow-btn {
-  background: #ff6600;
-  width: 35px;
-  height: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background 0.3s ease;
-  margin-left: auto;
-  flex-shrink: 0;
-  i {
-    transition: transform 0.3s ease;
-    display: inline-block;
-  }
-
-  &:hover {
-    background: #e65c00;
-
-    i {
-      transform: translateX(5px);
-    }
-  }
-
-  &:not(:hover) i {
-    transform: translateX(0);
-  }
-}
-.industries-card {
-  position: relative;
-  overflow: hidden;
-}
-.industries-img {
-  transition: transform 0.5s ease;
-}
-.industries-card:hover .industries-img {
-  transform: scale(2.05);
-}
-//end of industries cards
 .whatWeOffer-section .bg-white:hover h6,
 .whatWeOffer-section .bg-white:hover p {
   color: #fff !important;
@@ -452,11 +446,101 @@
   opacity: 0;
   transform: translateY(80px);
 }
+// Industries cards: increase height
+.industries-card {
+  overflow: hidden;
+  position: relative;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  .img {
+    height: 240px;
+    object-fit: cover;
+    width: 100%;
+    display: block;
+  }
+
+  .industries-img {
+transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+will-change: transform;
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+  }
+
+  &:hover .industries-img {
+    transform: scale(1.12) ;
+    box-shadow: 0 12px 32px rgba(55, 35, 153, 0.18);
+    z-index: 2;
+  }
+}
+// Service cards (What we offer) hover effect
+.whatWeOffer-section .bg-white:hover {
+  background: #372399 !important;
+  color: #fff !important;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.industry-title-overlay {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 15px;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+  .arrow-btn:hover ~ .industries-img,
+  .arrow-btn:hover .industries-img {
+    transform: scale(1.15); 
+  }
+
+
+// Arrow button styling
+.arrow-btn {
+  background: #ff6600;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.4s ease; 
+  margin-left: auto;
+  flex-shrink: 0;
+  z-index: 3; 
+
+  i {
+    transition: transform 0.4s ease;
+    display: inline-block;
+  }
+
+  &:hover {
+    background: #e65c00;
+    transform: scale(1.1);
+
+    i {
+      transform: translateX(6px); 
+    }
+  }
+}
+.industries-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.industries-card:hover .industries-img {
+  transform: scale(2.05);
+}
+//end of industries cards
 //section 3 end of (what we offer and industries we serve)
-//Collaboration Section
-// .collaborate-highlight {
-//   color: #468bd5;
-// }
+
 .text-purple {
   color: #3d008d;
 }
@@ -493,6 +577,8 @@
 .collaborate-section {
   position: relative;
   overflow: hidden;
+  background: #DEDEFF66;
+
 }
 // Collaboration cards hover effect
 .collaborate-card:hover {
@@ -509,7 +595,7 @@
 // Collaboration Section end
 // stats section
 .stats-section {
-  background: linear-gradient(90deg, #4b197a 0%, #6a2997 100%);
+  background: linear-gradient(90deg, #360060 0%, #5F3481 104.75%);
   padding: 20px 0;
   min-height: 200px;
 }
@@ -544,26 +630,14 @@
     margin-left: 200px !important;
   }
 }
-.dot {
-  width: 10px;
-  height: 10px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-.dot.active {
-  background-color: #f77300;
-}
 //insights end
 //testimonial section
 .testimonial-section {
   background:
-    url("/assets/homepage/footer/abstract-backdrop-with-colorful-wave-gradient-lines-white-background-modern-technology-background-wave-design-vector-illustration 4.png")
-      no-repeat center/120% auto,
-    url("/assets/homepage/footer/315788 4.png") no-repeat center/cover,
-    #f6f4fd;
+    url("/assets/home/testimonials/testinomial-bg.png")
+      no-repeat center/100% auto,
+    url("/assets/home/testimonials/testinomial-curve.png") no-repeat center/cover,
+    #f6f4fd;
 }
 .testimonial-section .card,
 .testimonial-section .bg-white {
@@ -573,53 +647,41 @@
   margin: 0 !important;
 }
 // Testimonial cards
+/* Hover effect */
 .testimonial-section .bg-white:hover {
-  background: #372399 !important;
-  transition:
-    background 0.2s,
-    color 0.2s;
+  background: #372399;
+  transition: background 0.2s, color 0.2s;
 }
 .testimonial-section .bg-white:hover .fw-bold,
 .testimonial-section .bg-white:hover .text-secondary,
 .testimonial-section .bg-white:hover .fs-5 {
-  color: #fff !important;
+  color: #fff;
 }
+/* Mobile horizontal scroll (for cards) */
 .testimonial-wrapper {
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   padding-bottom: 10px;
-  .testimonial-card {
-    scroll-snap-align: start;
-  }
 }
-.quote1 {
-  position: absolute;
-  top: 24px;
-  right: 72px;
-  width: 32px;
-  height: 32px;
+.testimonial-wrapper .testimonial-card {
+  scroll-snap-align: start;
 }
-.quote2 {
-  position: absolute;
-  top: 24px;
-  right: 32px;
-  width: 32px;
-  height: 32px;
-}
-/* 📱 Mobile view adjustments */
+/* 📱 Mobile adjustments */
 @media (max-width: 768px) {
-  .testimonial-card {
-    .card-inner {
-      min-height: 260px !important;
-      padding: 1rem !important;
-    }
-    img {
-      width: 60px !important;
-      height: 60px !important;
-    }
+  .testimonial-card img {
+    width: 60px;
+    height: 60px;
   }
 }
-//TESTIMONIAL END
-#about-us {
-  scroll-margin-top: 80px; // adjust for sticky header height
+.star-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px; /* spacing between stars */
 }
+
+.star-rating span {
+  font-size: 1.4rem; /* make stars bigger */
+  line-height: 1;    /* fix vertical alignment */
+}
+
+//TESTIMONIAL END

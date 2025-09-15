@@ -1,4 +1,4 @@
-import { NgStyle } from '@angular/common';
+import { NgClass, NgStyle } from '@angular/common';
 import { Component, inject, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
@@ -10,8 +10,7 @@ import { filter } from 'rxjs/operators';
   styleUrl: './footer.component.scss',
 })
 export class FooterComponent implements OnInit {
-  @Input() themeColor = '#ffffff';
-
+  @Input() themeColor: string = '#f6f4fd';
   route = inject(ActivatedRoute);
   router = inject(Router);
   public ngOnInit(): void {

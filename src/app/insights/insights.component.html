@@ -1,4 +1,4 @@
-CC<section class="insights-section container-fluid p-0">
+<section class="insights-section container-fluid p-0">
   <div class="row g-0 align-items-stretch">
     <!-- Image (one element only) -->
     <div class="col-lg-5 order-1 order-lg-2">
@@ -8,17 +8,14 @@ CC<section class="insights-section container-fluid p-0">
         class="img-fluid w-100 h-100 object-fit-cover"
       />
     </div>
-
     <!-- Content -->
     <div
       class="col-lg-7 order-2 order-lg-1 d-flex align-items-center justify-content-center p-5 insights-content"
     >
-      <div class="w-100 px-3 px-lg-5">
+      <div class="w-100 px-3 ">
         <h1 class="fw-bold mb-4 text-white">Stay Ahead with Expert Insights</h1>
         <h5 class="text-white lh-lg">
-          Explore trends, technologies, and strategies shaping the future of
-          digital transformation. Our thought leadership and industry
-          perspectives help you navigate innovation with clarity and confidence.
+         Explore trends, technologies, and strategies shaping the future of digital transformation. Our thought leadership and industry perspectives help you navigate innovation with clarity and confidence.
         </h5>
       </div>
     </div>
@@ -26,14 +23,13 @@ CC<section class="insights-section container-fluid p-0">
 </section>
 
 <div class="container py-5">
-  <h2 class="text-center mb-5 mt-5 fw-bold">Our Insights</h2>
+  <h2 class="text-center  mt-3 fw-bold">Our Insights</h2>
   <div class="row g-5">
     <div class="col-md-4" *ngFor="let insight of insights">
       <div class="card h-100 border-0 position-relative insight-card">
         <div
           class="position-relative w-100 our-insights"
-          style="height: 350px; overflow: hidden"
-        >
+          style="height: 350px; overflow: hidden">
           <img
             [src]="insight.image"
             class="card-img-top rounded-0 object-fit-contain"

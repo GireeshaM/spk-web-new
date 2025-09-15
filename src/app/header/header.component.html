@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md bg-white sticky-top border-bottom">
   <div class="container">
     <!-- Logo -->
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" [routerLink]="['/']">
       <img src="assets/header/header-logo.png" alt="logo" />
     </a>
 
@@ -18,124 +18,86 @@
     </button>
 
     <!-- Offcanvas -->
-    <div
-      class="offcanvas offcanvas-end"
-      tabindex="-1"
-      id="offcanvas"
-      aria-labelledby="offcanvasLabel"
-    >
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas">
       <div class="offcanvas-header">
-        <a class="navbar-brand" href="">
+        <a class="navbar-brand" [routerLink]="['/']">
           <img src="/assets/header/logoBlue.png" alt="logo" />
         </a>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="offcanvas"
-          aria-label="Close"
-        ></button>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
       </div>
 
       <div class="offcanvas-body">
         <ul class="navbar-nav flex-grow-1 justify-content-between">
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="#" aria-label="SprintPark">
-              <svg class="bi" width="24" height="24" aria-hidden="true">
-                <use xlink:href="#sprintpark"></use>
-              </svg>
-            </a>
-          </li> -->
-          <li></li>
-
-          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
           <li class="nav-item">
-            <!-- <a class="nav-link" (click)="onAboutClick()">About Us</a> -->
-           <a [routerLink]="['/']" fragment="about-us" class="nav-link">About Us</a>
-
+            <a
+              class="nav-link"
+              href="#home"
+            >Home</a>
           </li>
 
-          <li class="nav-item dropdown">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+             href="#about-us"
+            >About Us</a>
+          </li>
+
+          <!-- Services -->
+          <li
+            class="nav-item dropdown"
+            routerLinkActive="active"
+          >
             <a
               class="nav-link dropdown-toggle d-md-none"
               href="#"
               data-bs-toggle="dropdown"
-              >Services</a
-            >
+            >Services</a>
             <a class="nav-link d-none d-md-block" href="#">Services</a>
 
             <ul class="dropdown-menu">
-              <li>
-                <a class="dropdown-item" href="/it-consulting">IT Consulting</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="/staffing">Staffing</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="/project-management"
-                  >Project Management</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="/software-service"
-                  >Software Services</a
-                >
-              </li>
+              <li><a class="dropdown-item" [routerLink]="'/it-consulting'" routerLinkActive="active">IT Consulting</a></li>
+              <li><a class="dropdown-item" [routerLink]="'/staffing'" routerLinkActive="active">Staffing</a></li>
+              <li><a class="dropdown-item" [routerLink]="'/project-management'" routerLinkActive="active">Project Management</a></li>
+              <li><a class="dropdown-item" [routerLink]="'/software-service'" routerLinkActive="active">Software Services</a></li>
             </ul>
           </li>
-          <li class="nav-item dropdown">
+
+          <!-- Industries -->
+          <li
+            class="nav-item dropdown"
+            routerLinkActive="active"
+          >
             <a
               class="nav-link dropdown-toggle d-md-none"
               href="#"
               data-bs-toggle="dropdown"
-              >Industries</a
-            >
+            >Industries</a>
             <a class="nav-link d-none d-md-block" href="#">Industries</a>
 
             <ul class="dropdown-menu">
-              <li>
-                <a class="dropdown-item" href="/itAndTelecommunications"
-                  >IT & Telecommunications</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="/government">Government</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="/healthCareAndLifeSciences"
-                  >Health Care & Life Sciences</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="/manufacturing">Manufacturing</a>
-              </li>
-              <li><a class="dropdown-item" href="/education">Education</a></li>
-              <li>
-                <a class="dropdown-item" href="/transportationAndLogistics"
-                  >Transportation & Logistics</a
-                >
-              </li>
-              <li><a class="dropdown-item" href="/banking">Banking</a></li>
+              <li><a class="dropdown-item" [routerLink]="'/itAndTelecommunications'" routerLinkActive="active">IT & Telecommunications</a></li>
+              <li><a class="dropdown-item" [routerLink]="'/government'" routerLinkActive="active">Government</a></li>
+              <li><a class="dropdown-item" [routerLink]="'/healthCareAndLifeSciences'" routerLinkActive="active">Health Care & Life Sciences</a></li>
+              <li><a class="dropdown-item" [routerLink]="'/manufacturing'" routerLinkActive="active">Manufacturing</a></li>
+              <li><a class="dropdown-item" [routerLink]="'/education'" routerLinkActive="active">Education</a></li>
+              <li><a class="dropdown-item" [routerLink]="'/transportationAndLogistics'" routerLinkActive="active">Transportation & Logistics</a></li>
+              <li><a class="dropdown-item" [routerLink]="'/banking'" routerLinkActive="active">Banking</a></li>
             </ul>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link" href="/careers">Careers</a>
+            <a class="nav-link" [routerLink]="'/careers'" routerLinkActive="active">Careers</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/insights">Insights</a>
+            <a class="nav-link" [routerLink]="'/insights'" routerLinkActive="active">Insights</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/contact-us">Contact Us</a>
+            <a class="nav-link" [routerLink]="'/contact-us'" routerLinkActive="active">Contact Us</a>
           </li>
 
           <!-- Login Button -->
           <li class="nav-item">
-            <button
-              class="btn btnn"
-              data-bs-toggle="modal"
-              data-bs-target="#loginModal"
-            >
-              Login
-            </button>
+            <button class="btn btnn" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
           </li>
         </ul>
       </div>

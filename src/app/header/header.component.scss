@@ -65,6 +65,19 @@
   }
 }
 
+.nav-link.active,
+.dropdown-item.active {
+  font-weight: 600;
+  color: #0d6efd !important; /* highlight color */
+  border-bottom: 2px solid #0d6efd; /* optional underline */
+}
+
+/* Highlight dropdown parent if any child is active */
+.nav-item.dropdown.active > .nav-link {
+  font-weight: 600;
+  color: #0d6efd !important;
+}
+
 /* Desktop-only dropdown hover */
 @media (min-width: 768px) {
   .navbar {

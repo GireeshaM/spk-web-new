@@ -256,22 +256,22 @@ export class HomeComponent implements OnInit, AfterViewInit {
   // Industries
   public industries = [
     {
-      img: 'assets/home/industries-c-1/industry-it-telecommunications.jpg',
+      img: 'assets/home/industries/industry-it-telecommunications.jpg',
       alt: 'IT & TeleCommunications',
       title: 'IT & TeleCommunications',
     },
     {
-      img: 'assets/home/industries-c-1/industries-healthcare.jpg',
+      img: 'assets/home/industries/industries-healthcare.jpg',
       alt: 'Healthcare & Life Sciences',
       title: 'Healthcare & Life Sciences',
     },
     {
-      img: 'assets/home/industries-c-1/industry-education.jpg',
+      img: 'assets/home/industries/industry-education.jpg',
       alt: 'Education',
       title: 'Education',
     },
     {
-      img: 'assets/home/industries-c-1/industries-government.jpg',
+      img: 'assets/home/industries/industries-government.jpg',
       alt: 'Government',
       title: 'Government',
     },
@@ -279,28 +279,28 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   public stats = [
     {
-      img: 'assets/Compressed-home/section-6/satisfied-clients.png',
+      img: 'assets/home/statistics/satisfied clients.png',
       target: 4386,
       current: 0,
       label: 'Satisfied Clients',
       animated: false,
     },
     {
-      img: 'assets/Compressed-home/section-6/finished-projects.png',
+      img: 'assets/home/statistics/finished projects.png',
       target: 400,
       current: 0,
       label: 'Finished projects',
       animated: false,
     },
     {
-      img: 'assets/Compressed-home/section-6/skilled-experts.png',
+      img: 'assets/home/statistics/skilled experts.png',
       target: 250,
       current: 0,
       label: 'Skilled experts',
       animated: false,
     },
     {
-      img: 'assets/Compressed-home/section-6/media-posts.png',
+      img: 'assets/home/statistics/media posts.png',
       target: 4386,
       current: 0,
       label: 'Media posts',

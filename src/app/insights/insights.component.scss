@@ -3,16 +3,18 @@
     img {
       object-fit: cover;
       object-position: top;
+    
     }
   }
   .insights-content {
     background:
-      url("/assets/insights/insights.png") no-repeat left bottom / 100% 220px,
+      url("/assets/insights/insights.png") no-repeat left bottom / 250% 220px,
       linear-gradient(90.17deg, #1f0334 0.15%, #601698 117.16%);
   }
   .insights-desktop-img {
     img {
       object-position: top;
+     
     }
   }
 }
