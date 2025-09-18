@@ -17,7 +17,7 @@ export class GovernmentIComponent implements OnInit{
   public sections = {
     // StrategicRiskAndResilence
     StrategicRiskAndResilence: {
-      heroImage: 'assets/Industries/governmentSubPages/strategic-risk-resilence.png',
+      heroImage: 'assets/Industries/governmentSubPages/strategic-risk-resilence.jpg',
       heroHeading: 'How Can Risk Management Safeguard Public Trust?',
       subHeading:
         'Identifying, assessing, and mitigating risks to ensure stability and reliable services.',
@@ -62,7 +62,7 @@ export class GovernmentIComponent implements OnInit{
     },
     // SmartItManagedsolutions
     SmartItManagedsolutions: {
-      heroImage: 'assets/Industries/governmentSubPages/smart-it-manged-solutions.png',
+      heroImage: 'assets/Industries/governmentSubPages/smart-it-managed-solutions.jpg',
       heroHeading: 'How Can IT Consulting Transform Government Operations?',
       subHeading:
         'Enhancing Collaboration and Efficiency in Public Sector Agencies',
@@ -107,7 +107,7 @@ export class GovernmentIComponent implements OnInit{
     },
     // ProjectManagementExcellence
     ProjectManagementExcellence: {
-      heroImage: 'assets/Industries/governmentSubPages/project-management-excellence.png',
+      heroImage: 'assets/Industries/governmentSubPages/project-management-excellence.jpg',
       heroHeading: 'How Does Project Management Drive Development',
       subHeading: 'Turning plans into impactful results',
       introText: '',
@@ -156,7 +156,7 @@ export class GovernmentIComponent implements OnInit{
     },
     // DataAnalytics
     DataAnalytics: {
-      heroImage: 'assets/Industries/governmentSubPages/actionable-data-analytics.png',
+      heroImage: 'assets/Industries/governmentSubPages/actionable-data-analytics.jpg',
       heroHeading: 'How Can Data Analytics Transform Public Services?',
       subHeading:
         'Unlocking insights to drive smarter governance and citizen trust.',
@@ -191,7 +191,7 @@ export class GovernmentIComponent implements OnInit{
     },
     // TrustedTransformationPartner
     TrustedTransformationPartner: {
-      heroImage: 'assets/Industries/governmentSubPages/trusted-transformation-partner.png',
+      heroImage: 'assets/Industries/governmentSubPages/trusted-transformation-partner.jpg',
       heroHeading:
         'How Can a Trusted Transformation Partner Drive Your Growth?',
       subHeading:
@@ -227,7 +227,7 @@ export class GovernmentIComponent implements OnInit{
     },
     // CitizenEngagementTransparency
     CitizenEngagementTransparency: {
-      heroImage: 'assets/Industries/governmentSubPages/citizen-engagement-transparency.png',
+      heroImage: 'assets/Industries/governmentSubPages/citizen-engagement-transparency.jpg',
       heroHeading:
         'How Can Governments Build Stronger Citizen Engagement and Transparency?',
       subHeading: 'Empowering Citizens Through Open Communication and Trust',

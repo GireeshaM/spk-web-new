@@ -22,22 +22,22 @@ export class InsightsComponent {
     {
       image: 'assets/insights/deep-dive-health-cloud.jpg',
       title:
-        'Deep Dive into Salesforce Health Cloud changing Healthcare Industry',
+        'Demo: How the Salesforce Health Cloud changing Healthcare Industry',
     },
     {
       image: 'assets/insights/explore-potential-salesforce.jpg',
       title:
-        'Exploring the Potential of Salesforce Analytics Cloud: A Complete Guide to boost Business Intelligence',
+        'Exploring the Potential of Salesforce Analytics Cloud & Compliance Use-cases in Business Intelligence',
     },
     {
       image: 'assets/insights/empovering-smart-business.jpg',
       title:
-        'Empowering small Businesses:Unleashing the potential of Salesforce CRM',
+        'Empowering smart Business Reporting via potential of Salesforce CRM Analytics',
     },
     {
-      image: 'assets/insights/explore -salesforce-automation.jpg',
+      image: 'assets/insights/explore-salesforce-automation.jpg',
       title:
-        'Exposing the tempting benefits of choosing Salesforce Customization',
+        'Exploring the trending benefits of Choosing Salesforce Consultations',
     },
   ];
 }

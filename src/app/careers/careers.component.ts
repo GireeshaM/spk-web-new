@@ -18,7 +18,6 @@ import {
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { MainHeroSectionComponent } from '../webmodules/utilities/main-hero-section/main-hero-section.component';
 import { WhatCompComponent } from '../webmodules/utilities/mainServicesUtil/what-comp/what-comp.component';
-
 @Component({
   standalone: true,
   selector: 'app-careers',
@@ -48,36 +47,27 @@ import { WhatCompComponent } from '../webmodules/utilities/mainServicesUtil/what
 })
 export class CareersComponent implements AfterViewInit, OnDestroy {
   public whatMainHeader = 'Careers';
-  public whatDescription =
-    'SprintPark’s software services deliver customized, high-performance solutions that accelerate digital growth. From development to deployment, we ensure scalable, secure, and user-centric applications.';
-  public heroImage = 'assets/careers/careers-hero.jpg';
-  public smallImage = 'assets/careers/careers-hero.jpg';
+  public whatDescription ='SprintPark’s software services deliver customized, high-performance solutions that accelerate digital growth. From development to deployment, we ensure scalable, secure, and user-centric applications.';
+  public heroImage = 'assets/careers/caree.jpeg';
+  public smallImage = 'assets/careers/caree.jpeg';
   imageVisible = false;
-
   buttonStates: { btn1: boolean; btn2: boolean; btn3: boolean } = {
     btn1: false,
     btn2: false,
     btn3: false,
   };
-
   @ViewChildren('observeMe') elements!: QueryList<ElementRef>;
-
   private observer: IntersectionObserver | null = null;
-
   private platformId = inject(PLATFORM_ID);
-
   public ngAfterViewInit(): void {
-    // Skip completely if this is SSR
     if (!isPlatformBrowser(this.platformId)) {
-      return; // do nothing during server render
+      return; 
     }
-
     if ('IntersectionObserver' in window) {
       this.observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             const id = entry.target.getAttribute('data-anim-id');
-
             switch (id) {
               case 'image':
                 this.imageVisible = entry.isIntersecting;
@@ -96,11 +86,9 @@ export class CareersComponent implements AfterViewInit, OnDestroy {
         },
         { threshold: 0.2 },
       );
-
       this.elements.forEach((el) => this.observer!.observe(el.nativeElement));
     }
   }
-
   public ngOnDestroy(): void {
     if (this.observer) {
       this.observer.disconnect();
@@ -188,17 +176,17 @@ export class CareersComponent implements AfterViewInit, OnDestroy {
   ];
   public teamImages = {
     left: {
-      src: 'assets/careers/lifeAtSprintpark-1.png',
+      src: 'assets/careers/team-1.png',
       alt: 'Team 1',
     },
     right: [
       {
-        src: 'assets/careers/lifeAtSprintpark-2.png',
+        src: 'assets/careers/team-2.png',
         alt: 'Team 2',
         extraClass: 'mb-3',
       },
       {
-        src: 'assets/careers/lifeAtSprintpark-3.png',
+        src: 'assets/careers/team-3.png',
         alt: 'Team 3',
       },
     ],

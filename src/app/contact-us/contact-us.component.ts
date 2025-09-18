@@ -19,8 +19,8 @@ export class ContactUsComponent {
   public whatMainHeader = 'Get in touch with SprintPark';
   public whatDescription =
     'We’re here to answer your questions, support your journey, and help you move forward faster.';
-  public heroImage = 'assets/contactus/contactUsHero.png';
-  public smallImage = 'assets/contactus/contactUsHero.png';
+  public heroImage = 'assets/contactus/contactus.png';
+  public smallImage = 'assets/contactus/contactus.png';
   //section 2 Contact form
 
   public locations = [

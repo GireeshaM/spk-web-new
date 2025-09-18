@@ -27,7 +27,7 @@ export const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    data: { footerColor: '#EDE8F6' },
+    data: { footerColor: '#ffff' },
   },
   //services
   //it-consulting

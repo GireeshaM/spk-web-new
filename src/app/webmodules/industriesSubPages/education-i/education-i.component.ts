@@ -16,7 +16,7 @@ export class EducationIComponent implements OnInit {
   public sections = {
     //NetworkingEngineering
     networkingEngineering: {
-      heroImage: 'assets/Industries/education-sub-pages/network-engineering.png',
+      heroImage: 'assets/Industries/education-sub-pages/network-engineering.jpg',
       heroHeading: 'How Can Networking Engineering Transform Modern Education?',
       subHeading:
         'Building connected campuses with reliable, secure, and scalable networks.',
@@ -65,8 +65,8 @@ export class EducationIComponent implements OnInit {
       ],
     },
     //EducationProjectManagement
-    ProjectManagement: {
-      heroImage: 'assets/Industries/education-sub-pages/project-management.png',
+    educationProjectManagement: {
+      heroImage: 'assets/Industries/education-sub-pages/project-management.jpg',
       heroHeading: 'How Can Project Management Drive Success in Education?',
       subHeading:
         'Ensuring efficiency, accountability, and timely delivery of educational initiatives.',
@@ -116,7 +116,7 @@ export class EducationIComponent implements OnInit {
     },
     //dataAnalyticsEducation
     dataAnalyticsEducation: {
-      heroImage: 'assets/Industries/education-sub-pages/data-analytics.png',
+      heroImage: 'assets/Industries/education-sub-pages/data-analytics.jpg',
       heroHeading: 'How Can Data Analytics Transform Education?',
       subHeading:
         'Unlocking insights to improve learning outcomes and institutional performance.',

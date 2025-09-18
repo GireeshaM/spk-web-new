@@ -2,19 +2,20 @@ import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IndustrySubUtilComponent } from '../../utilities/industry-sub-util/industry-sub-util.component';
 import { CommonModule } from '@angular/common';
-
+ 
 @Component({
   selector: 'app-telecommunication-i',
   imports: [IndustrySubUtilComponent, CommonModule],
   templateUrl: './telecommunication-i.component.html',
-  styleUrl: './telecommunication-i.component.scss'
+  styleUrl: './telecommunication-i.component.scss',
 })
 export class TelecommunicationIComponent {
   public currentSection = 'dataPrivacy';
   route = inject(ActivatedRoute);
   public sections = {
     dataPrivacy: {
-      heroImage: 'assets/Industries/telecommunicationSubPages/data-privacy-hero.png',
+      heroImage:
+        'assets/Industries/telecommunicationSubPages/data-privacy-hero.jpg',
       heroHeading: 'Why Data Privacy is Telecom’s Biggest Challenge',
       subHeading: 'Customer trust begins with secure communication.',
       introText:
@@ -44,7 +45,8 @@ export class TelecommunicationIComponent {
       ],
     },
     automation: {
-      heroImage: 'assets/Industries/telecommunicationSubPages/automation-hero.png',
+      heroImage:
+        'assets/Industries/telecommunicationSubPages/automation-hero.jpg',
       heroHeading:
         'How can automation reshape patient care and medical innovation?',
       subHeading: 'Intelligent Automation in Healthcare & Life Sciences',
@@ -81,7 +83,8 @@ export class TelecommunicationIComponent {
       ],
     },
     infrastructure: {
-      heroImage: 'assets/Industries/telecommunicationSubPages/infrastructure-hero.png',
+      heroImage:
+        'assets/Industries/telecommunicationSubPages/infrastructure-hero.jpg',
       heroHeading:
         'What Makes Strong Infrastructure the Backbone of IT and Telecom?',
       subHeading:
@@ -122,7 +125,8 @@ export class TelecommunicationIComponent {
       ],
     },
     managedSolutions: {
-      heroImage: 'assets/Industries/telecommunicationSubPages/managed-solutions.png',
+      heroImage:
+        'assets/Industries/telecommunicationSubPages/managed-solutions.jpg',
       heroHeading: 'Why Choose Managed Solutions for Your Business?',
       subHeading: 'Unlock productivity with dependable IT services.',
       introText: '',
@@ -177,3 +181,5 @@ export class TelecommunicationIComponent {
     return this.sections[this.currentSection as keyof typeof this.sections];
   }
 }
+ 
+ 

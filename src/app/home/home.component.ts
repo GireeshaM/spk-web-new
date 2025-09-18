@@ -43,14 +43,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
   public btn2 = { label: "Let's talk", style: 'btn-outline-light' };
   public slides = [
     {
-      image: 'assets/home/hero-carousel/next-gen-software.jpg',
+      image: 'assets/home/hero-carousel/next-gen-software.jpeg',
       title: 'Next-Gen Software',
       subtitle: 'Smarter software, better solutions.',
       btn1: this.btn1,
       btn2: this.btn2,
     },
     {
-      image: 'assets/home/hero-carousel/talent-solution.jpg',
+      image: 'assets/home/hero-carousel/talent-solution.jpeg',
       title: 'Talent Solution',
       subtitle: 'Right people, Right fit.',
       btn1: this.btn1,
@@ -64,7 +64,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       btn2: this.btn2,
     },
     {
-      image: 'assets/home/hero-carousel/smart-product-layout.jpg',
+      image: 'assets/home/hero-carousel/smart-product-rollouts.jpeg',
       title: 'Smart Product Rollouts',
       subtitle: 'From Code to Clients.',
       btn1: this.btn1,
@@ -78,7 +78,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       btn2: this.btn2,
     },
     {
-      image: 'assets/home/hero-carousel/future-to-focus.jpg',
+      image: 'assets/home/hero-carousel/future-in-focus.jpg',
       title: 'Future in Focus',
       subtitle: "Get Ready for what's next in innovation  .",
       btn1: this.btn1,
@@ -279,28 +279,28 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   public stats = [
     {
-      img: 'assets/home/statistics/satisfied clients.png',
+      img: 'assets/home/statistics/satisfied-clients.png',
       target: 4386,
       current: 0,
       label: 'Satisfied Clients',
       animated: false,
     },
     {
-      img: 'assets/home/statistics/finished projects.png',
+      img: 'assets/home/statistics/finished-projects.png',
       target: 400,
       current: 0,
       label: 'Finished projects',
       animated: false,
     },
     {
-      img: 'assets/home/statistics/skilled experts.png',
+      img: 'assets/home/statistics/skilled-experts.png',
       target: 250,
       current: 0,
       label: 'Skilled experts',
       animated: false,
     },
     {
-      img: 'assets/home/statistics/media posts.png',
+      img: 'assets/home/statistics/media-posts.png',
       target: 4386,
       current: 0,
       label: 'Media posts',

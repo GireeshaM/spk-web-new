@@ -14,7 +14,7 @@ export class ManufacturingComponent {
   public itContent =
     'Manufacturing faces global challenges like supplier management and regulations. SprintPark helps you turn these into lasting opportunities, aligning strategies with your strengths and goals.';
   public subHeading = 'Driving Innovation in Manufacturing';
-  public telecom = 'assets/Industries/manufacturing/manufactiring-hero.png';
+  public telecom = 'assets/Industries/manufacturing/manufacturing-hero.jpeg';
   public cards = [
     {
       img: 'assets/Industries/manufacturing/sales-force-integration.png',

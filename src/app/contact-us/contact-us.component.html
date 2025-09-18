@@ -38,16 +38,14 @@
                   class="pi pi-map-marker me-2 fs-5 location-icon"
                   [ngClass]="location.type"
                 ></i>
-                <span class="fs-6 font-inter fw-bold">{{
+                <span class="fs-6 fw-bold">{{
                   location.title
                 }}</span>
               </div>
-
               <!-- Address -->
               <div class="text-start mb-2 address-text flex-grow-1">
                 {{ location.address }}
               </div>
-
               <!-- Contact Info -->
               <div class="d-flex flex-column">
                 <!-- Phone -->
@@ -58,7 +56,6 @@
                   ></i>
                   <span>{{ location.phone }}</span>
                 </div>
-
                 <!-- Email -->
                 <div class="d-flex align-items-center">
                   <i
@@ -73,106 +70,108 @@
         </div>
         <!-- Contact Form Column -->
         <div class="col-12 col-lg-6 contact-image py-3 mb-2">
-  <form
-    [formGroup]="contactForm"
-    (ngSubmit)="onSubmit()"
-    class="contact-form"
-  >
-    <!-- Name -->
-    <div class="mb-3">
-      <label
-        for="name"
-        class="form-label d-block fw-semibold text-start"
-      >
-        Name <span class="text-danger">*</span>
-      </label>
-      <input
-        type="text"
-        id="name"
-        placeholder="Your name"
-        class="form-control"
-        formControlName="name"
-        [class.is-invalid]="getFormControlError('name')"
-      />
-      <div class="invalid-feedback" *ngIf="getFormControlError('name')">
-        {{ getFormControlError("name") }}
-      </div>
-    </div>
+          <form
+            [formGroup]="contactForm"
+            (ngSubmit)="onSubmit()"
+            class="contact-form"
+          >
+            <!-- Name -->
+            <div class="mb-3">
+              <label
+                for="name"
+                class="form-label d-block fw-semibold text-start"
+                >Name</label
+              >
+              <input
+                type="text"
+                id="name"
+                placeholder="Your name"
+                class="form-control"
+                formControlName="name"
+                [class.is-invalid]="getFormControlError('name')"
+              />
+              <div class="invalid-feedback" *ngIf="getFormControlError('name')">
+                {{ getFormControlError("name") }}
+              </div>
+            </div>
+            <!-- Email -->
+            <div class="mb-3">
+              <label
+                for="email"
+                class="form-label d-block fw-semibold text-start"
+                >Email</label
+              >
+              <input
+                type="email"
+                id="email"
+                placeholder="Your@gmail.com"
+                class="form-control"
+                formControlName="email"
+                [class.is-invalid]="getFormControlError('email')"
+              />
+              <div
+                class="invalid-feedback"
+                *ngIf="getFormControlError('email')"
+              >
+                {{ getFormControlError("email") }}
+              </div>
+            </div>
+            <!-- Phone -->
+            <div class="mb-3">
+              <label
+                for="phone"
+                class="form-label d-block fw-semibold text-start"
+                >Phone number</label
+              >
+              <input
+                type="text"
+                id="phone"
+                placeholder="Your number"
+                class="form-control"
+                formControlName="phone"
+                [class.is-invalid]="getFormControlError('phone')"
+              />
+              <div
+                class="invalid-feedback"
+                *ngIf="getFormControlError('phone')"
+              >
+                {{ getFormControlError("phone") }}
+              </div>
+            </div>
 
-    <!-- Email -->
-    <div class="mb-3">
-      <label
-        for="email"
-        class="form-label d-block fw-semibold text-start"
-      >
-        Email <span class="text-danger">*</span>
-      </label>
-      <input
-        type="email"
-        id="email"
-        placeholder="Your@gmail.com"
-        class="form-control"
-        formControlName="email"
-        [class.is-invalid]="getFormControlError('email')"
-      />
-      <div class="invalid-feedback" *ngIf="getFormControlError('email')">
-        {{ getFormControlError("email") }}
-      </div>
-    </div>
+            <!-- Message -->
+            <div class="mb-3">
+              <label
+                for="message"
+                class="form-label d-block fw-semibold text-start"
+                >How can we help?</label
+              >
+              <textarea
+                id="message"
+                rows="4"
+                placeholder="Tell us a little about your problem"
+                class="form-control"
+                formControlName="message"
+                [class.is-invalid]="getFormControlError('message')"
+              ></textarea>
+              <div
+                class="invalid-feedback"
+                *ngIf="getFormControlError('message')"
+              >
+                {{ getFormControlError("message") }}
+              </div>
+            </div>
 
-    <!-- Phone -->
-    <div class="mb-3">
-      <label
-        for="phone"
-        class="form-label d-block fw-semibold text-start"
-      >
-        Phone number <span class="text-danger">*</span>
-      </label>
-      <input
-        type="text"
-        id="phone"
-        placeholder="Your number"
-        class="form-control"
-        formControlName="phone"
-        [class.is-invalid]="getFormControlError('phone')"
-      />
-      <div class="invalid-feedback" *ngIf="getFormControlError('phone')">
-        {{ getFormControlError("phone") }}
-      </div>
-    </div>
-
-    <!-- Message -->
-    <div class="mb-3">
-      <label
-        for="message"
-        class="form-label d-block fw-semibold text-start"
-      >
-        How can we help? <span class="text-danger">*</span>
-      </label>
-      <textarea
-        id="message"
-        rows="4"
-        placeholder="Tell us a little about your problem"
-        class="form-control"
-        formControlName="message"
-        [class.is-invalid]="getFormControlError('message')"
-      ></textarea>
-      <div class="invalid-feedback" *ngIf="getFormControlError('message')">
-        {{ getFormControlError("message") }}
-      </div>
-    </div>
-
-    <!-- Submit -->
-    <button
-      type="submit"
-      class="btn sbt-btn px-4 py-2 me-5"
-      [disabled]="contactForm.invalid"
-    >
-      Send
-    </button>
-  </form>
-</div>
-
+            <!-- Submit -->
+            <button
+              type="submit"
+              class="btn sbt-btn px-4 py-2"
+              [disabled]="contactForm.invalid"
+            >
+              Send
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   </section>

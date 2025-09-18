@@ -84,7 +84,7 @@ export class staffingComponent {
     },
     right: [
       {
-        src: 'assets/services/staffing-service/staffing-team-2.png',
+        src: 'assets/services/staffing-service/staffing-team-2.jpeg',
         alt: 'Team 2',
         extraClass: 'mb-3',
       },
@@ -99,6 +99,7 @@ public mainHeading = 'Why SprintPark Stands Out';
 
 public content =
   'At SprintPark, we’re more than a staffing partner — we’re your long-term growth enabler. Our strength lies in our strategic mindset, client-focused execution, and unwavering commitment to quality.';
+
 public cards = [
   {
     title: 'Expertise You Can Rely On',
@@ -121,6 +122,7 @@ public cards = [
            and our processes are designed to drive measurable value and long-term partnerships.`,
   },
 ];
+
 public image = {
   left: {
     src: 'assets/services/staffing-service/spk-stands-out.png',
@@ -137,15 +139,15 @@ public image = {
   public softwareCards = [
     {
       title: 'Contract Staffing  ',
-      image: 'assets/services/staffing-service/contract-staffing.png',
+      image: 'assets/services/staffing-service/contract-staffing.jpg',
     },
     {
       title: 'Permanent Staffing ',
-      image: 'assets/services/staffing-service/permanent-staffing.png',
+      image: 'assets/services/staffing-service/permanent-staffing.jpg',
     },
     {
       title: 'Offshore Staffing',
-      image: 'assets/services/staffing-service/offshore-staffing.png',
+      image: 'assets/services/staffing-service/offshore-staffing.jpg',
     },
   ];
 }

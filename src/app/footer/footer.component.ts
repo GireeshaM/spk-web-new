@@ -10,7 +10,7 @@ import { filter } from 'rxjs/operators';
   styleUrl: './footer.component.scss',
 })
 export class FooterComponent implements OnInit {
-  @Input() themeColor: string = '#f6f4fd';
+  @Input() themeColor: string = '#ffff';
   route = inject(ActivatedRoute);
   router = inject(Router);
   public ngOnInit(): void {

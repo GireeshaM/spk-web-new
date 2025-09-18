@@ -13,7 +13,7 @@ export class GovtComponent {
   public itContent =
     'Governments face complex challenges—from data protection to talent gaps and crisis management. SprintPark delivers tailored, expert-driven solutions that foster innovation, efficiency, and trust—never a one-size-fits-all approach.';
   public subHeading = 'Shaping the Future of Public Service';
-  public telecom = 'assets/Industries/government/government-hero.png';
+  public telecom = 'assets/Industries/government/government-hero.jpeg';
   public cards = [
     {
       img: 'assets/Industries/government/strategic-risk.png',
@@ -37,11 +37,11 @@ export class GovtComponent {
       link: '/government/ProjectManagementExcellence',
     },
     {
-      img: 'assets/Industries/government/actionable-data-analytics.png',
+      img: 'assets/Industries/governmentSubPages/actionable-data-analytics.jpg',
       title: ' Actionable Data Analytics',
       description:
         'Empower decision-makers with real-time insights, improve service delivery, and increase transparency through secure, ethical use of public data.',
-      link: '/government/ DataAnalytics',
+      link: '/government/DataAnalytics',
     },
     {
       img: 'assets/Industries/government/trusted-transformation-partner.png',

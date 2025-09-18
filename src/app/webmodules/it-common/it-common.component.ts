@@ -20,19 +20,17 @@ export class ItCommonComponent {
   public whatMainHeader = 'IT Consulting';
   public whatDescription =
     'Leverage the knowledge of seasoned IT professionals who guide you from strategy to execution solution design, implementation, and issue resolution all handled by specialists.';
-  public heroImage =
-    '/assets/services/it-consulting-service/hero.jpg';
-  public smallImage =
-    '/assets/services/it-consulting-service/hero.jpg';
+  public heroImage = 'assets/services/it-consulting-service/hero.png';
+  public smallImage = 'assets/services/it-consulting-service/hero.png';
 
   // Section 2
   public whyHeader = 'Unlocking Growth Through IT Expertise';
 
   public images = [
-    '/assets/services/it-consulting-service/access-Top-Tier-Experts.png',
-    '/assets/services/it-consulting-service/proactive-Risk-Management.png',
-    '/assets/services/it-consulting-service/focus-on-core-business.png',
-    '/assets/services/it-consulting-service/unbiased-Strategic-Insights.png',
+    'assets/services/it-consulting-service/access-Top-Tier-Experts.svg',
+    'assets/services/it-consulting-service/proactive-Risk-Management.svg',
+    'assets/services/it-consulting-service/focus-on-core-business.svg',
+    'assets/services/it-consulting-service/unbiased-Strategic-Insights.svg',
   ];
   whyList = [
     {
@@ -72,7 +70,7 @@ export class ItCommonComponent {
       desc: 'We believe in long-term relationships built on trust, accountability, and consistent delivery. Our commitment to integrity is reflected in everything we do.',
     },
     {
-      title: 'Flexible Engagement Models',  
+      title: 'Flexible Engagement Models',
       desc: 'We offer adaptable plans designed to fit your unique goals, timelines, and budget—whether you need end-to-end support or specialized consulting.',
     },
     {
@@ -87,12 +85,12 @@ export class ItCommonComponent {
     },
     right: [
       {
-        src: 'assets/services/it-consulting-service/team-2.png',
+        src: 'assets/services/it-consulting-service/team-2.jpeg',
         alt: 'Team 2',
         extraClass: 'mb-3',
       },
       {
-        src: 'assets/services/it-consulting-service/team-3.png',
+        src: 'assets/services/it-consulting-service/team-3.jpeg',
         alt: 'Team 3',
       },
     ],

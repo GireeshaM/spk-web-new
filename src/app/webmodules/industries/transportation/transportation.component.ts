@@ -14,7 +14,7 @@ export class TransportationComponent {
   public itContent =
     'SprintPark supports transportation and logistics firms with smart, tailored solutions. We combine strategy and expertise to help you stay competitive and grow in a fast-changing industry.';
   public subHeading = 'How We Help Transform Transportation & Logistics';
-  public telecom = 'assets/Industries/transportation-and-logistics/transportation-hero.png';
+  public telecom = 'assets/Industries/transportation-and-logistics/transportation-hero.jpeg';
   public cards = [
     {
       img: 'assets/Industries/transportation-and-logistics/it-Consulting-Digital-Solutions.png',

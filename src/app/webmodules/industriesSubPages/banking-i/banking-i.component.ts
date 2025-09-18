@@ -15,7 +15,7 @@ export class BankingIComponent {
   public sections = {
     //BigData
     BigData: {
-      heroImage: 'assets/\Industries/bankingSubPages/big-data.png',
+      heroImage: 'assets/Industries/bankingSubPages/big-data.jpg',
       heroHeading: 'How Can Big Data Transform the Future of Banking?',
       subHeading:
         'Unlocking insights for smarter decisions, better security, and enhanced customer experiences.',
@@ -66,7 +66,7 @@ export class BankingIComponent {
     },
     //Cybersecurity
     Cybersecurity: {
-      heroImage: 'assets/Industries/bankingSubPages/cyber-security.png',
+      heroImage: 'assets/Industries/bankingSubPages/cyber-security.jpg',
       heroHeading: 'Why Is Cybersecurity Essential for Modern Banking?',
       subHeading:
         'Safeguarding customer trust, financial assets, and digital operations in an evolving threat landscape.',
@@ -117,7 +117,7 @@ export class BankingIComponent {
     },
     //ProjectManagement
     ProjectManagement: {
-      heroImage: 'assets/Industries/bankingSubPages/project-management.png',
+      heroImage: 'assets/Industries/bankingSubPages/project-management.jpg',
       heroHeading: 'How Does Project Management Drive Success in Banking?',
       subHeading:
         'Ensuring efficiency, compliance, and customer value in financial transformation initiatives.',
@@ -172,7 +172,7 @@ export class BankingIComponent {
     },
     //AI
     AI: {
-      heroImage: 'assets/Industries/bankingSubPages/artificial-intelligence.png',
+      heroImage: 'assets/Industries/bankingSubPages/artificial-intelligence.jpg',
       heroHeading:
         'How Is Artificial Intelligence Transforming Modern Banking?',
       subHeading:

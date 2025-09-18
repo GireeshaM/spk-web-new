@@ -20,18 +20,20 @@ export class SoftwareServiceUtilComponent {
   public whatMainHeader = 'Software Services ';
   public whatDescription =
     'SprintPark’s software services deliver customized, high-performance solutions that accelerate digital growth. From development to deployment, we ensure scalable, secure, and user-centric applications.';
-  public heroImage = 'assets/services/software-services/itConsult.png';
-  public smallImage = 'assets/services/software-services/itConsult.png';
+  public heroImage =
+    'assets/services/software-services/software-service-hero.png';
+  public smallImage =
+    'assets/services/software-services/software-service-hero.png';
 
   // Section 2
   public whyHeader =
     'Enhancing Organizational Performance with Software Solutions.';
 
   public images = [
-    'assets/staffing/time.png',
-    'assets/itImages/risk.png',
-    'assets/itImages/reduce.png',
-    'assets/itImages/analyze.png',
+    'assets/services/software-services/digital-transformation.png',
+    'assets/services/software-services/tailor-your-needs.png',
+    'assets/services/software-services/scalability-Flexibility.png',
+    'assets/services/software-services/security-and-relability.png',
   ];
 
   public whyList = [
@@ -83,17 +85,17 @@ export class SoftwareServiceUtilComponent {
   ];
   public teamImages = {
     left: {
-      src: 'assets/services/software-services/section-3-1.png',
+      src: 'assets/services/software-services/software-partner-1.png',
       alt: 'Team 1',
     },
     right: [
       {
-        src: 'assets/services/software-services/section-3-2.png',
+        src: 'assets/services/software-services/software-partner-2.jpeg',
         alt: 'Team 2',
         extraClass: 'mb-3',
       },
       {
-        src: 'assets/services/software-services/section-3-3.png',
+        src: 'assets/services/software-services/software-partner-3.jpeg',
         alt: 'Team 3',
       },
     ],
@@ -106,15 +108,15 @@ export class SoftwareServiceUtilComponent {
   public softwareCards = [
     {
       title: 'Comprehensive Software Solutions ',
-      image: 'assets/services/software-services/whatWeDo.png',
+      image: 'assets/services/software-services/comprehensive-software.jpg',
     },
     {
       title: 'Innovative Technology Services ',
-      image: 'assets/services/software-services/whatWeDo.png',
+      image: 'assets/services/software-services/Innovative-service.jpg',
     },
     {
       title: 'Tailored Software Development',
-      image: 'assets/services/software-services/whatWeDo.png',
+      image: 'assets/services/software-services/tailored-software.jpg',
     },
   ];
 }
