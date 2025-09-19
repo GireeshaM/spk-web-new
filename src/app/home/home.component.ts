@@ -20,10 +20,11 @@ import {
   transition,
   animate,
 } from '@angular/animations';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [CarouselModule, CommonModule],
+  imports: [CarouselModule, CommonModule,RouterLink],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   animations: [
@@ -246,7 +247,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       desc: 'Align on requirements, limitations, and success criteria to ensure shared understanding.',
     },
     {
-      img: 'assets/Compressed-home/section-5-collaborate-section/collaborate-6.png',
+      img: 'assets/home/collaborate/measure-optimize.png',
       alt: 'Objectives',
       title: 'Measure and Optimize Performance',
       desc: 'Monitor results, refine strategies, and drive continuous improvement for success.',
@@ -259,21 +260,25 @@ export class HomeComponent implements OnInit, AfterViewInit {
       img: 'assets/home/industries/industry-it-telecommunications.jpg',
       alt: 'IT & TeleCommunications',
       title: 'IT & TeleCommunications',
+       link: '/itAndTelecommunications'
     },
     {
       img: 'assets/home/industries/industries-healthcare.jpg',
       alt: 'Healthcare & Life Sciences',
       title: 'Healthcare & Life Sciences',
+      link: '/healthCareAndLifeSciences'
     },
     {
       img: 'assets/home/industries/industry-education.jpg',
       alt: 'Education',
       title: 'Education',
+      link: '/education'
     },
     {
       img: 'assets/home/industries/industries-government.jpg',
       alt: 'Government',
       title: 'Government',
+      link: '/government'
     },
   ];
 

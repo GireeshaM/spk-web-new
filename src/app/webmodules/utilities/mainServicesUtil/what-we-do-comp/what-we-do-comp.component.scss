@@ -29,9 +29,12 @@
     border: none;
     color: #fff;
     background: black;
+    margin-left: -0px !important;
+    border-radius: 0%;
+    margin-bottom: -2px !important;
 
     &:hover {
-      width: 390px;
+      width: 420px;
       height: 50px;
       background: black;
       border-radius: 0;
