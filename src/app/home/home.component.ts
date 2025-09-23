@@ -21,7 +21,7 @@ import {
   animate,
 } from '@angular/animations';
 import { RouterLink } from '@angular/router';
-
+ 
 @Component({
   selector: 'app-home',
   imports: [CarouselModule, CommonModule,RouterLink],
@@ -51,7 +51,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       btn2: this.btn2,
     },
     {
-      image: 'assets/home/hero-carousel/talent-solution.jpeg',
+      image: 'assets/home/hero-carousel/talent-solutions.png',
       title: 'Talent Solution',
       subtitle: 'Right people, Right fit.',
       btn1: this.btn1,
@@ -65,7 +65,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       btn2: this.btn2,
     },
     {
-      image: 'assets/home/hero-carousel/smart-product-rollouts.jpeg',
+      image: 'assets/home/hero-carousel/smartproductrollout.png',
       title: 'Smart Product Rollouts',
       subtitle: 'From Code to Clients.',
       btn1: this.btn1,
@@ -94,13 +94,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
   public ngOnInit(): void {
     this.offerCardVisible = this.whatWeOffer.map(() => false);
   }
-
+ 
   public ngAfterViewInit(): void {
     if (this.isBrowser) {
       this.checkInView();
       this.onScroll();
       this.checkMobile();
-
+ 
       if (!this.isBrowser) return;
       setTimeout(() => {
         this.observer = new IntersectionObserver(
@@ -110,10 +110,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
                 const index = this.statElements
                   .toArray()
                   .findIndex((el) => el.nativeElement === entry.target);
-
+ 
                 if (index !== -1 && !this.stats[index].animated) {
                   this.stats[index].animated = true;
-
+ 
                   this.animateStat(index);
                   this.observer.unobserve(entry.target);
                 }
@@ -122,50 +122,50 @@ export class HomeComponent implements OnInit, AfterViewInit {
           },
           { threshold: 0.3 },
         );
-
+ 
         this.statElements.forEach((el) => {
           this.observer.observe(el.nativeElement);
         });
       }, 100);
     }
   }
-
+ 
   @HostListener('window:scroll')
   public onScroll(): void {
     if (!this.isBrowser) return;
-
+ 
     this.offerCards.forEach((card, i) => {
       const rect = card.nativeElement.getBoundingClientRect();
       this.offerCardVisible[i] =
         rect.top < window.innerHeight && rect.bottom > 0;
     });
-
+ 
     this.checkInView();
   }
-
+ 
   public checkInView(): void {
     if (!this.isBrowser) return;
-
+ 
     const imageEl = document.querySelector('.image-wrapper');
     if (imageEl) {
       const rect = imageEl.getBoundingClientRect();
       this.imageInView = rect.top < window.innerHeight && rect.bottom > 0;
     }
-
+ 
     const contentEl = document.querySelector('.move-right > div');
     if (contentEl) {
       const rect = contentEl.getBoundingClientRect();
       this.contentInView = rect.top < window.innerHeight && rect.bottom > 0;
     }
-
+ 
     if (this.featureGrid) {
       const rect = this.featureGrid.nativeElement.getBoundingClientRect();
       this.featuresInView = rect.top < window.innerHeight && rect.bottom > 0;
     }
   }
-
+ 
   // what we offer
-
+ 
   @ViewChildren('offerCard') offerCards!: QueryList<ElementRef>;
   public offerCardVisible: boolean[] = [];
   public whatWeOffer = [
@@ -185,13 +185,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
       desc: "Connect with the right talent to drive your organization's growth and success.",
     },
   ];
-
+ 
   // Features
   public imageInView = false;
   public contentInView = false;
   public featuresInView = false;
   @ViewChild('featureGrid') featureGrid!: ElementRef;
-
+ 
   public features = [
     {
       img: 'assets/home/about-sprintpark/integrity.png',
@@ -214,7 +214,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       desc: 'Embracing differences to drive innovation',
     },
   ];
-
+ 
   public collaborations = [
     {
       img: 'assets/home/collaborate/expert-team.svg',
@@ -253,7 +253,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       desc: 'Monitor results, refine strategies, and drive continuous improvement for success.',
     },
   ];
-
+ 
   // Industries
   public industries = [
     {
@@ -281,7 +281,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       link: '/government'
     },
   ];
-
+ 
   public stats = [
     {
       img: 'assets/home/statistics/satisfied-clients.png',
@@ -329,7 +329,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       description: 'Read More >>',
     },
   ];
-
+ 
   public testimonials = [
     {
       img: 'assets/home/testimonials/testimony-1.png',
@@ -348,18 +348,18 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ];
   public currentInsightIndex = 1; // Start with the middle card (or 0 for first)
   public isMobile = false;
-
+ 
   @HostListener('window:resize')
   public onResize(): void {
     this.checkMobile();
   }
-
+ 
   public checkMobile(): void {
     if (this.isBrowser) {
       this.isMobile = window.innerWidth < 768;
     }
   }
-
+ 
   public moveInsight(step: number): void {
     const newIndex = this.currentInsightIndex + step;
     if (newIndex >= 0 && newIndex < this.ourInsightsSlides.length) {
@@ -372,28 +372,28 @@ export class HomeComponent implements OnInit, AfterViewInit {
       this.moveInsight(1);
     }
   }
-
+ 
   @ViewChildren('statElements') statElements!: QueryList<ElementRef>;
-
+ 
   private observer!: IntersectionObserver;
-
+ 
   private platformId = inject(PLATFORM_ID);
   isBrowser = isPlatformBrowser(this.platformId);
   cdRef = inject(ChangeDetectorRef);
-
+ 
   private animateStat(index: number): void {
     const stat = this.stats[index];
     const duration = 2000;
     const steps = 60;
     let currentStep = 0;
-
+ 
     const interval = setInterval(() => {
       currentStep++;
       const progress = currentStep / steps;
       stat.current = Math.floor(stat.target * progress);
       this.cdRef.detectChanges();
       // console.log(`Animating: ${stat.label}`);
-
+ 
       if (currentStep >= steps) {
         stat.current = stat.target;
         clearInterval(interval);

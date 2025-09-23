@@ -11,58 +11,58 @@
         filter: brightness(50%);
       }
     }
-
+ 
     .carousel-caption {
       bottom: 40%;
       left: 5%;
       right: auto;
       max-width: 45%;
       top: 32%;
-
+ 
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       gap: 1rem;
-
+ 
       h1,
       p {
         text-align: left !important;
       }
-
+ 
       // Buttons
      .btn-1,
 .btn-2 {
   padding: 0.75rem 1rem;
   border-radius: 50px;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;      
   transition: all 0.3s ease-in-out;
 }
-
+ 
 .btn-1 {
   background: #EF7A13;
   color: #fff;
   border: none;
 }
-
+ 
 .btn-1:hover {
   background-color: #e68a00;
   transform: scale(1.05);
 }
-
+ 
 .btn-2 {
   color: #fff;
   border: 1px solid #fff;
 }
-
+ 
 .btn-2:hover {
 background-color: #e0e0e0 !important;
 color: black;
   transform: scale(1.05);
 }
-
-
+ 
+ 
       /* Sparkles */
       .sparkle {
         position: absolute;
@@ -73,11 +73,11 @@ color: black;
         pointer-events: none;
         opacity: 0;
       }
-
+ 
       .btn-1:hover .sparkle {
         animation: twinkle 1.5s infinite;
       }
-
+ 
       .sparkle:nth-child(2) {
         top: -10px;
         left: 20%;
@@ -103,7 +103,7 @@ color: black;
         right: 25%;
         animation-delay: 1.2s;
       }
-
+ 
       @keyframes twinkle {
         0%,
         100% {
@@ -116,7 +116,7 @@ color: black;
         }
       }
     }
-
+ 
     // Carousel controls
    .carousel-control-prev,
 .carousel-control-next {
@@ -133,22 +133,22 @@ color: black;
   align-items: center;
   justify-content: center;
 }
-
+ 
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
   background: #d2ac23;
   color: #fff !important;
-  transform: scale(1.15); 
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25); 
+  transform: scale(1.15);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
 }
-
-
+ 
+ 
     // Mobile adjustments
     @media (max-width: 576px) {
       .carousel-item img {
         height: 50vh;
       }
-
+ 
       .carousel-caption {
         bottom: 10%;
         left: 5%;
@@ -177,11 +177,11 @@ color: black;
     }
   }
 }
-
+ 
 //logo slider
 .logo-section {
  background: linear-gradient(90deg, #360060 0%, #5F3481 104.75%);
-  padding: 15px 0;
+  // padding: 15px 0;
   max-width: 1910px;
   .logo-slider {
     position: relative;
@@ -203,7 +203,8 @@ color: black;
         }
         img {
           margin-top: 20px;
-          height: 50px;
+          height: 100px;
+          width: 180px;
           filter: none;
           transition: transform 0.3s ease;
           &:hover {
@@ -247,13 +248,13 @@ color: black;
 }
 //features section
 .title {
-  color:#372399;                     
+  color:#372399;                    
 }
 /* CSS */
 .about-sprintpark-section {
  background: rgba(242, 241, 249, 1);
-
-  
+ 
+ 
   padding-bottom: 30px;
   .gradient-underline {
     display: inline-block; /* underline only as wide as the text */
@@ -261,12 +262,12 @@ color: black;
     border-image-source: linear-gradient(90deg, #8b59ef 0%, #6a6cef 100%);
     border-image-slice: 1; /* required for border-image to show */
     padding-bottom: 2px; /* spacing between text & underline */
-    
+   
   }
   .abt-spk{
     color: rgba(55, 35, 153, 1);
   }
-
+ 
   .features-container {
     width: 1440px;
     position: absolute;
@@ -356,7 +357,7 @@ color: black;
 .offer-industries-bg section {
   padding-top: 60px;  /* space above each section */
 }
-
+ 
 .whatWeOffer-section .bg-white:hover h6,
 .whatWeOffer-section .bg-white:hover p {
   color: #fff !important;
@@ -402,7 +403,7 @@ color: black;
     opacity: 1;
   }
 }
-
+ 
 .slide-left {
   animation: slide-left 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
@@ -442,7 +443,7 @@ color: black;
     width: 100%;
     display: block;
   }
-
+ 
   .industries-img {
 transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
 will-change: transform;
@@ -451,7 +452,7 @@ will-change: transform;
     object-fit: cover;
     display: block;
   }
-
+ 
   &:hover .industries-img {
     transform: scale(1.12) ;
     box-shadow: 0 12px 32px rgba(55, 35, 153, 0.18);
@@ -479,10 +480,10 @@ will-change: transform;
 }
   .arrow-btn:hover ~ .industries-img,
   .arrow-btn:hover .industries-img {
-    transform: scale(1.15); 
+    transform: scale(1.15);
   }
-
-
+ 
+ 
 // Arrow button styling
 .arrow-btn {
   background: #ff6600;
@@ -493,22 +494,22 @@ will-change: transform;
   justify-content: center;
   cursor: pointer;
   text-decoration: none;
-  transition: all 0.4s ease; 
+  transition: all 0.4s ease;
   margin-left: auto;
   flex-shrink: 0;
-  z-index: 3; 
-
+  z-index: 3;
+ 
   i {
     transition: transform 0.4s ease;
     display: inline-block;
   }
-
+ 
   &:hover {
     background: #e65c00;
     transform: scale(1.1);
-
+ 
     i {
-      transform: translateX(6px); 
+      transform: translateX(6px);
     }
   }
 }
@@ -516,13 +517,13 @@ will-change: transform;
   position: relative;
   overflow: hidden;
 }
-
+ 
 .industries-card:hover .industries-img {
   transform: scale(2.05);
 }
 //end of industries cards
 //section 3 end of (what we offer and industries we serve)
-
+ 
 .text-purple {
   color: #3d008d;
 }
@@ -560,7 +561,7 @@ will-change: transform;
   position: relative;
   overflow: hidden;
   background: #DEDEFF66;
-
+ 
 }
 // Collaboration cards hover effect
 .collaborate-card:hover {
@@ -616,18 +617,18 @@ will-change: transform;
 //testimonial section
 .testimonial-section {
   background-color: #f6f4fd;
-  background-image: 
+  background-image:
     url("/assets/home/testimonials/testinomial-bg.png"),
     url("/assets/home/testimonials/testinomial-curve.png");
   background-repeat: no-repeat, no-repeat;
   background-position: center, center;
   background-size: 100% auto, cover;
 }
-
+ 
 .testimonial-section .card,
 .testimonial-section .bg-white {
   border: transparent;
-  margin: 0 !important;
+  // margin: 0 !important;
 }
 // Testimonial cards
 /* Hover effect */
@@ -644,7 +645,7 @@ will-change: transform;
 .testimonial-wrapper {
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  padding-bottom: 10px;
+  // padding-bottom: 10px;
 }
 .testimonial-wrapper .testimonial-card {
   scroll-snap-align: start;
@@ -652,7 +653,7 @@ will-change: transform;
 .card-hover:hover .text-dark {
   color: #fff !important;
 }
-
+ 
 /* 📱 Mobile adjustments */
 @media (max-width: 768px) {
   .testimonial-card img {
@@ -663,12 +664,13 @@ will-change: transform;
 .star-rating {
   display: flex;
   align-items: center;
-  gap: 4px; 
+  gap: 4px;
 }
-
+ 
 .star-rating span {
-  font-size: 1.4rem; 
+  font-size: 1.4rem;
   line-height: 1;    
 }
-
+ 
 //TESTIMONIAL END
+ 

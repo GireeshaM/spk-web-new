@@ -68,7 +68,7 @@ public currentSection = 'itConsulting';
     },
 
     networkEngineering: {
-      heroImage: 'assets/Industries/transportation-SubPages/networkin-engineering-connectivity.jpg',
+      heroImage: 'assets/Industries/transportation-SubPages/network-engineering.jpg',
       heroHeading:
         'How Can Network Engineering & Connectivity Revolutionize Transportation & Logistics?',
       subHeading:

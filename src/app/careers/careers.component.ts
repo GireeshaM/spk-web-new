@@ -163,7 +163,7 @@ export class CareersComponent implements AfterViewInit, OnDestroy {
     },
     {
       title: 'Work Environment',
-      desc: 'We believe in a big family and treat all our members like one.',
+      desc: 'We foster a supportive and collaborative work environment that empowers growth, balance, and innovation.',
     },
     {
       title: 'Professional Development',

@@ -65,7 +65,7 @@ public currentSection = 'medicalinnovation';
       ],
     },
     connectedInfrastructure: {
-      heroImage: 'assets/Industries/healthCare-Life-Science-SubPage/connected-infrastrucre.jpg',
+      heroImage: 'assets/Industries/healthCare-Life-Science-SubPage/connected-infrastructure.jpg',
       heroHeading: 'How Does Connected Infrastructure Transform Healthcare?',
       subHeading:
         'Building smarter systems for efficient, secure, and patient-centered care.',
@@ -221,7 +221,7 @@ public currentSection = 'medicalinnovation';
       ],
     },
     talentSolutions: {
-      heroImage: 'assets/Industries/healthCare-Life-Science-SubPage/expert-talent-solutions.jpg',
+      heroImage: 'assets/Industries/healthCare-Life-Science-SubPage/expert-talent-solution.jpg',
       heroHeading:
         'How Can Expert Talent Solutions Empower the Healthcare Sector?',
       subHeading:

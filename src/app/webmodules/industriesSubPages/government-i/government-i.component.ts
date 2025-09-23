@@ -17,7 +17,7 @@ export class GovernmentIComponent implements OnInit{
   public sections = {
     // StrategicRiskAndResilence
     StrategicRiskAndResilence: {
-      heroImage: 'assets/Industries/governmentSubPages/strategic-risk-resilence.jpg',
+      heroImage: 'assets/Industries/governmentSubPages/risk-management.jpg',
       heroHeading: 'How Can Risk Management Safeguard Public Trust?',
       subHeading:
         'Identifying, assessing, and mitigating risks to ensure stability and reliable services.',
