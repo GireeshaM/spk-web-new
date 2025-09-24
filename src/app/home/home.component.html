@@ -93,22 +93,22 @@
    
   </div>
 </div>
- 
+
     </section>
 </section>
   <!-- FEATURES   About sprintpark -->
 <section class="about-sprintpark-section">
   <div class="container py-5 position-relative">
     <div class="row align-items-center flex-column flex-md-row gx-5 position-relative">
-     
+      
       <!-- Left Image -->
       <div class="col-12 col-md-5 image-wrapper mb-4 mb-md-0"
            [ngClass]="{'pre-slide-left': !imageInView, 'slide-left': imageInView}">
-        <img src="assets/home/about-sprintpark/abt-spk-right-image.jpg"
-             alt="Team working"
+        <img src="assets/home/about-sprintpark/abt-spk-right-image.jpg" 
+             alt="Team working" 
              class="main-image img-fluid w-100" />
-        <img src="assets/home/about-sprintpark/Ellipse.png"
-             alt="Ellipse"
+        <img src="assets/home/about-sprintpark/Ellipse.png" 
+             alt="Ellipse" 
              class="ellipse-shape img-fluid" />
       </div>
       <!-- Right Content -->
@@ -116,7 +116,7 @@
            [ngClass]="{'pre-slide-right': !contentInView, 'slide-right': contentInView}">
         <small class="mb-2 abt-spk gradient-underline">About Sprintpark</small>
         <h3 class="fw-bold mb-3">
-          Smart. Sleek. Scalable. We don’t just build
+          Smart. Sleek. Scalable. We don’t just build 
           <br>tech -we craft digital experiences.
         </h3>
         <p class=" fw-normal mb-4 lh-lg ">
@@ -124,7 +124,7 @@
           cutting-edge IT products and solutions—celebrated for our unwavering  <br>
           commitment to quality, forward-thinking innovation, and exceptional client  <br>
            satisfaction. By developing scalable, efficient, and user-centric products, <br>
-            we empower businesses to thrive in an
+            we empower businesses to thrive in an 
           ever-evolving digital landscape.
         </p>
         <!-- Features Grid -->
@@ -200,27 +200,49 @@
       </div>
     </section>
     <!-- Industries we serve -->
-   <section class="industries-section my-5 pt-0">
+<section class="industries-section my-5 pt-0">
   <div class="container">
     <div class="mb-4">
-      <h6 class="text-dark mb-3" >Industries we serve</h6>
+      <h6 class="text-dark mb-3">Industries we serve</h6>
       <h3 class="fw-bold mb-5">We bring our expertises</h3>
     </div>
-    <div class="row g-4">
-      <div class="col-12 col-sm-6 col-md-3" *ngFor="let industry of industries">
-        <div class="bg-transparent p-0 rounded-0 h-100 overflow-hidden industries-card d-flex flex-column position-relative">
-          <img [src]="industry.img" [alt]="industry.alt" class="w-100 industries-img flex-grow-1" />
+
+    <p-carousel
+      [value]="industries"
+      [numVisible]="3"
+      [numScroll]="1"
+      [circular]="true"
+      [autoplayInterval]="3000"
+      [responsiveOptions]="responsiveOptions"
+      [showIndicators]="false" 
+     
+    >
+      <ng-template pTemplate="item" let-industry>
+        <div
+          class="bg-transparent p-0 rounded-0 h-100 overflow-hidden industries-card d-flex flex-column position-relative"
+        >
+          <img
+            [src]="industry.img"
+            [alt]="industry.alt"
+            class="w-100 industries-img flex-grow-1"
+          />
           <div class="industry-title-overlay">
-            <span class="industry-title fw-semibold text-light">{{ industry.title }}</span>
-              <a class="arrow-btn" [routerLink]="industry.link">
-                <i class="fas fa-arrow-right text-light"></i>
-              </a>
+            <span class="industry-title fw-semibold text-light">
+              {{ industry.title }}
+            </span>
+            <a class="arrow-btn" [routerLink]="industry.link">
+              <i class="fas fa-arrow-right text-light"></i>
+            </a>
           </div>
         </div>
-      </div>
-    </div>
+      </ng-template>
+    </p-carousel>
   </div>
 </section>
+
+
+
+
   </div>
   <!-- Collaboration Section -->
 <div class="collaborate-section py-5 rounded-3">
@@ -305,7 +327,7 @@
           id="insightsCarousel"
           class="carousel slide"
           data-bs-ride="carousel"
-          data-bs-interval="4000"
+          data-bs-interval="4000" 
         >
           <div class="carousel-inner">
             <div
@@ -319,10 +341,10 @@
                 [alt]="slide.title"
                 class="d-block w-100 carousel-image"
               />
- 
+
               <!-- Gradient Overlay (if you still want it on the image) -->
               <div class="carousel-gradient"></div>
- 
+
               <!-- ✅ Caption moved OUTSIDE image -->
               <div class="carousel-text-below text-center p-2">
                 <h3 class="carousel-title">
@@ -413,7 +435,7 @@
             "
           ></div>
         </div>
- 
+
         <!-- Center Card -->
         <div
           class="bg-white rounded-0 shadow-sm position-relative overflow-hidden"
@@ -448,7 +470,7 @@
             </p>
           </div>
         </div>
- 
+
         <!-- Right Card -->
         <div
           role="button"
@@ -509,7 +531,7 @@
   <div class="container">
     <p class="mb-2 mt-5">Testimonial</p>
     <h2 class="fw-bold mb-4 fs-2">Real Stories, Real Results</h2>
- 
+
     <!-- Mobile slider -->
     <div class="testimonial-wrapper d-flex d-md-none overflow-auto pb-2">
       <div
@@ -551,7 +573,7 @@
         </div>
       </div>
     </div>
- 
+
     <!-- Desktop grid -->
     <div class="row gx-5 gy-3 d-none d-md-flex">
       <div class="col-12 col-md-6" *ngFor="let t of testimonials">
@@ -578,7 +600,7 @@
     <i class="far fa-star text-muted"></i>
   </ng-container>
 </div>
- 
+
             </div>
           </div>
           <img
@@ -605,4 +627,3 @@
 </section>
   <!-- Testimonial Section End -->
 </div>
- 

@@ -22,8 +22,13 @@ import { HealthCareIComponent } from './webmodules/industriesSubPages/health-car
 import { ManufacturingIComponent } from './webmodules/industriesSubPages/manufacturing-i/manufacturing-i.component';
 import { TelecommunicationIComponent } from './webmodules/industriesSubPages/telecommunication-i/telecommunication-i.component';
 import { TransportationIComponent } from './webmodules/industriesSubPages/transportation-i/transportation-i.component';
+import { CompanyComponent } from './company/company.component';
 
 export const routes: Routes = [
+  {
+    path:'company',
+    component:CompanyComponent
+  },
   {
     path: '',
     component: HomeComponent,

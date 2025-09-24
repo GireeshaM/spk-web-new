@@ -37,7 +37,7 @@ export class GovtComponent {
       link: '/government/ProjectManagementExcellence',
     },
     {
-      img: 'assets/Industries/governmentSubPages/actionable-data-analytics.jpg',
+      img: 'assets/Industries/government/actionable-data-analytics.png',
       title: ' Actionable Data Analytics',
       description:
         'Empower decision-makers with real-time insights, improve service delivery, and increase transparency through secure, ethical use of public data.',

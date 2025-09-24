@@ -14,7 +14,7 @@ export class HealthCareComponent {
   public itContent =
     'Life sciences and healthcare face risks like IP protection, supply chain issues, and regulatory change. SprintPark delivers tailored solutions to help you manage costs, ensure compliance, grow revenue, and strengthen cybersecurity with confidence.';
   public subHeading = 'Innovating Healthcare Services';
-  public telecom = 'assets/Industries/healthCareAndLifeSciences/healthCare-hero.jpeg';
+  public telecom = 'assets/Industries/healthCareAndLifeSciences/healthCare-hero.png';
   public cards = [
     {
       img: 'assets/Industries/healthCareAndLifeSciences/intelligent-automation.png',

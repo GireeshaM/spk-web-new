@@ -429,37 +429,6 @@ color: black;
   opacity: 0;
   transform: translateY(80px);
 }
-// Industries cards: increase height
-.industries-card {
-  overflow: hidden;
-  position: relative;
-  min-height: 340px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  .img {
-    height: 240px;
-    object-fit: cover;
-    width: 100%;
-    display: block;
-  }
- 
-  .industries-img {
-transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
-will-change: transform;
-    width: 100%;
-    height: 240px;
-    object-fit: cover;
-    display: block;
-  }
- 
-  &:hover .industries-img {
-    transform: scale(1.12) ;
-    box-shadow: 0 12px 32px rgba(55, 35, 153, 0.18);
-    z-index: 2;
-  }
-}
-// Service cards (What we offer) hover effect
 .whatWeOffer-section .bg-white:hover {
   background: #372399 !important;
   color: #fff !important;
@@ -467,61 +436,9 @@ will-change: transform;
     background 0.2s,
     color 0.2s;
 }
-.industry-title-overlay {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  padding: 15px;
-  z-index: 2;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-  .arrow-btn:hover ~ .industries-img,
-  .arrow-btn:hover .industries-img {
-    transform: scale(1.15);
-  }
- 
- 
-// Arrow button styling
-.arrow-btn {
-  background: #ff6600;
-  width: 35px;
-  height: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 0.4s ease;
-  margin-left: auto;
-  flex-shrink: 0;
-  z-index: 3;
- 
-  i {
-    transition: transform 0.4s ease;
-    display: inline-block;
-  }
- 
-  &:hover {
-    background: #e65c00;
-    transform: scale(1.1);
- 
-    i {
-      transform: translateX(6px);
-    }
-  }
-}
-.industries-card {
-  position: relative;
-  overflow: hidden;
-}
- 
-.industries-card:hover .industries-img {
-  transform: scale(2.05);
-}
+
 //end of industries cards
+
 //section 3 end of (what we offer and industries we serve)
  
 .text-purple {
@@ -673,4 +590,179 @@ will-change: transform;
 }
  
 //TESTIMONIAL END
+
+.industries-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  .industries-img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+  }
+
+  // Card hover zoom
+  &:hover .industries-img {
+    transform: scale(1.15);
+    box-shadow: 0 12px 32px rgba(55, 35, 153, 0.18);
+    z-index: 2;
+  }
+}
+
+// Overlay (title + arrow)
+.industry-title-overlay {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 15px;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// Arrow button
+.arrow-btn {
+  background: #ff6600;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  margin-left: auto;
+  flex-shrink: 0;
+  z-index: 3;
+
+  i {
+    transition: transform 0.4s ease;
+    display: inline-block;
+  }
+
+  &:hover {
+    background: #e65c00;
+    transform: scale(1.1);
+
+    i {
+      transform: translateX(6px);
+    }
+  }
+  // Carousel padding and spacing
+.industries-carousel {
+
+  .industries-card {
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+
+    .industries-img {
+      width: 100%;
+     
+      object-fit: cover;
+      transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform;
+      display: block;
+    }
+
+    &:hover .industries-img {
+      transform: scale(1.12);
+      box-shadow: 0 12px 32px rgba(55, 35, 153, 0.18);
+      z-index: 2;
+    }
+  }
+
+  .industry-title-overlay {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .arrow-btn {
+    background: #ff6600;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    margin-left: auto;
+    flex-shrink: 0;
+    z-index: 3;
+
+    i {
+      transition: transform 0.4s ease;
+      display: inline-block;
+    }
+
+    &:hover {
+      background: #e65c00;
+      transform: scale(1.1);
+      i {
+        transform: translateX(6px);
+      }
+    }
+  }
+}
+
+// Optional: maintain gap on mobile
+
+
+}
+/* Hide p-carousel indicators */
+.p-carousel .p-carousel-indicators {
+    display: none !important;
+}
+
+
+////////////////////////////////
+/* Wrapper for image */
+
+
+.industries-card {
+  margin: 0 0.5em;
+  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+  border: none;
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .img-wrapper {
+    height: 200px; // fixed height like Bootstrap demo
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+    }
+  }
+
  
+}
