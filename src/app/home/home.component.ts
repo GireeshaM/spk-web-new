@@ -87,11 +87,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
       btn2: this.btn2,
     },
   ];
-  public responsiveOptions = [
-    { breakpoint: '1024px', numVisible: 3, numScroll: 1 },
-    { breakpoint: '768px', numVisible: 2, numScroll: 1 },
-    { breakpoint: '560px', numVisible: 1, numScroll: 1 },
-  ];
+ 
+
   public ngOnInit(): void {
     this.offerCardVisible = this.whatWeOffer.map(() => false);
   }
@@ -256,94 +253,29 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ];
 
   // Industries
-  public industries = [
+ // Industries
+public industries = [
+  { img: 'assets/home/industries/industry-it-telecommunications.jpg', alt: 'IT & TeleCommunications', title: 'IT & TeleCommunications', link: '/itAndTeleCommunications' },
+  { img: 'assets/home/industries/industries-healthcare.jpg', alt: 'Healthcare & Life Sciences', title: 'Healthcare & Life Sciences', link: '/healthCareAndLifeSciences' },
+  { img: 'assets/home/industries/industry-education.jpg', alt: 'Education', title: 'Education', link: '/education' },
+  { img: 'assets/home/industries/industries-government.jpg', alt: 'Government', title: 'Government', link: '/government' },
+  { img: 'assets/home/industries/transportation.jpg', alt: 'Transportation and Logistics', title: 'Transportation and Logistics', link: '/government' },
+  { img: 'assets/home/industries/banking.jpg', alt: 'Banking', title: 'Banking', link: '/government' },
+  { img: 'assets/home/industries/manufactuing.jpg', alt: 'Manufacturing', title: 'Manufacturing', link: '/government' }
+];
 
-    {
+// Duplicate first 2 items at the end to allow smooth circular scroll
+public industriesCarousel = [
+  ...this.industries,
+  ...this.industries.slice(0, 2)
+];
 
-      img: 'assets/home/industries/industry-it-telecommunications.jpg',
+public responsiveOptions = [
+  { breakpoint: '1024px', numVisible: 3, numScroll: 1 },
+  { breakpoint: '768px', numVisible: 2, numScroll: 1 },
+  { breakpoint: '560px', numVisible: 1, numScroll: 1 },
+];
 
-      alt: 'IT & TeleCommunications',
-
-      title: 'IT & TeleCommunications',
-
-       link: '/itAndTelecommunications'
-
-    },
-
-    {
-
-      img: 'assets/home/industries/industries-healthcare.jpg',
-
-      alt: 'Healthcare & Life Sciences',
-
-      title: 'Healthcare & Life Sciences',
-
-      link: '/healthCareAndLifeSciences'
-
-    },
-
-    {
-
-      img: 'assets/home/industries/industry-education.jpg',
-
-      alt: 'Education',
-
-      title: 'Education',
-
-      link: '/education'
-
-    },
-
-    {
-
-      img: 'assets/home/industries/industries-government.jpg',
-
-      alt: 'Government',
-
-      title: 'Government',
-
-      link: '/government'
-
-    },
-
-    {
-
-      img: 'assets/home/industries/transportation.jpg',
-
-      alt: 'Transportation and Logistics',
-
-      title: 'Transportation and Logistics',
-
-      link: '/government'
-
-    },
-
-    {
-
-      img: 'assets/home/industries/banking.jpg',
-
-      alt: 'Government',
-
-      title: 'banking',
-
-      link: '/government'
-
-    },
-
-     {
-
-      img: 'assets/home/industries/manufactuing.jpg',
-
-      alt: 'Government',
-
-      title: 'Manufacuring',
-
-      link: '/government'
-
-    },
-
-  ];
- 
 
   public stats = [
     {
@@ -395,18 +327,18 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   public testimonials = [
     {
-      img: 'assets/home/testimonials/testimonial-1.png',
-      name: 'Dhruv Raya',
-      role: 'Co-founder - Zent Technologies',
-      rating: 4,
-      text: '“SprintPark quickly understood our requirements and delivered top-quality candidates within tight timelines.”',
-    },
-    {
-      img: 'assets/home/testimonials/testimonial-2.png',
+      img: 'assets/home/testimonials/testimony-1.png',
       name: 'Maria Sans',
       role: 'Co-founder - Zent Technologies',
       rating: 4,
-      text: '“A highly reliable partner — their team is responsive, professional, and easy to work with.”',
+      text: 'Sprintpark has delivered excellent services to deliver our AI products. They have given us innovative solutions. Happy client :)',
+    },
+    {
+      img: 'assets/home/testimonials/testimony-2.png',
+      name: 'Maria Sans',
+      role: 'Co-founder - Zent Technologies',
+      rating: 4,
+      text: 'Sprintpark has delivered excellent services to deliver our AI products. They have given us innovative solutions. Happy client :)',
     },
   ];
   public currentInsightIndex = 1; // Start with the middle card (or 0 for first)

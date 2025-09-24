@@ -156,26 +156,26 @@
           class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-4 gap-2"
         >
           <div>
-            <h6 class="text-dark  mb-3">What we offer</h6>
-            <h3 class="fw-bold mt-1">Services tailored for you</h3>
+            <small class="text-dark">What we offer</small>
+            <h3 class="fw-bold mb-2">Services tailored for you</h3>
           </div>
-          <a href="#" class="view-all">
-            View all
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="arrow-icon"
-              viewBox="0 0 16 16"
-            >
-              <path d="M2 8h12M8 2l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
+<a href="#" class="view-all">
+  View all
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    fill="currentColor"
+    class="arrow-icon"
+    viewBox="0 0 16 16"
+  >
+    <path d="M2 8h12M8 2l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</a>
         </div>
-        <div class="row g-4 text-center mt-3 ">
+        <div class="row g-4 text-center">
           <div
-            class="col-12 col-sm-6 col-md-4 p-5"
+            class="col-12 col-sm-6 col-md-4"
             *ngFor="let offer of whatWeOffer; let i = index"
             #offerCard
           >
@@ -191,7 +191,7 @@
                 class="mb-3 offer-image"
               />
               <h6 class="fw-bold mb-2 text-sec">{{ offer.title }}</h6>
-              <p class=" small mb-0 lh-lg text sec">
+              <p class="text-muted small mb-0 lh-lg text sec">
                 {{ offer.desc }}
               </p>
             </div>
@@ -207,29 +207,21 @@
       <h3 class="fw-bold mb-5">We bring our expertises</h3>
     </div>
 
-    <p-carousel
-      [value]="industries"
-      [numVisible]="3"
-      [numScroll]="1"
-      [circular]="true"
-      [autoplayInterval]="3000"
-      [responsiveOptions]="responsiveOptions"
-      [showIndicators]="false" 
-     
-    >
+  <p-carousel
+  #industriesCarouselRef
+  [value]="industriesCarousel"
+  [numVisible]="3"
+  [numScroll]="1"
+  [circular]="true"
+  [autoplayInterval]="3000"
+  [responsiveOptions]="responsiveOptions"
+  [showIndicators]="false"
+>
       <ng-template pTemplate="item" let-industry>
-        <div
-          class="bg-transparent p-0 rounded-0 h-100 overflow-hidden industries-card d-flex flex-column position-relative"
-        >
-          <img
-            [src]="industry.img"
-            [alt]="industry.alt"
-            class="w-100 industries-img flex-grow-1"
-          />
+        <div class=" p-0 rounded-0 h-100 overflow-hidden industries-card d-flex flex-column position-relative">
+          <img [src]="industry.img" [alt]="industry.alt" class=" industries-img flex-grow-1" />
           <div class="industry-title-overlay">
-            <span class="industry-title fw-semibold text-light">
-              {{ industry.title }}
-            </span>
+            <span class="industry-title fw-semibold text-light">{{ industry.title }}</span>
             <a class="arrow-btn" [routerLink]="industry.link">
               <i class="fas fa-arrow-right text-light"></i>
             </a>
@@ -239,6 +231,7 @@
     </p-carousel>
   </div>
 </section>
+
 
 
 
