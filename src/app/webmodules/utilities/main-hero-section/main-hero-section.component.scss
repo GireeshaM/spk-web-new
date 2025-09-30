@@ -50,3 +50,11 @@
     height: 300px !important;
   }
 }
+@media (max-width: 879px) {
+.heading{
+  margin-top: -70px;
+}
+.desc{
+  margin-top: 10px;
+}
+}

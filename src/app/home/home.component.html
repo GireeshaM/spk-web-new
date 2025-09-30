@@ -162,7 +162,7 @@
         <h3 class="fw-bold mb-2">Services tailored for you</h3>
       </div>
 
-      <a href="javascript:void(0)" class="view-all" (click)="toggleViewAll()">
+      <a href="javascript:void(0)" class="view-all d-none d-md-block" (click)="toggleViewAll()">
         {{ viewAll ? 'View less' : 'View all' }}
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -187,7 +187,8 @@
     <div class="row g-4 text-center" [class.view-all]="viewAll">
       <div
         class="col-12 col-sm-6 col-md-4"
-        *ngFor="let offer of viewAll ? whatWeOffer : (whatWeOffer | slice:0:3); let i = index"
+       *ngFor="let offer of (isMobile || viewAll ? whatWeOffer : (whatWeOffer | slice: 0:3)); let i = index"
+
         #offerCard
       >
        <a
@@ -318,9 +319,9 @@
       <div class="row ms-2 ms-md-5 ms-lg-150">
         <div class="ms-2">
           <p class="collaborate-subtitle mb-2 mt-3">Our insights</p>
-          <h2 class=" fw-bold mt-2 mb-2 ">
+          <h2 class="collaborate-title fw-bold mt-2 mb-2 ">
             Explore our
-            <span class=" text-primary fw-bold"
+            <span class="collaborate-highlight text-primary fw-bold"
               >Case Studies</span
             >
           </h2>
@@ -344,18 +345,18 @@
               <img
                 [src]="slide.image"
                 [alt]="slide.title"
-                class="d-block w-100 "
+                class="d-block w-100 carousel-image"
               />
 
               <!-- Gradient Overlay (if you still want it on the image) -->
               <div class="carousel-gradient"></div>
 
               <!-- ✅ Caption moved OUTSIDE image -->
-              <div class="text-center p-2">
+              <div class="carousel-text-below text-center p-2">
                 <h3 class="carousel-title">
                   {{ slide.title }}
                 </h3>
-                <p class=" mb-0">
+                <p class="carousel-readmore mb-0">
                   <a href="#" class="text-decoration-none">
                     Read More <span>&#8594;</span>
                   </a>
@@ -386,221 +387,159 @@
       </div>
       <!-- ✅ Desktop View: Original 3-card slider remains unchanged -->
       <div
-      class="d-none d-md-flex justify-content-center align-items-center flex-nowrap mt-5"
-      style="gap: 2.5rem;"
-    >
-  <!-- Left Card -->
-  <div
-  *ngIf="currentInsightIndex > 0"
-    role="button"
-    tabindex="0"
-    class="bg-white rounded-0 shadow-sm position-relative overflow-hidden"
-    style="width: 392px; height: 420px; cursor: pointer"
-    (click)="moveInsight(-1)"
-    (keydown)="onKeyDown($event)"
-  >
-    <img
-      [src]="ourInsightsSlides[currentInsightIndex - 1].image"
-      [alt]="ourInsightsSlides[currentInsightIndex - 1].title"
-      class="w-100 h-100"
-      style="object-fit: cover"
-    />
-    <button
-     *ngIf="currentInsightIndex > 0"
-      class="btn p-0 position-absolute d-flex align-items-center justify-content-center"
-      style="
-        top: 50%;
-        left: 32px;
-        transform: translateY(-50%);
-        width: 48px;
-        height: 48px;
-        background: #f77300;
-        border-radius: 0;
-        z-index: 2;
-      "
-    >
-      <span style=" color: #fff">&#8592;</span>
-    </button>
-    <div
-      class="position-absolute bottom-0 start-0 w-100 p-4"
-      style="z-index: 2"
-    >
-      <h5 class="fw-bold text-white mb-3">
-        {{ ourInsightsSlides[currentInsightIndex - 1].title }}
-      </h5>
-      <p class="mb-2 text-white small">
-        <a [routerLink]="['/insights', ourInsightsSlides[currentInsightIndex - 1].route]" class="text-decoration-none text-white">
-        Read More >>
-        </a>
-      </p>
-    </div>
-    <div
-      class="position-absolute bottom-0 start-0 w-100"
-      style="
-        height: 60%;
-        background: linear-gradient(
-          to top,
-          rgba(0, 0, 0, 0.65),
-          transparent 80%
-        );
-      "
-    ></div>
-  </div>
+        class="d-none d-md-flex justify-content-center align-items-center flex-nowrap mt-5"
+        style= " gap: 2.5rem;">
+        <!-- Left Card -->
+        <div
+          role="button"
+          tabindex="0"
+          class="bg-white rounded-0 shadow-sm position-relative overflow-hidden"
+          style="width: 392px; height: 420px; cursor: pointer"
+          *ngIf="currentInsightIndex > 0"
+          (click)="moveInsight(-1)"
+          (keydown)="onKeyDown($event)"
+        >
+          <img
+            [src]="ourInsightsSlides[currentInsightIndex - 1].image"
+            [alt]="ourInsightsSlides[currentInsightIndex - 1].title"
+            class="w-100 h-100"
+            style="object-fit: cover"
+          />
+          <button
+            class="btn p-0 position-absolute d-flex align-items-center justify-content-center"
+            style="
+              top: 50%;
+              left: 32px;
+              transform: translateY(-50%);
+              width: 48px;
+              height: 48px;
+              background: #f77300;
+              border-radius: 0;
+              z-index: 2;
+            "
+          >
+            <span style=" color: #fff">&#8592;</span>
+          </button>
+          <div
+            class="position-absolute bottom-0 start-0 w-100 p-4"
+            style="z-index: 2"
+          >
+            <h5 class="fw-bold text-white mb-3">
+              {{ ourInsightsSlides[currentInsightIndex - 1].title }}
+            </h5>
+              <p class="mb-2 text-white small">
+                    <a [routerLink]="['/insights', ourInsightsSlides[currentInsightIndex - 1].route]" class="text-decoration-none text-white">
+                    Read More >>
+                    </a>
+              </p>
+          </div>
+          <div
+            class="position-absolute bottom-0 start-0 w-100"
+            style="
+              height: 60%;
+              background: linear-gradient(
+                to top,
+                rgba(0, 0, 0, 0.65),
+                transparent 80%
+              );
+            "
+          ></div>
+        </div>
 
-  <!-- Center Card -->
-  <div
-    class="bg-white rounded-0 shadow-sm position-relative overflow-hidden"
-    style="max-width: 700px; height: 420px; flex: 1"
-  >
-    <img
-      [src]="ourInsightsSlides[currentInsightIndex].image"
-      [alt]="ourInsightsSlides[currentInsightIndex].title"
-      class="w-100 h-100"
-      style="object-fit: cover"
-    />
-    <div
-      class="position-absolute bottom-0 start-0 w-100"
-      style="
-        height: 60%;
-        background: linear-gradient(
-          to top,
-          rgba(0, 0, 0, 0.65),
-          transparent 80%
-        );
-      "
-    ></div>
-    <div
-      class="position-absolute bottom-0 start-0 p-4 w-100"
-      style="z-index: 2"
-    >
-      <h3 class="fw-bold text-white mb-3">
-        {{ ourInsightsSlides[currentInsightIndex].title }}
-      </h3>
-      <p class="mb-2 text-white small d-flex align-items-center gap-1">
+        <!-- Center Card -->
+        <div
+          class="bg-white rounded-0 shadow-sm position-relative overflow-hidden"
+          style="max-width: 700px; height: 420px; flex: 1"
+        >
+          <img
+            [src]="ourInsightsSlides[currentInsightIndex].image"
+            [alt]="ourInsightsSlides[currentInsightIndex].title"
+            class="w-100 h-100"
+            style="object-fit: cover"
+          />
+          <div
+            class="position-absolute bottom-0 start-0 w-100"
+            style="
+              height: 60%;
+              background: linear-gradient(
+                to top,
+                rgba(0, 0, 0, 0.65),
+                transparent 80%
+              );
+            "
+          ></div>
+          <div
+            class="position-absolute bottom-0 start-0 p-4 w-100"
+            style="z-index: 2"
+          >
+            <h3 class="fw-bold text-white mb-3">
+              {{ ourInsightsSlides[currentInsightIndex].title }}
+            </h3>
+            <p class="mb-2 text-white small d-flex align-items-center gap-1">
        <a [routerLink]="['/insights', ourInsightsSlides[currentInsightIndex].route]" class="text-decoration-none text-white">
         Read More >>
         </a>
       </p>
-    </div>
-  </div>
+          </div>
+        </div>
 
-  <!-- Right Card -->
-  <div
-  *ngIf="currentInsightIndex < ourInsightsSlides.length - 1"
-    role="button"
-    tabindex="0"
-    class="bg-white rounded-0 shadow-sm position-relative overflow-hidden"
-    style="width: 350px; height: 420px; cursor: pointer"
-    (click)="moveInsight(1)"
-    (keydown)="onKeyDown($event)"
-  >
-    <img
-      [src]="ourInsightsSlides[currentInsightIndex + 1].image"
-      [alt]="ourInsightsSlides[currentInsightIndex + 1].title"
-      class="w-100 h-100"
-      style="object-fit: cover"
-    />
-    <button
-   *ngIf="!isFourCardsVisible" 
-      class="btn p-0 position-absolute d-flex align-items-center justify-content-center"
-      style="
-        top: 50%;
-        right: 32px;
-        transform: translateY(-50%);
-        width: 48px;
-        height: 48px;
-        background: #f77300;
-        border-radius: 0;
-        z-index: 2;
-      "
-    >
-      <span style=" color: #fff">&#8594;</span>
-    </button>
-    <div
-      class="position-absolute bottom-0 start-0 w-100 p-4"
-      style="z-index: 2"
-    >
-      <h5 class="fw-bold text-white mb-3">
-        {{ ourInsightsSlides[currentInsightIndex + 1].title }}
-      </h5>
-      <p class="mb-2 text-white small">
+        <!-- Right Card -->
+        <div
+          role="button"
+          tabindex="0"
+          class="bg-white rounded-0 shadow-sm position-relative overflow-hidden"
+          style="width: 350px; height: 420px; cursor: pointer"
+          *ngIf="currentInsightIndex < ourInsightsSlides.length - 1"
+          (click)="moveInsight(1)"
+          (keydown)="onKeyDown($event)"
+        >
+          <img
+            [src]="ourInsightsSlides[currentInsightIndex + 1].image"
+            [alt]="ourInsightsSlides[currentInsightIndex + 1].title"
+            class="w-100 h-100"
+            style="object-fit: cover"
+          />
+          <button
+            class="btn p-0 position-absolute d-flex align-items-center justify-content-center"
+            style="
+              top: 50%;
+              right: 32px;
+              transform: translateY(-50%);
+              width: 48px;
+              height: 48px;
+              background: #f77300;
+              border-radius: 0;
+              z-index: 2;
+            "
+          >
+            <span style=" color: #fff">&#8594;</span>
+          </button>
+          <div
+            class="position-absolute bottom-0 start-0 w-100 p-4"
+            style="z-index: 2"
+          >
+            <h5 class="fw-bold text-white mb-3">
+              {{ ourInsightsSlides[currentInsightIndex + 1].title }}
+            </h5>
+             <p class="mb-2 text-white small">
         <a [routerLink]="['/insights', ourInsightsSlides[currentInsightIndex + 1].route]" class="text-decoration-none text-white">
         Read More >>
         </a>
       </p>
-    </div>
-    <div
-      class="position-absolute bottom-0 start-0 w-100"
-      style="
-        height: 60%;
-        background: linear-gradient(
-          to top,
-          rgba(0, 0, 0, 0.65),
-          transparent 80%
-        );
-      "
-    ></div>
-  </div>
-
-  <!-- Extra Fourth Card -->
-  <div
-  *ngIf="currentInsightIndex < ourInsightsSlides.length - 2"
-    role="button"
-    tabindex="0"
-    class="bg-white rounded-0 shadow-sm position-relative overflow-hidden"
-    style="width: 300px; height: 420px; cursor: pointer"
-    (click)="moveInsight(2)"
-    (keydown)="onKeyDown($event)"
-  >
-    <img
-      [src]="ourInsightsSlides[currentInsightIndex + 2].image"
-      [alt]="ourInsightsSlides[currentInsightIndex + 2].title"
-      class="w-100 h-100"
-      style="object-fit: cover"
-    />
-      <button
-     *ngIf="isFourCardsVisible"
-    class="btn p-0 position-absolute d-flex align-items-center justify-content-center"
-    style="
-      top: 50%;
-      right: 32px;
-      transform: translateY(-50%);
-      width: 48px;
-      height: 48px;
-      background: #f77300;
-      border-radius: 0;
-      z-index: 2;
-    "
-  >
-    <span style="color: #fff">&#8594;</span>
-  </button>
-    <div
-      class="position-absolute bottom-0 start-0 w-100 p-4"
-      style="z-index: 2"
-    >
-      <h5 class="fw-bold text-white mb-3">
-        {{ ourInsightsSlides[currentInsightIndex + 2].title }}
-      </h5>
-      <p class="mb-2 text-white small">
-        <a [routerLink]="['/insights', ourInsightsSlides[currentInsightIndex + 2].route]" class="text-decoration-none text-white">
-        Read More >>
-        </a>
-      </p>
-    </div>
-    <div
-      class="position-absolute bottom-0 start-0 w-100"
-      style="
-        height: 60%;
-        background: linear-gradient(
-          to top,
-          rgba(0, 0, 0, 0.65),
-          transparent 80%
-        );
-      "
-    ></div>
-  </div>
+          </div>
+          <div
+            class="position-absolute bottom-0 start-0 w-100"
+            style="
+              height: 60%;
+              background: linear-gradient(
+                to top,
+                rgba(0, 0, 0, 0.65),
+                transparent 80%
+              );
+            "
+          ></div>
+        </div>
       </div>
-
     </div>
   </div>
   <!-- Testimonial Section -->

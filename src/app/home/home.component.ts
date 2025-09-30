@@ -393,7 +393,7 @@ public responsiveOptions = [
       text: '“Professional, efficient, and trustworthy—an excellent partner in staffing.”',
     },
   ];
-  public currentInsightIndex = 0; // Start with the middle card (or 0 for first)
+  public currentInsightIndex = 1; // Start with the middle card (or 0 for first)
   public isMobile = false;
   @HostListener('window:resize')
   public onResize(): void {
