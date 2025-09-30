@@ -9,7 +9,8 @@ import { IndustryUtilComponent } from '../../utilities/industry-util/industry-ut
 })
 export class EducationComponent {
   public headerBg = 'assets/Industries/wave.svg';
-  public itHeader = 'Transforming the Landscape of Higher Education';
+  public itHeader = 'Education';
+  public itHeading = 'Transforming the Landscape of Higher Education';
   public itContent =
     'Higher education institutions are innovating teaching and leveraging technology to enhance student outcomes.Financial pressures require improved efficiency and strong governance.SprintPark helps institutions balance innovation with operational excellence for a successful future.';
   public subHeading = 'Driving Innovation in Manufacturing';

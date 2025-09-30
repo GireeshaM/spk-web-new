@@ -1,0 +1,153 @@
+.timeline {
+  position: relative;
+  padding: 20px 0;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-1px);
+  width: 2px;
+  height: calc(100% - 80px); // Subtract the height of last item margin
+  background-image: linear-gradient(to bottom, #999999 35%, transparent 35%);
+  background-size: 6px 30px;
+  background-repeat: repeat-y;
+  top: 0;
+  z-index: 1;
+}
+
+.timeline-row {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 80px;
+  position: relative;
+}
+
+.timeline-row:last-child {
+  margin-bottom: 0;
+}
+
+// Hide line after last circle
+.timeline-row.last-item .timeline-center::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-1px);
+  width: 2px;
+  height: 100%;
+  background: white;
+  top: 50px;
+  z-index: 2;
+}
+
+.timeline-left,
+.timeline-right {
+  flex: 1;
+  padding: 0 40px;
+}
+
+.timeline-center {
+  position: relative;
+  z-index: 2;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 0;
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid #3b4a9a;
+  align-items: center;
+  color: #3b4a9a;
+  position: relative;
+  z-index: 3;
+}
+
+.content-box {
+  padding: 0;
+}
+
+.timeline-left .content-box {
+  text-align: left;
+  padding-right: 20px;
+}
+
+.timeline-right .content-box {
+  text-align: left;
+  padding-left: 20px;
+}
+
+h5 {
+  color: #1a1a1a;
+  margin-bottom: 12px;
+  gap: 10px;
+}
+
+.timeline-left h5,
+.timeline-right h5 {
+  justify-content: flex-start;
+}
+
+.step-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-image {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+p {
+  color: #4a4a4a;
+  margin: 0;
+  max-width: 400px;
+}
+
+.timeline-left .content-box p,
+.timeline-right .content-box p {
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 25px;
+  }
+  
+  .timeline-row {
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+  
+  .timeline-center {
+    position: absolute;
+    left: 0;
+  }
+  
+  .timeline-left,
+  .timeline-right {
+    padding-left: 80px;
+    padding-right: 20px;
+  }
+  
+  .timeline-left .content-box,
+  .timeline-right .content-box {
+    text-align: left;
+  }
+  
+  .timeline-left h5,
+  .timeline-right h5 {
+    justify-content: flex-start;
+  }
+}

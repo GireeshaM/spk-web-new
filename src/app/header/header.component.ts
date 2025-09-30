@@ -31,21 +31,23 @@ export class HeaderComponent implements AfterViewInit {
     this.isScrolled = window.scrollY > 100;
   }
 
-  loginAs(role: string) {
-    if (this.loginModalInstance) {
-      this.loginModalInstance.hide();
-    }
-
-    switch (role) {
-      case 'Admin':
-      case 'Recruiter':
-        window.location.href = 'https://talenthire.ceipal.com/signin';
-        break;
-      case 'Employee':
-        this.router.navigate(['/employee-login']);
-        break;
-    }
+loginAs(role: string) {
+  if (this.loginModalInstance) {
+    this.loginModalInstance.hide();
   }
+
+  switch (role) {
+    case 'Admin':
+    case 'Recruiter':
+      // Open external URL in a new tab
+      window.open('https://talenthire.ceipal.com/signin', '_blank');
+      break;
+    case 'Employee':
+      // Navigate internally using Angular router
+      this.router.navigate(['/employee-login']);
+      break;
+  }
+}
 
   openLoginModal() {
     if (this.loginModalInstance) {

@@ -27,15 +27,13 @@ export class SoftwareServiceUtilComponent {
 
   // Section 2
   public whyHeader =
-    'Enhancing Organizational Performance with Software Solutions.';
-
+    'Enhancing Organizational Performance with Software Solutions.';                  
   public images = [
     'assets/services/software-services/digital-transformation.png',
     'assets/services/software-services/tailor-your-needs.png',
     'assets/services/software-services/scalability-Flexibility.png',
     'assets/services/software-services/security-and-relability.png',
   ];
-
   public whyList = [
     {
       title: 'Digital Transformation',
@@ -58,7 +56,6 @@ export class SoftwareServiceUtilComponent {
         'Your data is safe with us. We prioritize secure architecture, quality assurance, and 24/7 support.',
     },
   ];
-
   // Section 3
   public whyMainHeading = 'Why SprintPark is Your Ideal Software Partner  ';
   public whySubHeading =

@@ -123,6 +123,7 @@
         </h5>
         <button
           type="button"
+           id="loginModal"
           class="btn-close btn-close-white"
           data-bs-dismiss="modal"
           aria-label="Close"
@@ -141,7 +142,7 @@
               <p class="small text-light">
                 Hire & manage candidates.
               </p>
-              <button class="btn btn-gold mt-auto w-100" (click)="loginAs('Recruiter')">
+              <button class="btn btn-gold mt-auto w-100" target="_blank" (click)="loginAs('Recruiter')" >
                 Login 
               </button>
             </div>
@@ -155,7 +156,7 @@
               <p class="small text-light">
                 Manage users & settings.
               </p>
-              <button class="btn btn-gold mt-auto w-100" (click)="loginAs('Admin')">
+              <button class="btn btn-gold mt-auto w-100" (click)="loginAs('Admin')" target="_blank">
                 Login
               </button>
             </div>
@@ -169,7 +170,7 @@
               <p class="small text-light">
                 Access dashboard & tasks.
               </p>
-              <button class="btn btn-gold mt-auto w-100" (click)="loginAs('Employee')">
+              <button class="btn btn-gold mt-auto w-100" (click)="loginAs('Employee')" target="_blank">
                 Login
               </button>
             </div>

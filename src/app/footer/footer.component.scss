@@ -11,8 +11,15 @@
 
   .footer-content {
     padding: 30px 70px 0 100px;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    @media (max-width: 1024px) {
+      padding: 20px 40px;
+    }
 
     @media (max-width: 768px) {
+      flex-direction: column;
       padding: 20px 30px;
     }
 
@@ -44,64 +51,76 @@
     margin-bottom: 10.8px;
     padding-bottom: 5px;
     color: white;
+
+    @media (max-width: 768px) {
+      font-size: 18px;
+      text-align: center;
+    }
   }
 
   .contactCol {
     li {
       display: flex;
       align-items: center;
+      
 
       a {
         display: flex;
         align-items: center;
         text-decoration: none;
+
         &:hover {
           p {
             color: #89a4d7;
           }
         }
+
         p {
           margin-bottom: 0;
           color: white;
+          word-break: break-word; // ensures long text breaks instead of overflowing
         }
       }
 
       i {
         margin-right: 1rem;
+        
       }
     }
   }
 
   .bottomStrip {
     padding: 20px 0;
+
     .social-icons {
       display: flex;
       justify-content: space-between;
       gap: 3px;
-    }
-    img {
-      width: 30px;
-      height: 30px;
+
+     
+
+        img {
+          width: 30px;
+          height: 30px;
+        }
+      }
     }
 
-    @media (max-width: 768px) {
+   @media (max-width: 768px) {
       .bottomStrip {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         padding: 10px;
 
-        .social-icons {
-          display: flex;
-          gap: 10px;
-          align-items: center;
+      .social-icons {
+    
+        gap: 12px;
+      
 
-          a {
-            img {
-              width: 20px;
-              height: 20px;
-            }
-          }
+        a img {
+          width: 24px;
+          height: 24px;
         }
       }
     }

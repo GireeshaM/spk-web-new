@@ -2,169 +2,168 @@ import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IndustrySubUtilComponent } from '../../utilities/industry-sub-util/industry-sub-util.component';
 import { CommonModule } from '@angular/common';
+import { SubCardsComponent } from '../../utilities/sub-cards/sub-cards.component';
+import { MapSectionComponent } from '../../utilities/map-section/map-section.component';
+
+interface Step {
+  title: string;
+  description: string;
+  icon?: string;
+}
+
+interface Section {
+  heroImage: string;
+  heroHeading: string;
+  smallHeading: string;
+  whyList: Array<{ title: string; description: string }>;
+  steps?: Step[];
+  text?: string;
+}
+
+// ✅ Common reusable steps
+const COMMON_STEPS: Step[] = [
+    {
+    title: 'Understand',
+    icon: 'assets/Industries/understand.svg',
+    description: 'We learn about your business challenges, goals and ambitions, strategic drivers and culture.'
+  },
+  {
+    title: 'Assess',
+    icon: 'assets/Industries/access.svg',
+    description: 'We assess your current risk position relative to your needs and goals, and develop a roadmap for optimizing your cybersecurity.'
+  },
+  {
+    title: 'Design',
+    icon: 'assets/Industries/design.svg',
+    description: 'We design solutions, processes and strategies that allow you to achieve the desired state of security and effectiveness.'
+  },
+  {
+    title: 'Implement',
+    icon: 'assets/Industries/implement.svg',
+    description: 'We draw on our experience and expertise to implement the agreed technical solutions, governance, compliance frameworks and migration processes.'
+  },
+  {
+    title: 'Manage and Optimize',
+    icon: 'assets/Industries/manage-and-optimize.svg',
+    description: 'We operate to deliver tangible, value-added cyber security on a 24/7 basis. We use our methodology to evolve and optimize your solution over time, to maximize value.'
+  }
+];
 
 @Component({
   selector: 'app-education-i',
-  imports: [IndustrySubUtilComponent, CommonModule],
+  standalone: true,
+  imports: [
+    IndustrySubUtilComponent,
+    CommonModule,
+    SubCardsComponent,
+    MapSectionComponent,
+  ],
   templateUrl: './education-i.component.html',
-  styleUrl: './education-i.component.scss'
+  styleUrl: './education-i.component.scss',
 })
 export class EducationIComponent implements OnInit {
- public currentSection = 'NetworkingEngineering';
+  public currentSection = 'NetworkingEngineering';
 
-  route = inject(ActivatedRoute);
-  public sections = {
-    //NetworkingEngineering
-    networkingEngineering: {
+  private route = inject(ActivatedRoute);
+
+  sections: Record<string, Section> = {
+    // NetworkingEngineering
+    NetworkingEngineering: {
       heroImage: 'assets/Industries/education-sub-pages/network-engineering.jpg',
-      heroHeading: 'How Can Networking Engineering Transform Modern Education?',
-      subHeading:
+      heroHeading: ' How Can Networking Engineering Transform Modern Education?',
+      smallHeading:
         'Building connected campuses with reliable, secure, and scalable networks.',
-      introText: '',
-      points: [
+      text: 'Our Working Strategy',
+      whyList: [
         {
-          title: 'Reliable Campus Connectivity',
+          title: 'Reliable & Secure Connectivity',
           description:
-            'Educational institutions rely on uninterrupted, high-speed connectivity for classes, research, and administrative operations. Networking engineering ensures robust Wi-Fi coverage across campuses, enabling students and staff to access resources anywhere.',
+            'High-speed campus-wide Wi-Fi keeps students, faculty, and administrators connected. With firewalls, VPNs, and encryption, sensitive student and research data remain safe from cyber threats.',
         },
         {
-          title: 'Secure Data Transmission',
+          title: 'Cloud & E-Learning Support',
           description:
-            'Protecting sensitive information such as student records, research data, and financial details is crucial. Networking engineers implement firewalls, VPNs, and encryption to safeguard networks against cyber threats.',
+            'Seamless cloud integration powers e-learning tools, virtual classrooms, and digital libraries. Networking engineering ensures smooth video conferencing, collaboration, and uninterrupted online education.',
         },
         {
-          title: 'Cloud Integration for Education',
+          title: 'Scalable & Smart Infrastructure',
           description:
-            'With cloud platforms powering e-learning tools and administrative systems, networking engineers ensure seamless cloud adoption. This enables scalable storage, digital libraries, and virtual learning environments.',
+            'Future-ready networks scale with growing student populations and digital demand. IoT-enabled smart classrooms and digital labs create flexible, interactive learning environments.',
         },
         {
-          title: 'Support for E-Learning Platforms',
+          title: 'Collaboration & Cost Efficiency',
           description:
-            'Networking engineering strengthens virtual classrooms, video conferencing, and digital collaboration platforms, ensuring smooth communication and uninterrupted online learning experiences.',
-        },
-        {
-          title: 'Network Scalability for Growth',
-          description:
-            'As student populations and digital demands increase, scalable networks are essential. Engineers design flexible systems that adapt to growing bandwidth and technology needs.',
-        },
-        {
-          title: 'Smart Campus Infrastructure',
-          description:
-            'Networking supports IoT devices, smart classrooms, and digital labs that enhance teaching and learning. Engineers integrate connected devices for better classroom management and monitoring.',
-        },
-        {
-          title: 'Research Collaboration Enablement',
-          description:
-            'Global academic collaborations depend on strong, secure networking. Engineers ensure universities can exchange research data quickly and reliably with international institutions.',
-        },
-        {
-          title: 'Cost-Efficient IT Management',
-          description:
-            'Optimized network designs reduce downtime, minimize maintenance costs, and extend infrastructure lifespan, allowing institutions to focus resources on educational priorities.',
+            'Strong networks enable global research collaboration with fast, reliable data sharing. Optimized designs reduce downtime and IT costs, ensuring more resources go toward education priorities.',
         },
       ],
+      steps: COMMON_STEPS,
     },
-    //EducationProjectManagement
+
+    // EducationProjectManagement
     educationProjectManagement: {
       heroImage: 'assets/Industries/education-sub-pages/project-management.jpg',
       heroHeading: 'How Can Project Management Drive Success in Education?',
-      subHeading:
-        'Ensuring efficiency, accountability, and timely delivery of educational initiatives.',
-      introText: '',
-      points: [
+      smallHeading:
+        '  Ensuring efficiency, accountability, and timely delivery of educational initiatives.',
+      text: 'Our Working Strategy',
+      whyList: [
         {
-          title: 'Streamlined Academic Program Implementation',
+          title: 'Streamlined Implementation & Resource Efficiency',
           description:
-            'Project management ensures that new curricula, digital tools, or academic reforms are introduced smoothly. With clear timelines and responsibilities, institutions avoid delays and confusion.',
+            'Project management ensures smooth rollout of new curricula, technologies, and reforms. With efficient resource allocation, limited budgets, staff, and tools are used optimally to maximize impact.',
         },
         {
-          title: 'Efficient Resource Allocation',
+          title: 'Technology & Infrastructure Projects',
           description:
-            'Educational budgets are often limited. Project managers strategically allocate funds, staff, and technology resources to maximize impact without overspending.',
+            'From LMS platforms to smart classrooms and campus infrastructure, project management guarantees well-planned execution, timely delivery, proper training, and adherence to safety and academic goals.',
         },
         {
-          title: 'Technology Integration Projects',
+          title: 'Collaboration & Risk Management',
           description:
-            'From Learning Management Systems (LMS) to smart classrooms, technology projects require precise planning. Project management ensures smooth rollouts, staff training, and minimal disruptions.',
+            'By fostering communication among teachers, administrators, parents, and policymakers, project management ensures alignment. Risks like funding cuts or technical issues are identified early and mitigated.',
         },
         {
-          title: 'Infrastructure Development',
+          title: 'Monitoring Outcomes & Student Success',
           description:
-            'Building new facilities, labs, or libraries requires careful oversight. Project management guarantees that construction or upgrades align with budgets, safety standards, and academic goals.',
-        },
-        {
-          title: 'Stakeholder Collaboration',
-          description:
-            'Successful education projects require input from teachers, administrators, parents, and policymakers. Project managers foster communication and alignment across all stakeholders.',
-        },
-        {
-          title: 'Risk Management in Education Projects',
-          description:
-            'Unforeseen challenges like funding cuts or technical issues can derail progress. Through risk identification and mitigation strategies, project managers ensure resilience and adaptability.',
-        },
-        {
-          title: 'Monitoring & Evaluation of Outcomes',
-          description:
-            'Project management emphasizes setting measurable goals and tracking results. This helps institutions evaluate success, improve processes, and replicate best practices.',
-        },
-        {
-          title: 'Enhancing Student-Centered Learning Initiatives',
-          description:
-            'Projects like digital literacy programs or career development initiatives benefit from structured management, ensuring they deliver long-term value to students.',
+            'With measurable goals and continuous evaluation, institutions track progress and improve. Student-centered initiatives—like digital literacy or career development—deliver long-term educational value.',
         },
       ],
+      steps: COMMON_STEPS,
     },
-    //dataAnalyticsEducation
+
+    // DataAnalyticsEducation
     dataAnalyticsEducation: {
       heroImage: 'assets/Industries/education-sub-pages/data-analytics.jpg',
-      heroHeading: 'How Can Data Analytics Transform Education?',
-      subHeading:
-        'Unlocking insights to improve learning outcomes and institutional performance.',
-      introText: '',
-      points: [
+      heroHeading: 'How Can Project Management Drive Success in Education?',
+      smallHeading:
+        ' Ensuring efficiency, accountability, and timely delivery of educational initiatives.',
+      text: 'Our Working Strategy',
+      whyList: [
         {
-          title: 'Personalized Learning Pathways',
+          title: 'Personalized Learning & Student Success',
           description:
-            'Analytics enables educators to track individual student progress and customize teaching methods, ensuring that each learner receives the right support at the right time.',
+            'Data analytics allows educators to create personalized learning paths. By tracking progress and behavior, institutions can predict risks early and support students before they fall behind.',
         },
         {
-          title: 'Predictive Analytics for Student Success',
+          title: 'Smarter Curriculum & Decision-Making',
           description:
-            'By analyzing attendance, engagement, and assessment patterns, institutions can predict which students are at risk of falling behind and intervene proactively.',
+            'Analytics helps measure curriculum effectiveness and ensures courses stay relevant. Leaders also use insights for accurate admissions planning, faculty hiring, and policy decisions.',
         },
         {
-          title: 'Curriculum Effectiveness Evaluation',
+          title: 'Resource & Accountability Optimization',
           description:
-            'Data insights help evaluate whether existing courses and teaching strategies are effective. This ensures curricula remain relevant and aligned with student needs and industry demands.',
+            'With real-time data, institutions can optimize the use of budgets, facilities, and technology. Transparent reporting builds trust among students, parents, and regulators.',
         },
         {
-          title: 'Improved Institutional Decision-Making',
+          title: 'Research, Engagement & Innovation',
           description:
-            'From admissions planning to faculty hiring, data analytics provides leaders with actionable insights, enabling more accurate, timely, and cost-effective decisions.',
-        },
-        {
-          title: 'Resource Optimization',
-          description:
-            'Institutions can track how facilities, technology, and budgets are utilized. This ensures resources are allocated efficiently and reduces unnecessary expenditure.',
-        },
-        {
-          title: 'Enhancing Transparency & Accountability',
-          description:
-            'Data-driven reporting allows schools and universities to showcase performance metrics, improving trust among students, parents, and regulatory bodies.',
-        },
-        {
-          title: 'Supporting Research & Innovation',
-          description:
-            'Data analytics strengthens academic research by offering deeper insights, identifying trends, and supporting evidence-based innovations in teaching and learning.',
-        },
-        {
-          title: 'Boosting Student Engagement & Retention',
-          description:
-            'By monitoring participation and feedback, institutions can design engaging programs and support systems, helping students stay motivated and reducing dropout rates.',
+            'Data-driven insights support impactful research and innovation in teaching. Monitoring student participation improves engagement, boosts retention, and reduces dropouts.',
         },
       ],
+      steps: COMMON_STEPS,
     },
   };
+
   public ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
       const section = params.get('section');
@@ -173,7 +172,8 @@ export class EducationIComponent implements OnInit {
       }
     });
   }
-  public get sectionData(): (typeof this.sections)[keyof typeof this.sections] {
+
+  public get sectionData(): Section {
     return this.sections[this.currentSection as keyof typeof this.sections];
   }
 }

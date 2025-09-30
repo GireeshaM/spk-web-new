@@ -21,8 +21,6 @@ import {
   animate,
 } from '@angular/animations';
 import { RouterLink } from '@angular/router';
-
-
 @Component({
   selector: 'app-home',
   imports: [CarouselModule, CommonModule,RouterLink],
@@ -43,6 +41,9 @@ import { RouterLink } from '@angular/router';
 export class HomeComponent implements OnInit, AfterViewInit {
   public btn1 = { label: 'Get started with AI', style: 'btn-warning' };
   public btn2 = { label: "Let's talk", style: 'btn-outline-light' };
+  viewAll = false;
+  groupedTestimonials: any[][] = [];
+  currentTestimonialIndex = 0;
   public slides = [
     {
       image: 'assets/home/hero-carousel/next-gen-software.jpeg',
@@ -87,12 +88,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
       btn2: this.btn2,
     },
   ];
- 
-
   public ngOnInit(): void {
     this.offerCardVisible = this.whatWeOffer.map(() => false);
-  }
-
+     this.checkMobile(); // Set isMobile before grouping
+  this.groupTestimonials();
+}
   public ngAfterViewInit(): void {
     if (this.isBrowser) {
       this.checkInView();
@@ -127,69 +127,81 @@ export class HomeComponent implements OnInit, AfterViewInit {
       }, 100);
     }
   }
-
+groupTestimonials(): void {
+  this.groupedTestimonials = []; // Clear previous
+  const perSlide = this.isMobile ? 1 : 2; // You can use 3 if needed for desktop
+  for (let i = 0; i < this.testimonials.length; i += perSlide) {
+    this.groupedTestimonials.push(this.testimonials.slice(i, i + perSlide));
+  }
+  // Optional: loop the carousel by repeating the first group
+  if (this.groupedTestimonials.length > 0) {
+    this.groupedTestimonials.push(this.groupedTestimonials[0]);
+  }
+}
   @HostListener('window:scroll')
   public onScroll(): void {
     if (!this.isBrowser) return;
-
     this.offerCards.forEach((card, i) => {
       const rect = card.nativeElement.getBoundingClientRect();
       this.offerCardVisible[i] =
         rect.top < window.innerHeight && rect.bottom > 0;
     });
-
     this.checkInView();
   }
-
   public checkInView(): void {
     if (!this.isBrowser) return;
-
     const imageEl = document.querySelector('.image-wrapper');
     if (imageEl) {
       const rect = imageEl.getBoundingClientRect();
       this.imageInView = rect.top < window.innerHeight && rect.bottom > 0;
     }
-
     const contentEl = document.querySelector('.move-right > div');
     if (contentEl) {
       const rect = contentEl.getBoundingClientRect();
       this.contentInView = rect.top < window.innerHeight && rect.bottom > 0;
     }
-
     if (this.featureGrid) {
       const rect = this.featureGrid.nativeElement.getBoundingClientRect();
       this.featuresInView = rect.top < window.innerHeight && rect.bottom > 0;
     }
   }
-
   // what we offer
-
   @ViewChildren('offerCard') offerCards!: QueryList<ElementRef>;
   public offerCardVisible: boolean[] = [];
+  toggleViewAll() {
+    this.viewAll = !this.viewAll;
+  }
   public whatWeOffer = [
     {
       img: 'assets/home/whatWeOffer/software-services.png',
       title: 'Software services',
       desc: 'Custom software solutions designed to meet your unique business needs.',
+      link: '/software-service' 
     },
     {
       img: 'assets/home/whatWeOffer/It_consulting.png',
       title: 'IT Consulting',
       desc: 'Expert guidance and strategic solutions to overcome challenges and drive your business.',
+       link: '/it-consulting' 
     },
     {
       img: 'assets/home/whatWeOffer/staffing-solutions.png',
       title: 'Staffing Solutions',
       desc: "Connect with the right talent to drive your organization's growth and success.",
+      link: '/staffing'
+    },
+     {
+      img: 'assets/home/whatWeOffer/project-management.png',
+      title: 'Project-Management',
+      desc: "Seamless project execution with clear timelines, resources, and results.",
+      link: '/project-management'
     },
   ];
-
   // Features
   public imageInView = false;
   public contentInView = false;
   public featuresInView = false;
   @ViewChild('featureGrid') featureGrid!: ElementRef;
-
   public features = [
     {
       img: 'assets/home/about-sprintpark/integrity.png',
@@ -212,7 +224,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
       desc: 'Embracing differences to drive innovation',
     },
   ];
-
   public collaborations = [
     {
       img: 'assets/home/collaborate/expert-team.svg',
@@ -251,32 +262,27 @@ export class HomeComponent implements OnInit, AfterViewInit {
       desc: 'Monitor results, refine strategies, and drive continuous improvement for success.',
     },
   ];
-
   // Industries
  // Industries
 public industries = [
-  { img: 'assets/home/industries/industry-it-telecommunications.jpg', alt: 'IT & TeleCommunications', title: 'IT & TeleCommunications', link: '/itAndTeleCommunications' },
+  { img: 'assets/home/industries/industry-it-telecommunications.jpg', alt: 'IT & TeleCommunications', title: 'IT & TeleCommunications', link: '/itAndTelecommunications' },
   { img: 'assets/home/industries/industries-healthcare.jpg', alt: 'Healthcare & Life Sciences', title: 'Healthcare & Life Sciences', link: '/healthCareAndLifeSciences' },
   { img: 'assets/home/industries/industry-education.jpg', alt: 'Education', title: 'Education', link: '/education' },
   { img: 'assets/home/industries/industries-government.jpg', alt: 'Government', title: 'Government', link: '/government' },
-  { img: 'assets/home/industries/transportation.jpg', alt: 'Transportation and Logistics', title: 'Transportation and Logistics', link: '/government' },
-  { img: 'assets/home/industries/banking.jpg', alt: 'Banking', title: 'Banking', link: '/government' },
-  { img: 'assets/home/industries/manufactuing.jpg', alt: 'Manufacturing', title: 'Manufacturing', link: '/government' }
+  { img: 'assets/home/industries/transportation.jpg', alt: 'Transportation and Logistics', title: 'Transportation and Logistics', link: '/transportationAndLogistics' },
+  { img: 'assets/home/industries/banking.jpg', alt: 'Banking', title: 'Banking', link: '/banking' },
+  { img: 'assets/home/industries/manufactuing.jpg', alt: 'Manufacturing', title: 'Manufacturing', link: '/manufacturing' }
 ];
-
 // Duplicate first 2 items at the end to allow smooth circular scroll
 public industriesCarousel = [
   ...this.industries,
   ...this.industries.slice(0, 2)
 ];
-
 public responsiveOptions = [
   { breakpoint: '1024px', numVisible: 3, numScroll: 1 },
   { breakpoint: '768px', numVisible: 2, numScroll: 1 },
   { breakpoint: '560px', numVisible: 1, numScroll: 1 },
 ];
-
-
   public stats = [
     {
       img: 'assets/home/statistics/satisfied-clients.png',
@@ -311,50 +317,100 @@ public responsiveOptions = [
     {
       image: 'assets/home/our-insights/data-security.jpg',
       title: "Salesforce's Commitment to Data Security and Privacy Excellence",
-      description: 'Read More >>',
+       route: 'marketing'
     },
     {
       image: 'assets/home/our-insights/markrting-cloud.jpg',
       title: 'Salesforce Marketing Cloud Empowers Marketing of Businesses',
-      description: 'Read More >>',
+     route: 'flowBuilder'
     },
     {
       image: 'assets/home/our-insights/health-cloud.jpg',
       title: 'Salesforce Health Cloud transform Payer sector in Healthcare',
-      description: 'Read More >>',
+      route: 'automateYourBusinessThroughSalesforceBuilder'
+    },
+      {
+      image: 'assets/home/our-insights/salesforce-customization.jpeg',
+      title: " Exposing the Tempting Benefits of Choosing Salesforce Customization",
+      route: 'exploringThePotentialOfSalesforceAnalyticsCloud'
     },
   ];
-
   public testimonials = [
     {
-      img: 'assets/home/testimonials/testimony-1.png',
-      name: 'Maria Sans',
-      role: 'Co-founder - Zent Technologies',
+      img: 'assets/home/testimonials/testimonial-1.png',
+      name: 'Ravi Kumar',
+      role: 'HR Manager, TechNova Solutions',
       rating: 4,
-      text: 'Sprintpark has delivered excellent services to deliver our AI products. They have given us innovative solutions. Happy client :)',
+      text: 'SprintPark quickly understood our requirements and delivered top-quality candidates within tight timelines.”',
     },
     {
-      img: 'assets/home/testimonials/testimony-2.png',
-      name: 'Maria Sans',
+      img: 'assets/home/testimonials/testimonial-2.png',
+      name: 'Anjali Mehta',
       role: 'Co-founder - Zent Technologies',
+      rating: 5,
+      text: '“A highly reliable partner — their team is responsive, professional, and easy to work with.”',
+    },
+     {
+      img: 'assets/home/testimonials/vikram_testinomial.png',
+      name: 'Vikram Malhotra',
+      role: ' Program Manager, Google Cloud',
       rating: 4,
-      text: 'Sprintpark has delivered excellent services to deliver our AI products. They have given us innovative solutions. Happy client :)',
+      text: '“Their process is smooth, transparent, and very easy to work with.”',
+    },
+     {
+      img: 'assets/home/testimonials/sofia_testinomial.png',
+      name: 'Sophia Johnson',
+      role: ' Customer Success Manager, Salesforce',
+      rating: 4,
+      text: '“ We value SprintPark for consistently providing skilled and reliable professionals.”',
+    },
+     {
+      img: 'assets/home/testimonials/karen_testinomial.png',
+      name: 'Karen.S',
+      role: ' Enterprise Account Director, Microsoft Azure',
+      rating: 4,
+      text: '“ The team is supportive, attentive, and always quick to respond.”',
+    },
+     {
+      img: 'assets/home/testimonials/daniel_testinomial.png',
+      name: 'Daniel Lee',
+      role: 'Technical Consultant, Salesforce CRM',
+      rating: 4,
+      text: '“SprintPark helped us scale efficiently with the right talent.”',
+    },
+     {
+      img: 'assets/home/testimonials/arun_testinomial.png',
+      name: 'Arun Kumar',
+      role: ' Partner Solutions Lead, AWS India',
+      rating: 4,
+      text: '“They take the time to understand our culture and needs.”',
+    },
+     {
+      img: 'assets/home/testimonials/megha_testinomial.png',
+      name: 'Megha Sharma',
+      role: 'Training & Certification Manager, AWS',
+      rating: 4,
+      text: '“Professional, efficient, and trustworthy—an excellent partner in staffing.”',
     },
   ];
-  public currentInsightIndex = 1; // Start with the middle card (or 0 for first)
+  public currentInsightIndex = 0; // Start with the middle card (or 0 for first)
   public isMobile = false;
-
   @HostListener('window:resize')
   public onResize(): void {
+    const prevMobile = this.isMobile;
     this.checkMobile();
+    if (prevMobile !== this.isMobile) {
+    this.groupTestimonials();
   }
-
+  }
   public checkMobile(): void {
     if (this.isBrowser) {
       this.isMobile = window.innerWidth < 768;
     }
   }
-
+get isFourCardsVisible(): boolean {
+  return this.currentInsightIndex < this.ourInsightsSlides.length - 2;
+}
   public moveInsight(step: number): void {
     const newIndex = this.currentInsightIndex + step;
     if (newIndex >= 0 && newIndex < this.ourInsightsSlides.length) {
@@ -367,11 +423,8 @@ public responsiveOptions = [
       this.moveInsight(1);
     }
   }
-
   @ViewChildren('statElements') statElements!: QueryList<ElementRef>;
-
   private observer!: IntersectionObserver;
-
   private platformId = inject(PLATFORM_ID);
   isBrowser = isPlatformBrowser(this.platformId);
   cdRef = inject(ChangeDetectorRef);

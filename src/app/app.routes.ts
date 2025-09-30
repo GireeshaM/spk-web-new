@@ -23,6 +23,7 @@ import { ManufacturingIComponent } from './webmodules/industriesSubPages/manufac
 import { TelecommunicationIComponent } from './webmodules/industriesSubPages/telecommunication-i/telecommunication-i.component';
 import { TransportationIComponent } from './webmodules/industriesSubPages/transportation-i/transportation-i.component';
 import { CompanyComponent } from './company/company.component';
+import { InsightsBlogComponent } from './webmodules/insights-blog/insights-blog.component';
 
 export const routes: Routes = [
   {
@@ -151,6 +152,12 @@ export const routes: Routes = [
     path: 'insights',
     component: InsightsComponent,
   },
+  //insights-blog
+  {
+    path: 'insights/:section',
+    component:InsightsBlogComponent
+  },
+  
   //contact-us
    {
     path: 'contact-us',

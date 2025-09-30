@@ -1,9 +1,16 @@
 <app-industry-sub-util
   *ngIf="sectionData"
-  [heroImage]="sectionData.heroImage"
-  [heroHeading]="sectionData.heroHeading"
-  [subHeading]="sectionData.subHeading"
-  [introText]="sectionData.introText"
-  [points]="sectionData.points"
->
+  [heroImage]="sectionData.heroImage">
 </app-industry-sub-util>
+
+<app-sub-cards
+  [whyList]="sectionData.whyList"
+  [whyheader]="sectionData.heroHeading"
+  [smallHeading]="sectionData.smallHeading">
+</app-sub-cards>
+
+<app-map-section
+  *ngIf="sectionData.steps"
+  [text]="sectionData.text "
+  [steps]="sectionData.steps">
+</app-map-section>

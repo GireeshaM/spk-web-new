@@ -9,11 +9,12 @@ import { IndustryUtilComponent } from '../../utilities/industry-util/industry-ut
 })
 export class GovtComponent {
   public headerBg = 'assets/Industries/wave.svg';
-  public itHeader = 'Empowering Governments with Purpose-Built Solutions';
+  public itHeader = 'Government';
+    public itHeading = 'Empowering Governments with Purpose-Built Solutions';
   public itContent =
     'Governments face complex challenges—from data protection to talent gaps and crisis management. SprintPark delivers tailored, expert-driven solutions that foster innovation, efficiency, and trust—never a one-size-fits-all approach.';
   public subHeading = 'Shaping the Future of Public Service';
-  public telecom = 'assets/Industries/government/government-hero.jpeg';
+  public telecom = 'assets/Industries/government/government-hero.jpg';
   public cards = [
     {
       img: 'assets/Industries/government/strategic-risk.png',

@@ -10,7 +10,8 @@ import { CommonModule } from '@angular/common';
 })
 export class TransportationComponent {
   public headerBg = 'assets/Industries/wave.svg';
-  public itHeader = 'Transportation & Logistics: Innovate and Thrive';
+  public itHeader = 'Transportation & Logistics ';
+    public itHeading = 'Transportation & Logistics: Innovate and Thrive';
   public itContent =
     'SprintPark supports transportation and logistics firms with smart, tailored solutions. We combine strategy and expertise to help you stay competitive and grow in a fast-changing industry.';
   public subHeading = 'How We Help Transform Transportation & Logistics';

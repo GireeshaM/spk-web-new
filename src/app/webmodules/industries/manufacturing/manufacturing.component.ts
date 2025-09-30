@@ -10,7 +10,8 @@ import { CommonModule } from '@angular/common';
 })
 export class ManufacturingComponent {
   public headerBg = 'assets/Industries/wave.svg';
-  public itHeader = 'Transforming Manufacturing Through Smart Innovation';
+  public itHeader = 'Manufacturing';
+  public itHeading = 'Transforming Manufacturing Through Smart Innovation';
   public itContent =
     'Manufacturing faces global challenges like supplier management and regulations. SprintPark helps you turn these into lasting opportunities, aligning strategies with your strengths and goals.';
   public subHeading = 'Driving Innovation in Manufacturing';

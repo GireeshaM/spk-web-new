@@ -2,181 +2,162 @@ import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IndustrySubUtilComponent } from '../../utilities/industry-sub-util/industry-sub-util.component';
 import { CommonModule } from '@angular/common';
+import { SubCardsComponent } from '../../utilities/sub-cards/sub-cards.component';
+import { MapSectionComponent } from '../../utilities/map-section/map-section.component';
+
+interface Section {
+  heroImage: string;
+  heroHeading: string;
+  smallHeading: string;
+  whyList: Array<{ title: string; description: string }>;
+  steps?: Array<{ title: string; description: string; icon?: string }>;
+  text?: string;
+}
 
 @Component({
   selector: 'app-transportation-i',
-  imports: [IndustrySubUtilComponent, CommonModule],
+  imports: [IndustrySubUtilComponent, CommonModule, SubCardsComponent, MapSectionComponent],
   templateUrl: './transportation-i.component.html',
   styleUrl: './transportation-i.component.scss'
 })
 export class TransportationIComponent {
-public currentSection = 'itConsulting';
+  currentSection = 'itConsulting';
+  private route = inject(ActivatedRoute);
 
-  route = inject(ActivatedRoute);
-  public sections = {
+  // Define common steps once
+  public commonSteps = [
+  {
+    title: 'Understand',
+    icon: 'assets/Industries/understand.svg',
+    description: 'We learn about your business challenges, goals and ambitions, strategic drivers and culture.'
+  },
+  {
+    title: 'Assess',
+    icon: 'assets/Industries/access.svg',
+    description: 'We assess your current risk position relative to your needs and goals, and develop a roadmap for optimizing your cybersecurity.'
+  },
+  {
+    title: 'Design',
+    icon: 'assets/Industries/design.svg',
+    description: 'We design solutions, processes and strategies that allow you to achieve the desired state of security and effectiveness.'
+  },
+  {
+    title: 'Implement',
+    icon: 'assets/Industries/implement.svg',
+    description: 'We draw on our experience and expertise to implement the agreed technical solutions, governance, compliance frameworks and migration processes.'
+  },
+  {
+    title: 'Manage and Optimize',
+    icon: 'assets/Industries/manage-and-optimize.svg',
+    description: 'We operate to deliver tangible, value-added cyber security on a 24/7 basis. We use our methodology to evolve and optimize your solution over time, to maximize value.'
+  }
+];
+
+  sections: Record<string, Section> = {
     itConsulting: {
       heroImage: 'assets/Industries/transportation-SubPages/it-consulting-digital-solution.jpg',
-      heroHeading:
-        'How Can IT Consulting & Digital Solutions Transform Transportation & Logistics?',
-      subHeading:
+      heroHeading: 'How Can IT Consulting & Digital Solutions Transform Transportation & Logistics?',
+      smallHeading:
         'Driving efficiency, transparency, and smarter decision-making through digital innovation.',
-      introText: `In the fast-moving transportation and logistics sector, IT consulting and digital solutions play a vital role
-      in modernizing operations. From streamlining supply chains and automating workflows to integrating real-time tracking systems,
-      these solutions empower businesses to reduce costs, improve delivery accuracy, and enhance customer satisfaction.`,
-      points: [
+      text: 'Our Working Strategy',
+      whyList: [
         {
-          title: 'Digital Supply Chain Transformation',
+          title: 'Digital Supply Chains',
           description:
-            'Consulting services enable logistics companies to redesign their supply chain with advanced digital platforms, integrating data from suppliers, distributors, and carriers.',
+            'IT consulting integrates logistics systems, providing real-time visibility, predictive insights, and smoother operations for efficient, cost-effective supply chain management.',
         },
         {
-          title: 'Fleet Management Optimization',
+          title: 'Fleet & Warehouse Optimization',
           description:
-            'Organizations can track, monitor, and manage fleets with GPS, IoT devices, and telematics to improve efficiency and reduce costs.',
+            'GPS, IoT, AI, and robotics streamline fleet tracking and warehouse automation, reducing errors, improving accuracy, and speeding up deliveries.',
         },
         {
-          title: 'Smart Warehousing Solutions',
+          title: 'Data-Driven Decisions & Security',
           description:
-            'Digital tools such as AI, robotics, and IoT sensors transform warehouses into smart hubs, improving accuracy and minimizing errors.',
+            'Analytics enable smarter logistics decisions, while cybersecurity safeguards sensitive data, ensuring operational reliability, compliance, and customer trust across all processes.',
         },
         {
-          title: 'Real-Time Data Analytics',
+          title: 'Scalable & Future-Ready Operations',
           description:
-            'Big data and analytics anticipate demand, optimize routes, and identify inefficiencies with dashboards that aid decision-making.',
-        },
-        {
-          title: 'Cybersecurity & Compliance',
-          description:
-            'IT experts implement strong measures to protect against cyber threats, ensure compliance, and safeguard sensitive data.',
-        },
-        {
-          title: 'Cloud-Based Collaboration Platforms',
-          description:
-            'Cloud solutions enable seamless collaboration between shippers, carriers, and customers.',
-        },
-        {
-          title: 'Last-Mile Delivery Innovation',
-          description:
-            'AI-driven planning and smart lockers improve transparency, timeliness, and service quality.',
-        },
-        {
-          title: 'Scalability & Future-Readiness',
-          description:
-            'Builds infrastructures that adapt to growth, leveraging AI and blockchain for resilience.',
+            'Cloud platforms and emerging technologies enhance scalability, agility, and resilience, preparing logistics businesses for growth and evolving market demands.',
         },
       ],
+      steps: this.commonSteps, 
     },
-
     networkEngineering: {
       heroImage: 'assets/Industries/transportation-SubPages/network-engineering.jpg',
-      heroHeading:
-        'How Can Network Engineering & Connectivity Revolutionize Transportation & Logistics?',
-      subHeading:
-        'Building reliable, secure, and high-speed networks to keep transportation systems connected and efficient.',
-      introText: `In transportation and logistics, seamless connectivity is the backbone of modern operations. Network engineering ensures uninterrupted communication
-      across fleets, warehouses, ports, and distribution hubs. With strong and secure networks, companies can manage real-time tracking, automate workflows,
-      and streamline data sharing.`,
-      points: [
+      heroHeading: 'How Can Network Engineering & Connectivity Revolutionize Transportation & Logistics?',
+      smallHeading:
+        ' Building reliable, secure, and high-speed networks to keep transportation systems connected and efficient.',
+      text: 'Our Working Strategy',
+      whyList: [
         {
-          title: 'Reliable Fleet Communication Systems',
+          title: 'Seamless Connectivity',
           description:
-            'Robust networks enable communication between drivers, dispatch centers, and customers to deliver services with precision.',
+            'Network engineering enables uninterrupted communication across fleets, warehouses, ports, and hubs, supporting real-time tracking, automation, and efficient logistics operations.',
         },
         {
-          title: 'IoT-Enabled Asset Tracking',
+          title: 'IoT & 5G Integration',
           description:
-            'Embedded IoT sensors allow tracking goods in real time and ensure uninterrupted data flow.',
+            'IoT sensors and 5G networks allow real-time asset tracking, instant route adjustments, and advanced features like autonomous deliveries.',
         },
         {
-          title: 'High-Speed Connectivity with 5G',
+          title: 'Secure & Smart Systems',
           description:
-            'Ultra-fast 5G enables real-time adjustments, autonomous vehicles, and drone deliveries.',
+            'Cybersecurity, firewalls, and encryption protect logistics networks, while smart hubs and ports improve coordination, speed, and operational efficiency.',
         },
         {
-          title: 'Smart Port & Airport Connectivity',
+          title: 'Scalable Infrastructure',
           description:
-            'Strengthens communication systems across ports and airports for better coordination.',
-        },
-        {
-          title: 'Cybersecurity in Connected Systems',
-          description:
-            'Firewalls, encryption, and secure protocols safeguard customer and shipment data.',
-        },
-        {
-          title: 'Warehouse & Hub Connectivity',
-          description:
-            'Strong internal networks help automation tools like robotic systems and inventory trackers.',
-        },
-        {
-          title: 'Scalability for Future Growth',
-          description:
-            'Ensures logistics systems can adapt to new technologies and business expansion.',
+            'Modern networks support business growth by integrating new technologies, increasing connected devices, and ensuring adaptable, future-ready logistics operations.',
         },
       ],
+      steps: this.commonSteps, 
     },
     salesforceAI: {
       heroImage: 'assets/Industries/transportation-SubPages/salesforce-ai-automation.jpg',
-      heroHeading:
-        'How Can Salesforce & AI Automations Transform Transportation and Logistics?',
-      subHeading:
+      heroHeading: 'How Can Salesforce & AI Automations Transform Transportation and Logistics?',
+      smallHeading:
         'Streamlining logistics operations with intelligent automation and customer-focused Salesforce solutions.',
-      introText: `In today’s fast-moving logistics industry, efficiency, visibility, and customer satisfaction are key to success.
-      Salesforce, combined with AI-driven automation, helps logistics companies optimize customer engagement, automate workflows,
-      and predict demand patterns with high accuracy. By integrating AI into Salesforce platforms, transportation providers can enhance
-      service delivery, minimize delays, reduce costs, and personalize experiences for clients.`,
-      points: [
+      text: 'Our Working Strategy',
+      whyList: [
         {
-          title: 'Intelligent Customer Relationship Management (CRM)',
+          title: 'Intelligent CRM',
           description:
-            'Salesforce offers a centralized platform to track client interactions, inquiries, and service requests. AI automation enhances this by predicting customer needs and providing proactive solutions.',
+            'Salesforce centralizes client interactions, while AI predicts needs, automates responses, and enhances proactive customer engagement for logistics providers.',
         },
         {
-          title: 'Predictive Demand Forecasting',
+          title: 'Predictive Operations',
           description:
-            'AI algorithms analyze historical shipping data, seasonal trends, and external factors to forecast demand. This helps logistics providers optimize fleet usage and reduce overcapacity issues.',
+            'AI analyzes historical shipping data and trends, enabling accurate demand forecasting, optimized fleet usage, and reduced overcapacity issues.',
         },
         {
-          title: 'Automated Order Processing',
+          title: 'Automation & Visibility',
           description:
-            'With Salesforce automation, orders move seamlessly from booking to dispatch without manual intervention. This reduces errors, speeds delivery timelines, and enhances customer satisfaction.',
+            'Salesforce automates order processing, compliance, and documentation, while AI provides real-time shipment tracking, reducing errors and delays.',
         },
         {
-          title: 'Real-Time Shipment Visibility',
+          title: 'Data-Driven Insights',
           description:
-            'AI and Salesforce integration provide end-to-end shipment tracking for customers and logistics managers with automated alerts that ensure transparency.',
-        },
-        {
-          title: 'Enhanced Customer Engagement',
-          description:
-            'AI-powered chatbots and automated systems help logistics companies provide 24/7 support, handle queries, and improve response times.',
-        },
-        {
-          title: 'Optimized Route Planning',
-          description:
-            'AI-driven Salesforce solutions suggest efficient routes based on traffic, weather, and fuel costs, minimizing delays and lowering costs.',
-        },
-        {
-          title: 'Automated Compliance & Documentation',
-          description:
-            'Salesforce workflows combined with AI generate, validate, and manage shipping documents, ensuring adherence to regulations.',
-        },
-        {
-          title: 'Data-Driven Business Insights',
-          description:
-            'With Salesforce dashboards powered by AI, logistics companies gain insights into customer behavior, fleet efficiency, and revenue patterns for smarter decisions.',
+            'AI-powered dashboards deliver actionable insights on routes, fleet efficiency, and customer behavior, enabling smarter logistics decisions and cost reduction.',
         },
       ],
+      steps: this.commonSteps, 
     },
   };
-  public ngOnInit(): void {
+
+  ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
       const section = params.get('section');
-      if (section && this.sections[section as keyof typeof this.sections]) {
+      if (section && this.sections[section]) {
         this.currentSection = section;
+      } else {
+        this.currentSection = 'itConsulting'; // default section key
       }
     });
   }
-  public get sectionData(): (typeof this.sections)[keyof typeof this.sections] {
-    return this.sections[this.currentSection as keyof typeof this.sections];
+
+  get sectionData(): Section {
+    return this.sections[this.currentSection];
   }
 }

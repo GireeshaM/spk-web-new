@@ -10,7 +10,8 @@ import { CommonModule } from '@angular/common';
 })
 export class HealthCareComponent {
   public headerBg = 'assets/Industries/wave.svg';
-  public itHeader = 'Innovative Smart Health Solutions Network';
+    public itHeader = 'HealthCare And Life Sciences';
+  public itHeading = 'Innovative Smart Health Solutions Network';
   public itContent =
     'Life sciences and healthcare face risks like IP protection, supply chain issues, and regulatory change. SprintPark delivers tailored solutions to help you manage costs, ensure compliance, grow revenue, and strengthen cybersecurity with confidence.';
   public subHeading = 'Innovating Healthcare Services';

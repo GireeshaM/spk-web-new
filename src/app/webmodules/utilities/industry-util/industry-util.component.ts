@@ -12,6 +12,7 @@ import { RouterLink } from '@angular/router';
 export class IndustryUtilComponent {
   @Input() img!: string;
   @Input() itHeader!: string;
+  @Input() itHeading!:string;
   @Input() itContent!: string;
   @Input() itSubHeading!: string;
   @Input() cards: {
@@ -23,23 +24,6 @@ export class IndustryUtilComponent {
   @Input() isTwoPerRow = false;
   @Input() headerBgImg!: string;
   @Input() industryImg!: string;
-
-  // public  cards = [
-  //   {
-  //     img: 'assets/Industries/DataPrivacy.png',
-  //     title: 'Data Privacy',
-  //     description:
-  //       'Protect your data using advanced risk assessments, encryption, and compliance tools to prevent breaches, leaks, and unauthorized access.',
-  //     link: '/#',
-  //   },
-  //   {
-  //     img: 'assets/Industries/Automation.png',
-  //     title: 'Automation',
-  //     description:
-  //       'Automate personalized communications across email, SMS, and social media to boost efficiency, engagement, and timely customer interactions.',
-  //     link: '/#',
-  //   },
-  // ];
   public getCardClass(index: number): string {
     const classes = [
       'background-1',
