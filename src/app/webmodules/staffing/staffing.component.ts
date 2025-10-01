@@ -17,7 +17,7 @@ import { WhySpCompComponent } from '../utilities/mainServicesUtil/why-sp-comp/wh
   templateUrl: './staffing.component.html',
   styleUrl: './staffing.component.scss',
 })
-export class staffingComponent {
+export class StaffingComponent {
   // Section 1
   public whatMainHeader = 'Staffing Solutions ';
   public whatDescription =

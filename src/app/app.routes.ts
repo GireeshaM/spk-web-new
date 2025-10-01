@@ -13,7 +13,7 @@ import { GovtComponent } from './webmodules/industries/govt/govt.component';
 import { HealthCareComponent } from './webmodules/industries/health-care/health-care.component';
 import { ManufacturingComponent } from './webmodules/industries/manufacturing/manufacturing.component';
 import { TransportationComponent } from './webmodules/industries/transportation/transportation.component';
-import { staffingComponent } from './webmodules/staffing/staffing.component';
+import { StaffingComponent } from './webmodules/staffing/staffing.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { BankingIComponent } from './webmodules/industriesSubPages/banking-i/banking-i.component';
 import { GovernmentIComponent } from './webmodules/industriesSubPages/government-i/government-i.component';
@@ -45,7 +45,7 @@ export const routes: Routes = [
   //staffing
    {
     path:'staffing',
-    component:staffingComponent,
+    component:StaffingComponent,
     data: { footerColor: 'rgba(29, 6, 99, 1)' },
    },
    //project-management

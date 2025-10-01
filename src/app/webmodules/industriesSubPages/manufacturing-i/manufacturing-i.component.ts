@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IndustrySubUtilComponent } from '../../utilities/industry-sub-util/industry-sub-util.component';
 import { CommonModule } from '@angular/common';

@@ -106,24 +106,21 @@
 </nav>
 <!-- login modal -->
 <div
-  #loginModal
   class="modal fade"
   id="loginModal"
   tabindex="-1"
   aria-labelledby="loginModalLabel"
   aria-hidden="true"
 >
-  <!-- Vertically centered & scrollable, custom width -->
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
     <div class="modal-content login-modal p-4">
       <!-- Header -->
       <div class="modal-header border-0">
         <h5 class="modal-title fw-bold w-100 text-center text-white" id="loginModalLabel">
-          Choose  Role
+          Choose Login Role
         </h5>
         <button
           type="button"
-           id="loginModal"
           class="btn-close btn-close-white"
           data-bs-dismiss="modal"
           aria-label="Close"
@@ -137,12 +134,14 @@
           <!-- Recruiter -->
           <div class="col-12 col-md-4">
             <div class="card role-card text-center p-3 h-100">
-              <img src="assets/header/recruiter.png" alt="Recruiter Icon" class="text-gold mb-3 mx-auto d-block" style="font-size: 2rem; width: 4rem; height: 4rem;">
+              <img src="assets/header/recruiter.png" alt="Recruiter Icon"
+                   class="text-gold mb-3 mx-auto d-block"
+                   style="width: 4rem; height: 4rem;">
               <h6 class="fw-bold text-gold">Recruiter</h6>
-              <p class="small text-light">
-                Hire & manage candidates.
-              </p>
-              <button class="btn btn-gold mt-auto w-100" target="_blank" (click)="loginAs('Recruiter')" >
+              <p class="small text-light">Hire & manage candidates.</p>
+              <button class="btn btn-gold mt-auto w-100"
+                      (click)="loginAs('Recruiter')"
+                      data-bs-dismiss="modal">
                 Login 
               </button>
             </div>
@@ -151,12 +150,14 @@
           <!-- Admin -->
           <div class="col-12 col-md-4">
             <div class="card role-card text-center p-3 h-100">
-              <img src="assets/header/admin.png" alt="Admin Icon" class="text-gold mb-3 mx-auto d-block" style="font-size: 2rem; width: 4rem; height: 4rem;">
+              <img src="assets/header/admin.png" alt="Admin Icon"
+                   class="text-gold mb-3 mx-auto d-block"
+                   style="width: 4rem; height: 4rem;">
               <h6 class="fw-bold text-gold">Admin</h6>
-              <p class="small text-light">
-                Manage users & settings.
-              </p>
-              <button class="btn btn-gold mt-auto w-100" (click)="loginAs('Admin')" target="_blank">
+              <p class="small text-light">Manage users & settings.</p>
+              <button class="btn btn-gold mt-auto w-100"
+                      (click)="loginAs('Admin')"
+                      data-bs-dismiss="modal">
                 Login
               </button>
             </div>
@@ -165,12 +166,14 @@
           <!-- Employee -->
           <div class="col-12 col-md-4">
             <div class="card role-card text-center p-3 h-100">
-              <img src="assets/header/employee.png" alt="Employee Icon" class="text-gold mb-3 mx-auto d-block" style="font-size: 2rem; width: 4rem; height: 4rem;">
+              <img src="assets/header/employee.png" alt="Employee Icon"
+                   class="text-gold mb-3 mx-auto d-block"
+                   style="width: 4rem; height: 4rem;">
               <h6 class="fw-bold text-gold">Employee</h6>
-              <p class="small text-light">
-                Access dashboard & tasks.
-              </p>
-              <button class="btn btn-gold mt-auto w-100" (click)="loginAs('Employee')" target="_blank">
+              <p class="small text-light">Access dashboard & tasks.</p>
+              <button class="btn btn-gold mt-auto w-100"
+                      (click)="loginAs('Employee')"
+                      data-bs-dismiss="modal">
                 Login
               </button>
             </div>
@@ -182,9 +185,6 @@
     </div>
   </div>
 </div>
-
-
-
 
 
 
