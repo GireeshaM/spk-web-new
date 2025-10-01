@@ -21,13 +21,20 @@
   &:hover {
     transform: scale(1.05);
     .read-badge {
-      background-color: black;
+     background: rgba(239, 122, 19, 1);
+
       width: 100%;
       cursor: pointer;
     }
   }
   .read-badge {
-    background-color: black;
+    background: rgba(239, 122, 19, 1);
+
     margin-bottom: 5px;
+  }
+}
+@media(max-width:576px) {
+  .read-badge{
+    margin-bottom: 20px !important;
   }
 }

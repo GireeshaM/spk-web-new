@@ -78,12 +78,12 @@ export class ContactUsComponent {
   }
   // Section 3- Social Links
   public socialLinks = [
-    { name: 'LinkedIn', icon: 'assets/contactus/linkedin.png', url: '#' },
-    { name: 'X (Twitter)', icon: 'assets/contactus/twitter.png', url: '#' },
-    { name: 'YouTube', icon: 'assets/contactus/youtube.png', url: '#' },
-    { name: 'Facebook', icon: 'assets/contactus/facebook.png', url: '#' },
-    { name: 'Instagram', icon: 'assets/contactus/instagram.png', url: '#' },
-    { name: 'Glassdoor', icon: 'assets/contactus/glassdoor.png', url: '#' },
+    { name: 'LinkedIn', icon: 'assets/contactus/linkedin.png', url: 'https://www.linkedin.com/company/sprintpark-tech/posts/?feedView=all' },
+    { name: 'X (Twitter)', icon: 'assets/contactus/twitter.png', url: 'https://x.com/SprintParkllc/status/1914318204765405387' },
+    { name: 'YouTube', icon: 'assets/contactus/youtube.png', url: 'https://www.youtube.com/channel/UCxdBnMoAUtX4PbqnKApXVhg' },
+    { name: 'Facebook', icon: 'assets/contactus/facebook.png', url: 'https://www.facebook.com/SPRINTPARKLLC/' },
+    { name: 'Instagram', icon: 'assets/contactus/instagram.png', url: 'https://www.instagram.com/sprintpark/' },
+    { name: 'Glassdoor', icon: 'assets/contactus/glassdoor.png', url: 'https://www.glassdoor.co.in/Reviews/SprintPark-Reviews-E9736051.htm' },
   ];
   // Section 4- FAQ
   public faqItems = [

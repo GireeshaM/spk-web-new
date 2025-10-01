@@ -26,8 +26,8 @@
 </section>
 
 <div class="container py-5">
-  <h2 class="text-center mb-5 mt-5 fw-bold">Our Insights</h2>
-  <div class="row g-5">
+  <h2 class="text-center  mt-5 fw-bold">Our Insights</h2>
+  <div class="row gx-5 ">
     <div class="col-md-4" *ngFor="let insight of insights">
   <div class=" h-100 border-0 position-relative insight-card">
     <div
@@ -46,7 +46,7 @@
   [routerLink]="['/insights', insight.route]"
   *ngIf="insight.route"
 >
-  <span class="text-white fw-semibold">Read</span>
+  <span class="text-white r fw-semibold">Read</span>
   <span class="arrow-icon ms-2 text-white">→</span>
 </div>
     </div>
