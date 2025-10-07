@@ -28,20 +28,17 @@
     <div class="col-12 col-lg-6">
       <div class="row g-3">
         <div class="col-12 col-md-auto">
-          <img
-            [src]="images.left.src"
-            class="img-fluid rounded"
-            [alt]="images.left.alt"
-          />
+       <img [src]="images?.left?.src" [alt]="images?.left?.alt" />
         </div>
         <div class="col-12 col-md">
-          <img
-            *ngFor="let img of images.right"
-            [src]="img.src"
-            class="img-fluid rounded"
-            [ngClass]="img.extraClass"
-            [alt]="img.alt"
-          />
+        <img
+  *ngFor="let img of images?.right"
+  [src]="img.src"
+  class="img-fluid rounded"
+  [ngClass]="img.extraClass"
+  [alt]="img.alt"
+/>
+
         </div>
       </div>
     </div>

@@ -7,161 +7,138 @@
     [smallImage]="smallImage"
     [alignRight]="false"
   ></app-main-hero-section>
-  <!-- Contact Form Section  (Section 2) -->
-  <section class="contact-form-section">
+
+  <!-- Contact Form Section -->
+  <section class="contact-form-section py-5 bg-white">
     <div class="container contact-form-container text-center">
       <div class="row gy-5 g-md-4">
+        
         <!-- Contact Info Column -->
-        <div class="col-12 col-lg-6 contact-info">
-          <h2 class="contact-head fw-bold w-100 lh-sm ms-3 text-start">
+        <div class="col-12 col-lg-6 contact-info text-start">
+          <h2 class="contact-head fw-bold lh-sm mb-3">
             Let's start a conversation your questions, ideas, and feedback are
             always welcome at SprintPark
           </h2>
-          <p class="lh-lg ms-3 text-start">
+          <p class="lh-lg">
             Whether you're looking for more information, partnership
-            opportunities, or customer support, our team is here for you. We're
-            committed to quick, thoughtful responses and making your experience
-            with SprintPark seamless from start to finish.
+            opportunities, or customer support, our team is here for you.
+            We're committed to quick, thoughtful responses and making your
+            experience with SprintPark seamless from start to finish.
           </p>
-          <div
-            class="locations row row-cols-1 row-cols-md-2 justify-content-center g-4 w-100 mt-3 ms-3"
-          >
+
+          <!-- Locations -->
+          <div class="locations row row-cols-1 row-cols-md-2 g-4 w-100 mt-3">
             <div
-              class="col location px-4 py-3 d-flex flex-column"
+              class="col location d-flex flex-column justify-content-start p-3 mb-3"
               *ngFor="let location of locations; let last = last"
               [ngClass]="location.type"
               [class.has-border]="!last"
             >
               <!-- Title -->
               <div class="d-flex align-items-center mb-3">
-                <i
-                  class="pi pi-map-marker me-2 fs-5 location-icon"
-                  [ngClass]="location.type"
-                ></i>
-                <span class="fs-6 fw-bold">{{
-                  location.title
-                }}</span>
+                <i class="pi pi-map-marker me-2 fs-5 location-icon"
+                   [ngClass]="location.type"></i>
+                <span class="fs-6 fw-bold text-break">
+                  {{ location.title }}
+                </span>
               </div>
               <!-- Address -->
-              <div class="text-start mb-2 address-text flex-grow-1">
+              <div class="mb-2 address-text flex-grow-1">
                 {{ location.address }}
               </div>
               <!-- Contact Info -->
               <div class="d-flex flex-column">
-                <!-- Phone -->
                 <div class="d-flex align-items-center">
-                  <i
-                    class="pi pi-phone fs-6 phone-icon me-2"
-                    [ngClass]="location.type"
-                  ></i>
+                  <i class="pi pi-phone fs-6 me-2 phone-icon"
+                     [ngClass]="location.type"></i>
                   <span>{{ location.phone }}</span>
                 </div>
-                <!-- Email -->
                 <div class="d-flex align-items-center">
-                  <i
-                    class="pi pi-envelope fs-6 mail-icon me-2"
-                    [ngClass]="location.type"
-                  ></i>
+                  <i class="pi pi-envelope fs-6 me-2 mail-icon"
+                     [ngClass]="location.type"></i>
                   <span>{{ location.email }}</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
         <!-- Contact Form Column -->
         <div class="col-12 col-lg-6 contact-image py-3 mb-2">
           <form
             [formGroup]="contactForm"
             (ngSubmit)="onSubmit()"
-            class="contact-form"
+            class="contact-form mx-auto w-100 p-3"
           >
-          <!-- Name -->
-<div class="mb-3">
-  <label for="name" class="form-label d-block fw-semibold text-start">
-    Name <span class="text-danger">*</span>
-  </label>
-  <input
-    type="text"
-    id="name"
-    placeholder="Your name"
-    class="form-control"
-    formControlName="name"
-    [class.is-invalid]="getFormControlError('name')"
-  />
-  <div class="invalid-feedback" *ngIf="getFormControlError('name')">
-    {{ getFormControlError("name") }}
-  </div>
-</div>
+            <!-- Name -->
+            <div class="mb-3">
+              <label for="name" class="form-label fw-semibold text-start d-block">
+                Name <span class="text-danger">*</span>
+              </label>
+              <input type="text" id="name" placeholder="Your name"
+                class="form-control"
+                formControlName="name"
+                [class.is-invalid]="getFormControlError('name')" />
+              <div class="invalid-feedback" *ngIf="getFormControlError('name')">
+                {{ getFormControlError("name") }}
+              </div>
+            </div>
 
-<!-- Email -->
-<div class="mb-3">
-  <label for="email" class="form-label d-block fw-semibold text-start">
-    Email <span class="text-danger">*</span>
-  </label>
-  <input
-    type="email"
-    id="email"
-    placeholder="Your@gmail.com"
-    class="form-control"
-    formControlName="email"
-    [class.is-invalid]="getFormControlError('email')"
-  />
-  <div class="invalid-feedback" *ngIf="getFormControlError('email')">
-    {{ getFormControlError("email") }}
-  </div>
-</div>
+            <!-- Email -->
+            <div class="mb-3">
+              <label for="email" class="form-label fw-semibold text-start d-block">
+                Email <span class="text-danger">*</span>
+              </label>
+              <input type="email" id="email" placeholder="Your@gmail.com"
+                class="form-control"
+                formControlName="email"
+                [class.is-invalid]="getFormControlError('email')" />
+              <div class="invalid-feedback" *ngIf="getFormControlError('email')">
+                {{ getFormControlError("email") }}
+              </div>
+            </div>
 
-<!-- Phone -->
-<div class="mb-3">
-  <label for="phone" class="form-label d-block fw-semibold text-start">
-    Phone number <span class="text-danger">*</span>
-  </label>
-  <input
-    type="text"
-    id="phone"
-    placeholder="Your number"
-    class="form-control"
-    formControlName="phone"
-    [class.is-invalid]="getFormControlError('phone')"
-  />
-  <div class="invalid-feedback" *ngIf="getFormControlError('phone')">
-    {{ getFormControlError("phone") }}
-  </div>
-</div>
+            <!-- Phone -->
+            <div class="mb-3">
+              <label for="phone" class="form-label fw-semibold text-start d-block">
+                Phone number <span class="text-danger">*</span>
+              </label>
+              <input type="text" id="phone" placeholder="Your number"
+                class="form-control"
+                formControlName="phone"
+                [class.is-invalid]="getFormControlError('phone')" />
+              <div class="invalid-feedback" *ngIf="getFormControlError('phone')">
+                {{ getFormControlError("phone") }}
+              </div>
+            </div>
 
-<!-- Message -->
-<div class="mb-3">
-  <label for="message" class="form-label d-block fw-semibold text-start">
-    How can we help? <span class="text-danger">*</span>
-  </label>
-  <textarea
-    id="message"
-    rows="4"
-    placeholder="Tell us a little about your problem"
-    class="form-control"
-    formControlName="message"
-    [class.is-invalid]="getFormControlError('message')"
-  ></textarea>
-  <div class="invalid-feedback" *ngIf="getFormControlError('message')">
-    {{ getFormControlError("message") }}
-  </div>
-</div>
+            <!-- Message -->
+            <div class="mb-3">
+              <label for="message" class="form-label fw-semibold text-start d-block">
+                How can we help? <span class="text-danger">*</span>
+              </label>
+              <textarea id="message" rows="4"
+                placeholder="Tell us a little about your problem"
+                class="form-control"
+                formControlName="message"
+                [class.is-invalid]="getFormControlError('message')"></textarea>
+              <div class="invalid-feedback" *ngIf="getFormControlError('message')">
+                {{ getFormControlError("message") }}
+              </div>
+            </div>
 
             <!-- Submit -->
-            <button
-              type="submit"
-              class="btn sbt-btn px-4 py-2"
-              [disabled]="contactForm.invalid"
-            >
-              Send
-            </button>
+            <button type="submit"
+              class="btn sbt-btn text-white px-4 py-2 d-block mx-auto"
+              [disabled]="contactForm.invalid">Send</button>
           </form>
         </div>
       </div>
     </div>
   </section>
+
   <!-- Social Section -->
-  <section class="social-section">
+ <section class="social-section">
     <div class="container text-center">
       <div class="row row-cols-2">
         <div class="col social-left">
@@ -174,10 +151,10 @@
         <div class="col social-right">
           <h3 class="fw-bold">Get social with us</h3>
           <ul class="social-links row g-3">
-            <li class="col-4 mt-5" *ngFor="let social of socialLinks">
+            <li class="col-4 mt-5 d-flex align-items-center" *ngFor="let social of socialLinks">
               <a
                 [href]="social.url"
-                class="justify-content-center"
+                class="justify-content-center d-flex"
               >
                 <img
                   [src]="social.icon"
@@ -200,29 +177,20 @@
     </div>
   </section>
   <!-- FAQ Section -->
-  <section class="faq-section">
+  <section class="faq-section py-5 bg-white">
     <div class="container px-4 px-lg-5">
       <div class="row justify-content-center">
         <div class="col-12 col-lg-10">
           <h3 class="text-center fw-bold mb-4 mb-lg-5">
             Frequently asked questions
           </h3>
-
           <div class="faq-list">
-            <div
-              class="faq-item"
-              *ngFor="let faq of faqItems; let i = index"
-              [ngClass]="{ active: faq.isOpen }"
-            >
-              <button
-                class="faq-question w-100 d-flex justify-content-between align-items-center py-3"
-                (click)="toggleFAQ(i)"
-              >
+            <div class="faq-item" *ngFor="let faq of faqItems; let i = index"
+                 [ngClass]="{ active: faq.isOpen }">
+              <button class="faq-question w-100 d-flex justify-content-between align-items-center py-3"
+                      (click)="toggleFAQ(i)">
                 <span class="pe-3">{{ faq.question }}</span>
-                <i
-                  class="pi"
-                  [ngClass]="faq.isOpen ? 'pi-minus' : 'pi-plus'"
-                ></i>
+                <i class="pi" [ngClass]="faq.isOpen ? 'pi-minus' : 'pi-plus'"></i>
               </button>
               <div class="faq-answer" [ngClass]="{ show: faq.isOpen }">
                 <p class="mb-0 py-3">{{ faq.answer }}</p>
@@ -233,17 +201,15 @@
       </div>
     </div>
   </section>
-  <!-- why-hire section -->
+
+  <!-- Why Hire -->
   <section class="why-hire-section container py-5">
-    <h2 class="text-center fw-bold head mb-5">Why Hire Sprintpark?</h2>
+    <h2 class="text-center fw-bold mb-5">Why Hire Sprintpark?</h2>
     <div class="row">
       <div class="col-md-4 mb-4" *ngFor="let reason of reasons">
         <div class="why-card text-center p-4 h-100">
-          <img
-            [src]="reason.icon"
-            alt="{{ reason.title }}"
-            class="card-icon mb-3"
-          />
+          <img [src]="reason.icon" alt="{{ reason.title }}"
+               class="card-icon mb-3" />
           <h5 class="card-title fw-bold">{{ reason.title }}</h5>
         </div>
       </div>

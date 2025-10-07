@@ -1,119 +1,43 @@
 .contact-us {
-  
   overflow-x: hidden;
-  font-family: inter;
+  font-family: inter, sans-serif;
 }
-// Contact Form Section
-.contact-form-section {
-  background: #fff;
-  padding: 40px 0;
-  .contact-form-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 15px;
-    text-align: center;
-    .contact-info {
-      padding: 20px;
-      .contact-head {
-        width: 100%;
-      }
-      .locations {
-        width: 100%;
-        // margin-top: 1rem;
-        .location {
-          display: flex;
-          flex-direction: column;
-          .address-text {
-            text-align: start;
-            flex-grow: 1;
-          }
-        }
-      }
-      .locations {
-        .location {
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-          min-height: 200px;
-          padding: 15px !important;
-          margin-bottom: 20px;
-          @media (max-width: 768px) {
-            width: 100%;
-            padding-right: 15px !important;
-          }
+/* Contact Form */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
 
-          // USA location icons
-          &.usa {
-            .location-icon,
-            .phone-icon,
-            .mail-icon {
-              color: #482aa3;
-            }
-          }
-          // India location icons
-          &.india {
-            .location-icon,
-            .phone-icon,
-            .mail-icon {
-              color: #ef7a13;
-            }
-          }
-          .d-flex {
-            width: 100%;
-            span {
-              word-break: break-word;
-              overflow-wrap: break-word;
-            }
-          }
-          i {
-            flex-shrink: 0;
-          }
-        }
-        // Dotted vertical divider
-        .has-border {
-          border-right: 1px dashed #000;
-        }
-      }
+  .sbt-btn {
+    background: linear-gradient(273.4deg, #1B0976 -26.19%, #4B36B3 41.97%, #372399 110.13%);
+    transition: opacity 0.3s ease;
+  }
+}
+/* Locations */
+.location {
+  min-height: 200px;
+
+  &.usa {
+    .location-icon, .phone-icon, .mail-icon {
+      color: #482aa3;
     }
-    .contact-image {
-      padding: 20px;
-      .contact-form {
-        max-width: 600px;
-        margin: 0 auto;
-        width: 100%;
-        padding: 20px;
-        margin-left: 0 !important;
-        input,
-        textarea {
-          width: 100%;
-          max-width: 100%;
-        }
-        .sbt-btn {
-         background: linear-gradient(273.4deg, #1B0976 -26.19%, #4B36B3 41.97%, #372399 110.13%);
-          color: white;
-          transition: opacity 0.3s ease;
-        margin-left: -80%;
-        }
-      }
+  }
+  &.india {
+    .location-icon, .phone-icon, .mail-icon {
+      color: #ef7a13;
     }
   }
 }
-//Social Section
+.has-border {
+  border-right: 1px dashed #000;
+}
+/* Social Section */
 .social-section {
-  display: flex;
-  align-items: center;
   background: #f6f7fb;
   padding: 20px 0;
-  height: 450px;
-  .social-left {
-    flex: 1;
-    display: flex;
-    margin-left: 0px;
-  }
+  height: 450px; 
   .social-right {
     flex: 1;
     margin-right: -50px;
-    position: relative;
     margin-top: 30px;
     h3 {
       margin-bottom: 10px;
@@ -126,8 +50,6 @@
       list-style: none;
       padding: 0;
       li a {
-        display: flex;
-        align-items: center;
         gap: 8px;
         text-decoration: none;
         color: #333;
@@ -152,68 +74,47 @@
     }
   }
 }
-// FAQ Section
-.faq-section {
-  background: #fff;
-  padding: 40px 0;
-  max-width: 900px;
-  margin: 0 auto;
-  h3 {
-    margin-bottom: 30px;
-  }
-  .faq-list {
-    .faq-item {
-      margin-bottom: 15px;
-      border-bottom: 1px solid #eee;
-      .faq-question {
-        background: none;
-        border: none;
-        cursor: pointer;
-        text-align: left;
-        width: 100%;
-        padding: 15px 0;
-        transition: color 0.2s;
-        color: #111;
-      }
-      .faq-question:hover {
-        color: #4f46e5;
-      }
-      .faq-answer {
-        max-height: 0;
-        overflow: hidden;
-        padding-left: 10px;
-        color: #555;
-        transition:
-          max-height 0.3s ease,
-          padding 0.3s ease;
-        &.show {
-          max-height: 200px;
-          padding: 10px 10px 20px 10px;
-        }
-      }
-    }
+/* FAQ */
+.faq-item {
+  border-bottom: 1px solid #eee;
+}
+
+.faq-question {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+  color: #111;
+
+  &:hover {
+    color: #4f46e5;
   }
 }
-// .why-hire-section
-.why-hire-section {
-  .why-card {
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease;
-    border: 1px solid #eaeaea;
-    min-height: 250px;
-    &:hover {
-      transform: translateY(-5px);
-    }
-    .card-icon {
-      width: 70px;
-      height: auto;
-    }
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding-left: 10px;
+  color: #555;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+
+  &.show {
+    max-height: 200px;
+    padding: 10px 10px 20px 10px;
   }
-  .head {
-    color: #000;
-    margin-bottom: 5rem;
+}
+
+/* Why Hire */
+.why-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #eaeaea;
+  min-height: 250px;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
   }
 }
 @media (max-width: 768px) {

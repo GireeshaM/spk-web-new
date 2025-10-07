@@ -9,19 +9,6 @@
 
   <div class="bg-curve"><!-- Decorative curve --></div>
 
-  <!-- Headings -->
-  <h2
-    *ngIf="heroHeading"
-    class="fw-bold lh-sm hero-heading mt-5 mb-4 text-center"
-  >
-    {{ heroHeading }}
-  </h2>
-  <h4
-    *ngIf="subHeading"
-    class="text-center fw-medium lh-base letter-spacing-1 mx-auto"
-  >
-    {{ subHeading }}
-  </h4>
 
   <!-- Content Section -->
   <section
@@ -44,3 +31,89 @@
     </div>
   </section>
 </div>
+
+<!-- SubCardsComponent HTML -->
+<div class="why">
+  <div class="container">
+    <div class="text-center mb-5 pt-5">
+      <h1 class="text-white fw-bold">
+        {{ whyheader }}
+      </h1>
+      <p class="smallHeading text-white me-5  w-75">
+        {{ smallHeading }}
+      </p>
+    </div>
+    <div class="row justify-content-center gx-5 pb-5">
+      <div class="col-md-5 mb-4" *ngFor="let item of whyList; let i = index">
+        <div class="card p-2">
+          <div class="card-body align-items-center">
+            <div class="me-3"></div>
+            <div class="d-flex">
+              <h4 class="mt-3 mx-3">{{ item.title }}</h4>
+            </div>
+            <div>
+              <p class="card-text mt-4">{{ item.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="position-relative">
+  <img src="/assets/services/curve.png" alt="Top Curve" class="w-100" />
+</div>
+
+<!-- MapSectionComponent HTML -->
+<section class="container-fluid px-2 pt-5 pb-7 font-family-inter">
+  <div class="container custom-wide">
+    <h2 class="text-center text-dark mb-5 fw-bold">{{ text }}</h2>
+    <div class="timeline">
+      <div
+        *ngFor="let step of steps; let i = index"
+        class="timeline-row"
+        [class.left]="i % 2 === 0"
+        [class.right]="i % 2 !== 0"
+        [class.last-item]="i === steps.length - 1"
+      >
+        <!-- Right column (with content for odd indices) -->
+        <div class="col timeline-right">
+          <div *ngIf="i % 2 !== 0" class="content-box">
+            <h5 class="fw-bold mb-3">
+              {{ step.title }}
+              <span *ngIf="step.icon" class="step-icon">
+                <img [src]="step.icon" [alt]="step.title" class="icon-image" />
+              </span>
+            </h5>
+            <p>{{ step.description }}</p>
+          </div>
+        </div>
+
+        <!-- Center circle with line -->
+        <div class="col timeline-center">
+          <div
+            class="circle text-dark d-flex fw-bold fs-5 justify-content-center"
+          >
+            {{ i + 1 }}
+          </div>
+        </div>
+
+        <!-- Left column (with content for even indices) -->
+        <div class="col timeline-left">
+          <div *ngIf="i % 2 === 0" class="content-box">
+            <h5
+              class="fw-bold fs-5 mb-3 d-flex align-items-center"
+            >
+              {{ step.title }}
+              <span *ngIf="step.icon" class="step-icon">
+                <img [src]="step.icon" [alt]="step.title" class="icon-image" />
+              </span>
+            </h5>
+            <p class="lh-lg">{{ step.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

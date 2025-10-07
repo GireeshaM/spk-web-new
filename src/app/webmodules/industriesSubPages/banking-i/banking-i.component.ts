@@ -2,18 +2,17 @@ import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IndustrySubUtilComponent } from '../../utilities/industry-sub-util/industry-sub-util.component';
 import { CommonModule } from '@angular/common';
-import { SubCardsComponent } from '../../utilities/sub-cards/sub-cards.component';
-import { MapSectionComponent } from '../../utilities/map-section/map-section.component';
 
-interface Section {
+
+ interface Section {
   heroImage: string;
-  heroHeading: string;
+  whyheader:string;
   smallHeading: string;
   whyList: Array<{ title: string; description: string }>;
-  steps?: Array<{ title: string; description: string; icon?: string }>; // ✅ added steps
-  text?: string; // ✅ added text
+  steps: Array<{ title: string; description: string; icon?: string }>;
+  text?: string;
 }
-  const commonSteps = [
+const commonSteps = [
   {
     title: 'Understand',
     icon: 'assets/Industries/understand.svg',
@@ -40,30 +39,12 @@ interface Section {
     description: 'We operate to deliver tangible, value-added cyber security on a 24/7 basis. We use our methodology to evolve and optimize your solution over time, to maximize value.'
   }
 ];
-@Component({
-  selector: 'app-banking-i',
-  standalone: true,
-  imports: [
-    IndustrySubUtilComponent,
-    CommonModule,
-    SubCardsComponent, 
-   MapSectionComponent
-  ],
-  templateUrl: './banking-i.component.html',
-  styleUrls: ['./banking-i.component.scss']
-})
-export class BankingIComponent implements OnInit {
-  currentSection = 'Cybersecurity';
-  private route = inject(ActivatedRoute);
-
-  sections: Record<string, Section> = {
-    BigData: {
-      heroImage: 'assets/Industries/bankingSubPages/big-data.jpg',
-      heroHeading: 'How Can Big Data Transform the Future of Banking?',
-      smallHeading:
-        ' Unlocking insights for smarter decisions, better security, and enhanced customer experiences.',
-        text:'Our Working Strategy',
-      whyList: [
+const sectionsData: Record<string, Section> = {
+   BigData: {
+     heroImage :'assets/Industries/bankingSubPages/big-data.jpg',
+    whyheader: 'How Can Big Data Transform the Future of Banking?',
+    smallHeading: 'Customer trust begins with secure communication.',
+   whyList : [
  {
     title: 'Fraud Detection',
     description:
@@ -86,15 +67,15 @@ export class BankingIComponent implements OnInit {
   },
         
       ],
- 
- steps: commonSteps, 
-    },
-     Cybersecurity: {
-      heroImage: 'assets/Industries/bankingSubPages/cyber-security.jpg',
-      heroHeading: 'Why Is Cybersecurity Essential for Modern Banking?',
-      smallHeading:
-        'Safeguarding customer trust, financial assets, and digital operations in an evolving threat landscape.',
-        text: 'Our Working Strategy',
+    text: 'Our Working Strategy',
+    steps: commonSteps
+  },
+
+   Cybersecurity: {
+    heroImage: 'assets/Industries/telecommunicationSubPages/automation-hero.jpg',
+    whyheader: 'Why Is Cybersecurity Essential for Modern Banking?',
+    smallHeading: 'Safeguarding customer trust, financial assets, and digital operations in an evolving threat landscape.',
+    text: 'Our Healthcare Security Approach',
       whyList: [
       {
     title: 'Advanced Threat Protection',
@@ -121,13 +102,11 @@ export class BankingIComponent implements OnInit {
  
  steps: commonSteps, 
     },
-      ProjectManagement: {
-       heroImage: 'assets/Industries/bankingSubPages/project-management.jpg',
-      heroHeading: 'How Does Project Management Drive Success in Banking?',
-      smallHeading:
-        'Ensuring efficiency, compliance, and customer value in financial transformation initiatives.',
-        text: 'Our Working Strategy',
-      whyList: [
+ProjectManagement: {
+    heroImage: 'assets/Industries/bankingSubPages/project-management.jpg',
+    whyheader: 'How Does Project Management Drive Success in Banking?',
+    smallHeading: ' Ensuring efficiency, compliance, and customer value in financial transformation initiatives.',
+    whyList: [
     {
     title: 'Strategic Project Alignment',
     description:
@@ -150,16 +129,14 @@ export class BankingIComponent implements OnInit {
   },
         
       ],
- 
+  text: 'Our Working Strategy',
  steps: commonSteps, 
     },
-       AI: {
-      heroImage: 'assets/Industries/bankingSubPages/artificial-intelligence.jpg',
-      heroHeading: 'How Is Artificial Intelligence Transforming Modern Banking?',
-      smallHeading:
-        ' Leveraging AI to enhance customer experiences, streamline operations, and strengthen security in the financial sector.',
-        text:'Our Working Strategy',
-      whyList: [
+   AI: {
+    heroImage: 'assets/Industries/bankingSubPages/artificial-intelligence.jpg',
+    whyheader: ' How Is Artificial Intelligence Transforming Modern Banking?',
+    smallHeading: 'Leveraging AI to enhance customer experiences, streamline operations, and strengthen security in the financial sector.',
+    whyList: [
   {
     title: 'Personalized Customer Experience',
     description:
@@ -182,23 +159,28 @@ export class BankingIComponent implements OnInit {
   },
         
       ],
- 
+  text: 'Our Working Strategy',
  steps: commonSteps, 
     }
   };
 
-  ngOnInit(): void {
-    this.route.paramMap.subscribe((params) => {
-      const section = params.get('section');
-      if (section && this.sections[section]) {
-        this.currentSection = section;
-      } else {
-        this.currentSection = 'Cybersecurity';
-      }
-    });
-  }
+@Component({
+  selector: 'app-banking-i',
+  imports: [IndustrySubUtilComponent, CommonModule],
+  templateUrl: './banking-i.component.html',
+  styleUrl: './banking-i.component.scss'
+})
+export class BankingIComponent implements OnInit {
+route = inject(ActivatedRoute);
+  currentSectionData!: Section;
 
-  get sectionData(): Section {
-    return this.sections[this.currentSection];
-  }
+public ngOnInit(): void {
+  this.route.paramMap.subscribe(params => {
+    const rawKey = params.get('section') || 'BigData';
+    const sectionKey = rawKey.replace(/-([a-z])/g, (_, c) => c.toUpperCase());
+
+    this.currentSectionData = sectionsData[sectionKey] ?? sectionsData['BigData'];
+  });
+}
+
 }

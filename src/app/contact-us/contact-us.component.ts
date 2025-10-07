@@ -51,7 +51,7 @@ export class ContactUsComponent {
   }
   private fb = inject(FormBuilder);
 
-  contactForm: FormGroup = this.fb.group({
+ public contactForm: FormGroup = this.fb.group({
     name: ['', [Validators.required]],
     email: ['', [Validators.required, Validators.email]],
     phone: ['', [Validators.required]],

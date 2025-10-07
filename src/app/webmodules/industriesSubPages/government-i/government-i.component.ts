@@ -2,30 +2,17 @@ import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IndustrySubUtilComponent } from '../../utilities/industry-sub-util/industry-sub-util.component';
 import { CommonModule } from '@angular/common';
-import { map } from 'rxjs';
-import { MapSectionComponent } from '../../utilities/map-section/map-section.component';
-import { SubCardsComponent } from '../../utilities/sub-cards/sub-cards.component';
-
-
-
-interface Step {
-  title: string;
-  description: string;
-  icon?: string;
-}
 
 interface Section {
   heroImage: string;
-  heroHeading: string;
+  whyheader:string;
   smallHeading: string;
   whyList: Array<{ title: string; description: string }>;
-  steps?: Step[];
+  steps: Array<{ title: string; description: string; icon?: string }>;
   text?: string;
 }
-
-// ✅ Common reusable steps
-const COMMON_STEPS: Step[] = [
-    {
+const commonSteps = [
+  {
     title: 'Understand',
     icon: 'assets/Industries/understand.svg',
     description: 'We learn about your business challenges, goals and ambitions, strategic drivers and culture.'
@@ -51,22 +38,11 @@ const COMMON_STEPS: Step[] = [
     description: 'We operate to deliver tangible, value-added cyber security on a 24/7 basis. We use our methodology to evolve and optimize your solution over time, to maximize value.'
   }
 ];
-
-@Component({
-  selector: 'app-government-i',
-  imports: [IndustrySubUtilComponent, CommonModule,MapSectionComponent,SubCardsComponent],
-  templateUrl: './government-i.component.html',
-  styleUrl: './government-i.component.scss'
-})
-export class GovernmentIComponent implements OnInit{
- public currentSection = 'StrategicRiskAndResilence';
-
-  private route = inject(ActivatedRoute);
- sections: Record<string, Section> = {
-    //  StrategicRiskAndResilence
+const sectionsData: Record<string, Section> = {
+  //  StrategicRiskAndResilence
     StrategicRiskAndResilence: {
       heroImage: 'assets/Industries/governmentSubPages/risk-management.jpg',
-      heroHeading: 'How Can Risk Management Safeguard Public Trust?',
+     whyheader: 'How Can Risk Management Safeguard Public Trust?',
       smallHeading:
         ' Identifying, assessing, and mitigating risks to ensure stability and reliable services.',
      text: 'Our Working Strategy',
@@ -92,13 +68,13 @@ export class GovernmentIComponent implements OnInit{
         'Evaluating threats and preparing responses, risk management guarantees operational stability, efficient resource use, and sustained trust in public services.',
     },
   ],
-      steps: COMMON_STEPS,
+      steps: commonSteps,
     },
 
     // SmartItManagedsolutions
     SmartItManagedsolutions: {
       heroImage: 'assets/Industries/governmentSubPages/smart-it-managed-solutions.jpg',
-      heroHeading: 'How Can IT Consulting Transform Government Operations?',
+      whyheader: 'How Can IT Consulting Transform Government Operations?',
       smallHeading:
 'Enhancing Collaboration and Efficiency in Public Sector Agencies',    
   text: 'Our Working Strategy',
@@ -125,13 +101,13 @@ export class GovernmentIComponent implements OnInit{
   },
 ],
 
-      steps: COMMON_STEPS,
+      steps: commonSteps,
     },
 
     // ProjectManagementExcellence:
     ProjectManagementExcellence: {
       heroImage: 'assets/Industries/governmentSubPages/project-management-excellence.jpg',
-      heroHeading: ' How Does Project Management Drive Development?',
+     whyheader: ' How Does Project Management Drive Development?',
       smallHeading:
         'Turning plans into impactful results',
       text: 'Our Working Strategy',
@@ -157,12 +133,12 @@ export class GovernmentIComponent implements OnInit{
         'Project management supports lasting growth, efficient oversight, better decision-making, accountability, and maximizes resource utilization for sustainable development.',
     },
   ],
-  steps: COMMON_STEPS,
+  steps: commonSteps,
 },
      // DataAnalytics:
     DataAnalytics:{
       heroImage: 'assets/Industries/governmentSubPages/favicon.png',
-      heroHeading: 'How Can Data Analytics Transform Public Services?',
+      whyheader: 'How Can Data Analytics Transform Public Services?',
       smallHeading:
         'Unlocking insights to drive smarter governance and citizen trust.',
       text: 'Our Working Strategy',
@@ -189,11 +165,11 @@ export class GovernmentIComponent implements OnInit{
   },
 ],
 
-      steps: COMMON_STEPS,
+      steps: commonSteps,
     },
     TrustedTransformationPartner: { 
   heroImage: 'assets/Industries/governmentSubPages/trusted-transformation-partner.jpg',
-  heroHeading: 'How Can a Trusted Transformation Partner Drive Your Growth?',
+  whyheader: 'How Can a Trusted Transformation Partner Drive Your Growth?',
   smallHeading:
     'Building long-term success with expertise, innovation, and reliability.',
   text: 'Our Working Strategy',
@@ -219,12 +195,12 @@ export class GovernmentIComponent implements OnInit{
         'Reliable partners deliver outcomes, manage transitions, guide employees through change, and ensure smooth, accountable, and sustainable transformation for long-term growth.',
     },
   ],
-  steps: COMMON_STEPS,
+  steps: commonSteps,
 },
 
-CitizenEngagement: { 
+  CitizenEngagementTransparency: { 
   heroImage: 'assets/Industries/governmentSubPages/citizen-engagement-transparency.jpg',
-  heroHeading: 'How Can Governments Build Stronger Citizen Engagement and Transparency?',
+ whyheader: 'How Can Governments Build Stronger Citizen Engagement and Transparency?',
   smallHeading:
     ' Empowering Citizens Through Open Communication and Trust.',
   text: 'Our Working Strategy',
@@ -250,18 +226,26 @@ CitizenEngagement: {
         'Blockchain, AI, and IoT ensure secure, fair, and efficient processes in voting, welfare, and procurement, strengthening public confidence.',
     },
   ],
-  steps: COMMON_STEPS,
+  steps: commonSteps,
 },
   };
-  public ngOnInit(): void {
-    this.route.paramMap.subscribe((params) => {
-      const section = params.get('section');
-      if (section && this.sections[section as keyof typeof this.sections]) {
-        this.currentSection = section;
-      }
-    });
-  }
-  public get sectionData(): (typeof this.sections)[keyof typeof this.sections] {
-    return this.sections[this.currentSection as keyof typeof this.sections];
-  }
+@Component({
+  selector: 'app-government-i',
+  imports: [IndustrySubUtilComponent, CommonModule],
+  templateUrl: './government-i.component.html',
+  styleUrl: './government-i.component.scss'
+})
+export class GovernmentIComponent implements OnInit{
+ route = inject(ActivatedRoute);
+  currentSectionData!: Section;
+
+public ngOnInit(): void {
+  this.route.paramMap.subscribe(params => {
+    const rawKey = params.get('section') || 'StrategicRiskAndResilence';
+    const sectionKey = rawKey.replace(/-([a-z])/g, (_, c) => c.toUpperCase());
+
+    this.currentSectionData = sectionsData[sectionKey] ?? sectionsData['StrategicRiskAndResilence'];
+  });
+}
+
 }

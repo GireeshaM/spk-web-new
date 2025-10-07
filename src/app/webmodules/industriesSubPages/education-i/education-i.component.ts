@@ -1,27 +1,20 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { IndustrySubUtilComponent } from '../../utilities/industry-sub-util/industry-sub-util.component';
 import { CommonModule } from '@angular/common';
-import { SubCardsComponent } from '../../utilities/sub-cards/sub-cards.component';
-import { MapSectionComponent } from '../../utilities/map-section/map-section.component';
+import { ActivatedRoute } from '@angular/router';
 
-interface Step {
-  title: string;
-  description: string;
-  icon?: string;
-}
 
 interface Section {
   heroImage: string;
-  heroHeading: string;
+  whyheader:string;
   smallHeading: string;
   whyList: Array<{ title: string; description: string }>;
-  steps?: Step[];
+  steps: Array<{ title: string; description: string; icon?: string }>;
   text?: string;
 }
 
 // ✅ Common reusable steps
-const COMMON_STEPS: Step[] = [
+const commonSteps =[
     {
     title: 'Understand',
     icon: 'assets/Industries/understand.svg',
@@ -48,29 +41,11 @@ const COMMON_STEPS: Step[] = [
     description: 'We operate to deliver tangible, value-added cyber security on a 24/7 basis. We use our methodology to evolve and optimize your solution over time, to maximize value.'
   }
 ];
-
-@Component({
-  selector: 'app-education-i',
-  standalone: true,
-  imports: [
-    IndustrySubUtilComponent,
-    CommonModule,
-    SubCardsComponent,
-    MapSectionComponent,
-  ],
-  templateUrl: './education-i.component.html',
-  styleUrl: './education-i.component.scss',
-})
-export class EducationIComponent implements OnInit {
-  public currentSection = 'NetworkingEngineering';
-
-  private route = inject(ActivatedRoute);
-
-  sections: Record<string, Section> = {
+const sectionsData: Record<string, Section> = {
     // NetworkingEngineering
-    NetworkingEngineering: {
+    networkingEngineering: {
       heroImage: 'assets/Industries/education-sub-pages/network-engineering.jpg',
-      heroHeading: ' How Can Networking Engineering Transform Modern Education?',
+      whyheader: ' How Can Networking Engineering Transform Modern Education?',
       smallHeading:
         'Building connected campuses with reliable, secure, and scalable networks.',
       text: 'Our Working Strategy',
@@ -96,13 +71,13 @@ export class EducationIComponent implements OnInit {
             'Strong networks enable global research collaboration with fast, reliable data sharing. Optimized designs reduce downtime and IT costs, ensuring more resources go toward education priorities.',
         },
       ],
-      steps: COMMON_STEPS,
+      steps: commonSteps,
     },
 
     // EducationProjectManagement
     educationProjectManagement: {
       heroImage: 'assets/Industries/education-sub-pages/project-management.jpg',
-      heroHeading: 'How Can Project Management Drive Success in Education?',
+      whyheader: 'How Can Project Management Drive Success in Education?',
       smallHeading:
         '  Ensuring efficiency, accountability, and timely delivery of educational initiatives.',
       text: 'Our Working Strategy',
@@ -128,13 +103,13 @@ export class EducationIComponent implements OnInit {
             'With measurable goals and continuous evaluation, institutions track progress and improve. Student-centered initiatives—like digital literacy or career development—deliver long-term educational value.',
         },
       ],
-      steps: COMMON_STEPS,
+      steps: commonSteps,
     },
 
     // DataAnalyticsEducation
     dataAnalyticsEducation: {
       heroImage: 'assets/Industries/education-sub-pages/data-analytics.jpg',
-      heroHeading: 'How Can Project Management Drive Success in Education?',
+      whyheader: 'How Can Project Management Drive Success in Education?',
       smallHeading:
         ' Ensuring efficiency, accountability, and timely delivery of educational initiatives.',
       text: 'Our Working Strategy',
@@ -160,20 +135,32 @@ export class EducationIComponent implements OnInit {
             'Data-driven insights support impactful research and innovation in teaching. Monitoring student participation improves engagement, boosts retention, and reduces dropouts.',
         },
       ],
-      steps: COMMON_STEPS,
+      steps: commonSteps,
     },
   };
 
-  public ngOnInit(): void {
-    this.route.paramMap.subscribe((params) => {
-      const section = params.get('section');
-      if (section && this.sections[section as keyof typeof this.sections]) {
-        this.currentSection = section;
-      }
-    });
-  }
 
-  public get sectionData(): Section {
-    return this.sections[this.currentSection as keyof typeof this.sections];
-  }
-}
+@Component({
+  selector: 'app-education-i',
+  standalone: true,
+  imports: [
+    IndustrySubUtilComponent,
+    CommonModule,
+  ],
+  templateUrl: './education-i.component.html',
+  styleUrl: './education-i.component.scss',
+})
+export class EducationIComponent implements OnInit {
+ route = inject(ActivatedRoute);
+   currentSectionData!: Section;
+ 
+ public ngOnInit(): void {
+   this.route.paramMap.subscribe(params => {
+     const rawKey = params.get('section') || 'networkingEngineering';
+     const sectionKey = rawKey.replace(/-([a-z])/g, (_, c) => c.toUpperCase());
+ 
+     this.currentSectionData = sectionsData[sectionKey] ?? sectionsData['networkingEngineering'];
+   });
+ }
+ 
+ }

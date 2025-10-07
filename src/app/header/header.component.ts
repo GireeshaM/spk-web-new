@@ -19,7 +19,7 @@ export class HeaderComponent  {
     this.isScrolled = window.scrollY > 100;
   }
 
- loginAs(role: string) {
+ public loginAs(role: string) {
     switch (role) {
       case 'Admin':
       case 'Recruiter':

@@ -11,58 +11,42 @@
         filter: brightness(50%);
       }
     }
- 
     .carousel-caption {
       bottom: 40%;
       left: 5%;
       right: auto;
       max-width: 45%;
       top: 32%;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1rem;
- 
       h1,
       p {
         text-align: left !important;
       }
- 
       // Buttons
-     .btn-1,
-.btn-2 {
-  padding: 0.75rem 1rem;
-  border-radius: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;      
-  transition: all 0.3s ease-in-out;
-}
- 
-.btn-1 {
-  background: #EF7A13;
-  color: #fff;
-  border: none;
-}
- 
-.btn-1:hover {
-  background-color: #e68a00;
-  transform: scale(1.05);
-}
- 
-.btn-2 {
-  color: #fff;
-  border: 1px solid #fff;
-}
- 
-.btn-2:hover {
-background-color: #e0e0e0 !important;
-color: black;
-  transform: scale(1.05);
-}
+        .btn-1,
+        .btn-2 {
+          padding: 0.75rem 1rem;     
+          transition: all 0.3s ease-in-out;
+        }
+        .btn-1 {
+          background: #EF7A13;
+          color: #fff;
+          border: none;
+        }
+        .btn-1:hover {
+          background-color: #e68a00;
+          transform: scale(1.05);
+        }
+        .btn-2 {
+          color: #fff;
+          border: 1px solid #fff;
+        }
+        .btn-2:hover {
+        background-color: #e0e0e0 !important;
+        color: black !important;
+          transform: scale(1.05);
+        }
       /* Sparkles */
       .sparkle {
-        position: absolute;
         width: 6px;
         height: 6px;
         background: radial-gradient(circle, #f1efe8 0%, transparent 70%);
@@ -70,11 +54,9 @@ color: black;
         pointer-events: none;
         opacity: 0;
       }
- 
       .btn-1:hover .sparkle {
         animation: twinkle 1.5s infinite;
       }
- 
       .sparkle:nth-child(2) {
         top: -10px;
         left: 20%;
@@ -100,7 +82,6 @@ color: black;
         right: 25%;
         animation-delay: 1.2s;
       }
- 
       @keyframes twinkle {
         0%,
         100% {
@@ -113,7 +94,6 @@ color: black;
         }
       }
     }
- 
     // Carousel controls
    .carousel-control-prev,
 .carousel-control-next {
@@ -126,12 +106,8 @@ color: black;
   opacity: 1 !important;
   transition: all 0.3s ease-in-out; // smooth transition
   color: #e6e4e1 !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin-left: 80px !important;
 }
- 
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
   background: #d2ac23;
@@ -139,63 +115,18 @@ color: black;
   transform: scale(1.15);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
 }
- 
- 
-    // Mobile adjustments
-    @media (max-width: 576px) {
-      .carousel-item img {
-        height: 50vh;
-      }
- 
-      .carousel-caption {
-        bottom: 10%;
-        left: 5%;
-        right: 5%;
-        top: 5%;
-        max-width: 100%;
-        padding: 0 1rem;
-        text-align: center !important;
-        align-items: center;
-        .btn-group {
-          flex-direction: column !important;
-          width: 100%;
-          .btn-1,
-          .btn-2 {
-            width: 100%;
-          }
-        }
-      }
-      .carousel-control-prev,
-      .carousel-control-next {
-        margin-top: 42px;
-        width: 40px;
-        height: 40px;
-        border-width: 3px;
-      }
-    }
   }
 }
- 
 //logo slider
 .logo-section {
  background: linear-gradient(90deg, #360060 0%, #5F3481 104.75%);
   max-width: 1910px;
   .logo-slider {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
     .logo-track {
       width: 200%;
       animation: scroll 40s linear infinite;
       .logo-container {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
         min-width: 200%;
-        .combined-logo {
-          display: flex;
-          gap: 10px;
-        }
         img {
           margin-top: 20px;
           height: 100px;
@@ -221,57 +152,39 @@ color: black;
 // Explore Our case Studies
 /* Card container */
 .main-image {
-      width: 100%;
      height:400px;
       border-radius: 15px;
       object-fit: cover;
-      display: block;
-      position: relative;
       z-index: 2;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
-/* Dark gradient overlay */
 //features section
 .title {
   color:#372399;                    
 }
-/* CSS */
 //about-sprintpark-section
 .about-sprintpark-section {
  background: rgba(242, 241, 249, 1); 
-  padding-bottom: 30px;
-
   .gradient-underline {
     display: inline-block; 
     border-bottom: 3px solid;
     border-image-source: linear-gradient(90deg, #8b59ef 0%, #6a6cef 100%);
     border-image-slice: 1; /* required for border-image to show */
-    padding-bottom: 2px; /* spacing between text & underline */
-   
+     /* spacing between text & underline */
   }
   .abt-spk{
     color: rgba(55, 35, 153, 1);
   }
- 
   .feature-image {
     height: 50px;
     width: 50px;
-   
     background-size: cover;
   }
   .image-wrapper {
-    position: relative;
-    width: 100%;
     height: auto;
-    @media (min-width: 992px) {
-      width: 420px;
-      height: 436px;
-    }
-    
     .ellipse-shape {
       max-width: 100%;
       height: auto;
-      position: absolute;
       right: -80px;
       top: 50%;
       transform: translateY(-50%);
@@ -279,16 +192,10 @@ color: black;
       pointer-events: none;
       user-select: none;
       filter: drop-shadow(0 0 10px rgba(128, 0, 255, 0.5));
-      @media (max-width: 767px) {
-        display: none;
-      }
     }
   }
   .move-right {
     margin-left: 0;
-    @media (min-width: 992px) {
-      margin-left: 90px;
-    }
   }
 }
 //features section end
@@ -297,53 +204,32 @@ color: black;
    background: #f6f4fd url("/assets/home/industries/industries-bgwave.png") no-repeat center bottom;
   background-size: 100% 600px;
   min-height: 100vh;
-  width: 100%;
-  padding-bottom: 4rem;
-
+  
   .whatWeOffer-section,
   .industries-section {
     background: transparent;
-  margin-bottom: 60px;
-
-    .bg-white {
-      border-radius: 0 !important;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-      border: none;
-      min-height:240px;
-    }
-  }
-  .offer-image {
-    height: 60px;
-    width: 60px;
+    margin-bottom: 60px;
   }
   row.view-all {
   flex-wrap: nowrap;   /* keeps all cards in one row */
   overflow-x: auto;    /* allow horizontal scroll if needed */
 }
-
 .row.view-all .col-md-4 {
   flex: 0 0 25%;       /* each takes 25% width for 4 cards */
   max-width: 25%;
 }
-
   .whatWeOffer-section {
     margin-bottom: 6rem;
-    @media (max-width: 767px) {
-      margin-bottom: 2.5rem;
-      margin-top: 60px;
-    }
   }
 }
 .offer-industries-bg section {
   padding-top: 60px;  /* space above each section */
 }
- 
 .whatWeOffer-section .bg-white:hover h6,
 .whatWeOffer-section .bg-white:hover p {
   color: #fff !important;
 }
 //animation code for what we offer and whom we serve
-
 .slide-right {
   animation: slide-right 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
@@ -357,13 +243,10 @@ color: black;
     opacity: 1;
   }
 }
- 
-
 .pre-slide-left {
   opacity: 0;
   transform: translateX(-100px);
 }
-
 .whatWeOffer-section .bg-white:hover {
   background: #372399 !important;
   color: #fff !important;
@@ -371,11 +254,8 @@ color: black;
     background 0.2s,
     color 0.2s;
 }
-
-
 //end of industries cards
 //section 3 end of (what we offer and industries we serve)
-
 .text-purple {
   color: #3d008d;
 }
@@ -391,29 +271,9 @@ color: black;
 .collaborate-card:hover p {
   color: #fff !important;
 }
-@media (max-width: 991px) {
-  .collaborate-card {
-    min-height: 200px;
-  }
-}
-@media (max-width: 767px) {
-  .collaborate-section {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
-  .collaborate-title {
-    margin-bottom: 1.5rem;
-  }
-  .collaborate-card {
-    padding: 2rem 0.75rem;
-    min-height: auto;
-  }
-}
 .collaborate-section {
-  position: relative;
   overflow: hidden;
   background: #DEDEFF66;
- 
 }
 // Collaboration cards hover effect
 .collaborate-card:hover {
@@ -435,36 +295,15 @@ color: black;
   min-height: 200px;
 }
 .stats-icon {
-  width: 56px;
-  height: 56px;
   object-fit: contain;
 }
 .stats-number {
   color: #fff;
-  margin-bottom: 4px;
-  text-align: left;
 }
 .stats-label {
   color: #fff;
-  text-align: left;
-}
-@media (max-width: 991px) {
-  .stats-section {
-    padding: 32px 0;
-  }
-  .stats-icon {
-    width: 40px;
-    height: 40px;
-  }
 }
 //stats section end
-//insights
-/* Apply big margin only on desktop (≥992px) */
-@media (min-width: 992px) {
-  .ms-lg-150 {
-    margin-left: 200px !important;
-  }
-}
 //insights end
 //testimonial section
 .testimonial-section {
@@ -475,15 +314,6 @@ color: black;
   background-repeat: no-repeat, no-repeat;
   background-position: center, center;
   background-size: 100% auto, cover;
-}
- .review{
-  width:80%;
- }
- 
-.testimonial-section .card,
-.testimonial-section .bg-white {
-  border: transparent;
-  // margin: 0 !important;
 }
 // Testimonial cards
 /* Hover effect */
@@ -501,7 +331,6 @@ color: black;
 .testimonial-wrapper {
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  // padding-bottom: 10px;
 }
 .testimonial-wrapper .testimonial-card {
   scroll-snap-align: start;
@@ -509,52 +338,22 @@ color: black;
 .card-hover:hover .text-dark {
   color: #fff !important;
 }
- 
-/* 📱 Mobile adjustments */
-@media (max-width: 768px) {
-  .testimonial-card img {
-    width: 60px;
-    height: 60px;
-  }
-}
-.star-rating {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-.star-rating span {
-  font-size: 1.4rem;
-  line-height: 1;   
-}
- 
 //TESTIMONIAL END
-
 // Industries Cards
 .industries-card {
-
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
   margin: 0 0.5em;
   border-radius: 0.5rem;
   box-shadow: 2px 6px 8px rgba(22, 22, 26, 0.18);
   transition: transform 0.3s ease;
   min-height: 280px !important; // reduced height
-
   &:hover {
     transform: translateY(-5px);
   }
-
   .industries-img {
     width: 100%;
     height: 180px !important;
-    object-fit: cover;
-    display: block;
     transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
-
     &:hover {
       transform: scale(1.12); // subtle hover zoom
       box-shadow: 0 12px 32px rgba(55, 35, 153, 0.18);
@@ -564,42 +363,101 @@ color: black;
 }
 // Overlay (title + arrow)
 .industry-title-overlay {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
   padding: 15px;
   z-index: 2;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  // background: rgba(0, 0, 0, 0.3); // subtle overlay
 }
 // Arrow button
 .arrow-btn {
   background: #ff6600;
   width: 35px;
   height: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
-  text-decoration: none;
   transition: all 0.4s ease;
   margin-left: auto;
   flex-shrink: 0;
   z-index: 3;
-
   i {
     transition: transform 0.4s ease;
     display: inline-block;
   }
-
   &:hover {
     background: #e65c00;
     transform: scale(1.1);
     i {
       transform: translateX(6px);
     }
+  }
+}
+@media (max-width: 576px) {
+  .home #myCarousel .carousel-item img {
+    height: 50vh;
+  }
+  .home #myCarousel .carousel-caption {
+    bottom: 10%;
+    left: 5%;
+    right: 5%;
+    top: 5%;
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+  .home #myCarousel .carousel-caption .btn-group {
+    flex-direction: column !important;
+    width: 100%;
+  }
+  .home #myCarousel .carousel-caption .btn-group .btn-1,
+  .home #myCarousel .carousel-caption .btn-group .btn-2 {
+    width: 100%;
+  }
+  .home #myCarousel .carousel-control-prev,
+  .home #myCarousel .carousel-control-next {
+    margin-top: 42px;
+    width: 40px;
+    height: 40px;
+    border-width: 3px;
+  }
+}
+/* Max-width: 767px */
+@media (max-width: 767px) {
+  .about-sprintpark-section .image-wrapper .ellipse-shape {
+    display: none;
+  }
+  .offer-industries-bg .whatWeOffer-section {
+    margin-bottom: 2.5rem;
+    margin-top: 60px;
+  }
+  .collaborate-section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .collaborate-title {
+    margin-bottom: 1.5rem;
+  }
+  .collaborate-card {
+    padding: 2rem 0.75rem;
+    min-height: auto;
+  }
+
+}
+/* Min-width: 992px */
+@media (min-width: 992px) {
+  .about-sprintpark-section .image-wrapper {
+    width: 420px;
+    height: 436px;
+  }
+    .testimonial-section {
+    background-image: none;
+    
+    }
+  .about-sprintpark-section .move-right {
+    margin-left: 90px;
+  }
+  .ms-lg-150 {
+    margin-left: 200px !important;
+  }
+   .collaborate-card {
+    min-height: 200px;
+  }
+  .stats-section {
+    padding: 32px 0;
   }
 }

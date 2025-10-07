@@ -2,30 +2,16 @@ import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IndustrySubUtilComponent } from '../../utilities/industry-sub-util/industry-sub-util.component';
 import { CommonModule } from '@angular/common';
-import { SubCardsComponent } from '../../utilities/sub-cards/sub-cards.component';
-import { MapSectionComponent } from '../../utilities/map-section/map-section.component';
 
 interface Section {
   heroImage: string;
-  heroHeading: string;
+  whyheader:string;
   smallHeading: string;
   whyList: Array<{ title: string; description: string }>;
-  steps?: Array<{ title: string; description: string; icon?: string }>;
+  steps: Array<{ title: string; description: string; icon?: string }>;
   text?: string;
 }
-
-@Component({
-  selector: 'app-transportation-i',
-  imports: [IndustrySubUtilComponent, CommonModule, SubCardsComponent, MapSectionComponent],
-  templateUrl: './transportation-i.component.html',
-  styleUrl: './transportation-i.component.scss'
-})
-export class TransportationIComponent {
-  currentSection = 'itConsulting';
-  private route = inject(ActivatedRoute);
-
-  // Define common steps once
-  public commonSteps = [
+const commonSteps = [
   {
     title: 'Understand',
     icon: 'assets/Industries/understand.svg',
@@ -53,10 +39,10 @@ export class TransportationIComponent {
   }
 ];
 
-  sections: Record<string, Section> = {
+ const sectionsData: Record<string, Section> = {
     itConsulting: {
       heroImage: 'assets/Industries/transportation-SubPages/it-consulting-digital-solution.jpg',
-      heroHeading: 'How Can IT Consulting & Digital Solutions Transform Transportation & Logistics?',
+      whyheader: 'How Can IT Consulting & Digital Solutions Transform Transportation & Logistics?',
       smallHeading:
         'Driving efficiency, transparency, and smarter decision-making through digital innovation.',
       text: 'Our Working Strategy',
@@ -82,11 +68,11 @@ export class TransportationIComponent {
             'Cloud platforms and emerging technologies enhance scalability, agility, and resilience, preparing logistics businesses for growth and evolving market demands.',
         },
       ],
-      steps: this.commonSteps, 
+      steps:commonSteps, 
     },
     networkEngineering: {
       heroImage: 'assets/Industries/transportation-SubPages/network-engineering.jpg',
-      heroHeading: 'How Can Network Engineering & Connectivity Revolutionize Transportation & Logistics?',
+      whyheader: 'How Can Network Engineering & Connectivity Revolutionize Transportation & Logistics?',
       smallHeading:
         ' Building reliable, secure, and high-speed networks to keep transportation systems connected and efficient.',
       text: 'Our Working Strategy',
@@ -112,11 +98,11 @@ export class TransportationIComponent {
             'Modern networks support business growth by integrating new technologies, increasing connected devices, and ensuring adaptable, future-ready logistics operations.',
         },
       ],
-      steps: this.commonSteps, 
+      steps:commonSteps, 
     },
     salesforceAI: {
       heroImage: 'assets/Industries/transportation-SubPages/salesforce-ai-automation.jpg',
-      heroHeading: 'How Can Salesforce & AI Automations Transform Transportation and Logistics?',
+      whyheader: 'How Can Salesforce & AI Automations Transform Transportation and Logistics?',
       smallHeading:
         'Streamlining logistics operations with intelligent automation and customer-focused Salesforce solutions.',
       text: 'Our Working Strategy',
@@ -142,22 +128,28 @@ export class TransportationIComponent {
             'AI-powered dashboards deliver actionable insights on routes, fleet efficiency, and customer behavior, enabling smarter logistics decisions and cost reduction.',
         },
       ],
-      steps: this.commonSteps, 
+      steps:commonSteps, 
     },
   };
 
-  ngOnInit(): void {
-    this.route.paramMap.subscribe((params) => {
-      const section = params.get('section');
-      if (section && this.sections[section]) {
-        this.currentSection = section;
-      } else {
-        this.currentSection = 'itConsulting'; // default section key
-      }
-    });
-  }
-
-  get sectionData(): Section {
-    return this.sections[this.currentSection];
-  }
+@Component({
+  selector: 'app-transportation-i',
+  imports: [IndustrySubUtilComponent, CommonModule],
+  templateUrl: './transportation-i.component.html',
+  styleUrl: './transportation-i.component.scss'
+})
+export class TransportationIComponent implements OnInit{
+ route = inject(ActivatedRoute);
+   currentSectionData!: Section;
+ 
+public  ngOnInit(): void {
+   this.route.paramMap.subscribe(params => {
+     const rawKey = params.get('section') ||'itConsulting';
+ 
+     // convert dash-case → camelCase
+     const sectionKey = rawKey.replace(/-([a-z])/g, (_, c) => c.toUpperCase());
+ 
+     this.currentSectionData = sectionsData[sectionKey] ?? sectionsData[' itConsulting'];
+   });
+ }
 }

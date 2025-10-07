@@ -2,28 +2,23 @@ import { Component, inject, OnInit } from '@angular/core';
 import { IndustrySubUtilComponent } from '../../utilities/industry-sub-util/industry-sub-util.component';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { SubCardsComponent } from '../../utilities/sub-cards/sub-cards.component';
-import { MapSectionComponent } from '../../utilities/map-section/map-section.component';
 
 
 
-interface Step {
-  title: string;
-  description: string;
-  icon?: string;
-}
+
+
 
 interface Section {
   heroImage: string;
-  heroHeading: string;
+  whyheader:string;
   smallHeading: string;
   whyList: Array<{ title: string; description: string }>;
-  steps?: Step[];
+  steps: Array<{ title: string; description: string; icon?: string }>;
   text?: string;
 }
 
 // ✅ Common reusable steps
-const COMMON_STEPS: Step[] = [
+const commonSteps = [
     {
     title: 'Understand',
     icon: 'assets/Industries/understand.svg',
@@ -50,21 +45,10 @@ const COMMON_STEPS: Step[] = [
     description: 'We operate to deliver tangible, value-added cyber security on a 24/7 basis. We use our methodology to evolve and optimize your solution over time, to maximize value.'
   }
 ];
-
-@Component({
-  selector: 'app-health-care-i',
-  imports: [IndustrySubUtilComponent, CommonModule,SubCardsComponent,MapSectionComponent],
-  templateUrl: './health-care-i.component.html',
-  styleUrl: './health-care-i.component.scss'
-})
-export class HealthCareIComponent {
-public currentSection = ' intelligentinnovation';
-  route = inject(ActivatedRoute);
-
- public sections: Record<string, Section> = {
- intelligentinnovation: {
+const sectionsData: Record<string, Section> = {
+  intelligentinnovation: {
     heroImage: 'assets/Industries/healthCare-Life-Science-SubPage/intelligent-automation.jpg',
-    heroHeading: 'How can automation reshape patient care and medical innovation?',
+    whyheader: 'How can automation reshape patient care and medical innovation?',
     smallHeading: 'Intelligent Automation in Healthcare & Life Sciences',
     text: 'Our Working Strategy',
     whyList: [
@@ -89,12 +73,12 @@ public currentSection = ' intelligentinnovation';
           'Automated systems improve patient communication, reduce human errors, optimize resources, and scale healthcare delivery while maintaining quality, trust, and satisfaction.',
       },
     ],
-    steps: COMMON_STEPS,
+    steps: commonSteps,
   },
 
   connectedInfrastructure: {
     heroImage: 'assets/Industries/healthCare-Life-Science-SubPage/connected-infrastructure.jpg',
-    heroHeading: 'How Does Connected Infrastructure Transform Healthcare?',
+   whyheader: 'How Does Connected Infrastructure Transform Healthcare?',
     smallHeading: 'Building smarter systems for efficient, secure, and patient-centered care.',
     text: 'Our Transformation Model',
     whyList: [
@@ -119,16 +103,16 @@ public currentSection = ' intelligentinnovation';
           'Automated systems improve patient communication, reduce human errors, optimize resources, and scale healthcare delivery while maintaining quality, trust, and satisfaction.',
       },
     ],
-    steps: COMMON_STEPS,
+    steps: commonSteps,
   },
 
  
  dataSecurity:
  {
     heroImage: 'assets/Industries/healthCare-Life-Science-SubPage/data-Security.jpg',
-    heroHeading: 'Why Is Data Security & Compliance Critical in Healthcare?',
+    whyheader: 'Why Is Data Security & Compliance Critical in Healthcare?',
     smallHeading: 'Protecting sensitive health information while ensuring trust and regulatory alignment.',
-    text: 'Our Security Approach',
+    text: 'Our Working Strategy',
     whyList: [
       {
         title: 'Safeguarding Patient Privacy',
@@ -151,12 +135,12 @@ public currentSection = ' intelligentinnovation';
           'Backup systems, disaster recovery, and AI-powered adaptive frameworks maintain business continuity, protecting data against evolving cyber threats and emerging risks.',
       },
     ],
-    steps: COMMON_STEPS,
+    steps: commonSteps,
   },
 
-  ProjectDelivery: {
+  projectDelivery: {
     heroImage: 'assets/Industries/healthCare-Life-Science-SubPage/healthCare-project-delivery.jpg',
-    heroHeading: 'How Can Effective Project Delivery Transform Healthcare Services?',
+    whyheader: 'How Can Effective Project Delivery Transform Healthcare Services?',
     smallHeading:
       'Achieving efficiency, innovation, and better patient outcomes through structured project execution.',
     text: 'Our Delivery Framework',
@@ -182,12 +166,12 @@ public currentSection = ' intelligentinnovation';
           'Strong project delivery supports digital innovations, anticipates risks, ensures continuity, tracks outcomes, and drives continuous improvement in healthcare services.',
       },
     ],
-    steps: COMMON_STEPS,
+    steps: commonSteps,
   },
 
    talentSolutions: {
     heroImage: 'assets/Industries/healthCare-Life-Science-SubPage/expert-talent-solution.jpg',
-    heroHeading: 'How Can Expert Talent Solutions Empower the Healthcare Sector?',
+    whyheader: 'How Can Expert Talent Solutions Empower the Healthcare Sector?',
     smallHeading: 'Building stronger healthcare systems with skilled professionals and specialized expertise.',
     text: 'Our Talent Strategy',
     whyList: [
@@ -212,12 +196,12 @@ public currentSection = ' intelligentinnovation';
           'Proper talent placement improves patient care, ensures compliance, reduces burnout, and promotes long-term workforce retention, upskilling, and organizational resilience.',
       },
     ],
-    steps: COMMON_STEPS,
+    steps: commonSteps,
   },
 
    patientInnovation: {
     heroImage: 'assets/Industries/healthCare-Life-Science-SubPage/patient-centered-innovations.jpg',
-    heroHeading: 'How Can Patient-Centered Innovation Transform Healthcare?',
+    whyheader: 'How Can Patient-Centered Innovation Transform Healthcare?',
     smallHeading: 'Empowering patients through personalized care, technology, and human-centered design.',
     text: 'Our Innovation Approach',
     whyList: [
@@ -242,19 +226,30 @@ public currentSection = ' intelligentinnovation';
           'Preventive approaches, equitable access, and real-time patient feedback refine services, promote wellness, and foster a culture of patient-centered innovation.',
       },
     ],
-    steps: COMMON_STEPS,
+    steps: commonSteps,
   },
 };
 
-  public ngOnInit(): void {
-    this.route.paramMap.subscribe((params) => {
-      const section = params.get('section');
-      if (section && this.sections[section as keyof typeof this.sections]) {
-        this.currentSection = section;
-      }
-    });
-  }
-  public get sectionData(): (typeof this.sections)[keyof typeof this.sections] {
-    return this.sections[this.currentSection as keyof typeof this.sections];
-  }
+@Component({
+  selector: 'app-health-care-i',
+  imports: [IndustrySubUtilComponent, CommonModule],
+  templateUrl: './health-care-i.component.html',
+  styleUrl: './health-care-i.component.scss'
+})
+ 
+
+
+export class HealthCareIComponent implements OnInit {
+route = inject(ActivatedRoute);
+  currentSectionData!: Section;
+
+ public ngOnInit(): void {
+  this.route.paramMap.subscribe(params => {
+    const rawKey = params.get('section') || 'intelligentinnovation';
+    const sectionKey = rawKey.replace(/-([a-z])/g, (_, c) => c.toUpperCase());
+
+    this.currentSectionData = sectionsData[sectionKey] ?? sectionsData['intelligentinnovation'];
+  });
+}
+
 }

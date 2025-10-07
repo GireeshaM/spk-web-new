@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TelecommunicationIComponent } from './telecommunication-i.component';
+import { ActivatedRoute, provideRouter } from '@angular/router';
+import { of } from 'rxjs';
 
 describe('TelecommunicationIComponent', () => {
   let component: TelecommunicationIComponent;
@@ -8,7 +10,8 @@ describe('TelecommunicationIComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TelecommunicationIComponent]
+      imports: [TelecommunicationIComponent],
+ providers: [provideRouter([])]
     })
     .compileComponents();
 

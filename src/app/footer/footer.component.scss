@@ -57,13 +57,11 @@
       text-align: center;
     }
   }
-
   .contactCol {
     li {
       display: flex;
       align-items: center;
       
-
       a {
         display: flex;
         align-items: center;
@@ -88,10 +86,8 @@
       }
     }
   }
-
   .bottomStrip {
     padding: 20px 0;
-
     .social-icons {
       display: flex;
       justify-content: space-between;
@@ -105,19 +101,14 @@
         }
       }
     }
-
    @media (max-width: 768px) {
       .bottomStrip {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         padding: 10px;
-
       .social-icons {
-    
         gap: 12px;
-      
-
         a img {
           width: 24px;
           height: 24px;

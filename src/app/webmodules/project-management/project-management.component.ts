@@ -31,7 +31,7 @@ export class ProjectManagementComponent {
     'assets/services/project-management-service/discover-best-practices.png',
   ];
 
-  whyList = [
+ public whyList = [
     {
       title: 'Enhance Internal Communication',
       description:

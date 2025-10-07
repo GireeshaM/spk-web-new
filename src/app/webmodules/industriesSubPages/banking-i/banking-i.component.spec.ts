@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BankingIComponent } from './banking-i.component';
+import { ActivatedRoute, provideRouter } from '@angular/router';
+import { of } from 'rxjs';
 
 describe('BankingIComponent', () => {
   let component: BankingIComponent;
@@ -8,7 +10,8 @@ describe('BankingIComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BankingIComponent]
+      imports: [BankingIComponent],
+     providers: [provideRouter([])]
     })
     .compileComponents();
 

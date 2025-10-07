@@ -2,15 +2,14 @@ import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IndustrySubUtilComponent } from '../../utilities/industry-sub-util/industry-sub-util.component';
 import { CommonModule } from '@angular/common';
-import { SubCardsComponent } from '../../utilities/sub-cards/sub-cards.component';
-import { MapSectionComponent } from '../../utilities/map-section/map-section.component';
+
 
 interface Section {
   heroImage: string;
-  heroHeading: string;
+  whyheader:string;
   smallHeading: string;
   whyList: Array<{ title: string; description: string }>;
-  steps?: Array<{ title: string; description: string; icon?: string }>;
+  steps: Array<{ title: string; description: string; icon?: string }>;
   text?: string;
 }
 const commonSteps = [
@@ -40,20 +39,10 @@ const commonSteps = [
     description: 'We operate to deliver tangible, value-added cyber security on a 24/7 basis. We use our methodology to evolve and optimize your solution over time, to maximize value.'
   }
 ];
-@Component({
-  selector: 'app-manufacturing-i',
-  imports: [IndustrySubUtilComponent, CommonModule, SubCardsComponent, MapSectionComponent],
-  templateUrl: './manufacturing-i.component.html',
-  styleUrls: ['./manufacturing-i.component.scss']
-})
-export class ManufacturingIComponent {
-  currentSection = 'salesforceIntegration';
-  private route = inject(ActivatedRoute);
-
-  sections: Record<string, Section> = {
+  const sectionsData: Record<string, Section> = {
     salesforceIntegration: {
       heroImage: 'assets/Industries/Manufacturing-SubPages/salesforce-integration.jpg',
-      heroHeading: 'How Can Salesforce Integration Transform Manufacturing Operations?',
+      whyheader: 'How Can Salesforce Integration Transform Manufacturing Operations?',
       smallHeading: 'Connecting systems to streamline workflows and enhance decision-making.',
       text: 'Our Working Strategy',
       whyList: [
@@ -78,7 +67,7 @@ export class ManufacturingIComponent {
     },
     dataAnalytics: {
       heroImage: 'assets/Industries/Manufacturing-SubPages/advanced-data-analytics.jpg',
-      heroHeading: 'How Can Advanced Data Analytics Revolutionize Manufacturing?',
+      whyheader: 'How Can Advanced Data Analytics Revolutionize Manufacturing?',
       smallHeading: 'Unlocking insights to optimize productlon, reduce costs, and Improve decision-making.',
       text: 'Our Working Strategy',
       whyList: [
@@ -103,7 +92,7 @@ export class ManufacturingIComponent {
     },
     projectManagement: {
       heroImage: 'assets/Industries/Manufacturing-SubPages/expert-project-management.jpg',
-      heroHeading: 'How Can Expert Project Management Drive Manufacturing Success?',
+      whyheader: 'How Can Expert Project Management Drive Manufacturing Success?',
       smallHeading: 'Delivering elficieney, innovation, and rellabilty through structured execulion.',
       text: 'Our Working Strategy',
       whyList: [
@@ -128,7 +117,7 @@ export class ManufacturingIComponent {
     },
     ITConsulting: {
       heroImage: 'assets/Industries/Manufacturing-SubPages/strategic-it-consulting.jpg',
-      heroHeading: 'How Can Strategic IT Consulting Transform Manufacturing?',
+      whyheader: 'How Can Strategic IT Consulting Transform Manufacturing?',
       smallHeading: 'Driving digital transformation, operational ellciency, and innovation',
       text: 'Our Working Strategy',
       whyList: [
@@ -152,19 +141,24 @@ export class ManufacturingIComponent {
       steps: commonSteps,
     },
   };
-
-  ngOnInit(): void {
-    this.route.paramMap.subscribe((params) => {
-      const section = params.get('section');
-      if (section && this.sections[section]) {
-        this.currentSection = section;
-      } else {
-        this.currentSection = 'salesforceIntegration';
-      }
-    });
-  }
-
-  get sectionData(): Section {
-    return this.sections[this.currentSection];
-  }
+@Component({
+  selector: 'app-manufacturing-i',
+  imports: [IndustrySubUtilComponent, CommonModule,],
+  templateUrl: './manufacturing-i.component.html',
+  styleUrls: ['./manufacturing-i.component.scss']
+})
+export class ManufacturingIComponent implements OnInit {
+ route = inject(ActivatedRoute);
+   currentSectionData!: Section;
+ 
+ public ngOnInit(): void {
+   this.route.paramMap.subscribe(params => {
+     const rawKey = params.get('section') ||'salesforceIntegration';
+ 
+     // convert dash-case → camelCase
+     const sectionKey = rawKey.replace(/-([a-z])/g, (_, c) => c.toUpperCase());
+ 
+     this.currentSectionData = sectionsData[sectionKey] ?? sectionsData['salesforceIntegration'];
+   });
+ }
 }
