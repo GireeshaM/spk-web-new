@@ -23,81 +23,173 @@
         <a class="navbar-brand" [routerLink]="['/']">
           <img src="assets/logo/logoBlue.png" alt="logo" />
         </a>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+        ></button>
       </div>
 
       <div class="offcanvas-body">
         <ul class="navbar-nav flex-grow-1 justify-content-between">
           <li class="nav-item">
-            <a
-              class="nav-link"
-              href="#home"
-            >Home</a>
+            <a class="nav-link" href="#home">Home</a>
           </li>
 
           <li class="nav-item">
-            <a
-              class="nav-link"
-             href="#about-us"
-            >About Us</a>
+            <a class="nav-link" href="#about-us">About Us</a>
           </li>
 
           <!-- Services -->
-          <li
-            class="nav-item dropdown"
-            routerLinkActive="active"
-          >
+          <li class="nav-item dropdown" routerLinkActive="active">
             <a
               class="nav-link dropdown-toggle d-md-none"
               href="#"
               data-bs-toggle="dropdown"
-            >Services</a>
+              >Services</a
+            >
             <a class="nav-link d-none d-md-block" href="#">Services</a>
 
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" [routerLink]="'/it-consulting'" routerLinkActive="active">IT Consulting</a></li>
-              <li><a class="dropdown-item" [routerLink]="'/staffing'" routerLinkActive="active">Staffing</a></li>
-              <li><a class="dropdown-item" [routerLink]="'/project-management'" routerLinkActive="active">Project Management</a></li>
-              <li><a class="dropdown-item" [routerLink]="'/software-service'" routerLinkActive="active">Software Services</a></li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  [routerLink]="'/it-consulting'"
+                  routerLinkActive="active"
+                  >IT Consulting</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  [routerLink]="'/staffing'"
+                  routerLinkActive="active"
+                  >Staffing</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  [routerLink]="'/project-management'"
+                  routerLinkActive="active"
+                  >Project Management</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  [routerLink]="'/software-service'"
+                  routerLinkActive="active"
+                  >Software Services</a
+                >
+              </li>
             </ul>
           </li>
 
           <!-- Industries -->
-          <li
-            class="nav-item dropdown"
-            routerLinkActive="active"
-          >
+          <li class="nav-item dropdown" routerLinkActive="active">
             <a
               class="nav-link dropdown-toggle d-md-none"
               href="#"
               data-bs-toggle="dropdown"
-            >Industries</a>
+              >Industries</a
+            >
             <a class="nav-link d-none d-md-block" href="#">Industries</a>
 
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" [routerLink]="'/itAndTelecommunications'" routerLinkActive="active">IT & Telecommunications</a></li>
-              <li><a class="dropdown-item" [routerLink]="'/government'" routerLinkActive="active">Government</a></li>
-              <li><a class="dropdown-item" [routerLink]="'/healthCareAndLifeSciences'" routerLinkActive="active">Health Care & Life Sciences</a></li>
-              <li><a class="dropdown-item" [routerLink]="'/manufacturing'" routerLinkActive="active">Manufacturing</a></li>
-              <li><a class="dropdown-item" [routerLink]="'/education'" routerLinkActive="active">Education</a></li>
-              <li><a class="dropdown-item" [routerLink]="'/transportationAndLogistics'" routerLinkActive="active">Transportation & Logistics</a></li>
-              <li><a class="dropdown-item" [routerLink]="'/banking'" routerLinkActive="active">Banking</a></li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  [routerLink]="'/itAndTelecommunications'"
+                  routerLinkActive="active"
+                  >IT & Telecommunications</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  [routerLink]="'/government'"
+                  routerLinkActive="active"
+                  >Government</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  [routerLink]="'/healthCareAndLifeSciences'"
+                  routerLinkActive="active"
+                  >Health Care & Life Sciences</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  [routerLink]="'/manufacturing'"
+                  routerLinkActive="active"
+                  >Manufacturing</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  [routerLink]="'/education'"
+                  routerLinkActive="active"
+                  >Education</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  [routerLink]="'/transportationAndLogistics'"
+                  routerLinkActive="active"
+                  >Transportation & Logistics</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  [routerLink]="'/banking'"
+                  routerLinkActive="active"
+                  >Banking</a
+                >
+              </li>
             </ul>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="'/careers'" routerLinkActive="active">Careers</a>
+            <a
+              class="nav-link"
+              [routerLink]="'/careers'"
+              routerLinkActive="active"
+              >Careers</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="'/insights'" routerLinkActive="active">Insights</a>
+            <a
+              class="nav-link"
+              [routerLink]="'/insights'"
+              routerLinkActive="active"
+              >Insights</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="'/contact-us'" routerLinkActive="active">Contact Us</a>
+            <a
+              class="nav-link"
+              [routerLink]="'/contact-us'"
+              routerLinkActive="active"
+              >Contact Us</a
+            >
           </li>
 
           <!-- Login Button -->
           <li class="nav-item">
-            <button class="btn btnn" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+            <button
+              class="btn btnn"
+              data-bs-toggle="modal"
+              data-bs-target="#loginModal"
+            >
+              Login
+            </button>
           </li>
         </ul>
       </div>
@@ -112,11 +204,16 @@
   aria-labelledby="loginModalLabel"
   aria-hidden="true"
 >
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+  <div
+    class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"
+  >
     <div class="modal-content login-modal p-4">
       <!-- Header -->
       <div class="modal-header border-0">
-        <h5 class="modal-title fw-bold w-100 text-center text-white" id="loginModalLabel">
+        <h5
+          class="modal-title fw-bold w-100 text-center text-white"
+          id="loginModalLabel"
+        >
           Choose Login Role
         </h5>
         <button
@@ -130,19 +227,23 @@
       <!-- Body -->
       <div class="modal-body">
         <div class="row g-3">
-
           <!-- Recruiter -->
           <div class="col-12 col-md-4">
             <div class="card role-card text-center p-3 h-100">
-              <img src="assets/header/recruiter.png" alt="Recruiter Icon"
-                   class="text-gold mb-3 mx-auto d-block"
-                   style="width: 4rem; height: 4rem;">
+              <img
+                src="assets/header/recruiter.png"
+                alt="Recruiter Icon"
+                class="text-gold mb-3 mx-auto d-block"
+                style="width: 4rem; height: 4rem"
+              />
               <h6 class="fw-bold text-gold">Recruiter</h6>
               <p class="small text-light">Hire & manage candidates.</p>
-              <button class="btn btn-gold mt-auto w-100"
-                      (click)="loginAs('Recruiter')"
-                      data-bs-dismiss="modal">
-                Login 
+              <button
+                class="btn btn-gold mt-auto w-100"
+                (click)="loginAs('Recruiter')"
+                data-bs-dismiss="modal"
+              >
+                Login
               </button>
             </div>
           </div>
@@ -150,14 +251,19 @@
           <!-- Admin -->
           <div class="col-12 col-md-4">
             <div class="card role-card text-center p-3 h-100">
-              <img src="assets/header/admin.png" alt="Admin Icon"
-                   class="text-gold mb-3 mx-auto d-block"
-                   style="width: 4rem; height: 4rem;">
+              <img
+                src="assets/header/admin.png"
+                alt="Admin Icon"
+                class="text-gold mb-3 mx-auto d-block"
+                style="width: 4rem; height: 4rem"
+              />
               <h6 class="fw-bold text-gold">Admin</h6>
               <p class="small text-light">Manage users & settings.</p>
-              <button class="btn btn-gold mt-auto w-100"
-                      (click)="loginAs('Admin')"
-                      data-bs-dismiss="modal">
+              <button
+                class="btn btn-gold mt-auto w-100"
+                (click)="loginAs('Admin')"
+                data-bs-dismiss="modal"
+              >
                 Login
               </button>
             </div>
@@ -166,27 +272,25 @@
           <!-- Employee -->
           <div class="col-12 col-md-4">
             <div class="card role-card text-center p-3 h-100">
-              <img src="assets/header/employee.png" alt="Employee Icon"
-                   class="text-gold mb-3 mx-auto d-block"
-                   style="width: 4rem; height: 4rem;">
+              <img
+                src="assets/header/employee.png"
+                alt="Employee Icon"
+                class="text-gold mb-3 mx-auto d-block"
+                style="width: 4rem; height: 4rem"
+              />
               <h6 class="fw-bold text-gold">Employee</h6>
               <p class="small text-light">Access dashboard & tasks.</p>
-              <button class="btn btn-gold mt-auto w-100"
-                      (click)="loginAs('Employee')"
-                      data-bs-dismiss="modal">
+              <button
+                class="btn btn-gold mt-auto w-100"
+                (click)="loginAs('Employee')"
+                data-bs-dismiss="modal"
+              >
                 Login
               </button>
             </div>
           </div>
-
         </div>
       </div>
-
     </div>
   </div>
 </div>
-
-
-
-
-

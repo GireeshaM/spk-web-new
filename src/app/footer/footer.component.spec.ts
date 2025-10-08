@@ -10,16 +10,16 @@ describe('FooterComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [FooterComponent],
-         providers: [
-      {
-        provide: ActivatedRoute,
-        useValue: {
-          params: of({}),  // or whatever params you want to mock
-          snapshot: { paramMap: { get: () => null } },
-        }
-      }
-    ],
-        }).compileComponents();
+      providers: [
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            params: of({}), // or whatever params you want to mock
+            snapshot: { paramMap: { get: () => null } },
+          },
+        },
+      ],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(FooterComponent);
     component = fixture.componentInstance;

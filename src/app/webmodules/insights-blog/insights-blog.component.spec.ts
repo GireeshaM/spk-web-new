@@ -24,8 +24,7 @@ describe('InsightsBlogComponent', () => {
           },
         },
       ],
-    })
-    .compileComponents();
+    }).compileComponents();
 
     fixture = TestBed.createComponent(InsightsBlogComponent);
     component = fixture.componentInstance;

@@ -10,9 +10,8 @@ describe('HealthCareIComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [HealthCareIComponent],
-      providers: [provideRouter([])]
-    })
-    .compileComponents();
+      providers: [provideRouter([])],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(HealthCareIComponent);
     component = fixture.componentInstance;

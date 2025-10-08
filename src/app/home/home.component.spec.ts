@@ -11,7 +11,7 @@ describe('HomeComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [HomeComponent],
-           providers: [
+      providers: [
         {
           provide: ActivatedRoute,
           useValue: {
@@ -28,7 +28,6 @@ describe('HomeComponent', () => {
           },
         },
       ],
-
     }).compileComponents();
 
     fixture = TestBed.createComponent(HomeComponent);

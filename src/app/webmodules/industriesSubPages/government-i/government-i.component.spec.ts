@@ -10,9 +10,8 @@ describe('GovernmentIComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [GovernmentIComponent],
-      providers: [provideRouter([])]
-    })
-    .compileComponents();
+      providers: [provideRouter([])],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(GovernmentIComponent);
     component = fixture.componentInstance;

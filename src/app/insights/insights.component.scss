@@ -13,7 +13,6 @@
   .insights-desktop-img {
     img {
       object-position: top;
-      
     }
   }
 }
@@ -21,7 +20,7 @@
   &:hover {
     transform: scale(1.05);
     .read-badge {
-     background: rgba(239, 122, 19, 1);
+      background: rgba(239, 122, 19, 1);
 
       width: 100%;
       cursor: pointer;
@@ -33,8 +32,8 @@
     margin-bottom: 5px;
   }
 }
-@media(max-width:576px) {
-  .read-badge{
+@media (max-width: 576px) {
+  .read-badge {
     margin-bottom: 20px !important;
   }
 }

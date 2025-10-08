@@ -1,8 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BankingIComponent } from './banking-i.component';
-import { ActivatedRoute, provideRouter } from '@angular/router';
-import { of } from 'rxjs';
+import {  provideRouter } from '@angular/router';
 
 describe('BankingIComponent', () => {
   let component: BankingIComponent;
@@ -11,9 +10,8 @@ describe('BankingIComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [BankingIComponent],
-     providers: [provideRouter([])]
-    })
-    .compileComponents();
+      providers: [provideRouter([])],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(BankingIComponent);
     component = fixture.componentInstance;

@@ -43,75 +43,74 @@
   .hero-img {
     z-index: -2;
     position: relative;
-    top: -50px; 
+    top: -50px;
+  }
+  .it-heading {
+    color: #652fdb;
+  }
 }
-.it-heading{
-  color:#652fdb ;
+.bottomSection {
+  z-index: 2;
+  position: relative;
+  h4,
+  p {
+    color: #0a2250;
+  }
 }
+.industryBg {
+  background: #f7f7fc;
+  position: relative;
+  z-index: 2;
+}
+.bottomSection h1 {
+  color: #222;
+}
+.industry-card {
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  padding: 0 1rem;
+  width: 100%;
+  max-width: 350px;
+  flex-direction: column;
+  align-items: center;
+}
+.industry-card-img-wrap {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+.industry-card-img {
+  width: 170px;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 50%;
+  background: #fff;
+  outline: 3px dashed #a084e8;
+  outline-offset: 15px;
+  box-shadow: 0 2px 12px rgba(76, 63, 220, 0.08);
+}
+.wave-overlay {
+  position: absolute;
+  bottom: -100px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 2; /* Ensure wave overlays on top of hero and behind cards */
+  pointer-events: none;
+}
+.industry-card-number {
+  margin-left: 20px;
+}
+.industry-card-link {
+  color: #3264e7;
+  text-decoration: none;
+  transition: color 0.2s;
+  &:hover {
+    color: #6c3fdc;
+    text-decoration: underline;
   }
-  .bottomSection {
-    z-index: 2;
-    position: relative;
-    h4,
-    p {
-      color: #0a2250;
-    }
-  }
-  .industryBg {
-    background: #f7f7fc;
-    position: relative;
-    z-index: 2;
-  }
-  .bottomSection h1 {
-    color: #222;
-  }
-  .industry-card {
-    background: transparent;
-    box-shadow: none;
-    border: none;
-    padding: 0 1rem;
-    width: 100%;
-    max-width: 350px;
-    flex-direction: column;
-    align-items: center;
-  }
-  .industry-card-img-wrap {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 1rem;
-  }
-  .industry-card-img {
-    width: 170px;
-    height: 170px;
-    object-fit: cover;
-    border-radius: 50%;
-    background: #fff;
-    outline: 3px dashed #a084e8;
-    outline-offset: 15px;
-    box-shadow: 0 2px 12px rgba(76, 63, 220, 0.08);
-  }
-  .wave-overlay {
-    position: absolute;
-    bottom: -100px;
-    left: 0;
-    width: 100%;
-    height: auto;
-    z-index: 2; /* Ensure wave overlays on top of hero and behind cards */
-    pointer-events: none;
-  }
-  .industry-card-number {
-    margin-left: 20px;
-  }
-  .industry-card-link {
-    color: #3264e7;
-    text-decoration: none;
-    transition: color 0.2s;
-    &:hover {
-      color: #6c3fdc;
-      text-decoration: underline;
-    }
-  }
-
+}
 
 /* Responsive */
 @media (max-width: 768px) {

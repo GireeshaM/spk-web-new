@@ -9,7 +9,7 @@ import { IndustryUtilComponent } from '../../utilities/industry-util/industry-ut
 })
 export class BankingComponent {
   public headerBg = 'assets/Industries/wave.svg';
-  public itHeader ='Banking';
+  public itHeader = 'Banking';
   public itHeading =
     'SprintPark Successfully Navigating Change in Banking with Confidence';
   public itContent =

@@ -9,8 +9,7 @@ describe('CareersComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CareersComponent,NoopAnimationsModule],
-      
+      imports: [CareersComponent, NoopAnimationsModule],
     }).compileComponents();
     fixture = TestBed.createComponent(CareersComponent);
     component = fixture.componentInstance;

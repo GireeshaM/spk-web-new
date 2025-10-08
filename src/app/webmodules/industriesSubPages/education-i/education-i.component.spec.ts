@@ -10,9 +10,8 @@ describe('EducationIComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [EducationIComponent],
-      providers: [provideRouter([])]
-    })
-    .compileComponents();
+      providers: [provideRouter([])],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(EducationIComponent);
     component = fixture.componentInstance;

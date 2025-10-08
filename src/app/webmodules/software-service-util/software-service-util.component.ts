@@ -27,7 +27,7 @@ export class SoftwareServiceUtilComponent {
 
   // Section 2
   public whyHeader =
-    'Enhancing Organizational Performance with Software Solutions.';                  
+    'Enhancing Organizational Performance with Software Solutions.';
   public images = [
     'assets/services/software-services/digital-transformation.png',
     'assets/services/software-services/tailor-your-needs.png',

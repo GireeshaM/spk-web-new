@@ -26,36 +26,36 @@
 </section>
 
 <div class="container py-5">
-  <h2 class="text-center  mt-5 fw-bold">Our Insights</h2>
-  <div class="row gx-5 ">
+  <h2 class="text-center mt-5 fw-bold">Our Insights</h2>
+  <div class="row gx-5">
     <div class="col-md-4" *ngFor="let insight of insights">
-  <div class=" h-100 border-0 position-relative insight-card">
-    <div
-      class="position-relative w-100 our-insights"
-      style="height: 350px; overflow: hidden"
-    >
-      <img
-        [src]="insight.image"
-        class=" rounded-0 object-fit-contain"
-        [alt]="insight.title"
-        style="height: 450px; width: 100%"
-      />
-      <!-- Dynamic Read badge -->
-<div
-  class="read-badge position-absolute bottom-0 start-0 d-flex align-items-center px-3 py-2"
-  [routerLink]="['/insights', insight.route]"
-  *ngIf="insight.route"
->
-  <span class="text-white r fw-semibold">Read</span>
-  <span class="arrow-icon ms-2 text-white">→</span>
-</div>
+      <div class="h-100 border-0 position-relative insight-card">
+        <div
+          class="position-relative w-100 our-insights"
+          style="height: 350px; overflow: hidden"
+        >
+          <img
+            [src]="insight.image"
+            class="rounded-0 object-fit-contain"
+            [alt]="insight.title"
+            style="height: 450px; width: 100%"
+          />
+          <!-- Dynamic Read badge -->
+          <div
+            class="read-badge position-absolute bottom-0 start-0 d-flex align-items-center px-3 py-2"
+            [routerLink]="['/insights', insight.route]"
+            *ngIf="insight.route"
+          >
+            <span class="text-white r fw-semibold">Read</span>
+            <span class="arrow-icon ms-2 text-white">→</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <h5 class="lh-base fw-semibold">
+            {{ insight.title }}
+          </h5>
+        </div>
+      </div>
     </div>
-    <div class="card-body">
-      <h5 class=" lh-base fw-semibold">
-        {{ insight.title }}
-      </h5>
-    </div>
-  </div>
-</div>
   </div>
 </div>

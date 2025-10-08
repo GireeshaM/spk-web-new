@@ -2,16 +2,15 @@
   .navbar-brand {
     img {
       height: 40px;
-     
     }
   }
- 
+
   .offcanvas-body {
     .nav-link {
       color: black;
     }
   }
- 
+
   .btnn {
     width: 7rem;
     color: #fff;
@@ -22,12 +21,12 @@
       #372399 212.69%
     );
   }
- 
+
   /* Nav link underline animation */
   .nav-link {
     position: relative;
     cursor: pointer;
- 
+
     &::after {
       content: "";
       position: absolute;
@@ -38,17 +37,17 @@
       background-color: var(--bs-primary);
       transition: width 0.3s ease;
     }
- 
+
     &:hover::after {
       width: 100%;
     }
   }
- 
+
   /* Dropdown styles */
   .dropdown-toggle::after {
     display: none !important;
   }
- 
+
   .dropdown-menu {
     .dropdown-item {
       &:hover {
@@ -58,27 +57,27 @@
     }
   }
 }
- 
+
 /* Reduce offcanvas width */
 .offcanvas {
   &.offcanvas-end {
     width: 240px;
   }
 }
- 
+
 .nav-link.active,
 .dropdown-item.active {
   font-weight: 600;
   // color: #0d6efd !important; /* highlight color */
   border-bottom: 2px solid #0d6efd; /* optional underline */
 }
- 
+
 /* Highlight dropdown parent if any child is active */
 .nav-item.dropdown.active > .nav-link {
   font-weight: 600;
   color: #0d6efd !important;
 }
- 
+
 /* Desktop-only dropdown hover */
 @media (min-width: 768px) {
   .navbar {
@@ -86,10 +85,10 @@
       display: block;
     }
   }
-}/* Modal background (deep purple like Figma) */
+} /* Modal background (deep purple like Figma) */
 /* Modal background (deep purple like Figma) */
 .login-modal {
-  background: linear-gradient(90deg, #210337 0%, #5F3481 104.75%);
+  background: linear-gradient(90deg, #210337 0%, #5f3481 104.75%);
   border-radius: 1rem;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
   color: #ffffff;
@@ -100,17 +99,19 @@
   background: rgba(255, 255, 255, 0.05); /* Subtle contrast */
   border: 1px solid rgba(255, 255, 255, 0.2); /* Slightly brighter border for contrast */
   border-radius: 0.8rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
 
   &:hover {
     transform: translateY(-4px);
     border-color: #ffffff; /* White border on hover */
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4), 
-                0 0 30px rgba(255, 255, 255, 0.2);
+    box-shadow:
+      0 0 15px rgba(255, 255, 255, 0.4),
+      0 0 30px rgba(255, 255, 255, 0.2);
   }
 }
-
-
 
 /* Icon and title color */
 .role-card i, /* Target the icons */
@@ -120,7 +121,7 @@
 
 /* Button with white background */
 .btn-gold {
-  background: #4A90E2; /* Light blue background */
+  background: #4a90e2; /* Light blue background */
   color: #ffffff;
   border: none;
   font-weight: 600;
@@ -128,7 +129,7 @@
   transition: all 0.2s ease-in-out;
 
   &:hover {
-    background: #357ABD; /* Darker blue on hover */
+    background: #357abd; /* Darker blue on hover */
     color: #ffffff;
     box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
   }

@@ -11,19 +11,18 @@ describe('TransportationIComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [TransportationIComponent],
-       providers: [
-    provideRouter([]),
-    {
-      provide: ActivatedRoute,
-      useValue: {
-        paramMap: of({
-          get: (key: string) => 'it-consulting' 
-        }),
-      }
-    }
-  ]
-    })
-    .compileComponents();
+      providers: [
+        provideRouter([]),
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            paramMap: of({
+              get: () => 'it-consulting',
+            }),
+          },
+        },
+      ],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(TransportationIComponent);
     component = fixture.componentInstance;

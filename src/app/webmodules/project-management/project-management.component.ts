@@ -20,8 +20,10 @@ export class ProjectManagementComponent {
   public whatMainHeader = 'Project Management';
   public whatDescription =
     'SprintPark’s project management services ensure seamless execution from planning to delivery. We drive efficiency, collaboration, and timely outcomes aligned with your business objectives.';
-  public heroImage = 'assets/services/project-management-service/project-management-hero.png';
-  public smallImage = 'assets/services/project-management-service/project-management-hero.png';
+  public heroImage =
+    'assets/services/project-management-service/project-management-hero.png';
+  public smallImage =
+    'assets/services/project-management-service/project-management-hero.png';
   // Section 2
   public whyHeader = 'Ensuring Excellence in Project Delivery';
   public images = [
@@ -31,7 +33,7 @@ export class ProjectManagementComponent {
     'assets/services/project-management-service/discover-best-practices.png',
   ];
 
- public whyList = [
+  public whyList = [
     {
       title: 'Enhance Internal Communication',
       description:
@@ -103,15 +105,18 @@ export class ProjectManagementComponent {
   public softwareCards = [
     {
       title: 'Project Implementation',
-      image: 'assets/services/project-management-service/project-implementation.jpg',
+      image:
+        'assets/services/project-management-service/project-implementation.jpg',
     },
     {
       title: 'Project Outsourcing ',
-      image: 'assets/services/project-management-service/project-outsourcing.jpg',
+      image:
+        'assets/services/project-management-service/project-outsourcing.jpg',
     },
     {
       title: 'Project Consulting',
-      image: 'assets/services/project-management-service/project-consulting.jpg',
+      image:
+        'assets/services/project-management-service/project-consulting.jpg',
     },
   ];
 }

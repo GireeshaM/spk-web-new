@@ -47,7 +47,8 @@ import { WhatCompComponent } from '../webmodules/utilities/mainServicesUtil/what
 })
 export class CareersComponent implements AfterViewInit, OnDestroy {
   public whatMainHeader = 'Careers';
-  public whatDescription ='SprintPark’s software services deliver customized, high-performance solutions that accelerate digital growth. From development to deployment, we ensure scalable, secure, and user-centric applications.';
+  public whatDescription =
+    'SprintPark’s software services deliver customized, high-performance solutions that accelerate digital growth. From development to deployment, we ensure scalable, secure, and user-centric applications.';
   public heroImage = 'assets/careers/caree.jpeg';
   public smallImage = 'assets/careers/caree.jpeg';
   imageVisible = false;
@@ -61,7 +62,7 @@ export class CareersComponent implements AfterViewInit, OnDestroy {
   private platformId = inject(PLATFORM_ID);
   public ngAfterViewInit(): void {
     if (!isPlatformBrowser(this.platformId)) {
-      return; 
+      return;
     }
     if ('IntersectionObserver' in window) {
       this.observer = new IntersectionObserver(

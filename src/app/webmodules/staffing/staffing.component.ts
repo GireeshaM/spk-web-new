@@ -11,7 +11,7 @@ import { WhySpCompComponent } from '../utilities/mainServicesUtil/why-sp-comp/wh
     WhatCompComponent,
     WhatWeDoCompComponent,
     MainHeroSectionComponent,
-    WhySpCompComponent
+    WhySpCompComponent,
   ],
   templateUrl: './staffing.component.html',
   styleUrl: './staffing.component.scss',
@@ -37,19 +37,23 @@ export class StaffingComponent {
   public whyList = [
     {
       title: 'Boost Employee Retention',
-      description: 'We align the right candidate with the right job to reduce attrition and increase long-term engagement.',
+      description:
+        'We align the right candidate with the right job to reduce attrition and increase long-term engagement.',
     },
     {
       title: 'Minimize Training Costs',
-      description: 'Our staffing approach ensures you skip unnecessary training by onboarding candidates who are already equipped.',
+      description:
+        'Our staffing approach ensures you skip unnecessary training by onboarding candidates who are already equipped.',
     },
     {
       title: 'Access Global Talent Pools',
-      description: 'We provide access to a wide talent ecosystem across borders, giving you a competitive edge.',
+      description:
+        'We provide access to a wide talent ecosystem across borders, giving you a competitive edge.',
     },
     {
       title: 'Accelerate Hiring Timelines',
-      description: 'We handle everything from sourcing to onboarding so you can focus on scaling your business.',
+      description:
+        'We handle everything from sourcing to onboarding so you can focus on scaling your business.',
     },
   ];
 
@@ -94,42 +98,40 @@ export class StaffingComponent {
     ],
   };
 
-public mainHeading = 'Why SprintPark Stands Out';
+  public mainHeading = 'Why SprintPark Stands Out';
 
-public content =
-  'At SprintPark, we’re more than a staffing partner — we’re your long-term growth enabler. Our strength lies in our strategic mindset, client-focused execution, and unwavering commitment to quality.';
+  public content =
+    'At SprintPark, we’re more than a staffing partner — we’re your long-term growth enabler. Our strength lies in our strategic mindset, client-focused execution, and unwavering commitment to quality.';
 
-public cards = [
-  {
-    title: 'Expertise You Can Rely On',
-    desc: `We are with over 15 years of experience in talent acquisition and workforce solutions,
+  public cards = [
+    {
+      title: 'Expertise You Can Rely On',
+      desc: `We are with over 15 years of experience in talent acquisition and workforce solutions,
            our team brings deep industry knowledge and proven hiring strategies to every project.`,
-  },
-  {
-    title: 'Client-First Philosophy',
-    desc: `Your success is our priority. We listen, adapt, and deliver staffing solutions
+    },
+    {
+      title: 'Client-First Philosophy',
+      desc: `Your success is our priority. We listen, adapt, and deliver staffing solutions
            that not only meet but exceed your expectations every time.`,
-  },
-  {
-    title: 'Tailored Engagement Models',
-    desc: `We don’t believe in one-size-fits-all. From contract to permanent roles, we offer flexible staffing models
+    },
+    {
+      title: 'Tailored Engagement Models',
+      desc: `We don’t believe in one-size-fits-all. From contract to permanent roles, we offer flexible staffing models
            built around your unique goals and business dynamics.`,
-  },
-  {
-    title: 'Transparent & Trusted Partnerships',
-    desc: `Integrity and trust are at the core of everything we do. Our pricing is transparent,
+    },
+    {
+      title: 'Transparent & Trusted Partnerships',
+      desc: `Integrity and trust are at the core of everything we do. Our pricing is transparent,
            and our processes are designed to drive measurable value and long-term partnerships.`,
-  },
-];
+    },
+  ];
 
-public image = {
-  left: {
-    src: 'assets/services/staffing-service/spk-stands-out.png',
-    alt: 'Why SprintPark Image',
-  },
-};
-
-
+  public image = {
+    left: {
+      src: 'assets/services/staffing-service/spk-stands-out.png',
+      alt: 'Why SprintPark Image',
+    },
+  };
 
   // Section 5
   public whatWeDoHeading = 'Our Staffing Services';

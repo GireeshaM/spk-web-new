@@ -11,16 +11,16 @@ describe('HealthCareComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [HealthCareComponent],
-         providers: [
-      {
-        provide: ActivatedRoute,
-        useValue: {
-          params: of({}),  // or whatever params you want to mock
-          snapshot: { paramMap: { get: () => null } },
-          // add more mocks if your component uses them
-        }
-      }
-    ],
+      providers: [
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            params: of({}), // or whatever params you want to mock
+            snapshot: { paramMap: { get: () => null } },
+            // add more mocks if your component uses them
+          },
+        },
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(HealthCareComponent);

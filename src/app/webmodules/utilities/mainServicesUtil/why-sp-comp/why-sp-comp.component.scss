@@ -1,15 +1,16 @@
 .card {
-  opacity: 1;      
-  transform: rotate(0deg); 
+  opacity: 1;
+  transform: rotate(0deg);
 }
 
-
 .card-hover {
-  background: linear-gradient(275.69deg, #1A0951 2.22%, #4B1078 76.02%);
+  background: linear-gradient(275.69deg, #1a0951 2.22%, #4b1078 76.02%);
   color: #fff;
   border-radius: 12px;
   border: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   cursor: pointer;
 }
 

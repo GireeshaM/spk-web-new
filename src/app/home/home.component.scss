@@ -22,29 +22,29 @@
         text-align: left !important;
       }
       // Buttons
-        .btn-1,
-        .btn-2 {
-          padding: 0.75rem 1rem;     
-          transition: all 0.3s ease-in-out;
-        }
-        .btn-1 {
-          background: #EF7A13;
-          color: #fff;
-          border: none;
-        }
-        .btn-1:hover {
-          background-color: #e68a00;
-          transform: scale(1.05);
-        }
-        .btn-2 {
-          color: #fff;
-          border: 1px solid #fff;
-        }
-        .btn-2:hover {
+      .btn-1,
+      .btn-2 {
+        padding: 0.75rem 1rem;
+        transition: all 0.3s ease-in-out;
+      }
+      .btn-1 {
+        background: #ef7a13;
+        color: #fff;
+        border: none;
+      }
+      .btn-1:hover {
+        background-color: #e68a00;
+        transform: scale(1.05);
+      }
+      .btn-2 {
+        color: #fff;
+        border: 1px solid #fff;
+      }
+      .btn-2:hover {
         background-color: #e0e0e0 !important;
         color: black !important;
-          transform: scale(1.05);
-        }
+        transform: scale(1.05);
+      }
       /* Sparkles */
       .sparkle {
         width: 6px;
@@ -95,31 +95,31 @@
       }
     }
     // Carousel controls
-   .carousel-control-prev,
-.carousel-control-next {
-  width: 50px;
-  height: 50px;
-  top: 75%;
-  border: 4px solid #ff9900;
-  border-radius: 50%;
-  background: transparent !important;
-  opacity: 1 !important;
-  transition: all 0.3s ease-in-out; // smooth transition
-  color: #e6e4e1 !important;
-  margin-left: 80px !important;
-}
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-  background: #d2ac23;
-  color: #fff !important;
-  transform: scale(1.15);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
-}
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 50px;
+      height: 50px;
+      top: 75%;
+      border: 4px solid #ff9900;
+      border-radius: 50%;
+      background: transparent !important;
+      opacity: 1 !important;
+      transition: all 0.3s ease-in-out; // smooth transition
+      color: #e6e4e1 !important;
+      margin-left: 80px !important;
+    }
+    .carousel-control-prev:hover,
+    .carousel-control-next:hover {
+      background: #d2ac23;
+      color: #fff !important;
+      transform: scale(1.15);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+    }
   }
 }
 //logo slider
 .logo-section {
- background: linear-gradient(90deg, #360060 0%, #5F3481 104.75%);
+  background: linear-gradient(90deg, #360060 0%, #5f3481 104.75%);
   max-width: 1910px;
   .logo-slider {
     .logo-track {
@@ -152,27 +152,27 @@
 // Explore Our case Studies
 /* Card container */
 .main-image {
-     height:400px;
-      border-radius: 15px;
-      object-fit: cover;
-      z-index: 2;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
+  height: 400px;
+  border-radius: 15px;
+  object-fit: cover;
+  z-index: 2;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
 //features section
 .title {
-  color:#372399;                    
+  color: #372399;
 }
 //about-sprintpark-section
 .about-sprintpark-section {
- background: rgba(242, 241, 249, 1); 
+  background: rgba(242, 241, 249, 1);
   .gradient-underline {
-    display: inline-block; 
+    display: inline-block;
     border-bottom: 3px solid;
     border-image-source: linear-gradient(90deg, #8b59ef 0%, #6a6cef 100%);
     border-image-slice: 1; /* required for border-image to show */
-     /* spacing between text & underline */
+    /* spacing between text & underline */
   }
-  .abt-spk{
+  .abt-spk {
     color: rgba(55, 35, 153, 1);
   }
   .feature-image {
@@ -201,29 +201,30 @@
 //features section end
 //section 3 start of (what we offer and industries we serve)
 .offer-industries-bg {
-   background: #f6f4fd url("/assets/home/industries/industries-bgwave.png") no-repeat center bottom ;
+  background: #f6f4fd url("/assets/home/industries/industries-bgwave.png")
+    no-repeat center bottom;
   background-size: 100% 600px;
   min-height: 100vh;
-  
+
   .whatWeOffer-section,
   .industries-section {
     background: transparent;
     margin-bottom: 60px;
   }
   row.view-all {
-  flex-wrap: nowrap;   /* keeps all cards in one row */
-  overflow-x: auto;    /* allow horizontal scroll if needed */
-}
-.row.view-all .col-md-4 {
-  flex: 0 0 25%;       /* each takes 25% width for 4 cards */
-  max-width: 25%;
-}
+    flex-wrap: nowrap; /* keeps all cards in one row */
+    overflow-x: auto; /* allow horizontal scroll if needed */
+  }
+  .row.view-all .col-md-4 {
+    flex: 0 0 25%; /* each takes 25% width for 4 cards */
+    max-width: 25%;
+  }
   .whatWeOffer-section {
     margin-bottom: 6rem;
   }
 }
 .offer-industries-bg section {
-  padding-top: 60px;  /* space above each section */
+  padding-top: 60px; /* space above each section */
 }
 .whatWeOffer-section .bg-white:hover h6,
 .whatWeOffer-section .bg-white:hover p {
@@ -273,7 +274,7 @@
 }
 .collaborate-section {
   overflow: hidden;
-  background: #DEDEFF66;
+  background: #dedeff66;
 }
 // Collaboration cards hover effect
 .collaborate-card:hover {
@@ -290,7 +291,7 @@
 // Collaboration Section end
 // stats section
 .stats-section {
-  background: linear-gradient(90deg, #360060 0%, #5F3481 104.75%);
+  background: linear-gradient(90deg, #360060 0%, #5f3481 104.75%);
   padding: 20px 0;
   min-height: 200px;
 }
@@ -309,18 +310,22 @@
 .testimonial-section {
   background-color: #f6f4fd;
   background-image:
-    url("/assets/home/testimonials/testinomial-bg.png") ,
+    url("/assets/home/testimonials/testinomial-bg.png"),
     url("/assets/home/testimonials/testinomial-curve.png") !important;
   background-repeat: no-repeat, no-repeat;
   background-position: center, center;
-  background-size: 100% auto, cover;
+  background-size:
+    100% auto,
+    cover;
   height: 700px;
 }
 // Testimonial cards
 /* Hover effect */
 .testimonial-section .bg-white:hover {
   background: #372399 !important;
-  transition: background 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
   color: #fdfdfd;
 }
 // .testimonial-card{
@@ -328,8 +333,8 @@
 // }
 .testimonial-section .bg-white:hover .fw-bold,
 .testimonial-section .bg-white:hover .fs-6,
-.testimonial-section .bg-white:hover .text-secondary{
-  color:  #fdfdfd !important;
+.testimonial-section .bg-white:hover .text-secondary {
+  color: #fdfdfd !important;
 }
 /* Mobile horizontal scroll (for cards) */
 .testimonial-wrapper {
@@ -447,30 +452,29 @@
     width: 420px;
     height: 436px;
   }
-    .testimonial-section {
+  .testimonial-section {
     background-image: none;
-    }
+  }
   .about-sprintpark-section .move-right {
     margin-left: 90px;
   }
   .ms-lg-150 {
     margin-left: 200px !important;
   }
-   .collaborate-card {
+  .collaborate-card {
     min-height: 200px;
   }
   .stats-section {
     padding: 32px 0;
   }
-
 }
 @media (max-width: 991.98px) {
-  .whatWeOffer-section .row.view-all > div[class*='col-'] {
+  .whatWeOffer-section .row.view-all > div[class*="col-"] {
     flex: 0 0 100%;
     max-width: 100%;
   }
-.row.view-all {
-  width: 75%;
-  margin-left: 90px;
-}
+  .row.view-all {
+    width: 75%;
+    margin-left: 90px;
+  }
 }

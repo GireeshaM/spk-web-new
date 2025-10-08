@@ -3,14 +3,9 @@ import { IndustrySubUtilComponent } from '../../utilities/industry-sub-util/indu
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 
-
-
-
-
-
 interface Section {
   heroImage: string;
-  whyheader:string;
+  whyheader: string;
   smallHeading: string;
   whyList: Array<{ title: string; description: string }>;
   steps: Array<{ title: string; description: string; icon?: string }>;
@@ -19,36 +14,43 @@ interface Section {
 
 // ✅ Common reusable steps
 const commonSteps = [
-    {
+  {
     title: 'Understand',
     icon: 'assets/Industries/understand.svg',
-    description: 'We learn about your business challenges, goals and ambitions, strategic drivers and culture.'
+    description:
+      'We learn about your business challenges, goals and ambitions, strategic drivers and culture.',
   },
   {
     title: 'Assess',
     icon: 'assets/Industries/access.svg',
-    description: 'We assess your current risk position relative to your needs and goals, and develop a roadmap for optimizing your cybersecurity.'
+    description:
+      'We assess your current risk position relative to your needs and goals, and develop a roadmap for optimizing your cybersecurity.',
   },
   {
     title: 'Design',
     icon: 'assets/Industries/design.svg',
-    description: 'We design solutions, processes and strategies that allow you to achieve the desired state of security and effectiveness.'
+    description:
+      'We design solutions, processes and strategies that allow you to achieve the desired state of security and effectiveness.',
   },
   {
     title: 'Implement',
     icon: 'assets/Industries/implement.svg',
-    description: 'We draw on our experience and expertise to implement the agreed technical solutions, governance, compliance frameworks and migration processes.'
+    description:
+      'We draw on our experience and expertise to implement the agreed technical solutions, governance, compliance frameworks and migration processes.',
   },
   {
     title: 'Manage and Optimize',
     icon: 'assets/Industries/manage-and-optimize.svg',
-    description: 'We operate to deliver tangible, value-added cyber security on a 24/7 basis. We use our methodology to evolve and optimize your solution over time, to maximize value.'
-  }
+    description:
+      'We operate to deliver tangible, value-added cyber security on a 24/7 basis. We use our methodology to evolve and optimize your solution over time, to maximize value.',
+  },
 ];
 const sectionsData: Record<string, Section> = {
   intelligentinnovation: {
-    heroImage: 'assets/Industries/healthCare-Life-Science-SubPage/intelligent-automation.jpg',
-    whyheader: 'How can automation reshape patient care and medical innovation?',
+    heroImage:
+      'assets/Industries/healthCare-Life-Science-SubPage/intelligent-automation.jpg',
+    whyheader:
+      'How can automation reshape patient care and medical innovation?',
     smallHeading: 'Intelligent Automation in Healthcare & Life Sciences',
     text: 'Our Working Strategy',
     whyList: [
@@ -77,9 +79,11 @@ const sectionsData: Record<string, Section> = {
   },
 
   connectedInfrastructure: {
-    heroImage: 'assets/Industries/healthCare-Life-Science-SubPage/connected-infrastructure.jpg',
-   whyheader: 'How Does Connected Infrastructure Transform Healthcare?',
-    smallHeading: 'Building smarter systems for efficient, secure, and patient-centered care.',
+    heroImage:
+      'assets/Industries/healthCare-Life-Science-SubPage/connected-infrastructure.jpg',
+    whyheader: 'How Does Connected Infrastructure Transform Healthcare?',
+    smallHeading:
+      'Building smarter systems for efficient, secure, and patient-centered care.',
     text: 'Our Transformation Model',
     whyList: [
       {
@@ -106,12 +110,12 @@ const sectionsData: Record<string, Section> = {
     steps: commonSteps,
   },
 
- 
- dataSecurity:
- {
-    heroImage: 'assets/Industries/healthCare-Life-Science-SubPage/data-Security.jpg',
+  dataSecurity: {
+    heroImage:
+      'assets/Industries/healthCare-Life-Science-SubPage/data-Security.jpg',
     whyheader: 'Why Is Data Security & Compliance Critical in Healthcare?',
-    smallHeading: 'Protecting sensitive health information while ensuring trust and regulatory alignment.',
+    smallHeading:
+      'Protecting sensitive health information while ensuring trust and regulatory alignment.',
     text: 'Our Working Strategy',
     whyList: [
       {
@@ -139,8 +143,10 @@ const sectionsData: Record<string, Section> = {
   },
 
   projectDelivery: {
-    heroImage: 'assets/Industries/healthCare-Life-Science-SubPage/healthCare-project-delivery.jpg',
-    whyheader: 'How Can Effective Project Delivery Transform Healthcare Services?',
+    heroImage:
+      'assets/Industries/healthCare-Life-Science-SubPage/healthCare-project-delivery.jpg',
+    whyheader:
+      'How Can Effective Project Delivery Transform Healthcare Services?',
     smallHeading:
       'Achieving efficiency, innovation, and better patient outcomes through structured project execution.',
     text: 'Our Delivery Framework',
@@ -169,10 +175,12 @@ const sectionsData: Record<string, Section> = {
     steps: commonSteps,
   },
 
-   talentSolutions: {
-    heroImage: 'assets/Industries/healthCare-Life-Science-SubPage/expert-talent-solution.jpg',
+  talentSolutions: {
+    heroImage:
+      'assets/Industries/healthCare-Life-Science-SubPage/expert-talent-solution.jpg',
     whyheader: 'How Can Expert Talent Solutions Empower the Healthcare Sector?',
-    smallHeading: 'Building stronger healthcare systems with skilled professionals and specialized expertise.',
+    smallHeading:
+      'Building stronger healthcare systems with skilled professionals and specialized expertise.',
     text: 'Our Talent Strategy',
     whyList: [
       {
@@ -199,10 +207,12 @@ const sectionsData: Record<string, Section> = {
     steps: commonSteps,
   },
 
-   patientInnovation: {
-    heroImage: 'assets/Industries/healthCare-Life-Science-SubPage/patient-centered-innovations.jpg',
+  patientInnovation: {
+    heroImage:
+      'assets/Industries/healthCare-Life-Science-SubPage/patient-centered-innovations.jpg',
     whyheader: 'How Can Patient-Centered Innovation Transform Healthcare?',
-    smallHeading: 'Empowering patients through personalized care, technology, and human-centered design.',
+    smallHeading:
+      'Empowering patients through personalized care, technology, and human-centered design.',
     text: 'Our Innovation Approach',
     whyList: [
       {
@@ -234,22 +244,19 @@ const sectionsData: Record<string, Section> = {
   selector: 'app-health-care-i',
   imports: [IndustrySubUtilComponent, CommonModule],
   templateUrl: './health-care-i.component.html',
-  styleUrl: './health-care-i.component.scss'
+  styleUrl: './health-care-i.component.scss',
 })
- 
-
-
 export class HealthCareIComponent implements OnInit {
-route = inject(ActivatedRoute);
+  route = inject(ActivatedRoute);
   currentSectionData!: Section;
 
- public ngOnInit(): void {
-  this.route.paramMap.subscribe(params => {
-    const rawKey = params.get('section') || 'intelligentinnovation';
-    const sectionKey = rawKey.replace(/-([a-z])/g, (_, c) => c.toUpperCase());
+  public ngOnInit(): void {
+    this.route.paramMap.subscribe((params) => {
+      const rawKey = params.get('section') || 'intelligentinnovation';
+      const sectionKey = rawKey.replace(/-([a-z])/g, (_, c) => c.toUpperCase());
 
-    this.currentSectionData = sectionsData[sectionKey] ?? sectionsData['intelligentinnovation'];
-  });
-}
-
+      this.currentSectionData =
+        sectionsData[sectionKey] ?? sectionsData['intelligentinnovation'];
+    });
+  }
 }

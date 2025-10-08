@@ -23,7 +23,7 @@ import {
 import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-home',
-  imports: [CarouselModule, CommonModule,RouterLink],
+  imports: [CarouselModule, CommonModule, RouterLink],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   animations: [
@@ -90,9 +90,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ];
   public ngOnInit(): void {
     this.offerCardVisible = this.whatWeOffer.map(() => false);
-     this.checkMobile(); // Set isMobile before grouping
-  this.groupTestimonials();
-}
+    this.checkMobile(); // Set isMobile before grouping
+    this.groupTestimonials();
+  }
   public ngAfterViewInit(): void {
     if (this.isBrowser) {
       this.checkInView();
@@ -127,17 +127,17 @@ export class HomeComponent implements OnInit, AfterViewInit {
       }, 100);
     }
   }
-public groupTestimonials(): void {
-  this.groupedTestimonials = []; // Clear previous
-  const perSlide = this.isMobile ? 1 : 2; // You can use 3 if needed for desktop
-  for (let i = 0; i < this.testimonials.length; i += perSlide) {
-    this.groupedTestimonials.push(this.testimonials.slice(i, i + perSlide));
+  public groupTestimonials(): void {
+    this.groupedTestimonials = []; // Clear previous
+    const perSlide = this.isMobile ? 1 : 2; // You can use 3 if needed for desktop
+    for (let i = 0; i < this.testimonials.length; i += perSlide) {
+      this.groupedTestimonials.push(this.testimonials.slice(i, i + perSlide));
+    }
+    // Optional: loop the carousel by repeating the first group
+    if (this.groupedTestimonials.length > 0) {
+      this.groupedTestimonials.push(this.groupedTestimonials[0]);
+    }
   }
-  // Optional: loop the carousel by repeating the first group
-  if (this.groupedTestimonials.length > 0) {
-    this.groupedTestimonials.push(this.groupedTestimonials[0]);
-  }
-}
   @HostListener('window:scroll')
   public onScroll(): void {
     if (!this.isBrowser) return;
@@ -168,7 +168,7 @@ public groupTestimonials(): void {
   // what we offer
   @ViewChildren('offerCard') offerCards!: QueryList<ElementRef>;
   public offerCardVisible: boolean[] = [];
-  public toggleViewAll() {
+  public toggleViewAll():void {
     this.viewAll = !this.viewAll;
   }
   public whatWeOffer = [
@@ -176,25 +176,25 @@ public groupTestimonials(): void {
       img: 'assets/home/whatWeOffer/software-services.png',
       title: 'Software services',
       desc: 'Custom software solutions designed to meet your unique business needs.',
-      link: '/software-service' 
+      link: '/software-service',
     },
     {
       img: 'assets/home/whatWeOffer/It_consulting.png',
       title: 'IT Consulting',
       desc: 'Expert guidance and strategic solutions to overcome challenges and drive your business.',
-       link: '/it-consulting' 
+      link: '/it-consulting',
     },
     {
       img: 'assets/home/whatWeOffer/staffing-solutions.png',
       title: 'Staffing Solutions',
       desc: "Connect with the right talent to drive your organization's growth and success.",
-      link: '/staffing'
+      link: '/staffing',
     },
-     {
+    {
       img: 'assets/home/whatWeOffer/project-management.png',
       title: 'Project-Management',
-      desc: "Seamless project execution with clear timelines, resources, and results.",
-      link: '/project-management'
+      desc: 'Seamless project execution with clear timelines, resources, and results.',
+      link: '/project-management',
     },
   ];
   // Features
@@ -263,26 +263,61 @@ public groupTestimonials(): void {
     },
   ];
   // Industries
- // Industries
-public industries = [
-  { img: 'assets/home/industries/industry-it-telecommunications.jpg', alt: 'IT & TeleCommunications', title: 'IT & TeleCommunications', link: '/itAndTelecommunications' },
-  { img: 'assets/home/industries/industries-healthcare.jpg', alt: 'Healthcare & Life Sciences', title: 'Healthcare & Life Sciences', link: '/healthCareAndLifeSciences' },
-  { img: 'assets/home/industries/industry-education.jpg', alt: 'Education', title: 'Education', link: '/education' },
-  { img: 'assets/home/industries/industries-government.jpg', alt: 'Government', title: 'Government', link: '/government' },
-  { img: 'assets/home/industries/transportation.jpg', alt: 'Transportation and Logistics', title: 'Transportation and Logistics', link: '/transportationAndLogistics' },
-  { img: 'assets/home/industries/banking.jpg', alt: 'Banking', title: 'Banking', link: '/banking' },
-  { img: 'assets/home/industries/manufactuing.jpg', alt: 'Manufacturing', title: 'Manufacturing', link: '/manufacturing' }
-];
-// Duplicate first 2 items at the end to allow smooth circular scroll
-public industriesCarousel = [
-  ...this.industries,
-  ...this.industries.slice(0, 2)
-];
-public responsiveOptions = [
-  { breakpoint: '1024px', numVisible: 3, numScroll: 1 },
-  { breakpoint: '768px', numVisible: 2, numScroll: 1 },
-  { breakpoint: '560px', numVisible: 1, numScroll: 1 },
-];
+  // Industries
+  public industries = [
+    {
+      img: 'assets/home/industries/industry-it-telecommunications.jpg',
+      alt: 'IT & TeleCommunications',
+      title: 'IT & TeleCommunications',
+      link: '/itAndTelecommunications',
+    },
+    {
+      img: 'assets/home/industries/industries-healthcare.jpg',
+      alt: 'Healthcare & Life Sciences',
+      title: 'Healthcare & Life Sciences',
+      link: '/healthCareAndLifeSciences',
+    },
+    {
+      img: 'assets/home/industries/industry-education.jpg',
+      alt: 'Education',
+      title: 'Education',
+      link: '/education',
+    },
+    {
+      img: 'assets/home/industries/industries-government.jpg',
+      alt: 'Government',
+      title: 'Government',
+      link: '/government',
+    },
+    {
+      img: 'assets/home/industries/transportation.jpg',
+      alt: 'Transportation and Logistics',
+      title: 'Transportation and Logistics',
+      link: '/transportationAndLogistics',
+    },
+    {
+      img: 'assets/home/industries/banking.jpg',
+      alt: 'Banking',
+      title: 'Banking',
+      link: '/banking',
+    },
+    {
+      img: 'assets/home/industries/manufactuing.jpg',
+      alt: 'Manufacturing',
+      title: 'Manufacturing',
+      link: '/manufacturing',
+    },
+  ];
+  // Duplicate first 2 items at the end to allow smooth circular scroll
+  public industriesCarousel = [
+    ...this.industries,
+    ...this.industries.slice(0, 2),
+  ];
+  public responsiveOptions = [
+    { breakpoint: '1024px', numVisible: 3, numScroll: 1 },
+    { breakpoint: '768px', numVisible: 2, numScroll: 1 },
+    { breakpoint: '560px', numVisible: 1, numScroll: 1 },
+  ];
   public stats = [
     {
       img: 'assets/home/statistics/satisfied-clients.png',
@@ -317,22 +352,23 @@ public responsiveOptions = [
     {
       image: 'assets/home/our-insights/data-security.jpg',
       title: "Salesforce's Commitment to Data Security and Privacy Excellence",
-       route: 'marketing'
+      route: 'marketing',
     },
     {
       image: 'assets/home/our-insights/markrting-cloud.jpg',
       title: 'Salesforce Marketing Cloud Empowers Marketing of Businesses',
-     route: 'flowBuilder'
+      route: 'flowBuilder',
     },
     {
       image: 'assets/home/our-insights/health-cloud.jpg',
       title: 'Salesforce Health Cloud transform Payer sector in Healthcare',
-      route: 'automateYourBusinessThroughSalesforceBuilder'
+      route: 'automateYourBusinessThroughSalesforceBuilder',
     },
-      {
+    {
       image: 'assets/home/our-insights/salesforce-customization.jpeg',
-      title: " Exposing the Tempting Benefits of Choosing Salesforce Customization",
-      route: 'exploringThePotentialOfSalesforceAnalyticsCloud'
+      title:
+        ' Exposing the Tempting Benefits of Choosing Salesforce Customization',
+      route: 'exploringThePotentialOfSalesforceAnalyticsCloud',
     },
   ];
   public testimonials = [
@@ -350,42 +386,42 @@ public responsiveOptions = [
       rating: 5,
       text: '“A highly reliable partner — their team is responsive, professional, and easy to work with.”',
     },
-     {
+    {
       img: 'assets/home/testimonials/vikram_testinomial.png',
       name: 'Vikram Malhotra',
       role: ' Program Manager, Google Cloud',
       rating: 4,
       text: '“Their process is smooth, transparent, and very easy to work with.”',
     },
-     {
+    {
       img: 'assets/home/testimonials/sofia_testinomial.png',
       name: 'Sophia Johnson',
       role: ' Customer Success Manager, Salesforce',
       rating: 4,
       text: '“ We value SprintPark for consistently providing skilled and reliable professionals.”',
     },
-     {
+    {
       img: 'assets/home/testimonials/karen_testinomial.png',
       name: 'Karen.S',
       role: ' Enterprise Account Director, Microsoft Azure',
       rating: 4,
       text: '“ The team is supportive, attentive, and always quick to respond.”',
     },
-     {
+    {
       img: 'assets/home/testimonials/daniel_testinomial.png',
       name: 'Daniel Lee',
       role: 'Technical Consultant, Salesforce CRM',
       rating: 4,
       text: '“SprintPark helped us scale efficiently with the right talent.”',
     },
-     {
+    {
       img: 'assets/home/testimonials/arun_testinomial.png',
       name: 'Arun Kumar',
       role: ' Partner Solutions Lead, AWS India',
       rating: 4,
       text: '“They take the time to understand our culture and needs.”',
     },
-     {
+    {
       img: 'assets/home/testimonials/megha_testinomial.png',
       name: 'Megha Sharma',
       role: 'Training & Certification Manager, AWS',
@@ -400,17 +436,17 @@ public responsiveOptions = [
     const prevMobile = this.isMobile;
     this.checkMobile();
     if (prevMobile !== this.isMobile) {
-    this.groupTestimonials();
-  }
+      this.groupTestimonials();
+    }
   }
   public checkMobile(): void {
     if (this.isBrowser) {
       this.isMobile = window.innerWidth < 768;
     }
   }
-get isFourCardsVisible(): boolean {
-  return this.currentInsightIndex < this.ourInsightsSlides.length - 2;
-}
+  public get isFourCardsVisible(): boolean {
+    return this.currentInsightIndex < this.ourInsightsSlides.length - 2;
+  }
   public moveInsight(step: number): void {
     const newIndex = this.currentInsightIndex + step;
     if (newIndex >= 0 && newIndex < this.ourInsightsSlides.length) {

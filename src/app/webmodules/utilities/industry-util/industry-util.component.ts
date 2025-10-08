@@ -12,7 +12,7 @@ import { RouterLink } from '@angular/router';
 export class IndustryUtilComponent {
   @Input() img!: string;
   @Input() itHeader!: string;
-  @Input() itHeading!:string;
+  @Input() itHeading!: string;
   @Input() itContent!: string;
   @Input() itSubHeading!: string;
   @Input() cards: {

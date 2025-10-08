@@ -9,7 +9,6 @@
 
   <div class="bg-curve"><!-- Decorative curve --></div>
 
-
   <!-- Content Section -->
   <section
     class="container-fluid px-2 pt-5 pb-7 font-family-inter"
@@ -39,7 +38,7 @@
       <h1 class="text-white fw-bold">
         {{ whyheader }}
       </h1>
-      <p class="smallHeading text-white me-5  w-75">
+      <p class="smallHeading text-white me-5 w-75">
         {{ smallHeading }}
       </p>
     </div>
@@ -102,9 +101,7 @@
         <!-- Left column (with content for even indices) -->
         <div class="col timeline-left">
           <div *ngIf="i % 2 === 0" class="content-box">
-            <h5
-              class="fw-bold fs-5 mb-3 d-flex align-items-center"
-            >
+            <h5 class="fw-bold fs-5 mb-3 d-flex align-items-center">
               {{ step.title }}
               <span *ngIf="step.icon" class="step-icon">
                 <img [src]="step.icon" [alt]="step.title" class="icon-image" />

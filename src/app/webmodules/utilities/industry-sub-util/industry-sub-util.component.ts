@@ -22,7 +22,7 @@ interface Step {
   styleUrl: './industry-sub-util.component.scss',
 })
 export class IndustrySubUtilComponent {
- // From IndustrySubUtilComponent
+  // From IndustrySubUtilComponent
   @Input() heroImage?: string;
   @Input() heroHeading?: string;
   @Input() subHeading?: string;

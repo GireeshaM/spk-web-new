@@ -1,321 +1,420 @@
 <!-- Main Carousel -->
 <div class="home text-align-center align-items-center">
   <section class="carousel-section">
-  <div id="myCarousel" class="carousel slide text-align-center align-items-center " data-bs-ride="carousel" data-bs-interval="5000">
-    <!-- Slides -->
-    <div class="carousel-inner">
-      <div
-        class="carousel-item "
-        *ngFor="let slide of slides; let first = first"
-        [class.active]="first"
-      >
-        <img
-          [src]="slide.image"
-          class="img-fluid w-100 "
-          [alt]="slide.title"
-        />
-        <div class="container">
-          <div
-            class="carousel-caption d-flex flex-column align-items-sm-start align-items-center text-sm-start text-center gap-3"
-          >
-            <h1 class="carousel-title text-light fw-bold">
-              {{ slide.title }}
-            </h1>
-            <p class="carousel-subtitle text-light me-sm-5">
-              {{ slide.subtitle }}
-            </p>
-            <div  class="btn-group mt-4 d-flex flex-sm-row flex-column gap-3 w-100 w-sm-auto">
-             <a
-              class="btn btn-lg btn-1 d-flex justify-content-center align-items-center text-light fw-lighter rounded-pill flex-fill flex-sm-none"
-              href="javascript:void(0)"
-              data-bs-toggle="modal"
-              data-bs-target="#loginModal"
-             >
-                Get Started with AI
-                <span class="sparkle position-absolute"></span>
-                <span class="sparkle position-absolute"></span>
-                <span class="sparkle position-absolute"></span>
-                <span class="sparkle position-absolute"></span>
-                <span class="sparkle position-absolute"></span>
-              </a>
-              <a
-                class="btn btn-lg btn-2 d-flex justify-content-center align-items-center text-light fw-lighter rounded-pill flex-fill flex-sm-none"
-                href="/contact-us"
+    <div
+      id="myCarousel"
+      class="carousel slide text-align-center align-items-center"
+      data-bs-ride="carousel"
+      data-bs-interval="5000"
+    >
+      <!-- Slides -->
+      <div class="carousel-inner">
+        <div
+          class="carousel-item"
+          *ngFor="let slide of slides; let first = first"
+          [class.active]="first"
+        >
+          <img
+            [src]="slide.image"
+            class="img-fluid w-100"
+            [alt]="slide.title"
+          />
+          <div class="container">
+            <div
+              class="carousel-caption d-flex flex-column align-items-sm-start align-items-center text-sm-start text-center gap-3"
+            >
+              <h1 class="carousel-title text-light fw-bold">
+                {{ slide.title }}
+              </h1>
+              <p class="carousel-subtitle text-light me-sm-5">
+                {{ slide.subtitle }}
+              </p>
+              <div
+                class="btn-group mt-4 d-flex flex-sm-row flex-column gap-3 w-100 w-sm-auto"
               >
-                Let's Talk
-              </a>
+                <a
+                  class="btn btn-lg btn-1 d-flex justify-content-center align-items-center text-light fw-lighter rounded-pill flex-fill flex-sm-none"
+                  href="javascript:void(0)"
+                  data-bs-toggle="modal"
+                  data-bs-target="#loginModal"
+                >
+                  Get Started with AI
+                  <span class="sparkle position-absolute"></span>
+                  <span class="sparkle position-absolute"></span>
+                  <span class="sparkle position-absolute"></span>
+                  <span class="sparkle position-absolute"></span>
+                  <span class="sparkle position-absolute"></span>
+                </a>
+                <a
+                  class="btn btn-lg btn-2 d-flex justify-content-center align-items-center text-light fw-lighter rounded-pill flex-fill flex-sm-none"
+                  href="/contact-us"
+                >
+                  Let's Talk
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <!-- Controls -->
+      <button
+        class="carousel-control-prev ms-5 rounded-circle px-3 py-3"
+        type="button"
+        data-bs-target="#myCarousel"
+        data-bs-slide="prev"
+      >
+        <span aria-hidden="true">
+          <i class="fas fa-chevron-left fa-sm"></i>
+        </span>
+      </button>
+      <button
+        class="carousel-control-next d-flex align-items-center justify-content-center me-5 rounded-circle px-3 py-3"
+        type="button"
+        data-bs-target="#myCarousel"
+        data-bs-slide="next"
+      >
+        <span aria-hidden="true">
+          <i class="fas fa-chevron-right fa-sm"></i>
+        </span>
+      </button>
     </div>
-    <!-- Controls -->
-    <button
-      class="carousel-control-prev ms-5 rounded-circle px-3 py-3"
-      type="button"
-      data-bs-target="#myCarousel"
-      data-bs-slide="prev"
-    >
-      <span aria-hidden="true">
-        <i class="fas fa-chevron-left fa-sm"></i>
-      </span>
-    </button>
-    <button
-      class="carousel-control-next d-flex align-items-center justify-content-center me-5 rounded-circle px-3 py-3"
-      type="button"
-      data-bs-target="#myCarousel"
-      data-bs-slide="next"
-    >
-      <span aria-hidden="true">
-        <i class="fas fa-chevron-right fa-sm"></i>
-      </span>
-    </button>
-  </div>
-  <!-- Partner Logos -->
- <section id="about-us" class="logo-section">
+    <!-- Partner Logos -->
+    <section id="about-us" class="logo-section">
       <div class="logo-slider position-relative overflow-hidden">
-  <div class="logo-track d-flex">
-    <!-- First set of logos -->
-    <div class="logo-container d-flex justify-content-evenly align-items-center">
-      <img src="assets/home/partner-logos/salesforce.png" alt="Salesforce" />
-      <img src="assets/home/partner-logos/aws.png" alt="AWS" style="width: 90px;height: 70px;"/>
-       <img src="assets/home/partner-logos/cloudbees.png" alt="cloudbees" />
-      <img src="assets/home/partner-logos/microsoft.png" alt="Microsoft" />
-      <img src="assets/home/partner-logos/copado.png" alt="Copado" />
-      <img src="assets/home/partner-logos/google.png" alt="Google" />
-      <img src="assets/home/partner-logos/salesforce.png" alt="Salesforce" />
-      <img src="assets/home/partner-logos/aws.png" alt="AWS"style="width: 90px;height: 70px;" />
-       <img src="assets/home/partner-logos/cloudbees.png" alt="cloudbees" />
-      <img src="assets/home/partner-logos/microsoft.png" alt="Microsoft" />
-      <img src="assets/home/partner-logos/copado.png" alt="Copado" />
-      <img src="assets/home/partner-logos/google.png" alt="Google" />
-    </div>
-   
-  </div>
-</div>
- 
-    </section>
-</section>
-  <!-- FEATURES   About sprintpark -->
-<section class="about-sprintpark-section pb-5">
-  <div class="container py-5 position-relative">
-    <div class="row align-items-center flex-column flex-md-row gx-5 position-relative">
-      <!-- Left Image -->
-      <div class="col-12 col-md-5 image-wrapper mb-4 mb-md-0 m-lg-4 m-md-4 position-relative"
-           [ngClass]="{'pre-slide-left': !imageInView, 'slide-left': imageInView}">
-        <img src="assets/home/about-sprintpark/abt-spk-right-image.jpg"
-             alt="Team working"
-             class="main-image img-fluid w-100 position-relative display-block" />
-        <img src="assets/home/about-sprintpark/Ellipse.png"
-             alt="Ellipse"
-             class="ellipse-shape img-fluid position-absolute" />
+        <div class="logo-track d-flex">
+          <!-- First set of logos -->
+          <div
+            class="logo-container d-flex justify-content-evenly align-items-center"
+          >
+            <img
+              src="assets/home/partner-logos/salesforce.png"
+              alt="Salesforce"
+            />
+            <img
+              src="assets/home/partner-logos/aws.png"
+              alt="AWS"
+              style="width: 90px; height: 70px"
+            />
+            <img
+              src="assets/home/partner-logos/cloudbees.png"
+              alt="cloudbees"
+            />
+            <img
+              src="assets/home/partner-logos/microsoft.png"
+              alt="Microsoft"
+            />
+            <img src="assets/home/partner-logos/copado.png" alt="Copado" />
+            <img src="assets/home/partner-logos/google.png" alt="Google" />
+            <img
+              src="assets/home/partner-logos/salesforce.png"
+              alt="Salesforce"
+            />
+            <img
+              src="assets/home/partner-logos/aws.png"
+              alt="AWS"
+              style="width: 90px; height: 70px"
+            />
+            <img
+              src="assets/home/partner-logos/cloudbees.png"
+              alt="cloudbees"
+            />
+            <img
+              src="assets/home/partner-logos/microsoft.png"
+              alt="Microsoft"
+            />
+            <img src="assets/home/partner-logos/copado.png" alt="Copado" />
+            <img src="assets/home/partner-logos/google.png" alt="Google" />
+          </div>
+        </div>
       </div>
-      <!-- Right Content -->
-      <div class="col-12 col-md-7 move-right ms-md-6 col-lg-6"
-           [ngClass]="{'pre-slide-right': !contentInView, 'slide-right': contentInView}">
-        <small class="mb-2 abt-spk pb-1 gradient-underline ">About Sprintpark</small>
-        <h3 class="fw-bold mb-3">
-          Smart. Sleek. Scalable. We don’t just build
-          <br>tech -we craft digital experiences.
-        </h3>
-        <p class=" fw-normal mb-4 lh-lg ">
-          Our goal is to become the most trusted and recognized provider of <br>
-          cutting-edge IT products and solutions—celebrated for our unwavering  <br>
-          commitment to quality, forward-thinking innovation, and exceptional client  <br>
-           satisfaction. By developing scalable, efficient, and user-centric products, <br>
-            we empower businesses to thrive in an
-          ever-evolving digital landscape.
-        </p>
-        <!-- Features Grid -->
-        <div class="row g-3"
-             #featureGrid
-             [ngClass]="{'pre-slide-top': !featuresInView, 'slide-top': featuresInView}">
-          <div class="col-12 col-sm-6 mb-3 mb-sm-0" *ngFor="let feature of features">
-            <div class="p-3 rounded d-flex align-items-center gap-3 h-100">
-              <div class="text-primary flex-shrink-0">
-                <img [src]="feature.img" [alt]="feature.title" class="img-fluid feature-image" />
-              </div>
-              <div>
-                <h6 class="mb-1 text-dark fw-semibold">{{ feature.title }}</h6>
-                <small class="text-muted text-dark">{{ feature.desc }}</small>
+    </section>
+  </section>
+  <!-- FEATURES   About sprintpark -->
+  <section class="about-sprintpark-section pb-5">
+    <div class="container py-5 position-relative">
+      <div
+        class="row align-items-center flex-column flex-md-row gx-5 position-relative"
+      >
+        <!-- Left Image -->
+        <div
+          class="col-12 col-md-5 image-wrapper mb-4 mb-md-0 m-lg-4 m-md-4 position-relative"
+          [ngClass]="{
+            'pre-slide-left': !imageInView,
+            'slide-left': imageInView,
+          }"
+        >
+          <img
+            src="assets/home/about-sprintpark/abt-spk-right-image.jpg"
+            alt="Team working"
+            class="main-image img-fluid w-100 position-relative display-block"
+          />
+          <img
+            src="assets/home/about-sprintpark/ellipse.png"
+            alt="Ellipse"
+            class="ellipse-shape img-fluid position-absolute"
+          />
+        </div>
+        <!-- Right Content -->
+        <div
+          class="col-12 col-md-7 move-right ms-md-6 col-lg-6"
+          [ngClass]="{
+            'pre-slide-right': !contentInView,
+            'slide-right': contentInView,
+          }"
+        >
+          <small class="mb-2 abt-spk pb-1 gradient-underline"
+            >About Sprintpark</small
+          >
+          <h3 class="fw-bold mb-3">
+            Smart. Sleek. Scalable. We don’t just build
+            <br />tech -we craft digital experiences.
+          </h3>
+          <p class="fw-normal mb-4 lh-lg">
+            Our goal is to become the most trusted and recognized provider of
+            <br />
+            cutting-edge IT products and solutions—celebrated for our unwavering
+            <br />
+            commitment to quality, forward-thinking innovation, and exceptional
+            client <br />
+            satisfaction. By developing scalable, efficient, and user-centric
+            products, <br />
+            we empower businesses to thrive in an ever-evolving digital
+            landscape.
+          </p>
+          <!-- Features Grid -->
+          <div
+            class="row g-3"
+            #featureGrid
+            [ngClass]="{
+              'pre-slide-top': !featuresInView,
+              'slide-top': featuresInView,
+            }"
+          >
+            <div
+              class="col-12 col-sm-6 mb-3 mb-sm-0"
+              *ngFor="let feature of features"
+            >
+              <div class="p-3 rounded d-flex align-items-center gap-3 h-100">
+                <div class="text-primary flex-shrink-0">
+                  <img
+                    [src]="feature.img"
+                    [alt]="feature.title"
+                    class="img-fluid feature-image"
+                  />
+                </div>
+                <div>
+                  <h6 class="mb-1 text-dark fw-semibold">
+                    {{ feature.title }}
+                  </h6>
+                  <small class="text-muted text-dark">{{ feature.desc }}</small>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
   <!-- FEATURES END -->
   <!-- What we offer -->
   <div class="offer-industries-bg offer-industries pb-2">
-   <section class="whatWeOffer-section mb-20">
-  <div class="container">
-    <div
-      class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-4 gap-2"
-    >
-      <div>
-        <small class="text-dark">What we offer</small>
-        <h3 class="fw-bold mb-2">Services tailored for you</h3>
-      </div>
- 
-      <a href="javascript:void(0)" class="view-all d-none d-md-block" (click)="toggleViewAll()">
-        {{ viewAll ? 'View less' : 'View all' }}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="currentColor"
-          class="arrow-icon"
-          viewBox="0 0 16 16"
-        >
-          <path
-            d="M2 8h12M8 2l6 6-6 6"
-            stroke="currentColor"
-            stroke-width="2"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </a>
-    </div>
- 
-    <div class="row g-4 text-center " [class.view-all]="viewAll">
-      <div
-        class="col-sm-12 col-md-4 d-flex"
-       *ngFor="let offer of (isMobile || viewAll ? whatWeOffer : (whatWeOffer | slice: 0:3)); let i = index"
- 
-        #offerCard
-      >
-       <a
-    [routerLink]="offer.link"
-    class="text-decoration-none text-reset d-block"
-  >
+    <section class="whatWeOffer-section mb-20">
+      <div class="container">
         <div
-          class=" p-4 rounded-0 bg-white shadow-sm h-100"
-          [ngClass]="{ 'slide-top': offerCardVisible[i] }"
-          [style.animationDelay]="i * 0.15 + 's'"
-          [style.webkitAnimationDelay]="i * 0.15 + 's'"
+          class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-4 gap-2"
         >
-          <img
-            [src]="offer.img"
-            [alt]="offer.title"
-            class="mb-3 offer-image h-15 w-25"
-          />
-          <h6 class="fw-bold mb-2 text-sec">{{ offer.title }}</h6>
-          <p class="text-muted small mb-0 lh-lg text">
-            {{ offer.desc }}
-          </p>
+          <div>
+            <small class="text-dark">What we offer</small>
+            <h3 class="fw-bold mb-2">Services tailored for you</h3>
+          </div>
+
+          <a
+            href="javascript:void(0)"
+            class="view-all d-none d-md-block"
+            (click)="toggleViewAll()"
+          >
+            {{ viewAll ? "View less" : "View all" }}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="arrow-icon"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M2 8h12M8 2l6 6-6 6"
+                stroke="currentColor"
+                stroke-width="2"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
         </div>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
- 
-    <!-- Industries we serve -->
-<section class="industries-section my-5 pt-0">
-  <div class="container">
-    <div class="mb-4">
-      <h6 class="text-dark mb-3">Industries we serve</h6>
-      <h3 class="fw-bold mb-5">We bring our expertises</h3>
-    </div>
-  <p-carousel
-  #industriesCarouselRef
-  [value]="industriesCarousel"
-  [numVisible]="3"
-  [numScroll]="1"
-  [circular]="true"
-  [autoplayInterval]="3000"
-  [responsiveOptions]="responsiveOptions"
-  [showIndicators]="false"
-> <ng-template pTemplate="item" let-industry>
-        <div class=" p-0 rounded-0 h-100 overflow-hidden industries-card d-flex flex-column position-relative justify-content-end overflow-hidden">
-          <img [src]="industry.img" [alt]="industry.alt" class=" industries-img flex-grow-1 display-block  object-fit-cover" />
-          <div class="industry-title-overlay start-0 end-0 d-flex justify-content-between align-items-center position-absolute">
-            <span class="industry-title fw-semibold text-light">{{ industry.title }}</span>
-            <a class="arrow-btn justify-content-center align-items-center text-decoration-none d-flex" [routerLink]="industry.link">
-              <i class="fas fa-arrow-right text-light"></i>
+
+        <div class="row g-4 text-center" [class.view-all]="viewAll">
+          <div
+            class="col-sm-12 col-md-4 d-flex"
+            *ngFor="
+              let offer of isMobile || viewAll
+                ? whatWeOffer
+                : (whatWeOffer | slice: 0 : 3);
+              let i = index
+            "
+            #offerCard
+          >
+            <a
+              [routerLink]="offer.link"
+              class="text-decoration-none text-reset d-block"
+            >
+              <div
+                class="p-4 rounded-0 bg-white shadow-sm h-100"
+                [ngClass]="{ 'slide-top': offerCardVisible[i] }"
+                [style.animationDelay]="i * 0.15 + 's'"
+                [style.webkitAnimationDelay]="i * 0.15 + 's'"
+              >
+                <img
+                  [src]="offer.img"
+                  [alt]="offer.title"
+                  class="mb-3 offer-image h-15 w-25"
+                />
+                <h6 class="fw-bold mb-2 text-sec">{{ offer.title }}</h6>
+                <p class="text-muted small mb-0 lh-lg text">
+                  {{ offer.desc }}
+                </p>
+              </div>
             </a>
           </div>
         </div>
-      </ng-template>
-    </p-carousel>
-  </div>
-</section>
+      </div>
+    </section>
+
+    <!-- Industries we serve -->
+    <section class="industries-section my-5 pt-0">
+      <div class="container">
+        <div class="mb-4">
+          <h6 class="text-dark mb-3">Industries we serve</h6>
+          <h3 class="fw-bold mb-5">We bring our expertises</h3>
+        </div>
+        <p-carousel
+          #industriesCarouselRef
+          [value]="industriesCarousel"
+          [numVisible]="3"
+          [numScroll]="1"
+          [circular]="true"
+          [autoplayInterval]="3000"
+          [responsiveOptions]="responsiveOptions"
+          [showIndicators]="false"
+        >
+          <ng-template pTemplate="item" let-industry>
+            <div
+              class="p-0 rounded-0 h-100 overflow-hidden industries-card d-flex flex-column position-relative justify-content-end overflow-hidden"
+            >
+              <img
+                [src]="industry.img"
+                [alt]="industry.alt"
+                class="industries-img flex-grow-1 display-block object-fit-cover"
+              />
+              <div
+                class="industry-title-overlay start-0 end-0 d-flex justify-content-between align-items-center position-absolute"
+              >
+                <span class="industry-title fw-semibold text-light">{{
+                  industry.title
+                }}</span>
+                <a
+                  class="arrow-btn justify-content-center align-items-center text-decoration-none d-flex"
+                  [routerLink]="industry.link"
+                >
+                  <i class="fas fa-arrow-right text-light"></i>
+                </a>
+              </div>
+            </div>
+          </ng-template>
+        </p-carousel>
+      </div>
+    </section>
   </div>
   <!-- Collaboration Section -->
-<div class="collaborate-section py-5 rounded-3 position-relative">
-  <div class="container px-2 px-sm-4 px-md-5">
-    <p class="text-dark mb-3 mt-3">Discover Our Company</p>
-    <h2 class="mt-2 mb-4 fw-bold">
-      How we
-      <span class="text-primary fw-bold">Collaborate</span>
-      with you.
-    </h2>
-    <div class="row gx-4 gy-5 mb-5 mt-3">
-      <div
-        class="col-12 col-md-4"
-        *ngFor="let c of collaborations; let i = index"
-      >
-     
+  <div class="collaborate-section py-5 rounded-3 position-relative">
+    <div class="container px-2 px-sm-4 px-md-5">
+      <p class="text-dark mb-3 mt-3">Discover Our Company</p>
+      <h2 class="mt-2 mb-4 fw-bold">
+        How we
+        <span class="text-primary fw-bold">Collaborate</span>
+        with you.
+      </h2>
+      <div class="row gx-4 gy-5 mb-5 mt-3">
         <div
-          class="collaborate-card text-center bg-white border rounded shadow-sm p-4 d-flex flex-column align-items-center h-100"
+          class="col-12 col-md-4"
+          *ngFor="let c of collaborations; let i = index"
         >
-          <img
-            [src]="c.img"
-            [alt]="c.alt"
-            class="mb-3"
-            width="56"
-            height="56"
-          />
-          <h5 class="fw-bold text-purple collaborate-card-title mb-2">
-            {{ c.title }}
-          </h5>
-          <p class="text-dark collaborate-card-desc mb-0">{{ c.desc }}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-  <!-- Collaboration Section End -->
-  <!--stats section-->
-<div class="stats-section d-flex align-items-center py-3 py-lg-4">
-  <div class="container">
-    <div class="row justify-content-center align-items-center text-center">
-      <div
-        class="col-12 col-sm-6 col-md-3 mb-4 mb-md-0"
-        *ngFor="let stat of stats"
-        #statElements
-      >
-        <div class="d-flex align-items-center justify-content-center pt-5 pb-5 ">
-          <img [src]="stat.img" [alt]="stat.label" class="stats-icon w-25 h-25 " />
-          <div class="text-start ms-3">
-            <div class="stats-number fw-bolder mb-2 fs-2 ">
-              {{ stat.current | number: "1.0-0" }}+
-            </div>
-            <div class="stats-label fw-bold">{{ stat.label }}</div>
+          <div
+            class="collaborate-card text-center bg-white border rounded shadow-sm p-4 d-flex flex-column align-items-center h-100"
+          >
+            <img
+              [src]="c.img"
+              [alt]="c.alt"
+              class="mb-3"
+              width="56"
+              height="56"
+            />
+            <h5 class="fw-bold text-purple collaborate-card-title mb-2">
+              {{ c.title }}
+            </h5>
+            <p class="text-dark collaborate-card-desc mb-0">{{ c.desc }}</p>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+  <!-- Collaboration Section End -->
+  <!--stats section-->
+  <div class="stats-section d-flex align-items-center py-3 py-lg-4">
+    <div class="container">
+      <div class="row justify-content-center align-items-center text-center">
+        <div
+          class="col-12 col-sm-6 col-md-3 mb-4 mb-md-0"
+          *ngFor="let stat of stats"
+          #statElements
+        >
+          <div
+            class="d-flex align-items-center justify-content-center pt-5 pb-5"
+          >
+            <img
+              [src]="stat.img"
+              [alt]="stat.label"
+              class="stats-icon w-25 h-25"
+            />
+            <div class="text-start ms-3">
+              <div class="stats-number fw-bolder mb-2 fs-2">
+                {{ stat.current | number: "1.0-0" }}+
+              </div>
+              <div class="stats-label fw-bold">{{ stat.label }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <!--stats section end-->
   <!-- Explore Our case Studies - Center Card Focused, Clickable Sides, Bootstrap Only -->
-  <div class="ourInsights-section py-5"
-  style="
-    background-color: #f6f6f7;
-    background-image: url('assets/home/our-insights/insights-bg.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;">
+  <div
+    class="ourInsights-section py-5"
+    style="
+      background-color: #f6f6f7;
+      background-image: url(&quot;assets/home/our-insights/insights-bg.png&quot;);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    "
+  >
     <div class="container-fluid px-0">
       <div class="row ms-2 ms-md-5 ms-lg-150">
         <div class="ms-2">
           <p class="collaborate-subtitle mb-2 mt-3">Our insights</p>
-          <h2 class="collaborate-title fw-bold mt-2 mb-2 ">
+          <h2 class="collaborate-title fw-bold mt-2 mb-2">
             Explore our
             <span class="collaborate-highlight text-primary fw-bold"
               >Case Studies</span
@@ -343,10 +442,10 @@
                 [alt]="slide.title"
                 class="d-block w-100 carousel-image"
               />
- 
+
               <!-- Gradient Overlay (if you still want it on the image) -->
               <div class="carousel-gradient"></div>
- 
+
               <!-- ✅ Caption moved OUTSIDE image -->
               <div class="carousel-text-below text-center p-2">
                 <h3 class="carousel-title">
@@ -384,7 +483,8 @@
       <!-- ✅ Desktop View: Original 3-card slider remains unchanged -->
       <div
         class="d-none d-md-flex justify-content-center align-items-center flex-nowrap mt-5"
-        style= " gap: 2.5rem;">
+        style="gap: 2.5rem"
+      >
         <!-- Left Card -->
         <div
           role="button"
@@ -414,7 +514,7 @@
               z-index: 2;
             "
           >
-            <span style=" color: #fff">&#8592;</span>
+            <span style="color: #fff">&#8592;</span>
           </button>
           <div
             class="position-absolute bottom-0 start-0 w-100 p-4"
@@ -423,11 +523,17 @@
             <h5 class="fw-bold text-white mb-3">
               {{ ourInsightsSlides[currentInsightIndex - 1].title }}
             </h5>
-              <p class="mb-2 text-white small">
-                    <a [routerLink]="['/insights', ourInsightsSlides[currentInsightIndex - 1].route]" class="text-decoration-none text-white">
-                    Read More >>
-                    </a>
-              </p>
+            <p class="mb-2 text-white small">
+              <a
+                [routerLink]="[
+                  '/insights',
+                  ourInsightsSlides[currentInsightIndex - 1].route,
+                ]"
+                class="text-decoration-none text-white"
+              >
+                Read More >>
+              </a>
+            </p>
           </div>
           <div
             class="position-absolute bottom-0 start-0 w-100"
@@ -441,7 +547,7 @@
             "
           ></div>
         </div>
- 
+
         <!-- Center Card -->
         <div
           class="bg-white rounded-0 shadow-sm position-relative overflow-hidden"
@@ -472,13 +578,19 @@
               {{ ourInsightsSlides[currentInsightIndex].title }}
             </h3>
             <p class="mb-2 text-white small d-flex align-items-center gap-1">
-       <a [routerLink]="['/insights', ourInsightsSlides[currentInsightIndex].route]" class="text-decoration-none text-white">
-        Read More >>
-        </a>
-      </p>
+              <a
+                [routerLink]="[
+                  '/insights',
+                  ourInsightsSlides[currentInsightIndex].route,
+                ]"
+                class="text-decoration-none text-white"
+              >
+                Read More >>
+              </a>
+            </p>
           </div>
         </div>
- 
+
         <!-- Right Card -->
         <div
           role="button"
@@ -508,7 +620,7 @@
               z-index: 2;
             "
           >
-            <span style=" color: #fff">&#8594;</span>
+            <span style="color: #fff">&#8594;</span>
           </button>
           <div
             class="position-absolute bottom-0 start-0 w-100 p-4"
@@ -517,11 +629,17 @@
             <h5 class="fw-bold text-white mb-3">
               {{ ourInsightsSlides[currentInsightIndex + 1].title }}
             </h5>
-             <p class="mb-2 text-white small">
-        <a [routerLink]="['/insights', ourInsightsSlides[currentInsightIndex + 1].route]" class="text-decoration-none text-white">
-        Read More >>
-        </a>
-      </p>
+            <p class="mb-2 text-white small">
+              <a
+                [routerLink]="[
+                  '/insights',
+                  ourInsightsSlides[currentInsightIndex + 1].route,
+                ]"
+                class="text-decoration-none text-white"
+              >
+                Read More >>
+              </a>
+            </p>
           </div>
           <div
             class="position-absolute bottom-0 start-0 w-100"
@@ -539,70 +657,135 @@
     </div>
   </div>
   <!-- Testimonial Section -->
-<section class="testimonial-section py-5 py-lg-6  ">
-  <div class="container">
-    <p class="mb-2 mt-2">Testimonial</p>
-    <h2 class="fw-bold mb-4 fs-2">Real Stories, Real Results</h2>
-    <!-- Carousel Wrapper -->
-<div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
-  <div class="carousel-inner">
-    <!-- Loop through groupedTestimonials -->
-    <div
-      class="carousel-item"
-      *ngFor="let group of groupedTestimonials; let i = index"
-      [ngClass]="{ active: i === 0 }"
-    >
-      <div class="row justify-content-center gy-5">
-        <div
-          class="col-12 col-md-6 col-lg-4 mb-5 d-flex" 
-          *ngFor="let t of group"
-        >
-          <!-- Testimonial Card -->
-          <div class="border testimonial-card rounded mt-5 m-2 p-4 pb-2   bg-white shadow-sm d-flex flex-column position-relative border-opacity-0 "style="height: 300px; ">
-            <img src="/assets/home/testimonials/vector1.svg" alt="Quote" class="position-absolute top-0 end-0 m-2 mt-3" width="32" height="32" />
-            <img src="/assets/home/testimonials/vector2.svg" alt="Quote" class="position-absolute top-0 end-0 me-5 mt-3" width="32" height="32" />
- 
-            <div class="d-flex align-items-center mb-2 ">
-              <img [src]="t.img" [alt]="t.name" class="rounded-circle me-3" width="80" height="80" />
-              <div>
-                <div class="fw-medium mb-1">{{ t.name }}</div>
-                <div class="text-secondary small">{{ t.role }}</div>
-                <div class="star-rating mt-1 lh-sm fs-6 d-flex align-items-center gap-1">
-                  <ng-container *ngFor="let star of [].constructor(t.rating)">
-                    <i class="fas fa-star text-warning"></i>
-                  </ng-container>
-                  <ng-container *ngFor="let star of [].constructor(5 - t.rating)">
-                    <i class="far fa-star text-muted"></i>
-                  </ng-container>
+  <section class="testimonial-section py-5 py-lg-6">
+    <div class="container">
+      <p class="mb-2 mt-2">Testimonial</p>
+      <h2 class="fw-bold mb-4 fs-2">Real Stories, Real Results</h2>
+      <!-- Carousel Wrapper -->
+      <div
+        id="testimonialCarousel"
+        class="carousel slide"
+        data-bs-ride="carousel"
+        data-bs-interval="4000"
+      >
+        <div class="carousel-inner">
+          <!-- Loop through groupedTestimonials -->
+          <div
+            class="carousel-item"
+            *ngFor="let group of groupedTestimonials; let i = index"
+            [ngClass]="{ active: i === 0 }"
+          >
+            <div class="row justify-content-center gy-5">
+              <div
+                class="col-12 col-md-6 col-lg-4 mb-5 d-flex"
+                *ngFor="let t of group"
+              >
+                <!-- Testimonial Card -->
+                <div
+                  class="border testimonial-card rounded mt-5 m-2 p-4 pb-2 bg-white shadow-sm d-flex flex-column position-relative border-opacity-0"
+                  style="height: 300px"
+                >
+                  <img
+                    src="/assets/home/testimonials/vector1.svg"
+                    alt="Quote"
+                    class="position-absolute top-0 end-0 m-2 mt-3"
+                    width="32"
+                    height="32"
+                  />
+                  <img
+                    src="/assets/home/testimonials/vector2.svg"
+                    alt="Quote"
+                    class="position-absolute top-0 end-0 me-5 mt-3"
+                    width="32"
+                    height="32"
+                  />
+
+                  <div class="d-flex align-items-center mb-2">
+                    <img
+                      [src]="t.img"
+                      [alt]="t.name"
+                      class="rounded-circle me-3"
+                      width="80"
+                      height="80"
+                    />
+                    <div>
+                      <div class="fw-medium mb-1">{{ t.name }}</div>
+                      <div class="text-secondary small">{{ t.role }}</div>
+                      <div
+                        class="star-rating mt-1 lh-sm fs-6 d-flex align-items-center gap-1"
+                      >
+                        <ng-container
+                          *ngFor="let star of [].constructor(t.rating)"
+                        >
+                          <i class="fas fa-star text-warning"></i>
+                        </ng-container>
+                        <ng-container
+                          *ngFor="let star of [].constructor(5 - t.rating)"
+                        >
+                          <i class="far fa-star text-muted"></i>
+                        </ng-container>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="mt-2 review mb-3 fs-6 lh-lg text-dark flex-grow-1">
+                    {{ t.text }}
+                  </p>
                 </div>
               </div>
             </div>
-            <p class="mt-2 review mb-3 fs-6 lh-lg text-dark flex-grow-1">
-              {{ t.text }}
-            </p>
           </div>
         </div>
+        <!-- Carousel Controls -->
+        <a
+          class="carousel-control-prev w-auto"
+          href="#testimonialCarousel"
+          role="button"
+          data-bs-slide="prev"
+        >
+          <span
+            class="d-flex align-items-center justify-content-center rounded-circle ms-5"
+            style="width: 45px; height: 45px"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="#000"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+              />
+            </svg>
+          </span>
+        </a>
+        <a
+          class="carousel-control-next w-auto"
+          href="#testimonialCarousel"
+          role="button"
+          data-bs-slide="next"
+        >
+          <span
+            class="d-flex align-items-center justify-content-center rounded-circle me-5"
+            style="width: 45px; height: 45px"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="#000"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+              />
+            </svg>
+          </span>
+        </a>
       </div>
     </div>
-  </div>
-  <!-- Carousel Controls -->
-  <a class="carousel-control-prev w-auto" href="#testimonialCarousel" role="button" data-bs-slide="prev">
-    <span class="d-flex align-items-center justify-content-center rounded-circle ms-5" style="width:45px; height:45px;">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#000" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
-      </svg>
-    </span>
-  </a>
-  <a class="carousel-control-next w-auto" href="#testimonialCarousel" role="button" data-bs-slide="next">
-    <span class="d-flex align-items-center justify-content-center rounded-circle me-5" style="width:45px; height:45px;">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#000" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-      </svg>
-    </span>
-  </a>
-</div>
-  </div>
-</section>
+  </section>
   <!-- Testimonial Section End -->
 </div>
- 

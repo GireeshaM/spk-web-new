@@ -27,8 +27,8 @@ import { InsightsBlogComponent } from './webmodules/insights-blog/insights-blog.
 
 export const routes: Routes = [
   {
-    path:'company',
-    component:CompanyComponent
+    path: 'company',
+    component: CompanyComponent,
   },
   {
     path: '',
@@ -37,31 +37,32 @@ export const routes: Routes = [
   },
   //services
   //it-consulting
-   {
+  {
     path: 'it-consulting',
     component: ItCommonComponent,
     data: { footerColor: 'rgba(29, 6, 99, 1)' },
-   },
+  },
   //staffing
-   {
-    path:'staffing',
-    component:StaffingComponent,
+  {
+    path: 'staffing',
+    component: StaffingComponent,
     data: { footerColor: 'rgba(29, 6, 99, 1)' },
-   },
-   //project-management
-   {
+  },
+  //project-management
+  {
     path: 'project-management',
     component: ProjectManagementComponent,
     data: { footerColor: 'rgba(29, 6, 99, 1)' },
-   },
-   //software-service
-     {
-    path: 'software-service',component:SoftwareServiceUtilComponent,
+  },
+  //software-service
+  {
+    path: 'software-service',
+    component: SoftwareServiceUtilComponent,
     data: { footerColor: 'rgba(29, 6, 99, 1)' },
-     },
+  },
 
-     //Industries
-     //it& telecommunication
+  //Industries
+  //it& telecommunication
   {
     path: 'itAndTelecommunications',
     component: TeleCommunicationsComponent,
@@ -75,32 +76,32 @@ export const routes: Routes = [
   },
   //healthCrae & life Sciences
   {
-    path:'healthCareAndLifeSciences',
-    component:HealthCareComponent,
+    path: 'healthCareAndLifeSciences',
+    component: HealthCareComponent,
     data: { footerColor: '#f7f7fc' },
   },
   //manufacturing
   {
-      path:'manufacturing',
-      component:ManufacturingComponent,
-      data: { footerColor: '#f7f7fc' },
+    path: 'manufacturing',
+    component: ManufacturingComponent,
+    data: { footerColor: '#f7f7fc' },
   },
   //education
-    {
-    path:'education',
-    component:EducationComponent,
+  {
+    path: 'education',
+    component: EducationComponent,
     data: { footerColor: '#f7f7fc' },
   },
   //transport & logistics
   {
-    path:'transportationAndLogistics',
-    component:TransportationComponent,
+    path: 'transportationAndLogistics',
+    component: TransportationComponent,
     data: { footerColor: '#f7f7fc' },
   },
   //banking
   {
-    path:'banking',
-    component:BankingComponent,
+    path: 'banking',
+    component: BankingComponent,
     data: { footerColor: '#f7f7fc' },
   },
   //Industries subPages
@@ -128,7 +129,7 @@ export const routes: Routes = [
   //banking-subPage
   {
     path: 'banking/:section',
-    component:BankingIComponent,
+    component: BankingIComponent,
   },
   //education-subPage
   {
@@ -137,12 +138,12 @@ export const routes: Routes = [
   },
   //manufacturing-subPage
   {
-    path:'manufacturing/:section',
-    component:ManufacturingIComponent
+    path: 'manufacturing/:section',
+    component: ManufacturingIComponent,
   },
 
   //careers
-   {
+  {
     path: 'careers',
     component: CareersComponent,
     data: { footerColor: '#fff' },
@@ -155,11 +156,11 @@ export const routes: Routes = [
   //insights-blog
   {
     path: 'insights/:section',
-    component:InsightsBlogComponent
+    component: InsightsBlogComponent,
   },
-  
+
   //contact-us
-   {
+  {
     path: 'contact-us',
     component: ContactUsComponent,
     data: { footerColor: 'rgba(255, 255, 255, 1)' },

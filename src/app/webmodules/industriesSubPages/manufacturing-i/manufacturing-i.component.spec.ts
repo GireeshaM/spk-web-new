@@ -1,8 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ManufacturingIComponent } from './manufacturing-i.component';
-import { ActivatedRoute, provideRouter } from '@angular/router';
-import { of } from 'rxjs';
+import {  provideRouter } from '@angular/router';
 
 describe('ManufacturingIComponent', () => {
   let component: ManufacturingIComponent;
@@ -11,9 +10,8 @@ describe('ManufacturingIComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [ManufacturingIComponent],
- providers: [provideRouter([])]
-    })
-    .compileComponents();
+      providers: [provideRouter([])],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ManufacturingIComponent);
     component = fixture.componentInstance;

@@ -32,7 +32,7 @@ export class ItCommonComponent {
     'assets/services/it-consulting-service/focus-on-core-business.svg',
     'assets/services/it-consulting-service/unbiased-Strategic-Insights.svg',
   ];
- public whyList = [
+  public whyList = [
     {
       title: 'Access Top-Tier Experts',
       description:

@@ -26,7 +26,9 @@ p {
   }
 }
 .why {
-  background: url("/assets/services/software-services/abstract-backdrop.png")center/cover no-repeat,
+  background:
+    url("/assets/services/software-services/abstract-backdrop.png") center/cover
+      no-repeat,
     /* top layer */ linear-gradient(275.69deg, #1a0951 2.22%, #4b1078 76.02%); /* bottom layer */
   background-size: 100% 100%;
   background-position: center;

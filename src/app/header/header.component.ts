@@ -9,7 +9,7 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent  {
+export class HeaderComponent {
   public isScrolled = false;
 
   router = inject(Router);
@@ -19,7 +19,7 @@ export class HeaderComponent  {
     this.isScrolled = window.scrollY > 100;
   }
 
- public loginAs(role: string) {
+  public loginAs(role: string):void {
     switch (role) {
       case 'Admin':
       case 'Recruiter':
