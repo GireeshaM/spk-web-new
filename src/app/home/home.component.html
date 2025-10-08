@@ -93,7 +93,7 @@
    
   </div>
 </div>
-
+ 
     </section>
 </section>
   <!-- FEATURES   About sprintpark -->
@@ -103,19 +103,19 @@
       <!-- Left Image -->
       <div class="col-12 col-md-5 image-wrapper mb-4 mb-md-0 m-lg-4 m-md-4 position-relative"
            [ngClass]="{'pre-slide-left': !imageInView, 'slide-left': imageInView}">
-        <img src="assets/home/about-sprintpark/abt-spk-right-image.jpg" 
-             alt="Team working" 
+        <img src="assets/home/about-sprintpark/abt-spk-right-image.jpg"
+             alt="Team working"
              class="main-image img-fluid w-100 position-relative display-block" />
-        <img src="assets/home/about-sprintpark/Ellipse.png" 
-             alt="Ellipse" 
+        <img src="assets/home/about-sprintpark/Ellipse.png"
+             alt="Ellipse"
              class="ellipse-shape img-fluid position-absolute" />
       </div>
       <!-- Right Content -->
-      <div class="col-12 col-md-7 move-right ms-md-6  m-md-6"
+      <div class="col-12 col-md-7 move-right ms-md-6 col-lg-6"
            [ngClass]="{'pre-slide-right': !contentInView, 'slide-right': contentInView}">
         <small class="mb-2 abt-spk pb-1 gradient-underline ">About Sprintpark</small>
         <h3 class="fw-bold mb-3">
-          Smart. Sleek. Scalable. We don’t just build 
+          Smart. Sleek. Scalable. We don’t just build
           <br>tech -we craft digital experiences.
         </h3>
         <p class=" fw-normal mb-4 lh-lg ">
@@ -123,7 +123,7 @@
           cutting-edge IT products and solutions—celebrated for our unwavering  <br>
           commitment to quality, forward-thinking innovation, and exceptional client  <br>
            satisfaction. By developing scalable, efficient, and user-centric products, <br>
-            we empower businesses to thrive in an 
+            we empower businesses to thrive in an
           ever-evolving digital landscape.
         </p>
         <!-- Features Grid -->
@@ -158,7 +158,7 @@
         <small class="text-dark">What we offer</small>
         <h3 class="fw-bold mb-2">Services tailored for you</h3>
       </div>
-
+ 
       <a href="javascript:void(0)" class="view-all d-none d-md-block" (click)="toggleViewAll()">
         {{ viewAll ? 'View less' : 'View all' }}
         <svg
@@ -180,12 +180,12 @@
         </svg>
       </a>
     </div>
-
-    <div class="row g-4 text-center" [class.view-all]="viewAll">
+ 
+    <div class="row g-4 text-center " [class.view-all]="viewAll">
       <div
-        class="col-12 col-sm-6 col-md-4"
+        class="col-sm-12 col-md-4 d-flex"
        *ngFor="let offer of (isMobile || viewAll ? whatWeOffer : (whatWeOffer | slice: 0:3)); let i = index"
-
+ 
         #offerCard
       >
        <a
@@ -193,7 +193,7 @@
     class="text-decoration-none text-reset d-block"
   >
         <div
-          class="bg-white p-4 rounded-0 shadow-sm h-100"
+          class=" p-4 rounded-0 bg-white shadow-sm h-100"
           [ngClass]="{ 'slide-top': offerCardVisible[i] }"
           [style.animationDelay]="i * 0.15 + 's'"
           [style.webkitAnimationDelay]="i * 0.15 + 's'"
@@ -204,7 +204,7 @@
             class="mb-3 offer-image h-15 w-25"
           />
           <h6 class="fw-bold mb-2 text-sec">{{ offer.title }}</h6>
-          <p class="text-muted small mb-0 lh-lg text sec">
+          <p class="text-muted small mb-0 lh-lg text">
             {{ offer.desc }}
           </p>
         </div>
@@ -213,7 +213,7 @@
     </div>
   </div>
 </section>
-
+ 
     <!-- Industries we serve -->
 <section class="industries-section my-5 pt-0">
   <div class="container">
@@ -259,7 +259,7 @@
         class="col-12 col-md-4"
         *ngFor="let c of collaborations; let i = index"
       >
-      
+     
         <div
           class="collaborate-card text-center bg-white border rounded shadow-sm p-4 d-flex flex-column align-items-center h-100"
         >
@@ -329,7 +329,7 @@
           id="insightsCarousel"
           class="carousel slide"
           data-bs-ride="carousel"
-          data-bs-interval="4000" 
+          data-bs-interval="4000"
         >
           <div class="carousel-inner">
             <div
@@ -343,10 +343,10 @@
                 [alt]="slide.title"
                 class="d-block w-100 carousel-image"
               />
-
+ 
               <!-- Gradient Overlay (if you still want it on the image) -->
               <div class="carousel-gradient"></div>
-
+ 
               <!-- ✅ Caption moved OUTSIDE image -->
               <div class="carousel-text-below text-center p-2">
                 <h3 class="carousel-title">
@@ -441,7 +441,7 @@
             "
           ></div>
         </div>
-
+ 
         <!-- Center Card -->
         <div
           class="bg-white rounded-0 shadow-sm position-relative overflow-hidden"
@@ -478,7 +478,7 @@
       </p>
           </div>
         </div>
-
+ 
         <!-- Right Card -->
         <div
           role="button"
@@ -539,9 +539,9 @@
     </div>
   </div>
   <!-- Testimonial Section -->
-<section class="testimonial-section  py-5 py-lg-6  ">
+<section class="testimonial-section py-5 py-lg-6  ">
   <div class="container">
-    <p class="mb-2 mt-5">Testimonial</p>
+    <p class="mb-2 mt-2">Testimonial</p>
     <h2 class="fw-bold mb-4 fs-2">Real Stories, Real Results</h2>
     <!-- Carousel Wrapper -->
 <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
@@ -552,17 +552,17 @@
       *ngFor="let group of groupedTestimonials; let i = index"
       [ngClass]="{ active: i === 0 }"
     >
-      <div class="row justify-content-center">
+      <div class="row justify-content-center gy-5">
         <div
-          class="col-12 col-md-6 col-lg-4"
+          class="col-12 col-md-6 col-lg-4 mb-5 d-flex" 
           *ngFor="let t of group"
         >
           <!-- Testimonial Card -->
-          <div class="border border-surface-200 dark:border-surface-700 rounded m-2 p-4 bg-white shadow-sm h-100 d-flex flex-column position-relative border-opacity-0 ">
+          <div class="border testimonial-card rounded mt-5 m-2 p-4 pb-2   bg-white shadow-sm d-flex flex-column position-relative border-opacity-0 "style="height: 300px; ">
             <img src="/assets/home/testimonials/vector1.svg" alt="Quote" class="position-absolute top-0 end-0 m-2 mt-3" width="32" height="32" />
             <img src="/assets/home/testimonials/vector2.svg" alt="Quote" class="position-absolute top-0 end-0 me-5 mt-3" width="32" height="32" />
-
-            <div class="d-flex align-items-center mb-3">
+ 
+            <div class="d-flex align-items-center mb-2 ">
               <img [src]="t.img" [alt]="t.name" class="rounded-circle me-3" width="80" height="80" />
               <div>
                 <div class="fw-medium mb-1">{{ t.name }}</div>
@@ -587,14 +587,14 @@
   </div>
   <!-- Carousel Controls -->
   <a class="carousel-control-prev w-auto" href="#testimonialCarousel" role="button" data-bs-slide="prev">
-    <span class="d-flex align-items-center justify-content-center rounded-circle" style="width:45px; height:45px;">
+    <span class="d-flex align-items-center justify-content-center rounded-circle ms-5" style="width:45px; height:45px;">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#000" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
       </svg>
     </span>
   </a>
   <a class="carousel-control-next w-auto" href="#testimonialCarousel" role="button" data-bs-slide="next">
-    <span class="d-flex align-items-center justify-content-center rounded-circle" style="width:45px; height:45px;">
+    <span class="d-flex align-items-center justify-content-center rounded-circle me-5" style="width:45px; height:45px;">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#000" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
       </svg>
@@ -605,3 +605,4 @@
 </section>
   <!-- Testimonial Section End -->
 </div>
+ 

@@ -201,7 +201,7 @@
 //features section end
 //section 3 start of (what we offer and industries we serve)
 .offer-industries-bg {
-   background: #f6f4fd url("/assets/home/industries/industries-bgwave.png") no-repeat center bottom;
+   background: #f6f4fd url("/assets/home/industries/industries-bgwave.png") no-repeat center bottom ;
   background-size: 100% 600px;
   min-height: 100vh;
   
@@ -309,11 +309,12 @@
 .testimonial-section {
   background-color: #f6f4fd;
   background-image:
-    url("/assets/home/testimonials/testinomial-bg.png"),
-    url("/assets/home/testimonials/testinomial-curve.png");
+    url("/assets/home/testimonials/testinomial-bg.png") ,
+    url("/assets/home/testimonials/testinomial-curve.png") !important;
   background-repeat: no-repeat, no-repeat;
   background-position: center, center;
   background-size: 100% auto, cover;
+  height: 700px;
 }
 // Testimonial cards
 /* Hover effect */
@@ -322,6 +323,9 @@
   transition: background 0.2s, color 0.2s;
   color: #fdfdfd;
 }
+// .testimonial-card{
+//   width: 480px;
+// }
 .testimonial-section .bg-white:hover .fw-bold,
 .testimonial-section .bg-white:hover .fs-6,
 .testimonial-section .bg-white:hover .text-secondary{
@@ -436,7 +440,6 @@
     padding: 2rem 0.75rem;
     min-height: auto;
   }
-
 }
 /* Min-width: 992px */
 @media (min-width: 992px) {
@@ -446,7 +449,6 @@
   }
     .testimonial-section {
     background-image: none;
-    
     }
   .about-sprintpark-section .move-right {
     margin-left: 90px;
@@ -460,4 +462,15 @@
   .stats-section {
     padding: 32px 0;
   }
+
+}
+@media (max-width: 991.98px) {
+  .whatWeOffer-section .row.view-all > div[class*='col-'] {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+.row.view-all {
+  width: 75%;
+  margin-left: 90px;
+}
 }

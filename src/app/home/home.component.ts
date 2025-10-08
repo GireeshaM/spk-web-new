@@ -127,7 +127,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       }, 100);
     }
   }
-groupTestimonials(): void {
+public groupTestimonials(): void {
   this.groupedTestimonials = []; // Clear previous
   const perSlide = this.isMobile ? 1 : 2; // You can use 3 if needed for desktop
   for (let i = 0; i < this.testimonials.length; i += perSlide) {
@@ -168,7 +168,7 @@ groupTestimonials(): void {
   // what we offer
   @ViewChildren('offerCard') offerCards!: QueryList<ElementRef>;
   public offerCardVisible: boolean[] = [];
-  toggleViewAll() {
+  public toggleViewAll() {
     this.viewAll = !this.viewAll;
   }
   public whatWeOffer = [

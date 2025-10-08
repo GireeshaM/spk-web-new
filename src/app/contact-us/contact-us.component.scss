@@ -1,110 +1,95 @@
 .contact-us {
   overflow-x: hidden;
-  font-family: inter, sans-serif;
+  font-family: inter;
 }
-/* Contact Form */
-.contact-form {
-  max-width: 600px;
-  margin: 0 auto;
-
-  .sbt-btn {
-    background: linear-gradient(273.4deg, #1B0976 -26.19%, #4B36B3 41.97%, #372399 110.13%);
-    transition: opacity 0.3s ease;
+ 
+// Location-specific icon colors (can't be done with Bootstrap)
+ 
+// Location border (can't use Bootstrap border utilities for dashed)
+.location-border {
+  @media (min-width: 768px) {
+    border-right: 1px dashed #000;
   }
 }
-/* Locations */
-.location {
-  min-height: 200px;
-
-  &.usa {
-    .location-icon, .phone-icon, .mail-icon {
-      color: #482aa3;
-    }
-  }
-  &.india {
-    .location-icon, .phone-icon, .mail-icon {
-      color: #ef7a13;
-    }
+ 
+// Submit button gradient (can't be done with Bootstrap)
+.sbt-btn {
+  background: linear-gradient(273.4deg, #1B0976 -26.19%, #4B36B3 41.97%, #372399 110.13%);
+  transition: opacity 0.3s ease;
+ 
+  &:hover:not(:disabled) {
+    opacity: 0.9;
   }
 }
-.has-border {
-  border-right: 1px dashed #000;
-}
-/* Social Section */
+ 
+// Social section specific positioning
 .social-section {
   background: #f6f7fb;
-  padding: 20px 0;
-  height: 450px; 
-  .social-right {
-    flex: 1;
-    margin-right: -50px;
-    margin-top: 30px;
-    h3 {
-      margin-bottom: 10px;
-      margin-right: 50%;
-    }
-    .social-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      list-style: none;
-      padding: 0;
-      li a {
-        gap: 8px;
-        text-decoration: none;
-        color: #333;
-        transition: color 0.2s;
-        &:hover {
-          color: #4f46e5;
-        }
-      }
-    }
-    .social-icon {
-      width: 24px;
-      height: 24px;
-    }
-    .ellipse-img {
-      position: absolute;
-      right: -70px;
-      top: 20px;
-      width: 150px;
-      height: 250px;
-      opacity: 0.5;
-      z-index: 0;
+  min-height: 450px;
+ 
+  .social-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 1.5rem;
+    max-width: 450px;
+   
+    @media (max-width: 768px) {
+      max-width: 100%;
+      gap: 1rem;
     }
   }
+ 
+  .social-link {
+    transition: color 0.3s ease;
+   
+    &:hover {
+      color: #4f46e5 !important;
+    }
+  }
+ 
+  .ellipse-shape {
+    right: -150px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 200px;
+    background: #a89fd1;
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none;
+  }
 }
-/* FAQ */
-.faq-item {
-  border-bottom: 1px solid #eee;
+ 
+.social-icon {
+  width: 28px;
+  height: 28px;
 }
-
+ 
+// Hover effect for social links (can't be done with Bootstrap)
+.hover-primary:hover {
+  color: #4f46e5 !important;
+}
+ 
+// FAQ animations (can't be done with Bootstrap)
 .faq-question {
-  background: none;
-  border: none;
-  cursor: pointer;
   transition: color 0.2s;
-  color: #111;
-
+ 
   &:hover {
-    color: #4f46e5;
+    color: #4f46e5 !important;
   }
 }
-
+ 
 .faq-answer {
   max-height: 0;
-  overflow: hidden;
-  padding-left: 10px;
-  color: #555;
   transition: max-height 0.3s ease, padding 0.3s ease;
-
+ 
   &.show {
     max-height: 200px;
-    padding: 10px 10px 20px 10px;
   }
 }
-
-/* Why Hire */
+ 
+// Why card hover effect (can't be done with Bootstrap)
 .why-card {
   background-color: #fff;
   border-radius: 12px;
@@ -112,41 +97,67 @@
   border: 1px solid #eaeaea;
   min-height: 250px;
   transition: transform 0.3s ease;
-
+ 
   &:hover {
     transform: translateY(-5px);
   }
 }
-@media (max-width: 768px) {
-  // Social Section
-  .social-section {
-    padding: 2rem 1rem;
-    height: auto;
-    .row {
-      flex-direction: column;
-      .social-left {
-        order: 2;
-        margin: 1rem 0;
-      }
-      .social-right {
-        order: 1;
-        margin: 0;
-        text-align: center;
-        h3 {
-          width: 110%;
-          margin-left: 60%;
-        }
-        .social-links {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 0.5rem;
-          padding: 0 1rem;
-          margin-left: 70px;
-          li {
-            margin-bottom: 1rem;
-          }
-        }
-      }
-    }
+ 
+ 
+.hover-lift {
+  transition: transform 0.3s ease;
+ 
+  &:hover {
+    transform: translateY(-5px);
   }
 }
+ 
+// Mobile adjustments
+@media (max-width: 768px) {
+  .social-section {
+    min-height: auto;
+  }
+}
+/* Orange style for map marker */
+.orange-icon {
+  color: #ff8800;
+}
+ 
+/* Violet style for phone/mail */
+.violet-icon {
+  color: #8a2be2;
+}
+ 
+/* Optional: subtle hover animation */
+.orange-icon:hover,
+.violet-icon:hover {
+  transform: scale(1.2);
+  transition: transform 0.2s ease-in-out;
+}
+ 
+/* Black dashed border between cards (except the last one) */
+.location.has-border {
+  border-bottom: 2px dashed #000; /* solid black dashed line */
+  padding-bottom: 1.5rem;
+ 
+}
+@media (min-width: 768px) {
+  .locations {
+    position: relative;
+  }
+ 
+  /* simple black dashed line in the middle */
+  .locations::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 45%;
+    border-right: 2px dashed black;
+    transform: translateX(-50%);
+  }
+}
+ 
+ 
+ 
+ 
