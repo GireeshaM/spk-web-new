@@ -1,5 +1,5 @@
 <!-- Main Carousel -->
-<div class="home text-align-center align-items-center">
+<div class="home text-align-center align-items-center ">
   <section class="carousel-section">
   <div id="myCarousel" class="carousel slide text-align-center align-items-center " data-bs-ride="carousel" data-bs-interval="5000">
     <!-- Slides -->
@@ -312,7 +312,7 @@
     background-position: center;
     background-size: cover;">
     <div class="container-fluid px-0">
-      <div class="row ms-2 ms-md-5 ms-lg-150">
+      <div class="row ms-2 ms-md-5 ms-lg-150 ">
         <div class="ms-2">
           <p class="collaborate-subtitle mb-2 mt-3">Our insights</p>
           <h2 class="collaborate-title fw-bold mt-2 mb-2 ">
@@ -341,7 +341,7 @@
               <img
                 [src]="slide.image"
                 [alt]="slide.title"
-                class="d-block w-100 carousel-image"
+                class="carousel-image d-block w-100 "
               />
  
               <!-- Gradient Overlay (if you still want it on the image) -->
@@ -563,7 +563,7 @@
             <img src="/assets/home/testimonials/vector2.svg" alt="Quote" class="position-absolute top-0 end-0 me-5 mt-3" width="32" height="32" />
  
             <div class="d-flex align-items-center mb-2 ">
-              <img [src]="t.img" [alt]="t.name" class="rounded-circle me-3" width="80" height="80" />
+              <img [src]="t.img" [alt]="t.name" class="rounded-circle me-3" width="80" height="80"/>
               <div>
                 <div class="fw-medium mb-1">{{ t.name }}</div>
                 <div class="text-secondary small">{{ t.role }}</div>

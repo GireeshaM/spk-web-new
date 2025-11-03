@@ -419,6 +419,9 @@
     height: 40px;
     border-width: 3px;
   }
+ .carousel-image{
+  height: 350px !important;
+ }
 }
 /* Max-width: 767px */
 @media (max-width: 767px) {
@@ -462,10 +465,7 @@
   .stats-section {
     padding: 32px 0;
   }
-
-}
-@media (max-width: 991.98px) {
-  .whatWeOffer-section .row.view-all > div[class*='col-'] {
+    .whatWeOffer-section .row.view-all > div[class*='col-'] {
     flex: 0 0 100%;
     max-width: 100%;
   }
@@ -473,4 +473,8 @@
   width: 75%;
   margin-left: 90px;
 }
+
+}
+@media (max-width: 991.98px) {
+
 }

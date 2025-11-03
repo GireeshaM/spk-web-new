@@ -116,7 +116,7 @@
 /* Responsive */
 @media (max-width: 768px) {
   .top-content {
-    margin-top: -8% !important;
+    margin-top: 28% !important;
   }
   .tele .industry-card-img {
     width: 120px;
@@ -144,4 +144,23 @@
     flex: 0 0 100% !important;
     max-width: 100% !important;
   }
+}
+@media(max-width:1024px){
+  .tele{
+  margin-top: -300px;
+  }
+}
+@media (max-width: 820px) {
+  .tele{
+    margin-top: -230px ;
+    padding: 2%;
+  }
+.hero-img{
+  background-color: transparent;
+}
+.it-header-gradient{
+margin-left:-43px;
+margin-top: -50%;
+}
+
 }

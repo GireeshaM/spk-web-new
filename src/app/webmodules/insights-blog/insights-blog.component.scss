@@ -1,9 +1,9 @@
 .image-container img {
   width: 100%;
-  max-width: 1000px;
+  // max-width: 1000px;
   height: auto;
   border-radius: 8px;
-  object-fit: cover;
+  object-fit: contain;
   margin: 0 auto;
   display: block;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);

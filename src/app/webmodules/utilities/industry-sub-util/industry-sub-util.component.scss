@@ -215,3 +215,8 @@ p {
     justify-content: flex-start;
   }
 }
+ @media (max-width: 1024px) {
+ .smallHeading {
+  margin-left: 120px;
+}
+  }

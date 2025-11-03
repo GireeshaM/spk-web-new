@@ -19,14 +19,14 @@ export class HeaderComponent  {
     this.isScrolled = window.scrollY > 100;
   }
 
- public loginAs(role: string) {
+  public loginAs(role: string) {
     switch (role) {
       case 'Admin':
       case 'Recruiter':
-        window.location.href = 'https://talenthire.ceipal.com/signin';
+        window.open('https://talenthire.ceipal.com/signin', '_blank');
         break;
       case 'Employee':
-        this.router.navigate(['/employee-login']);
+        window.open('/employee-login', '_blank');
         break;
     }
   }
