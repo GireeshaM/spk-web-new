@@ -1,14 +1,4 @@
-.image-container img {
-  width: 100%;
-  // max-width: 1000px;
-  height: auto;
-  border-radius: 8px;
-  object-fit: contain;
-  margin: 0 auto;
-  display: block;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  
-}
+
 .fw-bold{
     margin-left: 180px;
 }
@@ -32,15 +22,6 @@
     }
   }
 
-  .image-container {
-    max-width: 700px;
-
-    img {
-      max-height: 400px;
-      object-fit: cover;
-      margin-left: 40%;
-    }
-  }
 
   .content {
     p {
