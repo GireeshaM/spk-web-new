@@ -7,6 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { MainHeroSectionComponent } from '../webmodules/utilities/main-hero-section/main-hero-section.component';
+import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
 
 @Component({
   selector: 'app-contact-us',
@@ -42,18 +43,52 @@ export class ContactUsComponent {
   ];
   public onSubmit(): void {
     if (this.contactForm.valid) {
-      // console.log('Form submitted:', this.contactForm.value);
-      // Handle form submission logic here
+      // alert("success");
+      //  console.log('Form submitted:', this.contactForm.value);
+      this.sendEmail(new Event('submit'));
     } else {
       // console.log('Form is invalid');
-      this.markFormGroupTouched();
+      this.contactForm.markAllAsTouched();
     }
   }
+
+  public sendEmail(e: Event): void {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        'service_j07jrmv',
+        'template_v0oy7ti',
+        e.target as HTMLFormElement,
+        {
+          publicKey: 'RqHEh2bb5Kq3zVphS',
+        },
+      )
+      .then(
+        () => {
+          // eslint-disable-next-line no-console
+
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          // eslint-disable-next-line no-console
+
+          console.log('FAILED...', (error as EmailJSResponseStatus).text);
+        },
+      );
+  }
+
   private fb = inject(FormBuilder);
 
   public contactForm: FormGroup = this.fb.group({
     name: ['', [Validators.required]],
-    email: ['', [Validators.required, Validators.email]],
+    email: [
+      '',
+      [
+        Validators.required,
+        Validators.pattern(/^[a-zA-Z0-9]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/),
+      ],
+    ],
     phone: ['', [Validators.required]],
     message: ['', [Validators.required]],
   });

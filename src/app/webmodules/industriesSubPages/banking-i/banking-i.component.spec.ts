@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BankingIComponent } from './banking-i.component';
-import {  provideRouter } from '@angular/router';
+import { provideRouter } from '@angular/router';
 
 describe('BankingIComponent', () => {
   let component: BankingIComponent;

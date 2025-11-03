@@ -168,7 +168,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   // what we offer
   @ViewChildren('offerCard') offerCards!: QueryList<ElementRef>;
   public offerCardVisible: boolean[] = [];
-  public toggleViewAll():void {
+  public toggleViewAll(): void {
     this.viewAll = !this.viewAll;
   }
   public whatWeOffer = [

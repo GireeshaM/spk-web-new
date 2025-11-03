@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ManufacturingIComponent } from './manufacturing-i.component';
-import {  provideRouter } from '@angular/router';
+import { provideRouter } from '@angular/router';
 
 describe('ManufacturingIComponent', () => {
   let component: ManufacturingIComponent;
