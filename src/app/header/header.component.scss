@@ -4,13 +4,19 @@
       height: 40px;
     }
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 314733e0c190d638522eb980ba81138a9788ab02
   .offcanvas-body {
     .nav-link {
       color: black;
     }
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 314733e0c190d638522eb980ba81138a9788ab02
   .btnn {
     width: 7rem;
     color: #fff;
@@ -21,7 +27,10 @@
       #372399 212.69%
     );
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 314733e0c190d638522eb980ba81138a9788ab02
   /* Nav link underline animation */
   .nav-link {
     position: relative;
@@ -85,7 +94,14 @@
       display: block;
     }
   }
+<<<<<<< HEAD
 } /* Modal background (deep purple like Figma) */
+=======
+  .btn{
+  width:4rem !important;
+}
+}/* Modal background (deep purple like Figma) */
+>>>>>>> 314733e0c190d638522eb980ba81138a9788ab02
 /* Modal background (deep purple like Figma) */
 .login-modal {
   background: linear-gradient(90deg, #210337 0%, #5f3481 104.75%);
@@ -112,7 +128,10 @@
       0 0 30px rgba(255, 255, 255, 0.2);
   }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 314733e0c190d638522eb980ba81138a9788ab02
 /* Icon and title color */
 .role-card i, /* Target the icons */
 .role-card h6 {
@@ -133,4 +152,9 @@
     color: #ffffff;
     box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
   }
+}
+@media (min-width: 820px){
+.btn{
+  width:5rem !important;
+}
 }

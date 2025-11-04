@@ -19,15 +19,23 @@ export class HeaderComponent {
     this.isScrolled = window.scrollY > 100;
   }
 
+<<<<<<< HEAD
   public loginAs(role: string): void {
+=======
+  public loginAs(role: string) {
+>>>>>>> 314733e0c190d638522eb980ba81138a9788ab02
     switch (role) {
       case 'Admin':
       case 'Recruiter':
-        window.location.href = 'https://talenthire.ceipal.com/signin';
+        window.open('https://talenthire.ceipal.com/signin', '_blank');
         break;
       case 'Employee':
+<<<<<<< HEAD
         window.location.href = 'https://app.kredily.com/login/';
         // this.router.navigate(['/employee-login']);
+=======
+        window.open('/employee-login', '_blank');
+>>>>>>> 314733e0c190d638522eb980ba81138a9788ab02
         break;
     }
   }
