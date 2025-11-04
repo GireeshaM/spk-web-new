@@ -29,36 +29,66 @@ export const routes: Routes = [
   {
     path: 'company',
     component: CompanyComponent,
+    data: {
+      title: 'SprintPark | Your Partner for IT, Staffing, and More',
+      description:
+        'At SprintPark, we are here to support your business with a range of services from IT consulting to staffing and project management. Our team provides flexible, tailored solutions that will fit your needs.',
+    },
   },
   {
     path: '',
     component: HomeComponent,
-    data: { footerColor: '#eae8fd' },
+    data: {
+      title: 'SprintPark Tech | Innovating ,Tomorrow, Today',
+      description:
+        'SprintPark is a leading software company delivering innovative IT, staffing, and technology solutions for businesses worldwide.',
+      footerColor: '#eae8fd',
+    },
   },
   //services
   //it-consulting
   {
     path: 'it-consulting',
     component: ItCommonComponent,
-    data: { footerColor: 'rgba(29, 6, 99, 1)' },
+    data: {
+      title: 'Empowering Businesses Through Technology',
+      description:
+        'Providing expert consulting to align technology with business goals and drive digital transformation success.',
+      footerColor: 'rgba(29, 6, 99, 1)',
+    },
   },
   //staffing
   {
     path: 'staffing',
     component: StaffingComponent,
-    data: { footerColor: 'rgba(29, 6, 99, 1)' },
+    data: {
+      title: 'Connecting Talent with Opportunity',
+      description:
+        'Offering specialized staffing solutions that ensure the right talent powers your organization’s success.',
+      footerColor: 'rgba(29, 6, 99, 1)',
+    },
   },
   //project-management
   {
     path: 'project-management',
     component: ProjectManagementComponent,
-    data: { footerColor: 'rgba(29, 6, 99, 1)' },
+    data: {
+      title: 'Delivering Excellence, On Time and On Budget',
+      description:
+        'Managing projects efficiently from planning to delivery with precision, accountability, and measurable results.',
+      footerColor: 'rgba(29, 6, 99, 1)',
+    },
   },
   //software-service
   {
     path: 'software-service',
     component: SoftwareServiceUtilComponent,
-    data: { footerColor: 'rgba(29, 6, 99, 1)' },
+    data: {
+      title: 'Building the Future with Intelligent Software',
+      description:
+        'Designing, developing, and maintaining innovative software systems that accelerate digital transformation.',
+      footerColor: 'rgba(29, 6, 99, 1)',
+    },
   },
 
   //Industries
@@ -66,43 +96,78 @@ export const routes: Routes = [
   {
     path: 'itAndTelecommunications',
     component: TeleCommunicationsComponent,
-    data: { footerColor: '#f7f7fc' },
+    data: {
+      title: 'Connecting the World, Seamlessly',
+      description:
+        'Driving digital connectivity with 5G, IoT, and cloud solutions for faster, smarter telecom operations.',
+      footerColor: '#f7f7fc',
+    },
   },
   //government
   {
     path: 'government',
     component: GovtComponent,
-    data: { footerColor: '#f7f7fc' },
+    data: {
+      title: 'Transforming Governance through Innovation',
+      description:
+        'Empowering public institutions with secure, efficient, and citizen-focused digital solutions.',
+      footerColor: '#f7f7fc',
+    },
   },
   //healthCrae & life Sciences
   {
     path: 'healthCareAndLifeSciences',
     component: HealthCareComponent,
-    data: { footerColor: '#f7f7fc' },
+    data: {
+      title: 'Innovating for Better Health Outcomes',
+      description:
+        'Enhancing patient care through AI, analytics, and secure, connected healthcare systems.',
+      footerColor: '#f7f7fc',
+    },
   },
   //manufacturing
   {
     path: 'manufacturing',
     component: ManufacturingComponent,
-    data: { footerColor: '#f7f7fc' },
+    data: {
+      title: 'Smart Manufacturing for the Digital Age',
+      description:
+        'Transforming factories with IoT, automation, and data-driven insights for efficient production.',
+      footerColor: '#f7f7fc',
+    },
   },
   //education
   {
     path: 'education',
     component: EducationComponent,
-    data: { footerColor: '#f7f7fc' },
+    data: {
+      title: 'Empowering Education through Technology',
+      description:
+        'Reimagining learning with digital classrooms, smart tools, and personalized education platforms.',
+      footerColor: '#f7f7fc',
+    },
   },
   //transport & logistics
   {
     path: 'transportationAndLogistics',
     component: TransportationComponent,
-    data: { footerColor: '#f7f7fc' },
+    data: {
+      title: 'Driving the Future of Mobility',
+      description:
+        'Optimizing logistics and mobility with real-time data, automation, and connected technologies.',
+      footerColor: '#f7f7fc',
+    },
   },
   //banking
   {
     path: 'banking',
     component: BankingComponent,
-    data: { footerColor: '#f7f7fc' },
+    data: {
+      title: 'Redefining Financial Innovation',
+      description:
+        'Accelerating digital banking with AI, automation, and secure, customer-centric platforms.',
+      footerColor: '#f7f7fc',
+    },
   },
   //Industries subPages
 
@@ -110,60 +175,107 @@ export const routes: Routes = [
   {
     path: 'telecommunication/:section',
     component: TelecommunicationIComponent,
+    data: {
+      title: '',
+      description: '',
+    },
   },
   //government-subPage
   {
     path: 'government/:section',
     component: GovernmentIComponent,
+    data: {
+      title: '',
+      description: '',
+    },
   },
   //transport-subPage
   {
     path: 'transport/:section',
     component: TransportationIComponent,
+    data: {
+      title: '',
+      description: '',
+    },
   },
   //healthcare & life sciences-subPage
   {
     path: 'healthcare/:section',
     component: HealthCareIComponent,
+    data: {
+      title: '',
+      description: '',
+    },
   },
   //banking-subPage
   {
     path: 'banking/:section',
     component: BankingIComponent,
+    data: {
+      title: '',
+      description: '',
+    },
   },
   //education-subPage
   {
     path: 'education/:section',
     component: EducationIComponent,
+    data: {
+      title: '',
+      description: '',
+    },
   },
   //manufacturing-subPage
   {
     path: 'manufacturing/:section',
     component: ManufacturingIComponent,
+    data: {
+      title: '',
+      description: '',
+    },
   },
 
   //careers
   {
     path: 'careers',
     component: CareersComponent,
-    data: { footerColor: '#fff' },
+    data: {
+      title: 'Sprintpark Careers| Build, Grow, Innovate with Us',
+      description:
+        'Join SprintPark to build innovative tech solutions. Explore career opportunities, grow your skills, and be part of a dynamic, forward-thinking team.',
+      footerColor: '#fff',
+    },
   },
   //insights
   {
     path: 'insights',
     component: InsightsComponent,
+    data: {
+      title: 'SprintPark’s Insights | Ideas that Power the Future',
+      description:
+        'Explore SprintPark Insights for the latest tech trends, industry updates, and expert perspectives driving innovation and digital transformation.',
+    },
   },
   //insights-blog
   {
     path: 'insights/:section',
     component: InsightsBlogComponent,
+    data: {
+      title: '',
+      description: '',
+    },
   },
 
   //contact-us
   {
     path: 'contact-us',
     component: ContactUsComponent,
-    data: { footerColor: 'rgba(255, 255, 255, 1)' },
+    data: {
+      title: 'Sprintpark’s Contact us| Let’s Create Something Extraordinary',
+      description:
+        'Get in touch with SprintPark. Connect with our team for software solutions, partnerships, or support.',
+      footerColor: 'rgba(255, 255, 255, 1)',
+    },
   },
   {
     path: '**',

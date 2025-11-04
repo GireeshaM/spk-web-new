@@ -1,0 +1,113 @@
+<img
+  src="/assets/chatbotImg.png"
+  alt="Chat Icon"
+  class="chat-icon p-2  "
+  (click)="toggleChat()"
+ style="width:80px; height:80px; cursor:pointer;"
+/>
+
+ 
+<!-- Chatbot Container -->
+<div *ngIf="isChatOpen" class="chatbot-container">
+  <button
+    type="button"
+    class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
+    aria-label="Close"
+    (click)="closeChat()"
+  ></button>
+ 
+  <div class="top d-flex">
+    <div class="py-3 px-1">
+      <img src="/assets/chatbotImg.png" alt="Logo" />
+    </div>
+    <h5 class="text-white mt-2">Sprint Bot</h5>
+  </div>
+ 
+  <div class="chat-window">
+    <div class="d-flex mt-3">
+      <!-- <i class="fa fa-user-circle fa-2x mx-2" aria-hidden="true"></i> -->
+      <div class="py-3 px-1">
+        <img src="/assets/chatbotImg.png" alt="Logo" />
+      </div>
+      <div>
+        <p class="welcome mb-1">Welcome to SprintPark!</p>
+        <p class="welcome">How can I assist you today?</p>
+        <div *ngIf="showOptions">
+          <button
+            class="btn-option"
+            (click)="handleOptionClick('exploreServices')"
+          >
+            Explore Sprintpark Services
+          </button>
+ 
+          <button
+            class="btn-option"
+            (click)="handleOptionClick('skillsAndRoles')"
+          >
+            Roles & Skills Requirements
+          </button>
+          <button
+            class="btn-option"
+            (click)="handleOptionClick('hiringTimelineProcess')"
+          >
+            Hiring TimeLine and Process
+          </button>
+          <button
+            class="btn-option"
+            (click)="handleOptionClick('workArrangement')"
+          >
+            Work Arrangement
+          </button>
+          <div class="d-flex">
+            <button
+              class="btn-option me-2"
+              (click)="handleOptionClick('jobOpportunities')"
+            >
+              Job Opportunities
+            </button>
+            <button
+              class="btn-option"
+              (click)="handleOptionClick('connectWithUs')"
+            >
+              Connect with Us
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- Chat messages here -->
+    <div *ngFor="let message of messages" class="d-flex align-items-end">
+      <!-- User message on the right -->
+      <div *ngIf="!message.isHtml" style="margin-left: auto">
+        <p class="{{ message.sender }}">{{ message.text }}</p>
+      </div>
+ 
+      <!-- Bot message on the left -->
+      <div *ngIf="message.isHtml" class="d-flex">
+        <!-- <i class="fa fa-user-circle fa-2x mx-2" aria-hidden="true"></i> -->
+        <div class="py-3 px-1">
+          <img src="assets/chatbotImg.png" alt="Logo" />
+        </div>
+        <p class="{{ message.sender }}" [innerHTML]="message.text"></p>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Input and Send Button -->
+  <div class="input-group">
+    <input
+      (input)="updateMessage($event)"
+      (keyup.enter)="sendMessage()"
+      type="text"
+      placeholder="Type a message..."
+      class="form-control"
+      [disabled]="!isInputEnabled"
+    />
+    <button class="send-btn" (click)="sendMessage()">
+      <i class="fa fa-paper-plane" aria-hidden="true"></i>
+    </button>
+  </div>
+</div>
+ 
+ 

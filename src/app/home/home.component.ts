@@ -263,7 +263,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
     },
   ];
   // Industries
-  // Industries
   public industries = [
     {
       img: 'assets/home/industries/industry-it-telecommunications.jpg',
