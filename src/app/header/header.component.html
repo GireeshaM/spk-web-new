@@ -32,7 +32,7 @@
 
       <div class="offcanvas-body">
         <ul class="navbar-nav flex-grow-1 justify-content-between">
-          <li class="nav-item">
+          <li class="nav-item align-items-center">
             <!-- <a class="nav-link" href="#home">Home</a> -->
             <a class="nav-link" href="#home"></a>
           </li>
@@ -184,17 +184,7 @@
 
           <!-- Login Button -->
           <li class="nav-item">
-<<<<<<< HEAD
-            <button
-              class="btn btnn"
-              data-bs-toggle="modal"
-              data-bs-target="#loginModal"
-            >
-              Login
-            </button>
-=======
             <button class="btn btnn " data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
->>>>>>> 314733e0c190d638522eb980ba81138a9788ab02
           </li>
         </ul>
       </div>
@@ -243,19 +233,10 @@
               />
               <h6 class="fw-bold text-gold">Recruiter</h6>
               <p class="small text-light">Hire & manage candidates.</p>
-<<<<<<< HEAD
-              <button
-                class="btn btn-gold mt-auto w-100"
-                (click)="loginAs('Recruiter')"
-                data-bs-dismiss="modal"
-              >
-                Login
-=======
-              <button class="btn btn-gold mt-auto w-100" 
+              <button class="btn btn-gold mt-auto w-100 text-white" 
                       (click)="loginAs('Recruiter')"
                       data-bs-dismiss="modal">
                 Login 
->>>>>>> 314733e0c190d638522eb980ba81138a9788ab02
               </button>
             </div>
           </div>
@@ -272,7 +253,7 @@
               <h6 class="fw-bold text-gold">Admin</h6>
               <p class="small text-light">Manage users & settings.</p>
               <button
-                class="btn btn-gold mt-auto w-100"
+                class="btn btn-gold mt-auto w-100 text-white"
                 (click)="loginAs('Admin')"
                 data-bs-dismiss="modal"
               >
@@ -293,7 +274,7 @@
               <h6 class="fw-bold text-gold">Employee</h6>
               <p class="small text-light">Access dashboard & tasks.</p>
               <button
-                class="btn btn-gold mt-auto w-100"
+                class="btn btn-gold mt-auto w-100 text-white"
                 (click)="loginAs('Employee')"
                 data-bs-dismiss="modal"
               >

@@ -45,7 +45,7 @@
       </p>
 
       <div
-        class="feature-box mb-5"
+        class="feature-box d-flex align-items-center"
         #observeMe
         data-anim-id="btn1"
         [@slideFromRight]="buttonStates.btn1 ? 'show' : 'hide'"
@@ -53,17 +53,17 @@
         <div class="feature-icon">
           <i class="bi bi-file-earmark-text"></i>
         </div>
-        <div class="feature-text py-3 px-4">Reliable Jobs Listings</div>
+        <div class="feature-text py-3 px-4 fw-medium text-center fs-5 w-100 mb-5 text-white align-items-center justify-content-center">Reliable Jobs Listings</div>
       </div>
 
       <div
-        class="feature-box mb-3"
+        class="feature-box mb-3 d-flex align-items-center"
         #observeMe
         data-anim-id="btn2"
         [@slideFromLeft]="buttonStates.btn2 ? 'show' : 'hide'"
       >
         <div
-          class="feature-text py-3 px-4 fw-medium text-center fs-5 w-100 mb-5"
+          class="feature-text py-3 px-4 fw-medium text-center fs-5 w-100 mb-5 text-white align-items-center justify-content-center"
         >
           Tailored Recommendations
         </div>
@@ -73,7 +73,7 @@
       </div>
 
       <div
-        class="feature-box"
+        class="feature-box d-flex align-items-center"
         #observeMe
         data-anim-id="btn3"
         [@slideFromRight]="buttonStates.btn3 ? 'show' : 'hide'"
@@ -82,7 +82,7 @@
           <i class="bi bi-arrow-repeat"></i>
         </div>
         <div
-          class="feature-text py-3 px-4 fw-medium text-center fs-5 w-100 mb-5"
+          class="feature-text py-3 px-4 fw-medium text-center fs-5 w-100 mb-5 text-white"
         >
           Easy Application Process
         </div>
@@ -129,7 +129,7 @@
 
             <div class="d-flex flex-wrap gap-3 mb-3">
               <span class="small"
-                ><i class="bi bi-clock"></i> {{ job.type }}</span
+                ><i class="fa-solid fa-laptop-code"></i> {{ job.type }}</span
               >
               <span class="small"
                 ><i class="bi bi-briefcase"></i> {{ job.experience }}</span
@@ -149,7 +149,7 @@
   </div>
 </div>
 <!-- The Easiest Way to Get Your Job SECTION -->
-<div class="container py-5 mt-4">
+<div class="container py-5 mt-4 mb-5">
   <div class="row align-items-center g-4">
     <!-- Left Content -->
     <div class="col-lg-6">

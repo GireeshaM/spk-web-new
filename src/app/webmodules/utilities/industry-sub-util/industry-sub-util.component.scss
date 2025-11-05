@@ -218,6 +218,11 @@ p {
 }
  @media (max-width: 1024px) {
  .smallHeading {
-  margin-left: 120px;
+  margin-left: 160px;
 }
   }
+      @media (max-width: 575.98px) { 
+        .smallHeading{
+          margin-left: 25px;
+        }
+       }

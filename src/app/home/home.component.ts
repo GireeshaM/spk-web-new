@@ -39,6 +39,8 @@ import { RouterLink } from '@angular/router';
   ],
 })
 export class HomeComponent implements OnInit, AfterViewInit {
+ 
+ 
   public btn1 = { label: 'Get started with AI', style: 'btn-warning' };
   public btn2 = { label: "Let's talk", style: 'btn-outline-light' };
   viewAll = false;
@@ -98,7 +100,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       this.checkInView();
       this.onScroll();
       this.checkMobile();
-
+ 
       if (!this.isBrowser) return;
       setTimeout(() => {
         this.observer = new IntersectionObserver(
@@ -108,10 +110,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
                 const index = this.statElements
                   .toArray()
                   .findIndex((el) => el.nativeElement === entry.target);
-
+ 
                 if (index !== -1 && !this.stats[index].animated) {
                   this.stats[index].animated = true;
-
+ 
                   this.animateStat(index);
                   this.observer.unobserve(entry.target);
                 }
@@ -120,7 +122,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
           },
           { threshold: 0.3 },
         );
-
+ 
         this.statElements.forEach((el) => {
           this.observer.observe(el.nativeElement);
         });
@@ -129,7 +131,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
   public groupTestimonials(): void {
     this.groupedTestimonials = []; // Clear previous
-    const perSlide = this.isMobile ? 1 : 2; // You can use 3 if needed for desktop
+    const perSlide = this.isMobile ? 1 : 3; // You can use 3 if needed for desktop
     for (let i = 0; i < this.testimonials.length; i += perSlide) {
       this.groupedTestimonials.push(this.testimonials.slice(i, i + perSlide));
     }
@@ -262,6 +264,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       desc: 'Monitor results, refine strategies, and drive continuous improvement for success.',
     },
   ];
+  // Industries
   // Industries
   public industries = [
     {
@@ -463,20 +466,20 @@ export class HomeComponent implements OnInit, AfterViewInit {
   private platformId = inject(PLATFORM_ID);
   isBrowser = isPlatformBrowser(this.platformId);
   cdRef = inject(ChangeDetectorRef);
-
+ 
   private animateStat(index: number): void {
     const stat = this.stats[index];
     const duration = 2000;
     const steps = 60;
     let currentStep = 0;
-
+ 
     const interval = setInterval(() => {
       currentStep++;
       const progress = currentStep / steps;
       stat.current = Math.floor(stat.target * progress);
       this.cdRef.detectChanges();
       // console.log(`Animating: ${stat.label}`);
-
+ 
       if (currentStep >= steps) {
         stat.current = stat.target;
         clearInterval(interval);
@@ -484,3 +487,5 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }, duration / steps);
   }
 }
+ 
+ 

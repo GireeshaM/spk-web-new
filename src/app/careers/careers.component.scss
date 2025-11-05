@@ -28,11 +28,10 @@
   }
 }
 .feature-box {
-  display: flex;
-  align-items: center;
+  // align-items: center;
   margin-bottom: 40px;
   gap: 1rem;
-  width: 100%;
+  width: 80%;
 
   .feature-icon {
     border-radius: 5rem;
@@ -43,17 +42,13 @@
 
   .feature-text {
     background: #9d67d6;
-    color: white;
+  
     flex: 1;
     border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 12px 20px;
     flex-grow: 1;
-    text-align: center;
     margin: 0 15px;
-    font-size: 18px;
+   
   }
 }
 // Job Oppurtunities at SprintPark
@@ -75,3 +70,7 @@
     display: none;
   }
 }
+//  @media (max-width: 575.98px) {
+
+//   width:100%;
+//   }

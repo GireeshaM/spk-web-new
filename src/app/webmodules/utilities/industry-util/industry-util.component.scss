@@ -144,8 +144,6 @@
     max-width: 100% !important;
   }
 }
-<<<<<<< HEAD
-=======
 @media(max-width:1024px){
   .tele{
   margin-top: -300px;
@@ -161,8 +159,12 @@
 }
 .it-header-gradient{
 margin-left:-43px;
-margin-top: -50%;
+margin-top: -40%;
 }
 
 }
->>>>>>> 314733e0c190d638522eb980ba81138a9788ab02
+@media (max-width: 576px) {
+  .it-header-gradient{
+  margin-top: 80px;
+  }
+}

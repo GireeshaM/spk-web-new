@@ -37,8 +37,8 @@ export class ContactUsComponent {
       title: 'India Location :',
       address:
         'Unit No. 1204,12th Floor,B Block,Asian Suncity, Kondapur, Hyderabad, Telangana 500084',
-      phone: '+1 (860) 566 9894',
-      email: 'hr@sprintpark.com',
+      phone: '+91 7207735554',
+      email: 'humanresources@sprintpark.com',
     },
   ];
   public onSubmit(): void {

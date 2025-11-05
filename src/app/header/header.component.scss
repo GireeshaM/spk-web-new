@@ -4,19 +4,11 @@
       height: 40px;
     }
   }
-<<<<<<< HEAD
-
-=======
->>>>>>> 314733e0c190d638522eb980ba81138a9788ab02
   .offcanvas-body {
     .nav-link {
       color: black;
     }
   }
-<<<<<<< HEAD
-
-=======
->>>>>>> 314733e0c190d638522eb980ba81138a9788ab02
   .btnn {
     width: 7rem;
     color: #fff;
@@ -27,10 +19,6 @@
       #372399 212.69%
     );
   }
-<<<<<<< HEAD
-
-=======
->>>>>>> 314733e0c190d638522eb980ba81138a9788ab02
   /* Nav link underline animation */
   .nav-link {
     position: relative;
@@ -94,14 +82,10 @@
       display: block;
     }
   }
-<<<<<<< HEAD
-} /* Modal background (deep purple like Figma) */
-=======
   .btn{
   width:4rem !important;
 }
 }/* Modal background (deep purple like Figma) */
->>>>>>> 314733e0c190d638522eb980ba81138a9788ab02
 /* Modal background (deep purple like Figma) */
 .login-modal {
   background: linear-gradient(90deg, #210337 0%, #5f3481 104.75%);
@@ -128,10 +112,6 @@
       0 0 30px rgba(255, 255, 255, 0.2);
   }
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 314733e0c190d638522eb980ba81138a9788ab02
 /* Icon and title color */
 .role-card i, /* Target the icons */
 .role-card h6 {
@@ -141,20 +121,19 @@
 /* Button with white background */
 .btn-gold {
   background: #4a90e2; /* Light blue background */
-  color: #ffffff;
   border: none;
-  font-weight: 600;
   border-radius: 0.6rem;
   transition: all 0.2s ease-in-out;
-
+  margin-left: 25%;
   &:hover {
     background: #357abd; /* Darker blue on hover */
-    color: #ffffff;
+   
     box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
   }
 }
 @media (min-width: 820px){
 .btn{
   width:5rem !important;
+  margin-left: 2px;
 }
 }
