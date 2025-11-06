@@ -43,7 +43,7 @@ export class SoftwareServiceUtilComponent {
     {
       title: 'Tailored Your Needs',
       description:
-        'Every business is unique — our software solutions are crafted specifically to fit your goals, workflows, and challenges.',
+        'Every business is unique our software solutions are crafted specifically to fit your goals, workflows, and challenges.',
     },
     {
       title: 'Scalability & Flexibility',

@@ -1,6 +1,6 @@
 .contact-us {
   overflow-x: hidden;
- font-family: "Inter", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 // Location border (can't use Bootstrap border utilities for dashed)
 .location-border {
@@ -123,7 +123,7 @@
 
 /* Black dashed border between cards (except the last one) */
 .location.has-border {
-  border-bottom: 2px dashed #000; 
+  border-bottom: 2px dashed #000;
   padding-bottom: 1.5rem;
 }
 @media (min-width: 768px) {

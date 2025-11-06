@@ -128,12 +128,12 @@ const sectionsData: Record<string, Section> = {
       {
         title: 'Cost Control & Compliance',
         description:
-          'Through real-time tracking, project managers keep expenses under control while embedding compliance and quality standards at every stage—ensuring products meet market and regulatory expectations.',
+          'Through real-time tracking, project managers keep expenses under control while embedding compliance and quality standards at every stage ensuring products meet market and regulatory expectations.',
       },
       {
         title: 'Collaboration & Continuous Improvement',
         description:
-          'Cross-functional teams—from engineers to QA—work cohesively under guided frameworks. Post-project evaluations capture lessons learned, driving innovation and continuous improvement for future success.',
+          'Cross-functional teams from engineers to QA work cohesively under guided frameworks. Post-project evaluations capture lessons learned, driving innovation and continuous improvement for future success.',
       },
     ],
     steps: commonSteps,

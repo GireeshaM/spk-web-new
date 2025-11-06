@@ -5,20 +5,20 @@
   right: 20px;
   cursor: pointer;
   z-index: 1000;
-//   background-color: #410470;
+  //   background-color: #410470;
   border-radius: 20%;
   color: white;
-//   padding: 15px;
+  //   padding: 15px;
   transition: background-color 0.3s ease;
 }
- 
+
 .chat-icon:hover {
- transform: scale(1.2); 
+  transform: scale(1.2);
 }
- 
+
 /* Chatbot Container */
 .chatbot-container {
-  border: 1px solid  #410470;
+  border: 1px solid #410470;
   width: 350px;
   height: 500px;
   position: fixed;
@@ -31,31 +31,33 @@
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   box-sizing: border-box;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
- 
+
 /* Top header */
 .top {
   height: 60px;
-  background-color:  #410470;
+  background-color: #410470;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
-  border-top: 2px solid  #410470;
+  border-top: 2px solid #410470;
   display: flex;
   align-items: center;
   padding-left: 10px;
 }
- 
+
 img {
   width: 30px;
   height: 30px;
 }
- 
+
 .top h5 {
   margin-left: 10px;
   color: white;
 }
- 
+
 /* Chat Window */
 .chat-window {
   flex-grow: 1;
@@ -66,9 +68,9 @@ img {
   scrollbar-width: thin;
   scrollbar-color: #0a2250 #f1f1f1;
 }
- 
+
 .chat-window p.user {
-  background-color:  #410470;
+  background-color: #410470;
   color: white;
   padding: 8px;
   border-radius: 10px;
@@ -76,7 +78,7 @@ img {
   width: 100%;
   align-self: flex-end;
 }
- 
+
 .chat-window p.bot {
   background-color: #eaf0f6;
   color: #0a2250;
@@ -86,12 +88,12 @@ img {
   max-width: 80%;
   align-self: flex-start;
 }
- 
+
 /* User icon */
 .fa-user-circle {
   color: #0a2250;
 }
- 
+
 .welcome {
   background-color: rgb(234, 240, 246);
   padding: 10px;
@@ -99,7 +101,7 @@ img {
   margin-left: 10px;
   color: #0a2250;
 }
- 
+
 /* Input Group */
 .input-group {
   display: flex;
@@ -109,7 +111,7 @@ img {
   background-color: #f1f1f1;
   border-top: 1px solid #ddd;
 }
- 
+
 /* Input box */
 input.form-control {
   flex: 1;
@@ -120,15 +122,15 @@ input.form-control {
   font-size: 1rem;
   transition: border-color 0.3s ease;
 }
- 
+
 input.form-control:focus {
   border-color: #0a2250;
   outline: none;
 }
- 
+
 /* Send Button */
 .send-btn {
-  background-color:  #410470;
+  background-color: #410470;
   border: none;
   color: white;
   padding: 10px;
@@ -137,15 +139,15 @@ input.form-control:focus {
   margin-left: 5px;
   transition: background-color 0.3s ease;
 }
- 
+
 .send-btn:hover {
   background-color: #9c36ea;
 }
- 
+
 .send-btn i {
   font-size: 1.2rem;
 }
- 
+
 .btn-option {
   display: block;
   border: 1px solid rgb(238, 71, 71) !important;
@@ -158,10 +160,8 @@ input.form-control:focus {
   text-align: left;
   cursor: pointer;
 }
- 
+
 .btn-option:hover {
   background-color: rgb(255, 236, 236);
   border-color: none;
 }
- 
- 

@@ -9,6 +9,7 @@ import {
   PLATFORM_ID,
   ChangeDetectorRef,
   inject,
+  Renderer2,
 } from '@angular/core';
 import { CarouselModule } from 'primeng/carousel';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
@@ -39,10 +40,10 @@ import { RouterLink } from '@angular/router';
   ],
 })
 export class HomeComponent implements OnInit, AfterViewInit {
- 
- 
+ @ViewChild('industriesCarouselRef', { static: false }) industriesCarouselRef!: ElementRef;
   public btn1 = { label: 'Get started with AI', style: 'btn-warning' };
   public btn2 = { label: "Let's talk", style: 'btn-outline-light' };
+  constructor(private renderer: Renderer2) {}
   viewAll = false;
   groupedTestimonials: any[][] = [];
   currentTestimonialIndex = 0;
@@ -95,40 +96,57 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.checkMobile(); // Set isMobile before grouping
     this.groupTestimonials();
   }
-  public ngAfterViewInit(): void {
-    if (this.isBrowser) {
-      this.checkInView();
-      this.onScroll();
-      this.checkMobile();
- 
-      if (!this.isBrowser) return;
-      setTimeout(() => {
-        this.observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                const index = this.statElements
-                  .toArray()
-                  .findIndex((el) => el.nativeElement === entry.target);
- 
-                if (index !== -1 && !this.stats[index].animated) {
-                  this.stats[index].animated = true;
- 
-                  this.animateStat(index);
-                  this.observer.unobserve(entry.target);
-                }
+public ngAfterViewInit(): void {
+  if (this.isBrowser) {
+    this.checkInView();
+    this.onScroll();
+    this.checkMobile();
+
+    if (!this.isBrowser) return;
+
+    // 👇 existing IntersectionObserver logic
+    setTimeout(() => {
+      this.observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const index = this.statElements
+                .toArray()
+                .findIndex((el) => el.nativeElement === entry.target);
+              if (index !== -1 && !this.stats[index].animated) {
+                this.stats[index].animated = true;
+                this.animateStat(index);
+                this.observer.unobserve(entry.target);
               }
-            });
-          },
-          { threshold: 0.3 },
-        );
- 
-        this.statElements.forEach((el) => {
-          this.observer.observe(el.nativeElement);
-        });
-      }, 100);
-    }
+            }
+          });
+        },
+        { threshold: 0.3 },
+      );
+
+      this.statElements.forEach((el) => {
+        this.observer.observe(el.nativeElement);
+      });
+    }, 100);
+
+    // 👇 Add this block to stabilize carousel height
+    setTimeout(() => {
+      const industriesCarousel = document.querySelector('.p-carousel-viewport');
+      if (industriesCarousel) {
+        (industriesCarousel as HTMLElement).style.height = '320px'; // or desired fixed height
+      }
+
+      // Optional: ensure smooth height on resize
+      window.addEventListener('resize', () => {
+        const viewport = document.querySelector('.p-carousel-viewport');
+        if (viewport) {
+          (viewport as HTMLElement).style.height = '420px';
+        }
+      });
+    }, 300);
   }
+}
+
   public groupTestimonials(): void {
     this.groupedTestimonials = []; // Clear previous
     const perSlide = this.isMobile ? 1 : 3; // You can use 3 if needed for desktop
@@ -264,7 +282,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       desc: 'Monitor results, refine strategies, and drive continuous improvement for success.',
     },
   ];
-  // Industries
+  
   // Industries
   public industries = [
     {
@@ -310,7 +328,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
       link: '/manufacturing',
     },
   ];
-  // Duplicate first 2 items at the end to allow smooth circular scroll
   public industriesCarousel = [
     ...this.industries,
     ...this.industries.slice(0, 2),
@@ -379,56 +396,56 @@ export class HomeComponent implements OnInit, AfterViewInit {
       name: 'Ravi Kumar',
       role: 'HR Manager, TechNova Solutions',
       rating: 4,
-      text: 'SprintPark quickly understood our requirements and delivered top-quality candidates within tight timelines.”',
+      text: 'SprintPark quickly understood our requirements and delivered top-quality candidates within tight timelines.',
     },
     {
       img: 'assets/home/testimonials/testimonial-2.png',
       name: 'Anjali Mehta',
       role: 'Co-founder - Zent Technologies',
       rating: 5,
-      text: '“A highly reliable partner — their team is responsive, professional, and easy to work with.”',
+      text: 'A highly reliable partner  their team is responsive, professional, and easy to work with.',
     },
     {
       img: 'assets/home/testimonials/vikram_testinomial.png',
       name: 'Vikram Malhotra',
       role: ' Program Manager, Google Cloud',
       rating: 4,
-      text: '“Their process is smooth, transparent, and very easy to work with.”',
+      text: 'Their process is smooth, transparent, and very easy to work with.',
     },
     {
       img: 'assets/home/testimonials/sofia_testinomial.png',
       name: 'Sophia Johnson',
       role: ' Customer Success Manager, Salesforce',
       rating: 4,
-      text: '“ We value SprintPark for consistently providing skilled and reliable professionals.”',
+      text: ' We value SprintPark for consistently providing skilled and reliable professionals.',
     },
     {
       img: 'assets/home/testimonials/karen_testinomial.png',
       name: 'Karen.S',
       role: ' Enterprise Account Director, Microsoft Azure',
       rating: 4,
-      text: '“ The team is supportive, attentive, and always quick to respond.”',
+      text: ' The team is supportive, attentive, and always quick to respond.',
     },
     {
       img: 'assets/home/testimonials/daniel_testinomial.png',
       name: 'Daniel Lee',
       role: 'Technical Consultant, Salesforce CRM',
       rating: 4,
-      text: '“SprintPark helped us scale efficiently with the right talent.”',
+      text: 'SprintPark helped us scale efficiently with the right talent.',
     },
     {
       img: 'assets/home/testimonials/arun_testinomial.png',
       name: 'Arun Kumar',
       role: ' Partner Solutions Lead, AWS India',
       rating: 4,
-      text: '“They take the time to understand our culture and needs.”',
+      text: 'They take the time to understand our culture and needs.',
     },
     {
       img: 'assets/home/testimonials/megha_testinomial.png',
       name: 'Megha Sharma',
       role: 'Training & Certification Manager, AWS',
       rating: 4,
-      text: '“Professional, efficient, and trustworthy—an excellent partner in staffing.”',
+      text: 'Professional, efficient, and trustworthy an excellent partner in staffing.',
     },
   ];
   public currentInsightIndex = 1; // Start with the middle card (or 0 for first)

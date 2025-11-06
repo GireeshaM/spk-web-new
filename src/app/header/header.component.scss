@@ -82,10 +82,10 @@
       display: block;
     }
   }
-  .btn{
-  width:4rem !important;
-}
-}/* Modal background (deep purple like Figma) */
+  .btn {
+    width: 4rem !important;
+  }
+} /* Modal background (deep purple like Figma) */
 /* Modal background (deep purple like Figma) */
 .login-modal {
   background: linear-gradient(90deg, #210337 0%, #5f3481 104.75%);
@@ -127,13 +127,13 @@
   margin-left: 25%;
   &:hover {
     background: #357abd; /* Darker blue on hover */
-   
+
     box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
   }
 }
-@media (min-width: 820px){
-.btn{
-  width:5rem !important;
-  margin-left: 2px;
-}
+@media (min-width: 820px) {
+  .btn {
+    width: 5rem !important;
+    margin-left: 2px;
+  }
 }

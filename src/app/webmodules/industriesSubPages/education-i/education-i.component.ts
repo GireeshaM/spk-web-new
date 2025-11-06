@@ -104,7 +104,7 @@ const sectionsData: Record<string, Section> = {
       {
         title: 'Monitoring Outcomes & Student Success',
         description:
-          'With measurable goals and continuous evaluation, institutions track progress and improve. Student-centered initiatives—like digital literacy or career development—deliver long-term educational value.',
+          'With measurable goals and continuous evaluation, institutions track progress and improve. Student-centered initiatives like digital literacy or career development deliver long-term educational value.',
       },
     ],
     steps: commonSteps,

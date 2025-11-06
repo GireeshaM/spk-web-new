@@ -1,12 +1,11 @@
 <img
   src="/assets/chatbotImg.png"
   alt="Chat Icon"
-  class="chat-icon p-2  "
+  class="chat-icon p-2"
   (click)="toggleChat()"
- style="width:80px; height:80px; cursor:pointer;"
+  style="width: 80px; height: 80px; cursor: pointer"
 />
 
- 
 <!-- Chatbot Container -->
 <div *ngIf="isChatOpen" class="chatbot-container">
   <button
@@ -15,14 +14,14 @@
     aria-label="Close"
     (click)="closeChat()"
   ></button>
- 
+
   <div class="top d-flex">
     <div class="py-3 px-1">
       <img src="/assets/chatbotImg.png" alt="Logo" />
     </div>
     <h5 class="text-white mt-2">Sprint Bot</h5>
   </div>
- 
+
   <div class="chat-window">
     <div class="d-flex mt-3">
       <!-- <i class="fa fa-user-circle fa-2x mx-2" aria-hidden="true"></i> -->
@@ -39,7 +38,7 @@
           >
             Explore Sprintpark Services
           </button>
- 
+
           <button
             class="btn-option"
             (click)="handleOptionClick('skillsAndRoles')"
@@ -75,14 +74,14 @@
         </div>
       </div>
     </div>
- 
+
     <!-- Chat messages here -->
     <div *ngFor="let message of messages" class="d-flex align-items-end">
       <!-- User message on the right -->
       <div *ngIf="!message.isHtml" style="margin-left: auto">
         <p class="{{ message.sender }}">{{ message.text }}</p>
       </div>
- 
+
       <!-- Bot message on the left -->
       <div *ngIf="message.isHtml" class="d-flex">
         <!-- <i class="fa fa-user-circle fa-2x mx-2" aria-hidden="true"></i> -->
@@ -93,7 +92,7 @@
       </div>
     </div>
   </div>
- 
+
   <!-- Input and Send Button -->
   <div class="input-group">
     <input
@@ -109,5 +108,3 @@
     </button>
   </div>
 </div>
- 
- 

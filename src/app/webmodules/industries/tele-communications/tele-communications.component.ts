@@ -13,7 +13,7 @@ export class TeleCommunicationsComponent {
   public itHeader = 'IT & TeleCommunications';
   public itHeading = 'Empowering Telecom Growth with Confidence';
   public itContent =
-    'As the telecom industry rapidly expands across B2B and B2C markets, so do the challenges of compliance, risk, and trust. We help telecom businesses scale strategically, strengthen governance, and stay resilient in a constantly evolving landscape — empowering growth with clarity and confidence.';
+    'As the telecom industry rapidly expands across B2B and B2C markets, so do the challenges of compliance, risk, and trust. We help telecom businesses scale strategically, strengthen governance, and stay resilient in a constantly evolving landscape  empowering growth with clarity and confidence.';
   public subHeading = 'How We Empower Your Business';
   public telecom =
     'assets/Industries/itAndTelecommunication/telecommunications-hero.jpg';

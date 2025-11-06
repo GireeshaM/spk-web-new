@@ -11,7 +11,10 @@ export class WhySpCompComponent {
   @Input() mainHeading!: string;
   @Input() content!: string;
   @Input() cards: { title: string; desc: string }[] = [];
-  @Input() image!: {
+
+  @Input() image: {
     left: { src: string; alt: string };
+  } = {
+    left: { src: '', alt: '' },
   };
 }

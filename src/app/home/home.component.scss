@@ -17,7 +17,7 @@
       left: 5%;
       right: auto;
       max-width: 45%;
-      top: 32%;
+      top: 22%;
       h1,
       p {
         text-align: left !important;
@@ -101,7 +101,7 @@
     .carousel-control-next {
       width: 50px;
       height: 50px;
-      top: 70%;
+      top:65% !important;
       border: 4px solid #ff9900;
       border-radius: 50%;
       background: transparent !important;
@@ -202,6 +202,7 @@
 }
 //features section end
 //section 3 start of (what we offer and industries we serve)
+
 .offer-industries-bg {
   background: #f6f4fd url("/assets/home/industries/industries-bgwave.png")
     no-repeat center bottom;
@@ -399,45 +400,28 @@
     }
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 575.98px) {
   .home #myCarousel .carousel-item img {
     height: 50vh;
   }
   .home #myCarousel .carousel-caption {
-    bottom: 10%;
-    left: 5%;
+    bottom: 15%;
+   top:5%;
     right: 5%;
-    top: 5%;
     max-width: 100%;
-    padding: 0 1rem;
-  }
-  .home #myCarousel .carousel-caption .btn-group {
-    flex-direction: column !important;
-    width: 100%;
-  }
-  .home #myCarousel .carousel-caption .btn-group .btn-1,
-  .home #myCarousel .carousel-caption .btn-group .btn-2 {
-    width: 100%;
   }
   .home #myCarousel .carousel-control-prev,
   .home #myCarousel .carousel-control-next {
-    margin-top: -22px !important;
-    width: 40px;
-    height: 40px;
-    border-width: 3px;
-    margin-left:40px !important;
+    margin-top: 8% !important;
+    height: 30px;
+    width:30px;
+    margin-left: 10% !important;
   }
  .carousel-image{
   height: 350px !important;
  }
 }
-@media (max-width: 930px) {
-    .home #myCarousel .carousel-control-prev,
-  .home #myCarousel .carousel-control-next {
-    margin-top: -10% !important;
-  }
-}
-@media (max-width: 768px) {
+@media (max-width: 767.98px) {
   .about-sprintpark-section .image-wrapper .ellipse-shape {
     display: none;
   }
@@ -456,9 +440,16 @@
     padding: 2rem 0.75rem;
     min-height: auto;
   }
+   .home #myCarousel .carousel-control-prev,
+ .home #myCarousel .carousel-control-next {
+  margin-top: 8% ;
+   }
+}
+@media(min-width:768px){
     .home #myCarousel .carousel-control-prev,
   .home #myCarousel .carousel-control-next {
-    margin-top: -8% !important;}
+  margin-top:-20px;
+  }
 }
 /* Min-width: 992px */
 @media (min-width: 992px) {
@@ -481,10 +472,8 @@
   .stats-section {
     padding: 32px 0;
   }
-  //  .home #myCarousel .carousel-control-prev,
-  // .home #myCarousel .carousel-control-next {
-  //   margin-top: -20% !important;}
 }
+
 @media (max-width: 991.98px) {
   .whatWeOffer-section .row.view-all > div[class*="col-"] {
     flex: 0 0 100%;
@@ -494,18 +483,18 @@
     width: 75%;
     margin-left: 90px;
   }
+      .home #myCarousel .carousel-control-prev,
+  .home #myCarousel .carousel-control-next {
+  margin-top:-22%;
+  }
 }
-
-@media (max-width: 390px) {
+@media (max-width: 1199.98px) { 
      .home #myCarousel .carousel-control-prev,
   .home #myCarousel .carousel-control-next {
-    margin-top: 15% !important;}
-}
+  margin-top:-22%;
+  }
+ }
 
-// @media (max-width: 1024px) {
-//   .home #myCarousel .carousel-control-prev,
-//   .home #myCarousel .carousel-control-next {
-//     margin-top: -15% !important;}
-// }
- 
+
+
  

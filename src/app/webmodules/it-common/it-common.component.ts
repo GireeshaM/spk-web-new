@@ -36,7 +36,7 @@ export class ItCommonComponent {
     {
       title: 'Access Top-Tier Experts',
       description:
-        'Leverage the knowledge of seasoned IT professionals who guide you from strategy to execution—solution design, implementation, and issue resolution—all handled by specialists.',
+        'Leverage the knowledge of seasoned IT professionals who guide you from strategy to execution solution design, implementation, and issue resolution all handled by specialists.',
     },
     {
       title: ' Proactive Risk Management',
@@ -46,7 +46,7 @@ export class ItCommonComponent {
     {
       title: ' Focus on Core Business',
       description:
-        'Free your internal team from complex IT challenges so they can focus on what matters most—growing your business. Let our experts handle the tech, while you drive the strategy.',
+        'Free your internal team from complex IT challenges so they can focus on what matters most growing your business. Let our experts handle the tech, while you drive the strategy.',
     },
     {
       title: ' Unbiased, Strategic Insights',
@@ -71,7 +71,7 @@ export class ItCommonComponent {
     },
     {
       title: 'Flexible Engagement Models',
-      desc: 'We offer adaptable plans designed to fit your unique goals, timelines, and budget—whether you need end-to-end support or specialized consulting.',
+      desc: 'We offer adaptable plans designed to fit your unique goals, timelines, and budget whether you need end-to-end support or specialized consulting.',
     },
     {
       title: 'Client-Centric Focus',

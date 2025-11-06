@@ -21,7 +21,7 @@ export class BankingComponent {
       img: 'assets/Industries/banking/big-data.png',
       title: 'Big Data',
       description:
-        'We manage vast financial datasets for risk assessment, transaction monitoring, and customer insights—enabling smarter decisions through predictive analytics.',
+        'We manage vast financial datasets for risk assessment, transaction monitoring, and customer insights enabling smarter decisions through predictive analytics.',
       link: '/banking/BigData',
     },
     {
@@ -35,7 +35,7 @@ export class BankingComponent {
       title: 'Project Management',
       img: 'assets/Industries/banking/project-management.png',
       description:
-        'We oversee critical initiatives such as digital banking transformations, regulatory compliance upgrades, and technology deployments—ensuring projects are delivered on time and within scope.',
+        'We oversee critical initiatives such as digital banking transformations, regulatory compliance upgrades, and technology deployments ensuring projects are delivered on time and within scope.',
       link: '/banking/ProjectManagement',
     },
     {

@@ -47,7 +47,7 @@ export class ProjectManagementComponent {
     {
       title: 'Enable Smarter Decision-Making',
       description:
-        'Real-time insights into project progress provide clarity on resource allocation, timelines, and priorities—leading to more informed, strategic decisions.',
+        'Real-time insights into project progress provide clarity on resource allocation, timelines, and priorities leading to more informed, strategic decisions.',
     },
     {
       title: 'Discover Best Practices',
@@ -73,7 +73,7 @@ export class ProjectManagementComponent {
     },
     {
       title: ' Collaborative Culture',
-      desc: ' We believe in open communication and working as an extension of your team — ensuring transparency, agility, and alignment every step of the way.',
+      desc: ' We believe in open communication and working as an extension of your team ensuring transparency, agility, and alignment every step of the way.',
     },
     {
       title: ' Results-Focused Delivery',

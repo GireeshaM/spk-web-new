@@ -101,7 +101,7 @@ export class StaffingComponent {
   public mainHeading = 'Why SprintPark Stands Out';
 
   public content =
-    'At SprintPark, we’re more than a staffing partner — we’re your long-term growth enabler. Our strength lies in our strategic mindset, client-focused execution, and unwavering commitment to quality.';
+    'At SprintPark, we’re more than a staffing partner we’re your long-term growth enabler. Our strength lies in our strategic mindset, client-focused execution, and unwavering commitment to quality.';
 
   public cards = [
     {

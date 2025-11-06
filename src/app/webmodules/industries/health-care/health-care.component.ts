@@ -43,7 +43,7 @@ export class HealthCareComponent {
       img: 'assets/Industries/healthCareAndLifeSciences/healthCare-project-delivery.png',
       title: 'Healthcare Project Delivery',
       description:
-        'Manage critical healthcare IT projects—like EHR implementations and system upgrades—ensuring timely and successful delivery.',
+        'Manage critical healthcare IT projects like EHR implementations and system upgrades ensuring timely and successful delivery.',
       link: '/healthcare/projectDelivery',
     },
     {

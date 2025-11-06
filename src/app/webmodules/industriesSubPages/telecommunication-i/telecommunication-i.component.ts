@@ -132,7 +132,7 @@ const sectionsData: Record<string, Section> = {
       {
         title: 'Smart & Modern Infrastructure',
         description:
-          'Shifting from legacy to smart systems delivers flexibility, resilience, predictive monitoring, and security — shaping a future-ready, adaptive digital ecosystem.',
+          'Shifting from legacy to smart systems delivers flexibility, resilience, predictive monitoring, and security shaping a future-ready, adaptive digital ecosystem.',
       },
     ],
     text: 'Our Strategy for Financial Cybersecurity',

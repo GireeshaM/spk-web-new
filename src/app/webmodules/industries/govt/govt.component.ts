@@ -12,7 +12,7 @@ export class GovtComponent {
   public itHeader = 'Government';
   public itHeading = 'Empowering Governments with Purpose-Built Solutions';
   public itContent =
-    'Governments face complex challenges—from data protection to talent gaps and crisis management. SprintPark delivers tailored, expert-driven solutions that foster innovation, efficiency, and trust—never a one-size-fits-all approach.';
+    'Governments face complex challenges from data protection to talent gaps and crisis management. SprintPark delivers tailored, expert-driven solutions that foster innovation, efficiency, and trust never a one-size-fits-all approach.';
   public subHeading = 'Shaping the Future of Public Service';
   public telecom = 'assets/Industries/government/government-hero.jpg';
   public cards = [

@@ -22,8 +22,8 @@ export class ContactUsComponent {
     'We’re here to answer your questions, support your journey, and help you move forward faster.';
   public heroImage = 'assets/contactus/contactus.png';
   public smallImage = 'assets/contactus/contactus.png';
-  //section 2 Contact form
 
+  // Section 2 - Contact form
   public locations = [
     {
       type: 'usa',
@@ -41,13 +41,26 @@ export class ContactUsComponent {
       email: 'humanresources@sprintpark.com',
     },
   ];
+
+  private fb = inject(FormBuilder);
+
+  public contactForm: FormGroup = this.fb.group({
+    name: ['', [Validators.required]],
+    email: [
+      '',
+      [
+        Validators.required,
+        Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/),
+      ],
+    ],
+    phone: ['', [Validators.required]],
+    message: ['', [Validators.required]],
+  });
+
   public onSubmit(): void {
     if (this.contactForm.valid) {
-      // alert("success");
-      //  console.log('Form submitted:', this.contactForm.value);
       this.sendEmail(new Event('submit'));
     } else {
-      // console.log('Form is invalid');
       this.contactForm.markAllAsTouched();
     }
   }
@@ -67,31 +80,14 @@ export class ContactUsComponent {
       .then(
         () => {
           // eslint-disable-next-line no-console
-
           console.log('SUCCESS!');
         },
         (error) => {
           // eslint-disable-next-line no-console
-
           console.log('FAILED...', (error as EmailJSResponseStatus).text);
         },
       );
   }
-
-  private fb = inject(FormBuilder);
-
-  public contactForm: FormGroup = this.fb.group({
-    name: ['', [Validators.required]],
-    email: [
-      '',
-      [
-        Validators.required,
-        Validators.pattern(/^[a-zA-Z0-9]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/),
-      ],
-    ],
-    phone: ['', [Validators.required]],
-    message: ['', [Validators.required]],
-  });
 
   private markFormGroupTouched(): void {
     Object.keys(this.contactForm.controls).forEach((key) => {
@@ -99,6 +95,7 @@ export class ContactUsComponent {
       control?.markAsTouched();
     });
   }
+
   public getFormControlError(controlName: string): string | null {
     const control = this.contactForm.get(controlName);
     if (control?.errors && control.touched) {
@@ -111,7 +108,8 @@ export class ContactUsComponent {
     }
     return null;
   }
-  // Section 3- Social Links
+
+  // Section 3 - Social Links
   public socialLinks = [
     {
       name: 'LinkedIn',
@@ -144,18 +142,19 @@ export class ContactUsComponent {
       url: 'https://www.glassdoor.co.in/Reviews/SprintPark-Reviews-E9736051.htm',
     },
   ];
-  // Section 4- FAQ
+
+  // Section 4 - FAQ
   public faqItems = [
     {
-      question: 'What services does your company offer?  ',
+      question: 'What services does your company offer?',
       answer:
-        'We specialize in custom software development, mobile and web applications, UI/UX design, and IT consulting solutions tailored to your business needs.    ',
+        'We specialize in custom software development, mobile and web applications, UI/UX design, and IT consulting solutions tailored to your business needs.',
       isOpen: false,
     },
     {
       question: 'Do you offer both web and mobile app development?',
       answer:
-        'Yes, at Sprintpark we offer both web and mobile app development, delivering customized solutions to meet your business needs.',
+        'Yes, at SprintPark we offer both web and mobile app development, delivering customized solutions to meet your business needs.',
       isOpen: false,
     },
     {
@@ -165,16 +164,18 @@ export class ContactUsComponent {
       isOpen: false,
     },
     {
-      question: ' How do you ensure quality and security in your projects?',
+      question: 'How do you ensure quality and security in your projects?',
       answer:
         'We ensure quality and security through rigorous testing, code reviews, and strict compliance with industry best practices and security standards.',
       isOpen: false,
     },
   ];
+
   public toggleFAQ(index: number): void {
     this.faqItems[index].isOpen = !this.faqItems[index].isOpen;
   }
-  // Section 5- Why Hire
+
+  // Section 5 - Why Hire
   public reasons = [
     {
       icon: 'assets/contactus/certified-consultants.png',
