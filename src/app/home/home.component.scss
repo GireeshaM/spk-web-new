@@ -1,4 +1,3 @@
-// <!--chatbot-component-->
 .home {
   font-family: "Inter", sans-serif;
   min-height: 100vh;
@@ -17,7 +16,7 @@
       left: 5%;
       right: auto;
       max-width: 45%;
-      top: 22%;
+      top: 32%;
       h1,
       p {
         text-align: left !important;
@@ -95,13 +94,12 @@
         }
       }
     }
-   
     // Carousel controls
     .carousel-control-prev,
     .carousel-control-next {
       width: 50px;
       height: 50px;
-      top:65% !important;
+      top: 75%;
       border: 4px solid #ff9900;
       border-radius: 50%;
       background: transparent !important;
@@ -154,7 +152,7 @@
 // Explore Our case Studies
 /* Card container */
 .main-image {
-  height: 500px;
+  height: 550px;
   border-radius: 15px;
   object-fit: cover;
   z-index: 2;
@@ -202,13 +200,12 @@
 }
 //features section end
 //section 3 start of (what we offer and industries we serve)
-
 .offer-industries-bg {
   background: #f6f4fd url("/assets/home/industries/industries-bgwave.png")
     no-repeat center bottom;
   background-size: 100% 600px;
   min-height: 100vh;
- 
+
   .whatWeOffer-section,
   .industries-section {
     background: transparent;
@@ -276,7 +273,6 @@
   color: #fff !important;
 }
 .collaborate-section {
-  overflow: hidden;
   background: #dedeff66;
 }
 // Collaboration cards hover effect
@@ -301,12 +297,6 @@
 .stats-icon {
   object-fit: contain;
 }
-.stats-number {
-  color: #fff;
-}
-.stats-label {
-  color: #fff;
-}
 //stats section end
 //insights end
 //testimonial section
@@ -317,9 +307,7 @@
     url("/assets/home/testimonials/testinomial-curve.png") !important;
   background-repeat: no-repeat, no-repeat;
   background-position: center, center;
-  background-size:
-    100% auto,
-    cover;
+  background-size: 100% auto,  cover;
   height: 700px;
 }
 // Testimonial cards
@@ -331,9 +319,6 @@
     color 0.2s;
   color: #fdfdfd;
 }
-// .testimonial-card{
-//   width: 480px;
-// }
 .testimonial-section .bg-white:hover .fw-bold,
 .testimonial-section .bg-white:hover .fs-6,
 .testimonial-section .bg-white:hover .text-secondary {
@@ -352,82 +337,116 @@
 }
 //TESTIMONIAL END
 // Industries Cards
-.industries-card {
-  margin: 0 0.5em;
-  border-radius: 0.5rem;
-  box-shadow: 2px 6px 8px rgba(22, 22, 26, 0.18);
-  transition: transform 0.3s ease;
-  min-height: 280px !important; // reduced height
-  &:hover {
-    transform: translateY(-5px);
+.industries-section {
+  position: relative;
+  background: #f6f4fd url("/assets/home/industries/industries-bgwave.png") no-repeat center bottom;
+  background-size: 100% 600px;
+  padding: 60px 0;
+  .carousel-container {
+    max-width: 1400px;
+    margin: 0 auto;
   }
-  .industries-img {
-    width: 100%;
-    height: 180px !important;
-    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: transform;
-    &:hover {
-      transform: scale(1.12); // subtle hover zoom
-      box-shadow: 0 12px 32px rgba(55, 35, 153, 0.18);
-      z-index: 2;
+  .carousel-track {
+    transition: transform 0.8s ease-in-out;
+    align-items: stretch;
+  }  
+  .industries-prev,
+  .industries-next {
+    // position: absolute; /* crucial */
+    top: 50%; 
+    transform: translateY(-50%);
+    background: transparent;
+    width: 40px;
+    height: 40px;
+    z-index: 10; 
+    cursor: pointer;
+     background: linear-gradient(135deg, rgb(126, 124, 124), rgb(242, 244, 244));
+  }
+  .industries-prev {
+    left: 0; 
+  }
+
+  .industries-next {
+    right: 0; 
+  }
+  .carousel-card {
+    padding: 0 10px;
+    transition: transform 0.3s ease-in-out;
+
+    .card {
+      box-shadow: 2px 6px 8px rgba(22, 22, 26, 0.18);
+      transition: transform 0.3s ease-in-out;
+      min-height: 280px;
+      &:hover {
+        transform: translateY(-5px);
+      }
+      img {
+        height: 280px;
+        transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+
+        &:hover {
+          transform: scale(1.12);
+        }
+      }
+      .card-img-overlay {
+        padding: 15px;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.2));
+
+        .card-icon {
+          background: #ff6600;
+          width: 35px;
+          height: 35px;
+          cursor: pointer;
+          transition: all 0.4s ease;
+
+          &:hover {
+            background: #e65c00;
+            transform: scale(1.1);
+          }
+        }
+      }
     }
   }
 }
-// Overlay (title + arrow)
-.industry-title-overlay {
-  padding: 15px;
-  z-index: 2;
-}
-// Arrow button
-.arrow-btn {
-  background: #ff6600;
-  width: 35px;
-  height: 35px;
-  cursor: pointer;
-  transition: all 0.4s ease;
-  margin-left: auto;
-  flex-shrink: 0;
-  z-index: 3;
-  i {
-    transition: transform 0.4s ease;
-    display: inline-block;
-  }
-  &:hover {
-    background: #e65c00;
-    transform: scale(1.1);
-    i {
-      transform: translateX(6px);
-    }
-  }
-}
-@media (max-width: 575.98px) {
+
+@media (max-width: 576px) {
   .home #myCarousel .carousel-item img {
     height: 50vh;
   }
   .home #myCarousel .carousel-caption {
-    bottom: 15%;
-   top:5%;
+    bottom: 10%;
+    left: 5%;
     right: 5%;
+    top: 5%;
     max-width: 100%;
+    padding: 0 1rem;
+  }
+  .home #myCarousel .carousel-caption .btn-group {
+    flex-direction: column !important;
+    width: 100%;
+  }
+  .home #myCarousel .carousel-caption .btn-group .btn-1,
+  .home #myCarousel .carousel-caption .btn-group .btn-2 {
+    width: 100%;
   }
   .home #myCarousel .carousel-control-prev,
   .home #myCarousel .carousel-control-next {
-    margin-top: 8% !important;
-    height: 30px;
-    width:30px;
-    margin-left: 10% !important;
+    width: 40px;
+     height: 40px;
+    border-width: 3px;
   }
  .carousel-image{
   height: 350px !important;
  }
 }
-@media (max-width: 767.98px) {
+/* Max-width: 767px */
+@media (max-width: 767px) {
   .about-sprintpark-section .image-wrapper .ellipse-shape {
     display: none;
   }
-  .offer-industries-bg .whatWeOffer-section {
-    margin-bottom: 2.5rem;
-    margin-top: 60px;
+  .carousel-control-prev,
+  .carousel-control-next {
+    display: none !important;
   }
   .collaborate-section {
     padding-top: 2rem;
@@ -440,16 +459,7 @@
     padding: 2rem 0.75rem;
     min-height: auto;
   }
-   .home #myCarousel .carousel-control-prev,
- .home #myCarousel .carousel-control-next {
-  margin-top: 8% ;
-   }
-}
-@media(min-width:768px){
-    .home #myCarousel .carousel-control-prev,
-  .home #myCarousel .carousel-control-next {
-  margin-top:-20px;
-  }
+
 }
 /* Min-width: 992px */
 @media (min-width: 992px) {
@@ -473,7 +483,6 @@
     padding: 32px 0;
   }
 }
-
 @media (max-width: 991.98px) {
   .whatWeOffer-section .row.view-all > div[class*="col-"] {
     flex: 0 0 100%;
@@ -483,18 +492,4 @@
     width: 75%;
     margin-left: 90px;
   }
-      .home #myCarousel .carousel-control-prev,
-  .home #myCarousel .carousel-control-next {
-  margin-top:-22%;
-  }
 }
-@media (max-width: 1199.98px) { 
-     .home #myCarousel .carousel-control-prev,
-  .home #myCarousel .carousel-control-next {
-  margin-top:-22%;
-  }
- }
-
-
-
- 

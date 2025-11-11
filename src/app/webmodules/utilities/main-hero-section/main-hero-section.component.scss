@@ -32,7 +32,14 @@
   top: 30%;
   left: 5%;
 }
-
+@media (max-width: 768px) {
+  .heading{
+    margin-top: -70px !important;
+  } 
+  .desc{
+    width: 90% !important;
+  }
+}
 @media (max-width: 576px) {
   .text-container {
     top: 20% !important;
@@ -50,11 +57,8 @@
     height: 300px !important;
   }
 }
-@media (max-width: 879px) {
-  .heading {
-    margin-top: -70px;
+@media (max-width: 991.98px) {
+   .heading{
+    margin-top: -40px !important;
   }
-  .desc {
-    margin-top: 10px;
-  }
-}
+ }

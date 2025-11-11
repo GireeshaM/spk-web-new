@@ -1,5 +1,5 @@
 <!-- Main Carousel -->
-<div class="home text-align-center align-items-center">
+<div class="home text-align-center align-items-center ">
   <section class="carousel-section">
     <div
       id="myCarousel"
@@ -21,7 +21,7 @@
           />
           <div class="container">
             <div
-              class="carousel-caption d-flex flex-column align-items-sm-start align-items-center text-sm-start text-center"
+              class="carousel-caption d-flex flex-column align-items-sm-start align-items-center text-sm-start text-center gap-3"
             >
               <h1 class="carousel-title text-light fw-bold">
                 {{ slide.title }}
@@ -30,7 +30,7 @@
                 {{ slide.subtitle }}
               </p>
               <div
-                class="btn-group mt-2 d-flex flex-sm-row flex-column gap-3 w-100 w-sm-auto mb-5"
+                class="btn-group mt-4 d-flex flex-sm-row flex-column gap-3 w-100 w-sm-auto mb-5"
               >
                 <a
                   class="btn btn-lg btn-1 d-flex justify-content-center align-items-center text-light fw-lighter rounded-pill flex-fill flex-sm-none"
@@ -57,7 +57,7 @@
         </div>
       </div>
       <!-- Controls -->
-      <!-- <button
+      <button
         class="carousel-control-prev ms-5 rounded-circle px-3 py-3 mt-4"
         type="button"
         data-bs-target="#myCarousel"
@@ -66,9 +66,9 @@
         <span aria-hidden="true">
           <i class="fas fa-chevron-left fa-sm"></i>
         </span>
-      </button> -->
-      <!-- <button
-        class="carousel-control-next me-5 rounded-circle px-3 py-3 mt-4"
+      </button>
+      <button
+        class="carousel-control-next d-flex align-items-center justify-content-center me-5 mt-4 rounded-circle px-3 py-3"
         type="button"
         data-bs-target="#myCarousel"
         data-bs-slide="next"
@@ -76,64 +76,58 @@
         <span aria-hidden="true">
           <i class="fas fa-chevron-right fa-sm"></i>
         </span>
-      </button> -->
-      <button
-        class="carousel-control-prev ms-5"
-        type="button"
-        data-bs-target="#myCarousel"
-        data-bs-slide="prev"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button
-        class="carousel-control-next me-5"
-        type="button"
-        data-bs-target="#myCarousel"
-        data-bs-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
       </button>
     </div>
-  </section>
-  <!-- Partner Logos -->
-  <section id="about-us" class="logo-section">
-    <div class="logo-slider position-relative overflow-hidden">
-      <div class="logo-track d-flex">
-        <!-- First set of logos -->
-        <div
-          class="logo-container d-flex justify-content-evenly align-items-center"
-        >
-          <img
-            src="assets/home/partner-logos/salesforce.png"
-            alt="Salesforce"
-          />
-          <img
-            src="assets/home/partner-logos/aws.png"
-            alt="AWS"
-            style="width: 90px; height: 70px"
-          />
-          <img src="assets/home/partner-logos/cloudbees.png" alt="cloudbees" />
-          <img src="assets/home/partner-logos/microsoft.png" alt="Microsoft" />
-          <img src="assets/home/partner-logos/copado.png" alt="Copado" />
-          <img src="assets/home/partner-logos/google.png" alt="Google" />
-          <img
-            src="assets/home/partner-logos/salesforce.png"
-            alt="Salesforce"
-          />
-          <img
-            src="assets/home/partner-logos/aws.png"
-            alt="AWS"
-            style="width: 90px; height: 70px"
-          />
-          <img src="assets/home/partner-logos/cloudbees.png" alt="cloudbees" />
-          <img src="assets/home/partner-logos/microsoft.png" alt="Microsoft" />
-          <img src="assets/home/partner-logos/copado.png" alt="Copado" />
-          <img src="assets/home/partner-logos/google.png" alt="Google" />
+    <!-- Partner Logos -->
+    <section id="about-us" class="logo-section">
+      <div class="logo-slider position-relative overflow-hidden">
+        <div class="logo-track d-flex">
+          <!-- First set of logos -->
+          <div
+            class="logo-container d-flex justify-content-evenly align-items-center"
+          >
+            <img
+              src="assets/home/partner-logos/salesforce.png"
+              alt="Salesforce"
+            />
+            <img
+              src="assets/home/partner-logos/aws.png"
+              alt="AWS"
+              style="width: 90px; height: 70px"
+            />
+            <img
+              src="assets/home/partner-logos/cloudbees.png"
+              alt="cloudbees"
+            />
+            <img
+              src="assets/home/partner-logos/microsoft.png"
+              alt="Microsoft"
+            />
+            <img src="assets/home/partner-logos/copado.png" alt="Copado" />
+            <img src="assets/home/partner-logos/google.png" alt="Google" />
+            <img
+              src="assets/home/partner-logos/salesforce.png"
+              alt="Salesforce"
+            />
+            <img
+              src="assets/home/partner-logos/aws.png"
+              alt="AWS"
+              style="width: 90px; height: 70px"
+            />
+            <img
+              src="assets/home/partner-logos/cloudbees.png"
+              alt="cloudbees"
+            />
+            <img
+              src="assets/home/partner-logos/microsoft.png"
+              alt="Microsoft"
+            />
+            <img src="assets/home/partner-logos/copado.png" alt="Copado" />
+            <img src="assets/home/partner-logos/google.png" alt="Google" />
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   </section>
   <!-- FEATURES   About sprintpark -->
   <section class="about-sprintpark-section pb-5">
@@ -173,12 +167,12 @@
           >
           <h3 class="fw-bold mb-3">
             Smart. Sleek. Scalable. We don’t just build
-            <br />tech we craft digital experiences.
+            <br />tech -we craft digital experiences.
           </h3>
           <p class="fw-normal mb-4 lh-lg">
             Our goal is to become the most trusted and recognized provider of
             <br />
-            cutting-edge IT products and solutions celebrated for our unwavering
+            cutting-edge IT products and solutions—celebrated for our unwavering
             <br />
             commitment to quality, forward-thinking innovation, and exceptional
             client <br />
@@ -298,24 +292,22 @@
     </section>
 
     <!-- Industries we serve -->
-    <section class="industries-section my-5 pt-0">
+    <!-- <section class="industries-section my-5 pt-0">
       <div class="container">
         <div class="mb-4">
           <h6 class="text-dark mb-3">Industries we serve</h6>
           <h3 class="fw-bold mb-5">We bring our expertises</h3>
         </div>
-        <p-carousel  aria-live="off"
+        <p-carousel
           #industriesCarouselRef
-          [value]="industries"
+          [value]="industriesCarousel"
           [numVisible]="3"
           [numScroll]="1"
           [circular]="true"
           [autoplayInterval]="3000"
           [responsiveOptions]="responsiveOptions"
           [showIndicators]="false"
-           [attr.aria-live]="'off'"
-          >
-        
+        >
           <ng-template pTemplate="item" let-industry>
             <div
               class="p-0 rounded-0 h-100 overflow-hidden industries-card d-flex flex-column position-relative justify-content-end overflow-hidden"
@@ -342,10 +334,63 @@
           </ng-template>
         </p-carousel>
       </div>
-    </section>
+    </section> -->
+<section class="industries-section my-5 pt-0 overflow-hidden ms-4 position-relative">
+  <div class="carousel-container position-relative overflow-hidden w-100">
+    <div class="mb-4 ms-5">
+      <h6 class="text-dark mb-3">Industries we serve</h6>
+      <h3 class="fw-bold mb-5">We bring our expertises</h3>
+    </div>
+
+    <!-- Prev Button -->
+    <button
+      class="industries-prev text-light mt-5  rounded-circle border-0 align-items-center justify-content-center position-absolute "
+      (click)="prevSlide()"
+      [disabled]="currentIndex === 0">
+    <i class="fa-solid fa-chevron-left fs-2 me-3"></i>
+    </button>
+    <!-- Carousel Wrapper -->
+    <div class="carousel-wrapper overflow-hidden position-relative w-100">
+      <div
+        class="carousel-track d-grid"
+        [style.transform]="'translateX(' + -(currentIndex * (100 / cardsPerView)) + '%)'"
+        [style.gridTemplateColumns]="'repeat(' + cards.length + ', ' + 100 / cardsPerView + '%)'"
+      >
+        <div class="carousel-card border-0" *ngFor="let card of cards" [@slideUp]="'visible'">
+          <div class="card position-relative overflow-hidden">
+            <img [src]="card.img" class="card-img-top object-fit-cover w-100" [alt]="card.title" />
+            <div class="card-img-overlay d-flex flex-column justify-content-end p-3">
+              <div class="d-flex justify-content-between align-items-center">
+                <h5 class="card-title text-white mb-0 fw-bold">{{ card.title }}</h5>
+
+                <!-- ✅ Clickable Arrow Icon -->
+                <a
+                  [routerLink]="[card.link]"
+                  class="card-icon d-flex align-items-center justify-content-center text-decoration-none"
+                  style="cursor: pointer;"
+                >
+                  <i class="fa-solid fa-arrow-right text-white"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Next Button -->
+    <button
+      class="industries-next mt-5  rounded-circle text-light border-0 align-items-center position-absolute "
+      (click)="nextSlide()"
+      [disabled]="currentIndex >= cards.length - cardsPerView">
+      <i class="fa-solid fa-chevron-right fs-2 me-5 "></i>
+    </button>
+  </div>
+</section>
+
   </div>
   <!-- Collaboration Section -->
-  <div class="collaborate-section py-5 rounded-3 position-relative">
+  <div class="collaborate-section py-5 rounded-3 position-relative overflow-hidden">
     <div class="container px-2 px-sm-4 px-md-5">
       <p class="text-dark mb-3 mt-3">Discover Our Company</p>
       <h2 class="mt-2 mb-4 fw-bold">
@@ -396,10 +441,10 @@
               class="stats-icon w-25 h-25"
             />
             <div class="text-start ms-3">
-              <div class="stats-number fw-bolder mb-2 fs-2">
+              <div class="stats-number fw-bolder mb-2 fs-2 text-white">
                 {{ stat.current | number: "1.0-0" }}+
               </div>
-              <div class="stats-label fw-bold">{{ stat.label }}</div>
+              <div class="stats-label fw-bold text-white">{{ stat.label }}</div>
             </div>
           </div>
         </div>
@@ -419,7 +464,7 @@
     "
   >
     <div class="container-fluid px-0">
-      <div class="row ms-2 ms-md-5 ms-lg-150">
+      <div class="row ms-2 ms-md-5 ms-lg-150 ">
         <div class="ms-2">
           <p class="collaborate-subtitle mb-2 mt-3">Our insights</p>
           <h2 class="collaborate-title fw-bold mt-2 mb-2">
@@ -448,7 +493,7 @@
               <img
                 [src]="slide.image"
                 [alt]="slide.title"
-                class="carousel-image d-block w-100"
+                class="carousel-image d-block w-100 "
               />
 
               <!-- Gradient Overlay (if you still want it on the image) -->
@@ -488,6 +533,7 @@
           </button>
         </div>
       </div>
+      
       <!-- ✅ Desktop View: Original 3-card slider remains unchanged -->
       <div
         class="d-none d-md-flex justify-content-center align-items-center flex-nowrap mt-5"
@@ -664,7 +710,7 @@
       </div>
     </div>
   </div>
-
+ 
   <section class="testimonial-section py-5 py-lg-6">
     <div class="container">
       <p class="mb-2 mt-2">Testimonial</p>
@@ -679,7 +725,7 @@
         <div class="carousel-inner">
           <!-- Loop through groupedTestimonials -->
           <div
-            class="carousel-item"
+            class="carousel-item "
             *ngFor="let group of groupedTestimonials; let i = index"
             [ngClass]="{ active: i === 0 }"
           >
@@ -690,7 +736,7 @@
               >
                 <!-- Testimonial Card -->
                 <div
-                  class="border testimonial-card rounded mt-5 m-2 p-4 pb-2 bg-white shadow-sm d-flex flex-column position-relative border-opacity-0"
+                  class="border testimonial-card rounded mt-5 m-2 p-4 pb-2 bg-white shadow-sm d-flex flex-column position-relative border-opacity-0 "
                   style="height: 300px"
                 >
                   <img
@@ -703,12 +749,12 @@
                   <img
                     src="/assets/home/testimonials/vector2.svg"
                     alt="Quote"
-                    class="position-absolute top-0 end-0 me-5 mt-3"
+                    class="position-absolute top-0 end-0 me-5 mt-3 "
                     width="32"
                     height="32"
                   />
-
-                  <div class="d-flex align-items-center mb-2">
+ 
+                  <div class="d-flex align-items-center mt-3">
                     <img
                       [src]="t.img"
                       [alt]="t.name"
@@ -795,6 +841,7 @@
       </div>
     </div>
   </section>
+ 
 
   <!-- Testimonial Section End -->
 </div>

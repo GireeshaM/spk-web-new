@@ -1,0 +1,44 @@
+<section class="industries-section my-5 pt-0 overflow-hidden  text-center position-relative">
+  <div class="carousel-container position-relative overflow-hidden w-100">
+ <div class="mb-4">
+          <h6 class="text-dark mb-3">Industries we serve</h6>
+          <h3 class="fw-bold mb-5">We bring our expertises</h3>
+   </div>
+
+    <!-- Prev Button -->
+    <button class="carousel-control carousel-control-prev text-white" (click)="prevSlide()" [disabled]="currentIndex === 0">
+       <i class="fa-solid fa-chevron-left" style="font-size: 28px;"></i> 
+    </button>
+
+    <!-- Carousel Wrapper -->
+    <div class="carousel-wrapper overflow-hidden position-relative w-100">
+  <div
+    class="carousel-track d-grid"
+    [style.transform]="'translateX(' + -(currentIndex * (100 / cardsPerView)) + '%)'"
+    [style.gridTemplateColumns]="'repeat(' + cards.length + ', ' + 100 / cardsPerView + '%)'"
+  >
+    <div class="carousel-card border-0" *ngFor="let card of cards" [@slideUp]="'visible'">
+      <div class="card position-relative overflow-hidden position-relative">
+        <img [src]="card.img" class="card-img-top object-fit-cover w-100" [alt]="card.title" />
+        <div class="card-img-overlay d-flex flex-column justify-content-end p-3">
+          <div class="d-flex justify-content-between align-items-center">
+            <h5 class="card-title text-white mb-0 fw-bold">{{ card.title }}</h5>
+            <div class="card-icon d-flex align-items-center justify-content-center">
+             <i class="fa-solid fa-arrow-right text-white"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- Next Button -->
+    <button
+      class="carousel-control carousel-control-next"
+      (click)="nextSlide()"
+      [disabled]="currentIndex >= cards.length - cardsPerView"
+    >
+     <i class="fa-solid fa-chevron-right" style="font-size: 28px;"></i>
+    </button>
+  </div>
+</section>
