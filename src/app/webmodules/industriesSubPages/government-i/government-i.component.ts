@@ -143,7 +143,7 @@ const sectionsData: Record<string, Section> = {
   },
   // DataAnalytics:
   DataAnalytics: {
-    heroImage: 'assets/Industries/governmentSubPages/favicon.png',
+    heroImage: 'assets/Industries/governmentSubPages/data-analytics.jpg',
     whyheader: 'How Can Data Analytics Transform Public Services?',
     smallHeading:
       'Unlocking insights to drive smarter governance and citizen trust.',
