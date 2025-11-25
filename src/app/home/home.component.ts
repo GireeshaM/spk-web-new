@@ -1,4 +1,3 @@
-
 import {
   Component,
   ElementRef,
@@ -27,7 +26,7 @@ import { RouterLink } from '@angular/router';
   imports: [CarouselModule, CommonModule, RouterLink],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  animations: [
+  animations: [ 
     trigger('slideUp', [
       state('hidden', style({ opacity: 0, transform: 'translateY(60px)' })),
       state('visible', style({ opacity: 1, transform: 'translateY(0)' })),
@@ -93,7 +92,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ];
   public ngOnInit(): void {
     this.offerCardVisible = this.whatWeOffer.map(() => false);
-    this.checkMobile(); // Set isMobile before grouping
+    // this.checkMobile(); // Set isMobile before grouping
     this.groupTestimonials();
   }
   public ngAfterViewInit(): void {
@@ -130,22 +129,23 @@ export class HomeComponent implements OnInit, AfterViewInit {
       }, 100);
     }
   }
-    getCardsPerView(): number {
+  public getCardsPerView(): number {
     const width = window.innerWidth;
     if (width >= 992) return 4;
     if (width >= 768) return 2;
     return 1;
   }
 
-  nextSlide() {
-    if (this.currentIndex < this.cards.length - this.cardsPerView) this.currentIndex++;
+  public nextSlide(): void {
+    if (this.currentIndex < this.cards.length - this.cardsPerView)
+      this.currentIndex++;
   }
 
-  prevSlide() {
+  public prevSlide(): void {
     if (this.currentIndex > 0) this.currentIndex--;
   }
 
-  goToSlide(index: number) {
+  public goToSlide(index: number): void {
     this.currentIndex = index;
   }
   public groupTestimonials(): void {
@@ -245,6 +245,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       desc: 'Embracing differences to drive innovation',
     },
   ];
+
   public collaborations = [
     {
       img: 'assets/home/collaborate/expert-team.svg',
@@ -284,8 +285,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
     },
   ];
   // Industries
-   cards = [
-   {
+  cards = [
+    {
       img: 'assets/home/industries/industry-it-telecommunications.jpg',
       alt: 'IT & TeleCommunications',
       title: 'IT & TeleCommunications',
@@ -328,6 +329,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       link: '/manufacturing',
     },
   ];
+
   public industries = [
     {
       img: 'assets/home/industries/industry-it-telecommunications.jpg',
@@ -372,16 +374,19 @@ export class HomeComponent implements OnInit, AfterViewInit {
       link: '/manufacturing',
     },
   ];
+
   // Duplicate first 2 items at the end to allow smooth circular scroll
   public industriesCarousel = [
     ...this.industries,
     ...this.industries.slice(0, 2),
   ];
+
   public responsiveOptions = [
     { breakpoint: '1024px', numVisible: 3, numScroll: 1 },
     { breakpoint: '768px', numVisible: 2, numScroll: 1 },
     { breakpoint: '560px', numVisible: 1, numScroll: 1 },
   ];
+
   public stats = [
     {
       img: 'assets/home/statistics/satisfied-clients.png',
@@ -412,6 +417,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       animated: false,
     },
   ];
+
   public ourInsightsSlides = [
     {
       image: 'assets/home/our-insights/data-security.jpg',
@@ -436,23 +442,23 @@ export class HomeComponent implements OnInit, AfterViewInit {
     },
   ];
   // Industries Carousel Logic (Bootstrap-based)
-public activeIndustryIndex = 0; // Track the current active slide
+  public activeIndustryIndex = 0; // Track the current active slide
 
-public nextIndustrySlide(): void {
-  if (this.activeIndustryIndex < this.industries.length - 1) {
-    this.activeIndustryIndex++;
-  } else {
-    this.activeIndustryIndex = 0; // loop back to start
+  public nextIndustrySlide(): void {
+    if (this.activeIndustryIndex < this.industries.length - 1) {
+      this.activeIndustryIndex++;
+    } else {
+      this.activeIndustryIndex = 0; // loop back to start
+    }
   }
-}
 
-public prevIndustrySlide(): void {
-  if (this.activeIndustryIndex > 0) {
-    this.activeIndustryIndex--;
-  } else {
-    this.activeIndustryIndex = this.industries.length - 1; // loop to end
+  public prevIndustrySlide(): void {
+    if (this.activeIndustryIndex > 0) {
+      this.activeIndustryIndex--;
+    } else {
+      this.activeIndustryIndex = this.industries.length - 1; // loop to end
+    }
   }
-}
 
   public testimonials = [
     {
@@ -512,11 +518,12 @@ public prevIndustrySlide(): void {
       text: '“Professional, efficient, and trustworthy—an excellent partner in staffing.”',
     },
   ];
+
   public currentInsightIndex = 1; // Start with the middle card (or 0 for first)
   public isMobile = false;
   @HostListener('window:resize')
   public onResize(): void {
-     const newCount = this.getCardsPerView();
+    const newCount = this.getCardsPerView();
     if (newCount !== this.cardsPerView) {
       this.cardsPerView = newCount;
       if (this.currentIndex > this.cards.length - this.cardsPerView) {

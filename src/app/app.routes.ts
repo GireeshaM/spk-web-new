@@ -24,11 +24,8 @@ import { TelecommunicationIComponent } from './webmodules/industriesSubPages/tel
 import { TransportationIComponent } from './webmodules/industriesSubPages/transportation-i/transportation-i.component';
 import { CompanyComponent } from './company/company.component';
 import { InsightsBlogComponent } from './webmodules/insights-blog/insights-blog.component';
-import { Component } from '@angular/core';
-import { DummyComponent } from './dummy/dummy.component';
 
 export const routes: Routes = [
- 
   {
     path: 'company',
     component: CompanyComponent,
@@ -37,9 +34,6 @@ export const routes: Routes = [
       description:
         'At SprintPark, we are here to support your business with a range of services from IT consulting to staffing and project management. Our team provides flexible, tailored solutions that will fit your needs.',
     },
-  },
-   {
-    path:'dummy',component:DummyComponent
   },
   {
     path: '',

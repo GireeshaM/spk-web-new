@@ -307,7 +307,9 @@
     url("/assets/home/testimonials/testinomial-curve.png") !important;
   background-repeat: no-repeat, no-repeat;
   background-position: center, center;
-  background-size: 100% auto,  cover;
+  background-size:
+    100% auto,
+    cover;
   height: 700px;
 }
 // Testimonial cards
@@ -339,7 +341,8 @@
 // Industries Cards
 .industries-section {
   position: relative;
-  background: #f6f4fd url("/assets/home/industries/industries-bgwave.png") no-repeat center bottom;
+  background: #f6f4fd url("/assets/home/industries/industries-bgwave.png")
+    no-repeat center bottom;
   background-size: 100% 600px;
   padding: 60px 0;
   .carousel-container {
@@ -349,25 +352,25 @@
   .carousel-track {
     transition: transform 0.8s ease-in-out;
     align-items: stretch;
-  }  
+  }
   .industries-prev,
   .industries-next {
     // position: absolute; /* crucial */
-    top: 50%; 
+    top: 50%;
     transform: translateY(-50%);
     background: transparent;
     width: 40px;
     height: 40px;
-    z-index: 10; 
+    z-index: 10;
     cursor: pointer;
-     background: linear-gradient(135deg, rgb(126, 124, 124), rgb(242, 244, 244));
+    background: linear-gradient(135deg, rgb(126, 124, 124), rgb(242, 244, 244));
   }
   .industries-prev {
-    left: 0; 
+    left: 0;
   }
 
   .industries-next {
-    right: 0; 
+    right: 0;
   }
   .carousel-card {
     padding: 0 10px;
@@ -390,7 +393,11 @@
       }
       .card-img-overlay {
         padding: 15px;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.2));
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.65),
+          rgba(0, 0, 0, 0.2)
+        );
 
         .card-icon {
           background: #ff6600;
@@ -432,12 +439,12 @@
   .home #myCarousel .carousel-control-prev,
   .home #myCarousel .carousel-control-next {
     width: 40px;
-     height: 40px;
+    height: 40px;
     border-width: 3px;
   }
- .carousel-image{
-  height: 350px !important;
- }
+  .carousel-image {
+    height: 350px !important;
+  }
 }
 /* Max-width: 767px */
 @media (max-width: 767px) {
@@ -459,7 +466,6 @@
     padding: 2rem 0.75rem;
     min-height: auto;
   }
-
 }
 /* Min-width: 992px */
 @media (min-width: 992px) {

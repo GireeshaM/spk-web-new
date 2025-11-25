@@ -1,5 +1,5 @@
 <!-- Main Carousel -->
-<div class="home text-align-center align-items-center ">
+<div class="home text-align-center align-items-center">
   <section class="carousel-section">
     <div
       id="myCarousel"
@@ -335,62 +335,85 @@
         </p-carousel>
       </div>
     </section> -->
-<section class="industries-section my-5 pt-0 overflow-hidden ms-4 position-relative">
-  <div class="carousel-container position-relative overflow-hidden w-100">
-    <div class="mb-4 ms-5">
-      <h6 class="text-dark mb-3">Industries we serve</h6>
-      <h3 class="fw-bold mb-5">We bring our expertises</h3>
-    </div>
+    <section
+      class="industries-section my-5 pt-0 overflow-hidden ms-4 position-relative"
+    >
+      <div class="carousel-container position-relative overflow-hidden w-100">
+        <div class="mb-4 ms-5">
+          <h6 class="text-dark mb-3">Industries we serve</h6>
+          <h3 class="fw-bold mb-5">We bring our expertises</h3>
+        </div>
 
-    <!-- Prev Button -->
-    <button
-      class="industries-prev text-light mt-5  rounded-circle border-0 align-items-center justify-content-center position-absolute "
-      (click)="prevSlide()"
-      [disabled]="currentIndex === 0">
-    <i class="fa-solid fa-chevron-left fs-2 me-3"></i>
-    </button>
-    <!-- Carousel Wrapper -->
-    <div class="carousel-wrapper overflow-hidden position-relative w-100">
-      <div
-        class="carousel-track d-grid"
-        [style.transform]="'translateX(' + -(currentIndex * (100 / cardsPerView)) + '%)'"
-        [style.gridTemplateColumns]="'repeat(' + cards.length + ', ' + 100 / cardsPerView + '%)'"
-      >
-        <div class="carousel-card border-0" *ngFor="let card of cards" [@slideUp]="'visible'">
-          <div class="card position-relative overflow-hidden">
-            <img [src]="card.img" class="card-img-top object-fit-cover w-100" [alt]="card.title" />
-            <div class="card-img-overlay d-flex flex-column justify-content-end p-3">
-              <div class="d-flex justify-content-between align-items-center">
-                <h5 class="card-title text-white mb-0 fw-bold">{{ card.title }}</h5>
-
-                <!-- ✅ Clickable Arrow Icon -->
-                <a
-                  [routerLink]="[card.link]"
-                  class="card-icon d-flex align-items-center justify-content-center text-decoration-none"
-                  style="cursor: pointer;"
+        <!-- Prev Button -->
+        <button
+          class="industries-prev text-light mt-5 rounded-circle border-0 align-items-center justify-content-center position-absolute"
+          (click)="prevSlide()"
+          [disabled]="currentIndex === 0"
+        >
+          <i class="fa-solid fa-chevron-left fs-2 me-3"></i>
+        </button>
+        <!-- Carousel Wrapper -->
+        <div class="carousel-wrapper overflow-hidden position-relative w-100">
+          <div
+            class="carousel-track d-grid"
+            [style.transform]="
+              'translateX(' + -(currentIndex * (100 / cardsPerView)) + '%)'
+            "
+            [style.gridTemplateColumns]="
+              'repeat(' + cards.length + ', ' + 100 / cardsPerView + '%)'
+            "
+          >
+            <div
+              class="carousel-card border-0"
+              *ngFor="let card of cards"
+              [@slideUp]="'visible'"
+            >
+              <div class="card position-relative overflow-hidden">
+                <img
+                  [src]="card.img"
+                  class="card-img-top object-fit-cover w-100"
+                  [alt]="card.title"
+                />
+                <div
+                  class="card-img-overlay d-flex flex-column justify-content-end p-3"
                 >
-                  <i class="fa-solid fa-arrow-right text-white"></i>
-                </a>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <h5 class="card-title text-white mb-0 fw-bold">
+                      {{ card.title }}
+                    </h5>
+
+                    <!-- ✅ Clickable Arrow Icon -->
+                    <a
+                      [routerLink]="[card.link]"
+                      class="card-icon d-flex align-items-center justify-content-center text-decoration-none"
+                      style="cursor: pointer"
+                    >
+                      <i class="fa-solid fa-arrow-right text-white"></i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- Next Button -->
+        <button
+          class="industries-next mt-5 rounded-circle text-light border-0 align-items-center position-absolute"
+          (click)="nextSlide()"
+          [disabled]="currentIndex >= cards.length - cardsPerView"
+        >
+          <i class="fa-solid fa-chevron-right fs-2 me-5"></i>
+        </button>
       </div>
-    </div>
-
-    <!-- Next Button -->
-    <button
-      class="industries-next mt-5  rounded-circle text-light border-0 align-items-center position-absolute "
-      (click)="nextSlide()"
-      [disabled]="currentIndex >= cards.length - cardsPerView">
-      <i class="fa-solid fa-chevron-right fs-2 me-5 "></i>
-    </button>
-  </div>
-</section>
-
+    </section>
   </div>
   <!-- Collaboration Section -->
-  <div class="collaborate-section py-5 rounded-3 position-relative overflow-hidden">
+  <div
+    class="collaborate-section py-5 rounded-3 position-relative overflow-hidden"
+  >
     <div class="container px-2 px-sm-4 px-md-5">
       <p class="text-dark mb-3 mt-3">Discover Our Company</p>
       <h2 class="mt-2 mb-4 fw-bold">
@@ -464,7 +487,7 @@
     "
   >
     <div class="container-fluid px-0">
-      <div class="row ms-2 ms-md-5 ms-lg-150 ">
+      <div class="row ms-2 ms-md-5 ms-lg-150">
         <div class="ms-2">
           <p class="collaborate-subtitle mb-2 mt-3">Our insights</p>
           <h2 class="collaborate-title fw-bold mt-2 mb-2">
@@ -493,7 +516,7 @@
               <img
                 [src]="slide.image"
                 [alt]="slide.title"
-                class="carousel-image d-block w-100 "
+                class="carousel-image d-block w-100"
               />
 
               <!-- Gradient Overlay (if you still want it on the image) -->
@@ -533,7 +556,7 @@
           </button>
         </div>
       </div>
-      
+
       <!-- ✅ Desktop View: Original 3-card slider remains unchanged -->
       <div
         class="d-none d-md-flex justify-content-center align-items-center flex-nowrap mt-5"
@@ -710,7 +733,7 @@
       </div>
     </div>
   </div>
- 
+
   <section class="testimonial-section py-5 py-lg-6">
     <div class="container">
       <p class="mb-2 mt-2">Testimonial</p>
@@ -725,7 +748,7 @@
         <div class="carousel-inner">
           <!-- Loop through groupedTestimonials -->
           <div
-            class="carousel-item "
+            class="carousel-item"
             *ngFor="let group of groupedTestimonials; let i = index"
             [ngClass]="{ active: i === 0 }"
           >
@@ -736,7 +759,7 @@
               >
                 <!-- Testimonial Card -->
                 <div
-                  class="border testimonial-card rounded mt-5 m-2 p-4 pb-2 bg-white shadow-sm d-flex flex-column position-relative border-opacity-0 "
+                  class="border testimonial-card rounded mt-5 m-2 p-4 pb-2 bg-white shadow-sm d-flex flex-column position-relative border-opacity-0"
                   style="height: 300px"
                 >
                   <img
@@ -749,11 +772,11 @@
                   <img
                     src="/assets/home/testimonials/vector2.svg"
                     alt="Quote"
-                    class="position-absolute top-0 end-0 me-5 mt-3 "
+                    class="position-absolute top-0 end-0 me-5 mt-3"
                     width="32"
                     height="32"
                   />
- 
+
                   <div class="d-flex align-items-center mt-3">
                     <img
                       [src]="t.img"
@@ -841,7 +864,6 @@
       </div>
     </div>
   </section>
- 
 
   <!-- Testimonial Section End -->
 </div>
