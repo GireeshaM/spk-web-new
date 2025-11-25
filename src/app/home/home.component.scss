@@ -308,8 +308,9 @@
   background-repeat: no-repeat, no-repeat;
   background-position: center, center;
   background-size: 100% auto,  cover;
-  height: 700px;
+ 
 }
+
 // Testimonial cards
 /* Hover effect */
 .testimonial-section .bg-white:hover {
@@ -321,7 +322,8 @@
 }
 .testimonial-section .bg-white:hover .fw-bold,
 .testimonial-section .bg-white:hover .fs-6,
-.testimonial-section .bg-white:hover .text-secondary {
+.testimonial-section .bg-white:hover .text-secondary
+ {
   color: #fdfdfd !important;
 }
 /* Mobile horizontal scroll (for cards) */
@@ -332,9 +334,11 @@
 .testimonial-wrapper .testimonial-card {
   scroll-snap-align: start;
 }
-.card-hover:hover .text-dark {
-  color: #fff !important;
+/* Make review text white when card is hovered */
+.testimonial-section .testimonial-card:hover .review-hover {
+  color: #ffffff !important;
 }
+
 //TESTIMONIAL END
 // Industries Cards
 .industries-section {
