@@ -1,8 +1,4 @@
-.root {
-  --a: #4f7cff;
-  --g: #9bb7ff;
-  --l: #f6f9ff;
-}
+
 /* HERO */
 .hero {
   min-height: 70vh;
@@ -17,13 +13,15 @@
   text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 .primary-btn {
-  background: #ef7a13;
-  color: #fff;
-  padding: 14px 2rem;
-  border: 0;
-  border-radius: 40px;
-  transition: 0.3s;
+  background-color: #ff6a00 !important;
+  color: #fff !important;
+  border: none;
+  cursor: pointer !important;
 }
+.overlay {
+  pointer-events: none !important;
+}
+
 .primary-btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 30px rgba(0, 150, 255, 0.55);
