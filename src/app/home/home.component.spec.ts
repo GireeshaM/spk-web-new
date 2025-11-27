@@ -12,7 +12,7 @@ describe('HomeComponent', () => {
     await TestBed.configureTestingModule({
       imports: [HomeComponent],
       providers: [
-              provideNoopAnimations(),
+        provideNoopAnimations(),
         {
           provide: ActivatedRoute,
           useValue: {

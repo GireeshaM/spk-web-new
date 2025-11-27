@@ -1,8 +1,8 @@
-<nav class="navbar navbar-expand-md bg-white sticky-top border-bottom">
-  <div class="container">
+<nav class="navbar navbar-expand-md bg-white sticky-top border-bottom px-5">
+  <div class="container-fluid">
     <!-- Logo -->
-    <a class="navbar-brand" [routerLink]="['/']">
-      <img src="assets/header/header-logo.png" alt="logo" />
+    <a class="navbar-brand fw-bold fs-4 me-4" routerLink="/">
+      <img src="assets/header/header-logo.png" alt="logo" class="navbar-logo" />
     </a>
 
     <!-- Toggler -->
@@ -17,281 +17,503 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Offcanvas -->
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas">
-      <div class="offcanvas-header">
-        <a class="navbar-brand" [routerLink]="['/']">
-          <img src="assets/logo/logoBlue.png" alt="logo" />
-        </a>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="offcanvas"
-        ></button>
-      </div>
+    <!-- Desktop Menu -->
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item align-items-center">
+          <a class="nav-link" href="#home"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about-us">About Us</a>
+        </li>
 
-      <div class="offcanvas-body">
-        <ul class="navbar-nav flex-grow-1 justify-content-between">
-          <li class="nav-item align-items-center">
-            <!-- <a class="nav-link" href="#home">Home</a> -->
-            <a class="nav-link" href="#home"></a>
-          </li>
+        <!-- Industries Megamenu -->
+        <li
+          class="nav-item dropdown mx-2 megamenu position-static"
+          (mouseenter)="onIndustriesMouseEnter()"
+          (mouseleave)="onIndustriesMouseLeave()"
+        >
+          <a class="nav-link dropdown-toggle" href="javascript:void(0)">
+            Industries
+          </a>
 
-          <li class="nav-item">
-            <a class="nav-link" href="#about-us">About Us</a>
-          </li>
+          <!-- MEGAMENU -->
+          <div
+            *ngIf="isIndustriesOpen"
+            @shutter
+            class="dropdown-menu w-100 megadrop p-3 p-md-4 mt-0 border-0 shadow-lg show"
+          >
+            <div class="container-fluid">
+              <div class="row g-3 g-md-4 align-items-start">
+                <!-- COL 2 - LEFT INFO -->
+                <div class="col-12 col-md-2 mega-left-info mb-3 mb-md-0">
+                  <h5 class="fw-bold fs-6 fs-md-5">Industries</h5>
+                  <p class="text-muted small">
+                    Explore industry-tailored solutions designed to transform
+                    operations, streamline workflows, and accelerate digital
+                    innovation across sectors.
+                  </p>
+                </div>
 
-          <!-- Services -->
-          <li class="nav-item dropdown" routerLinkActive="active">
-            <a
-              class="nav-link dropdown-toggle d-md-none"
-              href="#"
-              data-bs-toggle="dropdown"
-              >Services</a
-            >
-            <a class="nav-link d-none d-md-block" href="#">Services</a>
+                <!-- COL 6 - INDUSTRY LIST -->
+                <div class="col-12 col-md-6">
+                  <div class="row">
+                    <div class="col-12 mb-2 mb-md-3">
+                      <h5 class="fw-bold text-purple fs-6">
+                        Industry Segments
+                      </h5>
+                    </div>
 
-            <ul class="dropdown-menu">
-              <li>
-                <a
-                  class="dropdown-item"
-                  [routerLink]="'/it-consulting'"
-                  routerLinkActive="active"
-                  >IT Consulting</a
-                >
-              </li>
-              <li>
-                <a
-                  class="dropdown-item"
-                  [routerLink]="'/staffing'"
-                  routerLinkActive="active"
-                  >Staffing</a
-                >
-              </li>
-              <li>
-                <a
-                  class="dropdown-item"
-                  [routerLink]="'/project-management'"
-                  routerLinkActive="active"
-                  >Project Management</a
-                >
-              </li>
-              <li>
-                <a
-                  class="dropdown-item"
-                  [routerLink]="'/software-service'"
-                  routerLinkActive="active"
-                  >Software Services</a
-                >
-              </li>
-            </ul>
-          </li>
+                    <div class="col-12">
+                      <div class="row">
+                        <!-- LEFT COLUMN -->
+                        <div class="col-12 col-sm-6">
+                          <ul class="mega-list list-unstyled">
+                            <li
+                              *ngFor="let s of industries.slice(0, 4)"
+                              class="mb-2 mb-md-3"
+                            >
+                              <a
+                                [href]="s.link"
+                                class="text-decoration-none d-block"
+                              >
+                                <span
+                                  class="product-title title-hover d-flex fw-semibold align-items-center m-0 p-0 fs-6"
+                                >
+                                  {{ s.title }}
+                                  <span class="arrow ms-2">→</span>
+                                </span>
+                                <span
+                                  class="product-desc text-muted small d-block m-0 p-0 mt-1"
+                                >
+                                  {{ s.description }}
+                                </span>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
 
-          <!-- Industries -->
-          <li class="nav-item dropdown" routerLinkActive="active">
-            <a
-              class="nav-link dropdown-toggle d-md-none"
-              href="#"
-              data-bs-toggle="dropdown"
-              >Industries</a
-            >
-            <a class="nav-link d-none d-md-block" href="#">Industries</a>
+                        <!-- RIGHT COLUMN -->
+                        <div class="col-12 col-sm-6">
+                          <ul class="mega-list list-unstyled">
+                            <li
+                              *ngFor="let s of industries.slice(4)"
+                              class="mb-2 mb-md-3"
+                            >
+                              <a
+                                [href]="s.link"
+                                class="text-decoration-none d-block"
+                              >
+                                <span
+                                  class="product-title title-hover d-flex fw-semibold align-items-center m-0 p-0 fs-6"
+                                >
+                                  {{ s.title }}
+                                  <span class="arrow ms-2">→</span>
+                                </span>
+                                <span
+                                  class="product-desc text-muted small d-block m-0 p-0 mt-1"
+                                >
+                                  {{ s.description }}
+                                </span>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-            <ul class="dropdown-menu">
-              <li>
-                <a
-                  class="dropdown-item"
-                  [routerLink]="'/itAndTelecommunications'"
-                  routerLinkActive="active"
-                  >IT & Telecommunications</a
+                <!-- COL 4 - IMAGE + BUTTON -->
+                <div
+                  class="col-12 col-md-4 d-flex flex-column align-items-center justify-content-center sp-grey-bg p-3 rounded"
                 >
-              </li>
-              <li>
-                <a
-                  class="dropdown-item"
-                  [routerLink]="'/government'"
-                  routerLinkActive="active"
-                  >Government</a
-                >
-              </li>
-              <li>
-                <a
-                  class="dropdown-item"
-                  [routerLink]="'/healthCareAndLifeSciences'"
-                  routerLinkActive="active"
-                  >Health Care & Life Sciences</a
-                >
-              </li>
-              <li>
-                <a
-                  class="dropdown-item"
-                  [routerLink]="'/manufacturing'"
-                  routerLinkActive="active"
-                  >Manufacturing</a
-                >
-              </li>
-              <li>
-                <a
-                  class="dropdown-item"
-                  [routerLink]="'/education'"
-                  routerLinkActive="active"
-                  >Education</a
-                >
-              </li>
-              <li>
-                <a
-                  class="dropdown-item"
-                  [routerLink]="'/transportationAndLogistics'"
-                  routerLinkActive="active"
-                  >Transportation & Logistics</a
-                >
-              </li>
-              <li>
-                <a
-                  class="dropdown-item"
-                  [routerLink]="'/banking'"
-                  routerLinkActive="active"
-                  >Banking</a
-                >
-              </li>
-            </ul>
-          </li>
+                  <img
+                    src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=500"
+                    class="img-fluid rounded shadow-sm mb-3 preview-box"
+                    alt="industry preview"
+                    style="max-height: 200px; object-fit: cover; width: 100%"
+                  />
 
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              [routerLink]="'/careers'"
-              routerLinkActive="active"
-              >Careers</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              [routerLink]="'/insights'"
-              routerLinkActive="active"
-              >Insights</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              [routerLink]="'/contact-us'"
-              routerLinkActive="active"
-              >Contact Us</a
-            >
-          </li>
+                  <p class="text-muted text-center small">
+                    Industries are evolving fast. Our expertise and technology
+                    help businesses accelerate transformation, enhance
+                    operational resilience, and unlock new growth opportunities.
+                  </p>
 
-          <!-- Login Button -->
-          <li class="nav-item">
-            <button
-              class="btn btnn"
-              data-bs-toggle="modal"
-              data-bs-target="#loginModal"
-            >
-              Login
-            </button>
-          </li>
-        </ul>
-      </div>
+                  <button
+                    class="btn btn-sm mt-2 text-white w-100"
+                    style="background-color: #003399"
+                    routerLink="/industries"
+                  >
+                    Explore
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- Services MEGA DROPDOWN -->
+        <li
+          class="nav-item dropdown mx-2 megamenu position-static"
+          (mouseenter)="onProductsMouseEnter()"
+          (mouseleave)="onProductsMouseLeave()"
+        >
+          <a class="nav-link dropdown-toggle" href="javascript:void(0)">
+            Services
+          </a>
+
+          <div
+            *ngIf="isProductsOpen"
+            @shutter
+            class="dropdown-menu w-100 megadrop p-3 p-md-4 mt-0 border-0 shadow-lg show"
+          >
+            <div class="container-fluid">
+              <div class="row g-3 g-md-4 align-items-start">
+                <!-- COL 2 -->
+                <div class="col-12 col-md-2 mega-left-info mb-3 mb-md-0">
+                  <h5 class="fw-bold fs-6 fs-md-5">Services</h5>
+                  <p class="text-muted small">
+                    Explore our complete suite of innovative digital products
+                    built for enterprises. Our platforms are engineered to
+                    scale, adapt, and empower enterprises to operate with
+                    greater speed, clarity, and efficiency.
+                  </p>
+                </div>
+
+                <!-- COL 6 - PRODUCT LIST -->
+                <div class="col-12 col-md-6">
+                  <div class="row">
+                    <div class="col-12 mb-2 mb-md-3">
+                      <h5 class="fw-bold text-purple fs-6">
+                        SprintPark Solutions
+                      </h5>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="row">
+                        <!-- LEFT COLUMN -->
+                        <div class="col-12 col-sm-6">
+                          <ul class="mega-list list-unstyled">
+                            <li
+                              *ngFor="let s of services.slice(0, 4)"
+                              class="mb-2 mb-md-3"
+                            >
+                              <a
+                                [href]="s.link"
+                                class="text-decoration-none d-block"
+                              >
+                                <span
+                                  class="product-title title-hover d-flex fw-semibold align-items-center m-0 p-0 fs-6"
+                                >
+                                  {{ s.title }}
+                                  <span class="arrow ms-2">→</span>
+                                </span>
+                                <span
+                                  class="product-desc text-muted small d-block m-0 p-0 mt-1"
+                                >
+                                  {{ s.description }}
+                                </span>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+
+                        <!-- RIGHT COLUMN -->
+                        <div class="col-12 col-sm-6">
+                          <ul class="mega-list list-unstyled">
+                            <li
+                              *ngFor="let s of services.slice(4)"
+                              class="mb-2 mb-md-3"
+                            >
+                              <a
+                                [href]="s.link"
+                                class="text-decoration-none d-block"
+                              >
+                                <span
+                                  class="product-title title-hover d-flex fw-semibold align-items-center m-0 p-0 fs-6"
+                                >
+                                  {{ s.title }}
+                                  <span class="arrow ms-2">→</span>
+                                </span>
+                                <span
+                                  class="product-desc text-muted small d-block m-0 p-0 mt-1"
+                                >
+                                  {{ s.description }}
+                                </span>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- COL 4 - IMAGE + BUTTON -->
+                <div
+                  class="col-12 col-md-4 d-flex flex-column align-items-center justify-content-center sp-grey-bg p-3 rounded"
+                >
+                  <img
+                    src="https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                    class="img-fluid rounded shadow-sm mb-3 preview-box"
+                    alt="product preview"
+                    style="max-height: 200px; object-fit: cover; width: 100%"
+                  />
+
+                  <p class="text-muted text-center small">
+                    Technology today is more than just a tool—it's the core of
+                    smarter businesses. We build intelligent digital solutions
+                    that automate operations, enhance decision-making, and
+                    deliver real-time visibility across your entire ecosystem.
+                  </p>
+
+                  <button
+                    class="btn btn-sm mt-2 text-white w-100"
+                    style="background-color: #003399"
+                    routerLink="/products/featured"
+                  >
+                    Explore
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/careers" routerLinkActive="active"
+            >Careers</a
+          >
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link" routerLink="/insights" routerLinkActive="active"
+            >Insights</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact-us" routerLinkActive="active"
+            >Contact Us</a
+          >
+        </li>
+      </ul>
+
+      <!-- Desktop Login Button -->
+      <ul class="navbar-nav ms-auto d-none d-md-flex">
+        <li class="nav-item">
+          <button
+            class="btn btnn"
+            data-bs-toggle="modal"
+            data-bs-target="#loginModal"
+          >
+            Login
+          </button>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
-<!-- login modal -->
-<div
-  class="modal fade"
-  id="loginModal"
-  tabindex="-1"
-  aria-labelledby="loginModalLabel"
-  aria-hidden="true"
->
-  <div
-    class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"
-  >
-    <div class="modal-content login-modal p-4">
-      <!-- Header -->
-      <div class="modal-header border-0">
-        <h5
-          class="modal-title fw-bold w-100 text-center text-white"
-          id="loginModalLabel"
+
+<!-- Mobile Offcanvas Menu -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas">
+  <div class="offcanvas-header border-bottom">
+    <h5 class="offcanvas-title fw-bold">Menu</h5>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+
+  <div class="offcanvas-body">
+    <ul class="navbar-nav">
+      <li class="mb-2">
+        <a class="nav-link" href="#about-us" data-bs-dismiss="offcanvas"
+          >About Us</a
         >
-          Choose Login Role
-        </h5>
-        <button
-          type="button"
-          class="btn-close btn-close-white"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
-      </div>
-
-      <!-- Body -->
-      <div class="modal-body">
-        <div class="row g-3">
-          <!-- Recruiter -->
-          <div class="col-12 col-md-4">
-            <div class="card role-card text-center p-3 h-100">
-              <img
-                src="assets/header/recruiter.png"
-                alt="Recruiter Icon"
-                class="text-gold mb-3 mx-auto d-block"
-                style="width: 4rem; height: 4rem"
-              />
-              <h6 class="fw-bold text-gold">Recruiter</h6>
-              <p class="small text-light">Hire & manage candidates.</p>
-              <button
-                class="btn btn-gold mt-auto w-100 text-white"
-                (click)="loginAs('Recruiter')"
-                data-bs-dismiss="modal"
+      </li>
+      <!-- Industries Accordion -->
+      <li class="mb-2">
+        <a
+          class="nav-link d-flex justify-content-between align-items-center"
+          data-bs-toggle="collapse"
+          href="#industriesCollapse"
+          role="button"
+          aria-expanded="false"
+        >
+          Industries
+          <span class="ms-auto">+</span>
+        </a>
+        <div class="collapse ms-3" id="industriesCollapse">
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <a
+                routerLink="/itAndTelecommunications"
+                class="nav-link small"
+                data-bs-dismiss="offcanvas"
+                >IT & Telecommunications</a
               >
-                Login
-              </button>
-            </div>
-          </div>
-
-          <!-- Admin -->
-          <div class="col-12 col-md-4">
-            <div class="card role-card text-center p-3 h-100">
-              <img
-                src="assets/header/admin.png"
-                alt="Admin Icon"
-                class="text-gold mb-3 mx-auto d-block"
-                style="width: 4rem; height: 4rem"
-              />
-              <h6 class="fw-bold text-gold">Admin</h6>
-              <p class="small text-light">Manage users & settings.</p>
-              <button
-                class="btn btn-gold mt-auto w-100 text-white"
-                (click)="loginAs('Admin')"
-                data-bs-dismiss="modal"
+            </li>
+            <li class="mb-2">
+              <a
+                routerLink="/government"
+                class="nav-link small"
+                data-bs-dismiss="offcanvas"
+                >Government</a
               >
-                Login
-              </button>
-            </div>
-          </div>
-
-          <!-- Employee -->
-          <div class="col-12 col-md-4">
-            <div class="card role-card text-center p-3 h-100">
-              <img
-                src="assets/header/employee.png"
-                alt="Employee Icon"
-                class="text-gold mb-3 mx-auto d-block"
-                style="width: 4rem; height: 4rem"
-              />
-              <h6 class="fw-bold text-gold">Employee</h6>
-              <p class="small text-light">Access dashboard & tasks.</p>
-              <button
-                class="btn btn-gold mt-auto w-100 text-white"
-                (click)="loginAs('Employee')"
-                data-bs-dismiss="modal"
+            </li>
+            <li class="mb-2">
+              <a
+                routerLink="/healthCareAndLifeSciences"
+                class="nav-link small"
+                data-bs-dismiss="offcanvas"
+                >Health Care & Life Sciences</a
               >
-                Login
-              </button>
-            </div>
-          </div>
+            </li>
+            <li class="mb-2">
+              <a
+                routerLink="/manufacturing"
+                class="nav-link small"
+                data-bs-dismiss="offcanvas"
+                >Manufacturing</a
+              >
+            </li>
+            <li class="mb-2">
+              <a
+                routerLink="/education"
+                class="nav-link small"
+                data-bs-dismiss="offcanvas"
+                >Education</a
+              >
+            </li>
+            <li class="mb-2">
+              <a
+                routerLink="/transportationAndLogistics"
+                class="nav-link small"
+                data-bs-dismiss="offcanvas"
+                >Transportation & Logistics</a
+              >
+            </li>
+            <li class="mb-2">
+              <a
+                routerLink="/banking"
+                class="nav-link small"
+                data-bs-dismiss="offcanvas"
+                >Banking</a
+              >
+            </li>
+          </ul>
         </div>
-      </div>
-    </div>
+      </li>
+
+      <!-- Services Accordion -->
+      <li class="mb-2">
+        <a
+          class="nav-link d-flex justify-content-between align-items-center"
+          data-bs-toggle="collapse"
+          href="#productsCollapse"
+          role="button"
+          aria-expanded="false"
+        >
+          Services
+          <span class="ms-auto">+</span>
+        </a>
+        <div class="collapse ms-3" id="productsCollapse">
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <a
+                href="/careers"
+                class="nav-link small"
+                data-bs-dismiss="offcanvas"
+                >RackTrack</a
+              >
+            </li>
+            <li class="mb-2">
+              <a
+                href="/products/a2"
+                class="nav-link small"
+                data-bs-dismiss="offcanvas"
+                >TradeRails</a
+              >
+            </li>
+            <li class="mb-2">
+              <a
+                href="/products/a3"
+                class="nav-link small"
+                data-bs-dismiss="offcanvas"
+                >Arelia</a
+              >
+            </li>
+            <li class="mb-2">
+              <a
+                href="/products/a4"
+                class="nav-link small"
+                data-bs-dismiss="offcanvas"
+                >LMS</a
+              >
+            </li>
+            <li class="mb-2">
+              <a
+                href="/project-management"
+                class="nav-link small"
+                data-bs-dismiss="offcanvas"
+                >Project Management</a
+              >
+            </li>
+            <li class="mb-2">
+              <a
+                href="/software-service"
+                class="nav-link small"
+                data-bs-dismiss="offcanvas"
+                >Software Services</a
+              >
+            </li>
+            <li class="mb-2">
+              <a
+                href="/staffing"
+                class="nav-link small"
+                data-bs-dismiss="offcanvas"
+                >Staffing</a
+              >
+            </li>
+            <li class="mb-2">
+              <a
+                href="/it-consulting"
+                class="nav-link small"
+                data-bs-dismiss="offcanvas"
+                >IT Consulting</a
+              >
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="mb-2">
+        <a routerLink="/careers" class="nav-link" data-bs-dismiss="offcanvas"
+          >Careers</a
+        >
+      </li>
+      <li class="mb-2">
+        <a routerLink="/insights" class="nav-link" data-bs-dismiss="offcanvas"
+          >Insights</a
+        >
+      </li>
+      <li class="mb-2">
+        <a routerLink="/contact-us" class="nav-link" data-bs-dismiss="offcanvas"
+          >Contact Us</a
+        >
+      </li>
+    </ul>
+
+    <button
+      class="btn btnn mt-3 w-100"
+      data-bs-toggle="modal"
+      data-bs-target="#loginModal"
+      data-bs-dismiss="offcanvas"
+    >
+      Login
+    </button>
   </div>
 </div>

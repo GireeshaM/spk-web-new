@@ -1,137 +1,153 @@
+import { animate, style, transition, trigger } from '@angular/animations';
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, ViewChild } from '@angular/core';
-import { trigger, transition, style, animate } from '@angular/animations';
-
+import { Component, ElementRef, HostListener, inject, ViewChild } from '@angular/core';
+import { Router, RouterLink, RouterLinkActive, RouterModule, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-company',
   imports: [CommonModule],
   templateUrl: './company.component.html',
-  styleUrls: ['./company.component.scss'],
-    animations: [
-    trigger('fadeIn', [
+  styleUrls: ['./company.component.scss'], 
+  animations: [
+    trigger('shutter', [
       transition(':enter', [
-        style({ opacity: 0 }),
-        animate('300ms ease-out', style({ opacity: 1 }))
+        style({ height: '0', opacity: 0 }),
+        animate('300ms ease-out', style({ height: '*', opacity: 1 }))
+      ]),
+      transition(':leave', [
+        style({ height: '*' }),
+        animate('300ms ease-in', style({ height: '0', opacity: 0 }))
       ])
     ])
   ]
 })
 export class CompanyComponent {
-  
+  isIndustriesOpen = false;
+  isProductsOpen = false;
+  isScrolled = false;
+  currentRoute = '';
+
+ 
   @ViewChild('mainCard') mainCard!: ElementRef;
   @ViewChild('animLayer') animLayer!: ElementRef;
 
-  testimonials = [
-    {
-      img: 'assets/home/testimonials/testimonial-1.png',
-      name: 'Ravi Kumar',
-      role: 'HR Manager, TechNova Solutions',
-      rating: 4,
-      text: 'SprintPark quickly understood our requirements and delivered top-quality candidates within tight timelines.”',
-    },
-    {
-      img: 'assets/home/testimonials/testimonial-2.png',
-      name: 'Anjali Mehta',
-      role: 'Co-founder - Zent Technologies',
-      rating: 5,
-      text: '“A highly reliable partner — their team is responsive, professional, and easy to work with.”',
-    },
-    {
-      img: 'assets/home/testimonials/vikram_testinomial.png',
-      name: 'Vikram Malhotra',
-      role: 'Program Manager, Google Cloud',
-      rating: 4,
-      text: '“Their process is smooth, transparent, and very easy to work with.”',
-    },
-    {
-      img: 'assets/home/testimonials/sofia_testinomial.png',
-      name: 'Sophia Johnson',
-      role: 'Customer Success Manager, Salesforce',
-      rating: 4,
-      text: '“We value SprintPark for consistently providing skilled and reliable professionals.”',
-    },
-    {
-      img: 'assets/home/testimonials/karen_testinomial.png',
-      name: 'Karen.S',
-      role: 'Enterprise Account Director, Microsoft Azure',
-      rating: 4,
-      text: '“The team is supportive, attentive, and always quick to respond.”',
-    },
-    {
-      img: 'assets/home/testimonials/daniel_testinomial.png',
-      name: 'Daniel Lee',
-      role: 'Technical Consultant, Salesforce CRM',
-      rating: 4,
-      text: '“SprintPark helped us scale efficiently with the right talent.”',
-    },
-    {
-      img: 'assets/home/testimonials/arun_testinomial.png',
-      name: 'Arun Kumar',
-      role: 'Partner Solutions Lead, AWS India',
-      rating: 4,
-      text: '“They take the time to understand our culture and needs.”',
-    },
-    {
-      img: 'assets/home/testimonials/megha_testinomial.png',
-      name: 'Megha Sharma',
-      role: 'Training & Certification Manager, AWS',
-      rating: 4,
-      text: '“Professional, efficient, and trustworthy—an excellent partner in staffing.”',
-    },
-  ];
+  
 
-ngOnInit() {
-  this.selected = this.testimonials[0];
-}
-
-  selected: any = null;
-
-  // Carousel settings
-  carouselIndex = 0;
-  visibleCount = 3;
-  cardHeight = 150;
-
-  scrollUp() {
-    if (this.carouselIndex > 0) this.carouselIndex--;
+  @HostListener('window:scroll', [])
+  public onWindowScroll(): void {
+    this.isScrolled = window.scrollY > 100;
   }
 
-  scrollDown() {
-    if (this.carouselIndex < this.testimonials.length - this.visibleCount) {
-      this.carouselIndex++;
+
+  // Hover handlers for Industries
+  onIndustriesMouseEnter() {
+    this.isIndustriesOpen = true;
+  }
+
+  onIndustriesMouseLeave() {
+    this.isIndustriesOpen = false;
+  }
+
+  // Hover handlers for Products
+  onProductsMouseEnter() {
+    this.isProductsOpen = true;
+  }
+
+  onProductsMouseLeave() {
+    this.isProductsOpen = false;
+  }
+
+  public loginAs(role: string): void {
+    switch (role) {
+      case 'Admin':
+      case 'Recruiter':
+        window.open('https://talenthire.ceipal.com/signin', '_blank');
+        break;
+      case 'Employee':
+        window.open('https://sprintpark.kredily.com/login/', '_blank');
+        break;
     }
   }
 
-  // Smooth animation from side → main card
-  animateToMain(item: any, cardEl: HTMLElement) {
-    const animLayerEl = this.animLayer.nativeElement;
-    const mainCardEl = this.mainCard.nativeElement;
-
-    const clone = cardEl.cloneNode(true) as HTMLElement;
-    clone.style.position = 'absolute';
-    clone.style.margin = '0';
-    clone.style.transition = 'all 0.45s ease';
-
-    const cardRect = cardEl.getBoundingClientRect();
-    const mainRect = mainCardEl.getBoundingClientRect();
-
-    clone.style.top = cardRect.top + 'px';
-    clone.style.left = cardRect.left + 'px';
-    clone.style.width = cardRect.width + 'px';
-    clone.style.height = cardRect.height + 'px';
-
-    animLayerEl.appendChild(clone);
-
-    requestAnimationFrame(() => {
-      clone.style.top = mainRect.top + 'px';
-      clone.style.left = mainRect.left + 'px';
-      clone.style.width = mainRect.width + 'px';
-      clone.style.height = mainRect.height + 'px';
-    });
-
-    setTimeout(() => {
-      this.selected = item;
-      animLayerEl.removeChild(clone);
-    }, 450);
+  services=[
+    {
+    title:'RackTrack',
+    description:'RackTrack is a smart platform designed to help businesses and optimize every product.',
+    link:'/products'
+  },
+  {
+    title:'Arelia',
+    description:'AI-powered insights that simplify decision-making and boost performance.',
+    link:'/products'
+  },
+  {
+    title:'LMS',
+    description:'A flexible learning platform designed to train, track, and empower teams.',
+    link:'/products'
+  },
+  {
+    title:'Scan Forge',
+    description:'Scan Forge is a smart platform designed to help businesses and optimize every product.',
+    link:'/products'
+  },
+  {
+    title:'Project Management',
+    description:'Project Management is a smart platform designed to help businesses and optimize every product.',
+    link:'/project-management'
+  },
+  {
+    title:'Software Services',
+    description:'Software Services is a smart platform designed to help businesses and optimize every product.',
+    link:'/software-service'
+  },
+  {
+    title:'Staffing',
+    description:'Staffing is a smart platform designed to help businesses and optimize every product.',
+    link:'/staffing'
+  },
+  {
+    title:'IT Consulting',
+    description:'IT Consulting is a smart platform designed to help businesses and optimize every product.',
+    link:'/it-consulting'
   }
+]
+
+industries =[
+  {
+  title:' IT & Telecommunications',
+  description:' Modernize connectivity, infrastructure, and digital operations.',
+  link:'/itAndTelecommunications'
+},
+{
+  title:'Government',
+  description:'Build secure, citizen-centric digital public services.',
+  link:'/government'
+},
+{
+  title:'Health Care & Life Sciences',
+  description:'Scalable health platforms built for precision and efficiency.',
+  link:'/healthCareAndLifeSciences'
+},
+{
+  title:'Manufacturing',
+  description:'Smarter production with automation and real-time visibility.',
+  link:'/manufacturing'
+},
+{
+  title:'Education',
+  description:'Digital learning ecosystems for modern institutions.',
+  link:'/education'
+},
+{
+  title:'Transportation & Logistics',
+  description:'End-to-end logistics intelligence and automation.',
+  link:'/transportationAndLogistics'
+},
+{
+  title:'Banking',
+  description:'Secure, agile digital banking for a connected economy.',
+  link:'/banking'
+},
+]
 }

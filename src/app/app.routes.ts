@@ -24,6 +24,7 @@ import { TelecommunicationIComponent } from './webmodules/industriesSubPages/tel
 import { TransportationIComponent } from './webmodules/industriesSubPages/transportation-i/transportation-i.component';
 import { CompanyComponent } from './company/company.component';
 import { InsightsBlogComponent } from './webmodules/insights-blog/insights-blog.component';
+import { ProductComponent } from './webmodules/product/product.component';
 
 export const routes: Routes = [
   {
@@ -274,6 +275,13 @@ export const routes: Routes = [
       title: 'Sprintpark’s Contact us| Let’s Create Something Extraordinary',
       description:
         'Get in touch with SprintPark. Connect with our team for software solutions, partnerships, or support.',
+      footerColor: 'rgba(255, 255, 255, 1)',
+    },
+  },
+   {
+    path: 'products',
+    component: ProductComponent,
+    data: {
       footerColor: 'rgba(255, 255, 255, 1)',
     },
   },
