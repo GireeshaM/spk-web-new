@@ -1,0 +1,119 @@
+.root {
+  --a: #4f7cff;
+  --g: #9bb7ff;
+  --l: #f6f9ff;
+}
+/* HERO */
+.hero {
+  min-height: 70vh;
+  background: url("https://www.e-spincorp.com/wp-content/uploads/2018/06/digital-transformation-espincorp.jpg")
+    center/cover;
+  position: relative;
+}
+.hero-title {
+  background: linear-gradient(90deg, #fff, #e7f4ff, #d4e6ff);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+.primary-btn {
+  background: #ef7a13;
+  color: #fff;
+  padding: 14px 2rem;
+  border: 0;
+  border-radius: 40px;
+  transition: 0.3s;
+}
+.primary-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 150, 255, 0.55);
+}
+/* GLOBAL REDUCE IMAGE SIZE (except hero) */
+section:not(.hero) img {
+  width: 72% !important;
+  margin: auto;
+  display: block;
+  object-fit: cover;
+}
+section:not(.hero) .ratio {
+  transform: scale(0.78);
+  transform-origin: center;
+}
+/* FULL WIDTH BACKGROUND */
+.full-bg {
+  background: linear-gradient(#f7fff7, #fff);
+  margin: 0 calc(-50vw + 50%);
+  padding: 3rem calc(50vw - 50%);
+}
+/* Card container */
+.card {
+  border: none;
+  text-align: left;
+  border-radius: 1rem;
+  background: #ffffff;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+ 
+/* Card Title */
+.card-title {
+  font-weight: 600;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #0a2250;
+}
+ 
+/* Card Text */
+.card-text {
+  font-weight: 400;
+  font-size: 1rem;
+  color: #606262;
+  line-height: 1.5;
+}
+ 
+/* Image Styling */
+.card-img-top {
+  border-radius: 1rem;
+  max-height: 250px;
+  object-fit: cover;
+  width: 100%;
+  padding: 10px;
+}
+ 
+/* Column Padding */
+.card .row .col-md-6 {
+  padding: 15px;
+}
+ 
+/* Feature List Styling */
+.card-text ul {
+  margin: 10px 0 0 20px;
+  padding: 0;
+  list-style-type: disc;
+  color: #333;
+}
+ 
+.card-text ul li {
+  margin-bottom: 6px;
+}
+ 
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .card-img-top {
+    max-height: 180px;
+    padding: 5px;
+  }
+ 
+  .card .row .col-md-6 {
+    padding: 10px;
+  }
+ 
+  .card-title {
+    font-size: 1.4rem;
+  }
+ 
+  .card-text {
+    font-size: 0.95rem;
+  }
+}
+ 
