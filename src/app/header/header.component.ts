@@ -1,11 +1,6 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { CommonModule } from '@angular/common';
-import {
-  Component,
-  ElementRef,
-  HostListener,
-  ViewChild,
-} from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -42,20 +37,20 @@ export class HeaderComponent {
   }
 
   // Hover handlers for Industries
- public onIndustriesMouseEnter():void {
+  public onIndustriesMouseEnter(): void {
     this.isIndustriesOpen = true;
   }
 
- public onIndustriesMouseLeave():void {
+  public onIndustriesMouseLeave(): void {
     this.isIndustriesOpen = false;
   }
 
   // Hover handlers for Products
- public onProductsMouseEnter():void {
+  public onProductsMouseEnter(): void {
     this.isProductsOpen = true;
   }
 
- public onProductsMouseLeave():void {
+  public onProductsMouseLeave(): void {
     this.isProductsOpen = false;
   }
 
@@ -74,26 +69,22 @@ export class HeaderComponent {
   services = [
     {
       title: 'Smart Rack',
-      description:
-        'See Your Racks Smarter. Manage Them Faster',
+      description: 'See Your Racks Smarter. Manage Them Faster',
       link: '/products',
     },
     {
       title: 'Interior Living',
-      description:
-        'Design Collaboration Made Effortless',
+      description: 'Design Collaboration Made Effortless',
       link: '/products',
     },
     {
       title: 'LMS',
-      description:
-        'Smarter Learning. Seamless Growth',
+      description: 'Smarter Learning. Seamless Growth',
       link: '/products',
     },
     {
       title: 'Code Detector',
-      description:
-        'Scan Smart. Fix Fast. Ship Secure',
+      description: 'Scan Smart. Fix Fast. Ship Secure',
       link: '/products',
     },
     {
