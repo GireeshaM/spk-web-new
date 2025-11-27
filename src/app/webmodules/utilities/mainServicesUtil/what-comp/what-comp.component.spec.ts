@@ -18,17 +18,16 @@ describe('WhatCompComponent', () => {
     component.whyContent = 'Short test content for template rendering.';
     component.whyCards = [
       { title: 'Card A', desc: 'Desc A' },
-      { title: 'Card B', desc: 'Desc B' }
+      { title: 'Card B', desc: 'Desc B' },
     ];
 
     component.images = {
       left: { src: 'assets/test/left.png', alt: 'Left image alt' },
       right: [
         { src: 'assets/test/right1.png', alt: 'Right image 1' },
-        { src: 'assets/test/right2.png', alt: 'Right image 2' }
-      ]
+        { src: 'assets/test/right2.png', alt: 'Right image 2' },
+      ],
     };
-   
 
     fixture.detectChanges();
   });
@@ -37,5 +36,4 @@ describe('WhatCompComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
 });

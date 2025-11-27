@@ -586,7 +586,10 @@
   width: 65%;
   z-index: 5;
   opacity: 1;
-  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s ease;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease,
+    visibility 0.4s ease;
 }
 
 .row-one.hidden {
@@ -643,7 +646,6 @@
 
 /* TABLET (≤ 992px) */
 @media (max-width: 992px) {
-
   /* Fix button color issue at tablet */
   .sliding-box .row-one a.btn-purple-custom {
     background-color: #7a3ef5 !important; /* KEEP SAME COLOR */
@@ -694,4 +696,3 @@
     height: 200px;
   }
 }
-

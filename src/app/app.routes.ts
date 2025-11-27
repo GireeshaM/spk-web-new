@@ -26,7 +26,6 @@ import { InsightsBlogComponent } from './webmodules/insights-blog/insights-blog.
 import { ProductComponent } from './webmodules/product/product.component';
 
 export const routes: Routes = [
-
   {
     path: '',
     component: HomeComponent,
