@@ -554,12 +554,11 @@
   height: 420px;
 }
 
-/* Panel - only custom properties */
+/* Panel */
 .sliding-box {
   flex: 1 1 0;
   transition: flex 0.5s ease;
   cursor: pointer;
-  // background: #441a62;
   overflow: hidden;
 }
 
@@ -577,18 +576,17 @@
   background: #6a2880;
   z-index: 3;
 }
+
 .product-section {
   background: rgba(242, 241, 249, 1);
 }
+
 /* LEFT CONTENT */
 .row-one {
   width: 65%;
   z-index: 5;
   opacity: 1;
-  transition:
-    opacity 0.4s ease,
-    transform 0.4s ease,
-    visibility 0.4s ease;
+  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s ease;
 }
 
 .row-one.hidden {
@@ -604,7 +602,6 @@
   transition: width 0.5s ease;
 }
 
-/* DEFAULT STATE (not active) → clear image */
 .row-two img {
   width: 100%;
   height: 100%;
@@ -612,57 +609,45 @@
   transition: all 0.5s ease;
 }
 
-/* OPTIONAL: If you want blur only when hovered but not active */
+/* Hover Blur (only inactive panels) */
 .sliding-box:hover:not(.active) .row-two img {
   filter: brightness(70%) blur(2px);
 }
-/* When NOT active → row-two should take full width */
+
+/* Non-active → text hidden, full-width image */
 .sliding-box:not(.active) .row-two {
   width: 100% !important;
 }
 
-/* Hide text when not active so image gets full width */
 .sliding-box:not(.active) .row-one {
   display: none;
-  width: 65%;
 }
 
-/* ACTIVE STATE */
-.sliding-box.active .row-two {
-  width: 35%;
-}
-
+/* ACTIVE IMAGE */
 .sliding-box.active .row-two img {
   width: 180px;
   height: 300px;
   border-radius: 8px;
-  filter: brightness(100%) blur(0);
 }
 
-/* Custom Button */
+/* BUTTON COLOR — ALWAYS PURPLE */
 .btn-purple-custom {
   background-color: #7a3ef5 !important;
   transition: background-color 0.25s ease;
+  color: white !important;
 }
 
 .btn-purple-custom:hover {
   background-color: #5d24d6 !important;
 }
 
-/* TABLET & BELOW (992px) */
+/* TABLET (≤ 992px) */
 @media (max-width: 992px) {
-  .sliding-box .row-one h3,
-  .sliding-box .row-one p,
-  .sliding-box .row-one h5,
-  .sliding-box .row-one a {
-    color: #ffffff !important;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.55);
-  }
 
+  /* Fix button color issue at tablet */
   .sliding-box .row-one a.btn-purple-custom {
-    background-color: rgba(0, 0, 0, 0.4) !important;
-    backdrop-filter: blur(2px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    background-color: #7a3ef5 !important; /* KEEP SAME COLOR */
+    color: #fff !important;
   }
 
   .sliding-box-container {
@@ -686,7 +671,6 @@
   .row-one,
   .row-two {
     width: 100% !important;
-    position: relative;
     visibility: visible !important;
     opacity: 1 !important;
     transform: none !important;
@@ -696,7 +680,6 @@
     height: 260px;
   }
 
-  .sliding-box.active .row-two,
   .sliding-box.active .row-two img {
     width: 100%;
     height: 260px;
@@ -704,17 +687,11 @@
   }
 }
 
-/* MOBILE (576px and below) */
+/* MOBILE (≤ 576px) */
 @media (max-width: 576px) {
-  .sliding-box .row-one h3,
-  .sliding-box .row-one p,
-  .sliding-box .row-one h5,
-  .sliding-box .row-one a {
-    color: #131212 !important;
-    text-shadow: none;
-  }
   .row-two,
   .sliding-box.active .row-two img {
     height: 200px;
   }
 }
+
