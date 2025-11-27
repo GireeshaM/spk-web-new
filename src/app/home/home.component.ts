@@ -275,7 +275,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.viewAll = !this.viewAll;
   }
   public whatWeOffer = [
-    {  
+    {
       img: 'assets/home/whatWeOffer/software-services.png',
       title: 'Software services',
       desc: 'Custom software solutions designed to meet your unique business needs.',
@@ -668,43 +668,35 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   updates = [
     {
-      category: 'Rack Track',
-      title:
-        'See Your Racks Smarter. Manage Them Faster',
+      category: 'Smart Rack',
+      title: 'See Your Racks Smarter. Manage Them Faster',
       description:
         'Smart Rack Management Tool converts rack images or videos into structured, accurate reports using advanced AI vision.It automatically detects devices, cables, and connections, making audits, troubleshooting, and maintenance effortless.',
-      image:
-        'assets/product/producta.png',
+      image: 'assets/product/producta.png',
       url: '/insight/247ai-quarterly-product-release-highlights-q3/',
     },
     {
-      category: 'Scan Forge',
-      title:
-        'Scan Smart. Fix Fast. Ship Secure',
+      category: 'Code Detector',
+      title: 'Scan Smart. Fix Fast. Ship Secure',
       description:
         'AI Code Security & Vulnerability Scanner analyzes your repositories to detect vulnerabilities and instantly offers AI-generated fix suggestions.With GitHub-ready actions and automated remediation, developers can secure code with unmatched speed and accuracy.',
-       image:
-        'assets/product/productb.png',
+      image: 'assets/product/productb.png',
       url: 'https://www.linkedin.com/events/7178413110167285760/about/',
     },
     {
       category: 'LMS',
-      title:
-        'Smarter Learning. Seamless Growth',
+      title: 'Smarter Learning. Seamless Growth',
       description:
         'An AI-enhanced learning platform that personalizes courses and streamlines progress tracking for students and instructors.SLMS simplifies education management with intelligent recommendations, smart dashboards, and effortless course delivery.',
-     image:
-        'assets/product/productc.jpg',
+      image: 'assets/product/productc.jpg',
       url: 'https://www.247.ai/news-and-updates/',
     },
     {
-      category: 'Arelia',
-      title:
-        'Design Collaboration Made Effortless',
+      category: 'Interior Living',
+      title: 'Design Collaboration Made Effortless',
       description:
         'Interior Project Management Platform connects customers, designers, and vendors through a unified platform for smooth project execution.From request submission to final delivery, it keeps communication streamlined and every update organized in one place.',
-     image:
-        'assets/product/productd.jpg',
+      image: 'assets/product/productd.jpg',
       url: '/insight/247ai-quarterly-product-release-highlights-q3/',
     },
   ];

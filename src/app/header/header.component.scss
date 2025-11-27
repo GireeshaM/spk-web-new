@@ -1,243 +1,239 @@
-  /* ---------------------------------------
+/* ---------------------------------------
     1. NAVBAR BASE
   ---------------------------------------- */
-  .navbar {
-    background: #ffffff;
+.navbar {
+  background: #ffffff;
 
-    .navbar-brand img {
-      height: 40px;
-    }
-
-    .nav-link {
-      color: #000;
-      position: relative;
-      cursor: pointer;
-      transition: color 0.3s ease;
-
-      /* Underline Animation */
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background-color: var(--bs-primary);
-        transition: width 0.3s ease;
-      }
-
-      &:hover::after {
-        width: 100%;
-      }
-    }
+  .navbar-brand img {
+    height: 40px;
   }
 
-  /* Active States */
-  .nav-link.active,
-  .dropdown-item.active {
-    border-bottom: 1px solid #0d6efd;
-  }
-
-
-  /* Remove default arrow */
-  .dropdown-toggle::after {
-    display: none !important;
-  }
-
-  /* Hover effect for small dropdown-items */
-  .dropdown-menu .dropdown-item:hover {
-    background-color: #e9e4ff;
+  .nav-link {
     color: #000;
-  }
+    position: relative;
+    cursor: pointer;
+    transition: color 0.3s ease;
 
-  /* Desktop dropdown hover (small dropdowns only) */
-  @media (min-width: 768px) {
-    .navbar .dropdown:hover > .dropdown-menu {
-      display: block;
+    /* Underline Animation */
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--bs-primary);
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
     }
   }
+}
 
-  /* ---------------------------------------
+/* Active States */
+.nav-link.active,
+.dropdown-item.active {
+  border-bottom: 1px solid #0d6efd;
+}
+
+/* Remove default arrow */
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+/* Hover effect for small dropdown-items */
+.dropdown-menu .dropdown-item:hover {
+  background-color: #e9e4ff;
+  color: #000;
+}
+
+/* Desktop dropdown hover (small dropdowns only) */
+@media (min-width: 768px) {
+  .navbar .dropdown:hover > .dropdown-menu {
+    display: block;
+  }
+}
+
+/* ---------------------------------------
     4. PRODUCTS MEGA DROPDOWN
   ---------------------------------------- */
 
-  .mega-dropdown {
-    left: 0 !important;
-    right: 0 !important;
-    max-height: 480px;
-    overflow-y: auto;
-    border-radius: 0;
-  }
+.mega-dropdown {
+  left: 0 !important;
+  right: 0 !important;
+  max-height: 480px;
+  overflow-y: auto;
+  border-radius: 0;
+}
 
-  .mega-dropdown a {
-    transition: background 0.25s ease;
-  }
+.mega-dropdown a {
+  transition: background 0.25s ease;
+}
 
-  .mega-dropdown a:hover {
-    background: #f8f9fa;
-    border-radius: 4px;
-  }
+.mega-dropdown a:hover {
+  background: #f8f9fa;
+  border-radius: 4px;
+}
 
-  /* Right column image */
-  .preview-box {
-    width: 220px;
-    height: 150px;
-    border-radius: 8px;
-    object-fit: cover;
-  }
+/* Right column image */
+.preview-box {
+  width: 220px;
+  height: 150px;
+  border-radius: 8px;
+  object-fit: cover;
+}
 
-  .sp-grey-bg {
-    background-color: #f1f1f1;
-  }
+.sp-grey-bg {
+  background-color: #f1f1f1;
+}
 
-  /* Arrow animation */
-  .arrow {
-    transition: transform 0.2s ease;
-  }
+/* Arrow animation */
+.arrow {
+  transition: transform 0.2s ease;
+}
 
-  a:hover .arrow {
-    transform: translateX(4px);
-  }
+a:hover .arrow {
+  transform: translateX(4px);
+}
 
-  /* ---------------------------------------
+/* ---------------------------------------
     5. LOGIN MODAL
   ---------------------------------------- */
-  .login-modal {
-    background: linear-gradient(90deg, #210337 0%, #5f3481 104.75%);
-    border-radius: 1rem;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-    color: #ffffff;
-  }
-  /* Login button on navbar */
-  .btnn {
-    width: 7rem;
-    color: #fff;
-    background-color: rgb(234, 93, 68);
+.login-modal {
+  background: linear-gradient(90deg, #210337 0%, #5f3481 104.75%);
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+}
+/* Login button on navbar */
+.btnn {
+  width: 7rem;
+  color: #fff;
+  background-color: rgb(234, 93, 68);
 
-    @media (min-width: 768px) {
-      width: 4rem !important;
-    }
-  }
-  /* Desktop: show mega dropdown on hover */
   @media (min-width: 768px) {
-    .mega-parent:hover > .mega-dropdown {
-      display: block !important;
-    }
+    width: 4rem !important;
   }
-
-    /* Hover dropdown (desktop only) */
-  @media (min-width: 992px) {
-    .megamenu:hover .dropdown-menu {
-      display: block;
-    }
+}
+/* Desktop: show mega dropdown on hover */
+@media (min-width: 768px) {
+  .mega-parent:hover > .mega-dropdown {
+    display: block !important;
   }
+}
 
-  /* Full width dropdown */
-  .megadrop {
-    left: 0 !important;
-    right: 0 !important;
-    width: 100% !important;
-    border-radius: 0;
-    max-height: 500px;
-    overflow-y: auto;
-  }
-
-  .nav-link.active {
-    color: #8f26df !important;
-    background: linear-gradient(90deg, #8f26df, #9451c8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-
-  /* Product List Styling */
-  .mega-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .mega-list li {
-    margin-bottom: 15px;
-  }
-
-  .mega-list li a {
-    text-decoration: none;
-    color: #212529;
+/* Hover dropdown (desktop only) */
+@media (min-width: 992px) {
+  .megamenu:hover .dropdown-menu {
     display: block;
   }
+}
 
-  .product-title {
-    display: block;
-  }
+/* Full width dropdown */
+.megadrop {
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  border-radius: 0;
+  max-height: 500px;
+  overflow-y: auto;
+}
 
-  .product-desc {
-    display: block;
-    font-size: 0.85rem;
-    color: #6c757d;
-  }
+.nav-link.active {
+  color: #8f26df !important;
+  background: linear-gradient(90deg, #8f26df, #9451c8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-  /* Image box */
-  .preview-box {
-    max-width: 100%;
-    width: 220px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-  /* Make the whole block clickable with pointer cursor */
-  .product-title {
-    display: block;
-    padding: 10px 12px;
-    border-radius: 6px;
-    text-decoration: none;
-    color: #212529;
-    transition: 0.2s ease;
-    cursor: pointer !important;      
-  }
+/* Product List Styling */
+.mega-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-  /* Hover effect */
-  .product-title:hover {
-    background: #f1f3f5;
-    text-decoration: none;
-    cursor: pointer !important;      
-  }
-  ///products dropdown hover
-  /* default colors */
-  .title-hover {
-    color: #000;
-    transition: all 0.3s ease;
-  }
+.mega-list li {
+  margin-bottom: 15px;
+}
 
-  .title-hover .arrow {
-    transition: all 0.3s ease;
-    display: inline-block; /* Needed for scale animation */
-  }
+.mega-list li a {
+  text-decoration: none;
+  color: #212529;
+  display: block;
+}
 
-  /* Hover — title + arrow color change */
-  .title-hover:hover,
-  .title-hover:hover .arrow {
-    background: linear-gradient(90deg, #8f26df,  #9451c8 70%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  /* Arrow zoom animation */
-  .title-hover:hover .arrow {
-    transform: scale(1.4);   /* Zoom in */
-  }
+.product-title {
+  display: block;
+}
 
-  .product-intro-text {
-    margin-left: -6px;   /* Adjust as needed */
-  }
-  .text-purple {
-    color: #6f42c1; /* Bootstrap’s purple shade */
-  }
-  .sp-grey-bg {
-    background-color:rgb(241, 241, 241); /* soft grey */
-  }
-  //shutter
-  .mega-left-info {
-    margin-top: 80px; 
-  }
+.product-desc {
+  display: block;
+  font-size: 0.85rem;
+  color: #6c757d;
+}
 
+/* Image box */
+.preview-box {
+  max-width: 100%;
+  width: 220px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+/* Make the whole block clickable with pointer cursor */
+.product-title {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #212529;
+  transition: 0.2s ease;
+  cursor: pointer !important;
+}
 
+/* Hover effect */
+.product-title:hover {
+  background: #f1f3f5;
+  text-decoration: none;
+  cursor: pointer !important;
+}
+///products dropdown hover
+/* default colors */
+.title-hover {
+  color: #000;
+  transition: all 0.3s ease;
+}
+
+.title-hover .arrow {
+  transition: all 0.3s ease;
+  display: inline-block; /* Needed for scale animation */
+}
+
+/* Hover — title + arrow color change */
+.title-hover:hover,
+.title-hover:hover .arrow {
+  background: linear-gradient(90deg, #8f26df, #9451c8 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* Arrow zoom animation */
+.title-hover:hover .arrow {
+  transform: scale(1.4); /* Zoom in */
+}
+
+.product-intro-text {
+  margin-left: -6px; /* Adjust as needed */
+}
+.text-purple {
+  color: #6f42c1; /* Bootstrap’s purple shade */
+}
+.sp-grey-bg {
+  background-color: rgb(241, 241, 241); /* soft grey */
+}
+//shutter
+.mega-left-info {
+  margin-top: 80px;
+}

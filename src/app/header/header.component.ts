@@ -1,8 +1,12 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, HostListener, inject, ViewChild } from '@angular/core';
-import { Router, RouterLink, RouterLinkActive } from '@angular/router';
-
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  ViewChild,
+} from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -10,18 +14,18 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
   imports: [CommonModule, RouterLink, RouterLinkActive],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-   animations: [
+  animations: [
     trigger('shutter', [
       transition(':enter', [
         style({ height: '0', opacity: 0 }),
-        animate('300ms ease-out', style({ height: '*', opacity: 1 }))
+        animate('300ms ease-out', style({ height: '*', opacity: 1 })),
       ]),
       transition(':leave', [
         style({ height: '*' }),
-        animate('300ms ease-in', style({ height: '0', opacity: 0 }))
-      ])
-    ])
-  ]
+        animate('300ms ease-in', style({ height: '0', opacity: 0 })),
+      ]),
+    ]),
+  ],
 })
 export class HeaderComponent {
   isIndustriesOpen = false;
@@ -29,33 +33,29 @@ export class HeaderComponent {
   isScrolled = false;
   currentRoute = '';
 
- 
   @ViewChild('mainCard') mainCard!: ElementRef;
   @ViewChild('animLayer') animLayer!: ElementRef;
-
-  
 
   @HostListener('window:scroll', [])
   public onWindowScroll(): void {
     this.isScrolled = window.scrollY > 100;
   }
 
-
   // Hover handlers for Industries
-  onIndustriesMouseEnter() {
+ public onIndustriesMouseEnter():void {
     this.isIndustriesOpen = true;
   }
 
-  onIndustriesMouseLeave() {
+ public onIndustriesMouseLeave():void {
     this.isIndustriesOpen = false;
   }
 
   // Hover handlers for Products
-  onProductsMouseEnter() {
+ public onProductsMouseEnter():void {
     this.isProductsOpen = true;
   }
 
-  onProductsMouseLeave() {
+ public onProductsMouseLeave():void {
     this.isProductsOpen = false;
   }
 
@@ -71,84 +71,95 @@ export class HeaderComponent {
     }
   }
 
-  services=[
+  services = [
     {
-    title:'RackTrack',
-    description:'RackTrack is a smart platform designed to help businesses and optimize every product.',
-    link:'/products'
-  },
-  {
-    title:'Arelia',
-    description:'AI-powered insights that simplify decision-making and boost performance.',
-    link:'/products'
-  },
-  {
-    title:'LMS',
-    description:'A flexible learning platform designed to train, track, and empower teams.',
-    link:'/products'
-  },
-  {
-    title:'Scan Forge',
-    description:'Scan Forge is a smart platform designed to help businesses and optimize every product.',
-    link:'/products'
-  },
-  {
-    title:'Project Management',
-    description:'Project Management is a smart platform designed to help businesses and optimize every product.',
-    link:'/project-management'
-  },
-  {
-    title:'Software Services',
-    description:'Software Services is a smart platform designed to help businesses and optimize every product.',
-    link:'/software-service'
-  },
-  {
-    title:'Staffing',
-    description:'Staffing is a smart platform designed to help businesses and optimize every product.',
-    link:'/staffing'
-  },
-  {
-    title:'IT Consulting',
-    description:'IT Consulting is a smart platform designed to help businesses and optimize every product.',
-    link:'/it-consulting'
-  }
-]
+      title: 'Smart Rack',
+      description:
+        'See Your Racks Smarter. Manage Them Faster',
+      link: '/products',
+    },
+    {
+      title: 'Interior Living',
+      description:
+        'Design Collaboration Made Effortless',
+      link: '/products',
+    },
+    {
+      title: 'LMS',
+      description:
+        'Smarter Learning. Seamless Growth',
+      link: '/products',
+    },
+    {
+      title: 'Code Detector',
+      description:
+        'Scan Smart. Fix Fast. Ship Secure',
+      link: '/products',
+    },
+    {
+      title: 'Project Management',
+      description:
+        'Project Management is a smart platform designed to help businesses and optimize every product.',
+      link: '/project-management',
+    },
+    {
+      title: 'Software Services',
+      description:
+        'Software Services is a smart platform designed to help businesses and optimize every product.',
+      link: '/software-service',
+    },
+    {
+      title: 'Staffing',
+      description:
+        'Staffing is a smart platform designed to help businesses and optimize every product.',
+      link: '/staffing',
+    },
+    {
+      title: 'IT Consulting',
+      description:
+        'IT Consulting is a smart platform designed to help businesses and optimize every product.',
+      link: '/it-consulting',
+    },
+  ];
 
-industries =[
-  {
-  title:' IT & Telecommunications',
-  description:' Modernize connectivity, infrastructure, and digital operations.',
-  link:'/itAndTelecommunications'
-},
-{
-  title:'Government',
-  description:'Build secure, citizen-centric digital public services.',
-  link:'/government'
-},
-{
-  title:'Health Care & Life Sciences',
-  description:'Scalable health platforms built for precision and efficiency.',
-  link:'/healthCareAndLifeSciences'
-},
-{
-  title:'Manufacturing',
-  description:'Smarter production with automation and real-time visibility.',
-  link:'/manufacturing'
-},
-{
-  title:'Education',
-  description:'Digital learning ecosystems for modern institutions.',
-  link:'/education'
-},
-{
-  title:'Transportation & Logistics',
-  description:'End-to-end logistics intelligence and automation.',
-  link:'/transportationAndLogistics'
-},
-{
-  title:'Banking',
-  description:'Secure, agile digital banking for a connected economy.',
-  link:'/banking'
-},
-]
+  industries = [
+    {
+      title: ' IT & Telecommunications',
+      description:
+        ' Modernize connectivity, infrastructure, and digital operations.',
+      link: '/itAndTelecommunications',
+    },
+    {
+      title: 'Government',
+      description: 'Build secure, citizen-centric digital public services.',
+      link: '/government',
+    },
+    {
+      title: 'Health Care & Life Sciences',
+      description:
+        'Scalable health platforms built for precision and efficiency.',
+      link: '/healthCareAndLifeSciences',
+    },
+    {
+      title: 'Manufacturing',
+      description:
+        'Smarter production with automation and real-time visibility.',
+      link: '/manufacturing',
+    },
+    {
+      title: 'Education',
+      description: 'Digital learning ecosystems for modern institutions.',
+      link: '/education',
+    },
+    {
+      title: 'Transportation & Logistics',
+      description: 'End-to-end logistics intelligence and automation.',
+      link: '/transportationAndLogistics',
+    },
+    {
+      title: 'Banking',
+      description: 'Secure, agile digital banking for a connected economy.',
+      link: '/banking',
+    },
+  ];
 }
