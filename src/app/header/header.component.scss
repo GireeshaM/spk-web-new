@@ -243,7 +243,7 @@ a:hover .arrow {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
   color: #ffffff;
 }
- 
+
 /* Role cards */
 .role-card {
   background: rgba(255, 255, 255, 0.05); /* Subtle contrast */
@@ -253,7 +253,7 @@ a:hover .arrow {
     transform 0.3s ease,
     box-shadow 0.3s ease,
     border-color 0.3s ease;
- 
+
   &:hover {
     transform: translateY(-4px);
     border-color: #ffffff; /* White border on hover */
@@ -267,7 +267,7 @@ a:hover .arrow {
 .role-card h6 {
   color: #ffffff !important; /* Ensures both icons and titles are white */
 }
- 
+
 /* Button with white background */
 .btn-gold {
   background: #4a90e2; /* Light blue background */
@@ -276,15 +276,15 @@ a:hover .arrow {
   font-weight: 600;
   border-radius: 0.6rem;
   transition: all 0.2s ease-in-out;
- 
+
   &:hover {
     background: #357abd; /* Darker blue on hover */
     color: #ffffff;
     box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
   }
 }
-@media (min-width: 820px){
-.btn{
-  width:5rem !important;
-}
+@media (min-width: 820px) {
+  .btn {
+    width: 5rem !important;
+  }
 }
