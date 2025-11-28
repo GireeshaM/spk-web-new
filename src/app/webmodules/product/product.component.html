@@ -3,35 +3,30 @@
   class="hero position-relative d-flex align-items-center overflow-hidden"
 >
   <div class="overlay position-absolute w-100 h-100"></div>
- 
+
   <div class="container-fluid px-5">
     <div class="row align-items-center">
       <div class="col-lg-6 fade-in-left mt-5">
-        <h4 class=" fw-bold mb-3 hero-title">
+        <h4 class="fw-bold mb-3 hero-title">
           Smarter product management,<br />happier customers.
         </h4>
-        <p class=" text-white mb-4">
+        <p class="text-white mb-4">
           Our intelligent product suite brings automation, insights, and smooth
           workflows to help your business grow faster.
         </p>
-   <a
-  class="btn btn-sm rounded-pill primary-btn"
-  routerLink="/contact-us"
->
-  Start Your Free Trial
-</a>
-
-
+        <a class="btn btn-sm rounded-pill primary-btn" routerLink="/contact-us">
+          Start Your Free Trial
+        </a>
       </div>
     </div>
   </div>
 </section>
- 
+
 <div class="container py-5">
   <div class="title text-center mb-5">
     <h2>Our Products</h2>
   </div>
- 
+
   <div *ngFor="let card of data; let i = index" class="mb-5">
     <div class="card border-0">
       <div class="row g-0 align-items-center">
@@ -65,7 +60,7 @@
             />
           </ng-template>
         </div>
- 
+
         <!-- Content Section -->
         <div
           class="col-12 col-md-6 d-flex align-items-center"
@@ -88,4 +83,3 @@
     </div>
   </div>
 </div>
- 
