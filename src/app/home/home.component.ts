@@ -555,7 +555,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       name: 'Anjali Mehta',
       role: 'Co-founder - Zent Technologies',
       rating: 5,
-      text: '“A highly reliable partner — their team is responsive, professional, and easy to work with.”',
+      text: '“A highly reliable partner - their team is responsive, professional, and easy to work with.”',
     },
     {
       img: 'assets/home/testimonials/vikram_testinomial.png',
@@ -597,7 +597,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       name: 'Megha Sharma',
       role: 'Training & Certification Manager, AWS',
       rating: 4,
-      text: '“Professional, efficient, and trustworthy—an excellent partner in staffing.”',
+      text: '“Professional, efficient, and trustworthy-an excellent partner in staffing.”',
     },
   ];
 

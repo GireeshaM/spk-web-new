@@ -1,19 +1,21 @@
-<div class="it-container position-relative">
-  <img
+<div class="it-container position-relative overflow-hidden">
+<img
     [src]="isMobile ? smallImage : heroImage"
-    class="img-fluid hero-image"
+    class="img-fluid hero-image w-100 d-block"
     alt="Hero Image"
   />
-  <div class="d-flex align-items-center justify-content-end w-100 h-100">
-    <div
-      class="text-container p-4 text-white"
+<div class="overlay-container position-absolute top-0 start-0 end-0 bottom-0 d-flex align-items-center w-100 h-100">
+<div
+      class="text-container p-3 p-md-4 text-white"
       [ngClass]="{
-        'text-right': alignRight,
-        'text-left': !alignRight,
+        'text-end ms-auto me-3 me-md-4 me-lg-5': alignRight,
+        'text-start ms-3 ms-md-4 ms-lg-5 me-auto': !alignRight
       }"
-    >
-      <h1 class="heading fw-bold text-white mt-4">{{ whatHeader }}</h1>
-      <h5 class="desc text-white">{{ whatDescription }}</h5>
-    </div>
-  </div>
+>
+<h1 class="heading fw-bold text-white mb-2 mb-md-3">{{ whatHeader }}</h1>
+<h5 class="desc text-white lh-base">{{ whatDescription }}</h5>
 </div>
+</div>
+</div>
+ 
+ 
