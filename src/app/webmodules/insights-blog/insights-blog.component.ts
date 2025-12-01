@@ -13,9 +13,8 @@ export class InsightsBlogComponent implements OnInit {
   route = inject(ActivatedRoute);
 
   public ngOnInit(): void {
-    // Get the route param 'section'
     this.route.paramMap.subscribe((params) => {
-      this.currentSection = params.get('section') || 'marketing';
+      this.currentSection = params.get('section') || 'marketing-excellence';
     });
   }
 }

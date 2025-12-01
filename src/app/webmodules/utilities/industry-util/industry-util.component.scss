@@ -168,3 +168,29 @@
     margin-top: 80px;
   }
 }
+/* Fix for Nest Hub (1024x600 type screens) */
+@media (min-width: 1000px) and (max-width: 1100px) and (max-height: 700px) {
+  .tele {
+    margin-top: 0 !important; /* STOP pushing hero upward */
+    padding-top: 40px !important; /* adds a safe spacing */
+  }
+
+  .tele .top-content {
+    margin-top: 0 !important; /* reset mobile shift */
+  }
+
+  .tele .hero-img {
+    top: 0 !important;
+    margin: 0 !important;
+    max-height: 380px !important;
+    object-fit: contain !important;
+  }
+
+  .tele .topSection {
+    min-height: 480px !important;
+  }
+
+  .wave-overlay {
+    bottom: -40px !important;
+  }
+}

@@ -20,6 +20,7 @@ export class MainHeroSectionComponent implements OnInit {
 
   private platformId = inject(PLATFORM_ID);
   isBrowser = isPlatformBrowser(this.platformId);
+
   public ngOnInit(): void {
     if (this.isBrowser) {
       this.checkScreenSize();
@@ -32,7 +33,8 @@ export class MainHeroSectionComponent implements OnInit {
       this.checkScreenSize();
     }
   }
+
   public checkScreenSize(): void {
-    this.isMobile = window.innerWidth <= 768;
+    this.isMobile = window.innerWidth <= 576; // Changed from 768 to 576
   }
 }

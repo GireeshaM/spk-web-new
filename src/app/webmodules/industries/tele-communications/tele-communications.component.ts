@@ -10,7 +10,7 @@ import { IndustryUtilComponent } from '../../utilities/industry-util/industry-ut
 })
 export class TeleCommunicationsComponent {
   public headerBg = 'assets/Industries/wave.svg';
-  public itHeader = 'IT & TeleCommunications';
+  public itHeader = 'IT & TeleCommunication';
   public itHeading = 'Empowering Telecom Growth with Confidence';
   public itContent =
     'As the telecom industry rapidly expands across B2B and B2C markets, so do the challenges of compliance, risk, and trust. We help telecom businesses scale strategically, strengthen governance, and stay resilient in a constantly evolving landscape  empowering growth with clarity and confidence.';

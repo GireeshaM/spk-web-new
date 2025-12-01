@@ -121,14 +121,20 @@
 .logo-section {
   background: linear-gradient(90deg, #360060 0%, #5f3481 104.75%);
   max-width: 1910px;
+  padding: 5px 0;
+  margin: 0;
   .logo-slider {
+    padding: 0;
+    margin: 0;
     .logo-track {
       width: 200%;
       animation: scroll 40s linear infinite;
+      padding: 5px 0;
+      margin: 0;
       .logo-container {
         min-width: 200%;
         img {
-          margin-top: 20px;
+          margin-top: 5px;
           height: 100px;
           width: 180px;
           filter: none;
@@ -204,12 +210,12 @@
   background: #f6f4fd url("/assets/home/industries/industries-bgwave.png")
     no-repeat center bottom;
   background-size: 100% 600px;
-  min-height: 100vh;
+  min-height: auto;
 
   .whatWeOffer-section,
   .industries-section {
     background: transparent;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
   }
   row.view-all {
     flex-wrap: nowrap; /* keeps all cards in one row */
@@ -223,8 +229,9 @@
     margin-bottom: 6rem;
   }
 }
+
 .offer-industries-bg section {
-  padding-top: 60px; /* space above each section */
+  padding-top: 20px;
 }
 .whatWeOffer-section .bg-white:hover h6,
 .whatWeOffer-section .bg-white:hover p {
@@ -307,13 +314,14 @@
     url("/assets/home/testimonials/testinomial-curve.png") !important;
   background-repeat: no-repeat, no-repeat;
   background-position: center, center;
-  background-size: 100% auto,  cover;
- 
+  background-size:
+    100% auto,
+    cover;
 }
 
 // Testimonial cards
 /* Hover effect */
-.testimonial-section .bg-white:hover {
+.testimonial-section .testimonial-card:hover {
   background: #372399 !important;
   transition:
     background 0.2s,
@@ -322,8 +330,7 @@
 }
 .testimonial-section .bg-white:hover .fw-bold,
 .testimonial-section .bg-white:hover .fs-6,
-.testimonial-section .bg-white:hover .text-secondary
- {
+.testimonial-section .bg-white:hover .text-secondary {
   color: #fdfdfd !important;
 }
 /* Mobile horizontal scroll (for cards) */
@@ -343,7 +350,8 @@
 // Industries Cards
 .industries-section {
   position: relative;
-  background: #f6f4fd url("/assets/home/industries/industries-bgwave.png") no-repeat center bottom;
+  background: #f6f4fd url("/assets/home/industries/industries-bgwave.png")
+    no-repeat center bottom;
   background-size: 100% 600px;
   padding: 60px 0;
   .carousel-container {
@@ -353,25 +361,25 @@
   .carousel-track {
     transition: transform 0.8s ease-in-out;
     align-items: stretch;
-  }  
+  }
   .industries-prev,
   .industries-next {
     // position: absolute; /* crucial */
-    top: 50%; 
+    top: 50%;
     transform: translateY(-50%);
     background: transparent;
     width: 40px;
     height: 40px;
-    z-index: 10; 
+    z-index: 10;
     cursor: pointer;
-     background: linear-gradient(135deg, rgb(126, 124, 124), rgb(242, 244, 244));
+    // background: linear-gradient(135deg, rgb(126, 124, 124), rgb(242, 244, 244));
   }
   .industries-prev {
-    left: 0; 
+    left: 0;
   }
 
   .industries-next {
-    right: 0; 
+    right: 0;
   }
   .carousel-card {
     padding: 0 10px;
@@ -394,7 +402,11 @@
       }
       .card-img-overlay {
         padding: 15px;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.2));
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.65),
+          rgba(0, 0, 0, 0.2)
+        );
 
         .card-icon {
           background: #ff6600;
@@ -436,12 +448,12 @@
   .home #myCarousel .carousel-control-prev,
   .home #myCarousel .carousel-control-next {
     width: 40px;
-     height: 40px;
+    height: 40px;
     border-width: 3px;
   }
- .carousel-image{
-  height: 350px !important;
- }
+  .carousel-image {
+    height: 350px !important;
+  }
 }
 /* Max-width: 767px */
 @media (max-width: 767px) {
@@ -463,7 +475,6 @@
     padding: 2rem 0.75rem;
     min-height: auto;
   }
-
 }
 /* Min-width: 992px */
 @media (min-width: 992px) {
@@ -497,3 +508,207 @@
     margin-left: 90px;
   }
 }
+.main-container {
+  position: relative;
+}
+/* Animation layer */
+.animation-layer {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  overflow: visible;
+  z-index: 9999;
+}
+/* Carousel */
+.carousel-window {
+  height: 460px;
+  overflow: hidden;
+  width: 100%;
+}
+.carousel-inner {
+  transition: transform 0.45s ease;
+}
+/* Side card */
+.side-card {
+  cursor: pointer;
+  width: 260px !important;
+  height: 230px;
+  transition: transform 0.2s ease;
+  margin-left: 120px;
+}
+.side-card:hover {
+  transform: scale(1.03);
+}
+/* Big Card */
+.main-big-card {
+  height: auto;
+  min-height: 320px;
+  margin-top: 90px !important;
+}
+.carousel-arrow {
+  background: none !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  padding: 0; /* remove button padding */
+  cursor: pointer;
+}
+
+.sliding-box-container {
+  height: 420px;
+}
+
+/* Panel */
+.sliding-box {
+  flex: 1 1 0;
+  transition: flex 0.5s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.sliding-box:not(:last-child) {
+  margin-right: 10px;
+}
+
+.sliding-box.active {
+  flex: 6 1 0;
+  background: #fff;
+}
+
+/* Category Label */
+.box-label {
+  background: #6a2880;
+  z-index: 3;
+}
+
+.product-section {
+  background: rgba(242, 241, 249, 1);
+}
+
+/* LEFT CONTENT */
+.row-one {
+  width: 65%;
+  z-index: 5;
+  opacity: 1;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease,
+    visibility 0.4s ease;
+}
+
+.row-one.hidden {
+  opacity: 0;
+  transform: translateX(-20px);
+  visibility: hidden;
+  position: absolute;
+}
+
+/* RIGHT IMAGE AREA */
+.row-two {
+  width: 35%;
+  transition: width 0.5s ease;
+}
+
+.row-two img {
+  width: 100%;
+  height: 100%;
+  filter: brightness(100%) blur(0);
+  transition: all 0.5s ease;
+}
+
+/* Hover Blur (only inactive panels) */
+.sliding-box:hover:not(.active) .row-two img {
+  filter: brightness(70%) blur(2px);
+}
+
+/* Non-active → text hidden, full-width image */
+.sliding-box:not(.active) .row-two {
+  width: 100% !important;
+}
+
+.sliding-box:not(.active) .row-one {
+  display: none;
+}
+
+/* ACTIVE IMAGE */
+.sliding-box.active .row-two img {
+  width: 180px;
+  height: 300px;
+  border-radius: 8px;
+}
+
+/* BUTTON COLOR — ALWAYS PURPLE */
+.btn-purple-custom {
+  background-color: #7a3ef5 !important;
+  transition: background-color 0.25s ease;
+  color: white !important;
+}
+
+.btn-purple-custom:hover {
+  background-color: #5d24d6 !important;
+}
+
+/* TABLET (≤ 992px) */
+@media (max-width: 992px) {
+  /* Fix button color issue at tablet */
+  .sliding-box .row-one a.btn-purple-custom {
+    background-color: #7a3ef5 !important; /* KEEP SAME COLOR */
+    color: #fff !important;
+  }
+
+  .sliding-box-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .sliding-box {
+    flex: none;
+    width: 100%;
+  }
+
+  .sliding-box.active {
+    flex: none;
+  }
+
+  .sb_content_wrapper {
+    flex-direction: column;
+  }
+
+  .row-one,
+  .row-two {
+    width: 100% !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .row-two {
+    height: 260px;
+  }
+
+  .sliding-box.active .row-two img {
+    width: 100%;
+    height: 260px;
+    border-radius: 0;
+  }
+}
+
+/* MOBILE (≤ 576px) */
+/* MOBILE: Move text further left */
+@media (max-width: 576px) {
+  .row-one {
+    margin-left: 0 !important; /* Remove side spacing */
+    padding-left: 0 !important; /* Align text to the left */
+    text-align: left !important; /* Ensure left alignment */
+  }
+
+  .row-one h4,
+  .row-one p,
+  .row-one a {
+    margin-left: 0 !important; /* Bring text fully left */
+  }
+}
+/* MOBILE: shift images left inside industry cards */

@@ -1,5 +1,5 @@
 <!-- Main Carousel -->
-<div class="home text-align-center align-items-center ">
+<div class="home text-align-center align-items-center">
   <section class="carousel-section">
     <div
       id="myCarousel"
@@ -34,9 +34,8 @@
               >
                 <a
                   class="btn btn-lg btn-1 d-flex justify-content-center align-items-center text-light fw-lighter rounded-pill flex-fill flex-sm-none"
-                  href="javascript:void(0)"
+                  routerLink="/products"
                   data-bs-toggle="modal"
-                  data-bs-target="#loginModal"
                 >
                   Get Started with AI
                   <span class="sparkle position-absolute"></span>
@@ -47,7 +46,7 @@
                 </a>
                 <a
                   class="btn btn-lg btn-2 d-flex justify-content-center align-items-center text-light fw-lighter rounded-pill flex-fill flex-sm-none"
-                  href="/contact-us"
+                  routerLink="/contact-us"
                 >
                   Let's Talk
                 </a>
@@ -79,12 +78,12 @@
       </button>
     </div>
     <!-- Partner Logos -->
-    <section id="about-us" class="logo-section">
-      <div class="logo-slider position-relative overflow-hidden">
-        <div class="logo-track d-flex">
+    <section id="about-us" class="logo-section py-0 mt-0">
+      <div class="logo-slider position-relative overflow-hidden mt-0 pt-0">
+        <div class="logo-track d-flex py-1 mt-0">
           <!-- First set of logos -->
           <div
-            class="logo-container d-flex justify-content-evenly align-items-center"
+            class="logo-container d-flex justify-content-evenly align-items-center gap-2"
           >
             <img
               src="assets/home/partner-logos/salesforce.png"
@@ -130,7 +129,7 @@
     </section>
   </section>
   <!-- FEATURES   About sprintpark -->
-  <section class="about-sprintpark-section pb-5">
+  <section class="about-sprintpark-section">
     <div class="container py-5 position-relative">
       <div
         class="row align-items-center flex-column flex-md-row gx-5 position-relative"
@@ -172,14 +171,15 @@
           <p class="fw-normal mb-4 lh-lg">
             Our goal is to become the most trusted and recognized provider of
             <br />
-            cutting-edge IT products and solutions—celebrated for our unwavering
+            cutting-edge IT products and solutions celebrated for our unwavering
             <br />
             commitment to quality, forward-thinking innovation, and exceptional
             client <br />
             satisfaction. By developing scalable, efficient, and user-centric
             products, <br />
-            we empower businesses to thrive in an ever-evolving digital
-            landscape.
+            We enable organizations to succeed and stay competitive in an
+            ever-advancing<br />
+            digital environment.
           </p>
           <!-- Features Grid -->
           <div
@@ -216,9 +216,60 @@
     </div>
   </section>
   <!-- FEATURES END -->
+  <div class="product-section">
+    <h3 class="fw-bold ms-lg-5 mt-3 p-3">Our Products</h3>
+
+    <!-- PRODUCTS SECTION -->
+    <div class="p-3">
+      <div class="sliding-box-container d-flex overflow-hidden">
+        <div
+          class="sliding-box d-flex flex-column rounded-3 position-relative"
+          *ngFor="let item of updates; let i = index"
+          (mouseenter)="activeIndex = i"
+          [class.active]="activeIndex === i"
+        >
+          <!-- Category Header -->
+          <div class="box-label text-center p-2">
+            <h5 class="fw-semibold text-white m-0">{{ item.category }}</h5>
+          </div>
+
+          <div class="sb_content_wrapper d-flex h-100 position-relative">
+            <!-- LEFT CONTENT -->
+            <div
+              class="row-one mb-3 p-3 ms-4 mt-3"
+              [class.hidden]="activeIndex !== i"
+            >
+              <h4 class="fw-bold mt-4">{{ item.title }}</h4>
+              <p class="mt-3 mb-0 text-muted">{{ item.description }}</p>
+
+              <a
+                href="/products"
+                target="_self"
+                class="btn mt-3 btn-purple-custom text-white border-0"
+              >
+                Read More →
+              </a>
+            </div>
+
+            <!-- RIGHT IMAGE -->
+            <div
+              class="row-two d-flex align-items-center justify-content-center"
+            >
+              <img
+                [src]="item.image"
+                class="img-fluid object-fit-cover"
+                alt="image"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- What we offer -->
-  <div class="offer-industries-bg offer-industries pb-2">
-    <section class="whatWeOffer-section mb-20">
+  <div class="offer-industries-bg offer-industries pb-0">
+    <section class="whatWeOffer-section mb-3">
       <div class="container">
         <div
           class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-4 gap-2"
@@ -292,105 +343,85 @@
     </section>
 
     <!-- Industries we serve -->
-    <!-- <section class="industries-section my-5 pt-0">
-      <div class="container">
-        <div class="mb-4">
+    <section
+      class="industries-section my-5 pt-0 overflow-hidden ms-4 position-relative"
+    >
+      <div class="carousel-container position-relative overflow-hidden w-100">
+        <div class="mb-4 ms-5">
           <h6 class="text-dark mb-3">Industries we serve</h6>
           <h3 class="fw-bold mb-5">We bring our expertises</h3>
         </div>
-        <p-carousel
-          #industriesCarouselRef
-          [value]="industriesCarousel"
-          [numVisible]="3"
-          [numScroll]="1"
-          [circular]="true"
-          [autoplayInterval]="3000"
-          [responsiveOptions]="responsiveOptions"
-          [showIndicators]="false"
+
+        <!-- Prev Button -->
+        <button
+          class="industries-prev text-light mt-5 rounded-circle border-0 align-items-center justify-content-center position-absolute"
+          (click)="prevSlide()"
+          [disabled]="currentIndex === 0"
         >
-          <ng-template pTemplate="item" let-industry>
+          <i class="fa-solid fa-chevron-left fs-2 me-3"></i>
+        </button>
+        <!-- Carousel Wrapper -->
+        <div class="carousel-wrapper overflow-hidden position-relative w-100">
+          <div
+            class="carousel-track d-grid"
+            [style.transform]="
+              'translateX(' + -(currentIndex * (100 / cardsPerView)) + '%)'
+            "
+            [style.gridTemplateColumns]="
+              'repeat(' + cards.length + ', ' + 100 / cardsPerView + '%)'
+            "
+          >
             <div
-              class="p-0 rounded-0 h-100 overflow-hidden industries-card d-flex flex-column position-relative justify-content-end overflow-hidden"
+              class="carousel-card border-0"
+              *ngFor="let card of cards"
+              [@slideUp]="'visible'"
             >
-              <img
-                [src]="industry.img"
-                [alt]="industry.alt"
-                class="industries-img flex-grow-1 display-block object-fit-cover"
-              />
-              <div
-                class="industry-title-overlay start-0 end-0 d-flex justify-content-between align-items-center position-absolute"
-              >
-                <span class="industry-title fw-semibold text-light">{{
-                  industry.title
-                }}</span>
-                <a
-                  class="arrow-btn justify-content-center align-items-center text-decoration-none d-flex"
-                  [routerLink]="industry.link"
+              <div class="card position-relative overflow-hidden">
+                <img
+                  [src]="card.img"
+                  class="card-img-top object-fit-cover w-100"
+                  [alt]="card.title"
+                />
+                <div
+                  class="card-img-overlay d-flex flex-column justify-content-end p-3"
                 >
-                  <i class="fas fa-arrow-right text-light"></i>
-                </a>
-              </div>
-            </div>
-          </ng-template>
-        </p-carousel>
-      </div>
-    </section> -->
-<section class="industries-section my-5 pt-0 overflow-hidden ms-4 position-relative">
-  <div class="carousel-container position-relative overflow-hidden w-100">
-    <div class="mb-4 ms-5">
-      <h6 class="text-dark mb-3">Industries we serve</h6>
-      <h3 class="fw-bold mb-5">We bring our expertises</h3>
-    </div>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <h5 class="card-title text-white mb-0 fw-bold">
+                      {{ card.title }}
+                    </h5>
 
-    <!-- Prev Button -->
-    <button
-      class="industries-prev text-light mt-5  rounded-circle border-0 align-items-center justify-content-center position-absolute "
-      (click)="prevSlide()"
-      [disabled]="currentIndex === 0">
-    <i class="fa-solid fa-chevron-left fs-2 me-3"></i>
-    </button>
-    <!-- Carousel Wrapper -->
-    <div class="carousel-wrapper overflow-hidden position-relative w-100">
-      <div
-        class="carousel-track d-grid"
-        [style.transform]="'translateX(' + -(currentIndex * (100 / cardsPerView)) + '%)'"
-        [style.gridTemplateColumns]="'repeat(' + cards.length + ', ' + 100 / cardsPerView + '%)'"
-      >
-        <div class="carousel-card border-0" *ngFor="let card of cards" [@slideUp]="'visible'">
-          <div class="card position-relative overflow-hidden">
-            <img [src]="card.img" class="card-img-top object-fit-cover w-100" [alt]="card.title" />
-            <div class="card-img-overlay d-flex flex-column justify-content-end p-3">
-              <div class="d-flex justify-content-between align-items-center">
-                <h5 class="card-title text-white mb-0 fw-bold">{{ card.title }}</h5>
-
-                <!-- ✅ Clickable Arrow Icon -->
-                <a
-                  [routerLink]="[card.link]"
-                  class="card-icon d-flex align-items-center justify-content-center text-decoration-none"
-                  style="cursor: pointer;"
-                >
-                  <i class="fa-solid fa-arrow-right text-white"></i>
-                </a>
+                    <!-- ✅ Clickable Arrow Icon -->
+                    <a
+                      [routerLink]="[card.link]"
+                      class="card-icon d-flex align-items-center justify-content-center text-decoration-none"
+                      style="cursor: pointer"
+                    >
+                      <i class="fa-solid fa-arrow-right text-white"></i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- Next Button -->
+        <button
+          class="industries-next mt-5 rounded-circle text-light border-0 align-items-center position-absolute"
+          (click)="nextSlide()"
+          [disabled]="currentIndex >= cards.length - cardsPerView"
+        >
+          <i class="fa-solid fa-chevron-right fs-2 me-5"></i>
+        </button>
       </div>
-    </div>
-
-    <!-- Next Button -->
-    <button
-      class="industries-next mt-5  rounded-circle text-light border-0 align-items-center position-absolute "
-      (click)="nextSlide()"
-      [disabled]="currentIndex >= cards.length - cardsPerView">
-      <i class="fa-solid fa-chevron-right fs-2 me-5 "></i>
-    </button>
-  </div>
-</section>
-
+    </section>
   </div>
   <!-- Collaboration Section -->
-  <div class="collaborate-section py-5 rounded-3 position-relative overflow-hidden">
+  <div
+    class="collaborate-section py-5 rounded-3 position-relative overflow-hidden"
+  >
     <div class="container px-2 px-sm-4 px-md-5">
       <p class="text-dark mb-3 mt-3">Discover Our Company</p>
       <h2 class="mt-2 mb-4 fw-bold">
@@ -464,7 +495,7 @@
     "
   >
     <div class="container-fluid px-0">
-      <div class="row ms-2 ms-md-5 ms-lg-150 ">
+      <div class="row ms-2 ms-md-5 ms-lg-150">
         <div class="ms-2">
           <p class="collaborate-subtitle mb-2 mt-3">Our insights</p>
           <h2 class="collaborate-title fw-bold mt-2 mb-2">
@@ -475,44 +506,45 @@
           </h2>
         </div>
       </div>
-      <!-- ✅ Mobile View: Bootstrap Carousel -->
-      <div class="d-md-none">
+      <!-- ✅ Mobile/Tablet View (1 card): Bootstrap Carousel -->
+      <div class="d-lg-none">
+        <!-- Mobile: show exactly ONE card per slide -->
         <div
           id="insightsCarousel"
           class="carousel slide"
           data-bs-ride="carousel"
           data-bs-interval="4000"
+          data-bs-touch="true"
         >
           <div class="carousel-inner">
             <div
               *ngFor="let slide of ourInsightsSlides; let i = index"
               class="carousel-item"
-              [ngClass]="{ active: i === 0 }"
+              [class.active]="i === 0"
             >
-              <!-- Image -->
-              <img
-                [src]="slide.image"
-                [alt]="slide.title"
-                class="carousel-image d-block w-100 "
-              />
-
-              <!-- Gradient Overlay (if you still want it on the image) -->
-              <div class="carousel-gradient"></div>
-
-              <!-- ✅ Caption moved OUTSIDE image -->
-              <div class="carousel-text-below text-center p-2">
-                <h3 class="carousel-title">
-                  {{ slide.title }}
-                </h3>
-                <p class="carousel-readmore mb-0">
-                  <a href="#" class="text-decoration-none">
-                    Read More <span>&#8594;</span>
-                  </a>
-                </p>
+              <div class="card border-0">
+                <img
+                  [src]="slide.image"
+                  [alt]="slide.title"
+                  class="d-block w-100"
+                  style="height: 300px; object-fit: cover"
+                />
+                <div class="card-body text-center bg-white p-3">
+                  <h5 class="carousel-title fw-bold mb-2">{{ slide.title }}</h5>
+                  <p class="carousel-readmore mb-0">
+                    <a
+                      [routerLink]="['/insights', slide.route]"
+                      class="text-decoration-none text-dark fw-bold"
+                    >
+                      Read More <span>&#8594;</span>
+                    </a>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-          <!-- Controls -->
+
+          <!-- controls -->
           <button
             class="carousel-control-prev"
             type="button"
@@ -533,10 +565,10 @@
           </button>
         </div>
       </div>
-      
+
       <!-- ✅ Desktop View: Original 3-card slider remains unchanged -->
       <div
-        class="d-none d-md-flex justify-content-center align-items-center flex-nowrap mt-5"
+        class="d-none d-lg-flex justify-content-center align-items-center flex-nowrap mt-5"
         style="gap: 2.5rem"
       >
         <!-- Left Card -->
@@ -710,137 +742,216 @@
       </div>
     </div>
   </div>
- 
+
   <section class="testimonial-section py-5 py-lg-6">
     <div class="container">
       <p class="mb-2 mt-2">Testimonial</p>
       <h2 class="fw-bold mb-4 fs-2">Real Stories, Real Results</h2>
-      <!-- Carousel Wrapper -->
-      <div
-        id="testimonialCarousel"
-        class="carousel slide "
-        data-bs-ride="carousel"
-        data-bs-interval="4000"
-      >
-        <div class="carousel-inner ">
-          <!-- Loop through groupedTestimonials -->
-          <div
-            class="carousel-item "
-            *ngFor="let group of groupedTestimonials; let i = index"
-            [ngClass]="{ active: i === 0 }"
-          >
-            <div class="row justify-content-center gy-5">
-              <div
-                class="col-12 col-md-6 col-lg-6 mb-5 d-flex"
-                *ngFor="let t of group"
-              >
-                <!-- Testimonial Card -->
-                <div
-                  class="border testimonial-card rounded mt-5 m-2 p-2 pb-2 bg-white shadow-sm d-flex flex-column position-relative border-opacity-0 "
-                  style="height: 350px; "
-                >
-                  <img
-                    src="/assets/home/testimonials/vector1.svg"
-                    alt="Quote"
-                    class="position-absolute top-0 end-0 m-2 mt-3"
-                    width="32"
-                    height="32"
-                  />
-                  <img
-                    src="/assets/home/testimonials/vector2.svg"
-                    alt="Quote"
-                    class="position-absolute top-0 end-0 me-5 mt-3 "
-                    width="32"
-                    height="32"
-                  />
- 
-                  <div class="d-flex align-items-center mt-5  ms-3">
+
+      <!-- ============================= -->
+      <!-- DESKTOP + TABLET VIEW (Existing Layout) -->
+      <!-- ============================= -->
+      <div *ngIf="!isMobile" class="main-container d-none d-md-block">
+        <div class="animation-layer" #animLayer></div>
+
+        <div class="container mt-4">
+          <div class="row">
+            <!-- LEFT: Main card -->
+            <div class="col-md-8">
+              <div class="main-card-wrapper justify-content-center" #mainCard>
+                <ng-container *ngIf="selected">
+                  <div
+                    class="border testimonial-card rounded mt-5 p-5 m-5 bg-white shadow-sm position-relative border-opacity-0 main-big-card"
+                  >
                     <img
-                      [src]="t.img"
-                      [alt]="t.name"
-                      class="rounded-circle me-3"
-                      width="80"
-                      height="80"
+                      src="/assets/home/testimonials/vector1.svg"
+                      class="position-absolute top-0 end-0 m-2 mt-3"
+                      width="32"
+                      height="32"
                     />
-                    <div>
-                      <div class="fw-medium mb-2">{{ t.name }}</div>
-                      <div class="text-secondary small mb-2">{{ t.role }}</div>
-                      <div
-                        class="star-rating mt-1 lh-sm fs-6 d-flex align-items-center gap-1 mb-2"
-                      >
-                        <ng-container
-                          *ngFor="let star of [].constructor(t.rating)"
+
+                    <img
+                      src="/assets/home/testimonials/vector2.svg"
+                      class="position-absolute top-0 end-0 me-5 mt-3"
+                      width="32"
+                      height="32"
+                    />
+
+                    <div class="d-flex align-items-center mt-3">
+                      <img
+                        [src]="selected.img"
+                        [alt]="selected.name"
+                        class="rounded-circle me-3"
+                        width="80"
+                        height="80"
+                      />
+
+                      <div>
+                        <div class="fw-medium mb-1 fw-bold">
+                          {{ selected.name }}
+                        </div>
+                        <div class="text-secondary small">
+                          {{ selected.role }}
+                        </div>
+
+                        <div
+                          class="star-rating mt-1 lh-sm fs-6 d-flex align-items-center gap-1"
                         >
-                          <i class="fas fa-star text-warning"></i>
-                        </ng-container>
-                        <ng-container
-                          *ngFor="let star of [].constructor(5 - t.rating)"
-                        >
-                          <i class="far fa-star text-muted"></i>
-                        </ng-container>
+                          <ng-container
+                            *ngFor="let star of [].constructor(selected.rating)"
+                          >
+                            <i class="fas fa-star text-warning"></i>
+                          </ng-container>
+                          <ng-container
+                            *ngFor="
+                              let star of [].constructor(5 - selected.rating)
+                            "
+                          >
+                            <i class="far fa-star text-muted"></i>
+                          </ng-container>
+                        </div>
                       </div>
                     </div>
+
+                    <p class="mt-3 fs-6 lh-lg text-dark">
+                      {{ selected.text }}
+                    </p>
                   </div>
-                  <p class="mt-3 review-hover  fs-5 ms-5 lh-lg text-dark flex-grow-1 w-75 text-center align-items center">
-                    {{ t.text }}
-                  </p>
+                </ng-container>
+              </div>
+            </div>
+
+            <!-- RIGHT: Vertical carousel -->
+            <div class="col-md-4 d-flex flex-column align-items-center mb-2">
+              <button
+                class="carousel-arrow"
+                (click)="scrollUp()"
+                [disabled]="carouselIndex === 0"
+              >
+                <i class="fa-solid fa-chevron-up fs-5 ms-3"></i>
+              </button>
+
+              <div class="carousel-window">
+                <div
+                  class="carousel-inner"
+                  [style.transform]="
+                    'translateY(' + -carouselIndex * cardHeight + 'px)'
+                  "
+                >
+                  <!-- SIDE SMALL CARDS -->
+                  <div
+                    *ngFor="let t of testimonials; let i = index"
+                    class="side-card border rounded p-2 mb-3 shadow-sm position-relative w-100 w-md-75 w-lg-75 mx-auto text-center"
+                    #cardElement
+                    (click)="animateToMain(t, cardElement)"
+                  >
+                    <div class="d-flex flex-column align-items-center mt-5">
+                      <img
+                        src="/assets/home/testimonials/vector1.svg"
+                        class="position-absolute top-0 end-0 m-2 mt-3"
+                        width="22"
+                        height="22"
+                      />
+
+                      <img
+                        src="/assets/home/testimonials/vector2.svg"
+                        class="position-absolute top-0 end-0 me-4 mt-3"
+                        width="22"
+                        height="22"
+                      />
+                      <img
+                        [src]="t.img"
+                        [alt]="t.name"
+                        class="rounded-circle mb-2"
+                        width="50"
+                        height="50"
+                      />
+
+                      <div class="fw-semibold small">{{ t.name }}</div>
+                      <div class="text-muted tiny p-2">{{ t.role }}</div>
+                    </div>
+                  </div>
                 </div>
               </div>
+
+              <button
+                class="btn carousel-arrow"
+                (click)="scrollDown()"
+                [disabled]="carouselIndex >= testimonials.length - visibleCount"
+              >
+                <i class="fa-solid fa-chevron-down fs-5 mb-5 ms-3"></i>
+              </button>
             </div>
           </div>
         </div>
-        <!-- Carousel Controls -->
-        <a
-          class="carousel-control-prev w-auto"
-          href="#testimonialCarousel"
-          role="button"
-          data-bs-slide="prev"
+      </div>
+
+      <!-- ============================= -->
+      <!-- MOBILE VIEW (Bootstrap Carousel) -->
+      <!-- ============================= -->
+
+      <div *ngIf="isMobile" class="d-md-none mt-4 p-0 bg-white">
+        <div
+          id="testimonialMobileCarousel"
+          class="carousel slide"
+          data-bs-ride="carousel"
         >
-          <span
-            class="d-flex align-items-center justify-content-center rounded-circle ms-5"
-            style="width: 45px; height: 45px"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              fill="#000"
-              viewBox="0 0 16 16"
+          <div class="carousel-inner">
+            <div
+              *ngFor="let t of testimonials; let i = index"
+              class="carousel-item"
+              [class.active]="i === 0"
             >
-              <path
-                fill-rule="evenodd"
-                d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
-              />
-            </svg>
-          </span>
-        </a>
-        <a
-          class="carousel-control-next w-auto"
-          href="#testimonialCarousel"
-          role="button"
-          data-bs-slide="next"
-        >
-          <span
-            class="d-flex align-items-center justify-content-center rounded-circle me-5"
-            style="width: 45px; height: 45px"
+              <div class="d-flex flex-column align-items-center p-4">
+                <img
+                  [src]="t.img"
+                  [alt]="t.name"
+                  class="rounded-circle mb-3"
+                  width="90"
+                  height="90"
+                />
+
+                <h5 class="fw-semibold">{{ t.name }}</h5>
+                <small class="text-muted mb-2">{{ t.role }}</small>
+
+                <div class="mb-2">
+                  <ng-container *ngFor="let _ of [].constructor(t.rating)">
+                    <i class="fas fa-star text-warning"></i>
+                  </ng-container>
+                  <ng-container *ngFor="let _ of [].constructor(5 - t.rating)">
+                    <i class="far fa-star text-muted"></i>
+                  </ng-container>
+                </div>
+
+                <p class="text-center px-3">{{ t.text }}</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controls (same as reference carousel) -->
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#testimonialMobileCarousel"
+            data-bs-slide="prev"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              fill="#000"
-              viewBox="0 0 16 16"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-              />
-            </svg>
-          </span>
-        </a>
+            <span class="carousel-control-prev-icon"></span>
+            <!-- <span >Previous</span> -->
+          </button>
+
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#testimonialMobileCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon"></span>
+            <!-- <span >Next</span> -->
+          </button>
+        </div>
       </div>
     </div>
   </section>
-  
+
   <!-- Testimonial Section End -->
 </div>

@@ -1,7 +1,7 @@
 <div class="container my-5">
   <h1 class="text-center mb-5">
-    <span class="section-title fw-bold text-dark position-relative">
-      {{ whyMainHeading }}
+    <span class="section-title fw-bold text-dark position-relative"
+      >{{ whyMainHeading }}
     </span>
   </h1>
 
@@ -10,7 +10,9 @@
       <h5 class="fw-semibold w-75 w-md-75">
         {{ whySubHeading }}
       </h5>
-      <p>{{ whyContent }}</p>
+      <p>
+        {{ whyContent }}
+      </p>
 
       <div class="d-flex flex-column gap-3">
         <div class="card shadow-sm hover-card" *ngFor="let card of whyCards">
@@ -22,13 +24,12 @@
       </div>
     </div>
 
-    <!-- IMAGE SECTION -->
+    <!-- child.component.html -->
     <div class="col-12 col-lg-6">
       <div class="row g-3">
         <div class="col-12 col-md-auto">
           <img [src]="images.left.src" [alt]="images.left.alt" />
         </div>
-
         <div class="col-12 col-md">
           <img
             *ngFor="let img of images.right"

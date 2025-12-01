@@ -141,3 +141,38 @@
     transform: translateX(-50%);
   }
 }
+@media (max-width: 576px) {
+  .text-container h1 {
+    margin-top: 50px !important;
+  }
+}
+/* FORCE GREEN SUCCESS TOAST - OPAQUE */
+::ng-deep .p-toast-message.p-toast-message-success {
+  background: #47a55d !important;
+  background-color: #47a55d !important;
+  opacity: 1 !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+::ng-deep .p-toast-message-success .p-toast-message-content {
+  background: #47a55d !important;
+  background-color: #47a55d !important;
+  opacity: 1 !important;
+}
+
+/* Summary text */
+::ng-deep .p-toast-message-success .p-toast-summary {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+/* Detail text */
+::ng-deep .p-toast-message-success .p-toast-detail {
+  color: #ffffff !important;
+}
+
+/* Icon styling */
+::ng-deep .p-toast-message-success .p-toast-icon {
+  color: #ffffff !important;
+}

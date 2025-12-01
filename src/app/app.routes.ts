@@ -22,22 +22,10 @@ import { HealthCareIComponent } from './webmodules/industriesSubPages/health-car
 import { ManufacturingIComponent } from './webmodules/industriesSubPages/manufacturing-i/manufacturing-i.component';
 import { TelecommunicationIComponent } from './webmodules/industriesSubPages/telecommunication-i/telecommunication-i.component';
 import { TransportationIComponent } from './webmodules/industriesSubPages/transportation-i/transportation-i.component';
-import { CompanyComponent } from './company/company.component';
 import { InsightsBlogComponent } from './webmodules/insights-blog/insights-blog.component';
-import { Component } from '@angular/core';
+import { ProductComponent } from './webmodules/product/product.component';
 
 export const routes: Routes = [
- 
-  {
-    path: 'company',
-    component: CompanyComponent,
-    data: {
-      title: 'SprintPark | Your Partner for IT, Staffing, and More',
-      description:
-        'At SprintPark, we are here to support your business with a range of services from IT consulting to staffing and project management. Our team provides flexible, tailored solutions that will fit your needs.',
-    },
-  },
-   
   {
     path: '',
     component: HomeComponent,
@@ -277,6 +265,13 @@ export const routes: Routes = [
       title: 'Sprintpark’s Contact us| Let’s Create Something Extraordinary',
       description:
         'Get in touch with SprintPark. Connect with our team for software solutions, partnerships, or support.',
+      footerColor: 'rgba(255, 255, 255, 1)',
+    },
+  },
+  {
+    path: 'products',
+    component: ProductComponent,
+    data: {
       footerColor: 'rgba(255, 255, 255, 1)',
     },
   },

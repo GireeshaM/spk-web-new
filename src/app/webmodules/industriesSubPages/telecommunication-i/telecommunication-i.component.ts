@@ -53,7 +53,7 @@ const sectionsData: Record<string, Section> = {
       {
         title: 'Telecom & Data Privacy',
         description:
-          'Telecoms handle huge personal data. Breaches impact millions. Encryption, real-time monitoring, and user awareness are vital for digital trust.',
+          ' Telecoms handle huge personal data. Breaches impact millions. Encryption, real-time monitoring, and user awareness are vital for digital trust.',
       },
       {
         title: 'From Calls to Clouds',

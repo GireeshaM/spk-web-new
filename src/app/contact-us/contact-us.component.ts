@@ -8,14 +8,36 @@ import {
 } from '@angular/forms';
 import { MainHeroSectionComponent } from '../webmodules/utilities/main-hero-section/main-hero-section.component';
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-contact-us',
-  imports: [CommonModule, ReactiveFormsModule, MainHeroSectionComponent],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    MainHeroSectionComponent,
+    ToastModule,
+  ],
   templateUrl: './contact-us.component.html',
   styleUrl: './contact-us.component.scss',
+  providers: [MessageService],
 })
 export class ContactUsComponent {
+  messageService = inject(MessageService);
+  public onSubmit(): void {
+    if (this.contactForm.invalid) return;
+
+    this.messageService.add({
+      severity: 'success',
+      summary: 'Your contact was shared successfully',
+    });
+
+    // optional delay
+    setTimeout(() => {
+      this.contactForm.reset();
+    }, 300);
+  }
   // Section 1
   public whatMainHeader = 'Get in touch with SprintPark';
   public whatDescription =
@@ -57,13 +79,13 @@ export class ContactUsComponent {
     message: ['', [Validators.required]],
   });
 
-  public onSubmit(): void {
-    if (this.contactForm.valid) {
-      this.sendEmail(new Event('submit'));
-    } else {
-      this.contactForm.markAllAsTouched();
-    }
-  }
+  // public onSubmit(): void {
+  //   if (this.contactForm.valid) {
+  //     this.sendEmail(new Event('submit'));
+  //   } else {
+  //     this.contactForm.markAllAsTouched();
+  //   }
+  // }
 
   public sendEmail(e: Event): void {
     e.preventDefault();

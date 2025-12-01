@@ -1,0 +1,88 @@
+<!-- HERO SECTION -->
+<section
+  class="hero position-relative d-flex align-items-center overflow-hidden"
+>
+  <div class="overlay position-absolute w-100 h-100"></div>
+
+  <div class="container-fluid px-5">
+    <div class="row align-items-center">
+      <div class="col-lg-6 fade-in-left">
+        <h1 class="display-4 fw-bold mb-3 hero-title text-white">
+          Smarter product management,<br />happier customers.
+        </h1>
+        <p class="lead text-white mb-4">
+          Our intelligent product suite brings automation, insights, and smooth
+          workflows to help your business grow faster.
+        </p>
+        <button
+          class="btn btn-lg btn-primary rounded-pill px-5 primary-btn"
+          (click)="onStartTrial()"
+        >
+          Start Your Free Trial
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container py-5">
+  <div class="title text-center mb-5">
+    <h2>Our Products</h2>
+  </div>
+
+  <div *ngFor="let card of data; let i = index" class="mb-5">
+    <div class="card border-0">
+      <div class="row g-0 align-items-center">
+        <!-- Image Section -->
+        <div class="col-12 col-md-6" [ngClass]="{ 'order-md-2': i % 2 === 0 }">
+          <!-- Check if card has multiple images -->
+          <ng-container
+            *ngIf="card.images && card.images.length > 0; else singleImage"
+          >
+            <div class="row g-2">
+              <div *ngFor="let img of card.images" class="col-6">
+                <img
+                  [src]="img"
+                  alt="{{ card.title }}"
+                  class="img-fluid card-img-top"
+                  style="
+                    height: 140px;
+                    object-fit: cover;
+                    border-radius: 0.5rem;
+                  "
+                />
+              </div>
+            </div>
+          </ng-container>
+          <ng-template #singleImage>
+            <img
+              [src]="card.image"
+              alt="{{ card.title }}"
+              class="card-img-top img-fluid"
+              style="max-height: 350px; object-fit: cover; border-radius: 1rem"
+            />
+          </ng-template>
+        </div>
+
+        <!-- Content Section -->
+        <div
+          class="col-12 col-md-6 d-flex align-items-center"
+          [ngClass]="{ 'order-md-1': i % 2 === 0 }"
+        >
+          <div class="p-4">
+            <h3 class="card-title">{{ card.title }}</h3>
+            <p class="card-text">{{ card.description }}</p>
+            <ul class="list-unstyled mt-3 d-flex flex-wrap gap-2">
+              <li
+                *ngFor="let feature of card.features"
+                class="badge rounded-pill bg-light text-primary fw-semibold p-2"
+              >
+                <span class="me-1">✔</span>{{ feature }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

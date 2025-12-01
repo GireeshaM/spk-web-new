@@ -14,18 +14,18 @@ export class InsightsComponent {
       image: 'assets/insights/achieving-marketing-excellence.jpeg',
       title:
         'Achieving Marketing Excellence: Boost Your Campaigns Using Synergy of Salesforce Marketing Cloud & Salesforce Data Cloud',
-      route: 'marketing',
+      route: 'marketing-excellence',
     },
     {
       image: 'assets/insights/automate-business.jpeg',
       title: 'Automate your business process through Salesforce Flow Builder',
-      route: 'flowBuilder',
+      route: 'automate-your-business-flowBuilder',
     },
     {
       image: 'assets/insights/deep-dive-health-cloud.jpeg',
       title:
         'Demo: How the Salesforce Health Cloud changing Healthcare Industry',
-      route: 'automateYourBusinessThroughSalesforceBuilder',
+      route: 'salesforce-health-cloud',
     },
     {
       image: 'assets/insights/explore-potential-salesforce.jpeg',
@@ -37,7 +37,7 @@ export class InsightsComponent {
       image: 'assets/insights/empovering-smart-business.jpeg',
       title:
         'Empowering smart Business Reporting via potential of Salesforce CRM Analytics',
-      route: 'empoweringSmallBusinesses:UnleashingThePotentialOfSalesforceCRM',
+      route: 'empoweringSmallBusinesses',
     },
     {
       image: 'assets/insights/explore-salesforce-automation.jpeg',

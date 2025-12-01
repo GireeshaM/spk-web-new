@@ -1,4 +1,3 @@
-
 import {
   Component,
   ElementRef,
@@ -40,13 +39,22 @@ import { RouterLink } from '@angular/router';
   ],
 })
 export class HomeComponent implements OnInit, AfterViewInit {
+  @ViewChild('mainCard') mainCard!: ElementRef;
+  @ViewChild('animLayer') animLayer!: ElementRef;
   public btn1 = { label: 'Get started with AI', style: 'btn-warning' };
   public btn2 = { label: "Let's talk", style: 'btn-outline-light' };
   viewAll = false;
-  groupedTestimonials: any[][] = [];
-  currentTestimonialIndex = 0;
+  autoScrollInterval: any;
+  // groupedTestimonials: any[][] = [];
+  // currentTestimonialIndex = 0;
   currentIndex = 0;
   cardsPerView = 1;
+  selected: any = null;
+  // Carousel settings
+  carouselIndex = 0;
+  visibleCount = 3;
+  cardHeight = 200;
+  isMobile = false;
   public slides = [
     {
       image: 'assets/home/hero-carousel/next-gen-software.jpeg',
@@ -93,72 +101,146 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ];
   public ngOnInit(): void {
     this.offerCardVisible = this.whatWeOffer.map(() => false);
-    this.checkMobile(); // Set isMobile before grouping
-    this.groupTestimonials();
-  }
-  public ngAfterViewInit(): void {
+
     if (this.isBrowser) {
+      this.checkScreen();
+      this.startAutoScroll();
+      window.addEventListener('resize', () => this.checkScreen());
+    }
+
+    this.selected = this.testimonials[0];
+  }
+
+  public startAutoScroll(): void {
+    this.autoScrollInterval = setInterval(() => {
+      // If not at bottom → scroll down
+      if (this.carouselIndex < this.testimonials.length - this.visibleCount) {
+        this.scrollDown();
+      }
+      // If reached bottom → reset to top (loop effect)
+      else {
+        this.carouselIndex = 0;
+      }
+    }, 3000); // ⏳ scroll every 3 seconds (adjust as needed)
+  }
+
+  public ngAfterViewInit(): void {
+    if (!this.isBrowser) return; // SSR SAFE — works now because constructor initialized it
+
+    setTimeout(() => {
       this.checkInView();
       this.onScroll();
       this.checkMobile();
       this.cardsPerView = this.getCardsPerView();
-      if (!this.isBrowser) return;
-      setTimeout(() => {
-        this.observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                const index = this.statElements
-                  .toArray()
-                  .findIndex((el) => el.nativeElement === entry.target);
 
-                if (index !== -1 && !this.stats[index].animated) {
-                  this.stats[index].animated = true;
+      this.observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const index = this.statElements
+                .toArray()
+                .findIndex((el) => el.nativeElement === entry.target);
 
-                  this.animateStat(index);
-                  this.observer.unobserve(entry.target);
-                }
+              if (index !== -1 && !this.stats[index].animated) {
+                this.stats[index].animated = true;
+                this.animateStat(index);
+                this.observer.unobserve(entry.target);
               }
-            });
-          },
-          { threshold: 0.3 },
-        );
+            }
+          });
+        },
+        { threshold: 0.3 },
+      );
 
-        this.statElements.forEach((el) => {
-          this.observer.observe(el.nativeElement);
-        });
-      }, 100);
+      this.statElements.forEach((el) => {
+        this.observer.observe(el.nativeElement);
+      });
+    }, 100);
+  }
+
+  public checkScreen(): void {
+    if (!this.isBrowser) return;
+    this.isMobile = window.innerWidth <= 768;
+  }
+
+  public scrollUp(): void {
+    if (this.carouselIndex > 0) this.carouselIndex--;
+  }
+
+  public scrollDown(): void {
+    if (this.carouselIndex < this.testimonials.length - this.visibleCount) {
+      this.carouselIndex++;
     }
   }
-    getCardsPerView(): number {
+  // Smooth animation from side → main card
+  public animateToMain(item: any, cardEl: HTMLElement): void {
+    const animLayerEl = this.animLayer.nativeElement;
+    const mainCardEl = this.mainCard.nativeElement;
+
+    const clone = cardEl.cloneNode(true) as HTMLElement;
+    clone.style.position = 'absolute';
+    clone.style.margin = '0';
+    clone.style.transition = 'all 0.45s ease';
+
+    /* THIS FIXES YOUR ISSUE */
+    clone.style.background = 'transparent';
+    clone.style.border = 'none';
+    clone.style.boxShadow = 'none';
+
+    const cardRect = cardEl.getBoundingClientRect();
+    const mainRect = mainCardEl.getBoundingClientRect();
+
+    clone.style.top = cardRect.top + 'px';
+    clone.style.left = cardRect.left + 'px';
+    clone.style.width = cardRect.width + 'px';
+    clone.style.height = cardRect.height + 'px';
+
+    animLayerEl.appendChild(clone);
+
+    requestAnimationFrame(() => {
+      clone.style.top = mainRect.top + 'px';
+      clone.style.left = mainRect.left + 'px';
+      clone.style.width = mainRect.width + 'px';
+      clone.style.height = mainRect.height + 'px';
+    });
+
+    setTimeout(() => {
+      this.selected = item;
+      animLayerEl.removeChild(clone);
+    }, 450);
+  }
+
+  public getCardsPerView(): number {
+    if (!this.isBrowser) return 1; // safe default for SSR
     const width = window.innerWidth;
     if (width >= 992) return 4;
     if (width >= 768) return 2;
     return 1;
   }
 
-  nextSlide() {
-    if (this.currentIndex < this.cards.length - this.cardsPerView) this.currentIndex++;
+  public nextSlide(): void {
+    if (this.currentIndex < this.cards.length - this.cardsPerView)
+      this.currentIndex++;
   }
 
-  prevSlide() {
+  public prevSlide(): void {
     if (this.currentIndex > 0) this.currentIndex--;
   }
 
-  goToSlide(index: number) {
+  public goToSlide(index: number): void {
     this.currentIndex = index;
   }
-  public groupTestimonials(): void {
-    this.groupedTestimonials = []; // Clear previous
-    const perSlide = this.isMobile ? 1 : 2; // You can use 3 if needed for desktop
-    for (let i = 0; i < this.testimonials.length; i += perSlide) {
-      this.groupedTestimonials.push(this.testimonials.slice(i, i + perSlide));
-    }
-    // Optional: loop the carousel by repeating the first group
-    if (this.groupedTestimonials.length > 0) {
-      this.groupedTestimonials.push(this.groupedTestimonials[0]);
-    }
-  }
+  // public groupTestimonials(): void {
+  //   this.groupedTestimonials = []; // Clear previous
+  //   const perSlide = this.isMobile ? 1 : 2; // You can use 3 if needed for desktop
+  //   for (let i = 0; i < this.testimonials.length; i += perSlide) {
+  //     this.groupedTestimonials.push(this.testimonials.slice(i, i + perSlide));
+  //   }
+  //   // Optional: loop the carousel by repeating the first group
+  //   if (this.groupedTestimonials.length > 0) {
+  //     this.groupedTestimonials.push(this.groupedTestimonials[0]);
+  //   }
+  // }
   @HostListener('window:scroll')
   public onScroll(): void {
     if (!this.isBrowser) return;
@@ -245,6 +327,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       desc: 'Embracing differences to drive innovation',
     },
   ];
+
   public collaborations = [
     {
       img: 'assets/home/collaborate/expert-team.svg',
@@ -284,8 +367,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
     },
   ];
   // Industries
-   cards = [
-   {
+  cards = [
+    {
       img: 'assets/home/industries/industry-it-telecommunications.jpg',
       alt: 'IT & TeleCommunications',
       title: 'IT & TeleCommunications',
@@ -328,6 +411,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       link: '/manufacturing',
     },
   ];
+
   public industries = [
     {
       img: 'assets/home/industries/industry-it-telecommunications.jpg',
@@ -372,16 +456,19 @@ export class HomeComponent implements OnInit, AfterViewInit {
       link: '/manufacturing',
     },
   ];
+
   // Duplicate first 2 items at the end to allow smooth circular scroll
   public industriesCarousel = [
     ...this.industries,
     ...this.industries.slice(0, 2),
   ];
+
   public responsiveOptions = [
     { breakpoint: '1024px', numVisible: 3, numScroll: 1 },
     { breakpoint: '768px', numVisible: 2, numScroll: 1 },
     { breakpoint: '560px', numVisible: 1, numScroll: 1 },
   ];
+
   public stats = [
     {
       img: 'assets/home/statistics/satisfied-clients.png',
@@ -412,21 +499,22 @@ export class HomeComponent implements OnInit, AfterViewInit {
       animated: false,
     },
   ];
+
   public ourInsightsSlides = [
     {
       image: 'assets/home/our-insights/data-security.jpg',
       title: "Salesforce's Commitment to Data Security and Privacy Excellence",
-      route: 'marketing',
+      route: 'marketing-excellence',
     },
     {
       image: 'assets/home/our-insights/markrting-cloud.jpg',
       title: 'Salesforce Marketing Cloud Empowers Marketing of Businesses',
-      route: 'flowBuilder',
+      route: 'automate-your-business-flowBuilder',
     },
     {
       image: 'assets/home/our-insights/health-cloud.jpg',
       title: 'Salesforce Health Cloud transform Payer sector in Healthcare',
-      route: 'automateYourBusinessThroughSalesforceBuilder',
+      route: 'salesforce-health-cloud',
     },
     {
       image: 'assets/home/our-insights/salesforce-customization.jpeg',
@@ -436,28 +524,28 @@ export class HomeComponent implements OnInit, AfterViewInit {
     },
   ];
   // Industries Carousel Logic (Bootstrap-based)
-public activeIndustryIndex = 0; // Track the current active slide
+  public activeIndustryIndex = 0; // Track the current active slide
 
-public nextIndustrySlide(): void {
-  if (this.activeIndustryIndex < this.industries.length - 1) {
-    this.activeIndustryIndex++;
-  } else {
-    this.activeIndustryIndex = 0; // loop back to start
+  public nextIndustrySlide(): void {
+    if (this.activeIndustryIndex < this.industries.length - 1) {
+      this.activeIndustryIndex++;
+    } else {
+      this.activeIndustryIndex = 0; // loop back to start
+    }
   }
-}
 
-public prevIndustrySlide(): void {
-  if (this.activeIndustryIndex > 0) {
-    this.activeIndustryIndex--;
-  } else {
-    this.activeIndustryIndex = this.industries.length - 1; // loop to end
+  public prevIndustrySlide(): void {
+    if (this.activeIndustryIndex > 0) {
+      this.activeIndustryIndex--;
+    } else {
+      this.activeIndustryIndex = this.industries.length - 1; // loop to end
+    }
   }
-}
 
   public testimonials = [
     {
       img: 'assets/home/testimonials/testimonial-1.png',
-      name: 'Ravi Kumar',
+      name: 'Michael Roberts',
       role: 'HR Manager, TechNova Solutions',
       rating: 4,
       text: 'SprintPark quickly understood our requirements and delivered top-quality candidates within tight timelines.”',
@@ -512,22 +600,23 @@ public prevIndustrySlide(): void {
       text: '“Professional, efficient, and trustworthy—an excellent partner in staffing.”',
     },
   ];
+
   public currentInsightIndex = 1; // Start with the middle card (or 0 for first)
-  public isMobile = false;
+  // public isMobile = false;
   @HostListener('window:resize')
   public onResize(): void {
-     const newCount = this.getCardsPerView();
+    const newCount = this.getCardsPerView();
     if (newCount !== this.cardsPerView) {
       this.cardsPerView = newCount;
       if (this.currentIndex > this.cards.length - this.cardsPerView) {
         this.currentIndex = Math.max(0, this.cards.length - this.cardsPerView);
       }
     }
-    const prevMobile = this.isMobile;
+    // const prevMobile = this.isMobile;
     this.checkMobile();
-    if (prevMobile !== this.isMobile) {
-      this.groupTestimonials();
-    }
+    // if (prevMobile !== this.isMobile) {
+    //   this.groupTestimonials();
+    // }
   }
   public checkMobile(): void {
     if (this.isBrowser) {
@@ -574,4 +663,41 @@ public prevIndustrySlide(): void {
       }
     }, duration / steps);
   }
+
+  activeIndex = 0;
+
+  updates = [
+    {
+      category: 'Smart Rack',
+      title: 'See Your Racks Smarter. Manage Them Faster',
+      description:
+        'Smart Rack Management Tool converts rack images or videos into structured, accurate reports using advanced AI vision.It automatically detects devices, cables, and connections, making audits, troubleshooting, and maintenance effortless.',
+      image: 'assets/product/producta.png',
+      url: '/insight/247ai-quarterly-product-release-highlights-q3/',
+    },
+    {
+      category: 'Code Detector',
+      title: 'Scan Smart. Fix Fast. Ship Secure',
+      description:
+        'AI Code Security & Vulnerability Scanner analyzes your repositories to detect vulnerabilities and instantly offers AI-generated fix suggestions.With GitHub-ready actions and automated remediation, developers can secure code with unmatched speed and accuracy.',
+      image: 'assets/product/productb.png',
+      url: 'https://www.linkedin.com/events/7178413110167285760/about/',
+    },
+    {
+      category: 'LMS',
+      title: 'Smarter Learning. Seamless Growth',
+      description:
+        'An AI-enhanced learning platform that personalizes courses and streamlines progress tracking for students and instructors.SLMS simplifies education management with intelligent recommendations, smart dashboards, and effortless course delivery.',
+      image: 'assets/product/productc.jpg',
+      url: 'https://www.247.ai/news-and-updates/',
+    },
+    {
+      category: 'Interior Living',
+      title: 'Design Collaboration Made Effortless',
+      description:
+        'Interior Project Management Platform connects customers, designers, and vendors through a unified platform for smooth project execution.From request submission to final delivery, it keeps communication streamlined and every update organized in one place.',
+      image: 'assets/product/productd.jpg',
+      url: '/insight/247ai-quarterly-product-release-highlights-q3/',
+    },
+  ];
 }
