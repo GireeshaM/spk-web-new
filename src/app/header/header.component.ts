@@ -1,6 +1,7 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -30,6 +31,8 @@ export class HeaderComponent {
 
   @ViewChild('mainCard') mainCard!: ElementRef;
   @ViewChild('animLayer') animLayer!: ElementRef;
+
+  constructor(private router: Router) {}
 
   @HostListener('window:scroll', [])
   public onWindowScroll(): void {
@@ -66,20 +69,72 @@ export class HeaderComponent {
     }
   }
 
+  // --- New method: scrollTo ---
+  public scrollTo(id: string): void {
+    // 1) Try to find element on current DOM and scroll
+    const el = document.getElementById(id);
+    if (el) {
+      // Smooth scroll and close offcanvas
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      this.closeOpenOffcanvas();
+      return;
+    }
+
+
+    this.router.navigate(['/'], { fragment: id }).then(() => {
+     
+      setTimeout(() => {
+        const elAfterNav = document.getElementById(id);
+        if (elAfterNav) {
+          elAfterNav.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        this.closeOpenOffcanvas();
+      }, 60);
+    });
+  }
+
+  // Helper to close Bootstrap offcanvas (works with or without bootstrap JS present)
+  private closeOpenOffcanvas(): void {
+    const offcanvasEl = document.querySelector('.offcanvas.show') as HTMLElement | null;
+    if (!offcanvasEl) return;
+
+    // If Bootstrap is loaded, use its Offcanvas API
+    const _win: any = window as any;
+    try {
+      if (_win && _win.bootstrap && _win.bootstrap.Offcanvas) {
+        const bsInstance =
+          _win.bootstrap.Offcanvas.getInstance(offcanvasEl) ?? new _win.bootstrap.Offcanvas(offcanvasEl);
+        bsInstance.hide();
+        return;
+      }
+    } catch (err) {
+      // fall through to manual fallback
+      // console.warn('Bootstrap Offcanvas close failed, falling back to manual teardown', err);
+    }
+
+    // Manual fallback if Bootstrap is not available or API failed
+    offcanvasEl.classList.remove('show');
+    offcanvasEl.style.visibility = 'hidden';
+    document.body.classList.remove('offcanvas-open');
+
+    // Remove backdrop(s)
+    const backdrops = Array.from(document.querySelectorAll('.offcanvas-backdrop'));
+    backdrops.forEach((b) => b.parentElement?.removeChild(b));
+  }
+
   services = [
-   
     {
-      title: 'Interior Living',
-      description: 'Design Collaboration Made Effortless',
-      link: '/products',
-    },
-     {
       title: 'Smart Rack',
       description: 'See Your Racks Smarter. Manage Them Faster',
       link: '/products',
     },
     {
-      title: 'SLMS',
+      title: 'Interior Living',
+      description: 'Design Collaboration Made Effortless',
+      link: '/products',
+    },
+    {
+      title: 'LMS',
       description: 'Smarter Learning. Seamless Growth',
       link: '/products',
     },

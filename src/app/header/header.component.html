@@ -338,9 +338,8 @@
   <div class="offcanvas-body">
     <ul class="navbar-nav">
       <li class="mb-2">
-        <a class="nav-link" href="#about-us" data-bs-dismiss="offcanvas"
-          >About Us</a
-        >
+       <a class="nav-link" (click)="scrollTo('about-us')">About Us</a>
+
       </li>
       <!-- Industries Accordion -->
       <li class="mb-2">
@@ -459,7 +458,7 @@
                 routerLink="/products"
                 class="nav-link small"
                 data-bs-dismiss="offcanvas"
-                >SLMS</a
+                >LMS</a
               >
             </li>
             <li class="mb-2">
