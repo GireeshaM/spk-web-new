@@ -84,10 +84,20 @@ export class ChatbotComponent {
           sender: 'user',
           text: 'Explore Sprintpark Services',
         });
-        this.simulateBotResponse(
-          'SprintPark excels in providing quality services like <a href="/it-consulting">IT Consulting</a>, <a href="/staffing">Staffing</a>, <a href="/project-management">Project Management</a>, and <a href="/software-service">Software Solutions</a>. Our team of professionals is committed to offering flexible and tailored solutions to enhance your business.',
-          true,
-        );
+    this.simulateBotResponse(
+  `SprintPark excels in delivering high-quality services such as 
+  <a href="/it-consulting">IT Consulting</a>, 
+  <a href="/staffing">Staffing</a>, 
+  <a href="/project-management">Project Management</a>, and 
+  <a href="/software-service">Software Services</a>. 
+  Along with our services, we also offer powerful digital products including 
+  <a href="/products">Smart Rack</a>, 
+  <a href="/products">Interior Living</a>, 
+  <a href="/products">LMS</a>, and 
+  <a href="/products">Code Detector</a>—all designed to enhance enterprise efficiency and innovation.`,
+  true
+);
+
         break;
 
       case 'skillsAndRoles':

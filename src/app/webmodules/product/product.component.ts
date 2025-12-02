@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-product',
-  imports: [CommonModule],
+  imports: [CommonModule,RouterLink],
   templateUrl: './product.component.html',
   styleUrl: './product.component.scss',
 })
@@ -48,7 +49,7 @@ export class ProductComponent {
       ],
     },
     {
-      title: 'Sprintpark Learning Management System (SLMS)',
+      title: 'Smart Learning Management System (SLMS)',
       description:
         ' The SLMS app simplifies education management with an easy dashboard, course sign-ups, progress tracking, and secure storage. It also uses AI for personalized course suggestions, offers a chatbot for quick help, and has discussion rooms for student interaction, enhancing the learning experience.',
       images: [

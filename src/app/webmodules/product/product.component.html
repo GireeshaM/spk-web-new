@@ -14,12 +14,20 @@
           Our intelligent product suite brings automation, insights, and smooth
           workflows to help your business grow faster.
         </p>
-        <button
-          class="btn btn-lg btn-primary rounded-pill px-5 primary-btn"
-          (click)="onStartTrial()"
-        >
-          Start Your Free Trial
-        </button>
+      <button
+  class="btn btn-lg btn-primary rounded-pill px-5 primary-btn sparkle-btn position-relative overflow-hidden"
+  routerLink="/contact-us"
+  (click)="onStartTrial()"
+>
+  Start Your Free Trial
+  <span class="sparkle"></span>
+  <span class="sparkle"></span>
+  <span class="sparkle"></span>
+  <span class="sparkle"></span>
+  <span class="sparkle"></span>
+  <span class="sparkle"></span>
+</button>
+
       </div>
     </div>
   </div>
@@ -27,7 +35,7 @@
 
 <div class="container py-5">
   <div class="title text-center mb-5">
-    <h2>Our Products</h2>
+    <h2 class="fw-bold">Our Products</h2>
   </div>
 
   <div *ngFor="let card of data; let i = index" class="mb-5">

@@ -318,7 +318,6 @@
     100% auto,
     cover;
 }
-
 // Testimonial cards
 /* Hover effect */
 .testimonial-section .testimonial-card:hover {
@@ -345,7 +344,6 @@
 .testimonial-section .testimonial-card:hover .review-hover {
   color: #ffffff !important;
 }
-
 //TESTIMONIAL END
 // Industries Cards
 .industries-section {
@@ -377,14 +375,12 @@
   .industries-prev {
     left: 0;
   }
-
   .industries-next {
     right: 0;
   }
   .carousel-card {
     padding: 0 10px;
     transition: transform 0.3s ease-in-out;
-
     .card {
       box-shadow: 2px 6px 8px rgba(22, 22, 26, 0.18);
       transition: transform 0.3s ease-in-out;
@@ -424,7 +420,6 @@
     }
   }
 }
-
 @media (max-width: 576px) {
   .home #myCarousel .carousel-item img {
     height: 50vh;
@@ -454,6 +449,133 @@
   .carousel-image {
     height: 350px !important;
   }
+}
+
+.main-container {
+  position: relative;
+}
+/* Animation layer */
+.animation-layer {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  overflow: visible;
+  z-index: 9999;
+}
+/* Carousel */
+.carousel-window {
+  height: 460px;
+  overflow: hidden;
+  width: 100%;
+}
+.carousel-inner {
+  transition: transform 0.45s ease;
+}
+/* Side card */
+.side-card {
+  cursor: pointer;
+  width: 260px !important;
+  height: 230px;
+  transition: transform 0.2s ease;
+  margin-left: 120px;
+}
+.side-card:hover {
+  transform: scale(1.03);
+}
+/* Big Card */
+.main-big-card {
+  height: auto;
+  min-height: 320px;
+  margin-top: 90px !important;
+}
+.carousel-arrow {
+  background: none !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  padding: 0; /* remove button padding */
+  cursor: pointer;
+}
+.sliding-box-container {
+  height: 420px;
+}
+/* Panel */
+.sliding-box {
+  flex: 1 1 0;
+  transition: flex 0.5s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+.sliding-box:not(:last-child) {
+  margin-right: 10px;
+}
+.sliding-box.active {
+  flex: 6 1 0;
+  background: #fff;
+}
+/* Category Label */
+.box-label {
+  background: #6a2880;
+  z-index: 3;
+}
+.product-section {
+  background: rgba(242, 241, 249, 1);
+}
+/* LEFT CONTENT */
+.row-one {
+  width: 65%;
+  z-index: 5;
+  opacity: 1;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease,
+    visibility 0.4s ease;
+}
+.row-one.hidden {
+  opacity: 0;
+  transform: translateX(-20px);
+  visibility: hidden;
+  position: absolute;
+}
+/* RIGHT IMAGE AREA */
+.row-two {
+  width: 35%;
+  transition: width 0.5s ease;
+}
+.row-two img {
+  width: 100%;
+  height: 100%;
+  filter: brightness(100%) blur(0);
+  transition: all 0.5s ease;
+}
+/* Hover Blur (only inactive panels) */
+.sliding-box:hover:not(.active) .row-two img {
+  filter: brightness(70%) blur(2px);
+}
+/* Non-active → text hidden, full-width image */
+.sliding-box:not(.active) .row-two {
+  width: 100% !important;
+}
+.sliding-box:not(.active) .row-one {
+  display: none;
+}
+/* ACTIVE IMAGE */
+.sliding-box.active .row-two img {
+  width: 180px;
+  height: 300px;
+  border-radius: 8px;
+}
+/* BUTTON COLOR — ALWAYS PURPLE */
+.btn-purple-custom {
+  background-color: #7a3ef5 !important;
+  transition: background-color 0.25s ease;
+  color: white !important;
+}
+.btn-purple-custom:hover {
+  background-color: #5d24d6 !important;
 }
 /* Max-width: 767px */
 @media (max-width: 767px) {
@@ -508,149 +630,6 @@
     margin-left: 90px;
   }
 }
-.main-container {
-  position: relative;
-}
-/* Animation layer */
-.animation-layer {
-  position: absolute;
-  pointer-events: none;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-  overflow: visible;
-  z-index: 9999;
-}
-/* Carousel */
-.carousel-window {
-  height: 460px;
-  overflow: hidden;
-  width: 100%;
-}
-.carousel-inner {
-  transition: transform 0.45s ease;
-}
-/* Side card */
-.side-card {
-  cursor: pointer;
-  width: 260px !important;
-  height: 230px;
-  transition: transform 0.2s ease;
-  margin-left: 120px;
-}
-.side-card:hover {
-  transform: scale(1.03);
-}
-/* Big Card */
-.main-big-card {
-  height: auto;
-  min-height: 320px;
-  margin-top: 90px !important;
-}
-.carousel-arrow {
-  background: none !important;
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
-  padding: 0; /* remove button padding */
-  cursor: pointer;
-}
-
-.sliding-box-container {
-  height: 420px;
-}
-
-/* Panel */
-.sliding-box {
-  flex: 1 1 0;
-  transition: flex 0.5s ease;
-  cursor: pointer;
-  overflow: hidden;
-}
-
-.sliding-box:not(:last-child) {
-  margin-right: 10px;
-}
-
-.sliding-box.active {
-  flex: 6 1 0;
-  background: #fff;
-}
-
-/* Category Label */
-.box-label {
-  background: #6a2880;
-  z-index: 3;
-}
-
-.product-section {
-  background: rgba(242, 241, 249, 1);
-}
-
-/* LEFT CONTENT */
-.row-one {
-  width: 65%;
-  z-index: 5;
-  opacity: 1;
-  transition:
-    opacity 0.4s ease,
-    transform 0.4s ease,
-    visibility 0.4s ease;
-}
-
-.row-one.hidden {
-  opacity: 0;
-  transform: translateX(-20px);
-  visibility: hidden;
-  position: absolute;
-}
-
-/* RIGHT IMAGE AREA */
-.row-two {
-  width: 35%;
-  transition: width 0.5s ease;
-}
-
-.row-two img {
-  width: 100%;
-  height: 100%;
-  filter: brightness(100%) blur(0);
-  transition: all 0.5s ease;
-}
-
-/* Hover Blur (only inactive panels) */
-.sliding-box:hover:not(.active) .row-two img {
-  filter: brightness(70%) blur(2px);
-}
-
-/* Non-active → text hidden, full-width image */
-.sliding-box:not(.active) .row-two {
-  width: 100% !important;
-}
-
-.sliding-box:not(.active) .row-one {
-  display: none;
-}
-
-/* ACTIVE IMAGE */
-.sliding-box.active .row-two img {
-  width: 180px;
-  height: 300px;
-  border-radius: 8px;
-}
-
-/* BUTTON COLOR — ALWAYS PURPLE */
-.btn-purple-custom {
-  background-color: #7a3ef5 !important;
-  transition: background-color 0.25s ease;
-  color: white !important;
-}
-
-.btn-purple-custom:hover {
-  background-color: #5d24d6 !important;
-}
-
 /* TABLET (≤ 992px) */
 @media (max-width: 992px) {
   /* Fix button color issue at tablet */
@@ -695,20 +674,31 @@
     border-radius: 0;
   }
 }
-
 /* MOBILE (≤ 576px) */
-/* MOBILE: Move text further left */
 @media (max-width: 576px) {
   .row-one {
     margin-left: 0 !important; /* Remove side spacing */
     padding-left: 0 !important; /* Align text to the left */
     text-align: left !important; /* Ensure left alignment */
   }
-
   .row-one h4,
   .row-one p,
   .row-one a {
     margin-left: 0 !important; /* Bring text fully left */
   }
+  .header {
+    width: 100%;
+    padding: 0%;
+    margin-right: -60px !important;
+  }
+  .logo-section {
+    height: 70px !important;
+  }
+  .logo-container {
+    img {
+      margin-top: -10px !important;
+      height:80px !important;
+      width:80px !important;
+    }
+  }
 }
-/* MOBILE: shift images left inside industry cards */

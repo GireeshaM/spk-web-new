@@ -67,18 +67,19 @@ export class HeaderComponent {
   }
 
   services = [
-    {
-      title: 'Smart Rack',
-      description: 'See Your Racks Smarter. Manage Them Faster',
-      link: '/products',
-    },
+   
     {
       title: 'Interior Living',
       description: 'Design Collaboration Made Effortless',
       link: '/products',
     },
+     {
+      title: 'Smart Rack',
+      description: 'See Your Racks Smarter. Manage Them Faster',
+      link: '/products',
+    },
     {
-      title: 'LMS',
+      title: 'SLMS',
       description: 'Smarter Learning. Seamless Growth',
       link: '/products',
     },

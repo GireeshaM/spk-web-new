@@ -2,111 +2,108 @@
   width: 100%;
   height: auto;
 }
- 
+
 .hero-image {
   height: 480px;
   object-fit: cover;
   object-position: center;
   filter: brightness(70%);
 }
- 
+
 .overlay-container {
   z-index: 1;
   pointer-events: none;
 }
- 
+
 .text-container {
   max-width: 50%;
   pointer-events: auto;
 }
- 
+
 // Extra large desktops (1600px and above)
 @media (min-width: 1600px) {
   .hero-image {
     height: 580px;
   }
- 
+
   .text-container {
     max-width: 42%;
   }
 }
- 
+
 // Large desktops (1400px to 1599px)
 @media (min-width: 1400px) and (max-width: 1599.98px) {
   .hero-image {
     height: 550px;
   }
- 
+
   .text-container {
     max-width: 45%;
   }
 }
- 
+
 // Medium desktops (1200px to 1399px)
 @media (min-width: 1200px) and (max-width: 1399.98px) {
   .hero-image {
     height: 520px;
   }
- 
+
   .text-container {
     max-width: 48%;
   }
 }
- 
+
 // Small desktops/Large tablets (992px to 1199px)
 @media (min-width: 992px) and (max-width: 1199.98px) {
   .hero-image {
     height: 450px;
   }
- 
+
   .text-container {
     max-width: 55%;
   }
 }
- 
+
 // Tablets (768px to 991px)
 @media (min-width: 768px) and (max-width: 991.98px) {
   .hero-image {
     height: 400px;
   }
- 
+
   .text-container {
     max-width: 65%;
   }
 }
- 
+
 // Small tablets (577px to 767px)
 @media (min-width: 577px) and (max-width: 767.98px) {
   .hero-image {
     height: 350px;
   }
- 
+
   .text-container {
     max-width: 75%;
   }
 }
- 
+
 // Mobile devices (576px and below)
 @media (max-width: 576px) {
   .hero-image {
     height: 280px;
   }
- 
+
   .text-container {
     max-width: 90%;
   }
 }
- 
+
 // Extra small devices (480px and below)
 @media (max-width: 480px) {
   .hero-image {
     height: 260px;
   }
- 
+
   .text-container {
     max-width: 92%;
   }
 }
- 
- 
- 
