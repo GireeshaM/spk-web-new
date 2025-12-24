@@ -22,28 +22,28 @@ export class ManufacturingComponent {
       title: 'Salesforce Integration',
       description:
         'Implement Salesforce solutions to optimize supply chain, customer relationships, and sales operations for manufacturing efficiency.',
-      link: '/manufacturing/salesforceIntegration',
+      link: '/industries/manufacturing/salesforceIntegration',
     },
     {
       img: 'assets/Industries/manufacturing/advanced-data-analytics.png',
       title: 'Advanced Data Analytics',
       description:
         'Leverage data insights for process optimization, predictive maintenance, and improving product quality across your operations.',
-      link: '/manufacturing/dataAnalytics',
+      link: '/industries/manufacturing/dataAnalytics',
     },
     {
       title: 'Expert Project Management',
       img: 'assets/Industries/manufacturing/expert-project-management.png',
       description:
         'Oversee manufacturing system implementations to ensure projects are delivered on time and meet business objectives.',
-      link: '/manufacturing/projectManagement',
+      link: '/industries/manufacturing/projectManagement',
     },
     {
       img: 'assets/Industries/manufacturing/strategic-it-consulting.png',
       title: 'Strategic IT Consulting',
       description:
         'Provide guidance on technology integration, Industry 4.0 adoption, automation, IoT, and IT infrastructure enhancements to boost productivity and innovation.',
-      link: '/manufacturing/ITConsulting',
+      link: '/industries/manufacturing/ITConsulting',
     },
   ];
 }

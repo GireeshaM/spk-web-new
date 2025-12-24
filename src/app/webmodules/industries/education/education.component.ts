@@ -21,21 +21,21 @@ export class EducationComponent {
       title: 'Network Engineering',
       description:
         'We design and maintain strong network systems to support campus connectivity, e-learning, and administrative needs.',
-      link: '/education/networkingEngineering',
+      link: '/industries/education/networkingEngineering',
     },
     {
       img: 'assets/Industries/education/project-management.png',
       title: 'Project Management',
       description:
         'We oversee key projects like LMS deployment, IT upgrades, and integration of new educational technologies.',
-      link: '/education/educationProjectManagement',
+      link: '/industries/education/educationProjectManagement',
     },
     {
       title: 'Data Analytics',
       img: 'assets/Industries/education/data-analytics.png',
       description:
         'Using data insights, we analyze student performance to help improve learning outcomes and strategies.',
-      link: '/education/dataAnalyticsEducation',
+      link: '/industries/education/dataAnalyticsEducation',
     },
   ];
 }

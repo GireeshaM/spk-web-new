@@ -22,28 +22,28 @@ export class BankingComponent {
       title: 'Big Data',
       description:
         'We manage vast financial datasets for risk assessment, transaction monitoring, and customer insights enabling smarter decisions through predictive analytics.',
-      link: '/banking/BigData',
+      link: '/industries/banking/big-data',
     },
     {
       img: 'assets/Industries/banking/cyber-security.png',
       title: 'Cybersecurity',
       description:
         'We safeguard sensitive financial data with robust security measures, regular audits, and compliance with industry regulations to protect against cyber threats.',
-      link: '/banking/Cybersecurity',
+      link: '/industries/banking/cybersecurity',
     },
     {
       title: 'Project Management',
       img: 'assets/Industries/banking/project-management.png',
       description:
         'We oversee critical initiatives such as digital banking transformations, regulatory compliance upgrades, and technology deployments ensuring projects are delivered on time and within scope.',
-      link: '/banking/ProjectManagement',
+      link: '/industries/banking/project-management',
     },
     {
       img: 'assets/Industries/banking/artificial-intelligence.png',
       title: ' Artificial Intelligence',
       description:
         'We deploy AI-powered tools for personalized banking, fraud detection, customer service chatbots, and predictive financial analytics to enhance user experience and operational efficiency.',
-      link: '/banking/AI',
+      link: '/industries/banking/ai',
     },
   ];
 }

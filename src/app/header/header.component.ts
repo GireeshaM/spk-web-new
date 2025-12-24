@@ -147,25 +147,25 @@ export class HeaderComponent {
       title: 'Project Management',
       description:
         'Project Management is a smart platform designed to help businesses and optimize every product.',
-      link: '/project-management',
+      link: '/services/project-management',
     },
     {
       title: 'Software Services',
       description:
         'Software Services is a smart platform designed to help businesses and optimize every product.',
-      link: '/software-service',
+      link: '/services/software-service',
     },
     {
       title: 'Staffing',
       description:
         'Staffing is a smart platform designed to help businesses and optimize every product.',
-      link: '/staffing',
+      link: '/services/staffing',
     },
     {
       title: 'IT Consulting',
       description:
         'IT Consulting is a smart platform designed to help businesses and optimize every product.',
-      link: '/it-consulting',
+      link: '/services/it-consulting',
     },
   ];
 
@@ -174,39 +174,39 @@ export class HeaderComponent {
       title: ' IT & Telecommunications',
       description:
         ' Modernize connectivity, infrastructure, and digital operations.',
-      link: '/itAndTelecommunications',
+      link: '/industries/it-telecommunications',
     },
     {
       title: 'Government',
       description: 'Build secure, citizen-centric digital public services.',
-      link: '/government',
+      link: '/industries/government',
     },
     {
       title: 'Health Care & Life Sciences',
       description:
         'Scalable health platforms built for precision and efficiency.',
-      link: '/healthCareAndLifeSciences',
+      link: '/industries/healthcare-life-sciences',
     },
     {
       title: 'Manufacturing',
       description:
         'Smarter production with automation and real-time visibility.',
-      link: '/manufacturing',
+      link: '/industries/manufacturing',
     },
     {
       title: 'Education',
       description: 'Digital learning ecosystems for modern institutions.',
-      link: '/education',
+      link: '/industries/education',
     },
     {
       title: 'Transportation & Logistics',
       description: 'End-to-end logistics intelligence and automation.',
-      link: '/transportationAndLogistics',
+      link: '/industries/transportation-logistics',
     },
     {
       title: 'Banking',
       description: 'Secure, agile digital banking for a connected economy.',
-      link: '/banking',
+      link: '/industries/banking',
     },
   ];
 }

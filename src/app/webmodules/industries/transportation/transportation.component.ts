@@ -23,21 +23,21 @@ export class TransportationComponent {
       title: 'IT Consulting & Digital Solutions',
       description:
         'We provide tailored digital strategies like TMS, route optimization, and real-time tracking to improve your operations.',
-      link: '/transport/itConsulting',
+      link: '/industries/transportation-logistics/itConsulting',
     },
     {
       img: 'assets/Industries/transportation-and-logistics/network-Engineering-Connectivity.png',
       title: 'Network Engineering & Connectivity',
       description:
         'We build and maintain networks for smooth data flow, GPS tracking, and reliable vehicle communication.',
-      link: '/transport/networkEngineering',
+      link: '/industries/transportation-logistics/networkEngineering',
     },
     {
       title: 'Salesforce & AI Automation',
       img: 'assets/Industries/transportation-and-logistics/salesforce-AI Automation.png',
       description:
         'We customize Salesforce for customer management and use AI for route planning, maintenance, forecasting, and chatbots.',
-      link: '/transport/salesforceAI',
+      link: '/industries/transportation-logistics/salesforceAI',
     },
   ];
 }
