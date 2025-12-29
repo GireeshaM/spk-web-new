@@ -1,21 +1,13 @@
 <nav class="navbar navbar-expand-md bg-white sticky-top border-bottom px-3">
-  <div
-    class="container-fluid d-flex justify-content-between align-items-center"
-  >
+  <div class="container-fluid d-flex justify-content-between align-items-center">
     <!-- Logo -->
     <a class="navbar-brand fw-bold fs-4 me-4 m-0" routerLink="/">
       <img src="assets/header/header-logo.png" alt="logo" class="navbar-logo" />
     </a>
 
     <!-- Toggler -->
-    <button
-      class="navbar-toggler ms-auto"
-      type="button"
-      data-bs-toggle="offcanvas"
-      data-bs-target="#offcanvas"
-      aria-controls="offcanvas"
-      aria-label="Toggle navigation"
-    >
+    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"
+      aria-controls="offcanvas" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <!-- Desktop Menu -->
@@ -29,21 +21,15 @@
         </li>
 
         <!-- Industries Megamenu -->
-        <li
-          class="nav-item dropdown mx-2 megamenu position-static"
-          (mouseenter)="onIndustriesMouseEnter()"
-          (mouseleave)="onIndustriesMouseLeave()"
-        >
+        <li class="nav-item dropdown mx-2 megamenu position-static" (mouseenter)="onIndustriesMouseEnter()"
+          (mouseleave)="onIndustriesMouseLeave()">
           <a class="nav-link dropdown-toggle" href="javascript:void(0)">
             Industries
           </a>
 
           <!-- MEGAMENU -->
-          <div
-            *ngIf="isIndustriesOpen"
-            @shutter
-            class="dropdown-menu w-100 megadrop p-3 p-md-4 mt-0 border-0 shadow-lg show"
-          >
+          <div *ngIf="isIndustriesOpen" @shutter
+            class="dropdown-menu w-100 megadrop p-3 p-md-4 mt-0 border-0 shadow-lg show">
             <div class="container-fluid">
               <div class="row g-3 g-md-4 align-items-start">
                 <!-- COL 2 - LEFT INFO -->
@@ -70,23 +56,14 @@
                         <!-- LEFT COLUMN -->
                         <div class="col-12 col-sm-6">
                           <ul class="mega-list list-unstyled">
-                            <li
-                              *ngFor="let s of industries.slice(0, 4)"
-                              class="mb-2 mb-md-3"
-                            >
-                              <a
-                                [routerLink]="s.link"
-                                class="text-decoration-none d-block"
-                              >
+                            <li *ngFor="let s of industries.slice(0, 4)" class="mb-2 mb-md-3">
+                              <a [routerLink]="s.link" class="text-decoration-none d-block">
                                 <span
-                                  class="product-title title-hover d-flex fw-semibold align-items-center m-0 p-0 fs-6"
-                                >
+                                  class="product-title title-hover d-flex fw-semibold align-items-center m-0 p-0 fs-6">
                                   {{ s.title }}
                                   <span class="arrow ms-2">→</span>
                                 </span>
-                                <span
-                                  class="product-desc text-muted small d-block m-0 p-0 mt-1"
-                                >
+                                <span class="product-desc text-muted small d-block m-0 p-0 mt-1">
                                   {{ s.description }}
                                 </span>
                               </a>
@@ -97,23 +74,14 @@
                         <!-- RIGHT COLUMN -->
                         <div class="col-12 col-sm-6">
                           <ul class="mega-list list-unstyled">
-                            <li
-                              *ngFor="let s of industries.slice(4)"
-                              class="mb-2 mb-md-3"
-                            >
-                              <a
-                                [href]="s.link"
-                                class="text-decoration-none d-block"
-                              >
+                            <li *ngFor="let s of industries.slice(4)" class="mb-2 mb-md-3">
+                              <a [href]="s.link" class="text-decoration-none d-block">
                                 <span
-                                  class="product-title title-hover d-flex fw-semibold align-items-center m-0 p-0 fs-6"
-                                >
+                                  class="product-title title-hover d-flex fw-semibold align-items-center m-0 p-0 fs-6">
                                   {{ s.title }}
                                   <span class="arrow ms-2">→</span>
                                 </span>
-                                <span
-                                  class="product-desc text-muted small d-block m-0 p-0 mt-1"
-                                >
+                                <span class="product-desc text-muted small d-block m-0 p-0 mt-1">
                                   {{ s.description }}
                                 </span>
                               </a>
@@ -127,14 +95,11 @@
 
                 <!-- COL 4 - IMAGE + BUTTON -->
                 <div
-                  class="col-12 col-md-4 d-flex flex-column align-items-center justify-content-center sp-grey-bg p-3 rounded"
-                >
+                  class="col-12 col-md-4 d-flex flex-column align-items-center justify-content-center sp-grey-bg p-3 rounded">
                   <img
                     src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&am…"
-                    class="img-fluid rounded shadow-sm mb-3 preview-box"
-                    alt="Preview"
-                    style="max-height: 200px; object-fit: cover; width: 100%"
-                  />
+                    class="img-fluid rounded shadow-sm mb-3 preview-box" alt="Preview"
+                    style="max-height: 200px; object-fit: cover; width: 100%" />
 
                   <p class="text-muted text-center small">
                     Industries are evolving fast. Our expertise and technology
@@ -142,11 +107,8 @@
                     operational resilience, and unlock new growth opportunities.
                   </p>
 
-                  <button
-                    class="btn btn-sm mt-2 text-white w-100"
-                    style="background-color: #003399"
-                    routerLink="/itAndTelecommunications"
-                  >
+                  <button class="btn btn-sm mt-2 text-white w-100" style="background-color: #003399"
+                    routerLink="/itAndTelecommunications">
                     Explore
                   </button>
                 </div>
@@ -156,20 +118,14 @@
         </li>
 
         <!-- Services MEGA DROPDOWN -->
-        <li
-          class="nav-item dropdown mx-2 megamenu position-static"
-          (mouseenter)="onProductsMouseEnter()"
-          (mouseleave)="onProductsMouseLeave()"
-        >
+        <li class="nav-item dropdown mx-2 megamenu position-static" (mouseenter)="onProductsMouseEnter()"
+          (mouseleave)="onProductsMouseLeave()">
           <a class="nav-link dropdown-toggle" href="javascript:void(0)">
             Services
           </a>
 
-          <div
-            *ngIf="isProductsOpen"
-            @shutter
-            class="dropdown-menu w-100 megadrop p-3 p-md-4 mt-0 border-0 shadow-lg show"
-          >
+          <div *ngIf="isProductsOpen" @shutter
+            class="dropdown-menu w-100 megadrop p-3 p-md-4 mt-0 border-0 shadow-lg show">
             <div class="container-fluid">
               <div class="row g-3 g-md-4 align-items-start">
                 <!-- COL 2 -->
@@ -186,34 +142,23 @@
                 <!-- COL 6 - PRODUCT LIST -->
                 <div class="col-12 col-md-6">
                   <div class="row">
-                    <div class="col-12 mb-2 mb-md-3">
-                      <h5 class="fw-bold text-purple fs-6">
-                        SprintPark Solutions
-                      </h5>
-                    </div>
-
                     <div class="col-12">
                       <div class="row">
-                        <!-- LEFT COLUMN -->
+                        <!-- LEFT COLUMN: RackTrack -->
                         <div class="col-12 col-sm-6">
+                          <h5 class="fw-bold text-purple fs-6 mb-3">
+                            RackTrack
+                          </h5>
                           <ul class="mega-list list-unstyled">
-                            <li
-                              *ngFor="let s of services.slice(0, 4)"
-                              class="mb-2 mb-md-3"
-                            >
-                              <a
-                                [href]="s.link"
-                                class="text-decoration-none d-block"
-                              >
+                            <li *ngFor="let s of services.slice(0, 4)" class="mb-2 mb-md-3"
+                              (mouseenter)="onServiceHover(s)" (mouseleave)="onServiceLeave()">
+                              <a [routerLink]="s.link" class="text-decoration-none d-block">
                                 <span
-                                  class="product-title title-hover d-flex fw-semibold align-items-center m-0 p-0 fs-6"
-                                >
+                                  class="product-title title-hover d-flex fw-semibold align-items-center m-0 p-0 fs-6">
                                   {{ s.title }}
                                   <span class="arrow ms-2">→</span>
                                 </span>
-                                <span
-                                  class="product-desc text-muted small d-block m-0 p-0 mt-1"
-                                >
+                                <span class="product-desc text-muted small d-block m-0 p-0 mt-1">
                                   {{ s.description }}
                                 </span>
                               </a>
@@ -221,26 +166,21 @@
                           </ul>
                         </div>
 
-                        <!-- RIGHT COLUMN -->
+                        <!-- RIGHT COLUMN: Services -->
                         <div class="col-12 col-sm-6">
+                          <h5 class="fw-bold text-purple fs-6 mb-3">
+                            Services
+                          </h5>
                           <ul class="mega-list list-unstyled">
-                            <li
-                              *ngFor="let s of services.slice(4)"
-                              class="mb-2 mb-md-3"
-                            >
-                              <a
-                                [href]="s.link"
-                                class="text-decoration-none d-block"
-                              >
+                            <li *ngFor="let s of services.slice(4)" class="mb-2 mb-md-3"
+                              (mouseenter)="onServiceHover(s)" (mouseleave)="onServiceLeave()">
+                              <a [routerLink]="s.link" class="text-decoration-none d-block">
                                 <span
-                                  class="product-title title-hover d-flex fw-semibold align-items-center m-0 p-0 fs-6"
-                                >
+                                  class="product-title title-hover d-flex fw-semibold align-items-center m-0 p-0 fs-6">
                                   {{ s.title }}
                                   <span class="arrow ms-2">→</span>
                                 </span>
-                                <span
-                                  class="product-desc text-muted small d-block m-0 p-0 mt-1"
-                                >
+                                <span class="product-desc text-muted small d-block m-0 p-0 mt-1">
                                   {{ s.description }}
                                 </span>
                               </a>
@@ -254,27 +194,17 @@
 
                 <!-- COL 4 - IMAGE + BUTTON -->
                 <div
-                  class="col-12 col-md-4 d-flex flex-column align-items-center justify-content-center sp-grey-bg p-3 rounded"
-                >
-                  <img
-                    src="https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                    class="img-fluid rounded shadow-sm mb-3 preview-box"
-                    alt="Preview"
-                    style="max-height: 200px; object-fit: cover; width: 100%"
-                  />
+                  class="col-12 col-md-4 d-flex flex-column align-items-center justify-content-center sp-grey-bg p-3 rounded">
+                  <img [src]="activeService ? activeService.image : defaultService.image"
+                    class="img-fluid rounded shadow-sm mb-3 preview-box" alt="Preview"
+                    style="max-height: 200px; object-fit: cover; width: 100%" />
 
                   <p class="text-muted text-center small">
-                    Technology today is more than just a tool-it's the core of
-                    smarter businesses. We build intelligent digital solutions
-                    that automate operations, enhance decision-making, and
-                    deliver real-time visibility across your entire ecosystem.
+                    {{ activeService ? activeService.description : defaultService.description }}
                   </p>
 
-                  <button
-                    class="btn btn-sm mt-2 text-white w-100"
-                    style="background-color: #003399"
-                    routerLink="/software-service"
-                  >
+                  <button class="btn btn-sm mt-2 text-white w-100" style="background-color: #003399"
+                    [routerLink]="activeService ? activeService.link : defaultService.link">
                     Explore
                   </button>
                 </div>
@@ -287,34 +217,22 @@
           <!-- <a class="nav-link" routerLink="/careers" routerLinkActive="active"
             >Careers</a
           > -->
-          <a
-            class="nav-link"
-            href="https://sprintpark6-dev-ed.develop.my.site.com/careers/s/"
-            routerLinkActive="active"
-            >Careers</a
-          >
+          <a class="nav-link" href="https://sprintpark6-dev-ed.develop.my.site.com/careers/s/"
+            routerLinkActive="active">Careers</a>
         </li>
         <li class="nav-item mx-2">
-          <a class="nav-link" routerLink="/insights" routerLinkActive="active"
-            >Insights</a
-          >
+          <a class="nav-link" routerLink="/insights" routerLinkActive="active">Insights</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/contact-us" routerLinkActive="active"
-            >Contact Us</a
-          >
+          <a class="nav-link" routerLink="/contact-us" routerLinkActive="active">Contact Us</a>
         </li>
       </ul>
 
       <!-- Desktop Login Button -->
       <ul class="navbar-nav ms-auto d-none d-md-flex">
         <li class="nav-item">
-          <button
-            class="btn btnn"
-            style="background-color: #ef7a13"
-            data-bs-toggle="modal"
-            data-bs-target="#loginModal"
-          >
+          <button class="btn btnn" style="background-color: #ef7a13" data-bs-toggle="modal"
+            data-bs-target="#loginModal">
             Login
           </button>
         </li>
@@ -327,89 +245,48 @@
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas">
   <div class="offcanvas-header border-bottom">
     <h5 class="offcanvas-title fw-bold">Menu</h5>
-    <button
-      type="button"
-      class="btn-close"
-      data-bs-dismiss="offcanvas"
-      aria-label="Close"
-    ></button>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
 
   <div class="offcanvas-body">
     <ul class="navbar-nav">
       <li class="mb-2">
-       <a class="nav-link" (click)="scrollTo('about-us')">About Us</a>
+        <a class="nav-link" (click)="scrollTo('about-us')">About Us</a>
 
       </li>
       <!-- Industries Accordion -->
       <li class="mb-2">
-        <a
-          class="nav-link d-flex justify-content-between align-items-center"
-          data-bs-toggle="collapse"
-          href="#industriesCollapse"
-          role="button"
-          aria-expanded="false"
-        >
+        <a class="nav-link d-flex justify-content-between align-items-center" data-bs-toggle="collapse"
+          href="#industriesCollapse" role="button" aria-expanded="false">
           Industries
           <span class="ms-auto">+</span>
         </a>
         <div class="collapse ms-3" id="industriesCollapse">
           <ul class="list-unstyled">
             <li class="mb-2">
-              <a
-                routerLink="/industries/it-telecommunications"
-                class="nav-link small"
-                data-bs-dismiss="offcanvas"
-                >IT & Telecommunications</a
-              >
+              <a routerLink="/industries/it-telecommunications" class="nav-link small" data-bs-dismiss="offcanvas">IT &
+                Telecommunications</a>
             </li>
             <li class="mb-2">
-              <a
-                routerLink="/industries/government"
-                class="nav-link small"
-                data-bs-dismiss="offcanvas"
-                >Government</a
-              >
+              <a routerLink="/industries/government" class="nav-link small" data-bs-dismiss="offcanvas">Government</a>
             </li>
             <li class="mb-2">
-              <a
-                routerLink="/industries/healthcare-life-sciences"
-                class="nav-link small"
-                data-bs-dismiss="offcanvas"
-                >Health Care & Life Sciences</a
-              >
+              <a routerLink="/industries/healthcare-life-sciences" class="nav-link small"
+                data-bs-dismiss="offcanvas">Health Care & Life Sciences</a>
             </li>
             <li class="mb-2">
-              <a
-                routerLink="/industries/manufacturing"
-                class="nav-link small"
-                data-bs-dismiss="offcanvas"
-                >Manufacturing</a
-              >
+              <a routerLink="/industries/manufacturing" class="nav-link small"
+                data-bs-dismiss="offcanvas">Manufacturing</a>
             </li>
             <li class="mb-2">
-              <a
-                routerLink="/industries/education"
-                class="nav-link small"
-                data-bs-dismiss="offcanvas"
-                >Education</a
-              >
+              <a routerLink="/industries/education" class="nav-link small" data-bs-dismiss="offcanvas">Education</a>
             </li>
             <li class="mb-2">
-              <a
-                routerLink="/industries/transportation-logistics"
-                class="nav-link small"
-                data-bs-dismiss="offcanvas"
-                >Transportation & Logistics</a
-              >
+              <a routerLink="/industries/transportation-logistics" class="nav-link small"
+                data-bs-dismiss="offcanvas">Transportation & Logistics</a>
             </li>
             <li class="mb-2">
-              <a
-                routerLink="/industries/banking"
-                class="nav-link small"
-                data-bs-dismiss="offcanvas"
-                >Banking</a
-              >
+              <a routerLink="/industries/banking" class="nav-link small" data-bs-dismiss="offcanvas">Banking</a>
             </li>
           </ul>
         </div>
@@ -417,144 +294,71 @@
 
       <!-- Services Accordion -->
       <li class="mb-2">
-        <a
-          class="nav-link d-flex justify-content-between align-items-center"
-          data-bs-toggle="collapse"
-          href="#productsCollapse"
-          role="button"
-          aria-expanded="false"
-        >
+        <a class="nav-link d-flex justify-content-between align-items-center" data-bs-toggle="collapse"
+          href="#productsCollapse" role="button" aria-expanded="false">
           Services
           <span class="ms-auto">+</span>
         </a>
         <div class="collapse ms-3" id="productsCollapse">
           <ul class="list-unstyled">
             <li class="mb-2">
-              <a
-                routerLink="/products"
-                class="nav-link small"
-                data-bs-dismiss="offcanvas"
-                >Smart Rack</a
-              >
+              <a routerLink="/products" class="nav-link small" data-bs-dismiss="offcanvas">Smart Rack</a>
             </li>
             <li class="mb-2">
-              <a
-                routerLink="/products"
-                class="nav-link small"
-                data-bs-dismiss="offcanvas"
-                >Code Detector</a
-              >
+              <a routerLink="/products" class="nav-link small" data-bs-dismiss="offcanvas">Code Detector</a>
             </li>
             <li class="mb-2">
-              <a
-                routerLink="/products"
-                class="nav-link small"
-                data-bs-dismiss="offcanvas"
-                >Interior Living</a
-              >
+              <a routerLink="/products" class="nav-link small" data-bs-dismiss="offcanvas">Interior Living</a>
             </li>
             <li class="mb-2">
-              <a
-                routerLink="/products"
-                class="nav-link small"
-                data-bs-dismiss="offcanvas"
-                >LMS</a
-              >
+              <a routerLink="/products" class="nav-link small" data-bs-dismiss="offcanvas">LMS</a>
             </li>
             <li class="mb-2">
-              <a
-                routerLink="/project-management"
-                class="nav-link small"
-                data-bs-dismiss="offcanvas"
-                >Project Management</a
-              >
+              <a routerLink="/project-management" class="nav-link small" data-bs-dismiss="offcanvas">Project
+                Management</a>
             </li>
             <li class="mb-2">
-              <a
-                routerLink="/software-service"
-                class="nav-link small"
-                data-bs-dismiss="offcanvas"
-                >Software Services</a
-              >
+              <a routerLink="/software-service" class="nav-link small" data-bs-dismiss="offcanvas">Software Services</a>
             </li>
             <li class="mb-2">
-              <a
-                routerLink="/staffing"
-                class="nav-link small"
-                data-bs-dismiss="offcanvas"
-                >Staffing</a
-              >
+              <a routerLink="/staffing" class="nav-link small" data-bs-dismiss="offcanvas">Staffing</a>
             </li>
             <li class="mb-2">
-              <a
-                routerLink="/it-consulting"
-                class="nav-link small"
-                data-bs-dismiss="offcanvas"
-                >IT Consulting</a
-              >
+              <a routerLink="/it-consulting" class="nav-link small" data-bs-dismiss="offcanvas">IT Consulting</a>
             </li>
           </ul>
         </div>
       </li>
 
       <li class="mb-2" data-bs-dismiss="offcanvas">
-        <a
-          href="https://sprintpark6-dev-ed.develop.my.site.com/careers/s/"
-          class="nav-link"
-          target="_blank"
-          rel="noopener"
-        >
+        <a href="https://sprintpark6-dev-ed.develop.my.site.com/careers/s/" class="nav-link" target="_blank"
+          rel="noopener">
           Careers
         </a>
       </li>
       <li class="mb-2">
-        <a routerLink="/insights" class="nav-link" data-bs-dismiss="offcanvas"
-          >Insights</a
-        >
+        <a routerLink="/insights" class="nav-link" data-bs-dismiss="offcanvas">Insights</a>
       </li>
       <li class="mb-2">
-        <a routerLink="/contact-us" class="nav-link" data-bs-dismiss="offcanvas"
-          >Contact Us</a
-        >
+        <a routerLink="/contact-us" class="nav-link" data-bs-dismiss="offcanvas">Contact Us</a>
       </li>
     </ul>
 
-    <button
-      class="btn btnn mt-3 w-100"
-      data-bs-toggle="modal"
-      data-bs-target="#loginModal"
-      data-bs-dismiss="offcanvas"
-    >
+    <button class="btn btnn mt-3 w-100" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="offcanvas">
       Login
     </button>
   </div>
 </div>
 <!-- login modal -->
-<div
-  class="modal fade"
-  id="loginModal"
-  tabindex="-1"
-  aria-labelledby="loginModalLabel"
-  aria-hidden="true"
->
-  <div
-    class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"
-  >
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
     <div class="modal-content login-modal p-4">
       <!-- Header -->
       <div class="modal-header border-0">
-        <h5
-          class="modal-title fw-bold w-100 text-center text-white"
-          id="loginModalLabel"
-        >
+        <h5 class="modal-title fw-bold w-100 text-center text-white" id="loginModalLabel">
           Choose Login Role
         </h5>
-        <button
-          type="button"
-          class="btn-close btn-close-white"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
 
       <!-- Body -->
@@ -563,19 +367,11 @@
           <!-- Recruiter -->
           <div class="col-12 col-md-4">
             <div class="card role-card text-center p-3 h-100">
-              <img
-                src="assets/header/recruiter.png"
-                alt="Recruiter Icon"
-                class="text-gold mb-3 mx-auto d-block"
-                style="width: 4rem; height: 4rem"
-              />
+              <img src="assets/header/recruiter.png" alt="Recruiter Icon" class="text-gold mb-3 mx-auto d-block"
+                style="width: 4rem; height: 4rem" />
               <h6 class="fw-bold text-gold">Recruiter</h6>
               <p class="small text-light">Hire & manage candidates.</p>
-              <button
-                class="btn btn-gold mt-auto w-100 ms-5"
-                (click)="loginAs('Recruiter')"
-                data-bs-dismiss="modal"
-              >
+              <button class="btn btn-gold mt-auto w-100 ms-5" (click)="loginAs('Recruiter')" data-bs-dismiss="modal">
                 Login
               </button>
             </div>
@@ -584,19 +380,12 @@
           <!-- Admin -->
           <div class="col-12 col-md-4">
             <div class="card role-card text-center p-3 h-100">
-              <img
-                src="assets/header/admin.png"
-                alt="Admin Icon"
-                class="text-gold mb-3 mx-auto d-block"
-                style="width: 4rem; height: 4rem"
-              />
+              <img src="assets/header/admin.png" alt="Admin Icon" class="text-gold mb-3 mx-auto d-block"
+                style="width: 4rem; height: 4rem" />
               <h6 class="fw-bold text-gold">Admin</h6>
               <p class="small text-light">Manage users & settings.</p>
-              <button
-                class="btn btn-gold mt-auto w-100 ms-5 modal-sm"
-                (click)="loginAs('Admin')"
-                data-bs-dismiss="modal"
-              >
+              <button class="btn btn-gold mt-auto w-100 ms-5 modal-sm" (click)="loginAs('Admin')"
+                data-bs-dismiss="modal">
                 Login
               </button>
             </div>
@@ -605,19 +394,11 @@
           <!-- Employee -->
           <div class="col-12 col-md-4">
             <div class="card role-card text-center p-3 h-100">
-              <img
-                src="assets/header/employee.png"
-                alt="Employee Icon"
-                class="text-gold mb-3 mx-auto d-block"
-                style="width: 4rem; height: 4rem"
-              />
+              <img src="assets/header/employee.png" alt="Employee Icon" class="text-gold mb-3 mx-auto d-block"
+                style="width: 4rem; height: 4rem" />
               <h6 class="fw-bold text-gold">Employee</h6>
               <p class="small text-light">Access dashboard & tasks.</p>
-              <button
-                class="btn btn-gold mt-auto w-100 ms-5"
-                (click)="loginAs('Employee')"
-                data-bs-dismiss="modal"
-              >
+              <button class="btn btn-gold mt-auto w-100 ms-5" (click)="loginAs('Employee')" data-bs-dismiss="modal">
                 Login
               </button>
             </div>

@@ -91,10 +91,10 @@ export class ChatbotComponent {
   <a href="/project-management">Project Management</a>, and 
   <a href="/software-service">Software Services</a>. 
   Along with our services, we also offer powerful digital products including 
-  <a href="/products">Smart Rack</a>, 
-  <a href="/products">Interior Living</a>, 
-  <a href="/products">LMS</a>, and 
-  <a href="/products">Code Detector</a>—all designed to enhance enterprise efficiency and innovation.`,
+  <a href="/product">Smart Rack</a>, 
+  <a href="/product">Interior Living</a>, 
+  <a href="/product">LMS</a>, and 
+  <a href="/product">Code Detector</a>—all designed to enhance enterprise efficiency and innovation.`,
   true
 );
 

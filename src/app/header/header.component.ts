@@ -29,10 +29,26 @@ export class HeaderComponent {
   isScrolled = false;
   currentRoute = '';
 
+  activeService: any = null;
+  defaultService = {
+    title: 'Technology that Transforms',
+    description: 'Technology today is more than just a tool—it\'s the core of smarter businesses. We build intelligent digital solutions that automate operations, enhance decision-making, and deliver real-time visibility across your entire ecosystem.',
+    image: 'https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    link: '/software-service'
+  };
+
+  public onServiceHover(service: any): void {
+    this.activeService = service;
+  }
+
+  public onServiceLeave(): void {
+    this.activeService = null;
+  }
+
   @ViewChild('mainCard') mainCard!: ElementRef;
   @ViewChild('animLayer') animLayer!: ElementRef;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   @HostListener('window:scroll', [])
   public onWindowScroll(): void {
@@ -82,7 +98,7 @@ export class HeaderComponent {
 
 
     this.router.navigate(['/'], { fragment: id }).then(() => {
-     
+
       setTimeout(() => {
         const elAfterNav = document.getElementById(id);
         if (elAfterNav) {
@@ -126,46 +142,54 @@ export class HeaderComponent {
     {
       title: 'Smart Rack',
       description: 'See Your Racks Smarter. Manage Them Faster',
-      link: '/products',
+      link: '/products/smart-rack',
+      image: 'assets/products/product-2.jpg'
     },
     {
       title: 'Interior Living',
       description: 'Design Collaboration Made Effortless',
-      link: '/products',
+      link: '/products/interior-living',
+      image: 'assets/products/product 1-a.jpg'
     },
     {
       title: 'LMS',
       description: 'Smarter Learning. Seamless Growth',
-      link: '/products',
+      link: '/products/lms',
+      image: 'assets/products/product-3-a.jpg'
     },
     {
       title: 'Code Detector',
       description: 'Scan Smart. Fix Fast. Ship Secure',
-      link: '/products',
+      link: '/products/code-detector',
+      image: 'assets/products/product-4.jpg'
     },
     {
       title: 'Project Management',
       description:
         'Project Management is a smart platform designed to help businesses and optimize every product.',
       link: '/services/project-management',
+      image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
     },
     {
       title: 'Software Services',
       description:
         'Software Services is a smart platform designed to help businesses and optimize every product.',
       link: '/services/software-service',
+      image: 'https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
     },
     {
       title: 'Staffing',
       description:
         'Staffing is a smart platform designed to help businesses and optimize every product.',
       link: '/services/staffing',
+      image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
     },
     {
       title: 'IT Consulting',
       description:
         'IT Consulting is a smart platform designed to help businesses and optimize every product.',
       link: '/services/it-consulting',
+      image: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
     },
   ];
 
