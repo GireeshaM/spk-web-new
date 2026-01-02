@@ -106,7 +106,7 @@
 <h2 class="fw-bold text-center mb-4">
   Job Opportunities&#64;SprintPark
 </h2>
-<section class="career-section text-white   ">
+<section class="career-section text-white">
   <div class="container-fluid">
     <!-- HEADER ROW -->
 <div class="row career-header px-2 py-2 mb-3 align-items-center">
@@ -127,7 +127,9 @@
     <!-- LEFT JOB LIST -->
     <div class="col-lg-6">
       <div class="left-scroll">
-        <div class="job-row d-flex justify-content-between p-3 mb-2 rounded-2" *ngFor="let job of jobs">
+        <div class="job-row d-flex justify-content-between p-3 mb-2 rounded-2" *ngFor="let job of jobs"
+         [routerLink]="['/job-summary', job.jobId]"
+         role="button">
           <div class="job-title">{{ job.title }}</div>
           <div class="job-location">{{ job.location }}</div>
         </div>
@@ -158,7 +160,8 @@
                 <span><i class="bi bi-geo-alt"></i> {{ job.location }}</span>
               </div>
 
-              <button class="btn apply-btn w-100 fw-semibold text-white">
+              <button class="btn apply-btn w-100 fw-semibold text-white"
+              [routerLink]="['/job-summary', job.jobId]">
                 Apply Now
               </button>
             </div>

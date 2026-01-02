@@ -1,0 +1,93 @@
+<div class="summary-container h-100 mb-3">
+
+  <!-- ===== JOB HERO SECTION ===== -->
+  <section class="job-hero bg-white">
+    <div class="p-4 p-lg-5 rounded-4">
+
+      <div class="row g-5 align-items-start">
+
+        <!-- IMAGE -->
+        <div class="col-lg-6">
+          <img
+            [src]="job.image"
+            class="img-fluid rounded-4 w-100 hero-img"
+            alt="Job Image"
+          />
+        </div>
+
+        <!-- JOB INFO -->
+        <div class="col-lg-6">
+          <h3 class="fw-semibold mb-3">
+            {{ job.title }}
+          </h3>
+
+          <p class="text-muted mb-1">
+            <strong>Location :</strong> {{ job.location }}
+          </p>
+
+          <p class="text-muted mb-4">
+            <strong>Job ID :</strong> {{ job.jobId }}
+          </p>
+
+          <h6 class="fw-semibold mb-2">
+            Job Summary
+          </h6>
+
+          <p class="text-muted lh-lg">
+            {{ job.summary }}
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== KEY RESPONSIBILITIES ===== -->
+  <section class="job-section p-3 pb-0 ps-5">
+    <div class="p-4 rounded-4 mx-0">
+      <h6 class="fw-semibold mb-3">Key Responsibilities</h6>
+
+      <ul class="job-list">
+        <li *ngFor="let responsibility of job.responsibilities" class="mb-3">
+          {{ responsibility }}
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== REQUIRED SKILLS ===== -->
+  <section class="job-section p-3 pt-0 pb-0 ps-5 mt-0">
+    <div class="p-4 rounded-4 mx-0">
+      <h6 class="fw-semibold mb-3">Required Skills & Qualifications</h6>
+
+      <ul class="job-list">
+        <li *ngFor="let skill of job.requiredSkills" class="mb-3">
+          {{ skill }}
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== PREFERRED SKILLS ===== -->
+  <section class="job-section p-3 pt-0 ps-5">
+    <div class="p-4 rounded-4 align-items-center">
+      <h6 class="fw-semibold mb-3">Preferred Skills</h6>
+
+      <ul class="job-list">
+        <li *ngFor="let skill of job.preferredSkills" class="mb-3">
+          {{ skill }}
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== APPLY BUTTON ===== -->
+  <div class="text-start pt-0 ps-5 align-items-center justify-content-center">
+    <button
+      class="btn btn-primary px-4 apply-btn"
+      (click)="applyForJob(job.jobId)"
+    >
+      Apply Now
+    </button>
+  </div>
+</div>

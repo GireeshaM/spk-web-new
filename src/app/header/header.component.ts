@@ -198,7 +198,7 @@ export class HeaderComponent {
       title: ' IT & Telecommunications',
       description:
         ' Modernize connectivity, infrastructure, and digital operations.',
-      link: '/industries/it-telecommunications',
+      link: '/industries/it-and-telecommunications',
     },
     {
       title: 'Government',

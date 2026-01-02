@@ -18,10 +18,11 @@ import {
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { MainHeroSectionComponent } from '../webmodules/utilities/main-hero-section/main-hero-section.component';
 import { WhatCompComponent } from '../webmodules/utilities/mainServicesUtil/what-comp/what-comp.component';
+import { RouterLink } from '@angular/router';
 @Component({
   standalone: true,
   selector: 'app-careers',
-  imports: [CommonModule, MainHeroSectionComponent, WhatCompComponent],
+  imports: [CommonModule, MainHeroSectionComponent, WhatCompComponent,RouterLink],
   templateUrl: './careers.component.html',
   styleUrls: ['./careers.component.scss'],
   animations: [
@@ -97,80 +98,90 @@ export class CareersComponent implements AfterViewInit, OnDestroy {
     }
   }
 
-  public jobs = [
-    {
-      title: 'Networking Lead',
-      description:
-        'We are seeking a skilled and proactive Networking Lead to oversee the design, implementation, and maintenance of our organization’s network infrastructure. The ideal candidate will lead a team of network engineers and administrators, ensuring high availability, security, and scalability of the network to support business operations.',
-      type: 'Full time',
-      experience: '5-6 years',
-      location: 'Hyderabad',
-    },
-     {
-      title: 'Networking Lead',
-      description:
-        'We are seeking a skilled and proactive Networking Lead to oversee the design, implementation, and maintenance of our organization’s network infrastructure. The ideal candidate will lead a team of network engineers and administrators, ensuring high availability, security, and scalability of the network to support business operations.',
-      type: 'Full time',
-      experience: '5-6 years',
-      location: 'USA',
-    },
-    {
-      title: 'Salesforce Developer',
-      description:
-        'Meeting with project managers to determine CRM needs. Developing customized solutions within the Salesforce platform. Designing, coding, and implementing Salesforce applications. Creating timelines and development goals. Testing the stability and functionality of the application. Troubleshooting and fixing bugs.',
-      type: 'Full time',
-      experience: '5-6 years',
-      location: 'Hyderabad',
-    },
-    {
-      title: 'Bench Sales Manager',
-      description:
-        'We are seeking a dynamic and results-driven Bench Sales Manager to oversee and lead our IT bench sales operations. The ideal candidate will be responsible for marketing and placing IT consultants (bench candidates) on contract assignments with clients and partners across the U.S. market. The Bench Sales Manager will build strong relationships with vendors',
-      type: 'Full time',
-      experience: '5+ years',
-      location: 'Hyderabad',
-    },
-      {
-      title: 'Bench Sales Manager',
-      description:
-        'We are seeking a dynamic and results-driven Bench Sales Manager to oversee and lead our IT bench sales operations. The ideal candidate will be responsible for marketing and placing IT consultants (bench candidates) on contract assignments with clients and partners across the U.S. market. The Bench Sales Manager will build strong relationships with vendors',
-      type: 'Full time',
-      experience: '5+ years',
-      location: 'USA',
-    },
-    {
-      title: 'Bench Sales Recruiter',
-      description:
-        'We are seeking a dynamic and results-driven Bench Sales Manager to oversee and lead our IT bench sales operations. The ideal candidate will be responsible for marketing and placing IT consultants (bench candidates) on contract assignments with clients and partners across the U.S. market. The Bench Sales Manager will build strong relationships with vendors',
-      type: 'Full time',
-      experience: '5+ years',
-      location: 'USA',
-    },
-    {
-      title: 'Sales and Marketing Head',
-      description:
-        'We are looking for a visionary and results-driven Sales and Marketing Head to lead our sales and marketing initiatives. The ideal candidate will be responsible for developing strategies to drive revenue growth, build brand awareness, and expand market share. This role requires strong leadership, strategic thinking, and hands on execution to achieve ambitious business.',
-      type: 'Full time',
-      experience: '8+ years',
-      location: 'Hyderabad',
-    },
-    {
-      title: 'Digital Marketing Executive',
-      description:
-        'We are looking for a creative and results-oriented Digital Marketing Executive to help drive our online marketing efforts. The ideal candidate will be responsible for planning, executing, and optimizing digital campaigns across multiple channels to increase brand awareness, generate leads, and support business growth.',
-      type: 'Full time',
-      experience: '1-3 years',
-      location: 'Hyderabad',
-    },
-    {
-      title: 'UI/UX Designer',
-      description:
-        'We are seeking a creative and detail-oriented UI/UX Designer to design intuitive, engaging, and user-friendly interfaces for our web and mobile applications. The ideal candidate will translate user needs and business goals into seamless and visually appealing digital experiences. Design wireframes, prototypes, and high-fidelity mockups for web and mobile',
-      type: 'Full time',
-      experience: '5+ years',
-      location: 'Hyderabad',
-    },
-  ];
+public jobs = [
+  {
+    jobId: 'NET-001',
+    title: 'Networking Lead',
+    description:
+      'We are seeking a skilled and proactive Networking Lead to oversee the design, implementation, and maintenance of our organization’s network infrastructure.',
+    type: 'Full time',
+    experience: '5-6 years',
+    location: 'Hyderabad',
+  },
+  {
+    jobId: 'NET-002',
+    title: 'Networking Lead',
+    description:
+      'We are seeking a skilled and proactive Networking Lead to oversee the design, implementation, and maintenance of our organization’s network infrastructure.',
+    type: 'Full time',
+    experience: '5-6 years',
+    location: 'USA',
+  },
+  {
+    jobId: 'SF-001',
+    title: 'Salesforce Developer',
+    description:
+      'Meeting with project managers to determine CRM needs. Developing customized solutions within the Salesforce platform.',
+    type: 'Full time',
+    experience: '5-6 years',
+    location: 'Hyderabad',
+  },
+  {
+    jobId: 'BSM-001',
+    title: 'Bench Sales Manager',
+    description:
+      'We are seeking a dynamic and results-driven Bench Sales Manager to oversee and lead our IT bench sales operations.',
+    type: 'Full time',
+    experience: '5+ years',
+    location: 'Hyderabad',
+  },
+  {
+    jobId: 'BSM-002',
+    title: 'Bench Sales Manager',
+    description:
+      'We are seeking a dynamic and results-driven Bench Sales Manager to oversee and lead our IT bench sales operations.',
+    type: 'Full time',
+    experience: '5+ years',
+    location: 'USA',
+  },
+  {
+    jobId: 'BSR-001',
+    title: 'Bench Sales Recruiter',
+    description:
+      'Responsible for marketing and placing IT consultants on contract assignments.',
+    type: 'Full time',
+    experience: '5+ years',
+    location: 'USA',
+  },
+  {
+    jobId: 'SMH-001',
+    title: 'Sales and Marketing Head',
+    description:
+      'Lead sales and marketing initiatives to drive revenue growth and brand awareness.',
+    type: 'Full time',
+    experience: '8+ years',
+    location: 'Hyderabad',
+  },
+  {
+    jobId: 'DM-001',
+    title: 'Digital Marketing Executive',
+    description:
+      'Plan, execute, and optimize digital campaigns across multiple channels.',
+    type: 'Full time',
+    experience: '1-3 years',
+    location: 'Hyderabad',
+  },
+  {
+    jobId: 'UX-001',
+    title: 'UI/UX Designer',
+    description:
+      'Design intuitive, engaging, and user-friendly interfaces for web and mobile applications.',
+    type: 'Full time',
+    experience: '5+ years',
+    location: 'Hyderabad',
+  },
+];
+
   // Section 3
   public whyMainHeading = 'Life@Sprintpark';
   public whySubHeading =

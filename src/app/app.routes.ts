@@ -106,13 +106,13 @@ export const routes: Routes = [
       // default redirect
       {
         path: '',
-        redirectTo: 'it-telecommunications',
+        redirectTo: 'it-and-telecommunications',
         pathMatch: 'full'
       },
 
       // IT & TELECOMMUNICATIONS
       {
-        path: 'it-telecommunications',
+        path: 'it-and-telecommunications',
         component: TeleCommunicationsComponent,
         data: {
           title: 'Connecting the World, Seamlessly',
@@ -122,7 +122,7 @@ export const routes: Routes = [
         },
       },
       {
-        path: 'it-telecommunications/:section',
+        path: 'it-and-telecommunications/:section',
         component: TelecommunicationIComponent,
       },
 
@@ -224,72 +224,6 @@ export const routes: Routes = [
     ],
   },
 
-  //Industries subPages
-
-  //Telecommunication-subPage
-  // {
-  //   path: 'telecommunication/:section',
-  //   component: TelecommunicationIComponent,
-  //   data: {
-  //     title: '',
-  //     description: '',
-  //   },
-  // },
-  // //government-subPage
-  // {
-  //   path: 'government/:section',
-  //   component: GovernmentIComponent,
-  //   data: {
-  //     title: '',
-  //     description: '',
-  //   },
-  // },
-  // //transport-subPage
-  // {
-  //   path: 'transport/:section',
-  //   component: TransportationIComponent,
-  //   data: {
-  //     title: '',
-  //     description: '',
-  //   },
-  // },
-  // //healthcare & life sciences-subPage
-  // {
-  //   path: 'healthcare/:section',
-  //   component: HealthCareIComponent,
-  //   data: {
-  //     title: '',
-  //     description: '',
-  //   },
-  // },
-  // //banking-subPage
-  // {
-  //   path: 'banking/:section',
-  //   component: BankingIComponent,
-  //   data: {
-  //     title: '',
-  //     description: '',
-  //   },
-  // },
-  // //education-subPage
-  // {
-  //   path: 'education/:section',
-  //   component: EducationIComponent,
-  //   data: {
-  //     title: '',
-  //     description: '',
-  //   },
-  // },
-  // //manufacturing-subPage
-  // {
-  //   path: 'manufacturing/:section',
-  //   component: ManufacturingIComponent,
-  //   data: {
-  //     title: '',
-  //     description: '',
-  //   },
-  // },
-
   //careers
   {
     path: 'careers',
@@ -301,6 +235,15 @@ export const routes: Routes = [
       footerColor: '#fff',
     },
   },
+{
+  path: 'job-summary/:jobId',
+  loadComponent: () =>
+    import('./job-summary/job-summary.component')
+      .then(m => m.JobSummaryComponent),
+  data: {
+    footerColor: 'rgba(249, 249, 255, 1)'
+}
+},
   //insights
   {
     path: 'insights',

@@ -23,28 +23,28 @@ export class TeleCommunicationsComponent {
       title: 'Data Privacy',
       description:
         'Protect your data using advanced risk assessments, encryption, and compliance tools to prevent breaches, leaks, and unauthorized access.',
-      link: '/industries/it-telecommunications/dataPrivacy',
+      link: '/industries/it-and-telecommunications/dataPrivacy',
     },
     {
       img: 'assets/Industries/itAndTelecommunication/automation.png',
       title: 'Automation',
       description:
         'Automate personalized communications across email, SMS, and social media to boost efficiency, engagement, and timely customer interactions.',
-      link: '/industries/it-telecommunications/automation',
+      link: '/industries/it-and-telecommunications/automation',
     },
     {
       title: 'Infrastructure',
       img: 'assets/Industries/itAndTelecommunication/infrastructure.png',
       description:
         'Develop scalable infrastructure with robust storage, networking, and sharing capabilities to support your business growth and digital transformation.',
-      link: '/industries/it-telecommunications/infrastructure',
+      link: '/industries/it-and-telecommunications/infrastructure',
     },
     {
       img: 'assets/Industries/itAndTelecommunication/managed-solutions.png',
       title: ' Managed Solutions',
       description:
         'Get comprehensive IT and security management for reliable operations, reduced downtime, proactive monitoring, and improved system performance.',
-      link: '/industries/it-telecommunications/managedSolutions',
+      link: '/industries/it-and-telecommunications/managedSolutions',
     },
   ];
 }
