@@ -1,9 +1,19 @@
-#career-section,
+.career-section,
 .hero-section,
 .feature-box,
 .job-oppurtunity-card {
   font-family: "Inter", sans-serif !important;
 }
+.career-section {
+  font-family: "Inter", sans-serif !important;
+  background: linear-gradient(
+    275.69deg,
+    rgba(26, 9, 81, 0.95) 2.22%,
+    rgba(75, 16, 120, 0.95) 76.02%
+  );
+  padding-bottom: 2rem;
+}
+
 //Empowering your job journey
 .half-circle {
   width: 100px !important;
@@ -28,7 +38,6 @@
   }
 }
 .feature-box {
-  // align-items: center;
   margin-bottom: 40px;
   gap: 1rem;
   width: 80%;
@@ -69,7 +78,74 @@
     display: none;
   }
 }
-//  @media (max-width: 575.98px) {
+/* BACKGROUND */
+.career-section {
+  background: linear-gradient(
+      275.69deg,
+      rgba(26, 9, 81, 0.95) 2.22%,
+      rgba(75, 16, 120, 0.95) 76.02%
+    );
+  background-size: cover;
+  background-position: center;
+}
+.career-header{
+  background: rgba(55, 34, 103, 1);
+}
 
-//   width:100%;
-//   }
+/* LEFT SCROLL */
+.left-scroll {
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 18px;
+  padding-left: 20px;
+}
+.job-row {
+  background: rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.job-row:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+/* RIGHT SCROLL – EXACTLY 2 CARDS VIEW */
+.right-scroll {
+  max-height: 520px; /* fits 2 cards */
+  overflow-y: auto;
+  padding:0 12px;
+}
+
+/* JOB CARD */
+.job-detail-card {
+  background: rgba(255, 255, 255, 0.12);
+  padding: 22px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(6px);
+}
+
+/* APPLY BUTTON */
+.apply-btn {
+  background: #ff8a1f;
+}
+
+.apply-btn:hover {
+  background: #ff7600;
+}
+
+/* SCROLLBAR (Optional – Clean UI) */
+.left-scroll::-webkit-scrollbar,
+.right-scroll::-webkit-scrollbar {
+  width: 2px;
+}
+
+.left-scroll::-webkit-scrollbar-thumb,
+.right-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+@media (max-width: 991px) {
+  .right-scroll {
+    margin-top: 1.5rem;
+  }
+}
+
+

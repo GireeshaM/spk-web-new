@@ -44,6 +44,7 @@ export const routes: Routes = [
     children: [
 
       {
+        
         path: '',
         redirectTo: 'it-consulting',
         pathMatch: 'full'
@@ -345,6 +346,7 @@ export const routes: Routes = [
       footerColor: 'rgba(255, 255, 255, 1)',
     },
   },
+  
   {
     path: '**',
     component: PageNotFoundComponent,

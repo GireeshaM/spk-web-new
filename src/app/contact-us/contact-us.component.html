@@ -1,274 +1,246 @@
-<div class="contact-us">
-  <p-toast position="top-center"></p-toast>
+<section class="contact-hero position-relative">
 
-  <!-- Hero Section -->
-  <app-main-hero-section
-    [whatHeader]="whatMainHeader"
-    [whatDescription]="whatDescription"
-    [heroImage]="heroImage"
-    [smallImage]="smallImage"
-    [alignRight]="false"
-  ></app-main-hero-section>
+  <!-- Decorative circles -->
+  <div class="circle circle-top-left"></div>
+  <div class="circle circle-bottom-left"></div>
 
-  <!-- Contact Form Section -->
-  <section class="py-5 bg-white">
-    <div class="container">
-      <div class="row gy-5 g-md-4">
-        <!-- Contact Info Column -->
-        <div class="col-12 col-lg-6 text-start">
-          <h2 class="fw-bold lh-sm mb-3">
-            Let's start a conversation your questions, ideas, and feedback are
-            always welcome at SprintPark
-          </h2>
-          <p class="lh-lg">
-            Whether you're looking for more information, partnership
-            opportunities, or customer support, our team is here for you. We're
-            committed to quick, thoughtful responses and making your experience
-            with SprintPark seamless from start to finish.
-          </p>
+  <div class="container-fluid p-0">
+    <div class="row g-0 align-items-center">
 
-          <!-- Locations -->
-          <div class="locations row row-cols-1 row-cols-md-2 g-4 w-100 mt-3">
-            <div
-              class="col location d-flex flex-column justify-content-start p-3 mb-3"
-              *ngFor="let location of locations; let last = last"
-            >
-              <!-- Title -->
-              <div class="d-flex align-items-center mb-3">
-                <i
-                  class="pi pi-map-marker me-2 fs-5 location-icon orange-icon"
-                ></i>
-                <span class="fs-6 fw-bold text-break">
-                  {{ location.title }}
-                </span>
-              </div>
-
-              <!-- Address -->
-              <div class="mb-2 address-text flex-grow-1 w-75">
-                {{ location.address }}
-              </div>
-
-              <!-- Contact Info -->
-              <div class="d-flex flex-column">
-                <div class="d-flex align-items-center">
-                  <i class="pi pi-phone fs-6 me-2 phone-icon violet-icon"></i>
-                  <span>{{ location.phone }}</span>
-                </div>
-                <div class="d-flex align-items-center">
-                  <i class="pi pi-envelope fs-6 me-2 mail-icon violet-icon"></i>
-                  <span>{{ location.email }}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Contact Form Column -->
-        <div class="col-12 col-lg-6">
-          <form
-            [formGroup]="contactForm"
-            (ngSubmit)="onSubmit()"
-            (submit)="sendEmail($event)"
-            class="p-3"
-          >
-            <!-- Name -->
-            <div class="mb-3">
-              <label
-                for="name"
-                class="form-label fw-semibold text-start d-block"
-              >
-                Name <span class="text-danger">*</span>
-              </label>
-              <input
-                type="text"
-                name="name"
-                placeholder="Your name"
-                class="form-control"
-                formControlName="name"
-                [class.is-invalid]="getFormControlError('name')"
-              />
-              <div class="invalid-feedback" *ngIf="getFormControlError('name')">
-                {{ getFormControlError("name") }}
-              </div>
-            </div>
-
-            <!-- Email -->
-            <div class="mb-3">
-              <label
-                for="email"
-                class="form-label fw-semibold text-start d-block"
-              >
-                Email <span class="text-danger">*</span>
-              </label>
-              <input
-                type="email"
-                name="email"
-                placeholder="Your@gmail.com"
-                class="form-control"
-                formControlName="email"
-                [class.is-invalid]="getFormControlError('email')"
-              />
-              <div
-                class="invalid-feedback"
-                *ngIf="getFormControlError('email')"
-              >
-                {{ getFormControlError("email") }}
-              </div>
-            </div>
-
-            <!-- Phone -->
-            <div class="mb-3">
-              <label
-                for="phone"
-                class="form-label fw-semibold text-start d-block"
-              >
-                Phone number <span class="text-danger">*</span>
-              </label>
-              <input
-                type="text"
-                name="phone"
-                placeholder="Your number"
-                class="form-control"
-                formControlName="phone"
-                [class.is-invalid]="getFormControlError('phone')"
-              />
-              <div
-                class="invalid-feedback"
-                *ngIf="getFormControlError('phone')"
-              >
-                {{ getFormControlError("phone") }}
-              </div>
-            </div>
-
-            <!-- Message -->
-            <div class="mb-3">
-              <label
-                for="message"
-                class="form-label fw-semibold text-start d-block"
-              >
-                How can we help? <span class="text-danger">*</span>
-              </label>
-              <textarea
-                name="message"
-                rows="4"
-                placeholder="Tell us a little about your problem"
-                class="form-control"
-                formControlName="message"
-                [class.is-invalid]="getFormControlError('message')"
-              ></textarea>
-              <div
-                class="invalid-feedback"
-                *ngIf="getFormControlError('message')"
-              >
-                {{ getFormControlError("message") }}
-              </div>
-            </div>
-
-            <!-- Submit -->
-            <button
-              type="submit"
-              class="btn sbt-btn text-white px-4 py-2"
-              [disabled]="contactForm.invalid"
-            >
-              Send
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Social Section -->
-  <section class="social-section py-5 position-relative overflow-hidden">
-    <div class="container">
-      <div class="row align-items-center">
-        <div
-          class="col-12 col-md-6 order-2 order-md-1 text-center text-md-start"
-        >
+      <!-- IMAGE (first on mobile) -->
+      <div class="col-12 col-md-4 order-1 order-md-2 hero-right text-center position-relative">
+        <div class="hero-image-wrapper position-relative mx-auto">
+          <span class="image-top-circle"></span>
           <img
-            src="assets/contactus/GetSocial.png"
-            alt="Social Phone"
-            class="img-fluid"
+            src="assets/contactus/contact-us-hero.png"
+            class="img-fluid hero-image"
+            alt="Contact SprintPark"
           />
         </div>
-        <div class="col-12 col-md-6 order-1 order-md-2">
-          <h3 class="fw-bold mb-5 text-center text-md-start">
-            Get social with us
-          </h3>
-          <div class="social-grid mt-4">
-            <a
-              *ngFor="let social of socialLinks"
-              [href]="social.url"
-              class="social-link text-decoration-none text-dark d-flex align-items-center gap-2 hover-primary mb-3"
-            >
-              <img
-                [src]="social.icon"
-                [alt]="social.name"
-                class="social-icon flex-shrink-0"
-              />
-              <span class="fw-medium">{{ social.name }}</span>
-            </a>
-          </div>
+      </div>
+
+      <!-- CONTENT -->
+      <div class="col-12 col-md-8 order-2 order-md-1 hero-left bg-purple">
+        <div class="hero-content text-center text-md-start p-4 p-md-5">
+          <h1 class="mb-3">Get in touch with SprintPark</h1>
+          <p class="mb-4">
+           Whether you're looking for more information, partnership opportunities, or customer support, our team is here for you.
+            We’re committed to quick, thoughtful responses and making your experience with SprintPark seamless from start to finish.
+          </p>
+          <button class="btn get-started-btn text-light">
+            Get Started →
+          </button>
         </div>
       </div>
-    </div>
-    <div class="ellipse-shape d-none d-lg-block position-absolute"></div>
-  </section>
 
-  <!-- FAQ Section -->
-  <section class="py-5 bg-white">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-12 col-lg-10 col-xl-8">
-          <h3 class="text-center fw-bold mb-5">Frequently asked questions</h3>
-          <div class="faq-list">
-            <div
-              class="faq-item border-bottom"
-              *ngFor="let faq of faqItems; let i = index"
-              [ngClass]="{ active: faq.isOpen }"
-            >
-              <button
-                class="faq-question btn btn-link text-decoration-none text-dark w-100 d-flex justify-content-between align-items-center py-3 text-start"
-                (click)="toggleFAQ(i)"
-              >
-                <span class="pe-3 fw-normal">{{ faq.question }}</span>
-                <i
-                  class="pi flex-shrink-0"
-                  [ngClass]="faq.isOpen ? 'pi-minus' : 'pi-plus'"
-                ></i>
-              </button>
-              <div
-                class="faq-answer overflow-hidden transition"
-                [ngClass]="{ show: faq.isOpen }"
-              >
-                <p class="mb-0 py-3 ps-2 text-secondary">{{ faq.answer }}</p>
-              </div>
+    </div>
+  </div>
+</section>
+<div class="contact-form p-3 p-md-6">
+<section class="contact-form-section ">
+  <div class="container-fluid px-3 px-md-0">
+    <div class="row g-5 align-items-stretch justify-content-center">
+      <!-- LEFT -->
+      <div class="col-12 col-md-5">
+        <div class="contact-info-card p-4 text-light">
+          <h5 class="text-light mb-4 ">Contact information</h5>
+          <!-- Email -->
+          <div class="info-block ">
+            <label class="text-light">Email Address</label>
+            <p class="text-light">info&#64;sprintpark.com</p>
+            <p class="text-light">hr&#64;sprintpark.com</p>
+          </div>
+          <div class="divider"></div>
+
+          <!-- Contact -->
+          <div class="info-block">
+            <label class="text-light">Contact us</label>
+            <div class="d-flex gap-5">
+              <p class="mb-0 text-light">+1 (860) 566 9894</p>
+              <p class="mb-0 text-light">+91 7207735554</p>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Address 1 -->
+          <div class="info-block">
+            <label class="text-light">Address 1</label>
+            <p class="text-light">
+              85 Felt Rd, Suite #604,
+              South Windsor, CT 06074
+            </p>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Address 2 -->
+          <div class="info-block">
+            <label>Address 2</label>
+            <p class="text-light">
+              Unit No. 1204, 12th Floor, B Block,
+              Asian Suncity, Kondapur,<br />
+              Hyderabad, Telangana 500084
+            </p>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Social -->
+          <div class="info-block mt-1 ">
+            <label>Follow our Social Media</label>
+            <div class="social-icons d-flex gap-3 mt-3">
+              <i class="pi pi-facebook bg-white  socialicon"></i>
+              <i class="pi pi-instagram bg-white  socialicon"></i>
+              <i class="pi pi-linkedin bg-white  socialicon"></i>
+              <i class="pi pi-youtube bg-white  socialicon"></i>
+              <i class="pi pi-twitter bg-white socialicon"></i>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+      <!-- RIGHT -->
+      <div class="col-12 col-md-5">
+        <div class="contact-form-card">
+  <h4 class="fw-bold form-head">Get in Touch</h4>
+  <p class="subtitle text-dark">
+    Let’s start a conversation your questions and ideas
+  </p>
 
-  <!-- Why Hire -->
-  <section class="py-5">
-    <div class="container">
-      <h2 class="text-center fw-bold mb-5">Why Hire Sprintpark?</h2>
-      <div class="row g-4">
-        <div class="col-12 col-md-6 col-lg-4" *ngFor="let reason of reasons">
-          <div
-            class="card why-card text-center p-4 h-100 border shadow-sm hover-lift"
-          >
-            <img
-              [src]="reason.icon"
-              alt="{{ reason.title }}"
-              class="card-icon mx-auto mb-3 mt-5 text-center"
-              style="width: 70px; height: auto"
-            />
-            <h5 class="card-title fw-bold mb-0">{{ reason.title }}</h5>
-          </div>
+  <form [formGroup]="contactForm">
+    <div class="row gx-4 gy-4">
+
+      <div class="col-md-6 ">
+        <input
+          type="text"
+          class="form-control border border-secondary-subtle"
+          placeholder="Your Name*"
+          formControlName="name"
+        />
+      </div>
+
+      <div class="col-md-6">
+        <input
+          type="email"
+          class="form-control border border-secondary-subtle"
+          placeholder="Your Email*"
+          formControlName="email"
+        />
+      </div>
+
+      <div class="col-md-6">
+        <input
+          type="text"
+          class="form-control border border-secondary-subtle"
+          placeholder="Subject"
+          formControlName="subject"
+        />
+      </div>
+
+      <div class="col-md-6">
+        <input
+          type="text"
+          class="form-control border border-secondary-subtle"
+          placeholder="Phone Number*"
+          formControlName="phone"
+        />
+      </div>
+
+      <div class="col-12">
+        <textarea
+          rows="8"
+          class="form-control border border-secondary-subtle"
+          placeholder="How can we help?"
+          formControlName="message"
+        ></textarea>
+      </div>
+
+      <div class="col-12">
+        <button class=" send-btn btn btn-primary w-100 text-light">
+          Send Message
+        </button>
+      </div>
+
+    </div>
+  </form>
+</div>
+
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+<section class="py-5 bg-white">
+  <div class="container">
+    <h3 class="text-center fw-bold mb-5">
+      Frequently asked questions
+    </h3>
+
+    <div class="faq-list">
+      <div
+        class="faq-item"
+        *ngFor="let faq of faqItems; let i = index"
+      >
+        <button
+          class="btn w-75 mx-auto text-start d-flex justify-content-between align-items-center py-3"
+          (click)="toggleFAQ(i)"
+        >
+          <span class="fw-bold">
+            {{ i + 1 < 10 ? '0' + (i + 1) : i + 1 }}.
+            {{ faq.question }}
+          </span>
+
+          <i
+            class="pi"
+            [ngClass]="faq.isOpen ? 'pi-minus' : 'pi-plus'"
+          ></i>
+        </button>
+
+        <div
+          *ngIf="faq.isOpen"
+          class="pb-3 ps-2 text-secondary w-75 mx-auto fs-6"
+        >
+          {{ faq.answer }}
         </div>
       </div>
     </div>
-  </section>
-</div>
+  </div>
+</section>
+
+<section class="hiring-section">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- LEFT CONTENT -->
+      <div class="col-md-6">
+        <h2 class="hiring-title text-light">
+          Now Hiring to join our team
+        </h2>
+
+        <p class="hiring-desc">
+          We are looking for dedicated and motivated individuals to become
+          part of our growing team. If you're passionate about delivering
+          great work and ready to contribute your skills, we'd love to hear
+          from you!
+        </p>
+
+        <button class="btn hiring-btn text-light p-2 fw-bold">
+          Send your Portfolio
+          <i class="pi pi-arrow-right ms-2"></i>
+        </button>
+      </div>
+
+      <!-- RIGHT IMAGE -->
+      <div class="col-md-6 text-center mt-4 mt-md-0">
+        <div class="hiring-image-wrapper">
+          <img
+            src="assets/contactus/hiring-img.png"
+            alt="Hiring"
+          />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+

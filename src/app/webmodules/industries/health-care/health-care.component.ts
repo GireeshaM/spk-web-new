@@ -23,42 +23,42 @@ export class HealthCareComponent {
       title: 'Intelligent Automation',
       description:
         'Boost operational efficiency and patient care through AI-driven monitoring, diagnostics, personalized medicine, and drug discovery.',
-      link: '/industries/healthcare/intelligentinnovation',
+      link: '/industries/healthcare-life-sciences/intelligentinnovation',
     },
     {
       img: 'assets/Industries/healthCareAndLifeSciences/connected-infrastructure.png',
       title: 'Connected Infrastructure',
       description:
         'Design and maintain robust networks and migrate healthcare systems to secure, scalable cloud platforms for seamless access and data management.',
-      link: '/industries/healthcare/connectedInfrastructure',
+      link: '/industries/healthcare-life-sciences/connectedInfrastructure',
     },
     {
       title: 'Data Security & Compliance',
       img: 'assets/Industries/healthCareAndLifeSciences/data-security-compilance.png',
       description:
         'Protect patient data and systems with strong security protocols, risk assessments, and adherence to healthcare regulations.',
-      link: '/industries/healthcare/dataSecurity',
+      link: '/industries/healthcare-life-sciences/dataSecurity',
     },
     {
       img: 'assets/Industries/healthCareAndLifeSciences/healthCare-project-delivery.png',
       title: 'Healthcare Project Delivery',
       description:
         'Manage critical healthcare IT projects like EHR implementations and system upgrades ensuring timely and successful delivery.',
-      link: '/industries/healthcare/projectDelivery',
+      link: '/industries/healthcare-life-sciences/projectDelivery',
     },
     {
       img: 'assets/Industries/healthCareAndLifeSciences/expert-talent-solutions.png',
       title: 'Expert Talent Solutions',
       description:
         'Provide specialized healthcare IT professionals, including analysts, project managers, data scientists, and cybersecurity experts.',
-      link: '/industries/healthcare/talentSolutions',
+      link: '/industries/healthcare-life-sciences/talentSolutions',
     },
     {
       img: 'assets/Industries/healthCareAndLifeSciences/patient-Centered-Innovation.png',
       title: 'Patient-Centered Innovation',
       description:
         'Drive better outcomes by integrating cutting-edge technologies that enhance patient experience, remote care, and personalized treatment plans.',
-      link: '/industries/healthcare/patientInnovation',
+      link: '/industries/healthcare-life-sciences/patientInnovation',
     },
   ];
 }

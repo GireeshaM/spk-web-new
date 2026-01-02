@@ -106,6 +106,14 @@ export class CareersComponent implements AfterViewInit, OnDestroy {
       experience: '5-6 years',
       location: 'Hyderabad',
     },
+     {
+      title: 'Networking Lead',
+      description:
+        'We are seeking a skilled and proactive Networking Lead to oversee the design, implementation, and maintenance of our organization’s network infrastructure. The ideal candidate will lead a team of network engineers and administrators, ensuring high availability, security, and scalability of the network to support business operations.',
+      type: 'Full time',
+      experience: '5-6 years',
+      location: 'USA',
+    },
     {
       title: 'Salesforce Developer',
       description:
@@ -121,6 +129,22 @@ export class CareersComponent implements AfterViewInit, OnDestroy {
       type: 'Full time',
       experience: '5+ years',
       location: 'Hyderabad',
+    },
+      {
+      title: 'Bench Sales Manager',
+      description:
+        'We are seeking a dynamic and results-driven Bench Sales Manager to oversee and lead our IT bench sales operations. The ideal candidate will be responsible for marketing and placing IT consultants (bench candidates) on contract assignments with clients and partners across the U.S. market. The Bench Sales Manager will build strong relationships with vendors',
+      type: 'Full time',
+      experience: '5+ years',
+      location: 'USA',
+    },
+    {
+      title: 'Bench Sales Recruiter',
+      description:
+        'We are seeking a dynamic and results-driven Bench Sales Manager to oversee and lead our IT bench sales operations. The ideal candidate will be responsible for marketing and placing IT consultants (bench candidates) on contract assignments with clients and partners across the U.S. market. The Bench Sales Manager will build strong relationships with vendors',
+      type: 'Full time',
+      experience: '5+ years',
+      location: 'USA',
     },
     {
       title: 'Sales and Marketing Head',
