@@ -8,6 +8,7 @@ import {
 } from '@angular/forms';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
+import { RouterLink } from '@angular/router';
 
 export interface FaqItem {
   question: string;
@@ -22,6 +23,7 @@ export interface FaqItem {
     CommonModule,
     ReactiveFormsModule,
     ToastModule,
+    RouterLink
   ],
   templateUrl: './contact-us.component.html',
   styleUrl: './contact-us.component.scss',
@@ -32,15 +34,34 @@ export class ContactUsComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {}
 
-  ngOnInit(): void {
-    this.contactForm = this.fb.group({
-      name: ['', Validators.required],
-      email: ['', Validators.required],
-      subject: ['', Validators.required],
-      phone: ['', Validators.required],
-      message: ['', Validators.required],
-    });
-  }
+ngOnInit(): void {
+  this.contactForm = this.fb.group({
+    name: [
+      '',
+      [Validators.required, Validators.minLength(3)]
+    ],
+    email: [
+      '',
+      [Validators.required, Validators.email]
+    ],
+    subject: [
+      '',
+      [Validators.required, Validators.minLength(3)]
+    ],
+    phone: [
+      '',
+      [
+        Validators.required,
+        Validators.pattern('^[6-9][0-9]{9}$') // Indian mobile numbers
+      ]
+    ],
+    message: [
+      '',
+      [Validators.required, Validators.minLength(10)]
+    ],
+  });
+}
+
   // ✅ FAQ DATA 
     public faqItems = [
         {

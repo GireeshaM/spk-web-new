@@ -27,16 +27,19 @@
            Whether you're looking for more information, partnership opportunities, or customer support, our team is here for you.
             We’re committed to quick, thoughtful responses and making your experience with SprintPark seamless from start to finish.
           </p>
-          <button class="btn get-started-btn text-light">
+          <button
+            class="btn get-started-btn text-light"
+            routerLink="/careers">
             Get Started →
           </button>
+
         </div>
       </div>
 
     </div>
   </div>
 </section>
-<div class="contact-form p-3 p-md-6">
+<div class="contact-form p-5 p-md-6">
 <section class="contact-form-section ">
   <div class="container-fluid px-3 px-md-0">
     <div class="row g-5 align-items-stretch justify-content-center">
@@ -114,18 +117,26 @@
         <input
           type="text"
           class="form-control border border-secondary-subtle"
-          placeholder="Your Name*"
+          placeholder="Your Name"
           formControlName="name"
         />
+        <small class="text-danger"
+    *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.invalid">
+    Name is required (min 3 characters)
+  </small>
       </div>
 
       <div class="col-md-6">
         <input
           type="email"
           class="form-control border border-secondary-subtle"
-          placeholder="Your Email*"
+          placeholder="Your Email"
           formControlName="email"
         />
+         <small class="text-danger"
+    *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid">
+    Enter a valid email address
+  </small>
       </div>
 
       <div class="col-md-6">
@@ -135,15 +146,23 @@
           placeholder="Subject"
           formControlName="subject"
         />
+         <small class="text-danger"
+    *ngIf="contactForm.get('subject')?.touched && contactForm.get('subject')?.invalid">
+    Subject is required
+  </small>
       </div>
 
       <div class="col-md-6">
         <input
           type="text"
           class="form-control border border-secondary-subtle"
-          placeholder="Phone Number*"
+          placeholder="Phone Number"
           formControlName="phone"
         />
+        <small class="text-danger"
+    *ngIf="contactForm.get('phone')?.touched && contactForm.get('phone')?.invalid">
+    Enter a valid 10-digit mobile number
+  </small>
       </div>
 
       <div class="col-12">
@@ -153,14 +172,17 @@
           placeholder="How can we help?"
           formControlName="message"
         ></textarea>
+        <small class="text-danger"
+        *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid">
+        Message must be at least 10 characters
+      </small>
       </div>
-
       <div class="col-12">
-        <button class=" send-btn btn btn-primary w-100 text-light">
+        <button class=" send-btn btn btn-primary w-100 text-light"
+          [disabled]="contactForm.invalid">
           Send Message
         </button>
       </div>
-
     </div>
   </form>
 </div>
@@ -224,7 +246,7 @@
           from you!
         </p>
 
-        <button class="btn hiring-btn text-light p-2 fw-bold">
+        <button class="btn hiring-btn text-light p-2 fw-bold" routerLink="/careers">
           Send your Portfolio
           <i class="pi pi-arrow-right ms-2"></i>
         </button>
@@ -232,7 +254,7 @@
 
       <!-- RIGHT IMAGE -->
       <div class="col-md-6 text-center mt-4 mt-md-0">
-        <div class="hiring-image-wrapper">
+        <div class=" img-fluidhiring-image-wrapper">
           <img
             src="assets/contactus/hiring-img.png"
             alt="Hiring"
