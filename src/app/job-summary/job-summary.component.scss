@@ -23,3 +23,101 @@
 background: rgba(31, 12, 123, 1);
 margin-left: 30px;
 }
+////////////////////////////////
+/* ========= Animated Gradient Background ========= */
+
+
+/* ========= Floating Shapes ========= */
+
+
+@keyframes floatUpDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-35px); }
+}
+
+/* ========= Keep Content Above BG ========= */
+.container,
+.container-fluid {
+  position: relative;
+  z-index: 5;
+}
+
+
+
+.form-panel {
+  animation: slideFromRight 1.2s ease forwards;
+}
+
+@keyframes slideFromLeft {
+  from { transform: translateX(-60px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideFromRight {
+  from { transform: translateX(60px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.border-dashed {
+  border-style: dashed !important;
+}
+
+//
+/* ================= MODAL TEXT COLOR ================= */
+/* ================= THEME COLOR ================= */
+/* ================= THEME COLORS ================= */
+.modal.show {
+  --theme-purple: rgba(57, 10, 122, 1);
+  --modal-bg: rgba(226, 224, 255, 1);
+}
+
+/* ================= MODAL BACKGROUND ================= */
+.modal.show .modal-content {
+  background-color: var(--modal-bg);
+  border-radius: 1rem;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+/* ================= TEXT ================= */
+
+
+
+/* Labels & custom text */
+.modal.show .form-label,
+.modal.show .text-color {
+  color: var(--theme-purple);
+ 
+}
+
+/* Upload resume title */
+.modal.show .border-dashed strong {
+  color: var(--theme-purple);
+}
+
+/* ================= INPUTS & BORDERS ================= */
+
+.modal.show .form-control {
+  border: 2px solid rgba(57, 10, 122, 0.35);
+
+}
+
+.modal.show .form-control:focus {
+  border-color: var(--theme-purple);
+  box-shadow: 0 0 0 0.15rem rgba(57, 10, 122, 0.25);
+}
+
+/* ================= RESUME UPLOAD BOX ================= */
+
+.modal.show .border-dashed {
+  border: 2px dashed;
+ 
+  border-radius: 1rem;
+}
+
+/* ================= BUTTON ================= */
+
+.modal.show .btn-primary {
+  background-color: var(--theme-purple);
+  border-color: var(--theme-purple);
+}
+

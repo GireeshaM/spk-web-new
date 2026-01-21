@@ -25,6 +25,7 @@ import { TransportationIComponent } from './webmodules/industriesSubPages/transp
 import { InsightsBlogComponent } from './webmodules/insights-blog/insights-blog.component';
 import { ProductComponent } from './webmodules/product/product.component';
 
+
 export const routes: Routes = [
   {
     path: '',
@@ -289,9 +290,11 @@ export const routes: Routes = [
       footerColor: 'rgba(255, 255, 255, 1)',
     },
   },
-  
+   
   {
     path: '**',
     component: PageNotFoundComponent,
   },
+
+
 ];
