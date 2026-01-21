@@ -22,7 +22,7 @@ import { RouterLink } from '@angular/router';
 @Component({
   standalone: true,
   selector: 'app-careers',
-  imports: [CommonModule, MainHeroSectionComponent, WhatCompComponent,RouterLink],
+  imports: [CommonModule, WhatCompComponent,RouterLink],
   templateUrl: './careers.component.html',
   styleUrls: ['./careers.component.scss'],
   animations: [

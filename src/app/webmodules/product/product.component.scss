@@ -1,3 +1,6 @@
+.products{
+  font-family: "Inter", sans-serif !important;
+}
 :root {
   --a: #4f7cff;
   --g: #9bb7ff;
@@ -20,9 +23,7 @@
 }
 .primary-btn {
   background: #ef7a13;
-  color: #fff;
   padding: 14px 2rem;
-  border: 0;
   border-radius: 40px;
   transition: 0.3s;
 }
@@ -48,25 +49,20 @@ section:not(.hero) .ratio {
   padding: 3rem calc(50vw - 50%);
 }
 /* Card container */
-.card {
-  border: none;
-  text-align: left;
-  border-radius: 1rem;
-  background: #ffffff;
-  overflow: hidden;
-  margin-bottom: 2rem;
-}
+// .card {
+//   text-align: left;
+//   border-radius: 1rem;
+//   background: #ffffff;
+//   overflow: hidden;
+//   margin-bottom: 2rem;
+// }
 /* Card Title */
 .card-title {
-  font-weight: 600;
-  font-size: 1.8rem;
   margin-bottom: 10px;
   color: #0a2250;
 }
 /* Card Text */
 .card-text {
-  font-weight: 400;
-  font-size: 1rem;
   color: #606262;
   line-height: 1.5;
 }

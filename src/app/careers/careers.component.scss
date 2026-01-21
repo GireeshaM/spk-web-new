@@ -4,6 +4,93 @@
 .job-oppurtunity-card {
   font-family: "Inter", sans-serif !important;
 }
+.careers-hero {
+ background: linear-gradient(
+    275.69deg,
+    rgba(26, 9, 81, 0.95) 2.22%,
+    rgba(75, 16, 120, 0.95) 76.02%
+  );
+  // padding: 0 60px;
+ width: 100vw;   
+  display: flex;
+  align-items: stretch; /* 🔥 important */
+  overflow: hidden;
+  min-height: 520px;
+}
+
+.hero-grid {
+    display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  align-items: stretch;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  padding-left: 6vw;
+  max-width: 650px;
+  z-index: 2;
+ 
+
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  p {
+    max-width: 520px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+}
+
+.hero-right {
+  height: 100%; /* 🔥 full column height */
+  display: flex;
+  // justify-content: flex-end;
+}
+
+/* 🔥 FULL-HEIGHT SALESFORCE IMAGE */
+.image-wrapper {
+  position:absolute;
+  right:0;
+  height: 520px;      /* full hero height */
+  width: 720px;
+  max-width: 740px;
+  overflow: hidden;
+  clip-path: ellipse(95% 100% at 100% 50%);
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;      /* 🔥 fills wrapper */
+  object-fit: cover; /* no distortion */
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .careers-hero {
+    padding: 80px 24px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .image-wrapper {
+    height: 300px;
+    clip-path: none;
+    border-radius: 24px;
+    margin-top: 40px;
+  }
+}
+
+
+
+
 .career-section {
   font-family: "Inter", sans-serif !important;
   background: linear-gradient(
