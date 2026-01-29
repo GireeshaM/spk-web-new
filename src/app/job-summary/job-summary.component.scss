@@ -1,12 +1,12 @@
-.summary-container{
- background: rgba(249, 249, 255, 1) !important;
-
-}.summary-container {
+.summary-container {
+  background: rgba(249, 249, 255, 1) !important;
+}
+.summary-container {
   background: rgba(249, 249, 255, 1);
-//   padding: 60px 0;
+  //   padding: 60px 0;
 }
 .job-hero {
-  background-image: url('/assets/home/industries/industries-bgwave.png');
+  background-image: url("/assets/home/industries/industries-bgwave.png");
   background-repeat: no-repeat;
   background-position: left top;
   background-size: cover;
@@ -16,23 +16,26 @@
   object-fit: cover;
 }
 .job-list {
-  padding-left: 1.2rem;        /* aligns bullets nicely */
+  padding-left: 1.2rem; /* aligns bullets nicely */
   margin-bottom: 0;
 }
-.apply-btn{
-background: rgba(31, 12, 123, 1);
-margin-left: 30px;
+.apply-btn {
+  background: rgba(31, 12, 123, 1);
+  margin-left: 30px;
 }
 ////////////////////////////////
 /* ========= Animated Gradient Background ========= */
 
-
 /* ========= Floating Shapes ========= */
 
-
 @keyframes floatUpDown {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-35px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-35px);
+  }
 }
 
 /* ========= Keep Content Above BG ========= */
@@ -42,20 +45,30 @@ margin-left: 30px;
   z-index: 5;
 }
 
-
-
 .form-panel {
   animation: slideFromRight 1.2s ease forwards;
 }
 
 @keyframes slideFromLeft {
-  from { transform: translateX(-60px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
+  from {
+    transform: translateX(-60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 @keyframes slideFromRight {
-  from { transform: translateX(60px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
+  from {
+    transform: translateX(60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .border-dashed {
@@ -75,18 +88,15 @@ margin-left: 30px;
 .modal.show .modal-content {
   background-color: var(--modal-bg);
   border-radius: 1rem;
-  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-family: "Inter", "Segoe UI", sans-serif;
 }
 
 /* ================= TEXT ================= */
-
-
 
 /* Labels & custom text */
 .modal.show .form-label,
 .modal.show .text-color {
   color: var(--theme-purple);
- 
 }
 
 /* Upload resume title */
@@ -98,7 +108,6 @@ margin-left: 30px;
 
 .modal.show .form-control {
   border: 2px solid rgba(57, 10, 122, 0.35);
-
 }
 
 .modal.show .form-control:focus {
@@ -110,7 +119,7 @@ margin-left: 30px;
 
 .modal.show .border-dashed {
   border: 2px dashed;
- 
+
   border-radius: 1rem;
 }
 
@@ -120,4 +129,3 @@ margin-left: 30px;
   background-color: var(--theme-purple);
   border-color: var(--theme-purple);
 }
-

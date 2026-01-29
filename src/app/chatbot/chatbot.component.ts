@@ -84,8 +84,8 @@ export class ChatbotComponent {
           sender: 'user',
           text: 'Explore Sprintpark Services',
         });
-    this.simulateBotResponse(
-  `SprintPark excels in delivering high-quality services such as 
+        this.simulateBotResponse(
+          `SprintPark excels in delivering high-quality services such as 
   <a href="/it-consulting">IT Consulting</a>, 
   <a href="/staffing">Staffing</a>, 
   <a href="/project-management">Project Management</a>, and 
@@ -95,8 +95,8 @@ export class ChatbotComponent {
   <a href="/product">Interior Living</a>, 
   <a href="/product">LMS</a>, and 
   <a href="/product">Code Detector</a>—all designed to enhance enterprise efficiency and innovation.`,
-  true
-);
+          true,
+        );
 
         break;
 

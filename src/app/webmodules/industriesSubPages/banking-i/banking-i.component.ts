@@ -177,24 +177,22 @@ const sectionsData: Record<string, Section> = {
 export class BankingIComponent implements OnInit {
   route = inject(ActivatedRoute);
   currentSectionData!: Section;
- public ngOnInit(): void {
-  this.route.paramMap.subscribe((params) => {
-    const rawKey = params.get('section') || 'big-data';
+  public ngOnInit(): void {
+    this.route.paramMap.subscribe((params) => {
+      const rawKey = params.get('section') || 'big-data';
 
-    // Convert kebab-case → PascalCase
-   const sectionKey = rawKey
-  .split('-')
-  .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-  .join('');
+      // Convert kebab-case → PascalCase
+      const sectionKey = rawKey
+        .split('-')
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join('');
 
+      // Handle AI explicitly
+      const normalizedKey =
+        sectionKey.toLowerCase() === 'ai' ? 'AI' : sectionKey;
 
-    // Handle AI explicitly
-    const normalizedKey =
-      sectionKey.toLowerCase() === 'ai' ? 'AI' : sectionKey;
-
-    this.currentSectionData =
-      sectionsData[normalizedKey] ?? sectionsData['BigData'];
-  });
-}
-
+      this.currentSectionData =
+        sectionsData[normalizedKey] ?? sectionsData['BigData'];
+    });
+  }
 }

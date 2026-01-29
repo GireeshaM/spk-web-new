@@ -1,8 +1,13 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  ViewChild,
+  inject,
+} from '@angular/core';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -24,18 +29,35 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   ],
 })
 export class HeaderComponent {
-  isIndustriesOpen = false;
-  isProductsOpen = false;
-  isScrolled = false;
-  currentRoute = '';
+  private readonly router = inject(Router);
 
-  activeService: any = null;
-  defaultService = {
+  public isIndustriesOpen = false;
+  public isProductsOpen = false;
+  public isScrolled = false;
+  public currentRoute = '';
+
+  public activeService: any = null;
+
+  public readonly defaultService = {
     title: 'Technology that Transforms',
-    description: 'Technology today is more than just a tool—it\'s the core of smarter businesses. We build intelligent digital solutions that automate operations, enhance decision-making, and deliver real-time visibility across your entire ecosystem.',
-    image: 'https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-    link: '/software-service'
+    description:
+      'Technology today is more than just a tool—it’s the core of smarter businesses. We build intelligent digital solutions that automate operations, enhance decision-making, and deliver real-time visibility across your entire ecosystem.',
+    image:
+      'https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    link: '/software-service',
   };
+
+  @ViewChild('mainCard') public mainCard!: ElementRef;
+  @ViewChild('animLayer') public animLayer!: ElementRef;
+
+  /* ---------------- Scroll ---------------- */
+
+  @HostListener('window:scroll', [])
+  public onWindowScroll(): void {
+    this.isScrolled = window.scrollY > 100;
+  }
+
+  /* ---------------- Hover handlers ---------------- */
 
   public onServiceHover(service: any): void {
     this.activeService = service;
@@ -45,17 +67,6 @@ export class HeaderComponent {
     this.activeService = null;
   }
 
-  @ViewChild('mainCard') mainCard!: ElementRef;
-  @ViewChild('animLayer') animLayer!: ElementRef;
-
-  constructor(private router: Router) { }
-
-  @HostListener('window:scroll', [])
-  public onWindowScroll(): void {
-    this.isScrolled = window.scrollY > 100;
-  }
-
-  // Hover handlers for Industries
   public onIndustriesMouseEnter(): void {
     this.isIndustriesOpen = true;
   }
@@ -64,7 +75,6 @@ export class HeaderComponent {
     this.isIndustriesOpen = false;
   }
 
-  // Hover handlers for Products
   public onProductsMouseEnter(): void {
     this.isProductsOpen = true;
   }
@@ -72,6 +82,8 @@ export class HeaderComponent {
   public onProductsMouseLeave(): void {
     this.isProductsOpen = false;
   }
+
+  /* ---------------- Auth ---------------- */
 
   public loginAs(role: string): void {
     switch (role) {
@@ -82,23 +94,22 @@ export class HeaderComponent {
       case 'Employee':
         window.open('https://sprintpark.kredily.com/login/', '_blank');
         break;
+      default:
+        break;
     }
   }
 
-  // --- New method: scrollTo ---
+  /* ---------------- Navigation & Scroll ---------------- */
+
   public scrollTo(id: string): void {
-    // 1) Try to find element on current DOM and scroll
     const el = document.getElementById(id);
     if (el) {
-      // Smooth scroll and close offcanvas
       el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       this.closeOpenOffcanvas();
       return;
     }
 
-
     this.router.navigate(['/'], { fragment: id }).then(() => {
-
       setTimeout(() => {
         const elAfterNav = document.getElementById(id);
         if (elAfterNav) {
@@ -109,95 +120,99 @@ export class HeaderComponent {
     });
   }
 
-  // Helper to close Bootstrap offcanvas (works with or without bootstrap JS present)
   private closeOpenOffcanvas(): void {
-    const offcanvasEl = document.querySelector('.offcanvas.show') as HTMLElement | null;
-    if (!offcanvasEl) return;
+    const offcanvasEl = document.querySelector(
+      '.offcanvas.show',
+    ) as HTMLElement | null;
 
-    // If Bootstrap is loaded, use its Offcanvas API
-    const _win: any = window as any;
-    try {
-      if (_win && _win.bootstrap && _win.bootstrap.Offcanvas) {
-        const bsInstance =
-          _win.bootstrap.Offcanvas.getInstance(offcanvasEl) ?? new _win.bootstrap.Offcanvas(offcanvasEl);
-        bsInstance.hide();
-        return;
-      }
-    } catch (err) {
-      // fall through to manual fallback
-      // console.warn('Bootstrap Offcanvas close failed, falling back to manual teardown', err);
+    if (!offcanvasEl) {
+      return;
     }
 
-    // Manual fallback if Bootstrap is not available or API failed
+    const win = window as any;
+    if (win?.bootstrap?.Offcanvas) {
+      const instance =
+        win.bootstrap.Offcanvas.getInstance(offcanvasEl) ??
+        new win.bootstrap.Offcanvas(offcanvasEl);
+      instance.hide();
+      return;
+    }
+
     offcanvasEl.classList.remove('show');
     offcanvasEl.style.visibility = 'hidden';
     document.body.classList.remove('offcanvas-open');
 
-    // Remove backdrop(s)
-    const backdrops = Array.from(document.querySelectorAll('.offcanvas-backdrop'));
-    backdrops.forEach((b) => b.parentElement?.removeChild(b));
+    document
+      .querySelectorAll('.offcanvas-backdrop')
+      .forEach((b) => b.parentElement?.removeChild(b));
   }
 
-  services = [
+  /* ---------------- Data ---------------- */
+
+  public readonly services = [
     {
       title: 'Smart Rack',
       description: 'See Your Racks Smarter. Manage Them Faster',
       link: '/products/smart-rack',
-      image: 'assets/products/product-2.jpg'
+      image: 'assets/products/product-2.jpg',
     },
     {
       title: 'Interior Living',
       description: 'Design Collaboration Made Effortless',
       link: '/products/interior-living',
-      image: 'assets/products/product 1-a.jpg'
+      image: 'assets/products/product 1-a.jpg',
     },
     {
       title: 'LMS',
       description: 'Smarter Learning. Seamless Growth',
       link: '/products/lms',
-      image: 'assets/products/product-3-a.jpg'
+      image: 'assets/products/product-3-a.jpg',
     },
     {
       title: 'Code Detector',
       description: 'Scan Smart. Fix Fast. Ship Secure',
       link: '/products/code-detector',
-      image: 'assets/products/product-4.jpg'
+      image: 'assets/products/product-4.jpg',
     },
     {
       title: 'Project Management',
       description:
         'Project Management is a smart platform designed to help businesses and optimize every product.',
       link: '/services/project-management',
-      image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+      image:
+        'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg',
     },
     {
       title: 'Software Services',
       description:
         'Software Services is a smart platform designed to help businesses and optimize every product.',
       link: '/services/software-service',
-      image: 'https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+      image:
+        'https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg',
     },
     {
       title: 'Staffing',
       description:
         'Staffing is a smart platform designed to help businesses and optimize every product.',
       link: '/services/staffing',
-      image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+      image:
+        'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg',
     },
     {
       title: 'IT Consulting',
       description:
         'IT Consulting is a smart platform designed to help businesses and optimize every product.',
       link: '/services/it-consulting',
-      image: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+      image:
+        'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg',
     },
   ];
 
-  industries = [
+  public readonly industries = [
     {
-      title: ' IT & Telecommunications',
+      title: 'IT & Telecommunications',
       description:
-        ' Modernize connectivity, infrastructure, and digital operations.',
+        'Modernize connectivity, infrastructure, and digital operations.',
       link: '/industries/it-and-telecommunications',
     },
     {

@@ -18,7 +18,7 @@ export const appConfig: ApplicationConfig = {
       withInMemoryScrolling({
         scrollPositionRestoration: 'enabled',
         anchorScrolling: 'enabled',
-      })
+      }),
     ),
 
     // ✅ FIXED: SSR-friendly HttpClient

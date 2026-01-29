@@ -1,281 +1,295 @@
 [
   {
-    "jobId": "NET-001",
-    "title": "Networking Lead",
-    "location": "Hyderabad, India",
+    "jobId": "HR-001",
+    "title": "Senior HR Manager",
+    "location": "Kondapur, Hyderabad",
     "type": "Full Time",
-    "experience": "6+ Years",
-    "image": "assets/careers/networking-lead.jpg",
-    "summary": "We are seeking a skilled Networking Lead to oversee the design, implementation, and management of enterprise network infrastructure.",
+    "experience": "10+ Years",
+    "image": "assets/careers/Hr-Manager.jpg",
+    "summary": "We are seeking an experienced Senior HR Manager to act as the primary HR point of contact for US-based leadership teams. This role involves managing end-to-end HR operations, recruitment, employee relations, compliance, and performance management while ensuring strong alignment between offshore and onshore teams.",
     "responsibilities": [
-      "Lead LAN, WAN, WLAN, and data center networks.",
-      "Monitor network performance and troubleshoot issues.",
-      "Ensure network security and compliance.",
-      "Manage firewalls, VPNs, routing, and switching.",
-      "Plan and execute network upgrades.",
-      "Collaborate with cloud and security teams.",
-      "Mentor junior engineers.",
-      "Maintain network documentation."
+      "Act as the primary HR point of contact for onshore (US-based) leadership teams",
+      "Manage end-to-end recruitment, onboarding, employee relations, and HR compliance",
+      "Coordinate with US managers on hiring plans, workforce needs, and performance matters",
+      "Handle complete employee lifecycle management including onboarding, exits, documentation, and statutory compliance",
+      "Maintain HR policies, attendance tracking, leave management, payroll coordination, and grievance handling",
+      "Drive employee retention initiatives and manage performance review cycles",
+      "Ensure professional communication and seamless alignment between offshore and onshore teams",
+      "Support leadership with HR strategy, reporting, and organizational development initiatives"
     ],
     "requiredSkills": [
-      "Bachelor’s degree in IT or related field.",
-      "6+ years of networking experience.",
-      "Strong TCP/IP and routing knowledge.",
-      "Hands-on routing & switching.",
-      "Troubleshooting experience.",
-      "Good communication skills."
+      "10+ years of experience in HR Operations or Talent Management",
+      "Strong exposure to working with international (US/onshore) stakeholders",
+      "Excellent spoken and written English communication skills",
+      "Proven ability to confidently handle senior leadership and stakeholders",
+      "Strong knowledge of HR policies, compliance, recruitment, and employee engagement",
+      "Experience managing employee relations and performance frameworks",
+      "High standards of professionalism, discretion, ownership, and accountability"
     ],
     "preferredSkills": [
-      "Cloud networking experience.",
-      "Network security tools knowledge.",
-      "Automation tools exposure.",
-      "CCNP / CCIE certifications.",
-      "Enterprise environment experience."
+      "Experience working in IT, Technology, or Consulting organizations",
+      "Exposure to US employment practices and HR compliance",
+      "Experience with HRMS, payroll systems, and reporting tools",
+      "Ability to work independently in a fast-paced environment",
+      "Experience supporting distributed or global teams"
     ]
   },
- 
+
   {
-    "jobId": "NET-002",
-    "title": "Networking Lead",
-    "location": "USA",
+    "jobId": "FSD-001",
+    "title": "Full Stack Developer",
+    "location": "Kondapur, Hyderabad",
     "type": "Full Time",
-    "experience": "5–6 Years",
-    "image": "assets/careers/networking-lead.jpg",
-    "summary": "We are seeking a skilled and proactive Networking Lead to oversee the design, implementation, and maintenance of our organization’s network infrastructure.",
+    "experience": "3–6 Years",
+    "image": "assets/careers/fullstack developer.jpg",
+    "summary": "We are seeking a highly skilled and passionate Java Full Stack Developer who can contribute across all layers of the technology stack—from building scalable backend services using Java and Spring Boot to developing intuitive, responsive front-end interfaces using modern JavaScript frameworks. You will collaborate closely with architects, UI/UX designers, QA engineers, and product teams to deliver high-performance, production-ready applications.",
     "responsibilities": [
-      "Design and maintain enterprise networks",
-      "Ensure network security and reliability",
-      "Troubleshoot complex networking issues"
+      "Design and implement robust, secure, and scalable microservices using Java (8/11/17) and Spring Boot",
+      "Build RESTful APIs following industry best practices and standards",
+      "Develop reusable backend components and libraries for future use",
+      "Implement authentication and authorization using Spring Security, OAuth2, and JWT",
+      "Optimize application performance to ensure low-latency, high-availability systems",
+      "Develop responsive and user-friendly interfaces using React.js or Angular",
+      "Translate UI/UX designs into high-quality functional front-end components",
+      "Implement state management using Redux, Context API, NgRx, or similar tools",
+      "Ensure cross-browser compatibility and mobile responsiveness",
+      "Design efficient relational database schemas and write optimized SQL queries",
+      "Work with databases such as MySQL, PostgreSQL, or Oracle; exposure to MongoDB is a plus",
+      "Use Git for version control and follow proper branching strategies",
+      "Implement CI/CD pipelines using Jenkins, GitLab CI, Azure DevOps, or GitHub Actions",
+      "Containerize applications using Docker and support Kubernetes deployments",
+      "Write unit tests using JUnit, Mockito, Karma, or Jasmine",
+      "Participate in code reviews, architecture discussions, and Agile/Scrum ceremonies",
+      "Collaborate closely with QA teams to ensure high-quality, stable releases",
+      "Troubleshoot and resolve issues across the full application stack"
     ],
     "requiredSkills": [
-      "Strong networking fundamentals",
-      "Routing and switching experience",
-      "Firewall and VPN knowledge"
+      "Strong proficiency in Java (Core and Advanced concepts)",
+      "Expertise in Spring Boot, Spring MVC, Spring Security",
+      "Hands-on experience building REST APIs and microservices",
+      "Strong understanding of Hibernate/JPA and ORM concepts",
+      "Excellent SQL skills and database schema design experience",
+      "Hands-on experience with React.js or Angular",
+      "Strong JavaScript and TypeScript knowledge",
+      "Experience with HTML5, CSS3, Bootstrap or Tailwind CSS",
+      "Experience using Git, Maven, or Gradle",
+      "Hands-on experience with Docker",
+      "Experience working in Agile/Scrum development environments",
+      "Strong problem-solving and debugging skills",
+      "Excellent communication and collaboration abilities"
     ],
     "preferredSkills": [
-      "Cloud networking experience",
-      "Cisco certifications"
+      "Experience with Kubernetes deployments",
+      "Exposure to cloud platforms such as AWS, Azure, or GCP",
+      "Experience integrating third-party APIs and cloud services",
+      "Familiarity with CI/CD pipelines and DevOps practices",
+      "Experience with monitoring tools like ELK, Prometheus, or Grafana",
+      "Bachelor’s or Master’s degree in Computer Science, IT, or a related field"
     ]
   },
+
   {
     "jobId": "SF-001",
-    "title": "Salesforce Developer",
-    "location": "Hyderabad",
+    "title": "Senior Salesforce Developer",
+    "location": "Kondapur, Hyderabad",
     "type": "Full Time",
-    "experience": "5–6 Years",
+    "experience": "4+ Years",
     "image": "assets/careers/salesforce-developer.jpg",
-    "summary": "Meeting with project managers to determine CRM needs and developing customized solutions within the Salesforce platform.",
+    "summary": "We are looking for a skilled Senior Salesforce Developer with 4+ years of hands-on experience to design, develop, and maintain scalable Salesforce solutions. The role involves close collaboration with business and technical teams to deliver high-quality Salesforce implementations that improve operational efficiency and user experience.",
     "responsibilities": [
-      "Develop Salesforce applications",
-      "Customize Salesforce workflows",
-      "Integrate third-party systems"
+      "Design, develop, and deploy Salesforce solutions using Apex, Lightning Web Components (LWC), Visualforce, and declarative tools",
+      "Customize and configure Salesforce to support evolving business requirements",
+      "Build and maintain integrations with third-party systems using REST and SOAP APIs",
+      "Implement automation using Salesforce Flows, Process Builder, and triggers",
+      "Perform unit testing, debugging, and provide production support",
+      "Participate in code reviews and follow Salesforce best practices and governance standards",
+      "Collaborate with cross-functional teams including business analysts, QA, and architects",
+      "Contribute to system optimization, documentation, and continuous improvements"
     ],
     "requiredSkills": [
-      "Salesforce development experience",
-      "Apex and Lightning components",
-      "CRM knowledge"
+      "4+ years of hands-on Salesforce development experience",
+      "Strong knowledge of Apex, SOQL, SOSL, and Lightning Web Components",
+      "Experience with Salesforce Flows and declarative automation",
+      "Experience with Sales Cloud and/or Service Cloud",
+      "Understanding of Salesforce security, sharing model, and governor limits",
+      "Experience with integrations, data migration, and deployment tools",
+      "Familiarity with Git and CI/CD practices"
     ],
     "preferredSkills": [
-      "Salesforce certifications",
-      "CI/CD experience"
+      "Salesforce Platform Developer I certification",
+      "Experience with Experience Cloud, CPQ, or Marketing Cloud",
+      "Exposure to Agile/Scrum methodologies",
+      "Salesforce Platform Developer II or advanced certifications"
     ]
   },
+
   {
-  "jobId": "BSM-001",
-  "title": "Bench Sales Manager",
-  "location": "Hyderabad, India",
-  "type": "Full Time",
-  "experience": "5+ Years",
-  "image": "assets/careers/bench-sales-manager.jpg",
-  "summary": "We are looking for an experienced Bench Sales Manager to lead consultant marketing efforts, manage vendor relationships, and drive successful placements across the US IT staffing market.",
-  "responsibilities": [
-    "Manage and market bench consultants across multiple technologies and domains",
-    "Identify new client requirements and submit consultant profiles accordingly",
-    "Build and maintain strong relationships with vendors, clients, and implementation partners",
-    "Negotiate rates, contracts, and terms with clients and vendors",
-    "Track consultant availability, submissions, and placement status",
-    "Coordinate interviews and onboarding activities",
-    "Ensure compliance with US staffing policies and documentation standards",
-    "Mentor junior recruiters and sales coordinators"
-  ],
-  "requiredSkills": [
-    "Minimum 5 years of experience in US IT bench sales",
-    "Strong understanding of US staffing life cycle and hiring models",
-    "Excellent negotiation and communication skills",
-    "Hands-on experience with vendor management and client coordination",
-    "Ability to work in a fast-paced, target-driven environment"
-  ],
-  "preferredSkills": [
-    "Established vendor and client network",
-    "Experience using ATS and CRM tools",
-    "Knowledge of multiple IT skill sets and market trends",
-    "Leadership and team management experience"
-  ]
-},
+    "jobId": "AI-001",
+    "title": "Google ADK / Vertex AI Developer",
+    "location": "Kondapur, Hyderabad",
+    "type": "Full Time",
+    "experience": "2–5 Years",
+    "image": "assets/careers/google ad-ai developer.jpg",
+    "summary": "We are seeking skilled developers with hands-on experience in Google ADK, Vertex AI, and Python to join our AI/ML product development team. The ideal candidate will work closely with data scientists, ML engineers, and QA teams to design, build, and deploy intelligent, scalable AI-driven solutions on Google Cloud.",
+    "responsibilities": [
+      "Design, build, and deploy intelligent agents using Google ADK",
+      "Develop and integrate machine learning workflows using Google Vertex AI",
+      "Write, test, and optimize Python-based backend services and data pipelines",
+      "Collaborate with data scientists and ML engineers to implement end-to-end AI solutions",
+      "Deploy and manage ML models including training, testing, and production rollout",
+      "Integrate REST APIs and microservices for AI-enabled applications",
+      "Implement CI/CD pipelines to support automated builds and deployments",
+      "Ensure scalability, reliability, and performance of AI/ML systems",
+      "Participate in code reviews, debugging, and performance optimization",
+      "Work in an Agile environment with cross-functional teams"
+    ],
+    "requiredSkills": [
+      "2–5 years of hands-on experience in Python development",
+      "Strong experience with Google ADK (agent development, configuration, deployment)",
+      "Hands-on experience with Google Vertex AI (model training, pipelines, deployment)",
+      "Good understanding of REST APIs and microservices architecture",
+      "Experience with cloud-native deployments (GCP preferred)",
+      "Strong problem-solving and debugging skills",
+      "Understanding of CI/CD pipelines and DevOps practices"
+    ],
+    "preferredSkills": [
+      "Experience working on AI/ML production systems",
+      "Familiarity with data pipelines and ML workflows",
+      "Exposure to containerization tools like Docker",
+      "Knowledge of Kubernetes is a plus",
+      "Strong analytical and troubleshooting skills",
+      "Excellent communication and teamwork abilities",
+      "Ability to work in a fast-paced, agile environment"
+    ]
+  },
 
- {
-  "jobId": "BSM-002",
-  "title": "Bench Sales Manager",
-  "location": "USA",
-  "type": "Full Time",
-  "experience": "5+ Years",
-  "image": "assets/careers/bench-sales-manager.jpg",
-  "summary": "We are seeking an experienced Bench Sales Manager to lead IT consultant placements, strengthen client relationships, and drive consistent revenue across the US staffing market.",
-  "responsibilities": [
-    "Oversee end-to-end bench sales activities for US-based consultants",
-    "Market consultant profiles to direct clients, vendors, and implementation partners",
-    "Identify, analyze, and respond to client requirements in a timely manner",
-    "Negotiate billing rates, contract terms, and placement agreements",
-    "Build and maintain long-term relationships with clients and staffing vendors",
-    "Track consultant availability, submissions, interviews, and placements",
-    "Ensure compliance with US staffing policies and documentation standards",
-    "Collaborate with recruitment and delivery teams to achieve placement targets"
-  ],
-  "requiredSkills": [
-    "Minimum 5 years of hands-on experience in US IT bench sales",
-    "Strong understanding of US staffing processes and hiring models",
-    "Proven ability to independently close consultant placements",
-    "Excellent communication, negotiation, and client management skills",
-    "Ability to work in a fast-paced, performance-driven environment"
-  ],
-  "preferredSkills": [
-    "Established network of US clients and vendors",
-    "Experience working with MSPs and direct clients",
-    "Knowledge of ATS and CRM systems",
-    "Leadership and team mentoring experience"
-  ]
-},
+  {
+    "jobId": "FSD-002",
+    "title": "Full Stack Developer",
+    "location": "Kondapur, Hyderabad",
+    "type": "Full Time",
+    "experience": "3–6 Years",
+    "image": "assets/careers/fullstack developer.jpg",
+    "summary": "We are seeking a highly skilled and passionate Java Full Stack Developer to contribute across all layers of our technology stack. The ideal candidate will build scalable backend services using Java and Spring Boot, while also developing intuitive, responsive front-end applications using modern JavaScript frameworks.",
+    "responsibilities": [
+      "Design and implement secure, scalable microservices using Java 8/11/17 and Spring Boot",
+      "Build RESTful APIs following industry best practices",
+      "Develop reusable backend components and libraries",
+      "Implement authentication and authorization using Spring Security, OAuth2, and JWT",
+      "Optimize application performance for low-latency interactions",
+      "Develop responsive user interfaces using React.js or Angular",
+      "Convert UI/UX designs into high-quality functional components",
+      "Implement state management using Redux, Context API, or NgRx",
+      "Ensure cross-browser compatibility and mobile responsiveness",
+      "Design relational database schemas and write optimized SQL queries",
+      "Work with MySQL, PostgreSQL, or Oracle databases",
+      "Collaborate on CI/CD pipelines using Jenkins, GitLab CI, Azure DevOps, or GitHub Actions",
+      "Containerize applications using Docker and assist with Kubernetes deployments",
+      "Participate in code reviews, architecture discussions, and technical design sessions",
+      "Write unit tests using JUnit, Mockito, or Karma/Jasmine",
+      "Collaborate with QA teams to ensure high-quality releases",
+      "Work in Agile/Scrum environments and actively participate in sprint activities"
+    ],
+    "requiredSkills": [
+      "Strong proficiency in Java (Core and Advanced)",
+      "Hands-on experience with Spring Boot, Spring MVC, and Spring Security",
+      "Experience building REST APIs and microservices",
+      "Deep understanding of Hibernate/JPA and ORM concepts",
+      "Strong SQL skills and database schema design experience",
+      "Hands-on experience with React.js or Angular",
+      "Proficiency in JavaScript and TypeScript",
+      "Strong knowledge of HTML5, CSS3, and Bootstrap or Tailwind",
+      "Experience with Git and build tools like Maven or Gradle",
+      "Hands-on experience with Docker",
+      "Strong analytical, debugging, and problem-solving skills"
+    ],
+    "preferredSkills": [
+      "Experience with Kubernetes deployments",
+      "Exposure to cloud platforms such as AWS, Azure, or GCP",
+      "Experience integrating third-party APIs",
+      "Knowledge of CI/CD pipelines and DevOps practices",
+      "Familiarity with monitoring tools like ELK, Prometheus, or Grafana",
+      "Excellent communication and collaboration skills",
+      "Ability to work in a fast-paced, dynamic environment",
+      "Strong ownership mindset and attention to detail"
+    ]
+  },
 
- {
-  "jobId": "BSR-001",
-  "title": "Bench Sales Recruiter",
-  "location": "USA",
-  "type": "Full Time",
-  "experience": "5+ Years",
-  "image": "assets/careers/bench-sales-recruiter-us.jpg",
-  "summary": "We are seeking a motivated Bench Sales Recruiter to actively market IT consultants, manage client requirements, and support successful consultant placements across the US staffing market.",
-  "responsibilities": [
-    "Market bench consultants to direct clients, vendors, and implementation partners",
-    "Search, analyze, and respond to daily client requirements",
-    "Prepare and submit consultant profiles in alignment with client needs",
-    "Coordinate and schedule interviews between consultants and clients",
-    "Follow up with clients on submissions, interview feedback, and placement status",
-    "Maintain accurate records of submissions, interviews, and consultant availability",
-    "Work closely with recruiters and account managers to support placements",
-    "Ensure compliance with documentation and US staffing guidelines"
-  ],
-  "requiredSkills": [
-    "Minimum 5 years of experience in US IT bench sales or staffing",
-    "Strong understanding of US contract hiring processes",
-    "Excellent communication and interpersonal skills",
-    "Ability to manage multiple submissions and priorities simultaneously",
-    "Good knowledge of IT skill sets and market trends"
-  ],
-  "preferredSkills": [
-    "Established vendor and client contacts",
-    "Experience working with ATS or CRM systems",
-    "Strong negotiation and follow-up skills",
-    "Ability to work in a fast-paced, target-oriented environment"
-  ]
-},
+  {
+    "jobId": "BSR-001",
+    "title": "Bench Sales Recruiter (Freshers)",
+    "location": "Kondapur, Hyderabad",
+    "type": "Full Time",
+    "experience": "0–1 Years",
+    "image": "assets/careers/bench-sales-recruiter-us.jpg",
+    "summary": "We are looking for a Bench Sales Recruiter (Freshers) to join our US IT Staffing team. This role involves marketing bench consultants, coordinating with vendors and clients, and supporting successful placements in the US market. The ideal candidate should be comfortable working in US shift hours and possess strong communication and negotiation skills.",
+    "responsibilities": [
+      "Build and maintain strong relationships with vendors, clients, and staffing partners",
+      "Market H1B, OPT, CPT, EAD, Green Card, and US Citizen consultants to vendors and clients",
+      "Negotiate rates with vendors and consultants under supervision",
+      "Maintain and expand the database of potential vendors and clients",
+      "Proactively identify daily requirements and submit suitable consultant profiles",
+      "Coordinate with consultants regarding availability, submissions, and interview schedules",
+      "Follow up on submissions, interview feedback, and placement status",
+      "Work closely with senior recruiters and account managers to achieve staffing targets"
+    ],
+    "requiredSkills": [
+      "0–1 years of experience in US IT bench sales or staffing",
+      "Excellent knowledge of US visa classifications and employment terms",
+      "Strong verbal and written communication skills",
+      "Good negotiation and interpersonal abilities",
+      "Ability to work in a fast-paced, results-driven environment",
+      "Willingness to work US Shift (Night Shift – 6:30 PM to 3:30 AM IST)"
+    ],
+    "preferredSkills": [
+      "Exposure to US IT staffing and recruitment processes",
+      "Basic understanding of IT technologies and skill sets",
+      "Experience using ATS or CRM tools",
+      "Strong learning attitude and adaptability",
+      "Ability to work under pressure and meet targets"
+    ]
+  },
 
-{
-  "jobId": "SMH-001",
-  "title": "Sales and Marketing Head",
-  "location": "Hyderabad, India",
-  "type": "Full Time",
-  "experience": "8+ Years",
-  "image": "assets/careers/sales-head.jpg",
-  "summary": "We are seeking an experienced Sales and Marketing Head to define growth strategies, lead high-performing teams, and strengthen the company’s market presence while driving sustainable revenue growth.",
-  "responsibilities": [
-    "Define and execute sales and marketing strategies aligned with business goals",
-    "Lead and mentor sales and marketing teams to achieve revenue targets",
-    "Develop go-to-market plans for new services and offerings",
-    "Build strong relationships with key clients, partners, and stakeholders",
-    "Oversee brand positioning, digital campaigns, and demand generation initiatives",
-    "Analyze market trends, customer needs, and competitive landscape",
-    "Track performance metrics and optimize strategies for continuous improvement",
-    "Collaborate with leadership to align sales, marketing, and delivery functions"
-  ],
-  "requiredSkills": [
-    "8+ years of experience in sales and marketing leadership roles",
-    "Strong strategic planning and execution capabilities",
-    "Proven track record in revenue growth and market expansion",
-    "Excellent leadership, communication, and presentation skills",
-    "Ability to manage cross-functional teams and initiatives"
-  ],
-  "preferredSkills": [
-    "Background in IT services or technology-driven organizations",
-    "Experience with digital marketing and brand management",
-    "Strong understanding of enterprise sales cycles",
-    "Exposure to global or US market operations"
-  ]
-}
-,
- {
-  "jobId": "DM-001",
-  "title": "Digital Marketing Executive",
-  "location": "Hyderabad, India",
-  "type": "Full Time",
-  "experience": "1–3 Years",
-  "image": "assets/careers/digital-marketing.jpg",
-  "summary": "We are looking for a Digital Marketing Executive to plan, execute, and optimize online marketing campaigns that increase brand visibility, drive engagement, and support business growth.",
-  "responsibilities": [
-    "Plan and execute digital marketing campaigns across search, social, and email channels",
-    "Manage SEO and SEM activities to improve website traffic and rankings",
-    "Create, schedule, and monitor content for social media platforms",
-    "Analyze campaign performance and generate reports using analytics tools",
-    "Collaborate with design and content teams to ensure consistent brand messaging",
-    "Monitor market trends and identify new digital marketing opportunities",
-    "Support lead generation and conversion optimization initiatives"
-  ],
-  "requiredSkills": [
-    "1–3 years of experience in digital marketing or related roles",
-    "Basic understanding of SEO, SEM, and social media marketing",
-    "Familiarity with analytics tools such as Google Analytics",
-    "Strong communication and coordination skills",
-    "Ability to manage multiple campaigns and deadlines"
-  ],
-  "preferredSkills": [
-    "Experience with marketing automation platforms",
-    "Hands-on knowledge of paid advertising campaigns",
-    "Content marketing or copywriting experience",
-    "Exposure to email marketing tools and CRM systems"
-  ]
-}
-,
- {
-  "jobId": "UX-001",
-  "title": "UI/UX Designer",
-  "location": "Hyderabad, India",
-  "type": "Full Time",
-  "experience": "5+ Years",
-  "image": "assets/careers/ui-ux.jpg",
-  "summary": "We are seeking an experienced UI/UX Designer to create intuitive, visually appealing, and user-centric digital experiences across web and mobile platforms.",
-  "responsibilities": [
-    "Design wireframes, mockups, and interactive prototypes for web and mobile applications",
-    "Conduct user research, usability testing, and user interviews to gather insights",
-    "Translate user requirements and business goals into effective design solutions",
-    "Collaborate with product managers, developers, and stakeholders throughout the design process",
-    "Ensure consistency in design language, components, and user flows",
-    "Iterate on designs based on feedback, testing results, and analytics",
-    "Stay up to date with UI/UX trends, tools, and best practices"
-  ],
-  "requiredSkills": [
-    "5+ years of hands-on experience in UI/UX design",
-    "Strong portfolio demonstrating user-centered design solutions",
-    "Proficiency with design tools such as Figma, Adobe XD, or similar",
-    "Good understanding of usability principles and accessibility standards",
-    "Ability to communicate design concepts clearly to technical and non-technical teams"
-  ],
-  "preferredSkills": [
-    "Experience designing SaaS or enterprise applications",
-    "Familiarity with design systems and component libraries",
-    "Basic understanding of front-end technologies (HTML, CSS, JavaScript)",
-    "Experience working in agile or product-driven environments"
-  ]
-}
-
+  {
+    "jobId": "AI-002",
+    "title": "AI Specialist / Machine Learning Engineer",
+    "location": "Hyderabad, India (On-site)",
+    "type": "Full Time",
+    "experience": "3–7 Years",
+    "image": "assets/careers/AI Specialist.jpg",
+    "summary": "We are seeking a skilled and forward-thinking AI Specialist to design, develop, and deploy advanced AI/ML solutions including large language models, multimodal systems, and generative AI. This role involves building intelligent, production-ready systems that automate workflows and unlock insights at scale.",
+    "responsibilities": [
+      "Design and implement machine learning models for NLP, computer vision, predictive analytics, and generative AI",
+      "Fine-tune and deploy large language models using Hugging Face Transformers, OpenAI APIs, and Anthropic Claude",
+      "Develop Retrieval-Augmented Generation (RAG) pipelines using LangChain, LlamaIndex, and vector databases",
+      "Productionize ML workflows using MLflow, TensorFlow Extended (TFX), or cloud ML pipelines",
+      "Integrate generative AI into business applications including chat interfaces and Copilot-style features",
+      "Collaborate with data scientists, software engineers, and product managers to build scalable AI-powered products",
+      "Monitor, evaluate, and optimize model performance including fairness, explainability, and drift detection",
+      "Apply explainability techniques such as SHAP and LIME to improve transparency and trust",
+      "Research emerging AI trends and evaluate their applicability to real-world business problems",
+      "Ensure scalable, reliable deployment using Docker, Kubernetes, and cloud-native architectures"
+    ],
+    "requiredSkills": [
+      "Strong proficiency in Python",
+      "Hands-on experience with PyTorch, TensorFlow, or JAX",
+      "Experience building and deploying machine learning models in production environments",
+      "Strong understanding of LLMs, prompt engineering, and fine-tuning techniques",
+      "Experience with LangChain, LlamaIndex, and vector databases",
+      "Familiarity with OpenAI, Anthropic Claude, Mistral, or Cohere platforms",
+      "Experience with RESTful APIs, FastAPI, and microservices architectures",
+      "Strong analytical thinking, debugging, and problem-solving skills",
+      "Excellent communication and collaboration abilities"
+    ],
+    "preferredSkills": [
+      "Experience with Google Vertex AI, AWS SageMaker, or Azure ML",
+      "Hands-on experience with MLflow, DVC, Airflow, or Ray",
+      "Knowledge of vector databases such as Pinecone, Weaviate, Qdrant, or FAISS",
+      "Experience with multimodal AI tools such as CLIP, Whisper, SAM, or generative media models",
+      "Contributions to open-source AI projects or academic publications",
+      "Experience with multi-agent frameworks such as AutoGPT or OpenDevin",
+      "Knowledge of synthetic data generation and augmentation techniques",
+      "Exposure to large-scale data platforms such as Snowflake, BigQuery, or Delta Lake"
+    ]
+  }
 ]
- 
- 
