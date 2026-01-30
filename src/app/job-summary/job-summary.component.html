@@ -110,7 +110,7 @@
               </div>
 
               <!-- FORM -->
-              <form [formGroup]="applyForm" (ngSubmit)="submitForm($event)">
+              <form [formGroup]="applyForm" (ngSubmit)="submitForm($event)"enctype="multipart/form-data">
                 <!-- FULL NAME -->
                 <div class="mb-3">
                   <label class="form-label fw-semibold text-color">
@@ -162,13 +162,13 @@
                       Phone Number <span style="color: red">*</span>
                     </label>
                     <input
-                      type="text"
-                      maxlength="10"
-                      class="form-control form-control-lg rounded-3"
-                      formControlName="phoneNumber"
-                      name="phoneNumber"
-                      1
-                    />
+  type="text"
+  maxlength="10"
+  class="form-control form-control-lg rounded-3"
+  formControlName="phoneNumber"
+  name="phoneNumber"
+/>
+
 
                     <small
                       class="text-danger"
@@ -212,14 +212,15 @@
                     <label
                       class="border border-2 border-dashed rounded-4 p-4 d-flex flex-column justify-content-center h-100 text-center bg-light cursor-pointer"
                     >
-                      <input
-                        type="file"
-                        formControlName="resume"
-                        name="resume"
-                        hidden
-                        accept="application/pdf"
-                        (change)="onFileChange($event)"
-                      />
+                 <input
+  type="file"
+  name="resume"
+  accept=".pdf"
+  (change)="onFileChange($event)"
+  required
+/>
+
+
 
                       <strong class="text-color fs-6">
                         Upload Your Resume <span style="color: red">*</span>

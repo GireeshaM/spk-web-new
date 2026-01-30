@@ -16,14 +16,22 @@ import {
   animate,
 } from '@angular/animations';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 
 import { WhatCompComponent } from '../webmodules/utilities/mainServicesUtil/what-comp/what-comp.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-careers',
   standalone: true,
-  imports: [CommonModule, WhatCompComponent, RouterLink],
+ imports: [CommonModule,
+    WhatCompComponent,
+    RouterLink,
+    FormsModule,
+    ToastModule],
+    providers: [MessageService],
   templateUrl: './careers.component.html',
   styleUrls: ['./careers.component.scss'],
   animations: [
@@ -49,6 +57,7 @@ import { WhatCompComponent } from '../webmodules/utilities/mainServicesUtil/what
 })
 export class CareersComponent implements AfterViewInit, OnDestroy {
   /* ================= PLATFORM ================= */
+    public searchText = '';
   private readonly platformId = inject(PLATFORM_ID);
 
   /* ================= VIEW ================= */
@@ -72,6 +81,38 @@ export class CareersComponent implements AfterViewInit, OnDestroy {
     btn2: false,
     btn3: false,
   };
+   constructor(
+    private router: Router,
+   private messageService: MessageService) {}
+
+ public onSearch(): void {
+  const keyword = this.searchText.trim().toLowerCase();
+
+  if (!keyword) {
+    this.messageService.add({
+      severity: 'warn',
+      summary: 'Search Required',
+      detail: 'Please enter a job title to search',
+    });
+    return;
+  }
+
+  const matchedJob = this.jobs.find(job =>
+    job.title.toLowerCase().includes(keyword)
+  );
+
+  if (!matchedJob) {
+    this.messageService.add({
+      severity: 'error',
+      summary: 'Job Not Found',
+      detail: 'No job matches your search',
+    });
+    return;
+  }
+
+  // ✅ Redirect when matched
+  this.router.navigate(['/job-summary', matchedJob.jobId]);
+}
 
   /* ================= LIFECYCLE ================= */
   public ngAfterViewInit(): void {

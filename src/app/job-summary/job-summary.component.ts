@@ -16,6 +16,7 @@ import emailjs from '@emailjs/browser';
   selector: 'app-job-summary',
   standalone: true,
   imports: [CommonModule, RouterModule, ReactiveFormsModule, ToastModule],
+  providers: [MessageService],
   templateUrl: './job-summary.component.html',
   styleUrl: './job-summary.component.scss',
 })
@@ -29,6 +30,8 @@ export class JobSummaryComponent implements OnInit {
   /* ================= STATE ================= */
   public job!: Job;
   public applyForm!: FormGroup;
+
+  public selectedFile: File | null = null;
   public selectedFileName = '';
 
   /* ================= LIFECYCLE ================= */
@@ -62,7 +65,6 @@ export class JobSummaryComponent implements OnInit {
         '',
         [Validators.required, Validators.min(0), Validators.max(50)],
       ],
-      resume: [null, Validators.required],
     });
   }
 
@@ -70,36 +72,43 @@ export class JobSummaryComponent implements OnInit {
   public onFileChange(event: Event): void {
     const input = event.target as HTMLInputElement;
 
-    if (!input.files || input.files.length === 0) {
-      return;
-    }
+    if (!input.files || input.files.length === 0) return;
 
     const file = input.files[0];
 
     if (file.type !== 'application/pdf') {
-      this.applyForm.get('resume')?.setErrors({ fileType: true });
-      this.selectedFileName = '';
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Invalid File',
+        detail: 'Only PDF files are allowed',
+      });
+      input.value = '';
       return;
     }
 
-    const maxSize = 5 * 1024 * 1024;
-    if (file.size > maxSize) {
-      this.applyForm.get('resume')?.setErrors({ fileSize: true });
-      this.selectedFileName = '';
+    if (file.size > 2 * 1024 * 1024) {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'File Too Large',
+        detail: 'Max file size is 2MB',
+      });
+      input.value = '';
       return;
     }
-
+    this.selectedFile = file;
     this.selectedFileName = file.name;
-    this.applyForm.patchValue({ resume: file });
-    this.applyForm.get('resume')?.updateValueAndValidity();
   }
 
   /* ================= SUBMIT ================= */
   public submitForm(e: Event): void {
     e.preventDefault();
 
-    if (this.applyForm.invalid) {
-      this.applyForm.markAllAsTouched();
+    if (this.applyForm.invalid || !this.selectedFile) {
+      this.messageService.add({
+        severity: 'warn',
+        summary: 'Incomplete Form',
+        detail: 'Please fill all fields and upload resume',
+      });
       return;
     }
 
@@ -108,25 +117,28 @@ export class JobSummaryComponent implements OnInit {
         'service_j07jrmv',
         'template_iys8t94',
         e.target as HTMLFormElement,
-        'RqHEh2bb5Kq3zVphS',
+        'RqHEh2bb5Kq3zVphS'
       )
       .then(() => {
         this.messageService.add({
           severity: 'success',
-          summary: 'Message Sent',
-          detail: 'Your contact shared successfully.',
+          summary: 'Application Sent',
+          detail: 'Your application was submitted successfully',
         });
 
         this.applyForm.reset();
+        this.selectedFile = null;
+        this.selectedFileName = '';
       })
       .catch(() => {
         this.messageService.add({
           severity: 'error',
           summary: 'Failed',
-          detail: 'Something went wrong. Please try again.',
+          detail: 'Email service error. Try again later.',
         });
       });
   }
+
   /* ================= LOAD JOB ================= */
   private loadJob(jobId: string): void {
     this.jobService.getJobById(jobId).subscribe({
