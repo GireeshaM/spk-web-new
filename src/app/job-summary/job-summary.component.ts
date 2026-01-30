@@ -8,11 +8,14 @@ import {
   Validators,
 } from '@angular/forms';
 import { JobService, Job } from '../services/job.service';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
+import emailjs from '@emailjs/browser';
 
 @Component({
   selector: 'app-job-summary',
   standalone: true,
-  imports: [CommonModule, RouterModule, ReactiveFormsModule],
+  imports: [CommonModule, RouterModule, ReactiveFormsModule, ToastModule],
   templateUrl: './job-summary.component.html',
   styleUrl: './job-summary.component.scss',
 })
@@ -21,6 +24,7 @@ export class JobSummaryComponent implements OnInit {
   private readonly route = inject(ActivatedRoute);
   private readonly fb = inject(FormBuilder);
   private readonly jobService = inject(JobService);
+  private readonly messageService = inject(MessageService);
 
   /* ================= STATE ================= */
   public job!: Job;
@@ -50,7 +54,10 @@ export class JobSummaryComponent implements OnInit {
           Validators.pattern(/^[a-zA-Z0-9._%+-]+@gmail\.com$/),
         ],
       ],
-      phone: ['', [Validators.required, Validators.pattern(/^[0-9]{10}$/)]],
+      phoneNumber: [
+        '',
+        [Validators.required, Validators.pattern(/^[0-9]{10}$/)],
+      ],
       experience: [
         '',
         [Validators.required, Validators.min(0), Validators.max(50)],
@@ -88,21 +95,38 @@ export class JobSummaryComponent implements OnInit {
   }
 
   /* ================= SUBMIT ================= */
-  public submitForm(): void {
-    if (this.applyForm.invalid || !this.job) {
+  public submitForm(e: Event): void {
+    e.preventDefault();
+
+    if (this.applyForm.invalid) {
       this.applyForm.markAllAsTouched();
       return;
     }
 
-    const payload = {
-      ...this.applyForm.value,
-      jobId: this.job.jobId,
-    };
+    emailjs
+      .sendForm(
+        'service_j07jrmv',
+        'template_iys8t94',
+        e.target as HTMLFormElement,
+        'RqHEh2bb5Kq3zVphS',
+      )
+      .then(() => {
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Message Sent',
+          detail: 'Your contact shared successfully.',
+        });
 
-    // keep payload intentionally (future API call)
-    void payload;
+        this.applyForm.reset();
+      })
+      .catch(() => {
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Failed',
+          detail: 'Something went wrong. Please try again.',
+        });
+      });
   }
-
   /* ================= LOAD JOB ================= */
   private loadJob(jobId: string): void {
     this.jobService.getJobById(jobId).subscribe({

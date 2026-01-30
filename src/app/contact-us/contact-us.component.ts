@@ -9,6 +9,7 @@ import {
 import { RouterLink } from '@angular/router';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
+import emailjs from '@emailjs/browser';
 
 /* ================= FAQ INTERFACE ================= */
 export interface FaqItem {
@@ -38,7 +39,7 @@ export class ContactUsComponent implements OnInit {
     this.contactForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
-      subject: ['', [Validators.required, Validators.minLength(3)]],
+      // subject: ['', [Validators.required, Validators.minLength(3)]],
       phone: [
         '',
         [
@@ -50,23 +51,37 @@ export class ContactUsComponent implements OnInit {
     });
   }
 
-  /* ================= FORM SUBMIT ================= */
-  public submitForm(): void {
+  public submitForm(e: Event): void {
+    e.preventDefault();
+
     if (this.contactForm.invalid) {
       this.contactForm.markAllAsTouched();
       return;
     }
 
-    const payload = this.contactForm.value;
-    void payload; // prevents unused-var lint error
+    emailjs
+      .sendForm(
+        'service_j07jrmv',
+        'template_v0oy7ti',
+        e.target as HTMLFormElement,
+        'RqHEh2bb5Kq3zVphS',
+      )
+      .then(() => {
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Message Sent',
+          detail: 'Your contact shared successfully.',
+        });
 
-    this.messageService.add({
-      severity: 'success',
-      summary: 'Message Sent',
-      detail: 'We will get back to you shortly.',
-    });
-
-    this.contactForm.reset();
+        this.contactForm.reset();
+      })
+      .catch(() => {
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Failed',
+          detail: 'Something went wrong. Please try again.',
+        });
+      });
   }
 
   /* ================= FAQ DATA ================= */
