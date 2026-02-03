@@ -211,24 +211,24 @@
 
         <!-- Search box -->
         <form class="d-flex border rounded p-2" (ngSubmit)="onSearch()">
-  <input
-    type="text"
-    class="form-control me-2 border-0"
-    placeholder="Enter your job role"
-    [(ngModel)]="searchText"
-    name="searchText"
-    required
-  />
+          <input
+            type="text"
+            class="form-control me-2 border-0"
+            placeholder="Enter your job role"
+            [(ngModel)]="searchText"
+            name="searchText"
+            required
+          />
 
-  <button
-    class="btn px-4 text-white"
-    style="background-color: #3c28a0; border-radius: 0.75rem"
-    type="submit"
-  >
-    Search
-  </button>
-</form>
-<p-toast position="top-right"></p-toast>
+          <button
+            class="btn px-4 text-white"
+            style="background-color: #3c28a0; border-radius: 0.75rem"
+            type="submit"
+          >
+            Search
+          </button>
+        </form>
+        <p-toast position="top-right"></p-toast>
       </div>
 
       <!-- Right Image -->

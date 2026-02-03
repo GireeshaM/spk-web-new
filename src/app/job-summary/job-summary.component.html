@@ -110,154 +110,85 @@
               </div>
 
               <!-- FORM -->
-              <form [formGroup]="applyForm" (ngSubmit)="submitForm($event)"enctype="multipart/form-data">
-                <!-- FULL NAME -->
-                <div class="mb-3">
-                  <label class="form-label fw-semibold text-color">
-                    Full Name <span style="color: red">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    class="form-control form-control-lg rounded-3"
-                    formControlName="fullName"
-                    name="fullName"
-                  />
-                  <small
-                    class="text-danger"
-                    *ngIf="
-                      applyForm.get('fullName')?.touched &&
-                      applyForm.get('fullName')?.invalid
-                    "
-                  >
-                    Name must contain only letters
-                  </small>
-                </div>
+              <div class="container py-5" *ngIf="job">
+                <h2 class="mb-3">{{ job.title }}</h2>
+                <p>{{ job.summary }}</p>
 
-                <!-- EMAIL + PHONE -->
-                <div class="row g-3 mb-3">
-                  <div class="col-md-6">
-                    <label class="form-label fw-semibold text-color">
-                      Email Address <span style="color: red">*</span>
-                    </label>
+                <form
+                  [formGroup]="applyForm"
+                  (ngSubmit)="submitForm($event)"
+                  enctype="multipart/form-data"
+                  class="mt-4"
+                >
+                  <!-- FULL NAME -->
+                  <div class="mb-3">
+                    <label class="form-label">Full Name *</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      formControlName="fullName"
+                      name="fullName"
+                    />
+                  </div>
+
+                  <!-- EMAIL -->
+                  <div class="mb-3">
+                    <label class="form-label">Email *</label>
                     <input
                       type="email"
-                      class="form-control form-control-lg rounded-3"
+                      class="form-control"
                       formControlName="email"
                       name="email"
                     />
-
-                    <small
-                      class="text-danger"
-                      *ngIf="
-                        applyForm.get('email')?.touched &&
-                        applyForm.get('email')?.invalid
-                      "
-                    >
-                      Enter a valid email address
-                    </small>
                   </div>
 
-                  <div class="col-md-6">
-                    <label class="form-label fw-semibold text-color">
-                      Phone Number <span style="color: red">*</span>
-                    </label>
+                  <!-- PHONE -->
+                  <div class="mb-3">
+                    <label class="form-label">Phone *</label>
                     <input
-  type="text"
-  maxlength="10"
-  class="form-control form-control-lg rounded-3"
-  formControlName="phoneNumber"
-  name="phoneNumber"
-/>
-
-
-                    <small
-                      class="text-danger"
-                      *ngIf="
-                        applyForm.get('phone')?.touched &&
-                        applyForm.get('phone')?.invalid
-                      "
-                    >
-                      Must be exactly 10 digits
-                    </small>
+                      type="text"
+                      maxlength="10"
+                      class="form-control"
+                      formControlName="phoneNumber"
+                      name="phoneNumber"
+                    />
                   </div>
-                </div>
 
-                <!-- EXPERIENCE + RESUME -->
-                <div class="row g-3 mb-4 align-items-stretch">
                   <!-- EXPERIENCE -->
-                  <div class="col-md-4">
-                    <label class="form-label fw-semibold text-color">
-                      Experience (In Months) <span style="color: red">*</span>
-                    </label>
+                  <div class="mb-3">
+                    <label class="form-label">Experience (Months) *</label>
                     <input
                       type="number"
-                      class="form-control form-control-lg rounded-3"
+                      class="form-control"
                       formControlName="experience"
                       name="experience"
                     />
+                  </div>
 
-                    <small
-                      class="text-color"
-                      *ngIf="
-                        applyForm.get('experience')?.touched &&
-                        applyForm.get('experience')?.invalid
-                      "
+                  <!-- RESUME -->
+                  <div class="mb-3">
+                    <label class="form-label"
+                      >Upload Resume (PDF, max 2MB) *</label
                     >
-                      Enter valid years of experience
+                    <input
+                      type="file"
+                      name="resume"
+                      accept=".pdf"
+                      (change)="onFileChange($event)"
+                      required
+                      class="form-control"
+                    />
+                    <small class="text-success" *ngIf="selectedFileName">
+                      {{ selectedFileName }}
                     </small>
                   </div>
 
-                  <!-- RESUME UPLOAD -->
-                  <div class="col-md-8">
-                    <label
-                      class="border border-2 border-dashed rounded-4 p-4 d-flex flex-column justify-content-center h-100 text-center bg-light cursor-pointer"
-                    >
-                 <input
-  type="file"
-  name="resume"
-  accept=".pdf"
-  (change)="onFileChange($event)"
-  required
-/>
-
-
-
-                      <strong class="text-color fs-6">
-                        Upload Your Resume <span style="color: red">*</span>
-                      </strong>
-
-                      <small class="text-muted">
-                        PDF, DOC, DOCX • Max 5MB
-                      </small>
-
-                      <small class="text-success mt-1" *ngIf="selectedFileName">
-                        {{ selectedFileName }}
-                      </small>
-
-                      <small
-                        class="text-danger mt-1"
-                        *ngIf="
-                          applyForm.get('resume')?.touched &&
-                          applyForm.get('resume')?.invalid
-                        "
-                      >
-                        Resume is required
-                      </small>
-                    </label>
-                  </div>
-                </div>
-
-                <!-- SUBMIT -->
-                <div class="text-end">
-                  <button
-                    type="submit"
-                    class="btn btn-primary px-4 py-2"
-                    [disabled]="applyForm.invalid"
-                  >
+                  <!-- SUBMIT -->
+                  <button type="submit" class="btn btn-primary w-100">
                     Submit Application
                   </button>
-                </div>
-              </form>
+                </form>
+              </div>
             </div>
           </div>
         </div>

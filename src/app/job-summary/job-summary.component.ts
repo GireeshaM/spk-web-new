@@ -117,7 +117,7 @@ export class JobSummaryComponent implements OnInit {
         'service_j07jrmv',
         'template_iys8t94',
         e.target as HTMLFormElement,
-        'RqHEh2bb5Kq3zVphS'
+        'RqHEh2bb5Kq3zVphS',
       )
       .then(() => {
         this.messageService.add({

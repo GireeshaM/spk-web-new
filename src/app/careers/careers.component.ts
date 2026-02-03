@@ -26,12 +26,14 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-careers',
   standalone: true,
- imports: [CommonModule,
+  imports: [
+    CommonModule,
     WhatCompComponent,
     RouterLink,
     FormsModule,
-    ToastModule],
-    providers: [MessageService],
+    ToastModule,
+  ],
+  providers: [MessageService],
   templateUrl: './careers.component.html',
   styleUrls: ['./careers.component.scss'],
   animations: [
@@ -56,8 +58,10 @@ import { FormsModule } from '@angular/forms';
   ],
 })
 export class CareersComponent implements AfterViewInit, OnDestroy {
+  private router = inject(Router);
+  private messageService = inject(MessageService);
   /* ================= PLATFORM ================= */
-    public searchText = '';
+  public searchText = '';
   private readonly platformId = inject(PLATFORM_ID);
 
   /* ================= VIEW ================= */
@@ -81,38 +85,35 @@ export class CareersComponent implements AfterViewInit, OnDestroy {
     btn2: false,
     btn3: false,
   };
-   constructor(
-    private router: Router,
-   private messageService: MessageService) {}
 
- public onSearch(): void {
-  const keyword = this.searchText.trim().toLowerCase();
+  public onSearch(): void {
+    const keyword = this.searchText.trim().toLowerCase();
 
-  if (!keyword) {
-    this.messageService.add({
-      severity: 'warn',
-      summary: 'Search Required',
-      detail: 'Please enter a job title to search',
-    });
-    return;
+    if (!keyword) {
+      this.messageService.add({
+        severity: 'warn',
+        summary: 'Search Required',
+        detail: 'Please enter a job title to search',
+      });
+      return;
+    }
+
+    const matchedJob = this.jobs.find((job) =>
+      job.title.toLowerCase().includes(keyword),
+    );
+
+    if (!matchedJob) {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Job Not Found',
+        detail: 'No job matches your search',
+      });
+      return;
+    }
+
+    // ✅ Redirect when matched
+    this.router.navigate(['/job-summary', matchedJob.jobId]);
   }
-
-  const matchedJob = this.jobs.find(job =>
-    job.title.toLowerCase().includes(keyword)
-  );
-
-  if (!matchedJob) {
-    this.messageService.add({
-      severity: 'error',
-      summary: 'Job Not Found',
-      detail: 'No job matches your search',
-    });
-    return;
-  }
-
-  // ✅ Redirect when matched
-  this.router.navigate(['/job-summary', matchedJob.jobId]);
-}
 
   /* ================= LIFECYCLE ================= */
   public ngAfterViewInit(): void {
