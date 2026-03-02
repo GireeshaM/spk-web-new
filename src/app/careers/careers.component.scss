@@ -10,66 +10,29 @@
     rgba(26, 9, 81, 0.95) 2.22%,
     rgba(75, 16, 120, 0.95) 76.02%
   );
-  // padding: 0 60px;
  width: 100vw;   
-  display: flex;
-  align-items: stretch; /* 🔥 important */
-  overflow: hidden;
   min-height: 520px;
 }
 
 .hero-grid {
-    display: grid;
+    // display: grid;
   grid-template-columns: 1.3fr 1fr;
-  align-items: stretch;
+ min-height: 520px;
 }
 
 .hero-left {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: #fff;
   padding-left: 6vw;
-  max-width: 650px;
   z-index: 2;
- 
-
-  h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-  }
-
-  p {
-    max-width: 520px;
-    font-size: 1.1rem;
-    line-height: 1.7;
-  }
-}
-
-.hero-right {
-  height: 100%; /* 🔥 full column height */
-  display: flex;
-  // justify-content: flex-end;
 }
 
 /* 🔥 FULL-HEIGHT SALESFORCE IMAGE */
 .image-wrapper {
-  position:absolute;
   right:0;
   height: 520px;      /* full hero height */
   width: 720px;
   max-width: 740px;
-  overflow: hidden;
   clip-path: ellipse(95% 100% at 100% 50%);
 }
-
-.image-wrapper img {
-  width: 100%;
-  height: 100%;      /* 🔥 fills wrapper */
-  object-fit: cover; /* no distortion */
-}
-
 /* Responsive */
 @media (max-width: 992px) {
   .careers-hero {
@@ -87,12 +50,7 @@
     margin-top: 40px;
   }
 }
-
-
-
-
 .career-section {
-  font-family: "Inter", sans-serif !important;
   background: linear-gradient(
     275.69deg,
     rgba(26, 9, 81, 0.95) 2.22%,
@@ -100,16 +58,10 @@
   );
   padding-bottom: 2rem;
 }
-
 //Empowering your job journey
 .half-circle {
-  width: 100px !important;
-  height: 100px !important;
   border: 16px solid #9d67d6;
-  border-radius: 50%;
-  background: transparent;
   z-index: 2;
-
   &.top-right {
     top: -48px;
     right: -60px;
@@ -229,9 +181,38 @@
   background: rgba(255, 255, 255, 0.3);
   border-radius: 10px;
 }
-@media (max-width: 991px) {
-  .right-scroll {
-    margin-top: 1.5rem;
+
+@media (max-width: 991.98px) {
+
+  /* Hero should not be tall anymore */
+  .careers-hero {
+    min-height: auto;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  /* shrink purple section height */
+  .hero-left {
+    padding: 60px 40px !important;
+  }
+
+  /* right section should shrink */
+  .hero-right {
+    min-height: auto;
+    padding-bottom: 40px;
+  }
+
+  /* make image normal block */
+  .image-wrapper {
+    position: relative !important;
+    width: 85%;
+    height: 360px;
+    margin: 30px auto 0;
+    right: auto !important;
+    top: auto !important;
   }
 }
 

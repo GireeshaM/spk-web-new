@@ -11,9 +11,11 @@ import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeng/themes/aura'; // You can replace 'aura' with other themes
 
 import { routes } from './app.routes';
+import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideHttpClient(),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(
       routes,

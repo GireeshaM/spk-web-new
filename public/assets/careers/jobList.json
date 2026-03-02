@@ -1,0 +1,157 @@
+[
+  {
+    "jobId": "NET-001",
+    "title": "Networking Lead",
+    "location": "Hyderabad, India",
+    "type": "Full Time",
+    "experience": "6+ Years",
+    "image": "assets/careers/networking-lead.jpg",
+    "summary": "We are seeking a skilled Networking Lead to oversee the design, implementation, and management of enterprise network infrastructure.",
+    "responsibilities": [
+      "Lead LAN, WAN, WLAN, and data center networks.",
+      "Monitor network performance and troubleshoot issues.",
+      "Ensure network security and compliance.",
+      "Manage firewalls, VPNs, routing, and switching.",
+      "Plan and execute network upgrades.",
+      "Collaborate with cloud and security teams.",
+      "Mentor junior engineers.",
+      "Maintain network documentation."
+    ],
+    "requiredSkills": [
+      "Bachelor’s degree in IT or related field.",
+      "6+ years of networking experience.",
+      "Strong TCP/IP and routing knowledge.",
+      "Hands-on routing & switching.",
+      "Troubleshooting experience.",
+      "Good communication skills."
+    ],
+    "preferredSkills": [
+      "Cloud networking experience.",
+      "Network security tools knowledge.",
+      "Automation tools exposure.",
+      "CCNP / CCIE certifications.",
+      "Enterprise environment experience."
+    ]
+  },
+
+  {
+    "jobId": "SF-001",
+    "title": "Salesforce Developer",
+    "location": "Hyderabad, India",
+    "type": "Full Time",
+    "experience": "3+ Years",
+    "image": "assets/careers/salesforce-developer.jpg",
+    "summary": "Design, develop, and maintain scalable Salesforce solutions.",
+    "responsibilities": [
+      "Develop Salesforce customizations.",
+      "Build Apex and Lightning components.",
+      "Integrate third-party systems.",
+      "Perform testing and deployments."
+    ],
+    "requiredSkills": [
+      "Strong Apex and LWC knowledge."
+    ],
+    "preferredSkills": [
+      "Salesforce certifications.",
+      "CI/CD experience."
+    ]
+  },
+
+  {
+    "jobId": "FE-001",
+    "title": "Frontend Developer",
+    "location": "Bangalore, India",
+    "type": "Full Time",
+    "experience": "2–4 Years",
+    "image": "assets/careers/frontend-developer.jpg",
+    "summary": "Develop responsive user interfaces using Angular and TypeScript.",
+    "responsibilities": [
+      "Develop reusable Angular components.",
+      "Implement responsive UI designs.",
+      "Integrate APIs with frontend.",
+      "Optimize application performance."
+    ],
+    "requiredSkills": [
+      "Angular",
+      "TypeScript",
+      "HTML",
+      "CSS"
+    ],
+    "preferredSkills": [
+      "RxJS",
+      "REST API integration"
+    ]
+  },
+
+  {
+    "jobId": "BE-001",
+    "title": "Backend Developer",
+    "location": "Hyderabad, India",
+    "type": "Full Time",
+    "experience": "3–5 Years",
+    "image": "assets/careers/backend-developer.jpg",
+    "summary": "Build REST APIs using Java, Spring Boot, and SQL databases.",
+    "responsibilities": [
+      "Develop RESTful APIs.",
+      "Design database schemas.",
+      "Ensure application security.",
+      "Optimize backend performance."
+    ],
+    "requiredSkills": [
+      "Java",
+      "Spring Boot",
+      "SQL"
+    ],
+    "preferredSkills": [
+      "Microservices",
+      "Cloud deployment"
+    ]
+  },
+
+  {
+    "jobId": "FS-001",
+    "title": "Full Stack Developer",
+    "location": "Remote",
+    "type": "Contract",
+    "experience": "4–6 Years",
+    "image": "assets/careers/fullstack-developer.jpg",
+    "summary": "Work on both frontend (Angular) and backend (Spring Boot) modules.",
+    "responsibilities": [
+      "Develop frontend and backend features.",
+      "Integrate APIs.",
+      "Participate in system design."
+    ],
+    "requiredSkills": [
+      "Angular",
+      "Spring Boot"
+    ],
+    "preferredSkills": [
+      "Docker",
+      "Cloud platforms"
+    ]
+  },
+
+  {
+    "jobId": "QA-001",
+    "title": "QA Engineer",
+    "location": "Chennai, India",
+    "type": "Part Time",
+    "experience": "1–3 Years",
+    "image": "assets/careers/qa-engineer.jpg",
+    "summary": "Perform manual and automated testing to ensure product quality.",
+    "responsibilities": [
+      "Write test cases.",
+      "Execute manual testing.",
+      "Perform automated testing.",
+      "Report and track defects."
+    ],
+    "requiredSkills": [
+      "Manual testing",
+      "Test case creation"
+    ],
+    "preferredSkills": [
+      "Automation tools",
+      "Selenium"
+    ]
+  }
+]

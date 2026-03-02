@@ -16,26 +16,22 @@
 .hero-right {
   background: linear-gradient(180deg, #4b147a, #2d0a4d);
   position: relative;
-  min-height: 520px;
 }
 
 /* IMAGE POSITIONING */
 .hero-image-wrapper {
   position: absolute;
   left: -220px; 
-   top: 15% !important;
   z-index: 2;
 }
-
 .hero-image {
  width:450px !important;
   height: 450px !important;
   border-radius: 16px;
   margin-top: 25%;
   position: relative;
-  z-index: 2; /* image above circle */
+  z-index: 2; 
 }
-
 .contact-info-card {
   background: linear-gradient(180deg, #2d0a4d, #5a189a);
 }
@@ -51,7 +47,6 @@
 }
 .get-started-btn {
  background: rgba(239, 112, 19, 1);
-
 }
 .contact-form{
   background: rgba(217, 217, 217, 1) !important;
@@ -68,21 +63,10 @@
 .hiring-section {
   background: linear-gradient(135deg, #2b004f, #6a1bb1);
   padding: 80px 0;
-  color: #fff;
-}
-
-.hiring-title {
-  font-size: 36px;
-  font-weight: 600;
-  margin-bottom: 16px;
 }
 
 .hiring-desc {
-  font-size: 15px;
-  line-height: 1.7;
-  color: #e6dcff;
   max-width: 520px;
-  margin-bottom: 28px;
 }
 
 /* Button */
@@ -93,21 +77,6 @@
 .hiring-btn:hover {
   background: #ff8800;
   color: #fff;
-}
-
-/* Image */
-.hiring-image-wrapper {
-  width: 320px;
-  height: 320px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-left: auto;
-}
-
-.hiring-image-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 .faq-item {
   transition: background 0.2s ease;
@@ -121,38 +90,13 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
-
   &.show {
     max-height: 300px;
   }
 }
-.contact-hero {
-  background-color: #fff; /* or your desired background */
-  position: relative;
-  overflow: hidden; /* ensures circles don't create scrollbars */
-}
-
-.circle {
-  position: absolute;
-  background-color: #4b0082; /* purple like your example */
-  border-radius: 50%;
-}
-
-.circle-top-left {
-  width: 20px;
-  height: 20px;
-  top: 20%;
-  left: 4%;
-}
-.circle-bottom-left {
-  width: 60px;
-  height: 60px;
-  bottom: 20px;
-  left: -20px;
-}
 .image-top-circle {
   position: absolute;
-  top: 22%;                 
+  top: 19% !important;                 
   left: 20%;
   transform: translate(-50%, -50%); /* moves half up */
   width: 42px;
@@ -173,14 +117,12 @@
     top:10%;
   }
   .hero-right {
-    min-height: auto;
-    background: none;
+    min-height: 560px;
+     background: linear-gradient(180deg, #4b147a, #2d0a4d) !important;
   }
-
   .bg-purple {
     background: none !important;
   }
-
   .hero-left {
     padding: 24px 16px;
   }
@@ -191,5 +133,35 @@
     top: 0;
     transform: none;
     margin: 0 auto;
+  }
+}
+/* Medium screens only (tablets, small laptops) */
+@media (max-width: 1199.98px) {
+  .hero-image-wrapper {
+    position: relative !important;
+    left: -30px !important;
+    top: 0 !important;
+    margin: 140px auto;
+    text-align: center;
+  }
+
+  .hero-image {
+    width: 100% !important;
+    max-width: 360px;
+    height: auto !important;
+    margin-top: 0 !important;
+  }
+
+  .hero-right {
+    min-height: auto;
+  }
+}
+/* Mobile screens */
+@media (max-width: 768px) {
+  .hero-image {
+    max-width: 280px;
+  }
+  .hero-right {
+    background: none;
   }
 }
