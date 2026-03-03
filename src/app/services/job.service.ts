@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+/* ================= JOB INTERFACE ================= */
 export interface Job {
   jobId: string;
   title: string;
@@ -17,21 +18,20 @@ export interface Job {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class JobService {
+  private readonly http = inject(HttpClient);
 
-  private jobsUrl = '/assets/careers/jobList.json';
+  private readonly jobsUrl = '/assets/careers/jobList.json';
 
-  constructor(private http: HttpClient) {}
-
-  getAllJobs(): Observable<Job[]> {
+  public getAllJobs(): Observable<Job[]> {
     return this.http.get<Job[]>(this.jobsUrl);
   }
 
-  getJobById(jobId: string): Observable<Job | undefined> {
+  public getJobById(jobId: string): Observable<Job | undefined> {
     return this.getAllJobs().pipe(
-      map(jobs => jobs.find(job => job.jobId === jobId))
+      map((jobs) => jobs.find((job) => job.jobId === jobId)),
     );
   }
 }

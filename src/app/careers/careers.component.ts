@@ -16,13 +16,24 @@ import {
   animate,
 } from '@angular/animations';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { MainHeroSectionComponent } from '../webmodules/utilities/main-hero-section/main-hero-section.component';
+import { Router, RouterLink } from '@angular/router';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
+
 import { WhatCompComponent } from '../webmodules/utilities/mainServicesUtil/what-comp/what-comp.component';
-import { RouterLink } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
 @Component({
-  standalone: true,
   selector: 'app-careers',
-  imports: [CommonModule, WhatCompComponent,RouterLink],
+  standalone: true,
+  imports: [
+    CommonModule,
+    WhatCompComponent,
+    RouterLink,
+    FormsModule,
+    ToastModule,
+  ],
+  providers: [MessageService],
   templateUrl: './careers.component.html',
   styleUrls: ['./careers.component.scss'],
   animations: [
@@ -47,24 +58,69 @@ import { RouterLink } from '@angular/router';
   ],
 })
 export class CareersComponent implements AfterViewInit, OnDestroy {
+  private router = inject(Router);
+  private messageService = inject(MessageService);
+  /* ================= PLATFORM ================= */
+  public searchText = '';
+  private readonly platformId = inject(PLATFORM_ID);
+
+  /* ================= VIEW ================= */
+  @ViewChildren('observeMe')
+  public elements!: QueryList<ElementRef>;
+
+  private observer: IntersectionObserver | null = null;
+
+  /* ================= HERO CONTENT ================= */
   public whatMainHeader = 'Careers';
   public whatDescription =
-    'SprintPark’s software services deliver customized, high-performance solutions that accelerate digital growth. From development to deployment, we ensure scalable, secure, and user-centric applications.';
+    'SprintPark’s software services deliver customized, high-performance solutions that accelerate digital growth.';
   public heroImage = 'assets/careers/caree.jpeg';
   public smallImage = 'assets/careers/caree.jpeg';
-  imageVisible = false;
-  buttonStates: { btn1: boolean; btn2: boolean; btn3: boolean } = {
+
+  /* ================= ANIMATION STATE ================= */
+  public imageVisible = false;
+
+  public buttonStates: { btn1: boolean; btn2: boolean; btn3: boolean } = {
     btn1: false,
     btn2: false,
     btn3: false,
   };
-  @ViewChildren('observeMe') elements!: QueryList<ElementRef>;
-  private observer: IntersectionObserver | null = null;
-  private platformId = inject(PLATFORM_ID);
+
+  public onSearch(): void {
+    const keyword = this.searchText.trim().toLowerCase();
+
+    if (!keyword) {
+      this.messageService.add({
+        severity: 'warn',
+        summary: 'Search Required',
+        detail: 'Please enter a job title to search',
+      });
+      return;
+    }
+
+    const matchedJob = this.jobs.find((job) =>
+      job.title.toLowerCase().includes(keyword),
+    );
+
+    if (!matchedJob) {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Job Not Found',
+        detail: 'No job matches your search',
+      });
+      return;
+    }
+
+    // ✅ Redirect when matched
+    this.router.navigate(['/job-summary', matchedJob.jobId]);
+  }
+
+  /* ================= LIFECYCLE ================= */
   public ngAfterViewInit(): void {
     if (!isPlatformBrowser(this.platformId)) {
       return;
     }
+
     if ('IntersectionObserver' in window) {
       this.observer = new IntersectionObserver(
         (entries) => {
@@ -88,9 +144,11 @@ export class CareersComponent implements AfterViewInit, OnDestroy {
         },
         { threshold: 0.2 },
       );
+
       this.elements.forEach((el) => this.observer!.observe(el.nativeElement));
     }
   }
+
   public ngOnDestroy(): void {
     if (this.observer) {
       this.observer.disconnect();
@@ -98,118 +156,103 @@ export class CareersComponent implements AfterViewInit, OnDestroy {
     }
   }
 
-public jobs = [
-  {
-    jobId: 'NET-001',
-    title: 'Networking Lead',
-    description:
-      'We are seeking a skilled and proactive Networking Lead to oversee the design, implementation, and maintenance of our organization’s network infrastructure.',
-    type: 'Full time',
-    experience: '5-6 years',
-    location: 'Hyderabad',
-  },
-  {
-    jobId: 'NET-002',
-    title: 'Networking Lead',
-    description:
-      'We are seeking a skilled and proactive Networking Lead to oversee the design, implementation, and maintenance of our organization’s network infrastructure.',
-    type: 'Full time',
-    experience: '5-6 years',
-    location: 'USA',
-  },
-  {
-    jobId: 'SF-001',
-    title: 'Salesforce Developer',
-    description:
-      'Meeting with project managers to determine CRM needs. Developing customized solutions within the Salesforce platform.',
-    type: 'Full time',
-    experience: '5-6 years',
-    location: 'Hyderabad',
-  },
-  {
-    jobId: 'BSM-001',
-    title: 'Bench Sales Manager',
-    description:
-      'We are seeking a dynamic and results-driven Bench Sales Manager to oversee and lead our IT bench sales operations.',
-    type: 'Full time',
-    experience: '5+ years',
-    location: 'Hyderabad',
-  },
-  {
-    jobId: 'BSM-002',
-    title: 'Bench Sales Manager',
-    description:
-      'We are seeking a dynamic and results-driven Bench Sales Manager to oversee and lead our IT bench sales operations.',
-    type: 'Full time',
-    experience: '5+ years',
-    location: 'USA',
-  },
-  {
-    jobId: 'BSR-001',
-    title: 'Bench Sales Recruiter',
-    description:
-      'Responsible for marketing and placing IT consultants on contract assignments.',
-    type: 'Full time',
-    experience: '5+ years',
-    location: 'USA',
-  },
-  {
-    jobId: 'SMH-001',
-    title: 'Sales and Marketing Head',
-    description:
-      'Lead sales and marketing initiatives to drive revenue growth and brand awareness.',
-    type: 'Full time',
-    experience: '8+ years',
-    location: 'Hyderabad',
-  },
-  {
-    jobId: 'DM-001',
-    title: 'Digital Marketing Executive',
-    description:
-      'Plan, execute, and optimize digital campaigns across multiple channels.',
-    type: 'Full time',
-    experience: '1-3 years',
-    location: 'Hyderabad',
-  },
-  {
-    jobId: 'UX-001',
-    title: 'UI/UX Designer',
-    description:
-      'Design intuitive, engaging, and user-friendly interfaces for web and mobile applications.',
-    type: 'Full time',
-    experience: '5+ years',
-    location: 'Hyderabad',
-  },
-];
+  /* ================= JOB LIST ================= */
+  public jobs = [
+    {
+      jobId: 'HR-001',
+      title: 'Senior HR Manager',
+      description:
+        'SprintPark is looking for an experienced HR professional to act as the primary HR SPOC for our onshore leadership teams and manage end-to-end HR operations.',
+      type: 'Full time',
+      experience: '10+ years',
+      location: 'Hyderabad',
+    },
+    {
+      jobId: 'FSD-001',
+      title: 'Full Stack Developer',
+      description:
+        ' We are seeking a highly skilled and passionate Java Full Stack Developer who can contribute across all layers of our technology stack',
+      type: 'Full time',
+      experience: '3-6 years',
+      location: 'Hyderabad',
+    },
+    {
+      jobId: 'SF-001',
+      title: 'Salesforce Developer',
+      description:
+        'Meeting with project managers to determine CRM needs and developing customized solutions within Salesforce.',
+      type: 'Full time',
+      experience: '5-6 years',
+      location: 'Hyderabad',
+    },
+    {
+      jobId: 'AI-001',
+      title: 'Google ADK/Vertex Al Developer',
+      description:
+        'We are seeking skilled Developers with hands-on experience in Google ADK, Vertex Al, and Python to join our Al/ML product development team. ',
+      type: 'Full time',
+      experience: '2-5 years',
+      location: 'Hyderabad',
+    },
+    {
+      jobId: 'FSD-002',
+      title: 'Full Stack Developer',
+      description:
+        ' We are seeking a highly skilled and passionate Java Full Stack Developer to contribute across all layers of our technology stack.',
+      type: 'Full time',
+      experience: '3-6 years',
+      location: 'Hyderabad',
+    },
+    {
+      jobId: 'BSR-001',
+      title: 'Bench Sales Recruiter',
+      description:
+        'We are looking for a Bench Sales Recruiter (Freshers) to join our US IT Staffing team. This role involves marketing bench consultants, coordinating with vendors and clients.',
+      type: 'Full time',
+      experience: '0-1 Years',
+      location: 'Hyderabad',
+    },
+    {
+      jobId: 'AI-002',
+      title: 'AI Specialist / Machine Learning Engineer',
+      description:
+        'We are seeking a skilled and forward-thinking AI Specialist to design, develop, and deploy advanced AI/ML solutions.',
+      type: 'Full time',
+      experience: '3–7 Years',
+      location: 'Hyderabad',
+    },
+  ];
 
-  // Section 3
+  /* ================= LIFE @ SPRINTPARK ================= */
   public whyMainHeading = 'Life@Sprintpark';
   public whySubHeading =
     'Your Trusted Partner for Comprehensive Software Solutions';
   public whyContent =
-    'SprintPark delivers tailored AI, data analytics, cybersecurity, and Salesforce services to boost your efficiency, security, and growth.';
+    'SprintPark delivers tailored AI, data analytics, cybersecurity, and Salesforce services to boost efficiency and growth.';
+
   public whyCards = [
     {
-      title: 'Learning ',
-      desc: "Every employee should get their fair share of opportunities to share their ideas and become a part of organization's success.",
+      title: 'Learning',
+      desc: 'Every employee gets opportunities to share ideas and grow.',
     },
     {
-      title: 'Employee growth',
-      desc: 'We are dedicated to providing a workplace where employees can grow and thrive.',
+      title: 'Employee Growth',
+      desc: 'We provide a workplace where employees can thrive.',
     },
     {
       title: 'Work Environment',
-      desc: 'We foster a supportive and collaborative work environment that empowers growth, balance, and innovation.',
+      desc: 'A collaborative environment that empowers balance and innovation.',
     },
     {
       title: 'Professional Development',
-      desc: 'We are committed to empower our team to grow personally and professionally.',
+      desc: 'We empower personal and professional growth.',
     },
     {
       title: 'Compensation & Benefits',
-      desc: 'Compensations and benefits reward employees fairly while enhancing their growth and well-being.',
+      desc: 'Competitive benefits that reward performance and well-being.',
     },
   ];
+
   public teamImages = {
     left: {
       src: 'assets/careers/team-1.png',

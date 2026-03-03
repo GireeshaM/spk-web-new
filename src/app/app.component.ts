@@ -4,7 +4,6 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ChatbotComponent } from './chatbot/chatbot.component';
 
-
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, HeaderComponent, FooterComponent, ChatbotComponent],

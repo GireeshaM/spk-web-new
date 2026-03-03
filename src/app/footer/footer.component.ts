@@ -1,11 +1,16 @@
 import { NgStyle } from '@angular/common';
 import { Component, inject, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router, RouterModule } from '@angular/router';
+import {
+  ActivatedRoute,
+  NavigationEnd,
+  Router,
+  RouterModule,
+} from '@angular/router';
 import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-footer',
-  imports: [NgStyle,RouterModule],
+  imports: [NgStyle, RouterModule],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss',
 })

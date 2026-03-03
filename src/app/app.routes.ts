@@ -25,7 +25,6 @@ import { TransportationIComponent } from './webmodules/industriesSubPages/transp
 import { InsightsBlogComponent } from './webmodules/insights-blog/insights-blog.component';
 import { ProductComponent } from './webmodules/product/product.component';
 
-
 export const routes: Routes = [
   {
     path: '',
@@ -43,12 +42,10 @@ export const routes: Routes = [
     path: 'services',
     component: ItCommonComponent, // OR ServicesComponent if you create one
     children: [
-
       {
-        
         path: '',
         redirectTo: 'it-consulting',
-        pathMatch: 'full'
+        pathMatch: 'full',
       },
 
       {
@@ -97,18 +94,16 @@ export const routes: Routes = [
     ],
   },
 
-
   //Industries
   // ================= INDUSTRIES =================
   {
     path: 'industries',
     children: [
-
       // default redirect
       {
         path: '',
         redirectTo: 'it-and-telecommunications',
-        pathMatch: 'full'
+        pathMatch: 'full',
       },
 
       // IT & TELECOMMUNICATIONS
@@ -236,15 +231,16 @@ export const routes: Routes = [
       footerColor: '#fff',
     },
   },
-{
-  path: 'job-summary/:jobId',
-  loadComponent: () =>
-    import('./job-summary/job-summary.component')
-      .then(m => m.JobSummaryComponent),
-  data: {
-    footerColor: 'rgba(249, 249, 255, 1)'
-}
-},
+  {
+    path: 'job-summary/:jobId',
+    loadComponent: () =>
+      import('./job-summary/job-summary.component').then(
+        (m) => m.JobSummaryComponent,
+      ),
+    data: {
+      footerColor: 'rgba(249, 249, 255, 1)',
+    },
+  },
   //insights
   {
     path: 'insights',
@@ -290,11 +286,9 @@ export const routes: Routes = [
       footerColor: 'rgba(255, 255, 255, 1)',
     },
   },
-   
+
   {
     path: '**',
     component: PageNotFoundComponent,
   },
-
-
 ];

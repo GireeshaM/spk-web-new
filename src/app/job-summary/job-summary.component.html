@@ -1,95 +1,250 @@
-<div class="summary-container h-100 mb-3" *ngIf="job as j">
- 
+<div class="summary-container h-100 mb-3">
+
   <!-- ===== JOB HERO SECTION ===== -->
   <section class="job-hero bg-white">
     <div class="p-4 p-lg-5 rounded-4">
+
       <div class="row g-5 align-items-start">
- 
+
         <!-- IMAGE -->
         <div class="col-lg-6">
           <img
-            [src]="j.image"
+            [src]="job.image"
             class="img-fluid rounded-4 w-100 hero-img"
             alt="Job Image"
           />
         </div>
- 
+
         <!-- JOB INFO -->
         <div class="col-lg-6">
           <h3 class="fw-semibold mb-3">
-            {{ j.title }}
+            {{ job.title }}
           </h3>
- 
+
           <p class="text-muted mb-1">
-            <strong>Location :</strong> {{ j.location }}
+            <strong>Location :</strong> {{ job.location }}
           </p>
- 
+
           <p class="text-muted mb-4">
-            <strong>Job ID :</strong> {{ j.jobId }}
+            <strong>Job ID :</strong> {{ job.jobId }}
           </p>
- 
-          <h6 class="fw-semibold mb-2">Job Summary</h6>
- 
+
+          <h6 class="fw-semibold mb-2">
+            Job Summary
+          </h6>
+
           <p class="text-muted lh-lg">
-            {{ j.summary }}
+            {{ job.summary }}
           </p>
         </div>
- 
+
       </div>
     </div>
   </section>
- 
+
   <!-- ===== KEY RESPONSIBILITIES ===== -->
   <section class="job-section p-3 pb-0 ps-5">
     <div class="p-4 rounded-4 mx-0">
       <h6 class="fw-semibold mb-3">Key Responsibilities</h6>
- 
+
       <ul class="job-list">
-        <li *ngFor="let responsibility of j.responsibilities" class="mb-3">
+        <li *ngFor="let responsibility of job.responsibilities" class="mb-3">
           {{ responsibility }}
         </li>
       </ul>
     </div>
   </section>
- 
+
   <!-- ===== REQUIRED SKILLS ===== -->
-  <section class="job-section p-3 pt-0 pb-0 ps-5">
+  <section class="job-section p-3 pt-0 pb-0 ps-5 mt-0">
     <div class="p-4 rounded-4 mx-0">
       <h6 class="fw-semibold mb-3">Required Skills & Qualifications</h6>
- 
+
       <ul class="job-list">
-        <li *ngFor="let skill of j.requiredSkills" class="mb-3">
+        <li *ngFor="let skill of job.requiredSkills" class="mb-3">
           {{ skill }}
         </li>
       </ul>
     </div>
   </section>
- 
+
   <!-- ===== PREFERRED SKILLS ===== -->
   <section class="job-section p-3 pt-0 ps-5">
-    <div class="p-4 rounded-4">
+    <div class="p-4 rounded-4 align-items-center">
       <h6 class="fw-semibold mb-3">Preferred Skills</h6>
- 
+
       <ul class="job-list">
-        <li *ngFor="let skill of j.preferredSkills" class="mb-3">
+        <li *ngFor="let skill of job.preferredSkills" class="mb-3">
           {{ skill }}
         </li>
       </ul>
     </div>
   </section>
- 
-  <!-- ===== APPLY BUTTON (SALESFORCE INTEGRATION) ===== -->
-  <div class="text-start pt-0 ps-5">
-    <a
-      class="btn btn-primary px-4 apply-btn"
-      [href]="'https://orgfarm-8b9f1d89f2-dev-ed.develop.my.site.com/careers/s?jobId=' + j.jobId"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Apply Now
-    </a>
+
+  <!-- ===== APPLY BUTTON ===== -->
+  <div class="text-start pt-0 ps-5 align-items-center justify-content-center">
+<button
+  class="btn btn-primary px-4 apply-btn"
+  data-bs-toggle="modal"
+  data-bs-target="#applyModal">
+  Apply Now
+</button>
+
+<!--POPUP APPLICATION FORM-->
+<!-- APPLY JOB MODAL -->
+<!-- ================= APPLY MODAL ================= -->
+<!-- APPLY MODAL -->
+<div class="modal fade" id="applyModal" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content border-0 rounded-4">
+
+      <div class="modal-body p-4 p-md-5">
+
+        <!-- HEADER -->
+        <div class="d-flex align-items-center gap-3 mb-4">
+          <div>
+            <h4 class="fw-semibold mb-1 text-color">
+              Apply for this role
+            </h4>
+            <small class="text-dark">
+              We’d love to hear from you
+            </small>
+          </div>
+
+          <button
+            type="button"
+            class="btn-close ms-auto"
+            data-bs-dismiss="modal">
+          </button>
+        </div>
+
+        <!-- FORM -->
+        <form [formGroup]="applyForm" (ngSubmit)="submitForm($event)">
+
+          <!-- FULL NAME -->
+          <div class="mb-3">
+            <label class="form-label fw-semibold text-color">
+              Full Name
+            </label>
+            <input
+              type="text"
+              class="form-control form-control-lg rounded-3"
+              formControlName="fullName">
+
+            <small class="text-danger"
+              *ngIf="applyForm.get('fullName')?.touched && applyForm.get('fullName')?.invalid">
+              Name must contain only letters
+            </small>
+          </div>
+
+          <!-- EMAIL + PHONE -->
+          <div class="row g-3 mb-3">
+            <div class="col-md-6">
+              <label class="form-label fw-semibold text-color">
+                Email Address
+              </label>
+              <input
+                type="email"
+                class="form-control form-control-lg rounded-3"
+                formControlName="email">
+
+              <small class="text-danger"
+                *ngIf="applyForm.get('email')?.touched && applyForm.get('email')?.invalid">
+                enter a valid email address
+              </small>
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label fw-semibold text-color">
+                Phone Number
+              </label>
+              <input
+                type="text"
+                maxlength="10"
+                class="form-control form-control-lg rounded-3"
+                formControlName="phone">
+
+              <small class="text-danger"
+                *ngIf="applyForm.get('phone')?.touched && applyForm.get('phone')?.invalid">
+                Must be exactly 10 digits
+              </small>
+            </div>
+          </div>
+
+          <!-- EXPERIENCE + RESUME -->
+          <div class="row g-3 mb-4 align-items-stretch">
+
+            <!-- EXPERIENCE -->
+            <div class="col-md-4">
+              <label class="form-label fw-semibold text-color">
+                Experience (Years)
+              </label>
+              <input
+                type="number"
+                
+                class="form-control form-control-lg rounded-3"
+                formControlName="experience">
+
+              <small class="text-color"
+                *ngIf="applyForm.get('experience')?.touched && applyForm.get('experience')?.invalid">
+                Enter valid years of experience
+              </small>
+            </div>
+
+            <!-- RESUME UPLOAD -->
+            <div class="col-md-8">
+              <label
+                class="border border-2 border-dashed rounded-4 p-4
+                       d-flex flex-column justify-content-center h-100
+                       text-center bg-light cursor-pointer">
+
+                <input
+  type="file"
+  hidden
+  accept="application/pdf"
+  (change)="onFileChange($event)">
+
+
+                <strong class="text-color fs-6">
+                  Upload Your Resume
+                </strong>
+
+                <small class="text-muted">
+                  PDF, DOC, DOCX • Max 5MB
+                </small>
+
+                <small class="text-success mt-1" *ngIf="selectedFileName">
+                  {{ selectedFileName }}
+                </small>
+
+                <small class="text-danger mt-1"
+                  *ngIf="applyForm.get('resume')?.touched && applyForm.get('resume')?.invalid">
+                  Resume is required
+                </small>
+              </label>
+            </div>
+
+          </div>
+
+          <!-- SUBMIT -->
+          <div class="text-end">
+            <button
+              type="submit"
+              class="btn btn-primary px-4 py-2"
+              [disabled]="applyForm.invalid">
+              Submit Application
+            </button>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
   </div>
- 
 </div>
 
- 
+
+
+
+  </div>
+</div>

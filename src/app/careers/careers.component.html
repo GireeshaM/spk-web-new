@@ -1,238 +1,244 @@
 <div class="careers overflow-x-hidden">
-<section class="careers-hero  d-flex align-items-stretch overflow-hidden">
-  <div class="hero-grid d-grid align-items-stretch">
-
-    <!-- LEFT CONTENT -->
-    <div class="hero-left p-5 text-white d-flex flex-column justify-content-center">
-      <h1 class="mb-3">Careers</h1>
-      <p class="lh-4">
-        SprintPark’s software services deliver customized, high-performance
-        solutions that accelerate digital growth. From development to
-        deployment, we ensure scalable, secure, and user-centric applications.
-      </p>
-    </div>
-
-    <!-- RIGHT IMAGE -->
-    <div class="hero-right justify-content-end h-100 d-flex">
-      <div class="image-wrapper position-absolute overflow-hidden">
-        <img
-        class="object-fit-cover w-100 h-100"
-          src="assets/careers/careers-hero.png"
-          alt="SprintPark Careers"
-        />
+  <section class="careers-hero">
+    <div class="hero-grid">
+      <!-- LEFT CONTENT -->
+      <div class="hero-left p-5">
+        <h1 class="text-white">Careers</h1>
+        <p class="text-white">
+          SprintPark’s software services deliver customized, high-performance
+          solutions that accelerate digital growth. From development to
+          deployment, we ensure scalable, secure, and user-centric applications.
+        </p>
       </div>
-    </div>
 
-  </div>
-</section>
-
-
-<!-- Empowering your job journey -->
-<h1 class="fw-400 mb-2 text-center mt-5">Empowering your job journey</h1>
-<div class="container my-5 py-4">
-  <div class="row justify-content-center align-items-center g-4">
-    <div
-      class="col-lg-6 d-flex justify-content-center custom-image-frame"
-      #observeMe
-      data-anim-id="image"
-      [@imageAnim]="imageVisible ? 'show' : 'hide'"
-    >
-      <div class="position-relative p-2 bg-light rounded shadow">
-        <div
-          class="half-circle bottom-left position-absolute bg-transparent"
-        ></div>
-        <img
-          src="assets/careers/empowering-job.jpg"
-          alt="Team"
-          class="img-fluid rounded"
-        />
-        <div
-          class="half-circle top-right position-absolute bg-transparent"
-        ></div>
-      </div>
-    </div>
-
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
-    />
-
-    <!-- Text + features -->
-    <div class="col-lg-6 text-center text-lg-start">
-      <p class="mb-4 mx-auto mx-lg-0">
-        We connect talented professionals with top companies, empowering
-        individuals to discover fulfilling careers and grow within their
-        industries
-      </p>
-
-     <div
-  class="feature-box d-flex align-items-center gap-3"
-  #observeMe
-  data-anim-id="btn1"
-  [@slideFromRight]="buttonStates.btn1 ? 'show' : 'hide'"
->
-  <div class="feature-icon d-flex align-items-center justify-content-center">
-    <i class="bi bi-file-earmark-text fs-4 "></i>
-  </div>
-
-  <div class="feature-text fw-medium fs-5 text-white">
-    Reliable Jobs Listings
-  </div>
-</div>
-     <div
-  class="feature-box d-flex align-items-center gap-3"
-  #observeMe
-  data-anim-id="btn2"
-  [@slideFromLeft]="buttonStates.btn2 ? 'show' : 'hide'"
->
-  <div class="feature-text fw-medium fs-5 text-white">
-    Tailored Recommendations
-  </div>
-
-  <div class="feature-icon d-flex align-items-center justify-content-center">
-    <i class="bi bi-award fs-4 "></i>
-  </div>
-</div>
-
-
-     <div
-  class="feature-box d-flex align-items-center gap-3"
-  #observeMe
-  data-anim-id="btn3"
-  [@slideFromRight]="buttonStates.btn3 ? 'show' : 'hide'"
->
-  <div class="feature-icon d-flex align-items-center justify-content-center">
-    <i class="bi bi-arrow-repeat fs-4 "></i>
-  </div>
-
-  <div class="feature-text fw-medium fs-5 text-white">
-    Easy Application Process
-  </div>
-</div>
-
-    </div>
-  </div>
-</div>
-<!-- Life at SprintPark -->
-<app-what-comp
-  [whyMainHeading]="whyMainHeading"
-  [whySubHeading]="whySubHeading"
-  [whyContent]="whyContent"
-  [whyCards]="whyCards"
-  [images]="teamImages"
-></app-what-comp>
-<!-- Job Opportunities at SprintPark -->
-<h2 class="fw-bold text-center mb-4">
-  Job Opportunities&#64;SprintPark
-</h2>
-<section class="career-section text-white">
-  <div class="container-fluid">
-    <!-- HEADER ROW -->
-<div class="row career-header px-2 py-2 mb-3 align-items-center">
-  <!-- LEFT HEADER -->
-  <div class="col-lg-6">
-    <div class="d-flex justify-content-between">
-      <div class="job-title-header">Job Title</div>
-      <div class="job-location-header">Location</div>
-    </div>
-  </div>
-  <!-- RIGHT HEADER (DESKTOP ONLY) -->
-  <div class="col-lg-6 text-light text-center d-none d-lg-block">
-    Current Openings
-  </div>
-</div>
-    <!-- CONTENT ROW -->
-  <div class="row gx-6 mt-0">
-    <!-- LEFT JOB LIST -->
-    <div class="col-lg-6">
-      <div class="left-scroll">
-        <div class="job-row d-flex justify-content-between p-3 mb-2 rounded-2" *ngFor="let job of jobs"
-         [routerLink]="['/job-summary', job.jobId]"
-         role="button">
-          <div class="job-title">{{ job.title }}</div>
-          <div class="job-location">{{ job.location }}</div>
+      <!-- RIGHT IMAGE -->
+      <div class="hero-right justify-content-end">
+        <div class="image-wrapper">
+          <img src="assets/careers/careers-hero.png" alt="SprintPark Careers" />
         </div>
       </div>
     </div>
-    <!-- MOBILE-ONLY CURRENT OPENINGS HEADING -->
-    <div class="col-12 d-block d-lg-none text-center mt-4 mb-3 text-light">
-      <h5 class="fw-semibold">Current Openings</h5>
-    </div>
-    <!-- RIGHT JOB CARDS -->
-    <div class="col-lg-6">
-      <div class="right-scroll">
-        <div class="row gx-3 gy-5 gy-lg-4 justify-content-center">
+  </section>
+
+  <!-- Empowering your job journey -->
+  <h1 class="fw-400 mb-2 text-center mt-5">Empowering your job journey</h1>
+  <div class="container my-5 py-4">
+    <div class="row justify-content-center align-items-center g-4">
+      <div
+        class="col-lg-6 d-flex justify-content-center custom-image-frame"
+        #observeMe
+        data-anim-id="image"
+        [@imageAnim]="imageVisible ? 'show' : 'hide'"
+      >
+        <div class="position-relative p-2 bg-light rounded shadow">
           <div
-            class="col-12 col-sm-6 col-lg-10"
-            *ngFor="let job of jobs"
+            class="half-circle bottom-left position-absolute bg-transparent"
+          ></div>
+          <img
+            src="assets/careers/empowering-job.jpg"
+            alt="Team"
+            class="img-fluid rounded"
+          />
+          <div
+            class="half-circle top-right position-absolute bg-transparent"
+          ></div>
+        </div>
+      </div>
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      />
+
+      <!-- Text + features -->
+      <div class="col-lg-6 text-center text-lg-start">
+        <p class="mb-4 mx-auto mx-lg-0">
+          We connect talented professionals with top companies, empowering
+          individuals to discover fulfilling careers and grow within their
+          industries
+        </p>
+
+        <div
+          class="feature-box d-flex align-items-center gap-3"
+          #observeMe
+          data-anim-id="btn1"
+          [@slideFromRight]="buttonStates.btn1 ? 'show' : 'hide'"
+        >
+          <div
+            class="feature-icon d-flex align-items-center justify-content-center"
           >
-            <div class="job-detail-card h-100">
-              <h5 class="fw-bold text-white mb-3">{{ job.title }}</h5>
+            <i class="bi bi-file-earmark-text fs-4"></i>
+          </div>
 
-              <p class="small opacity-75 text-white">
-                {{ job.description }}
-              </p>
+          <div class="feature-text fw-medium fs-5 text-white">
+            Reliable Jobs Listings
+          </div>
+        </div>
+        <div
+          class="feature-box d-flex align-items-center gap-3"
+          #observeMe
+          data-anim-id="btn2"
+          [@slideFromLeft]="buttonStates.btn2 ? 'show' : 'hide'"
+        >
+          <div class="feature-text fw-medium fs-5 text-white">
+            Tailored Recommendations
+          </div>
 
-              <div class="d-flex gap-3 small my-3 flex-wrap">
-                <span><i class="bi bi-clock"></i> {{ job.type }}</span>
-                <span><i class="bi bi-briefcase"></i> {{ job.experience }}</span>
-                <span><i class="bi bi-geo-alt"></i> {{ job.location }}</span>
+          <div
+            class="feature-icon d-flex align-items-center justify-content-center"
+          >
+            <i class="bi bi-award fs-4"></i>
+          </div>
+        </div>
+
+        <div
+          class="feature-box d-flex align-items-center gap-3"
+          #observeMe
+          data-anim-id="btn3"
+          [@slideFromRight]="buttonStates.btn3 ? 'show' : 'hide'"
+        >
+          <div
+            class="feature-icon d-flex align-items-center justify-content-center"
+          >
+            <i class="bi bi-arrow-repeat fs-4"></i>
+          </div>
+
+          <div class="feature-text fw-medium fs-5 text-white">
+            Easy Application Process
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Life at SprintPark -->
+  <app-what-comp
+    [whyMainHeading]="whyMainHeading"
+    [whySubHeading]="whySubHeading"
+    [whyContent]="whyContent"
+    [whyCards]="whyCards"
+    [images]="teamImages"
+  ></app-what-comp>
+  <!-- Job Opportunities at SprintPark -->
+  <h2 class="fw-bold text-center mb-4">Job Opportunities&#64;SprintPark</h2>
+  <section class="career-section text-white">
+    <div class="container-fluid">
+      <!-- HEADER ROW -->
+      <div class="row career-header px-2 py-2 mb-3 align-items-center">
+        <!-- LEFT HEADER -->
+        <div class="col-lg-6">
+          <div class="d-flex justify-content-between">
+            <div class="job-title-header">Job Title</div>
+            <div class="job-location-header">Location</div>
+          </div>
+        </div>
+        <!-- RIGHT HEADER (DESKTOP ONLY) -->
+        <div class="col-lg-6 text-light text-center d-none d-lg-block">
+          Current Openings
+        </div>
+      </div>
+      <!-- CONTENT ROW -->
+      <div class="row gx-6 mt-0">
+        <!-- LEFT JOB LIST -->
+        <div class="col-lg-6">
+          <div class="left-scroll">
+            <div
+              class="job-row d-flex justify-content-between p-3 mb-2 rounded-2"
+              *ngFor="let job of jobs"
+              [routerLink]="['/job-summary', job.jobId]"
+              role="button"
+            >
+              <div class="job-title">{{ job.title }}</div>
+              <div class="job-location">{{ job.location }}</div>
+            </div>
+          </div>
+        </div>
+        <!-- MOBILE-ONLY CURRENT OPENINGS HEADING -->
+        <div class="col-12 d-block d-lg-none text-center mt-4 mb-3 text-light">
+          <h5 class="fw-semibold">Current Openings</h5>
+        </div>
+        <!-- RIGHT JOB CARDS -->
+        <div class="col-lg-6">
+          <div class="right-scroll">
+            <div class="row gx-3 gy-5 gy-lg-4 justify-content-center">
+              <div class="col-12 col-sm-6 col-lg-10" *ngFor="let job of jobs">
+                <div class="job-detail-card h-100">
+                  <h5 class="fw-bold text-white mb-3">{{ job.title }}</h5>
+
+                  <p class="small opacity-75 text-white">
+                    {{ job.description }}
+                  </p>
+
+                  <div class="d-flex gap-3 small my-3 flex-wrap">
+                    <span><i class="bi bi-clock"></i> {{ job.type }}</span>
+                    <span
+                      ><i class="bi bi-briefcase"></i>
+                      {{ job.experience }}</span
+                    >
+                    <span
+                      ><i class="bi bi-geo-alt"></i> {{ job.location }}</span
+                    >
+                  </div>
+
+                  <button
+                    class="btn apply-btn w-100 fw-semibold text-white"
+                    [routerLink]="['/job-summary', job.jobId]"
+                  >
+                    Apply Now
+                  </button>
+                </div>
               </div>
-
-              <button class="btn apply-btn w-100 fw-semibold text-white"
-              [routerLink]="['/job-summary', job.jobId]">
-                Apply Now
-              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </section>
+  <!-- The Easiest Way to Get Your Job SECTION -->
+  <div class="container py-5 mt-4 mb-5">
+    <div class="row align-items-center g-4">
+      <!-- Left Content -->
+      <div class="col-lg-6">
+        <h1 class="mb-3">The Easiest Way to Get Your Job</h1>
+        <p class="text-muted">
+          Are you a student looking for an internship at SprintPark? Or are you
+          interested in a role at SprintPark but can’t find what you’re looking
+          for? Send our Talent Team your application and CV/Portfolio. Want to
+          gain experience while still in school or studying but don’t have the
+          time for a full-time job?
+        </p>
 
-  </div>
-  </div>
-</section>
-<!-- The Easiest Way to Get Your Job SECTION -->
-<div class="container py-5 mt-4 mb-5">
-  <div class="row align-items-center g-4">
-    <!-- Left Content -->
-    <div class="col-lg-6">
-      <h1 class="mb-3">The Easiest Way to Get Your Job</h1>
-      <p class="text-muted">
-        Are you a student looking for an internship at SprintPark? Or are you
-        interested in a role at SprintPark but can’t find what you’re looking
-        for? Send our Talent Team your application and CV/Portfolio. Want to
-        gain experience while still in school or studying but don’t have the
-        time for a full-time job?
-      </p>
+        <h1 class="fw-bold mb-3">Find Your Job Here</h1>
 
-      <h1 class="fw-bold mb-3">Find Your Job Here</h1>
+        <!-- Search box -->
+        <form class="d-flex border rounded p-2" (ngSubmit)="onSearch()">
+          <input
+            type="text"
+            class="form-control me-2 border-0"
+            placeholder="Enter your job role"
+            [(ngModel)]="searchText"
+            name="searchText"
+            required
+          />
 
-      <!-- Search box -->
-      <form class="d-flex border rounded p-2">
-        <input
-          type="text"
-          class="form-control me-2 border-0"
-          placeholder="Enter your job role"
+          <button
+            class="btn px-4 text-white"
+            style="background-color: #3c28a0; border-radius: 0.75rem"
+            type="submit"
+          >
+            Search
+          </button>
+        </form>
+        <p-toast position="top-right"></p-toast>
+      </div>
+
+      <!-- Right Image -->
+      <div class="col-lg-6 text-center">
+        <img
+          src="assets/careers/find-jobimage.jpg"
+          class="img-fluid rounded shadow w-75"
+          alt="Job Search Image"
         />
-        <button
-          class="btn px-4 text-white"
-          style="background-color: #3c28a0; border-radius: 0.75rem"
-          type="submit"
-        >
-          Search
-        </button>
-      </form>
-    </div>
-
-    <!-- Right Image -->
-    <div class="col-lg-6 text-center">
-      <img
-        src="assets/careers/find-jobimage.jpg"
-        class="img-fluid rounded shadow w-75"
-        alt="Job Search Image"
-      />
+      </div>
     </div>
   </div>
-</div>
 </div>
