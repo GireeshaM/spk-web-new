@@ -40,7 +40,6 @@ export const routes: Routes = [
   // SERVICES (Parent)
   {
     path: 'services',
-    component: ItCommonComponent, // OR ServicesComponent if you create one
     children: [
       {
         path: '',

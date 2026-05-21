@@ -248,8 +248,7 @@
               <p class="mt-3 mb-0 text-muted">{{ item.description }}</p>
 
               <a
-                href="/products"
-                target="_self"
+                [routerLink]="item.link"
                 class="btn mt-3 btn-purple-custom text-white border-0"
               >
                 Read More →

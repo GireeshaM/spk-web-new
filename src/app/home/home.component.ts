@@ -279,25 +279,25 @@ export class HomeComponent implements OnInit, AfterViewInit {
       img: 'assets/home/whatWeOffer/software-services.png',
       title: 'Software services',
       desc: 'Custom software solutions designed to meet your unique business needs.',
-      link: '/software-service',
+      link: '/services/software-service',
     },
     {
       img: 'assets/home/whatWeOffer/It_consulting.png',
       title: 'IT Consulting',
       desc: 'Expert guidance and strategic solutions to overcome challenges and drive your business.',
-      link: '/it-consulting',
+      link: '/services/it-consulting',
     },
     {
       img: 'assets/home/whatWeOffer/staffing-solutions.png',
       title: 'Staffing Solutions',
       desc: "Connect with the right talent to drive your organization's growth and success.",
-      link: '/staffing',
+      link: '/services/staffing',
     },
     {
       img: 'assets/home/whatWeOffer/project-management.png',
       title: 'Project-Management',
       desc: 'Seamless project execution with clear timelines, resources, and results.',
-      link: '/project-management',
+      link: '/services/project-management',
     },
   ];
   // Features
@@ -372,43 +372,43 @@ export class HomeComponent implements OnInit, AfterViewInit {
       img: 'assets/home/industries/industry-it-telecommunications.jpg',
       alt: 'IT & TeleCommunications',
       title: 'IT & TeleCommunications',
-      link: '/itAndTelecommunications',
+      link: '/industries/it-and-telecommunications',
     },
     {
       img: 'assets/home/industries/industries-healthcare.jpg',
       alt: 'Healthcare & Life Sciences',
       title: 'Healthcare & Life Sciences',
-      link: '/healthCareAndLifeSciences',
+      link: '/industries/healthcare-life-sciences',
     },
     {
       img: 'assets/home/industries/industry-education.jpg',
       alt: 'Education',
       title: 'Education',
-      link: '/education',
+      link: '/industries/education',
     },
     {
       img: 'assets/home/industries/industries-government.jpg',
       alt: 'Government',
       title: 'Government',
-      link: '/government',
+      link: '/industries/government',
     },
     {
       img: 'assets/home/industries/transportation.jpg',
       alt: 'Transportation and Logistics',
       title: 'Transportation and Logistics',
-      link: '/transportationAndLogistics',
+      link: '/industries/transportation-logistics',
     },
     {
       img: 'assets/home/industries/banking.jpg',
       alt: 'Banking',
       title: 'Banking',
-      link: '/banking',
+      link: '/industries/banking',
     },
     {
       img: 'assets/home/industries/manufactuing.jpg',
       alt: 'Manufacturing',
       title: 'Manufacturing',
-      link: '/manufacturing',
+      link: '/industries/manufacturing',
     },
   ];
 
@@ -417,43 +417,43 @@ export class HomeComponent implements OnInit, AfterViewInit {
       img: 'assets/home/industries/industry-it-telecommunications.jpg',
       alt: 'IT & TeleCommunications',
       title: 'IT & TeleCommunications',
-      link: '/itAndTelecommunications',
+      link: '/industries/it-and-telecommunications',
     },
     {
       img: 'assets/home/industries/industries-healthcare.jpg',
       alt: 'Healthcare & Life Sciences',
       title: 'Healthcare & Life Sciences',
-      link: '/healthCareAndLifeSciences',
+      link: '/industries/healthcare-life-sciences',
     },
     {
       img: 'assets/home/industries/industry-education.jpg',
       alt: 'Education',
       title: 'Education',
-      link: '/education',
+      link: '/industries/education',
     },
     {
       img: 'assets/home/industries/industries-government.jpg',
       alt: 'Government',
       title: 'Government',
-      link: '/government',
+      link: '/industries/government',
     },
     {
       img: 'assets/home/industries/transportation.jpg',
       alt: 'Transportation and Logistics',
       title: 'Transportation and Logistics',
-      link: '/transportationAndLogistics',
+      link: '/industries/transportation-logistics',
     },
     {
       img: 'assets/home/industries/banking.jpg',
       alt: 'Banking',
       title: 'Banking',
-      link: '/banking',
+      link: '/industries/banking',
     },
     {
       img: 'assets/home/industries/manufactuing.jpg',
       alt: 'Manufacturing',
       title: 'Manufacturing',
-      link: '/manufacturing',
+      link: '/industries/manufacturing',
     },
   ];
 
@@ -673,7 +673,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       description:
         'Smart Rack Management Tool converts rack images or videos into structured, accurate reports using advanced AI vision.It automatically detects devices, cables, and connections, making audits, troubleshooting, and maintenance effortless.',
       image: 'assets/product/producta.png',
-      url: '/insight/247ai-quarterly-product-release-highlights-q3/',
+      link: '/products/smart-rack',
     },
     {
       category: 'Code Detector',
@@ -681,7 +681,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       description:
         'AI Code Security & Vulnerability Scanner analyzes your repositories to detect vulnerabilities and instantly offers AI-generated fix suggestions.With GitHub-ready actions and automated remediation, developers can secure code with unmatched speed and accuracy.',
       image: 'assets/product/productb.png',
-      url: 'https://www.linkedin.com/events/7178413110167285760/about/',
+      link: '/products/code-detector',
     },
     {
       category: 'LMS',
@@ -689,7 +689,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       description:
         'An AI-enhanced learning platform that personalizes courses and streamlines progress tracking for students and instructors.SLMS simplifies education management with intelligent recommendations, smart dashboards, and effortless course delivery.',
       image: 'assets/product/productc.jpg',
-      url: 'https://www.247.ai/news-and-updates/',
+      link: '/products/lms',
     },
     {
       category: 'Interior Living',
@@ -697,7 +697,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       description:
         'Interior Project Management Platform connects customers, designers, and vendors through a unified platform for smooth project execution.From request submission to final delivery, it keeps communication streamlined and every update organized in one place.',
       image: 'assets/product/productd.jpg',
-      url: '/insight/247ai-quarterly-product-release-highlights-q3/',
+      link: '/products/interior-living',
     },
   ];
 }
