@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-insights',
@@ -8,7 +9,13 @@ import { RouterLink } from '@angular/router';
   templateUrl: './insights.component.html',
   styleUrl: './insights.component.scss',
 })
-export class InsightsComponent {
+export class InsightsComponent implements OnInit {
+  private seoService = inject(SeoService);
+
+  public ngOnInit(): void {
+    this.seoService.setMetaForPage('insights');
+  }
+
   public insights = [
     {
       image: 'assets/insights/achieving-marketing-excellence.jpeg',

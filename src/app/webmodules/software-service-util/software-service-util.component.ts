@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { UnlockCompComponent } from '../utilities/mainServicesUtil/unlock-comp/unlock-comp.component';
 import { WhatCompComponent } from '../utilities/mainServicesUtil/what-comp/what-comp.component';
 import { WhatWeDoCompComponent } from '../utilities/mainServicesUtil/what-we-do-comp/what-we-do-comp.component';
 import { MainHeroSectionComponent } from '../utilities/main-hero-section/main-hero-section.component';
+import { SeoService } from '../../services/seo.service';
 
 @Component({
   selector: 'app-software-service-util',
@@ -15,13 +16,19 @@ import { MainHeroSectionComponent } from '../utilities/main-hero-section/main-he
   templateUrl: './software-service-util.component.html',
   styleUrl: './software-service-util.component.scss',
 })
-export class SoftwareServiceUtilComponent {
+export class SoftwareServiceUtilComponent implements OnInit {
+  private readonly seoService = inject(SeoService);
+
   // Section 1
   public whatMainHeader = 'Software Services ';
   public whatDescription =
     'SprintPark’s software services deliver customized, high-performance solutions that accelerate digital growth. From development to deployment, we ensure scalable, secure, and user-centric applications.';
   public heroImage =
     'assets/services/software-services/software-service-hero.png';
+
+  public ngOnInit(): void {
+    this.seoService.setMetaForPage('softwareDevelopment');
+  }
   public smallImage =
     'assets/services/software-services/software-service-hero.png';
 

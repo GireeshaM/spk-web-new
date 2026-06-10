@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { UnlockCompComponent } from '../utilities/mainServicesUtil/unlock-comp/unlock-comp.component';
 import { WhatCompComponent } from '../utilities/mainServicesUtil/what-comp/what-comp.component';
 import { WhatWeDoCompComponent } from '../utilities/mainServicesUtil/what-we-do-comp/what-we-do-comp.component';
 import { MainHeroSectionComponent } from '../utilities/main-hero-section/main-hero-section.component';
+import { SeoService } from '../../services/seo.service';
 
 @Component({
   selector: 'app-project-management',
@@ -15,13 +16,19 @@ import { MainHeroSectionComponent } from '../utilities/main-hero-section/main-he
   templateUrl: './project-management.component.html',
   styleUrl: './project-management.component.scss',
 })
-export class ProjectManagementComponent {
+export class ProjectManagementComponent implements OnInit {
+  private readonly seoService = inject(SeoService);
+
   // Section 1
   public whatMainHeader = 'Project Management';
   public whatDescription =
     'SprintPark’s project management services ensure seamless execution from planning to delivery. We drive efficiency, collaboration, and timely outcomes aligned with your business objectives.';
   public heroImage =
     'assets/services/project-management-service/project-management-hero.png';
+
+  public ngOnInit(): void {
+    this.seoService.setMetaForPage('projectManagement');
+  }
   public smallImage =
     'assets/services/project-management-service/project-management-hero.png';
   // Section 2

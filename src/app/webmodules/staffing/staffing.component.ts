@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { UnlockCompComponent } from '../utilities/mainServicesUtil/unlock-comp/unlock-comp.component';
 import { WhatCompComponent } from '../utilities/mainServicesUtil/what-comp/what-comp.component';
 import { WhatWeDoCompComponent } from '../utilities/mainServicesUtil/what-we-do-comp/what-we-do-comp.component';
 import { MainHeroSectionComponent } from '../utilities/main-hero-section/main-hero-section.component';
 import { WhySpCompComponent } from '../utilities/mainServicesUtil/why-sp-comp/why-sp-comp.component';
+import { SeoService } from '../../services/seo.service';
 @Component({
   selector: 'app-staffing',
   imports: [
@@ -16,12 +17,18 @@ import { WhySpCompComponent } from '../utilities/mainServicesUtil/why-sp-comp/wh
   templateUrl: './staffing.component.html',
   styleUrl: './staffing.component.scss',
 })
-export class StaffingComponent {
+export class StaffingComponent implements OnInit {
+  private readonly seoService = inject(SeoService);
+
   // Section 1
   public whatMainHeader = 'Staffing Solutions ';
   public whatDescription =
     'SprintPark’s staffing solutions connect businesses with top-tier talent, ensuring the right skills for every project. We deliver flexible, reliable workforce support to meet evolving business needs';
   public heroImage = 'assets/services/staffing-service/staffing-hero.png';
+
+  public ngOnInit(): void {
+    this.seoService.setMetaForPage('staffing');
+  }
   public smallImage = 'assets/services/staffing-service/staffing-hero.png';
 
   // Section 2

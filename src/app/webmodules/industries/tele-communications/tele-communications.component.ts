@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { IndustryUtilComponent } from '../../utilities/industry-util/industry-util.component';
+import { SeoService } from '../../../services/seo.service';
 
 @Component({
   selector: 'app-tele-communications',
@@ -8,7 +9,9 @@ import { IndustryUtilComponent } from '../../utilities/industry-util/industry-ut
   templateUrl: './tele-communications.component.html',
   styleUrl: './tele-communications.component.scss',
 })
-export class TeleCommunicationsComponent {
+export class TeleCommunicationsComponent implements OnInit {
+  private readonly seoService = inject(SeoService);
+
   public headerBg = 'assets/Industries/wave.svg';
   public itHeader = 'IT & TeleCommunication';
   public itHeading = 'Empowering Telecom Growth with Confidence';
@@ -17,6 +20,11 @@ export class TeleCommunicationsComponent {
   public subHeading = 'How We Empower Your Business';
   public telecom =
     'assets/Industries/itAndTelecommunication/telecommunications-hero.jpg';
+
+  public ngOnInit(): void {
+    this.seoService.setMetaForPage('industries');
+  }
+
   public cards = [
     {
       img: 'assets/Industries/itAndTelecommunication/data-privacy.png',

@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { UnlockCompComponent } from '../utilities/mainServicesUtil/unlock-comp/unlock-comp.component';
 import { WhatCompComponent } from '../utilities/mainServicesUtil/what-comp/what-comp.component';
 import { WhatWeDoCompComponent } from '../utilities/mainServicesUtil/what-we-do-comp/what-we-do-comp.component';
 import { MainHeroSectionComponent } from '../utilities/main-hero-section/main-hero-section.component';
+import { SeoService } from '../../services/seo.service';
 
 @Component({
   selector: 'app-it-common',
@@ -15,7 +16,9 @@ import { MainHeroSectionComponent } from '../utilities/main-hero-section/main-he
   templateUrl: './it-common.component.html',
   styleUrl: './it-common.component.scss',
 })
-export class ItCommonComponent {
+export class ItCommonComponent implements OnInit {
+  private readonly seoService = inject(SeoService);
+
   // Section 1
   public whatMainHeader = 'IT Consulting';
   public whatDescription =
@@ -99,6 +102,10 @@ export class ItCommonComponent {
   public whatWeDoHeading = 'What we do';
   public whatWeDoDescription =
     'SprintPark offers wide range of IT Consulting services which include';
+  public ngOnInit(): void {
+    this.seoService.setMetaForPage('itConsulting');
+  }
+
   public softwareCards = [
     {
       title: 'IT Assessment',

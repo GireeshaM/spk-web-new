@@ -21,6 +21,7 @@ import {
   animate,
 } from '@angular/animations';
 import { RouterLink } from '@angular/router';
+import { SeoService } from '../services/seo.service';
 @Component({
   selector: 'app-home',
   imports: [CarouselModule, CommonModule, RouterLink],
@@ -100,6 +101,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
     },
   ];
   public ngOnInit(): void {
+    this.seoService.setMetaForPage('home');
+
     this.offerCardVisible = this.whatWeOffer.map(() => false);
 
     if (this.isBrowser) {
@@ -641,6 +644,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   @ViewChildren('statElements') statElements!: QueryList<ElementRef>;
   private observer!: IntersectionObserver;
   private platformId = inject(PLATFORM_ID);
+  private seoService = inject(SeoService);
   isBrowser = isPlatformBrowser(this.platformId);
   cdRef = inject(ChangeDetectorRef);
 

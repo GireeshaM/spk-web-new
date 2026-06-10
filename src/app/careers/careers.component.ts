@@ -3,6 +3,7 @@ import {
   Component,
   ElementRef,
   OnDestroy,
+  OnInit,
   QueryList,
   ViewChildren,
   PLATFORM_ID,
@@ -19,6 +20,7 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
+import { SeoService } from '../services/seo.service';
 
 import { WhatCompComponent } from '../webmodules/utilities/mainServicesUtil/what-comp/what-comp.component';
 import { FormsModule } from '@angular/forms';
@@ -57,9 +59,10 @@ import { FormsModule } from '@angular/forms';
     ]),
   ],
 })
-export class CareersComponent implements AfterViewInit, OnDestroy {
+export class CareersComponent implements OnInit, AfterViewInit, OnDestroy {
   private router = inject(Router);
   private messageService = inject(MessageService);
+  private seoService = inject(SeoService);
   /* ================= PLATFORM ================= */
   public searchText = '';
   private readonly platformId = inject(PLATFORM_ID);
@@ -116,6 +119,10 @@ export class CareersComponent implements AfterViewInit, OnDestroy {
   }
 
   /* ================= LIFECYCLE ================= */
+  public ngOnInit(): void {
+    this.seoService.setMetaForPage('careers');
+  }
+
   public ngAfterViewInit(): void {
     if (!isPlatformBrowser(this.platformId)) {
       return;

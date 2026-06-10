@@ -10,6 +10,7 @@ import { RouterLink } from '@angular/router';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import emailjs from '@emailjs/browser';
+import { SeoService } from '../services/seo.service';
 
 /* ================= FAQ INTERFACE ================= */
 export interface FaqItem {
@@ -30,12 +31,15 @@ export class ContactUsComponent implements OnInit {
   /* ================= DEPENDENCIES ================= */
   private readonly fb = inject(FormBuilder);
   private readonly messageService = inject(MessageService);
+  private readonly seoService = inject(SeoService);
 
   /* ================= FORM ================= */
   public contactForm!: FormGroup;
 
   /* ================= LIFECYCLE ================= */
   public ngOnInit(): void {
+    this.seoService.setMetaForPage('contact');
+
     this.contactForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
