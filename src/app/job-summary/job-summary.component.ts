@@ -28,7 +28,7 @@ export class JobSummaryComponent implements OnInit {
   private readonly messageService = inject(MessageService);
 
   /* ================= STATE ================= */
-  public job!: Job;
+  public job: Job | null = null;
   public applyForm!: FormGroup;
 
   public selectedFile: File | null = null;
@@ -140,26 +140,24 @@ export class JobSummaryComponent implements OnInit {
   }
 
   /* ================= LOAD JOB ================= */
-private loadJob(jobId: string | null): void {
-  if (!jobId) {
-    console.error('❌ jobId is null');
-    return;
-  }
-
-  this.jobService.getJobById(jobId).subscribe({
-    next: (job) => {
-      console.log('SELECTED JOB:', job);
-
-      if (!job) {
-        console.error('❌ Job not found for ID:', jobId);
-        return;
-      }
-
-      this.job = job;
-    },
-    error: (err) => {
-      console.error('Failed to load job', err);
+  private loadJob(jobId: string | null): void {
+    if (!jobId) {
+      console.error('❌ jobId is null');
+      return;
     }
-  });
-}
+
+    this.jobService.getJobById(jobId).subscribe({
+      next: (job) => {
+        if (!job) {
+          console.error('❌ Job not found for ID:', jobId);
+          return;
+        }
+
+        this.job = job;
+      },
+      error: (err) => {
+        console.error('Failed to load job', err);
+      },
+    });
+  }
 }
