@@ -1,0 +1,110 @@
+<div *ngIf="showPopup" class="cookie-popup">
+  <div class="cookie-popup__backdrop" aria-hidden="true"></div>
+
+  <section
+    class="cookie-popup__dialog"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="cookie-popup-title"
+  >
+    <div class="cookie-popup__icon" aria-hidden="true">
+      <i class="fa-solid fa-cookie-bite"></i>
+    </div>
+
+    <div class="cookie-popup__content">
+      <p class="cookie-popup__eyebrow">Privacy preferences</p>
+      <h2 id="cookie-popup-title">We value your privacy</h2>
+      <p class="cookie-popup__copy">
+        SprintPark uses sample cookie preferences to help shape a smoother
+        browsing experience. You can accept all cookies or customize which
+        optional categories you want to allow.
+      </p>
+
+      <div *ngIf="showPreferences" class="cookie-popup__preferences">
+        <div class="cookie-popup__preference">
+          <div>
+            <h3>Strictly necessary</h3>
+            <p>Required for basic site security, routing, and core features.</p>
+          </div>
+          <span>Always on</span>
+        </div>
+
+        <label class="cookie-popup__preference">
+          <div>
+            <h3>Performance</h3>
+            <p>Helps us understand page usage and improve the experience.</p>
+          </div>
+          <input
+            type="checkbox"
+            [checked]="preferences.performance"
+            (change)="updatePreference('performance', $event)"
+          />
+        </label>
+
+        <label class="cookie-popup__preference">
+          <div>
+            <h3>Functional</h3>
+            <p>Remembers simple choices for a smoother future visit.</p>
+          </div>
+          <input
+            type="checkbox"
+            [checked]="preferences.functional"
+            (change)="updatePreference('functional', $event)"
+          />
+        </label>
+
+        <label class="cookie-popup__preference">
+          <div>
+            <h3>Marketing</h3>
+            <p>Supports more relevant service and campaign content.</p>
+          </div>
+          <input
+            type="checkbox"
+            [checked]="preferences.marketing"
+            (change)="updatePreference('marketing', $event)"
+          />
+        </label>
+      </div>
+    </div>
+
+    <div
+      class="cookie-popup__actions"
+      [class.cookie-popup__actions--expanded]="showPreferences"
+    >
+      <button
+        type="button"
+        class="btn btn-link-action"
+        (click)="togglePreferences()"
+      >
+        <i class="fa-solid fa-sliders" aria-hidden="true"></i>
+        Customize
+      </button>
+      <button
+        *ngIf="showPreferences"
+        type="button"
+        class="btn btn-outline-action"
+        (click)="rejectAll()"
+      >
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        Reject optional
+      </button>
+      <button
+        *ngIf="showPreferences"
+        type="button"
+        class="btn btn-secondary-action"
+        (click)="saveSelected()"
+      >
+        <i class="fa-solid fa-floppy-disk" aria-hidden="true"></i>
+        Save choices
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary-action"
+        (click)="acceptAll()"
+      >
+        <i class="fa-solid fa-check" aria-hidden="true"></i>
+        Accept all
+      </button>
+    </div>
+  </section>
+</div>

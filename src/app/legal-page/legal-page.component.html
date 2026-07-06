@@ -1,0 +1,31 @@
+<main class="legal-page">
+  <section class="legal-hero">
+    <div class="container">
+      <p class="eyebrow">SprintPark</p>
+      <h1>{{ page.title }}</h1>
+      <p>{{ page.intro }}</p>
+    </div>
+  </section>
+
+  <section class="legal-content">
+    <div class="container">
+      <div class="placeholder-note" *ngIf="page.isPlaceholder">
+        This is placeholder content and will be replaced with the official
+        SprintPark policy text.
+      </div>
+
+      <div class="legal-section" *ngFor="let section of page.sections">
+        <h2>{{ section.heading }}</h2>
+        <p>{{ section.body }}</p>
+        <ul *ngIf="section.items?.length">
+          <li *ngFor="let item of section.items">{{ item }}</li>
+        </ul>
+        <address *ngIf="section.contactLines?.length">
+          <span *ngFor="let line of section.contactLines">{{ line }}</span>
+        </address>
+      </div>
+
+      <a routerLink="/" class="back-link">Back to Home</a>
+    </div>
+  </section>
+</main>
