@@ -26,6 +26,141 @@ import { InsightsBlogComponent } from './webmodules/insights-blog/insights-blog.
 import { ProductComponent } from './webmodules/product/product.component';
 import { LegalPageComponent } from './legal-page/legal-page.component';
 
+const legacyRedirectRoutes: Routes = [
+  {
+    path: 'home',
+    redirectTo: '',
+    pathMatch: 'full',
+  },
+  {
+    path: 'it-consulting',
+    redirectTo: 'services/it-consulting',
+    pathMatch: 'full',
+  },
+  {
+    path: 'staffing',
+    redirectTo: 'services/staffing',
+    pathMatch: 'full',
+  },
+  {
+    path: 'project-management',
+    redirectTo: 'services/project-management',
+    pathMatch: 'full',
+  },
+  {
+    path: 'software-service',
+    redirectTo: 'services/software-service',
+    pathMatch: 'full',
+  },
+  {
+    path: 'it-assess',
+    redirectTo: 'services/it-consulting',
+    pathMatch: 'full',
+  },
+  {
+    path: 'it-infra',
+    redirectTo: 'services/it-consulting',
+    pathMatch: 'full',
+  },
+  {
+    path: 'staffingSolutions',
+    redirectTo: 'services/staffing',
+    pathMatch: 'full',
+  },
+  {
+    path: 'itAndTelecommunications',
+    redirectTo: 'industries/it-and-telecommunications',
+    pathMatch: 'full',
+  },
+  {
+    path: 'itTelecommunications',
+    redirectTo: 'industries/it-and-telecommunications',
+    pathMatch: 'full',
+  },
+  {
+    path: 'healthCareAndLifeSciences',
+    redirectTo: 'industries/healthcare-life-sciences',
+    pathMatch: 'full',
+  },
+  {
+    path: 'transportationAndLogistics',
+    redirectTo: 'industries/transportation-logistics',
+    pathMatch: 'full',
+  },
+  {
+    path: 'government',
+    redirectTo: 'industries/government',
+    pathMatch: 'full',
+  },
+  {
+    path: 'manufacturing',
+    redirectTo: 'industries/manufacturing',
+    pathMatch: 'full',
+  },
+  {
+    path: 'education',
+    redirectTo: 'industries/education',
+    pathMatch: 'full',
+  },
+  {
+    path: 'banking',
+    redirectTo: 'industries/banking',
+    pathMatch: 'full',
+  },
+  {
+    path: 'telecommunication/:section',
+    redirectTo: 'industries/it-and-telecommunications/:section',
+  },
+  {
+    path: 'government/:section',
+    redirectTo: 'industries/government/:section',
+  },
+  {
+    path: 'transport/:section',
+    redirectTo: 'industries/transportation-logistics/:section',
+  },
+  {
+    path: 'healthcare/:section',
+    redirectTo: 'industries/healthcare-life-sciences/:section',
+  },
+  {
+    path: 'banking/:section',
+    redirectTo: 'industries/banking/:section',
+  },
+  {
+    path: 'education/:section',
+    redirectTo: 'industries/education/:section',
+  },
+  {
+    path: 'manufacturing/:section',
+    redirectTo: 'industries/manufacturing/:section',
+  },
+  {
+    path: 'industries/transportation-and-logistics',
+    redirectTo: 'industries/transportation-logistics',
+    pathMatch: 'full',
+  },
+  {
+    path: 'industries/transportation-and-logistics/:section',
+    redirectTo: 'industries/transportation-logistics/:section',
+  },
+  {
+    path: 'networkEngineering',
+    redirectTo: 'industries/transportation-logistics/networkEngineering',
+    pathMatch: 'full',
+  },
+  {
+    path: 'insightsBlog',
+    redirectTo: 'insights/marketing-excellence',
+    pathMatch: 'full',
+  },
+  {
+    path: 'java',
+    redirectTo: 'careers',
+    pathMatch: 'full',
+  },
+];
+
 export const routes: Routes = [
   {
     path: '',
@@ -37,6 +172,7 @@ export const routes: Routes = [
       footerColor: '#eae8fd',
     },
   },
+  ...legacyRedirectRoutes,
   //services
   // SERVICES (Parent)
   {
@@ -120,6 +256,11 @@ export const routes: Routes = [
       {
         path: 'it-and-telecommunications/:section',
         component: TelecommunicationIComponent,
+        data: {
+          title: 'IT & Telecommunications Solutions | SprintPark',
+          description:
+            'Explore SprintPark IT and telecommunications solutions for data privacy, automation, infrastructure, and managed services.',
+        },
       },
 
       // GOVERNMENT
@@ -136,6 +277,11 @@ export const routes: Routes = [
       {
         path: 'government/:section',
         component: GovernmentIComponent,
+        data: {
+          title: 'Government Technology Solutions | SprintPark',
+          description:
+            'Explore SprintPark government technology solutions for secure modernization, data analytics, risk management, and citizen services.',
+        },
       },
 
       // HEALTHCARE & LIFE SCIENCES
@@ -152,6 +298,11 @@ export const routes: Routes = [
       {
         path: 'healthcare-life-sciences/:section',
         component: HealthCareIComponent,
+        data: {
+          title: 'Healthcare & Life Sciences Solutions | SprintPark',
+          description:
+            'Explore SprintPark healthcare and life sciences solutions for secure data, connected systems, patient innovation, and project delivery.',
+        },
       },
 
       // MANUFACTURING
@@ -168,6 +319,11 @@ export const routes: Routes = [
       {
         path: 'manufacturing/:section',
         component: ManufacturingIComponent,
+        data: {
+          title: 'Manufacturing Technology Solutions | SprintPark',
+          description:
+            'Explore SprintPark manufacturing solutions for Salesforce integration, analytics, project management, and IT consulting.',
+        },
       },
 
       // EDUCATION
@@ -184,6 +340,11 @@ export const routes: Routes = [
       {
         path: 'education/:section',
         component: EducationIComponent,
+        data: {
+          title: 'Education Technology Solutions | SprintPark',
+          description:
+            'Explore SprintPark education technology solutions for network engineering, analytics, and digital project delivery.',
+        },
       },
 
       // TRANSPORTATION & LOGISTICS
@@ -200,6 +361,11 @@ export const routes: Routes = [
       {
         path: 'transportation-logistics/:section',
         component: TransportationIComponent,
+        data: {
+          title: 'Transportation & Logistics Solutions | SprintPark',
+          description:
+            'Explore SprintPark transportation and logistics solutions for IT consulting, network engineering, Salesforce AI, and connected operations.',
+        },
       },
 
       // BANKING
@@ -216,6 +382,11 @@ export const routes: Routes = [
       {
         path: 'banking/:section',
         component: BankingIComponent,
+        data: {
+          title: 'Banking Technology Solutions | SprintPark',
+          description:
+            'Explore SprintPark banking technology solutions for big data, cybersecurity, project management, and AI innovation.',
+        },
       },
     ],
   },
@@ -238,6 +409,9 @@ export const routes: Routes = [
         (m) => m.JobSummaryComponent,
       ),
     data: {
+      title: 'Careers at SprintPark | Job Details',
+      description:
+        'View SprintPark job details, responsibilities, required skills, and application information for current technology career opportunities.',
       footerColor: 'rgba(249, 249, 255, 1)',
     },
   },
@@ -256,8 +430,9 @@ export const routes: Routes = [
     path: 'insights/:section',
     component: InsightsBlogComponent,
     data: {
-      title: '',
-      description: '',
+      title: 'SprintPark Technology Insight',
+      description:
+        'Read SprintPark insights on Salesforce, automation, analytics, cloud technology, and digital transformation.',
     },
   },
 
@@ -276,6 +451,9 @@ export const routes: Routes = [
     path: 'products',
     component: ProductComponent,
     data: {
+      title: 'SprintPark Products | AI-Powered Business Platforms',
+      description:
+        'Explore SprintPark products for smart rack management, interior collaboration, learning management, and AI-driven code security.',
       footerColor: 'rgba(255, 255, 255, 1)',
     },
   },
@@ -283,6 +461,9 @@ export const routes: Routes = [
     path: 'products/:id',
     component: ProductComponent,
     data: {
+      title: 'SprintPark Product Details',
+      description:
+        'Explore SprintPark product details, features, and business use cases for AI-powered digital platforms.',
       footerColor: 'rgba(255, 255, 255, 1)',
     },
   },
@@ -347,7 +528,7 @@ export const routes: Routes = [
           },
           {
             heading: '3. Cookies and Tracking Technologies',
-            body: 'SprintPark currently does not use cookies, advertising technologies, or analytics tools on its website. If cookies or similar technologies are implemented in the future, this Privacy Policy will be updated accordingly.',
+            body: 'SprintPark uses cookies and similar technologies to ensure our website functions properly and to help us understand website usage through Google Analytics 4 when analytics consent is provided. Essential cookies, if used, are always enabled because they are necessary for core website functionality. Analytics cookies are optional and can be accepted, rejected, or changed at any time through Cookie Settings. SprintPark does not use analytics cookies for advertising or personalized marketing.',
           },
           {
             heading: '4. Information Sharing',
@@ -419,30 +600,52 @@ export const routes: Routes = [
       footerColor: 'rgba(255, 255, 255, 1)',
       legalPage: {
         title: 'Cookie Policy',
-        intro: 'Effective Date: July 6, 2026',
-        isPlaceholder: true,
+        intro: 'Effective Date: July 22, 2026',
         sections: [
           {
             heading: 'Overview',
-            body: 'This Cookie Policy is sample content prepared for SprintPark website visitors. It explains, in simple terms, how cookies and similar browser technologies may be used to support website functionality, preferences, performance, and communication experiences.',
+            body: 'SprintPark uses cookies and similar technologies to ensure our website functions properly and to help us understand how visitors use our website through Google Analytics. Analytics cookies help us improve website performance and user experience.',
           },
           {
             heading: 'What Cookies Are',
             body: 'Cookies are small text files that a website may store on your browser or device. They can help a website remember basic information, improve navigation, keep pages working correctly, or understand how visitors interact with the site.',
           },
           {
-            heading: 'Types of Cookies',
-            body: 'A website may use different categories of cookies depending on the features enabled.',
+            heading: 'Essential Cookies',
+            body: 'Essential cookies, if used, are always enabled because they are necessary for the operation and security of the website. They cannot be disabled because they are required to provide core website functionality.',
+          },
+          {
+            heading: 'Analytics Cookies',
+            body: 'Analytics cookies are optional. SprintPark uses Google Analytics 4 to measure website traffic, identify popular pages, and improve website performance and user experience. Analytics information may include pages visited, time spent on pages, device and browser information, general geographic region, traffic source, and website interactions.',
             items: [
-              'Strictly necessary cookies that help the website load and operate.',
-              'Functional cookies that remember simple preferences.',
-              'Performance cookies that help improve page speed and usability.',
-              'Marketing cookies that may support more relevant service or campaign content.',
+              'Analytics cookies are off until consent is given.',
+              'SprintPark does not use analytics cookies for advertising or personalized marketing.',
+              'Analytics cookie duration may be up to 24 months depending on configuration.',
             ],
           },
           {
             heading: 'Managing Preferences',
-            body: 'Visitors can choose whether to accept optional cookie categories through the cookie preference popup. Browser settings may also allow users to delete or block cookies at any time.',
+            body: 'You can accept or reject analytics cookies at any time through the cookie consent banner or the Cookie Settings link in the footer. By clicking "Accept All," you consent to analytics cookies. By clicking "Reject Non-Essential," only essential cookies will be used. You can also use browser settings to delete or block cookies.',
+          },
+          {
+            heading: 'Cookie Declaration',
+            body: 'The following table summarizes the cookie categories used on the SprintPark website.',
+            cookieTable: [
+              {
+                category: 'Essential Cookies',
+                purpose: 'Website functionality and security',
+                provider: 'SprintPark',
+                duration: 'Session',
+                required: 'Yes',
+              },
+              {
+                category: 'Analytics Cookies',
+                purpose: 'Website usage statistics and performance',
+                provider: 'Google Analytics 4',
+                duration: 'Up to 24 months (configuration dependent)',
+                required: 'No',
+              },
+            ],
           },
           {
             heading: 'Updates to This Policy',
@@ -664,5 +867,9 @@ export const routes: Routes = [
   {
     path: '**',
     component: PageNotFoundComponent,
+    data: {
+      title: 'Page Not Found | SprintPark',
+      description: 'The SprintPark page you requested could not be found.',
+    },
   },
 ];

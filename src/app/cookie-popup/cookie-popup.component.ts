@@ -6,114 +6,155 @@ import {
   OnInit,
   PLATFORM_ID,
 } from '@angular/core';
-
-type CookiePreferenceKey = 'performance' | 'functional' | 'marketing';
-
-interface CookiePreferences {
-  performance: boolean;
-  functional: boolean;
-  marketing: boolean;
-}
+import { NavigationEnd, Router, RouterLink } from '@angular/router';
+import { filter, Subscription } from 'rxjs';
+import {
+  CookieConsentPreferences,
+  CookieConsentService,
+} from '../services/cookie-consent.service';
 
 @Component({
   selector: 'app-cookie-popup',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './cookie-popup.component.html',
   styleUrl: './cookie-popup.component.scss',
 })
 export class CookiePopupComponent implements OnInit, OnDestroy {
-  private readonly storageKey = 'sprintpark_cookie_preferences_v2';
+  private readonly cookieConsentService = inject(CookieConsentService);
   private readonly document = inject(DOCUMENT);
   private readonly platformId = inject(PLATFORM_ID);
+  private readonly router = inject(Router);
+  private readonly policyPagePaths = ['/cookie-policy', '/privacy-policy'];
+  private preferencesDialogSubscription?: Subscription;
+  private routeSubscription?: Subscription;
   private previousBodyOverflow = '';
+  private isPageLocked = false;
 
   public showPopup = this.shouldShowPopup();
   public showPreferences = false;
-  public preferences: CookiePreferences = {
-    performance: false,
-    functional: false,
-    marketing: false,
-  };
+  public preferences: CookieConsentPreferences =
+    this.cookieConsentService.getPreferencesSnapshot();
 
   public ngOnInit(): void {
-    this.lockPageWhenOpen();
+    this.preferencesDialogSubscription =
+      this.cookieConsentService.preferencesDialogRequested$.subscribe(() => {
+        this.openPreferencesDialog();
+      });
+    this.routeSubscription = this.router.events
+      .pipe(
+        filter(
+          (event): event is NavigationEnd => event instanceof NavigationEnd,
+        ),
+      )
+      .subscribe((event) => {
+        this.syncPopupWithRoute(event.urlAfterRedirects);
+      });
+
+    this.syncPopupWithRoute(this.router.url);
   }
 
   public ngOnDestroy(): void {
+    this.preferencesDialogSubscription?.unsubscribe();
+    this.routeSubscription?.unsubscribe();
     this.unlockPage();
   }
 
   public acceptAll(): void {
-    this.savePreferences({
-      performance: true,
-      functional: true,
-      marketing: true,
-    });
+    this.preferences = { essential: true, analytics: true };
+    this.cookieConsentService.acceptAll();
+    this.closePopup();
   }
 
-  public rejectAll(): void {
-    this.savePreferences({
-      performance: false,
-      functional: false,
-      marketing: false,
-    });
+  public rejectNonEssential(): void {
+    this.preferences = { essential: true, analytics: false };
+    this.cookieConsentService.rejectNonEssential();
+    this.closePopup();
   }
 
   public saveSelected(): void {
-    this.savePreferences(this.preferences);
+    this.cookieConsentService.savePreferences(this.preferences);
+    this.closePopup();
   }
 
-  public togglePreferences(): void {
-    this.showPreferences = !this.showPreferences;
+  public openPreferences(): void {
+    this.showPreferences = true;
+    this.lockPageWhenOpen();
   }
 
-  public updatePreference(key: CookiePreferenceKey, event: Event): void {
+  public openPolicyPage(): void {
+    this.closePopup();
+  }
+
+  public updateAnalyticsPreference(event: Event): void {
     this.preferences = {
       ...this.preferences,
-      [key]: (event.target as HTMLInputElement).checked,
+      analytics: (event.target as HTMLInputElement).checked,
     };
   }
 
   private shouldShowPopup(): boolean {
-    if (!isPlatformBrowser(this.platformId)) {
-      return false;
-    }
-
-    return window.localStorage.getItem(this.storageKey) === null;
-  }
-
-  private savePreferences(preferences: CookiePreferences): void {
-    this.preferences = preferences;
-    this.showPopup = false;
-    this.unlockPage();
-
-    if (!isPlatformBrowser(this.platformId)) {
-      return;
-    }
-
-    window.localStorage.setItem(
-      this.storageKey,
-      JSON.stringify({
-        savedAt: new Date().toISOString(),
-        preferences,
-      }),
+    return (
+      isPlatformBrowser(this.platformId) &&
+      !this.cookieConsentService.hasSavedConsent() &&
+      !this.isPolicyPageUrl(this.router.url)
     );
   }
 
+  private syncPopupWithRoute(url: string): void {
+    if (this.isPolicyPageUrl(url)) {
+      this.closePopup();
+      return;
+    }
+
+    if (
+      isPlatformBrowser(this.platformId) &&
+      !this.cookieConsentService.hasSavedConsent()
+    ) {
+      this.showPopup = true;
+      this.showPreferences = false;
+      this.lockPageWhenOpen();
+    }
+  }
+
+  private isPolicyPageUrl(url: string): boolean {
+    const path = url.split('?')[0].split('#')[0].replace(/\/$/, '');
+
+    return this.policyPagePaths.includes(path);
+  }
+
+  private openPreferencesDialog(): void {
+    this.preferences = this.cookieConsentService.getPreferencesSnapshot();
+    this.showPopup = true;
+    this.showPreferences = true;
+    this.lockPageWhenOpen();
+  }
+
+  private closePopup(): void {
+    this.showPopup = false;
+    this.showPreferences = false;
+    this.unlockPage();
+  }
+
   private lockPageWhenOpen(): void {
-    if (!this.showPopup || !isPlatformBrowser(this.platformId)) {
+    if (
+      !this.showPopup ||
+      this.isPageLocked ||
+      !isPlatformBrowser(this.platformId)
+    ) {
       return;
     }
 
     this.previousBodyOverflow = this.document.body.style.overflow;
     this.document.body.style.overflow = 'hidden';
+    this.isPageLocked = true;
   }
 
   private unlockPage(): void {
-    if (!isPlatformBrowser(this.platformId)) {
+    if (!this.isPageLocked || !isPlatformBrowser(this.platformId)) {
       return;
     }
 
     this.document.body.style.overflow = this.previousBodyOverflow;
+    this.isPageLocked = false;
   }
 }

@@ -161,7 +161,7 @@ export class TransportationIComponent implements OnInit {
       const sectionKey = rawKey.replace(/-([a-z])/g, (_, c) => c.toUpperCase());
 
       this.currentSectionData =
-        sectionsData[sectionKey] ?? sectionsData[' itConsulting'];
+        sectionsData[sectionKey] ?? sectionsData['itConsulting'];
     });
   }
 }

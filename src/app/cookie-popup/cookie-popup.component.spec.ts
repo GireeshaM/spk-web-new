@@ -1,9 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
 
 import { CookiePopupComponent } from './cookie-popup.component';
+import { COOKIE_CONSENT_STORAGE_KEY } from '../services/cookie-consent.service';
 
 describe('CookiePopupComponent', () => {
-  const storageKey = 'sprintpark_cookie_preferences_v2';
+  const storageKey = COOKIE_CONSENT_STORAGE_KEY;
   let component: CookiePopupComponent;
   let fixture: ComponentFixture<CookiePopupComponent>;
 
@@ -12,6 +14,7 @@ describe('CookiePopupComponent', () => {
 
     await TestBed.configureTestingModule({
       imports: [CookiePopupComponent],
+      providers: [provideRouter([])],
     }).compileComponents();
 
     fixture = TestBed.createComponent(CookiePopupComponent);
@@ -31,8 +34,21 @@ describe('CookiePopupComponent', () => {
   it('should hide after accepting preferences', () => {
     component.acceptAll();
 
+    const savedConsent = JSON.parse(
+      window.localStorage.getItem(storageKey) ?? '{}',
+    ) as { preferences?: { analytics?: boolean } };
+
     expect(component.showPopup).toBeFalse();
-    expect(window.localStorage.getItem(storageKey)).not.toBeNull();
+    expect(savedConsent.preferences?.analytics).toBeTrue();
+    expect(document.body.style.overflow).toBe('');
+  });
+
+  it('should close the popup without saving consent before opening policy pages', () => {
+    component.openPolicyPage();
+
+    expect(component.showPopup).toBeFalse();
+    expect(component.showPreferences).toBeFalse();
+    expect(window.localStorage.getItem(storageKey)).toBeNull();
     expect(document.body.style.overflow).toBe('');
   });
 });

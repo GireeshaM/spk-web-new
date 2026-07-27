@@ -85,6 +85,33 @@
         display: block;
       }
     }
+
+    .legal-table-wrap {
+      margin-top: 16px;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      min-width: 760px;
+      border-collapse: collapse;
+      color: #4d4d5f;
+      font-size: 0.95rem;
+    }
+
+    th,
+    td {
+      padding: 13px 14px;
+      text-align: left;
+      vertical-align: top;
+      border: 1px solid #e4ddec;
+    }
+
+    th {
+      color: #3f0d66;
+      background: #f7f3ff;
+      font-weight: 700;
+    }
   }
 
   .back-link {

@@ -1,5 +1,9 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter, withInMemoryScrolling } from '@angular/router';
+import {
+  provideRouter,
+  TitleStrategy,
+  withInMemoryScrolling,
+} from '@angular/router';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 
 // PrimeNG imports
@@ -8,11 +12,13 @@ import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeng/themes/aura';
 
 import { routes } from './app.routes';
+import { SeoTitleStrategy } from './services/seo-title.strategy';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideHttpClient(),
     provideZoneChangeDetection({ eventCoalescing: true }),
+    { provide: TitleStrategy, useClass: SeoTitleStrategy },
 
     provideRouter(
       routes,

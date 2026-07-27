@@ -1,4 +1,8 @@
-<div *ngIf="showPopup" class="cookie-popup">
+<div
+  *ngIf="showPopup"
+  class="cookie-popup"
+  [class.cookie-popup--preferences]="showPreferences"
+>
   <div class="cookie-popup__backdrop" aria-hidden="true"></div>
 
   <section
@@ -6,105 +10,199 @@
     role="dialog"
     aria-modal="true"
     aria-labelledby="cookie-popup-title"
+    [class.cookie-popup__dialog--preferences]="showPreferences"
   >
     <div class="cookie-popup__icon" aria-hidden="true">
       <i class="fa-solid fa-cookie-bite"></i>
     </div>
 
     <div class="cookie-popup__content">
-      <p class="cookie-popup__eyebrow">Privacy preferences</p>
-      <h2 id="cookie-popup-title">We value your privacy</h2>
-      <p class="cookie-popup__copy">
-        SprintPark uses sample cookie preferences to help shape a smoother
-        browsing experience. You can accept all cookies or customize which
-        optional categories you want to allow.
+      <p class="cookie-popup__eyebrow">
+        {{ showPreferences ? "Cookie Preferences" : "Cookie Consent Banner" }}
       </p>
+      <h2 id="cookie-popup-title">
+        {{ showPreferences ? "Cookie Preferences" : "We Value Your Privacy" }}
+      </h2>
 
-      <div *ngIf="showPreferences" class="cookie-popup__preferences">
-        <div class="cookie-popup__preference">
-          <div>
-            <h3>Strictly necessary</h3>
-            <p>Required for basic site security, routing, and core features.</p>
+      <ng-container *ngIf="!showPreferences; else preferencesDialog">
+        <p class="cookie-popup__copy">
+          SprintPark uses cookies and similar technologies to ensure our website
+          functions properly and to help us understand how visitors use our
+          website through Google Analytics. Analytics cookies help us improve
+          website performance and user experience.
+        </p>
+        <p class="cookie-popup__copy">
+          You can accept or reject analytics cookies at any time. Essential
+          cookies, if used, are always enabled because they are necessary for
+          the website to function.
+        </p>
+        <p class="cookie-popup__copy">
+          By clicking <strong>"Accept All"</strong>, you consent to the use of
+          analytics cookies. By clicking
+          <strong>"Reject Non-Essential"</strong>, only essential cookies will
+          be used.
+        </p>
+        <p class="cookie-popup__copy">
+          For more information, please review our
+          <a routerLink="/cookie-policy" (click)="openPolicyPage()"
+            >Cookie Policy</a
+          >
+          and
+          <a routerLink="/privacy-policy" (click)="openPolicyPage()"
+            >Privacy Policy</a
+          >.
+        </p>
+      </ng-container>
+
+      <ng-template #preferencesDialog>
+        <p class="cookie-popup__copy">
+          You can choose which cookies SprintPark may use on your device.
+        </p>
+
+        <div class="cookie-popup__preferences">
+          <div class="cookie-popup__preference">
+            <div>
+              <h3>Essential Cookies (Always Active)</h3>
+              <p class="cookie-popup__status">
+                <strong>Status:</strong> Always Enabled
+              </p>
+              <p>
+                These cookies are necessary for the operation and security of
+                the website. They cannot be disabled because they are required
+                to provide core website functionality.
+              </p>
+            </div>
+            <span>Always Enabled</span>
           </div>
-          <span>Always on</span>
+
+          <label class="cookie-popup__preference">
+            <div>
+              <h3>Analytics Cookies (Optional)</h3>
+              <p class="cookie-popup__status">
+                <strong>Status:</strong> Toggle
+              </p>
+              <p>
+                Analytics cookies help us understand how visitors interact with
+                our website by collecting anonymous or aggregated information.
+                SprintPark uses Google Analytics 4 to measure website traffic,
+                identify popular pages, and improve website performance and user
+                experience.
+              </p>
+              <p>Information collected may include:</p>
+              <ul>
+                <li>Pages visited</li>
+                <li>Time spent on pages</li>
+                <li>Device and browser information</li>
+                <li>General geographic region</li>
+                <li>Traffic source</li>
+                <li>Website interactions</li>
+              </ul>
+              <p>
+                We do not use analytics cookies for advertising or personalized
+                marketing.
+              </p>
+            </div>
+            <input
+              type="checkbox"
+              [checked]="preferences.analytics"
+              (change)="updateAnalyticsPreference($event)"
+              aria-label="Analytics Cookies"
+            />
+          </label>
         </div>
 
-        <label class="cookie-popup__preference">
-          <div>
-            <h3>Performance</h3>
-            <p>Helps us understand page usage and improve the experience.</p>
+        <div class="cookie-popup__declaration">
+          <h3>Cookie Declaration</h3>
+          <div class="cookie-popup__table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Cookie Category</th>
+                  <th>Purpose</th>
+                  <th>Provider</th>
+                  <th>Duration</th>
+                  <th>Required</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Essential Cookies</td>
+                  <td>Website functionality and security</td>
+                  <td>SprintPark</td>
+                  <td>Session</td>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <td>Analytics Cookies</td>
+                  <td>Website usage statistics and performance</td>
+                  <td>Google Analytics 4</td>
+                  <td>Up to 24 months (configuration dependent)</td>
+                  <td>No</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-          <input
-            type="checkbox"
-            [checked]="preferences.performance"
-            (change)="updatePreference('performance', $event)"
-          />
-        </label>
-
-        <label class="cookie-popup__preference">
-          <div>
-            <h3>Functional</h3>
-            <p>Remembers simple choices for a smoother future visit.</p>
-          </div>
-          <input
-            type="checkbox"
-            [checked]="preferences.functional"
-            (change)="updatePreference('functional', $event)"
-          />
-        </label>
-
-        <label class="cookie-popup__preference">
-          <div>
-            <h3>Marketing</h3>
-            <p>Supports more relevant service and campaign content.</p>
-          </div>
-          <input
-            type="checkbox"
-            [checked]="preferences.marketing"
-            (change)="updatePreference('marketing', $event)"
-          />
-        </label>
-      </div>
+        </div>
+      </ng-template>
     </div>
 
     <div
       class="cookie-popup__actions"
       [class.cookie-popup__actions--expanded]="showPreferences"
     >
-      <button
-        type="button"
-        class="btn btn-link-action"
-        (click)="togglePreferences()"
-      >
-        <i class="fa-solid fa-sliders" aria-hidden="true"></i>
-        Customize
-      </button>
-      <button
-        *ngIf="showPreferences"
-        type="button"
-        class="btn btn-outline-action"
-        (click)="rejectAll()"
-      >
-        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-        Reject optional
-      </button>
-      <button
-        *ngIf="showPreferences"
-        type="button"
-        class="btn btn-secondary-action"
-        (click)="saveSelected()"
-      >
-        <i class="fa-solid fa-floppy-disk" aria-hidden="true"></i>
-        Save choices
-      </button>
-      <button
-        type="button"
-        class="btn btn-primary-action"
-        (click)="acceptAll()"
-      >
-        <i class="fa-solid fa-check" aria-hidden="true"></i>
-        Accept all
-      </button>
+      <ng-container *ngIf="!showPreferences; else preferenceActions">
+        <button
+          type="button"
+          class="btn btn-primary-action"
+          (click)="acceptAll()"
+        >
+          <i class="fa-solid fa-check" aria-hidden="true"></i>
+          Accept All
+        </button>
+        <button
+          type="button"
+          class="btn btn-outline-action"
+          (click)="rejectNonEssential()"
+        >
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          Reject Non-Essential
+        </button>
+        <button
+          type="button"
+          class="btn btn-link-action"
+          (click)="openPreferences()"
+        >
+          <i class="fa-solid fa-sliders" aria-hidden="true"></i>
+          Cookie Preferences
+        </button>
+      </ng-container>
+
+      <ng-template #preferenceActions>
+        <button
+          type="button"
+          class="btn btn-primary-action"
+          (click)="saveSelected()"
+        >
+          <i class="fa-solid fa-floppy-disk" aria-hidden="true"></i>
+          Save Preferences
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary-action"
+          (click)="acceptAll()"
+        >
+          <i class="fa-solid fa-check" aria-hidden="true"></i>
+          Accept All
+        </button>
+        <button
+          type="button"
+          class="btn btn-outline-action"
+          (click)="rejectNonEssential()"
+        >
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          Reject Non-Essential
+        </button>
+      </ng-template>
     </div>
   </section>
 </div>

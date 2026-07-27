@@ -165,14 +165,14 @@
                     type="text"
                     maxlength="10"
                     class="form-control form-control-lg rounded-3"
-                    formControlName="phone"
+                    formControlName="phoneNumber"
                   />
 
                   <small
                     class="text-danger"
                     *ngIf="
-                      applyForm.get('phone')?.touched &&
-                      applyForm.get('phone')?.invalid
+                      applyForm.get('phoneNumber')?.touched &&
+                      applyForm.get('phoneNumber')?.invalid
                     "
                   >
                     Must be exactly 10 digits

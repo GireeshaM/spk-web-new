@@ -11,6 +11,13 @@ interface LegalPageData {
     body: string;
     items?: string[];
     contactLines?: string[];
+    cookieTable?: Array<{
+      category: string;
+      purpose: string;
+      provider: string;
+      duration: string;
+      required: string;
+    }>;
   }>;
 }
 

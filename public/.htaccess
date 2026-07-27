@@ -1,0 +1,50 @@
+DirectoryIndex index.html index.csr.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Backward-compatible 301 redirects for legacy URLs.
+  RewriteRule ^home/?$ / [R=301,L,NC]
+  RewriteRule ^it-consulting/?$ /services/it-consulting [R=301,L,NC]
+  RewriteRule ^staffing/?$ /services/staffing [R=301,L,NC]
+  RewriteRule ^project-management/?$ /services/project-management [R=301,L,NC]
+  RewriteRule ^software-service/?$ /services/software-service [R=301,L,NC]
+  RewriteRule ^it-assess/?$ /services/it-consulting [R=301,L,NC]
+  RewriteRule ^it-infra/?$ /services/it-consulting [R=301,L,NC]
+  RewriteRule ^staffingSolutions/?$ /services/staffing [R=301,L,NC]
+  RewriteRule ^itAndTelecommunications/?$ /industries/it-and-telecommunications [R=301,L,NC]
+  RewriteRule ^itTelecommunications/?$ /industries/it-and-telecommunications [R=301,L,NC]
+  RewriteRule ^healthCareAndLifeSciences/?$ /industries/healthcare-life-sciences [R=301,L,NC]
+  RewriteRule ^transportationAndLogistics/?$ /industries/transportation-logistics [R=301,L,NC]
+  RewriteRule ^government/?$ /industries/government [R=301,L,NC]
+  RewriteRule ^manufacturing/?$ /industries/manufacturing [R=301,L,NC]
+  RewriteRule ^education/?$ /industries/education [R=301,L,NC]
+  RewriteRule ^banking/?$ /industries/banking [R=301,L,NC]
+  RewriteRule ^telecommunication/([^/]+)/?$ /industries/it-and-telecommunications/$1 [R=301,L,NC]
+  RewriteRule ^government/([^/]+)/?$ /industries/government/$1 [R=301,L,NC]
+  RewriteRule ^transport/([^/]+)/?$ /industries/transportation-logistics/$1 [R=301,L,NC]
+  RewriteRule ^healthcare/([^/]+)/?$ /industries/healthcare-life-sciences/$1 [R=301,L,NC]
+  RewriteRule ^banking/([^/]+)/?$ /industries/banking/$1 [R=301,L,NC]
+  RewriteRule ^education/([^/]+)/?$ /industries/education/$1 [R=301,L,NC]
+  RewriteRule ^manufacturing/([^/]+)/?$ /industries/manufacturing/$1 [R=301,L,NC]
+  RewriteRule ^industries/transportation-and-logistics/?$ /industries/transportation-logistics [R=301,L,NC]
+  RewriteRule ^industries/transportation-and-logistics/([^/]+)/?$ /industries/transportation-logistics/$1 [R=301,L,NC]
+  RewriteRule ^networkEngineering/?$ /industries/transportation-logistics/networkEngineering [R=301,L,NC]
+  RewriteRule ^java/?$ /careers [R=301,L,NC]
+
+  # Legacy insight URLs with query-string sections.
+  RewriteCond %{QUERY_STRING} (^|&)section=marketing(&|$) [NC]
+  RewriteRule ^insightsBlog/?$ /insights/marketing-excellence? [R=301,L,NC]
+
+  RewriteCond %{QUERY_STRING} (^|&)section=exploringThePotentialOfSalesforceAnalyticsCloud(&|$) [NC]
+  RewriteRule ^insightsBlog/?$ /insights/exploringThePotentialOfSalesforceAnalyticsCloud? [R=301,L,NC]
+
+  RewriteRule ^insightsBlog/?$ /insights/marketing-excellence? [R=301,L,NC]
+
+  # Angular client-side routing fallback.
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+  RewriteRule ^ index.csr.html [L]
+</IfModule>

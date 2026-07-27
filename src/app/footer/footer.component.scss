@@ -1,8 +1,17 @@
 .footer {
   margin-top: -20px;
+  overflow-x: clip;
+
   img {
     max-width: 100%;
     display: block;
+  }
+
+  .footer-curve {
+    width: 100vw;
+    max-width: none;
+    margin-left: calc(50% - 50vw);
+    height: auto;
   }
 
   .footer-background {
@@ -88,18 +97,27 @@
   }
   .bottomStrip {
     padding: 20px 0;
-    align-items: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 18px;
+
+    &::after {
+      content: "";
+      flex: 0 0 clamp(96px, 8vw, 128px);
+    }
 
     .legal-links {
       display: flex;
-      flex-wrap: wrap;
-      gap: 8px 18px;
+      flex: 1 1 auto;
+      flex-wrap: nowrap;
+      gap: 8px 14px;
       justify-content: center;
-      max-width: 560px;
-      padding: 0 16px;
+      max-width: none;
+      min-width: max-content;
+      padding: 0;
 
-      a {
+      a,
+      .legal-link-button {
         color: white;
         font-size: 13px;
         text-decoration: none;
@@ -109,10 +127,19 @@
           text-decoration: underline;
         }
       }
+
+      .legal-link-button {
+        padding: 0;
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+        line-height: inherit;
+      }
     }
 
     .social-icons {
       display: flex;
+      flex: 0 0 auto;
       justify-content: space-between;
       gap: 3px;
 
@@ -136,12 +163,17 @@
       }
 
       .legal-links {
+        flex-wrap: wrap;
         padding: 0;
+        min-width: 0;
+      }
+
+      &::after {
+        display: none;
       }
 
       .social-icons {
         gap: 12px;
-        margin-right: 0 !important;
         a img {
           width: 24px;
           height: 24px;

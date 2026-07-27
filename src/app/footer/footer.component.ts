@@ -7,6 +7,7 @@ import {
   RouterModule,
 } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { CookieConsentService } from '../services/cookie-consent.service';
 
 @Component({
   selector: 'app-footer',
@@ -18,6 +19,8 @@ export class FooterComponent implements OnInit {
   @Input() themeColor: string = '#ffff';
   route = inject(ActivatedRoute);
   router = inject(Router);
+  private readonly cookieConsentService = inject(CookieConsentService);
+
   public ngOnInit(): void {
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
@@ -28,5 +31,9 @@ export class FooterComponent implements OnInit {
         }
         this.themeColor = child?.snapshot.data['footerColor'] || '#ffffff';
       });
+  }
+
+  public openCookieSettings(): void {
+    this.cookieConsentService.openPreferencesDialog();
   }
 }

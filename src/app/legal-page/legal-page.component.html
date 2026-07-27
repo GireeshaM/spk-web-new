@@ -20,6 +20,28 @@
         <ul *ngIf="section.items?.length">
           <li *ngFor="let item of section.items">{{ item }}</li>
         </ul>
+        <div class="legal-table-wrap" *ngIf="section.cookieTable?.length">
+          <table>
+            <thead>
+              <tr>
+                <th>Cookie Category</th>
+                <th>Purpose</th>
+                <th>Provider</th>
+                <th>Duration</th>
+                <th>Required</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let row of section.cookieTable">
+                <td>{{ row.category }}</td>
+                <td>{{ row.purpose }}</td>
+                <td>{{ row.provider }}</td>
+                <td>{{ row.duration }}</td>
+                <td>{{ row.required }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
         <address *ngIf="section.contactLines?.length">
           <span *ngFor="let line of section.contactLines">{{ line }}</span>
         </address>

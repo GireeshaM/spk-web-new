@@ -1,8 +1,9 @@
 <div class="footer" [ngStyle]="{ 'background-color': themeColor }">
   <img
     src="/assets/footer/footerCurve.png"
-    alt="footerCurve"
-    class="img-fluid"
+    alt=""
+    aria-hidden="true"
+    class="footer-curve img-fluid"
   />
 
   <div class="footer-background">
@@ -129,6 +130,17 @@
                 <p>85 Felt Rd, Suite #604, South Windsor, CT 06074</p>
               </a>
             </li>
+            <!-- Address Section 2-->
+            <li>
+              <a href="contact-us" target="_blank" rel="noopener noreferrer">
+                <!-- <i class="fa fa-map-marker fa-lg"></i> -->
+                <i class="fa-solid fa-location-dot"></i>
+                <p>
+                  Unit No 1204, Asian Sun City, Kondapur, Hyderabad, Telangana
+                  500084
+                </p>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -139,11 +151,18 @@
         <nav class="legal-links" aria-label="Legal links">
           <a routerLink="/privacy-policy">Privacy Policy</a>
           <a routerLink="/cookie-policy">Cookie Policy</a>
+          <button
+            type="button"
+            class="legal-link-button"
+            (click)="openCookieSettings()"
+          >
+            Cookie Settings
+          </button>
           <a routerLink="/terms-and-conditions">Terms and Conditions</a>
           <a routerLink="/disclaimer">Disclaimer</a>
           <a routerLink="/accessibility">Accessibility</a>
         </nav>
-        <div class="social-icons d-flex me-5">
+        <div class="social-icons">
           <a
             href="https://www.facebook.com/SPRINTPARKLLC"
             target="_blank"
@@ -159,7 +178,7 @@
             <img src="/assets/footer/instagram.png" alt="Instagram Icon"
           /></a>
           <a
-            href="https://www.linkedin.com/company/sprintparkusa"
+            href="https://www.linkedin.com/company/sprintpark"
             target="_blank"
             rel="noopener noreferrer"
           >

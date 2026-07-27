@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ChatbotComponent } from './chatbot/chatbot.component';
 import { CookiePopupComponent } from './cookie-popup/cookie-popup.component';
+import { AnalyticsService } from './services/analytics.service';
 
 @Component({
   selector: 'app-root',
@@ -19,4 +20,8 @@ import { CookiePopupComponent } from './cookie-popup/cookie-popup.component';
 })
 export class AppComponent {
   public title = 'spk-web-new';
+
+  constructor() {
+    inject(AnalyticsService);
+  }
 }

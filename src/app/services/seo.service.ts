@@ -14,6 +14,13 @@ export class SeoService {
   title = inject(Title);
   meta = inject(Meta);
 
+  public readonly defaultMeta: SeoPageMeta = {
+    title:
+      'SprintPark Technologies | AI Solutions, Software Development & Product Engineering',
+    description:
+      'SprintPark Technologies delivers AI solutions, product engineering, software development, digital transformation, and technology consulting services that help businesses innovate and scale.',
+  };
+
   private readonly pageMeta: Record<string, SeoPageMeta> = {
     home: {
       title: 'SprintPark Technologies | AI Solutions, Software Development & Product Engineering',
@@ -73,8 +80,15 @@ export class SeoService {
   };
 
   public updateMeta(title: string, description: string): void {
-    this.title.setTitle(title);
-    this.meta.updateTag({ name: 'description', content: description });
+    const normalizedTitle = title || this.defaultMeta.title;
+    const normalizedDescription =
+      description || this.defaultMeta.description;
+
+    this.title.setTitle(normalizedTitle);
+    this.meta.updateTag({
+      name: 'description',
+      content: normalizedDescription,
+    });
   }
 
   public setMetaForPage(pageKey: string): void {
